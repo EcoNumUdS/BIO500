@@ -55,7 +55,6 @@ Notre ami robot, [Travis](https://travis-ci.org) est en charge de la mise en lig
 Un fichier `.Rmd` par section du cours. Le makefile s'occupe de générer le
 diaporama dans le dossier `pres` qu'on ouvre avec un navigateur Internet.
 
-
 ### Utilisation du diaporama
 
 ### Taille écran:
