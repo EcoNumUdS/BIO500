@@ -1,8 +1,8 @@
 # Méthodes en écologie computationnelle
 (2 crédits)
 
-**Professeur:** Dominique Gravel
-**Assistant:** (Steve Vissault)[@SteveViss]
+- **Professeur:** Dominique Gravel
+- **Assistant:** [Steve Vissault](@SteveViss)
 
 # Mise en ligne des cours
 
