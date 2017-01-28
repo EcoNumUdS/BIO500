@@ -6,7 +6,7 @@
 
 # Mise en ligne des cours
 
-Notre ami robot, (Travis)[https://travis-ci.org] est en charge de la mise en ligne des cours sur internet.
+Notre ami robot, [Travis](https://travis-ci.org) est en charge de la mise en ligne des cours sur internet.
 
 [![Build Status](https://travis-ci.org/EcoNumUdS/BIO500.svg?branch=master)](https://travis-ci.org/EcoNumUdS/BIO500)
 
@@ -15,7 +15,7 @@ Notre ami robot, (Travis)[https://travis-ci.org] est en charge de la mise en lig
 - [Présentation HTML](https://econumuds.github.io/BIO109/cours1)
 - [Présentation PDF](./cours1/pres/assets/pdf/S1-BIO109.pdf)
 
-# BLOC 1 : Planification de la collecte et organisation des données (3 cours)
+# Planification de la collecte et organisation des données (bloc 1, 3 cours)
 
 ## Séance 2: La collecte de données en science.
 
@@ -36,7 +36,7 @@ Notre ami robot, (Travis)[https://travis-ci.org] est en charge de la mise en lig
 - [Présentation HTML](https://econumuds.github.io/BIO500/cours4)
 - [Présentation PDF](./cours4/pres/assets/pdf/S4-BIO500.pdf)
 
-# BLOC 2: Outils pour science reproductible (1 cours)
+# Outils pour science reproductible (bloc 2, 1 cours)
 
 *À venir*
 
