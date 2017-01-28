@@ -1,0 +1,4 @@
+Title: Diapo cours BIO109 (UdS)
+Version: 0.0.1
+Imports: slidify, slidifyLibraries
+Remotes: ramnathv/slidify, ramnathv/slidifyLibraries
