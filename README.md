@@ -2,7 +2,7 @@
 (2 crédits)
 
 - **Professeur:** Dominique Gravel
-- **Assistant:** [Steve Vissault](@SteveViss)
+- **Assistant:** [Steve Vissault](https://github.com/SteveViss)
 
 # Mise en ligne des cours
 
@@ -15,7 +15,7 @@ Notre ami robot, [Travis](https://travis-ci.org) est en charge de la mise en lig
 - [Présentation HTML](https://econumuds.github.io/BIO109/cours1)
 - [Présentation PDF](./cours1/pres/assets/pdf/S1-BIO109.pdf)
 
-# Planification de la collecte et organisation des données (bloc 1, 3 cours)
+# B1: Planification de la collecte et organisation des données
 
 ## Séance 2: La collecte de données en science.
 
@@ -36,7 +36,7 @@ Notre ami robot, [Travis](https://travis-ci.org) est en charge de la mise en lig
 - [Présentation HTML](https://econumuds.github.io/BIO500/cours4)
 - [Présentation PDF](./cours4/pres/assets/pdf/S4-BIO500.pdf)
 
-# Outils pour science reproductible (bloc 2, 1 cours)
+# B2: Outils pour une science reproductible
 
 *À venir*
 
