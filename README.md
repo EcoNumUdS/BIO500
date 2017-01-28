@@ -40,6 +40,14 @@ Notre ami robot, [Travis](https://travis-ci.org) est en charge de la mise en lig
 
 *À venir*
 
+# B3: La visualisation de données
+
+*À venir*
+
+# B4: Communiquer ses résultats
+
+*À venir*
+
 # Utiliser `slidify`
 
 ### Organisation
