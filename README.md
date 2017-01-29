@@ -12,8 +12,8 @@ Notre ami robot, [Travis](https://travis-ci.org) est en charge de la mise en lig
 
 ## Séance 1: Introduction
 
-- [Présentation HTML](https://econumuds.github.io/BIO109/cours1)
-- [Présentation PDF](./cours1/pres/assets/pdf/S1-BIO109.pdf)
+- [Présentation HTML](https://econumuds.github.io/BIO500/cours1)
+- [Présentation PDF](./cours1/pres/assets/pdf/S1-BIO500.pdf)
 
 # B1: Planification de la collecte et organisation des données
 
