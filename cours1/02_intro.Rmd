@@ -20,11 +20,11 @@
 
 ## Certaines de ces situations peuvent survenir lors de votre carrière professionnelle:
 
-**Situation 1.** Un employeur souhaite que vous réaliser les même analyses 3 ans plus tard sur des données difféntes.
+**Situation 1.** Un employeur souhaite que vous réalisez les même analyses 3 ans plus tard sur des données difféntes.
 
-**Situation 2.** Vous avez commis une erreur dans votre saisie, vous devez reconduire vos analyses.
+**Situation 2.** Vous avez commis une erreur dans votre saisie de données, vous devez reconduire vos analyses.
 
-**Situation 3.** Un des réviseurs de votre article scientifique vous demande de refaire vos analyses en tenant compte d'une nouvelle variable environnemnale.
+**Situation 3.** Un des réviseurs de votre article scientifique vous demande de refaire vos analyses en tenant compte d'une nouvelle variable environnemental.
 
 ---
 
@@ -53,7 +53,7 @@
 
 # Les étapes de travail d'un biologiste
 
-<!-- La slide suivante peut être placer à différents endroits le long du cours. Je pense que présenter le "workflow" d'un biologiste et sans servir au début de chaque cours pour montrer que chaque cours illustre une étape le long de ce "workflow". Ca va permettre aux étudiants de suivre notre cheminement. -->
+<!-- La slide suivante peut être placé à différents endroits le long du cours. Je pense que présenter le "workflow" d'un biologiste et sans servir au début de chaque cours pour montrer que chaque cours illustre une étape le long de ce "workflow". Ca va permettre aux étudiants de suivre notre cheminement. -->
 
 ## Certaines étapes intermédiaires sont souvent oublié.
 
