@@ -1,5 +1,5 @@
 ---
-title       : "Séance 1: Introduction"
+title       : "Séance 2: Les données en biologie"
 subtitle    : "BIO 500 - Méthodes en écologie computationnelle"
 author      : "Dominique Gravel"
 job         : "Laboratoire d'écologie intégrative"
