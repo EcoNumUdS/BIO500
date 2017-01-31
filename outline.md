@@ -1,146 +1,197 @@
-# OBJECTIFS :
+# INTRODUCTION (3 heures) 
 
-- adopter une pensée critique face aux enjeux de la reproductibilité et de la transparence en science et en pratique professionnelle
+## Cours 1
 
+- Présentation du projet de session
+    - Le "Bacon number"
+    - Exemple
+    - Représentation du réseau de Kevin Bacon
+    - Histoire du Bacon number
+    - Histoire du 'six degrees of separation'
+    - Parallèle avec les réseaux écologiques
+    - Question de session : est-ce que les réseaux de collaboration entre les étudiants du bacc ont les mêmes propriétés que les réseaux écologiques ? 
 
-# Outils à installer / VM à préparer
+- Les étapes d'une étude scientifique (schéma)
+ 
+- Discussion sur la crise de reproductibilité : identification des étapes d'une étude scientifique susceptibles d'influer sur la reproductibilité
 
-# Plan d'un cours
-- Alternance entre présentations et exercices
-- Discussion en clôture
+- Exemples de situations problématiques dans la pratique professionnelle
 
-# Exercices
+- Présentation du plan de cours
+    - Objectif général
+    - Objectifs spécifiques
+    - Contenu du cours
+    - Approche
+    - Évaluation 
 
-# Activités sur le potentiel de la science ouverte
+- Présentation sur les réseaux
+    - théorie des graphs en physique, informatique, socio etc...
+    - les types de réseaux écologiques
+    - descripteurs de base des réseaux
 
-- Discussion sur article de Miraldo
-- Débat sur le partage des données à partir de l'article de Mills
-- Présentation de mangal
-- Article de Jetz sur la distribution de la biodiversité
-- Présentation sur la reconstruction des megawebs
-- Survol des outils disponibles en science ouverte
-- Discussion sur el prix des données
-
-
-
-
-================================================
-
-# INTRO :
-- Bonnes pratiques
-- Crise de la reproductibilité
-- Étapes d'un projet
-    Récolte des données
-    Organisation des données
-    Documentation:
-    Visualisation
-- Bonnes pratiques
-- Présentation du projet
-- Présentation sur les réseaux écologiques
 - Utilisation de la VM et utilisation de base de Ubuntu
+    - ouvrir le terminal
+    - organisation des données
+    - ouvrir R
+    - ouvrir sublimeText
+
+*** Lectures pour la semaine suivante:
+Baker2016
+Munafo2017
+OpenScience015
+
+*** Devoir : explorer l'utilisation de la VM
 
 ================================================
 
-# BLOC 1 : Planification de la collecte et organisation des données (3 cours)
+# BLOC 1 : Planification de la collecte et organisation des données (9 heures)
 
-## Cours 2: Collecte
+## Cours 2: Collecte des données
 
 - Présentation : définition des données
+
 - Activité : Récolte des données dans le cours
-    - instructions
+    - instructions 
     - planification
     - récolte
     - formulaire de saisie
+
 - Activité : intégration des données entre les équipes
     - Inventaire des champs
     - Format des tables
     - Définition en classe du format standard
     - Gestion des doublons
-- Discussion : corruption et sécurité des données
-- Devoir : préparation des données dans format approprié pour intégration ultérieure
+
+### Discussion : est-ce qu'il y a une crise de la reproductibilité en science ?
+
+*** Lectures pour la semaine suivante:
+Pereira 2016
+Miraldo et al. 2016
+
+*** Devoir : préparation des données dans format approprié pour intégration ultérieure 
+
+======
 
 ## Cours 3: base de données relationnelles
 
+- Présentation : environnement de développement
+    - diversité d'outils
+    - présentation sublimeText
+    - envoyer des commandes vers R
+
 - Présentation : organisation relationnelle des données
+
 - Exercice : design du schéma de la DB
+
 - Présentation : utilisation de SQLite
     - Créer les tables et importation des données
     - Déterminer enregistrement unique (clés primaires)
     - Contrôle des relations
+
 - Exercice : monter la base de données pour le cours
+
+### Discussion : les promesses de l'utilisation des données ouvertes
+
+*** Lectures pour la semaine suivante:
+Poisot2014
+Mills2015
+
+======
 
 ## Cours 4: Input / output
 
 - Présentation : saisie de données additionnelles (insert)
+
 - Exercice : ajout d'une table (informations sur les cours)
+
 - Présentation : commandes de bases pour la réalisation de requêtes
+
 - Exercice : requête sur ....
-- Présentation : interface avec R
-- Présentation : autres outils SQL
-    - pré-traitement des données
-    - serveur
-    - postgSQL / spatial
+
+
+### Débat : les enjeux du partage de données
+
+*** Lectures pour la semaine suivante:
+Wilson2014
+Barba2016
+Peng2011
+Sandve2013
 
 ================================================
-
 
 # BLOC 2: Outils pour science reproductible (1 cours)
 
 ## Cours 5: outils pour science reproductible
 
-- Présentation : environnement de développement
-    - diversité d'outils
-    - présentation de ATOM ? gedit ? sublimeText
-
 - Présentation : UNIX
-    - commande 'say coucou Kevin'
     - commandes unix de base
-        déplacement de dossiers
-        manipulation de fichiers
+        cd : déplacement de dossiers
+        cp et mv : manipulation de fichiers
         ls
-        wordcount: wc
-    - chercher un fichier: find
-    - lancer un script R
+        mkdir
+        touch
+        lancer subl
+        supprimer des fichiers
+        find
+    - lancer un script R : RScript
     - lancer une tâche en background: nohup COMMANDE &
     - tâches en cours: top, ps
     - lancer une séquence de tâches simultanément: bash
-    - makefile
-    - utilisation du serveur SQL pour le cours
+
+Le fichier makefile
+    - définition
+    - syntaxe
+    - exemple
+
 - Exercice : préparation du makefile pour la réalisation des requêtes
 
-- Présentation : GIT
+- Système de contrôle de version
     - principe
         contrôle de version
         serveur local et serveur distant
     - cloner un dépot
-    - commit et push
-    - branches et travail de groupe
-    - gitignore
-    - récupérer version actuelle: git pull
+    - Commandes de base
+        git add
+        git commit
+        git push
+        git branch
+        git pull
+    - Fichier gitignore
+    - récupérer version actuelle
     - gestion des conflits entre versions
     - visualisation du travail sur github
     - git log
     - git checkout
 - Exercice : mettre sur un dépôt GIT les données et les scripts
 
+### Discussion : bonnes pratiques en science computationnelle
 
-## Exercice:
+*** Lectures pour la semaine suivante:
+Weissberger2015
+
 
 ================================================
 
 # BLOC 3: Visualisation (2 cours)
 
-- Exercice: critique de figures
+## Cours 6 : figures 1
+
+
+### Discussion : critique de figures
     - cas pathologiques mélangés avec figures très informatives
 
-- Présentation: notions de base pour la visualisation
+Présentation: notions de base pour la visualisation
     - objectif: exploration / communication
     - règles de base
-    - types de figures: scatter plot, barplot, histograms, 3D plots, contour plot....
-    - règles de base
+    - types de figures
+        scatter plot
+        barplot
+        histograms
+        3D plots
+        contour plot
     - formats de base: vectoriel versus bitmap
 
-- Présentation : fonctions de base sur R
+Présentation : fonctions de base sur R
         ouvrir une fenêtre graphique
         plot
         superposition de figures
@@ -150,15 +201,15 @@
         image
         contour
 
-- Enregistrer une figure
+Enregistrer une figure
     Commandes de base
     Différences entre formats
 
-- Paramètres graphiques
+Paramètres graphiques
         par
         layout
-
-- Présentation : édition supplémentaire
+   
+Présentation : édition supplémentaire 
         legend
         text
         title
@@ -168,24 +219,43 @@
         polygon
         arrows
 
-- Exercice : illustrer les données d'une régression linéaire
+Exercice : illustrer les données d'une régression linéaire
+
+*** Lectures pour la semaine suivante
+Silberzahn2015 
+
+## Cours 7 : figres 2
+
 
 - Packages R spécialisés
-   ggplot2
+   ggplot2 
    lattice     
    igraph   
-   RColorBrewer
-
+   RColorBrewer 
+   
 - Faire des schémas avec DiagrammeR
 
-- Tableau: cable
+- Faire des tableau: kable
 
 - Intégration dans le makefile
 
+### Discussion : la reproductibilité des analyses statistiques
+
+*** Lectures pour la semaine suivante : 
+Sand-Jensen2007
+Fawcett2012
+
+
 ================================================
 
-
 # BLOC 4: Communication (3 cours)
+
+## Cours 8 : Introduction à LaTex
+
+### Discussion : comment présenter adéquatement un article scientifique
+
+*** Lectures pour la semaine suivante : 
+Borregaard2016
 
 - Présentation : pourquoi LaTeX
     - Historique
@@ -198,52 +268,55 @@
     - Automatisation
     - Stabilité
 
-- Présentation : un exemple de base
+- Présentation : un exemple de base avec un template par défaut
 
-- Exercice : faire la mise en page d'un article
-  - Un document de base
+- Présentation : autres templates
 
-- Exercice : faire la mise en page d'un article
-    - Table des matières
+- Préparer la présentation d'un rapport de session
+    - Page titre
     - Intégration des figures
     - Intégration des tableaux
-    - Gérer des chapitres
 
-
-- Gestion des références
-    - bibtex
-    - bst
-
-- Beamer
-    -
-
-- Démonstration de Markdown
+- Exercice : préparer la mise en page du travail de session 
 
 - Intégration dans le makefile
 
 
+## Cours 9 : LaTeX (suite)
 
-1. éléments de base pour produire un document
-    -
-    - compilation
+- Gestion des références
+    - bibtex : le format
+    - compiler
+    - bst
 
-2. insertion de tableaux, figures, équations et références
+- Notions avancées de mise en page
+    - Page titre
+    - Table des matières
+    - Gérer des chapitres
+    - Édition d'équations
+    - Utiliser différents templates
+        CV
+        Lettre
 
-3. mise en page
-    - utilisation de packages
-    - template
-    - marges
-    - table des matières
+- Démonstration de Markdown 
 
-4. Beamer
+- Utilisation de pandoc pour la conversion de documents
 
 
+## Cours 10 : LaTeX (fin)
+
+- Beamer pour les présentations
+
+- Problème final : on rajoute des données, il faut tout refaire 
+
+### Discussion finale : enjeux de science reproductible en écologie
 
 
 ================================================
 
 
-## Exercice:
+## Exercice: 
+
 
 évaluation / exemple final: modification des données
 
@@ -261,3 +334,4 @@ MATÉRIEL SUPPLÉMENTAIRE POUR DOCUMENT ÉCRIT ET ÉTUDIANTS GRADUÉS
 - utilisation de SAGE pour la notation symbolique
 - notions de base en python
 - calcul haute performance
+- 
