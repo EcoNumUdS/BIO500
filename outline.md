@@ -1,4 +1,4 @@
-# INTRODUCTION (3 heures) 
+# INTRODUCTION (3 heures)
 
 ## Cours 1
 
@@ -9,10 +9,10 @@
     - Histoire du Bacon number
     - Histoire du 'six degrees of separation'
     - Parallèle avec les réseaux écologiques
-    - Question de session : est-ce que les réseaux de collaboration entre les étudiants du bacc ont les mêmes propriétés que les réseaux écologiques ? 
+    - Question de session : est-ce que les réseaux de collaboration entre les étudiants du bacc ont les mêmes propriétés que les réseaux écologiques ?
 
 - Les étapes d'une étude scientifique (schéma)
- 
+
 - Discussion sur la crise de reproductibilité : identification des étapes d'une étude scientifique susceptibles d'influer sur la reproductibilité
 
 - Exemples de situations problématiques dans la pratique professionnelle
@@ -22,7 +22,7 @@
     - Objectifs spécifiques
     - Contenu du cours
     - Approche
-    - Évaluation 
+    - Évaluation
 
 - Présentation sur les réseaux
     - théorie des graphs en physique, informatique, socio etc...
@@ -51,7 +51,7 @@ OpenScience015
 - Présentation : définition des données
 
 - Activité : Récolte des données dans le cours
-    - instructions 
+    - instructions
     - planification
     - récolte
     - formulaire de saisie
@@ -68,27 +68,50 @@ OpenScience015
 Pereira 2016
 Miraldo et al. 2016
 
-*** Devoir : préparation des données dans format approprié pour intégration ultérieure 
+*** Devoir : préparation des données dans format approprié pour intégration ultérieure
 
 ======
 
 ## Cours 3: base de données relationnelles
 
-- Présentation : environnement de développement
-    - diversité d'outils
-    - présentation sublimeText
-    - envoyer des commandes vers R
+<!-- le client psql sera utilisé pour la création de la BD
+ La visualisation de la BD dans pgadmin est envisageable -->
 
 - Présentation : organisation relationnelle des données
-
-- Exercice : design du schéma de la DB
-
-- Présentation : utilisation de SQLite
-    - Créer les tables et importation des données
-    - Déterminer enregistrement unique (clés primaires)
-    - Contrôle des relations
-
-- Exercice : monter la base de données pour le cours
+  1. Pourquoi les bases de données relationnelles.
+      - Difficulé de stocker les données en 2D
+      - Éviter les redondances (voir règles de normalisation BD)
+      - Séparer les données raw des analyses
+  2. Intro SQL
+      - La couche serveur
+      - la couche client
+          - La diversité des clients (pgadmin4, psql, R etc..)
+      - L'interaction entre les deux couches (adressage serveur via psql)
+      - comment ca fonctionne en local? émulation d'un serveur (localhost)
+      - Qu'est que le language SQL? Language d'interrogation, création et manipulation de la BD
+      - La représentation de la données en SQL:
+          - Les tables
+            - Diversité des types de données
+          - Les relations
+            - 1:1
+            - 1:n
+            - n:n
+            - Intégrité relationnelle
+          - Les clés primaires et étrangères
+      - Introduction à UML pour conceptualiser la DB
+          - Représentation des tables
+          - Représentation
+      - Exercice : design du schéma de la DB
+  3. Le language SQL
+      - Création de table:
+          - CREATE - Déclaration de la table
+      - Manipulation de table:
+          - DROP
+          - UPDATE
+      - Exercice : monter la base de données pour le cours  
+          - Créer les tables
+          - Déterminer enregistrement unique (clés primaires)
+          - Contrôle des relations
 
 ### Discussion : les promesses de l'utilisation des données ouvertes
 
@@ -100,13 +123,43 @@ Mills2015
 
 ## Cours 4: Input / output
 
-- Présentation : saisie de données additionnelles (insert)
+<!-- R sera utiliser pour injecter et retirer les donées -->
+- Présentation SQL Suite - saisie de données additionnelles (insert):
+    - Les insertions de données en SQL
+      - INSERT (ligne par ligne)
+        - Rappel sur l'importance des clés et des types
+      - COPY (fichier txt, csv)
+    - La manipulation de données:
+      - SELECT
+      - AS
+      - FROM
+      - WHERE
+      - GROUP BY
+      - HAVING
+      - JOIN: Les type de jointure entre table
+          - LEFT/RIGHT JOIN
+          - INNER JOIN
+          - OUTER JOIN
+      - les requêtes séquentielles
+        - SELECT * FROM (SELECT * FROM table) AS query1
+      - DELETE (une ligne/plusieurs lignes) basé sur des critères
+      - UPDATE (une ligne/plusieurs lignes) basé sur des critères
 
-- Exercice : ajout d'une table (informations sur les cours)
-
-- Présentation : commandes de bases pour la réalisation de requêtes
-
-- Exercice : requête sur ....
+- Présentation : environnement de développement
+    - diversité d'outils (atom)
+    - L'importance de se détacher de la pensée: 1 logiciel = 1 language. Deux choses différentes
+    - présentation sublimeText (On peut écrire/développer sur plusieurs language à partir d'un logiciel)
+    - Communauté et packages additionnelles à installer (color picker)
+    - envoyer des commandes vers R
+    - Interaction avec la BD depuis R (RPostgreSQL)
+        - Pourquoi? Amener des dfs directement depuis R
+        - Connecter l'entrepot, retirer les données, reformater les données pour l'analyse
+        - présentation du package RPostgreSQL
+        - Connection à la BD
+        - Lister les tables
+        - Envoyer des instructions SQL
+    - Exercice : ajout d'une table (informations sur les cours) depuis R
+    - Exercie: requête sur ....
 
 
 ### Débat : les enjeux du partage de données
@@ -208,8 +261,8 @@ Enregistrer une figure
 Paramètres graphiques
         par
         layout
-   
-Présentation : édition supplémentaire 
+
+Présentation : édition supplémentaire
         legend
         text
         title
@@ -222,17 +275,17 @@ Présentation : édition supplémentaire
 Exercice : illustrer les données d'une régression linéaire
 
 *** Lectures pour la semaine suivante
-Silberzahn2015 
+Silberzahn2015
 
 ## Cours 7 : figres 2
 
 
 - Packages R spécialisés
-   ggplot2 
+   ggplot2
    lattice     
    igraph   
-   RColorBrewer 
-   
+   RColorBrewer
+
 - Faire des schémas avec DiagrammeR
 
 - Faire des tableau: kable
@@ -241,7 +294,7 @@ Silberzahn2015
 
 ### Discussion : la reproductibilité des analyses statistiques
 
-*** Lectures pour la semaine suivante : 
+*** Lectures pour la semaine suivante :
 Sand-Jensen2007
 Fawcett2012
 
@@ -254,7 +307,7 @@ Fawcett2012
 
 ### Discussion : comment présenter adéquatement un article scientifique
 
-*** Lectures pour la semaine suivante : 
+*** Lectures pour la semaine suivante :
 Borregaard2016
 
 - Présentation : pourquoi LaTeX
@@ -277,7 +330,7 @@ Borregaard2016
     - Intégration des figures
     - Intégration des tableaux
 
-- Exercice : préparer la mise en page du travail de session 
+- Exercice : préparer la mise en page du travail de session
 
 - Intégration dans le makefile
 
@@ -298,7 +351,7 @@ Borregaard2016
         CV
         Lettre
 
-- Démonstration de Markdown 
+- Démonstration de Markdown
 
 - Utilisation de pandoc pour la conversion de documents
 
@@ -307,7 +360,7 @@ Borregaard2016
 
 - Beamer pour les présentations
 
-- Problème final : on rajoute des données, il faut tout refaire 
+- Problème final : on rajoute des données, il faut tout refaire
 
 ### Discussion finale : enjeux de science reproductible en écologie
 
@@ -315,7 +368,7 @@ Borregaard2016
 ================================================
 
 
-## Exercice: 
+## Exercice:
 
 
 évaluation / exemple final: modification des données
@@ -334,4 +387,4 @@ MATÉRIEL SUPPLÉMENTAIRE POUR DOCUMENT ÉCRIT ET ÉTUDIANTS GRADUÉS
 - utilisation de SAGE pour la notation symbolique
 - notions de base en python
 - calcul haute performance
-- 
+-
