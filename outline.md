@@ -2,7 +2,7 @@
 
 ## Cours 1
 
-- Présentation du projet de session
+- Présentation du projet de session (30min)
     - Le "Bacon number"
     - Exemple
     - Représentation du réseau de Kevin Bacon
@@ -12,28 +12,34 @@
     - Question de session : est-ce que les réseaux de collaboration entre les étudiants du bacc ont les mêmes propriétés que les réseaux écologiques ?
 
 - Les étapes d'une étude scientifique (schéma)
+<<<<<<< Updated upstream
 
 - Discussion sur la crise de reproductibilité : identification des étapes d'une étude scientifique susceptibles d'influer sur la reproductibilité
+=======
+ 
+- Discussion sur la crise de reproductibilité (30-60min) : identification des étapes d'une étude scientifique susceptibles d'influer sur la reproductibilité
+>>>>>>> Stashed changes
 
 - Exemples de situations problématiques dans la pratique professionnelle
 
-- Présentation du plan de cours
+- Présentation du plan de cours (15 min)
     - Objectif général
     - Objectifs spécifiques
     - Contenu du cours
     - Approche
     - Évaluation
 
-- Présentation sur les réseaux
+- Présentation sur les réseaux (30 min)
     - théorie des graphs en physique, informatique, socio etc...
     - les types de réseaux écologiques
     - descripteurs de base des réseaux
 
-- Utilisation de la VM et utilisation de base de Ubuntu
+- Utilisation de la VM et utilisation de base de Ubuntu (60 min)
     - ouvrir le terminal
-    - organisation des données
+    - répertoires 
     - ouvrir R
     - ouvrir sublimeText
+    - exécuter un script sur le terminal 
 
 *** Lectures pour la semaine suivante:
 Baker2016
@@ -48,21 +54,26 @@ OpenScience015
 
 ## Cours 2: Collecte des données
 
-- Présentation : définition des données
+- Présentation : définition des données (30 min)
 
+<<<<<<< Updated upstream
 - Activité : Récolte des données dans le cours
     - instructions
+=======
+- Activité : Récolte des données dans le cours (60 min)
+    - instructions 
+>>>>>>> Stashed changes
     - planification
     - récolte
     - formulaire de saisie
 
-- Activité : intégration des données entre les équipes
+- Activité : intégration des données entre les équipes (30 min)
     - Inventaire des champs
     - Format des tables
     - Définition en classe du format standard
     - Gestion des doublons
 
-### Discussion : est-ce qu'il y a une crise de la reproductibilité en science ?
+### Discussion : est-ce qu'il y a une crise de la reproductibilité en science ? (30 min)
 
 *** Lectures pour la semaine suivante:
 Pereira 2016

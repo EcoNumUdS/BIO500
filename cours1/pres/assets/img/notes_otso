@@ -1,0 +1,64 @@
+Hi Otso,
+
+Here is some feedback on the manuscript. It's great to see it taking form, it's been a while sinc ae we talked about it and I was very intrigued by the results. Bravo Anna for a well structured, accessible and interesting manuscript. Results are crystal clear and you don't lose yourself in all comparison and the tiny details of the model outputs. 
+
+I attached a commented / edited version of the manuscript. Essentially minor things. I will rather emphasize two important points here, and then after provide some suggestions below for the discussion. My two comments are conditional on your motivation to submit this to Eco Lett; they would be relevant if you decided to submit elsewhere, let say MEE, but I think there is justification for ELE. That said, you need to raise up the conceptual part of the study in order to meet the standards of the journal. 
+
+1. The intro is very model-oriented, albeit not so statistical. ELE looks for papers, including ones presenting methods, that will make the field go forward conceptually. As it is right now, it is presented as a straight method comparison. Which is find, and useful, but not what they look for. You have to frame the intro so that the comparison will reveal us something about how communities are organized, and why conceptually we are missing something with stacked SDMs. 
+
+I remember a discussion one day I had with Wilfried Thuiller about SDMs and the need to include biotic interactions. Although he changed his mind since, at the time he quickly replied me : "why do we need to include biotic interactions if our standard methods are already accounting for 80% of the variance ? What can we get more ? Including biotic interactions will only allow for marginal gains, the bulk of information is in the species-habitat relationship. " This reasoning is relevant at the species level, to a certain extent, but stacking SDMs by Guisian, Ferrier and others revealed that we miss something at the community level. Something that a comparison of species vs community based models will reveal. 
+
+And the results are indeed conclusive: stacking SDMs is inappropriate. We have some clue why, because some of us work on theoretical models of biotic interactions, other on JSDMs. At the end, it's because of species association that violates the assumption of independence underlying stacked SDMs. You have to make this point very clear in the introduction. Further, you tend to overlook in the introduction the interpretation of species associations, what you refer to as correlations. You describe JSDMs in one sentence. You should not take these models for granted, only an elite knows what you talk about when referring to them. And they need to be explained conceptually, not just mathematically. 
+
+The bottom line, is that in the intro I would try to : 
+
+- write a paragraph reviewing the sucesses and failures of stacking SDMs
+- write another paragraph explaining, with theory, why it's obvious that stacked SDMs are wrong, in order to reveal the importance of species associations
+- frame the last paragraph almost as a test of hypothesis. Based on our theoretical understanding of species and community distribution, we should expect that community models accounting for co-distribution will i) be unbiased, ii) perform better to predict variation in species richness and iii) predict community-level metrics such as the C-score. That said, there will be a cost and iv) it is likely that SDMs perform better at the species level (which is not granted that said). 
+
+As a result, in the Discussion, I would come back to this setting of the introduction and emphasize conceptual findings. For me, the model comparison brings something much better than ranking of different models and showing that HMSC is the best. It tells me very convincingly that i) community turnover is not only a matter of individual responses to the environment, interactions could matter as well and ii) we should shift our focus to better understand and represent co-distribution constraints in distribution models. 
+
+Lastly, I would underline that there is currently no theoretical framework that could be mapped to the current statistical approaches. It was fairly easy for SDMs, we could just refer to the Hutchinsonian niche and say that a SDMs is just a fitting method to represent the niche. It's more complicated for communities, we currently don't have a S species method to explain the results. we have it for 2-3 species, for instance playing with conditional probabilities or with metapopulation models, but we don't have it for diverse communities. 
+
+2. The other thing that is missing, which is still conceptual but leans toward the methods, is a rough description of the different types of modelling approaches. There are few criteria provided in the table, but they miss in the text. Further, I would try to find other ways to classify them. They do not differ only by the fitting method, they also have somethings constraints derived from entropy principle, others use latent variables etc..... It might prove hard, but you need at least to give the reader some background information so that he could by himself understand why the HMSC is performing the best, and some other methods doing very bad. 
+
+
+DISCUSSION
+
+I'll throw in some relevant questions / suggestions, and I'm willing to write stuff about them if you want me to.
+
+Does this comparison yields some insights about what is driving turnover in community composition ? Is it the same as what is driving species variation ? Some discussion on the Gleason vs Clements debate might be worthwhile. Further, we should position ourselves relative to 'ancient' ordination methods. 
+
+Ease to use of the different methods. Some criteria
+- package availability
+- data restrictions (some are limited in number of sites or species)
+- computational efficiency
+
+
+Are these approaches expandable ?
+- e.g. amenable to account for spatial autocorrelation
+- can we introduce non-linear functions for the response to the environment ? 
+- Can we imagine developping them for dynamic data, not only static data ?
+
+Eveness of performance across datasets
+- what does the comaprison across datasets tells us ?
+- what's the impact of rare species (was envisionned in the text)
+- shall we compare models for a given dataset and pick the best ? What do we learn from this ? 
+- should we do model averaging for communities (arg!)
+
+Usefulness for predicting climate change scenarios
+- was a major motivation for SDMs, but can we do the same for community models
+- for instance, is it as straighforward to predict future distributions ?
+- what if some species are not migrating, does it screw up the predictions ? 
+
+Are these models really catching the effect of species interactions ? 
+- we found taht dealing with associations is important. what is the interpretation ?
+- does it means that biotic interactions matter for species composition ? 
+
+
+It's not easy to match these methods with the current theory for species distribution
+
+Avenues for future method developments
+
+
+
