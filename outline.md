@@ -2,44 +2,51 @@
 
 ## Cours 1
 
-- Présentation du projet de session (30min)
-    - Le "Bacon number"
-    - Exemple
-    - Représentation du réseau de Kevin Bacon
-    - Histoire du Bacon number
-    - Histoire du 'six degrees of separation'
-    - Parallèle avec les réseaux écologiques
-    - Question de session : est-ce que les réseaux de collaboration entre les étudiants du bacc ont les mêmes propriétés que les réseaux écologiques ?
+# Introduction (30 min)
+- Le "Bacon number"
+- Définition
+- Exemple
+- Histoire du Bacon number
+- Histoire du 'six degrees of separation'
+- Internet
+- Réseaux sociaux
+- Réseau trophique
+- Réseau plantes-pollinisateurs
+- Réseau bactéries phages
+- Question de session : est-ce que les réseaux de collaboration entre les étudiants du bacc ont les mêmes propriétés que les réseaux écologiques ?
 
+
+# La crise de reproductibitlié (30min)
 - Les étapes d'une étude scientifique (schéma)
-<<<<<<< Updated upstream
-
-- Discussion sur la crise de reproductibilité : identification des étapes d'une étude scientifique susceptibles d'influer sur la reproductibilité
-=======
- 
-- Discussion sur la crise de reproductibilité (30-60min) : identification des étapes d'une étude scientifique susceptibles d'influer sur la reproductibilité
->>>>>>> Stashed changes
 
 - Exemples de situations problématiques dans la pratique professionnelle
+ 
+- Discussion sur la crise de reproductibilité (30-60min) : identification des étapes d'une étude scientifique susceptibles d'influer sur la reproductibilité
 
-- Présentation du plan de cours (15 min)
+
+
+# Présentation du plan de cours (15 min)
     - Objectif général
     - Objectifs spécifiques
     - Contenu du cours
     - Approche
     - Évaluation
 
-- Présentation sur les réseaux (30 min)
+# Présentation sur les réseaux (30 min)
     - théorie des graphs en physique, informatique, socio etc...
     - les types de réseaux écologiques
     - descripteurs de base des réseaux
 
-- Utilisation de la VM et utilisation de base de Ubuntu (60 min)
+# Utilisation de la VM et utilisation de base de Ubuntu (30 min)
     - ouvrir le terminal
     - répertoires 
     - ouvrir R
     - ouvrir sublimeText
     - exécuter un script sur le terminal 
+
+
+
+
 
 *** Lectures pour la semaine suivante:
 Baker2016
