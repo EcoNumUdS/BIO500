@@ -133,7 +133,7 @@ Est-ce que le réseau de collaboration entre les étudiants du bac en écologie 
 
 # L'importance de la reproductibilité.
 
-## Certaines de ces situations peuvent survenir lors de votre carrière professionnelle:
+## Ces situations peuvent survenir lors de votre carrière professionnelle:
 
 **Situation 1.** Un employeur souhaite que vous réalisiez les mêmes analyses 3 ans plus tard sur des données difféntes.
 

@@ -45,12 +45,12 @@ Une hypothèse selon laquelle n'importe quel acteur peut être relié à Kevin B
 - Sean Penn a un Bacon number de 1 pour son rôle dans *Mystic River*
 - Madonna a un Bacon number de 2 pour son rôle dans *Shadows and Fog*, dans lequel figurait Camille Saviola, qui a elle-même joué avec Kevin Bacon dans *Queens Logic*
 
-Si le jeux vous amusent, allez consulter le site [The Oracle of Bacon](https://oracleofbacon.org/movielinks.php)
+Si le jeu vous amuse, allez consulter le site [The Oracle of Bacon](https://oracleofbacon.org/movielinks.php)
 
 ---
 # Six degrés de séparation
 
-Le jeu est une parodie du mythe urbain de six degrés de séparation, qui propose que tous les humains sur la terre sont à moins de six degrés de séparation dans une chaine "d'ami à ami".
+Le jeu est une parodie du mythe urbain de six degrés de séparation, qui propose que tous les humains sur la terre soient à moins de six degrés de séparation dans une chaine "d'ami à ami".
 
 Kochen a proposé dans les années 50 que "*it is practically certain that any two individuals can contact one another by means of at most two intermediaries. In a [socially] structured population it is less likely but still seems probable. And perhaps for the whole world's population, probably only one more bridging individual should be needed.*"
 
@@ -67,14 +67,14 @@ Kochen a proposé dans les années 50 que "*it is practically certain that any t
 - Individus choisis au hasard au Nebraska et au Kansas, et qui devaient rejoindre des personnes à Boston.
 - Un paquet était envoyé, incluant des instructions, une lettre ainsi que de l'information sur la personne ciblée à Boston
 - Si la personne de départ connaissait directement la cible, elle devait lui envoyer directement la lettre
-- Si non, la personne devait choisir un ami ou une connaissance qui était susceptible de connaître la personne cible
-- Une fois rendue à destination, le destinataire envoyait la chaîne de communication au chercheur
+- Sinon, la personne devait choisir un ami ou une connaissance qui était susceptible de connaître la personne cible
+- Une fois rendu à destination, le destinataire envoyait la chaîne de communication au chercheur
 
 ---
 # Résultats
 
 - 64 lettres sur 296 envoyées sont arrivées à destination
-- Le nombre de degré moyens était entre 5 et 6
+- Le nombre de degrés moyens était entre 5 et 6
 
 ---
 # Suivi
@@ -90,7 +90,7 @@ Kochen a proposé dans les années 50 que "*it is practically certain that any t
 </div>
 
 ---
-# Les propriétés de petits monde en écologie
+# Les propriétés de petit monde en écologie
 
 <div style='text-align:center;'>
 <img src="assets/img/williams2002.png" height="500px"></img>
@@ -98,7 +98,7 @@ Kochen a proposé dans les années 50 que "*it is practically certain that any t
 
 ---
 
-# Les propriétés de petits monde en écologie
+# Les propriétés de petit monde en écologie
 
 <div style='text-align:center;'>
 <img src="assets/img/foodweb.png" height="500px"></img>
@@ -106,7 +106,7 @@ Kochen a proposé dans les années 50 que "*it is practically certain that any t
 
 ---
 
-# Les propriétés de petits monde en écologie
+# Les propriétés de petit monde en écologie
 
 <div style='text-align:center;'>
 <img src="assets/img/cod.png" height="500px"></img>
@@ -114,7 +114,7 @@ Kochen a proposé dans les années 50 que "*it is practically certain that any t
 
 ---
 
-# Les propriétés de petits monde en écologie
+# Les propriétés de petit monde en écologie
 
 <div style='text-align:center;'>
 <img src="assets/img/pollinisateur.png" height="500px"></img>
@@ -124,7 +124,7 @@ Kochen a proposé dans les années 50 que "*it is practically certain that any t
 
 TODO: MISSING FILE bacteries.png
 
-# Les propriétés de petits monde en écologie
+# Les propriétés de petit monde en écologie
 
 <div style='text-align:center;'>
 <img src="assets/img/bacteries.png" height="500px"></img>
@@ -132,7 +132,7 @@ TODO: MISSING FILE bacteries.png
 
 ---
 
-# Les propriétés de petits monde en écologie
+# Les propriétés de petit monde en écologie
 
 <div style='text-align:center;'>
 <img src="assets/img/csbq.png" height="500px"></img>
@@ -141,7 +141,7 @@ TODO: MISSING FILE bacteries.png
 ---
 # Le projet de session
 
-Est-ce que le réseau de collaboration entre les étudiants du bacc en écologie a les mêmes propriétés que les réseaux écologiques ?
+Est-ce que le réseau de collaboration entre les étudiants du bac en écologie a les mêmes propriétés que les réseaux écologiques ?
 
 ---.transition
 
@@ -151,13 +151,13 @@ Est-ce que le réseau de collaboration entre les étudiants du bacc en écologie
 
 # L'importance de la reproductibilité.
 
-## Certaines de ces situations peuvent survenir lors de votre carrière professionnelle:
+## Ces situations peuvent survenir lors de votre carrière professionnelle:
 
-**Situation 1.** Un employeur souhaite que vous réalisez les même analyses 3 ans plus tard sur des données difféntes.
+**Situation 1.** Un employeur souhaite que vous réalisiez les mêmes analyses 3 ans plus tard sur des données difféntes.
 
 **Situation 2.** Vous avez commis une erreur dans votre saisie de données, vous devez reconduire vos analyses.
 
-**Situation 3.** Un des réviseurs de votre article scientifique vous demande de refaire vos analyses en tenant compte d'une nouvelle variable environnemental.
+**Situation 3.** Un des réviseurs de votre article scientifique vous demande de refaire vos analyses en tenant compte d'une nouvelle variable environnementale.
 
 ---
 
@@ -255,7 +255,7 @@ Au terme de ce cours, l'étudiant sera en mesure de réaliser l'ensemble de la  
 
 # Approche
 
-Les cours vont comprendre une période de présentation entre-coupée d'exercices, suivi d'une discussion générale sur des références clés (45).
+Les cours vont comprendre une période de présentation entrecoupée d'exercices, suivi d'une discussion générale sur des références clés (45).
 
 Nous progresserons dans l'exécution du travail de session et l'évaluation portera sur les étapes intermédiaires.
 
@@ -317,7 +317,7 @@ L'évaluation porte sur la réalisation d'un travail de session (75%), réalisé
 ---
 
 # Types de réseaux
-## Plante-disperseur
+## Plante-vecteur de dispersion
 
 <div style='text-align:center;'>
 <img src="assets/img/dispersion.png" height="500px;"></img>
@@ -344,7 +344,7 @@ L'évaluation porte sur la réalisation d'un travail de session (75%), réalisé
 ---
 
 # Types de réseaux
-## Hote-parasite
+## Hôte-parasite
 
 <div style='text-align:center;'>
 <img src="assets/img/parasite.png" height="500px"></img>
@@ -432,16 +432,16 @@ L'évaluation porte sur la réalisation d'un travail de session (75%), réalisé
 
 *** =left
 
-[VirtualBox](https://www.virtualbox.org/) est une application qui `émule` une machine/ordinateur virtuel à l'intérieur de votre ordinateur.
+[VirtualBox](https://www.virtualbox.org/) est une application qui `émule` une machine/ordinateur virtuelle à l'intérieur de votre ordinateur.
 
-Une machine virtuelle est donc un environnement confiné sur lequel on peut installer un autre système d'exploitation qui utilise les ressources matériels de l'hôte (votre ordinateur).
+Une machine virtuelle est donc un environnement confiné sur lequel on peut installer un autre système d'exploitation qui utilise les ressources matérielles de l'hôte (votre ordinateur).
 
-Nous utiliserons [VirtualBox](https://www.virtualbox.org/) pour exécuter une machine Linux (distribution Ubuntu 16.04), sur votre PC Windows ou votre Mac créée spécifiquement pour ce cours.
+Nous utiliserons [VirtualBox](https://www.virtualbox.org/) pour exécuter une machine Linux (distribution Ubuntu 16.04), sur votre PC Windows ou votre Mac créé spécifiquement pour ce cours.
 
 *** =right
 
 <div style='text-align:center;'>
-<img src="assets/img/VM.png" width="90%"></img>
+<img src="assets/img/mv.png" width="90%"></img>
 </div>
 
 
@@ -480,7 +480,7 @@ Nous utiliserons [VirtualBox](https://www.virtualbox.org/) pour exécuter une ma
 *** =right
 
 <div style='text-align:center;'>
-<img src="assets/img/VM1.png" width="95%"></img>
+<img src="assets/img/mv_1.png" width="95%"></img>
 </div>
 
 --- &twocolw w1:40% w2:60%
@@ -489,12 +489,12 @@ Nous utiliserons [VirtualBox](https://www.virtualbox.org/) pour exécuter une ma
 
 *** =left
 
-- Étape 5: **Sélectionner le fichier de l'image de la machine virtuelle** créée pour le cours (téléchargé à l'étape 2)
+- Étape 5: **Sélectionner le fichier de l'image de la machine virtuelle** créé pour le cours (téléchargé à l'étape 2)
 
 *** =right
 
 <div style='text-align:center;'>
-<img src="assets/img/VM2.png" width="95%"></img>
+<img src="assets/img/mv_2.png" width="95%"></img>
 </div>
 
 --- &twocolw w1:40% w2:60%
@@ -511,16 +511,16 @@ Nous utiliserons [VirtualBox](https://www.virtualbox.org/) pour exécuter une ma
 *** =right
 
 <div style='text-align:center;'>
-<img src="assets/img/VM3.png" width="95%"></img>
+<img src="assets/img/mv_3.png" width="95%"></img>
 </div>
 
 --- &twocol
 
-# Une nouveau monde s'ouvre à vous...
+# Un nouveau monde s'ouvre à vous...
 
 *** =left
 
-Il éxiste une [grande diversité de distributions](https://fr.wikipedia.org/wiki/Liste_des_distributions_Linux) Linux (Systèmes d'exploitation). L'ensemble de ces distributions sont gratuites et libres (OpenSource) !
+Il existe une [grande diversité de distributions](https://fr.wikipedia.org/wiki/Liste_des_distributions_Linux) Linux (Systèmes d'exploitation). L'ensemble de ces distributions sont gratuites et libres (OpenSource) !
 
 
 ## Alors, pourquoi Ubuntu?
@@ -540,7 +540,7 @@ Il éxiste une [grande diversité de distributions](https://fr.wikipedia.org/wik
 
 # Sur la machine virtuelle Ubuntu...
 
-**Les logiciels/languages que nous utiliserons dans le cours ont déjà été installés pour vous.**
+**Les logiciels/langages que nous utiliserons dans le cours ont déjà été installés pour vous.**
 
 - R (avec les librairies nécessaires)
 - La distribution complète de LaTeX
@@ -548,8 +548,6 @@ Il éxiste une [grande diversité de distributions](https://fr.wikipedia.org/wik
 - SQL
 - SublimeText
 - Le terminal (crt+alt+t)
-
-
 
 
 ---.transition
@@ -563,7 +561,7 @@ Il éxiste une [grande diversité de distributions](https://fr.wikipedia.org/wik
 ## Travail
 
 - Prenez le temps de vous familiariser avec la Machine virtuelle Ubuntu.
-  - Exemples: Créer des fichiers et des dossiers, changer le fond d'écran etc.
+  - Exemples: Créer des fichiers et des dossiers, changer le fond d'écran, etc.
 
 ## Lectures
 

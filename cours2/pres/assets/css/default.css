@@ -68,12 +68,12 @@ slide:not(.segue) p {
 
 slide:not(.segue) a:link {
   font-weight: bold;
-  color: darkred;
+  color: rgb(0, 74, 144);
 }
 
 slide:not(.segue) a:visited {
     text-decoration: none;
-    color: darkred;
+    color: rgb(0, 74, 144);
     font-weight: bold;
 }
 
