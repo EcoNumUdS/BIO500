@@ -470,45 +470,48 @@ Nous utiliserons [VirtualBox](https://www.virtualbox.org/) pour exécuter une ma
 
 --- &twocolw w1:40% w2:60%
 
-# Procédure d'importation et de lancement de la VM
+# Procédure d'importation de la VM
 
 *** =left
 
 - Étape 3: Ouvrir **VirtualBox**
-- Étape 4: Dans le menu **File**, sélectionnez **Import Applicance**
+- Étape 4: Dans le menu **Machine**, sélectionnez **Ajouter**
 
 *** =right
 
 <div style='text-align:center;'>
-<img src="assets/img/vm1.png" width="90%"></img>
+<img src="assets/img/VM1.png" width="95%"></img>
 </div>
 
 --- &twocolw w1:40% w2:60%
 
-# Procédure d'importation et de lancement de la VM
+# Procédure d'importation de la VM
 
 *** =left
 
-- Étape 5: Cliquez sur **choose** et **sélectionner le fichier de l'image de la machine virtuelle** créée pour le cours (téléchargé à l'étape 2)
+- Étape 5: **Sélectionner le fichier de l'image de la machine virtuelle** créée pour le cours (téléchargé à l'étape 2)
 
 *** =right
 
 <div style='text-align:center;'>
-<img src="assets/img/vm2.png" width="90%"></img>
+<img src="assets/img/VM2.png" width="95%"></img>
 </div>
 
 --- &twocolw w1:40% w2:60%
 
-# Procédure d'importation et de lancement de la VM
+# Procédure de lancement de la VM
 
 *** =left
 
-- Étape 6: Cliquez sur **import**
+- Étape 6: Clique droit sur la machine virtuelle `VM-BIO500`, puis `Démarrer` et enfin sur `Démarrage normal`.
+- Étape 7: Et voilà ! La machine virtuelle est en train de démarrer.
+
+**Veuillez prendre note que le mot de passe utilisateur est: `etudiant`**
 
 *** =right
 
 <div style='text-align:center;'>
-<img src="assets/img/vm3.png" width="90%"></img>
+<img src="assets/img/VM3.png" width="95%"></img>
 </div>
 
 --- &twocol
@@ -551,11 +554,18 @@ Il éxiste une [grande diversité de distributions](https://fr.wikipedia.org/wik
 
 ---.transition
 
-# Lectures pour la semaine prochaine
+# Lectures et travail pour la semaine prochaine
 
 ---
 
-# Lectures
+# Lectures et travail
+
+## Travail
+
+- Prenez le temps de vous familiariser avec la Machine virtuelle Ubuntu.
+  - Exemples: Créer des fichiers et des dossiers, changer le fond d'écran etc.
+
+## Lectures
 
 - Baker, M. 2016. Is there a reproducibility crisis ? Nature, 533 : 452:454
 - Munafo, M.R. et al. 2017. A manifesto for reproducible science. Nature Human Behaviour 1: 0021
