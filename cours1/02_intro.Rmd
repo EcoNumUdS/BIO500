@@ -7,16 +7,18 @@
 
 # Introduction
 
---- 
+---
+
+# Le Bacon number
 
 <div style='text-align:center;'>
-<img src="assets/img/bacon.png" height="500px"></img>
+<img src="assets/img/bacon.jpg" height="500px"></img>
 </div>
 
 ---
 # Le Bacon number
 
-Une hypothèse selon laquelle n'importe quel acteur peut être relié à Kevin Bacon via ses rôles dans 6 films ou moins. 
+Une hypothèse selon laquelle n'importe quel acteur peut être relié à Kevin Bacon via ses rôles dans 6 films ou moins.
 
 ---
 # Exemple
@@ -30,9 +32,9 @@ Si le jeux vous amusent, allez consulter le site [The Oracle of Bacon](https://o
 ---
 # Six degrés de séparation
 
-Le jeu est une parodie du mythe urbain de six degrés de séparation, qui propose que tous les humains sur la terre sont à moins de six degrés de séparation dans une chaine "d'ami à ami". 
+Le jeu est une parodie du mythe urbain de six degrés de séparation, qui propose que tous les humains sur la terre sont à moins de six degrés de séparation dans une chaine "d'ami à ami".
 
-Kochen a proposé dans les années 50 que "it is practically certain that any two individuals can contact one another by means of at most two intermediaries. In a [socially] structured population it is less likely but still seems probable. And perhaps for the whole world's population, probably only one more bridging individual should be needed." 
+Kochen a proposé dans les années 50 que "*it is practically certain that any two individuals can contact one another by means of at most two intermediaries. In a [socially] structured population it is less likely but still seems probable. And perhaps for the whole world's population, probably only one more bridging individual should be needed.*"
 
 ---
 # L'expérience de Milgram
@@ -44,7 +46,7 @@ Kochen a proposé dans les années 50 que "it is practically certain that any tw
 ---
 # L'expérience de Milgram
 
-- Individus choisis au hasard au Nebraska et au Kansas, et qui devaient rejoindre des personnes à Boston. 
+- Individus choisis au hasard au Nebraska et au Kansas, et qui devaient rejoindre des personnes à Boston.
 - Un paquet était envoyé, incluant des instructions, une lettre ainsi que de l'information sur la personne ciblée à Boston
 - Si la personne de départ connaissait directement la cible, elle devait lui envoyer directement la lettre
 - Si non, la personne devait choisir un ami ou une connaissance qui était susceptible de connaître la personne cible
@@ -61,7 +63,7 @@ Kochen a proposé dans les années 50 que "it is practically certain that any tw
 
 - L'expérience a été répliquée de nombreuses fois, notamment par Dodds et al. qui ont aussi confirmé un nombre de 6
 - Watts et Strogatz (1998) ont élaboré un modèle qui permet d'expliquer les propriétés de petit monde trouvées dans de nombreux réseaux
- 
+
 ---
 # Le modèle de petits mondes
 
@@ -78,11 +80,15 @@ Kochen a proposé dans les années 50 que "it is practically certain that any tw
 
 ---
 
+# Les propriétés de petits monde en écologie
+
 <div style='text-align:center;'>
 <img src="assets/img/foodweb.png" height="500px"></img>
 </div>
 
 ---
+
+# Les propriétés de petits monde en écologie
 
 <div style='text-align:center;'>
 <img src="assets/img/cod.png" height="500px"></img>
@@ -90,17 +96,25 @@ Kochen a proposé dans les années 50 que "it is practically certain that any tw
 
 ---
 
+# Les propriétés de petits monde en écologie
+
 <div style='text-align:center;'>
-<img src="assets/img/pollinisateurs.png" height="500px"></img>
+<img src="assets/img/pollinisateur.png" height="500px"></img>
 </div>
 
----
+<!-- ---
+
+TODO: MISSING FILE bacteries.png
+
+# Les propriétés de petits monde en écologie
 
 <div style='text-align:center;'>
 <img src="assets/img/bacteries.png" height="500px"></img>
-</div>
+</div> -->
 
 ---
+
+# Les propriétés de petits monde en écologie
 
 <div style='text-align:center;'>
 <img src="assets/img/csbq.png" height="500px"></img>
@@ -113,9 +127,9 @@ Est-ce que le réseau de collaboration entre les étudiants du bacc en écologie
 
 ---.transition
 
-La science reproductible
+# La science reproductible
 
---- 
+---
 
 # L'importance de la reproductibilité.
 
@@ -132,24 +146,26 @@ La science reproductible
 # Les étapes du travail d'un biologiste
 
 <div style='text-align:center;'>
-<img src="assets/img/flow_biometrie.png" height="500px"></img>
+<img src="assets/img/flow_biometrie.png"  width="90%"></img>
 </div>
 
 ---
 
 # Les étapes du travail d'un biologiste
 
-## Certaines étapes intermédiaires sont souvent oubliées.
-
 <div style='text-align:center;'>
 <img src="assets/img/flow_bio500.png" width="90%"></img>
 </div>
 
+## Certaines étapes intermédiaires sont souvent oubliées.
+
+
 ---
 
-# Discussion
+# Discussion:
 
-Identification des étapes d'une étude scientifique susceptibles d'influer sur la reproductibilité. 
+Identification des étapes d'une étude scientifique susceptibles d'influer sur la reproductibilité.
+
 
 --- .transition
 
@@ -159,13 +175,13 @@ Identification des étapes d'une étude scientifique susceptibles d'influer sur 
 
 # Objectif général
 
-Au terme de ce cours, l'étudiant sera en mesure de réaliser l'ensemble de la  séquence d'une étude d'écologie en respectant les standards de gestion,  d'analyse et de présentation des données. Le cours portera sur la réalisation d'un projet intégrateur, de la collecte des données à la production du rapport final. 
+Au terme de ce cours, l'étudiant sera en mesure de réaliser l'ensemble de la  séquence d'une étude d'écologie en respectant les standards de gestion,  d'analyse et de présentation des données. Le cours portera sur la réalisation d'un projet intégrateur, de la collecte des données à la production du rapport final.
 
 ---
 
 # Objectifs spécifiques
 
-- Planifier une base de données et la préparation de formulaires pour leur acquisition ; 
+- Planifier une base de données et la préparation de formulaires pour leur acquisition ;
 - Programmer et interroger une base de données relationnelle ;
 - Compiler et exécuter un script au moyen de makefile ;
 - Représenter visuellement les données au moyen de R ;
@@ -173,7 +189,7 @@ Au terme de ce cours, l'étudiant sera en mesure de réaliser l'ensemble de la  
 - Utiliser un système de contrôle de version pour le suivi des modifications sur du code ;
 - Porter un regard critique sur la reproductibilité et la transparence d'études scientifiques ;
 
---- 
+---
 
 # Contenu du cours
 
@@ -212,7 +228,7 @@ Au terme de ce cours, l'étudiant sera en mesure de réaliser l'ensemble de la  
 ## Bloc 4: Communication scientifique au moyen de LaTeX
 
 - Rédaction de rapports et d'articles scientifiques
-- Mise en page 
+- Mise en page
 - Insertion de figures et tableaux
 - Gestion des références
 - Utilisation de Beamer pour les présentations
@@ -221,15 +237,15 @@ Au terme de ce cours, l'étudiant sera en mesure de réaliser l'ensemble de la  
 
 # Approche
 
-Les cours vont comprendre une période de présentation entre-coupée d'exercices, suivi d'une discussion générale sur des références clés (45). 
+Les cours vont comprendre une période de présentation entre-coupée d'exercices, suivi d'une discussion générale sur des références clés (45).
 
-Nous progresserons dans l'exécution du travail de session et l'évaluation portera sur les étapes intermédiaires. 
+Nous progresserons dans l'exécution du travail de session et l'évaluation portera sur les étapes intermédiaires.
 
 ---
 
 # Évaluation
 
-L'évaluation porte sur la réalisation d'un travail de session (75\%), réalisé en équipe de 4 personnes. Le travail sera divisé en 3 étapes réparties au cours de la session. L'évaluation finale (25\%) portera sur la rédaction d'un essai de 1500 mots sur les enjeux de reproductibilité en science expérimentale.  
+L'évaluation porte sur la réalisation d'un travail de session (75%), réalisé en équipe de 4 personnes. Le travail sera divisé en 3 étapes réparties au cours de la session. L'évaluation finale (25%) portera sur la rédaction d'un essai de 1500 mots sur les enjeux de reproductibilité en science expérimentale.  
 
 --- .transition
 
@@ -246,10 +262,11 @@ L'évaluation porte sur la réalisation d'un travail de session (75\%), réalis�
 ---
 
 # Types de réseaux
+
 ## Internet
 
 <div style='text-align:center;'>
-<img src="assets/img/internet.png" width="90%"></img>
+<img src="assets/img/internet.png" width="60%"></img>
 </div>
 
 ---
@@ -258,7 +275,7 @@ L'évaluation porte sur la réalisation d'un travail de session (75\%), réalis�
 ## Sociaux
 
 <div style='text-align:center;'>
-<img src="assets/img/sociaux.png" width="90%"></img>
+<img src="assets/img/sociaux.png" width="50%"></img>
 </div>
 
 ---
@@ -267,7 +284,7 @@ L'évaluation porte sur la réalisation d'un travail de session (75\%), réalis�
 ## Trophiques
 
 <div style='text-align:center;'>
-<img src="assets/img/foodweb.png" width="90%"></img>
+<img src="assets/img/foodweb.png" width="65%"></img>
 </div>
 
 ---
@@ -276,15 +293,16 @@ L'évaluation porte sur la réalisation d'un travail de session (75\%), réalis�
 ## Plante-pollinisateur
 
 <div style='text-align:center;'>
-<img src="assets/img/pollinisateur.png" width="90%"></img>
+<img src="assets/img/pollinisateur.png" height="500px;"></img>
 </div>
+
 ---
 
 # Types de réseaux
 ## Plante-disperseur
 
 <div style='text-align:center;'>
-<img src="assets/img/disperseur.png" width="90%"></img>
+<img src="assets/img/dispersion.png" height="500px;"></img>
 </div>
 
 ---
@@ -293,7 +311,7 @@ L'évaluation porte sur la réalisation d'un travail de session (75\%), réalis�
 ## Plante-herbivore
 
 <div style='text-align:center;'>
-<img src="assets/img/herbivore.png" width="90%"></img>
+<img src="assets/img/herbivore.png" height="500px"></img>
 </div>
 
 ---
@@ -311,7 +329,7 @@ L'évaluation porte sur la réalisation d'un travail de session (75\%), réalis�
 ## Hote-parasite
 
 <div style='text-align:center;'>
-<img src="assets/img/parasite.png" width="90%"></img>
+<img src="assets/img/parasite.png" height="500px"></img>
 </div>
 
 ---
@@ -320,7 +338,7 @@ L'évaluation porte sur la réalisation d'un travail de session (75\%), réalis�
 ## S, L, C
 
 <div style='text-align:center;'>
-<img src="assets/img/foodweb.png" width="90%"></img>
+<img src="assets/img/foodweb.png" height="500px;"></img>
 </div>
 
 ---
@@ -329,7 +347,7 @@ L'évaluation porte sur la réalisation d'un travail de session (75\%), réalis�
 ## Rang trophique
 
 <div style='text-align:center;'>
-<img src="assets/img/rang.png" width="90%"></img>
+<img src="assets/img/rang.png" height="500px"></img>
 </div>
 
 ---
@@ -338,7 +356,7 @@ L'évaluation porte sur la réalisation d'un travail de session (75\%), réalis�
 ## Distribution de degrés
 
 <div style='text-align:center;'>
-<img src="assets/img/degres.png" width="90%"></img>
+<img src="assets/img/degres.png" height="500px"></img>
 </div>
 
 ---
@@ -347,7 +365,7 @@ L'évaluation porte sur la réalisation d'un travail de session (75\%), réalis�
 ## Centralité
 
 <div style='text-align:center;'>
-<img src="assets/img/centralite.png" width="90%"></img>
+<img src="assets/img/centralite.png" height="500px"></img>
 </div>
 
 ---
@@ -356,7 +374,7 @@ L'évaluation porte sur la réalisation d'un travail de session (75\%), réalis�
 ## Nestedness
 
 <div style='text-align:center;'>
-<img src="assets/img/nestedness.png" width="90%"></img>
+<img src="assets/img/nestedness.png" height="500px"></img>
 </div>
 
 ---
@@ -365,7 +383,7 @@ L'évaluation porte sur la réalisation d'un travail de session (75\%), réalis�
 ## Modularité
 
 <div style='text-align:center;'>
-<img src="assets/img/modularite.png" width="90%"></img>
+<img src="assets/img/modularite.png" height="500px"></img>
 </div>
 
 ---
@@ -383,93 +401,134 @@ L'évaluation porte sur la réalisation d'un travail de session (75\%), réalis�
 ## Robustesse
 
 <div style='text-align:center;'>
-<img src="assets/img/robustesse.png" width="90%"></img>
+<img src="assets/img/robustesse.png" height="500px"></img>
 </div>
 
 --- .transition
 
-# L'utilisation d'une machine virtuelle
+# L'utilisation d'une machine virtuelle (VM)
 
----
+--- &twocolw w1:50% w2:50%
 
 # Définition
 
-Une machine virtuelle est une application qui 'virtualise' l'exécution d'un système d'exploitation sur votre ordinateur. Ainsi, nous utiliserons l'application VirtualBox pour exécuter une machine Linux, sur votre PC Windows ou votre Mac. 
+*** =left
+
+[VirtualBox](https://www.virtualbox.org/) est une application qui `émule` une machine/ordinateur virtuel à l'intérieur de votre ordinateur.
+
+Une machine virtuelle est donc un environnement confiné sur lequel on peut installer un autre système d'exploitation qui utilise les ressources matériels de l'hôte (votre ordinateur).
+
+Nous utiliserons [VirtualBox](https://www.virtualbox.org/) pour exécuter une machine Linux (distribution Ubuntu 16.04), sur votre PC Windows ou votre Mac créée spécifiquement pour ce cours.
+
+*** =right
+
+<div style='text-align:center;'>
+<img src="assets/img/VM.png" width="90%"></img>
+</div>
+
 
 ---
 
-# Pourquoi une VM ?
+# Pourquoi une VM?
 
 - Simplifier l'installation des outils nécessaires pour le cours
-- Être certain que tous disposent des mêmes outils et pour uniformiser l'enseignement
-- Un système d'exploitation de type UNIX est nécessaire pour exécuter certaines opérations
-- C'est plus sécuritaire et convivial
-- C'est gratuit ! 
+- Être certain que tout le monde dispose des mêmes outils
+- Permet d'uniformiser l'enseignement
+- Un système d'exploitation de type `UNIX` est nécessaire pour exécuter certaines tâches de ce cours
 
----
 
-# Procédure d'installation
+--- &twocolw w1:40% w2:60%
 
-Étape 1: installer [VirtualBox](https://www.virtualbox.org/)
+# Procédure d'importation et de lancement de la VM
 
----
+*** =left
 
-# Procédure d'installation
+- Étape 1: Installer [VirtualBox](https://www.virtualbox.org/)
 
-Étape 2: télécharger l'[image](https://ielab-o.dbio.usherbrooke.ca/index.php/s/W8XIQcC1Dc9tUYD) créée pour le cours
+--
 
----
+- Étape 2: Téléchargez [l'image de la machine virtuelle](https://ielab-o.dbio.usherbrooke.ca/index.php/s/W8XIQcC1Dc9tUYD) créée pour le cours
 
-# Procédure d'installation
 
-Étape 3: ouvrir VirtualBox
+--- &twocolw w1:40% w2:60%
 
-<div style='text-align:center;'>
-<img src="assets/img/vm1.png" height="500px"></img>
-</div>
+# Procédure d'importation et de lancement de la VM
 
-Dans le menu 'File', sélection 'Import Applicance'
----
+*** =left
 
-# Procédure d'installation
+- Étape 3: Ouvrir **VirtualBox**
+- Étape 4: Dans le menu **File**, sélectionnez **Import Applicance**
 
-Étape 4: cliquer **choose** et sélectionner la machine virtuelle créée pour le cours 
+*** =right
 
 <div style='text-align:center;'>
-<img src="assets/img/vm2.png" height="500px"></img>
+<img src="assets/img/vm1.png" width="90%"></img>
 </div>
 
----
+--- &twocolw w1:40% w2:60%
 
-# Procédure d'installation
+# Procédure d'importation et de lancement de la VM
 
-Étape 5: cliquer **import** 
+*** =left
+
+- Étape 5: Cliquez sur **choose** et **sélectionner le fichier de l'image de la machine virtuelle** créée pour le cours (téléchargé à l'étape 2)
+
+*** =right
 
 <div style='text-align:center;'>
-<img src="assets/img/vm3.png" height="500px"></img>
+<img src="assets/img/vm2.png" width="90%"></img>
 </div>
+
+--- &twocolw w1:40% w2:60%
+
+# Procédure d'importation et de lancement de la VM
+
+*** =left
+
+- Étape 6: Cliquez sur **import**
+
+*** =right
+
+<div style='text-align:center;'>
+<img src="assets/img/vm3.png" width="90%"></img>
+</div>
+
+--- &twocol
+
+# Une nouveau monde s'ouvre à vous...
+
+*** =left
+
+Il éxiste une [grande diversité de distributions](https://fr.wikipedia.org/wiki/Liste_des_distributions_Linux) Linux (Systèmes d'exploitation). L'ensemble de ces distributions sont gratuites et libres (OpenSource) !
+
+
+## Alors, pourquoi Ubuntu?
+
+- Une importante communauté d'utilisateurs (estimé à 25 millions)
+- Aussi facile d'utilisation que Microsoft Windows
+
+
+*** =right
+
+<div style='text-align:center;'>
+<img src="assets/img/linux_distros.png" width="90%"></img>
+</div>
+
 
 ---
 
-# Sur la machine virtuelle
+# Sur la machine virtuelle Ubuntu...
 
-Vous trouverez les applications suivantes
+**Les logiciels/languages que nous utiliserons dans le cours ont déjà été installés pour vous.**
+
 - R (avec les librairies nécessaires)
 - La distribution complète de LaTeX
 - Git
-- SQL 
+- SQL
 - SublimeText
 - Le terminal (crt+alt+t)
 
----
 
-# 
-
-À vous de découvrir maintenant le bonheur de travailler sur un ordinateur Linux !!!
-
-<div style='text-align:center;'>
-<img src="assets/img/pingouin.png" height="500px"></img>
-</div>
 
 
 ---.transition
@@ -478,12 +537,8 @@ Vous trouverez les applications suivantes
 
 ---
 
-Baker, M. 2016. Is there a reproducibility crisis ? Nature, 533 : 452:454
+# Lectures
 
-Munafo, M.R. et al. 2017. A manifesto for reproducible science. Nature Human Behaviour 1: 0021 
-
-Open Science Collaboration. 2015. Estimating the reproducibility of psychological science. Science 349 : 943. 
-
-
-
-
+- Baker, M. 2016. Is there a reproducibility crisis ? Nature, 533 : 452:454
+- Munafo, M.R. et al. 2017. A manifesto for reproducible science. Nature Human Behaviour 1: 0021
+- Open Science Collaboration. 2015. Estimating the reproducibility of psychological science. Science 349 : 943.
