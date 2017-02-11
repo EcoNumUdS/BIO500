@@ -423,7 +423,7 @@ Nous utiliserons [VirtualBox](https://www.virtualbox.org/) pour exécuter une ma
 *** =right
 
 <div style='text-align:center;'>
-<img src="assets/img/VM.png" width="90%"></img>
+<img src="assets/img/mv.png" width="90%"></img>
 </div>
 
 
@@ -462,7 +462,7 @@ Nous utiliserons [VirtualBox](https://www.virtualbox.org/) pour exécuter une ma
 *** =right
 
 <div style='text-align:center;'>
-<img src="assets/img/vm1.png" width="95%"></img>
+<img src="assets/img/mv_1.png" width="95%"></img>
 </div>
 
 --- &twocolw w1:40% w2:60%
@@ -476,7 +476,7 @@ Nous utiliserons [VirtualBox](https://www.virtualbox.org/) pour exécuter une ma
 *** =right
 
 <div style='text-align:center;'>
-<img src="assets/img/vm2.png" width="95%"></img>
+<img src="assets/img/mv_2.png" width="95%"></img>
 </div>
 
 --- &twocolw w1:40% w2:60%
@@ -493,7 +493,7 @@ Nous utiliserons [VirtualBox](https://www.virtualbox.org/) pour exécuter une ma
 *** =right
 
 <div style='text-align:center;'>
-<img src="assets/img/vm3.png" width="95%"></img>
+<img src="assets/img/mv_3.png" width="95%"></img>
 </div>
 
 --- &twocol
