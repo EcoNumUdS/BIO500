@@ -50,11 +50,14 @@ Le type de données collectées conditionne les analyses statistiques que l'on p
 
 <!-- ## Probléme - La structure des données est par conséquent déterminé par les analyses que l'on va réaliser. On est une étape plus loin dans notre cheminement (voir schéma précédent) -->
 
+
 ---
 
 # La collecte de données en biologie
 
-## Qu'est ce qu'une donnée biologique ?
+## Alors, qu'en est-il d'une donnée biologique ?
+
+
 
 <!-- Présenter qu'est qu'une données biologiques, comme elle est représenté -->
 <!-- Qu'est ce qui est représenté en ligne versus en colonne -->
@@ -86,13 +89,7 @@ Le type de données collectées conditionne les analyses statistiques que l'on p
 <img src="assets/img/data_cube_4n.png" width="100%"></img>
 </div>
 
----
-
-# La collecte de données en biologie
-
-
-<!-- Ajouter la partie sur les données abiotiques, une dimension de moins (taxonomique) -->
-
+**Note:** Pour la prise de données de facteurs environnementaux (abiotiques), on retrouverait une forme de type 3n.
 
 ---
 
@@ -100,10 +97,12 @@ Le type de données collectées conditionne les analyses statistiques que l'on p
 
 ## **En biologie**, on classifie les données selon 4 dimensions/classes d'information:
 
-1. Taxonomique
-2. Biotique/abiotique
-3. Temporel
+1. Biotique/abiotique
+2. Taxonomique
+3. Temporelle
 4. Spatial
+
+Au cours des diapos suivantes, nous nous attarderons à la façon de stocker ces données selon la dimension abordée.
 
 
 --- .transition
@@ -113,10 +112,20 @@ Le type de données collectées conditionne les analyses statistiques que l'on p
 
 ---
 
-# Les données taxonomiques
+# Les données biotiques et abiotiques
 
-<!-- Présenté les types de chaines de caractère -->
+TABLEAU DE DONNÉES AVEC LES 4 Types de données informatiques
 
+---
+
+# Les données biotiques et abiotiques
+
+## **En informatique**, on distingue plusieurs types de données également:
+
+1. Les entiers (`INTEGER`)
+2. Les nombres réels (`DOUBLE`, `FLOAT`)
+2. Les caractères (`CHAR`,`VARCHAR`)
+3. Les dates (`DATE`)
 
 ---
 
@@ -124,6 +133,97 @@ Le type de données collectées conditionne les analyses statistiques que l'on p
 
 <!-- Voir Borer -->
 <!-- Représentation en jour julien Annuelle -->
+
+
+--- &twocol
+
+# Les données taxonomiques
+
+*Un exemple avec l'érable à sucre*
+
+
+*** =left
+
+**Selon vous quelle option est la meilleure?**
+
+```{r echo=FALSE}
+library("knitr")
+way <- c("Code spécifique à l'étude","Code du ministère","Genre et espèce","Nom vernaculaire")
+ex <- c("ACSA","ERS","Acer saccharum","Érable à sucre")
+df <- data.frame(Option=way,Exemple=ex)
+kable(df,format="markdown")
+```
+
+*** =right
+
+
+<div style='text-align:center;'>
+<img src="assets/img/acsa.jpg" height="450px"></img>
+</div>
+
+
+--- &twocol
+
+# Les données taxonomiques
+
+*Un exemple avec l'érable à sucre*
+
+*** =left
+
+```{r echo=FALSE}
+library("knitr")
+way <- c("1. Code spécifique à l'étude","2. Code du ministère","3. Genre et espèce","4. Nom vernaculaire","5. Numéro Taxonomique (TSN - ITIS)")
+ex <- c("ACSA","ERS","Acer saccharum","Érable à sucre","28731")
+df <- data.frame(Option=way,Exemple=ex)
+kable(df,format="markdown")
+```
+
+*** =right
+
+>- **Option 1:** Doit être associé à des métadonnées. Risque de perte du fichier attaché.
+
+>- **Option 2:** Le genre et l'espèce peuvent changer à travers le temps.
+
+>- **Option 3:** Le nom vernaculaire des espèces est le pire choix. Le nom vernaculaire est propre à un pays et peu changer même entre différentes régions géographiques.
+
+
+--- &twocol
+
+# Les données taxonomiques
+
+*Un exemple avec l'érable à sucre*
+
+*** =left
+
+```{r echo=FALSE}
+library("knitr")
+way <- c("Code spécifique à l'étude","Code du ministère","Genre et espèce","Nom vernaculaire","Numéro Taxonomique (TSN - ITIS)")
+ex <- c("ACSA","ERS","Acer saccharum","Érable à sucre","28731")
+df <- data.frame(Option=way,Exemple=ex)
+kable(df,format="markdown")
+```
+
+*** =right
+
+
+>- **Option 4:** Cette option couplé à l'option 3, est le meilleur choix.
+
+
+---
+
+# Les données taxonomiques
+
+On privilégie généralement, l'utilisation de code espèce standardisé:
+
+1. ITIS
+2. VASCAN (Plantes vasculaires du Canada)
+3. NCBI
+
+**Avantage:** Chacune de ces institutions/infrastructures, nous permettent de valider et retirer l'ensemble de la classification taxonomique d'une espèce à partir de son code. Même si l'identifiant change (nouvelle classification), nous serons en mesure de trouver identifiant à partir de l'ancien.
+
+Exemple: [https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null)
+
+---
 
 
 ---
@@ -136,9 +236,15 @@ Le type de données collectées conditionne les analyses statistiques que l'on p
 # L'absence de données
 
 
+
+--- .transition
+
+#  Le format des données
+
+
 ---
 
-# Choisir le bon type de données
+# Choisir le bon type et format de données
 
 Si l'on ne choisit pas le type de données approprié, cela aura diverses conséquences:
 

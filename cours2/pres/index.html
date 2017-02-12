@@ -119,7 +119,7 @@
     <h1>La collecte de données en biologie</h1>
   </hgroup>
   <article data-timings="">
-    <h2>Qu&#39;est ce qu&#39;une donnée biologique ?</h2>
+    <h2>Alors, qu&#39;en est-il d&#39;une donnée biologique ?</h2>
 
 <!-- Présenter qu'est qu'une données biologiques, comme elle est représenté -->
 
@@ -159,6 +159,8 @@
 <img src="assets/img/data_cube_4n.png" width="100%"></img>
 </div>
 
+<p><strong>Note:</strong> Pour la prise de données de facteurs environnementaux (abiotiques), on retrouverait une forme de type 3n.</p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -168,31 +170,22 @@
     <h1>La collecte de données en biologie</h1>
   </hgroup>
   <article data-timings="">
-    <!-- Ajouter la partie sur les données abiotiques, une dimension de moins (taxonomique) -->
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-<slide class="" id="slide-9" style="background:;">
-  <!--  <a href="#slide-9"></a> -->
-  <hgroup>
-    <h1>La collecte de données en biologie</h1>
-  </hgroup>
-  <article data-timings="">
     <h2><strong>En biologie</strong>, on classifie les données selon 4 dimensions/classes d&#39;information:</h2>
 
 <ol>
-<li>Taxonomique</li>
 <li>Biotique/abiotique</li>
-<li>Temporel</li>
+<li>Taxonomique</li>
+<li>Temporelle</li>
 <li>Spatial</li>
 </ol>
+
+<p>Au cours des diapos suivantes, nous nous attarderons à la façon de stocker ces données selon la dimension abordée.</p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-10" style="background:;">
-  <!--  <a href="#slide-10"></a> -->
+<slide class="transition" id="slide-9" style="background:;">
+  <!--  <a href="#slide-9"></a> -->
   <hgroup>
     <h1>Les type de données</h1>
   </hgroup>
@@ -201,13 +194,31 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
+<slide class="" id="slide-10" style="background:;">
+  <!--  <a href="#slide-10"></a> -->
+  <hgroup>
+    <h1>Les données biotiques et abiotiques</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>TABLEAU DE DONNÉES AVEC LES 4 Types de données informatiques</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 <slide class="" id="slide-11" style="background:;">
   <!--  <a href="#slide-11"></a> -->
   <hgroup>
-    <h1>Les données taxonomiques</h1>
+    <h1>Les données biotiques et abiotiques</h1>
   </hgroup>
   <article data-timings="">
-    <!-- Présenté les types de chaines de caractère -->
+    <h2><strong>En informatique</strong>, on distingue plusieurs types de données également:</h2>
+
+<ol>
+<li>Les entiers (<code>INTEGER</code>)</li>
+<li>Les nombres réels (<code>DOUBLE</code>, <code>FLOAT</code>)</li>
+<li>Les caractères (<code>CHAR</code>,<code>VARCHAR</code>)</li>
+<li>Les dates (<code>DATE</code>)</li>
+</ol>
 
   </article>
   <!-- Presenter Notes -->
@@ -226,7 +237,169 @@
   <!-- Presenter Notes -->
 </slide>
 <slide class="" id="slide-13" style="background:;">
-  <!--  <a href="#slide-13"></a> -->
+  <hgroup>
+    <h1>Les données taxonomiques</h1>
+  </hgroup>
+  <article>
+    <p><em>Un exemple avec l&#39;érable à sucre</em></p>
+
+    <div class='left' style='float:left;width:48%'>
+     <p><strong>Selon vous quelle option est la meilleure?</strong></p>
+
+<table><thead>
+<tr>
+<th align="left">Option</th>
+<th align="left">Exemple</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">Code spécifique à l&#39;étude</td>
+<td align="left">ACSA</td>
+</tr>
+<tr>
+<td align="left">Code du ministère</td>
+<td align="left">ERS</td>
+</tr>
+<tr>
+<td align="left">Genre et espèce</td>
+<td align="left">Acer saccharum</td>
+</tr>
+<tr>
+<td align="left">Nom vernaculaire</td>
+<td align="left">Érable à sucre</td>
+</tr>
+</tbody></table>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <div style='text-align:center;'>
+<img src="assets/img/acsa.jpg" height="450px"></img>
+</div>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h1>Les données taxonomiques</h1>
+  </hgroup>
+  <article>
+    <p><em>Un exemple avec l&#39;érable à sucre</em></p>
+
+    <div class='left' style='float:left;width:48%'>
+     <table><thead>
+<tr>
+<th align="left">Option</th>
+<th align="left">Exemple</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">1. Code spécifique à l&#39;étude</td>
+<td align="left">ACSA</td>
+</tr>
+<tr>
+<td align="left">2. Code du ministère</td>
+<td align="left">ERS</td>
+</tr>
+<tr>
+<td align="left">3. Genre et espèce</td>
+<td align="left">Acer saccharum</td>
+</tr>
+<tr>
+<td align="left">4. Nom vernaculaire</td>
+<td align="left">Érable à sucre</td>
+</tr>
+<tr>
+<td align="left">5. Numéro Taxonomique (TSN - ITIS)</td>
+<td align="left">28731</td>
+</tr>
+</tbody></table>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <ul class = "build incremental">
+<li><p><strong>Option 1:</strong> Doit être associé à des métadonnées. Risque de perte du fichier attaché.</p></li>
+<li><p><strong>Option 2:</strong> Le genre et l&#39;espèce peuvent changer à travers le temps.</p></li>
+<li><p><strong>Option 3:</strong> Le nom vernaculaire des espèces est le pire choix. Le nom vernaculaire est propre à un pays et peu changer même entre différentes régions géographiques.</p></li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h1>Les données taxonomiques</h1>
+  </hgroup>
+  <article>
+    <p><em>Un exemple avec l&#39;érable à sucre</em></p>
+
+    <div class='left' style='float:left;width:48%'>
+     <table><thead>
+<tr>
+<th align="left">Option</th>
+<th align="left">Exemple</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">Code spécifique à l&#39;étude</td>
+<td align="left">ACSA</td>
+</tr>
+<tr>
+<td align="left">Code du ministère</td>
+<td align="left">ERS</td>
+</tr>
+<tr>
+<td align="left">Genre et espèce</td>
+<td align="left">Acer saccharum</td>
+</tr>
+<tr>
+<td align="left">Nom vernaculaire</td>
+<td align="left">Érable à sucre</td>
+</tr>
+<tr>
+<td align="left">Numéro Taxonomique (TSN - ITIS)</td>
+<td align="left">28731</td>
+</tr>
+</tbody></table>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <ul class = "build incremental">
+<li><strong>Option 4:</strong> Cette option couplé à l&#39;option 3, est le meilleur choix.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-16" style="background:;">
+  <!--  <a href="#slide-16"></a> -->
+  <hgroup>
+    <h1>Les données taxonomiques</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On privilégie généralement, l&#39;utilisation de code espèce standardisé:</p>
+
+<ol>
+<li>ITIS</li>
+<li>VASCAN (Plantes vasculaires du Canada)</li>
+<li>NCBI</li>
+</ol>
+
+<p><strong>Avantage:</strong> Chacune de ces institutions/infrastructures, nous permettent de valider et retirer l&#39;ensemble de la classification taxonomique d&#39;une espèce à partir de son code. Même si l&#39;identifiant change (nouvelle classification), nous serons en mesure de trouver identifiant à partir de l&#39;ancien.</p>
+
+<p>Exemple: <a href="https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&amp;search_value=28731#null">https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&amp;search_value=28731#null</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-17" style="background:;">
+  <!--   <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-18" style="background:;">
+  <!--  <a href="#slide-18"></a> -->
   <hgroup>
     <h1>Les données spatiales</h1>
   </hgroup>
@@ -235,8 +408,8 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-14" style="background:;">
-  <!--  <a href="#slide-14"></a> -->
+<slide class="" id="slide-19" style="background:;">
+  <!--  <a href="#slide-19"></a> -->
   <hgroup>
     <h1>L&#39;absence de données</h1>
   </hgroup>
@@ -245,10 +418,20 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-15" style="background:;">
-  <!--  <a href="#slide-15"></a> -->
+<slide class="transition" id="slide-20" style="background:;">
+  <!--  <a href="#slide-20"></a> -->
   <hgroup>
-    <h1>Choisir le bon type de données</h1>
+    <h1>Le format des données</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-21" style="background:;">
+  <!--  <a href="#slide-21"></a> -->
+  <hgroup>
+    <h1>Choisir le bon type et format de données</h1>
   </hgroup>
   <article data-timings="">
     <p>Si l&#39;on ne choisit pas le type de données approprié, cela aura diverses conséquences:</p>
@@ -264,8 +447,8 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-16" style="background:;">
-  <!--  <a href="#slide-16"></a> -->
+<slide class="" id="slide-22" style="background:;">
+  <!--  <a href="#slide-22"></a> -->
   <hgroup>
     <h1>Finalement</h1>
   </hgroup>
@@ -344,19 +527,19 @@ Comme nous le verrons plus tard cette multi-dimensionnalité complique notre tâ
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=9 title='La collecte de données en biologie'>
+        data-slide=9 title='Les type de données'>
          9
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=10 title='Les type de données'>
+        data-slide=10 title='Les données biotiques et abiotiques'>
          10
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='Les données taxonomiques'>
+        data-slide=11 title='Les données biotiques et abiotiques'>
          11
       </a>
     </li>
@@ -368,26 +551,62 @@ Comme nous le verrons plus tard cette multi-dimensionnalité complique notre tâ
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=13 title='Les données spatiales'>
+        data-slide=13 title='Les données taxonomiques'>
          13
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=14 title='L&#39;absence de données'>
+        data-slide=14 title='Les données taxonomiques'>
          14
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=15 title='Choisir le bon type de données'>
+        data-slide=15 title='Les données taxonomiques'>
          15
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=16 title='Finalement'>
+        data-slide=16 title='Les données taxonomiques'>
          16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='NA'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Les données spatiales'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='L&#39;absence de données'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Le format des données'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='Choisir le bon type et format de données'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Finalement'>
+         22
       </a>
     </li>
   </ul>
