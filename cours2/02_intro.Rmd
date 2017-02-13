@@ -84,13 +84,83 @@ Le type de données collectées conditionne les analyses statistiques que l'on p
 3. Temporelle
 4. Spatial
 
-Au cours des diapos suivantes, nous nous attarderons à la façon de stocker ces données selon la dimension abordée.
-
+Au cours des diapos suivantes, nous nous attarderons à la façon de stocker ces données. J'aborderais les spécificités propre à chacune des ces dimensions.
 
 --- .transition
 
-#  Les type de données
+#  Le format des données
 
+--- &twocol
+
+#  Le format des données
+
+*** =right
+
+## Format long
+
+```{r echo=FALSE}
+library("knitr")
+ids <- c("567-1","567-2","567-3","598","876")
+esp <- c("acsa","acsa","acsa","piru","abba")
+year <- c(2010,2010,2010,2011,2014)
+dhp_mm <- c(460,100,120,380,160)
+df <- data.frame(ID=ids,esp=esp,year=year,dhp_mm=dhp_mm)
+kable(df,format="markdown")
+```
+
+- Privilégier le format long
+- Une ligne = une observation
+- Nom de colonnes court, sans accent et explicite.
+
+*** =left
+
+## Format large
+
+```{r echo=FALSE}
+library(reshape2)
+df2 <- dcast(ids + esp ~ year, data=df, value.var="dhp_mm")
+kable(df2,format="markdown")
+```
+
+--- &twocol
+
+#  Le format des données
+
+## Ne mettre toute l'information dans une seul tableau
+
+
+--- &twocol
+
+#  Le format des données
+
+## Ne concatenner pas l'information dans une seule colonne
+
+*** =left
+
+```{r echo=FALSE}
+kable(df,format="markdown")
+```
+
+- Une colonne = une information
+
+*** =right
+
+```{r echo=FALSE}
+ids <- c("567","567","567","598","876")
+sub_ids <- c("1","2","3",NA,NA)
+df <- data.frame(ID=ids,ID_multi=sub_ids,esp=esp,year=year,dhp_mm=dhp_mm)
+kable(df,format="markdown")
+```
+
+
+<!-- - Privilégier le format long, une ligne = une observation
+- Plusieurs tableau: un tableau par type d'observation
+- Éviter de concaténer l'information
+- Stockage des NAs -->
+
+--- .transition
+
+#  Les types de données
 
 ---
 
@@ -102,7 +172,7 @@ TABLEAU DE DONNÉES AVEC LES 4 Types de données informatiques
 
 # Les données biotiques et abiotiques
 
-## **En informatique**, on distingue plusieurs types de données également:
+## **En informatique**, on distingue plusieurs types de données:
 
 1. Les entiers (`INTEGER`)
 2. Les nombres réels (`DOUBLE`, `FLOAT`)
@@ -129,13 +199,11 @@ TABLEAU DE DONNÉES AVEC LES 4 Types de données informatiques
 **Selon vous quelle option est la meilleure?**
 
 ```{r echo=FALSE}
-library("knitr")
-way <- c("Code spécifique à l'étude","Code du ministère","Genre et espèce","Nom vernaculaire")
-ex <- c("ACSA","ERS","Acer saccharum","Érable à sucre")
+way <- c("1. Code spécifique à l'étude","2. Code du ministère","3. Genre et espèce","4. Nom vernaculaire","5. Numéro Taxonomique (TSN - ITIS)")
+ex <- c("ACSA","ERS","Acer saccharum","Érable à sucre","28731")
 df <- data.frame(Option=way,Exemple=ex)
 kable(df,format="markdown")
 ```
-
 *** =right
 
 
@@ -153,10 +221,6 @@ kable(df,format="markdown")
 *** =left
 
 ```{r echo=FALSE}
-library("knitr")
-way <- c("1. Code spécifique à l'étude","2. Code du ministère","3. Genre et espèce","4. Nom vernaculaire","5. Numéro Taxonomique (TSN - ITIS)")
-ex <- c("ACSA","ERS","Acer saccharum","Érable à sucre","28731")
-df <- data.frame(Option=way,Exemple=ex)
 kable(df,format="markdown")
 ```
 
@@ -166,7 +230,7 @@ kable(df,format="markdown")
 
 >- **Option 2:** Le genre et l'espèce peuvent changer à travers le temps.
 
->- **Option 3:** Le nom vernaculaire des espèces est le pire choix. Le nom vernaculaire est propre à un pays et peu changer même entre différentes régions géographiques.
+>- **Option 3:** Le nom vernaculaire des espèces est le pire choix. Le nom vernaculaire est propre à un pays, à une région géographique, à une culture.
 
 
 --- &twocol
@@ -188,7 +252,7 @@ kable(df,format="markdown")
 *** =right
 
 
->- **Option 4:** Cette option couplé à l'option 3, est le meilleur choix.
+>- **Option 4:** Cette option couplée à l'option 3, est le meilleur choix.
 
 
 ---
@@ -201,9 +265,9 @@ On privilégie généralement, l'utilisation de code espèce standardisé:
 2. VASCAN (Plantes vasculaires du Canada)
 3. NCBI
 
-**Avantage:** Chacune de ces institutions/infrastructures, nous permettent de valider et retirer l'ensemble de la classification taxonomique d'une espèce à partir de son code. Même si l'identifiant change (nouvelle classification), nous serons en mesure de trouver identifiant à partir de l'ancien.
+**Avantage:** Chacune de ces institutions/infrastructures, nous permettent de valider et retirer l'ensemble de la classification taxonomique d'une espèce à partir de son code. Même si l'identifiant change (nouvelle classification), nous serons en mesure de trouver le nouvel identifiant taxonomique à partir de l'ancien.
 
-Exemple: [https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null)
+**Exemple:** [https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null)
 
 ---
 
@@ -218,10 +282,6 @@ Exemple: [https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&sear
 # L'absence de données
 
 
-
---- .transition
-
-#  Le format des données
 
 
 ---

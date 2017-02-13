@@ -102,13 +102,86 @@ Le type de données collectées conditionne les analyses statistiques que l'on p
 3. Temporelle
 4. Spatial
 
-Au cours des diapos suivantes, nous nous attarderons à la façon de stocker ces données selon la dimension abordée.
-
+Au cours des diapos suivantes, nous nous attarderons à la façon de stocker ces données. J'aborderais les spécificités propre à chacune des ces dimensions.
 
 --- .transition
 
-#  Les type de données
+#  Le format des données
 
+--- &twocol
+
+#  Le format des données
+
+*** =right
+
+## Format long
+
+
+|ID    |esp  | year| dhp_mm|
+|:-----|:----|----:|------:|
+|567-1 |acsa | 2010|    460|
+|567-2 |acsa | 2010|    100|
+|567-3 |acsa | 2010|    120|
+|598   |piru | 2011|    380|
+|876   |abba | 2014|    160|
+
+- Privilégier le format long
+- Nom de colonnes court, sans accent et explicite.
+
+*** =left
+
+## Format large
+
+
+|ids   |esp  | 2010| 2011| 2014|
+|:-----|:----|----:|----:|----:|
+|567-1 |acsa |  460|   NA|   NA|
+|567-2 |acsa |  100|   NA|   NA|
+|567-3 |acsa |  120|   NA|   NA|
+|598   |piru |   NA|  380|   NA|
+|876   |abba |   NA|   NA|  160|
+
+
+--- &twocol
+
+#  Le format des données
+
+
+## Une colonne = une information
+
+*** =left
+
+
+|ID    |esp  | year| dhp_mm|
+|:-----|:----|----:|------:|
+|567-1 |acsa | 2010|    460|
+|567-2 |acsa | 2010|    100|
+|567-3 |acsa | 2010|    120|
+|598   |piru | 2011|    380|
+|876   |abba | 2014|    160|
+
+- Ne concatenner pas l'information dans une seule colonne
+
+*** =right
+
+
+|ID  |ID_multi |esp  | year| dhp_mm|
+|:---|:--------|:----|----:|------:|
+|567 |1        |acsa | 2010|    460|
+|567 |2        |acsa | 2010|    100|
+|567 |3        |acsa | 2010|    120|
+|598 |NA       |piru | 2011|    380|
+|876 |NA       |abba | 2014|    160|
+
+
+<!-- - Privilégier le format long, une ligne = une observation
+- Plusieurs tableau: un tableau par type d'observation
+- Éviter de concaténer l'information
+- Stockage des NAs -->
+
+--- .transition
+
+#  Les types de données
 
 ---
 
@@ -120,7 +193,7 @@ TABLEAU DE DONNÉES AVEC LES 4 Types de données informatiques
 
 # Les données biotiques et abiotiques
 
-## **En informatique**, on distingue plusieurs types de données également:
+## **En informatique**, on distingue plusieurs types de données:
 
 1. Les entiers (`INTEGER`)
 2. Les nombres réels (`DOUBLE`, `FLOAT`)
@@ -147,13 +220,13 @@ TABLEAU DE DONNÉES AVEC LES 4 Types de données informatiques
 **Selon vous quelle option est la meilleure?**
 
 
-|Option                    |Exemple        |
-|:-------------------------|:--------------|
-|Code spécifique à l'étude |ACSA           |
-|Code du ministère         |ERS            |
-|Genre et espèce           |Acer saccharum |
-|Nom vernaculaire          |Érable à sucre |
-
+|Option                             |Exemple        |
+|:----------------------------------|:--------------|
+|1. Code spécifique à l'étude       |ACSA           |
+|2. Code du ministère               |ERS            |
+|3. Genre et espèce                 |Acer saccharum |
+|4. Nom vernaculaire                |Érable à sucre |
+|5. Numéro Taxonomique (TSN - ITIS) |28731          |
 *** =right
 
 
@@ -185,7 +258,7 @@ TABLEAU DE DONNÉES AVEC LES 4 Types de données informatiques
 
 >- **Option 2:** Le genre et l'espèce peuvent changer à travers le temps.
 
->- **Option 3:** Le nom vernaculaire des espèces est le pire choix. Le nom vernaculaire est propre à un pays et peu changer même entre différentes régions géographiques.
+>- **Option 3:** Le nom vernaculaire des espèces est le pire choix. Le nom vernaculaire est propre à un pays, à une région géographique, à une culture.
 
 
 --- &twocol
@@ -208,7 +281,7 @@ TABLEAU DE DONNÉES AVEC LES 4 Types de données informatiques
 *** =right
 
 
->- **Option 4:** Cette option couplé à l'option 3, est le meilleur choix.
+>- **Option 4:** Cette option couplée à l'option 3, est le meilleur choix.
 
 
 ---
@@ -221,9 +294,9 @@ On privilégie généralement, l'utilisation de code espèce standardisé:
 2. VASCAN (Plantes vasculaires du Canada)
 3. NCBI
 
-**Avantage:** Chacune de ces institutions/infrastructures, nous permettent de valider et retirer l'ensemble de la classification taxonomique d'une espèce à partir de son code. Même si l'identifiant change (nouvelle classification), nous serons en mesure de trouver identifiant à partir de l'ancien.
+**Avantage:** Chacune de ces institutions/infrastructures, nous permettent de valider et retirer l'ensemble de la classification taxonomique d'une espèce à partir de son code. Même si l'identifiant change (nouvelle classification), nous serons en mesure de trouver le nouvel identifiant taxonomique à partir de l'ancien.
 
-Exemple: [https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null)
+**Exemple:** [https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null)
 
 ---
 
@@ -238,10 +311,6 @@ Exemple: [https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&sear
 # L'absence de données
 
 
-
---- .transition
-
-#  Le format des données
 
 
 ---

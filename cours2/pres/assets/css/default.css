@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,400i,600,600i,700|PT+Sans:400,400i,700,700i');
 @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,500,500i,600,600i,700');
 
+table th {
+    background: #ffffff;
+    color: rgb(42, 42, 42);
+    text-transform: none;
+}
+
 em {
     font-style: italic
 }
@@ -56,7 +62,7 @@ slide:not(.segue) h1 {
 slide:not(.segue) h2 {
     font-family: 'Lato', sans-serif;
     font-size: 27px;
-    color: rgb(0, 74, 144);
+    color: rgb(26, 26, 26);
     font-weight: 600;
     padding-bottom: 0px;
     margin-bottom: 10px;

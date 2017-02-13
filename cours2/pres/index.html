@@ -179,7 +179,7 @@
 <li>Spatial</li>
 </ol>
 
-<p>Au cours des diapos suivantes, nous nous attarderons à la façon de stocker ces données selon la dimension abordée.</p>
+<p>Au cours des diapos suivantes, nous nous attarderons à la façon de stocker ces données. J&#39;aborderais les spécificités propre à chacune des ces dimensions.</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -187,7 +187,7 @@
 <slide class="transition" id="slide-9" style="background:;">
   <!--  <a href="#slide-9"></a> -->
   <hgroup>
-    <h1>Les type de données</h1>
+    <h1>Le format des données</h1>
   </hgroup>
   <article data-timings="">
     
@@ -195,7 +195,232 @@
   <!-- Presenter Notes -->
 </slide>
 <slide class="" id="slide-10" style="background:;">
-  <!--  <a href="#slide-10"></a> -->
+  <hgroup>
+    <h1>Le format des données</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <h2>Format large</h2>
+
+<table><thead>
+<tr>
+<th align="left">ids</th>
+<th align="left">esp</th>
+<th align="right">2010</th>
+<th align="right">2011</th>
+<th align="right">2014</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">567-1</td>
+<td align="left">acsa</td>
+<td align="right">460</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+</tr>
+<tr>
+<td align="left">567-2</td>
+<td align="left">acsa</td>
+<td align="right">100</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+</tr>
+<tr>
+<td align="left">567-3</td>
+<td align="left">acsa</td>
+<td align="right">120</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+</tr>
+<tr>
+<td align="left">598</td>
+<td align="left">piru</td>
+<td align="right">NA</td>
+<td align="right">380</td>
+<td align="right">NA</td>
+</tr>
+<tr>
+<td align="left">876</td>
+<td align="left">abba</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">160</td>
+</tr>
+</tbody></table>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <h2>Format long</h2>
+
+<table><thead>
+<tr>
+<th align="left">ID</th>
+<th align="left">esp</th>
+<th align="right">year</th>
+<th align="right">dhp_mm</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">567-1</td>
+<td align="left">acsa</td>
+<td align="right">2010</td>
+<td align="right">460</td>
+</tr>
+<tr>
+<td align="left">567-2</td>
+<td align="left">acsa</td>
+<td align="right">2010</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td align="left">567-3</td>
+<td align="left">acsa</td>
+<td align="right">2010</td>
+<td align="right">120</td>
+</tr>
+<tr>
+<td align="left">598</td>
+<td align="left">piru</td>
+<td align="right">2011</td>
+<td align="right">380</td>
+</tr>
+<tr>
+<td align="left">876</td>
+<td align="left">abba</td>
+<td align="right">2014</td>
+<td align="right">160</td>
+</tr>
+</tbody></table>
+
+<ul>
+<li>Privilégier le format long</li>
+<li>Nom de colonnes court, sans accent et explicite.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h1>Le format des données</h1>
+  </hgroup>
+  <article>
+    <h2>Une colonne = une information</h2>
+
+    <div class='left' style='float:left;width:48%'>
+     <table><thead>
+<tr>
+<th align="left">ID</th>
+<th align="left">esp</th>
+<th align="right">year</th>
+<th align="right">dhp_mm</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">567-1</td>
+<td align="left">acsa</td>
+<td align="right">2010</td>
+<td align="right">460</td>
+</tr>
+<tr>
+<td align="left">567-2</td>
+<td align="left">acsa</td>
+<td align="right">2010</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td align="left">567-3</td>
+<td align="left">acsa</td>
+<td align="right">2010</td>
+<td align="right">120</td>
+</tr>
+<tr>
+<td align="left">598</td>
+<td align="left">piru</td>
+<td align="right">2011</td>
+<td align="right">380</td>
+</tr>
+<tr>
+<td align="left">876</td>
+<td align="left">abba</td>
+<td align="right">2014</td>
+<td align="right">160</td>
+</tr>
+</tbody></table>
+
+<ul>
+<li>Ne concatenner pas l&#39;information dans une seule colonne</li>
+</ul>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <table><thead>
+<tr>
+<th align="left">ID</th>
+<th align="left">ID_multi</th>
+<th align="left">esp</th>
+<th align="right">year</th>
+<th align="right">dhp_mm</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">567</td>
+<td align="left">1</td>
+<td align="left">acsa</td>
+<td align="right">2010</td>
+<td align="right">460</td>
+</tr>
+<tr>
+<td align="left">567</td>
+<td align="left">2</td>
+<td align="left">acsa</td>
+<td align="right">2010</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td align="left">567</td>
+<td align="left">3</td>
+<td align="left">acsa</td>
+<td align="right">2010</td>
+<td align="right">120</td>
+</tr>
+<tr>
+<td align="left">598</td>
+<td align="left">NA</td>
+<td align="left">piru</td>
+<td align="right">2011</td>
+<td align="right">380</td>
+</tr>
+<tr>
+<td align="left">876</td>
+<td align="left">NA</td>
+<td align="left">abba</td>
+<td align="right">2014</td>
+<td align="right">160</td>
+</tr>
+</tbody></table>
+
+<!-- - Privilégier le format long, une ligne = une observation
+- Plusieurs tableau: un tableau par type d'observation
+- Éviter de concaténer l'information
+- Stockage des NAs -->
+
+    </div>
+  </article>
+</slide>
+<slide class="transition" id="slide-12" style="background:;">
+  <!--  <a href="#slide-12"></a> -->
+  <hgroup>
+    <h1>Les types de données</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-13" style="background:;">
+  <!--  <a href="#slide-13"></a> -->
   <hgroup>
     <h1>Les données biotiques et abiotiques</h1>
   </hgroup>
@@ -205,13 +430,13 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-11" style="background:;">
-  <!--  <a href="#slide-11"></a> -->
+<slide class="" id="slide-14" style="background:;">
+  <!--  <a href="#slide-14"></a> -->
   <hgroup>
     <h1>Les données biotiques et abiotiques</h1>
   </hgroup>
   <article data-timings="">
-    <h2><strong>En informatique</strong>, on distingue plusieurs types de données également:</h2>
+    <h2><strong>En informatique</strong>, on distingue plusieurs types de données:</h2>
 
 <ol>
 <li>Les entiers (<code>INTEGER</code>)</li>
@@ -223,8 +448,8 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-12" style="background:;">
-  <!--  <a href="#slide-12"></a> -->
+<slide class="" id="slide-15" style="background:;">
+  <!--  <a href="#slide-15"></a> -->
   <hgroup>
     <h1>Les données temporelles</h1>
   </hgroup>
@@ -236,7 +461,7 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-13" style="background:;">
+<slide class="" id="slide-16" style="background:;">
   <hgroup>
     <h1>Les données taxonomiques</h1>
   </hgroup>
@@ -253,20 +478,24 @@
 </tr>
 </thead><tbody>
 <tr>
-<td align="left">Code spécifique à l&#39;étude</td>
+<td align="left">1. Code spécifique à l&#39;étude</td>
 <td align="left">ACSA</td>
 </tr>
 <tr>
-<td align="left">Code du ministère</td>
+<td align="left">2. Code du ministère</td>
 <td align="left">ERS</td>
 </tr>
 <tr>
-<td align="left">Genre et espèce</td>
+<td align="left">3. Genre et espèce</td>
 <td align="left">Acer saccharum</td>
 </tr>
 <tr>
-<td align="left">Nom vernaculaire</td>
+<td align="left">4. Nom vernaculaire</td>
 <td align="left">Érable à sucre</td>
+</tr>
+<tr>
+<td align="left">5. Numéro Taxonomique (TSN - ITIS)</td>
+<td align="left">28731</td>
 </tr>
 </tbody></table>
 
@@ -279,7 +508,7 @@
     </div>
   </article>
 </slide>
-<slide class="" id="slide-14" style="background:;">
+<slide class="" id="slide-17" style="background:;">
   <hgroup>
     <h1>Les données taxonomiques</h1>
   </hgroup>
@@ -320,13 +549,13 @@
      <ul class = "build incremental">
 <li><p><strong>Option 1:</strong> Doit être associé à des métadonnées. Risque de perte du fichier attaché.</p></li>
 <li><p><strong>Option 2:</strong> Le genre et l&#39;espèce peuvent changer à travers le temps.</p></li>
-<li><p><strong>Option 3:</strong> Le nom vernaculaire des espèces est le pire choix. Le nom vernaculaire est propre à un pays et peu changer même entre différentes régions géographiques.</p></li>
+<li><p><strong>Option 3:</strong> Le nom vernaculaire des espèces est le pire choix. Le nom vernaculaire est propre à un pays, à une région géographique, à une culture.</p></li>
 </ul>
 
     </div>
   </article>
 </slide>
-<slide class="" id="slide-15" style="background:;">
+<slide class="" id="slide-18" style="background:;">
   <hgroup>
     <h1>Les données taxonomiques</h1>
   </hgroup>
@@ -365,14 +594,14 @@
     </div>
     <div class='right' style='float:right;width:48%'>
      <ul class = "build incremental">
-<li><strong>Option 4:</strong> Cette option couplé à l&#39;option 3, est le meilleur choix.</li>
+<li><strong>Option 4:</strong> Cette option couplée à l&#39;option 3, est le meilleur choix.</li>
 </ul>
 
     </div>
   </article>
 </slide>
-<slide class="" id="slide-16" style="background:;">
-  <!--  <a href="#slide-16"></a> -->
+<slide class="" id="slide-19" style="background:;">
+  <!--  <a href="#slide-19"></a> -->
   <hgroup>
     <h1>Les données taxonomiques</h1>
   </hgroup>
@@ -385,21 +614,21 @@
 <li>NCBI</li>
 </ol>
 
-<p><strong>Avantage:</strong> Chacune de ces institutions/infrastructures, nous permettent de valider et retirer l&#39;ensemble de la classification taxonomique d&#39;une espèce à partir de son code. Même si l&#39;identifiant change (nouvelle classification), nous serons en mesure de trouver identifiant à partir de l&#39;ancien.</p>
+<p><strong>Avantage:</strong> Chacune de ces institutions/infrastructures, nous permettent de valider et retirer l&#39;ensemble de la classification taxonomique d&#39;une espèce à partir de son code. Même si l&#39;identifiant change (nouvelle classification), nous serons en mesure de trouver le nouvel identifiant taxonomique à partir de l&#39;ancien.</p>
 
-<p>Exemple: <a href="https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&amp;search_value=28731#null">https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&amp;search_value=28731#null</a></p>
+<p><strong>Exemple:</strong> <a href="https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&amp;search_value=28731#null">https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&amp;search_value=28731#null</a></p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-17" style="background:;">
+<slide class="" id="slide-20" style="background:;">
   <!--   <article data-timings="">
     
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-18" style="background:;">
-  <!--  <a href="#slide-18"></a> -->
+<slide class="" id="slide-21" style="background:;">
+  <!--  <a href="#slide-21"></a> -->
   <hgroup>
     <h1>Les données spatiales</h1>
   </hgroup>
@@ -408,8 +637,8 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-19" style="background:;">
-  <!--  <a href="#slide-19"></a> -->
+<slide class="" id="slide-22" style="background:;">
+  <!--  <a href="#slide-22"></a> -->
   <hgroup>
     <h1>L&#39;absence de données</h1>
   </hgroup>
@@ -418,18 +647,8 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-20" style="background:;">
-  <!--  <a href="#slide-20"></a> -->
-  <hgroup>
-    <h1>Le format des données</h1>
-  </hgroup>
-  <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-<slide class="" id="slide-21" style="background:;">
-  <!--  <a href="#slide-21"></a> -->
+<slide class="" id="slide-23" style="background:;">
+  <!--  <a href="#slide-23"></a> -->
   <hgroup>
     <h1>Choisir le bon type et format de données</h1>
   </hgroup>
@@ -447,8 +666,8 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-22" style="background:;">
-  <!--  <a href="#slide-22"></a> -->
+<slide class="" id="slide-24" style="background:;">
+  <!--  <a href="#slide-24"></a> -->
   <hgroup>
     <h1>Finalement</h1>
   </hgroup>
@@ -527,43 +746,43 @@ Comme nous le verrons plus tard cette multi-dimensionnalité complique notre tâ
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=9 title='Les type de données'>
+        data-slide=9 title='Le format des données'>
          9
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=10 title='Les données biotiques et abiotiques'>
+        data-slide=10 title='Le format des données'>
          10
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='Les données biotiques et abiotiques'>
+        data-slide=11 title='Le format des données'>
          11
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title='Les données temporelles'>
+        data-slide=12 title='Les types de données'>
          12
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=13 title='Les données taxonomiques'>
+        data-slide=13 title='Les données biotiques et abiotiques'>
          13
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=14 title='Les données taxonomiques'>
+        data-slide=14 title='Les données biotiques et abiotiques'>
          14
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=15 title='Les données taxonomiques'>
+        data-slide=15 title='Les données temporelles'>
          15
       </a>
     </li>
@@ -575,38 +794,50 @@ Comme nous le verrons plus tard cette multi-dimensionnalité complique notre tâ
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=17 title='NA'>
+        data-slide=17 title='Les données taxonomiques'>
          17
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=18 title='Les données spatiales'>
+        data-slide=18 title='Les données taxonomiques'>
          18
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=19 title='L&#39;absence de données'>
+        data-slide=19 title='Les données taxonomiques'>
          19
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=20 title='Le format des données'>
+        data-slide=20 title='NA'>
          20
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=21 title='Choisir le bon type et format de données'>
+        data-slide=21 title='Les données spatiales'>
          21
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=22 title='Finalement'>
+        data-slide=22 title='L&#39;absence de données'>
          22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Choisir le bon type et format de données'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Finalement'>
+         24
       </a>
     </li>
   </ul>
