@@ -40,7 +40,7 @@ assets      :
 
 # La collecte de données
 
-## **En biométrie**, il éxiste plusieurs grandes familles de données:
+## **En biométrie**, il existe plusieurs grandes familles de données:
 
 1. Quantitative (variables continues)
 2. Semi-quantitative (variables discrètes)
@@ -48,7 +48,7 @@ assets      :
 
 Le type de données collectées conditionne les analyses statistiques que l'on pourra réaliser sur les données.
 
-<!-- ## Probléme - La structure des données est par conséquent déterminé par les analyses que l'on va réaliser. On est une étape plus loin dans notre cheminement (voir schéma précédent) -->
+<!-- ## Problème - La structure des données est par conséquent déterminée par les analyses que l'on va réaliser. On est une étape plus loin dans notre cheminement (voir schéma précédent) -->
 
 
 ---
@@ -59,7 +59,7 @@ Le type de données collectées conditionne les analyses statistiques que l'on p
 
 
 
-<!-- Présenter qu'est qu'une données biologiques, comme elle est représenté -->
+<!-- Présenter qu'est qu'une données biologiques, comme elle est représentée -->
 <!-- Qu'est ce qui est représenté en ligne versus en colonne -->
 
 
@@ -72,7 +72,7 @@ Le type de données collectées conditionne les analyses statistiques que l'on p
 
 # La collecte de données en biologie
 
-## Le problème de multi-dimensionnalité
+## Le problème de multidimensionnalité
 
 <div style='text-align:center;'>
 <img src="assets/img/data_cube_3n.png" width="100%"></img>
@@ -83,7 +83,7 @@ Le type de données collectées conditionne les analyses statistiques que l'on p
 
 # La collecte de données en biologie
 
-## Le problème de multi-dimensionnalité
+## Le problème de multidimensionnalité
 
 <div style='text-align:center;'>
 <img src="assets/img/data_cube_4n.png" width="100%"></img>
@@ -102,7 +102,7 @@ Le type de données collectées conditionne les analyses statistiques que l'on p
 3. Temporelle
 4. Spatial
 
-Au cours des diapos suivantes, nous nous attarderons à la façon de stocker ces données. J'aborderais les spécificités propre à chacune des ces dimensions.
+Au sein de ce cours, nous nous attarderons à la façon de structurer ses données. J'aborderais les spécificités propres à chacune de ces dimensions. Nous attarderons d'abord au format des données, puis aux types de données.
 
 --- .transition
 
@@ -117,16 +117,16 @@ Au cours des diapos suivantes, nous nous attarderons à la façon de stocker ces
 ## Format long
 
 
-|ID    |esp  | year| dhp_mm|
-|:-----|:----|----:|------:|
-|567-1 |acsa | 2010|    460|
-|567-2 |acsa | 2010|    100|
-|567-3 |acsa | 2010|    120|
-|598   |piru | 2011|    380|
-|876   |abba | 2014|    160|
+|ID    |esp  | annees| dhp_mm|
+|:-----|:----|------:|------:|
+|567-1 |acsa |   2010|    460|
+|567-2 |acsa |   2010|    100|
+|567-3 |acsa |   2010|    120|
+|598   |piru |   2011|    380|
+|876   |abba |   2014|    160|
 
-- Privilégier le format long
-- Nom de colonnes court, sans accent et explicite.
+- Nom de colonnes court, sans accent, sans espace et explicite.
+- Si possible, attachez les unités au nom de la colonne.
 
 *** =left
 
@@ -141,43 +141,76 @@ Au cours des diapos suivantes, nous nous attarderons à la façon de stocker ces
 |598   |piru |   NA|  380|   NA|
 |876   |abba |   NA|   NA|  160|
 
+- Privilégier le format long
+- Une ligne = une observation
 
 --- &twocol
 
-#  Le format des données
+#  Le format des données: tableaux
 
-
-## Une colonne = une information
+## Garder l'approche un tableau doit contenir un type d'information:
 
 *** =left
 
 
-|ID    |esp  | year| dhp_mm|
-|:-----|:----|----:|------:|
-|567-1 |acsa | 2010|    460|
-|567-2 |acsa | 2010|    100|
-|567-3 |acsa | 2010|    120|
-|598   |piru | 2011|    380|
-|876   |abba | 2014|    160|
-
-- Ne concatenner pas l'information dans une seule colonne
+|ID_plot | ID_arbre| ID_multi|esp  | annees| dhp_mm|
+|:-------|--------:|--------:|:----|------:|------:|
+|A       |      567|        1|acsa |   2010|    460|
+|A       |      567|        2|acsa |   2010|    100|
+|A       |      567|        3|acsa |   2010|    120|
+|B       |      598|       NA|piru |   2011|    380|
+|B       |      876|       NA|abba |   2014|    160|
 
 *** =right
 
 
-|ID  |ID_multi |esp  | year| dhp_mm|
-|:---|:--------|:----|----:|------:|
-|567 |1        |acsa | 2010|    460|
-|567 |2        |acsa | 2010|    100|
-|567 |3        |acsa | 2010|    120|
-|598 |NA       |piru | 2011|    380|
-|876 |NA       |abba | 2014|    160|
+|ID_plot | annees|variable     | valeur|
+|:-------|------:|:------------|------:|
+|A       |   2010|pp_tot_mm    |    880|
+|B       |   2011|pp_tot_mm    |    560|
+|B       |   2014|pp_tot_mm    |    900|
+|A       |   2010|temp_max_deg |     24|
+|B       |   2011|temp_max_deg |     26|
+|B       |   2014|temp_max_deg |     28|
+
+- Si l'on veut ajouter des données sur le climat, on ouvrira un nouveau tableau.
+
+--- &twocol
+
+#  Le format des données: colonnes
+
+## Ne pas agréger l'information dans une seule colonne
+
+*** =left
 
 
-<!-- - Privilégier le format long, une ligne = une observation
-- Plusieurs tableau: un tableau par type d'observation
-- Éviter de concaténer l'information
-- Stockage des NAs -->
+|ID_plot | ID_arbre| ID_multi|esp  | annees| dhp_mm|
+|:-------|--------:|--------:|:----|------:|------:|
+|A       |      567|        1|acsa |   2010|    460|
+|A       |      567|        2|acsa |   2010|    100|
+|A       |      567|        3|acsa |   2010|    120|
+|B       |      598|       NA|piru |   2011|    380|
+|B       |      876|       NA|abba |   2014|    160|
+
+- Une colonne = une information
+
+*** =right
+
+
+|ID  |ID_multi |esp  | annees| dhp_mm|
+|:---|:--------|:----|------:|------:|
+|567 |1        |acsa |   2010|    460|
+|567 |2        |acsa |   2010|    100|
+|567 |3        |acsa |   2010|    120|
+|598 |NA       |piru |   2011|    380|
+|876 |NA       |abba |   2014|    160|
+
+---
+
+#  Le format des données: colonnes
+
+## <span style="color:rgb(194, 0, 0);"> Important:</span> votre fichier brut de données (destinée au stockage à long terme) ne doit pas contenir de champ calculé (c.a.d. une nouvelle colonne avec une moyenne, etc..)
+
 
 --- .transition
 
@@ -187,33 +220,54 @@ Au cours des diapos suivantes, nous nous attarderons à la façon de stocker ces
 
 # Les données biotiques et abiotiques
 
-TABLEAU DE DONNÉES AVEC LES 4 Types de données informatiques
-
----
-
-# Les données biotiques et abiotiques
-
 ## **En informatique**, on distingue plusieurs types de données:
 
 1. Les entiers (`INTEGER`)
 2. Les nombres réels (`DOUBLE`, `FLOAT`)
-2. Les caractères (`CHAR`,`VARCHAR`)
-3. Les dates (`DATE`)
+3. Les caractères (`CHAR`,`VARCHAR`)
+4. Les dates et heures (`TIMESTAMP`,`DATE`,`TIME`)
+
 
 ---
 
 # Les données temporelles
 
-<!-- Voir Borer -->
-<!-- Représentation en jour julien Annuelle -->
+La plupart des languages/programmes disposent d'un type `TIMESTAMP`, `DATE` et `TIME` pour représenter une donnée temporelle.
 
+On utilisera préférablement la norme [ISO8601](https://fr.wikipedia.org/wiki/ISO_8601) pour représenter ces données.
+
+- `TIMESTAMP` (Heure et temps): On utilisera la notation `YYYY-MM-ddThh:mm:ss`. *ex. `1977-04-22T01:00:00-05:00`*
+- `DATE`: On utilisera la notation `YYYY-MM-dd`. *ex. 1997-04-22*
+- `TIME`: On utilisera la notation `HH:mm:ss` dans un systéme de 24 heures. *ex. 01:30:00.*
+
+---
+
+# Les données temporelles
+
+ Garder à l'esprit que vos données pourraient être réutilisées à travers le Monde. Les dates ne sont pas représentées de la même manière que l'on soit en Amérique du Nord ou en Europe. **Il est donc important de normaliser la saisie de ce type d'information.**
+
+--- &twocol
+
+# Les données temporelles
+
+Une autre représentation de la date du jour peut-être basé sur le calendrier Julien.
+
+*** =left
+
+<div style='text-align:center;'>
+<img src="assets/img/jul.jpg" width="105%"></img>
+</div>
+
+*** =right
+
+- **Inconvénient:** Le jour julien doit toujours être accompagné de l'année (YYYY).
+- **Avantage:** simplifie les analyses temporelles intra-annuelles.
 
 --- &twocol
 
 # Les données taxonomiques
 
 *Un exemple avec l'érable à sucre*
-
 
 *** =left
 
@@ -227,8 +281,8 @@ TABLEAU DE DONNÉES AVEC LES 4 Types de données informatiques
 |3. Genre et espèce                 |Acer saccharum |
 |4. Nom vernaculaire                |Érable à sucre |
 |5. Numéro Taxonomique (TSN - ITIS) |28731          |
-*** =right
 
+*** =right
 
 <div style='text-align:center;'>
 <img src="assets/img/acsa.jpg" height="450px"></img>
@@ -254,11 +308,11 @@ TABLEAU DE DONNÉES AVEC LES 4 Types de données informatiques
 
 *** =right
 
->- **Option 1:** Doit être associé à des métadonnées. Risque de perte du fichier attaché.
+>- **Option 1 et 2:** Doit être associé à des métadonnées. Risque de perte du fichier attaché.
 
->- **Option 2:** Le genre et l'espèce peuvent changer à travers le temps.
+>- **Option 3:** Le genre et l'espèce peuvent changer à travers le temps.
 
->- **Option 3:** Le nom vernaculaire des espèces est le pire choix. Le nom vernaculaire est propre à un pays, à une région géographique, à une culture.
+>- **Option 4:** Le nom vernaculaire des espèces est le pire choix. Le nom vernaculaire est propre à un pays, à une région géographique, à une culture/dialecte.
 
 
 --- &twocol
@@ -288,7 +342,7 @@ TABLEAU DE DONNÉES AVEC LES 4 Types de données informatiques
 
 # Les données taxonomiques
 
-On privilégie généralement, l'utilisation de code espèce standardisé:
+## On privilégie généralement, l'utilisation de code espèce standardisée:
 
 1. ITIS
 2. VASCAN (Plantes vasculaires du Canada)
@@ -298,19 +352,71 @@ On privilégie généralement, l'utilisation de code espèce standardisé:
 
 **Exemple:** [https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null)
 
----
-
 
 ---
 
 # Les données spatiales
 
+## Il existe plus de [65 familles de projections géographiques](https://en.wikipedia.org/wiki/List_of_map_projections) pour représenter des coordonnées sur la planète, en voici 3 des plus connues:
+
+<div style='text-align:center;'>
+<img src="assets/img/proj.png" height="200px"></img>
+</div>
+
+- Il est important de choisir un bon système de projection pour minimiser la déformation spatiale (surtout à nos latitudes)
+
+>- À nos latitudes, on privilégiera l'utilisation d'une projection conique. Les ministères du Québec conseillent généralement l'utilisation d'une [projection conique conforme de Lambert](https://fr.wikipedia.org/wiki/Projection_conique_conforme_de_Lambert).
 
 ---
 
-# L'absence de données
+# Les données spatiales
+
+- **Ce qu'il est important de savoir:** des coordonnées spatiales sans système de projection ne veulent strictement rien dire.
+- Ainsi, lorsque l'on entrepose des données spatiales, trois colonnes doivent être représentées:
+  - La coordonnée en X
+  - La coordonnée en Y
+  - La projection écrite en texte (voir votre GPS), ou préférablement l'identifiant unique de la projection.
+
+---
+
+# Les données spatiales
+
+## Deux bases de données connues permettent de fournir des identifiants uniques:
+
+1. `EPSG`: *European Petroleum Survey Group.*
+2. `SRID`: *Spatial reference system*.
+
+Ces deux identifiants sont généralement identiques et peuvent être trouvés à cette adresse: [http://spatialreference.org/](http://spatialreference.org/)
+
+**Exemple:** [http://spatialreference.org/ref/epsg/2138/](http://spatialreference.org/ref/epsg/2138/)
 
 
+--- &twocol
+
+#  L'absence de données
+
+## On peut représenter l'absence de données de plusieurs façons:
+
+- Laisser la cellule vide (`NULL`)
+- Mettre un `NA` (*Not Available*)
+- Mettre un 0
+- Mettre `-9999` dans une colonne numérique
+
+## Selon vous, quelle est l'action la plus appropriée ?
+
+--- &twocol
+
+#  Le format des données
+
+## On peut représenter l'absence de données de plusieurs façons:
+
+- Laisser la cellule vide: montre que l'information n'a pas été saisie (un oublie)
+
+>- Mettre un `NA` (*Not Available*): Montre que l'information est réellement indisponible (car le NA est saisie par un humain).
+
+>- <span style="text-decoration: line-through;"> Mettre un 0 </span>: **JAMAIS** (empêche la distinction entre un vrai d'un faux 0, influence la moyenne)
+
+>- Mettre `-9999` dans une colonne numérique: Ce choix peut être utilisé seulement pour les jeux de données très importants (centaine de Megas-octet), et doit être référencé dans les métadonnées.
 
 
 ---
@@ -327,16 +433,14 @@ Si l'on ne choisit pas le type de données approprié, cela aura diverses consé
 
 ---
 
-# Finalement
+# Finalement...
 
 Pourquoi prendre soin de ces données ?
 
+<!--
 Les 3 R.
-C'est comme un livre, ca nous raconte l'histoire d'individu, d'une pop à un instant t à un endroit donné.
-Sommes-nous capable de juger de la valeur de ces données?
-
-
-<!-- ---
+C'est comme un livre, ça nous raconte l'histoire d'individu, d'une pop à un instant t à un endroit donné.
+Sommes-nous capables de juger de la valeur de ces données?
 
 TRANSTION vers SQL
 
@@ -344,5 +448,4 @@ TRANSTION vers SQL
 
 En biologie, la collecte de données se résume à un hypercube.
 
-
-Comme nous le verrons plus tard cette multi-dimensionnalité complique notre tâche, car il est difficile de la représenter dans un tableau excel (n-2). -->
+Comme nous le verrons plus tard cette multidimensionnalité complique notre tâche, car il est difficile de la représenter dans un tableau excel (n-2). -->

@@ -20,7 +20,7 @@
 - Les étapes d'une étude scientifique (schéma)
 
 - Exemples de situations problématiques dans la pratique professionnelle
- 
+
 - Discussion sur la crise de reproductibilité (30-60min) : identification des étapes d'une étude scientifique susceptibles d'influer sur la reproductibilité
 
 
@@ -39,10 +39,10 @@
 
 # Utilisation de la VM et utilisation de base de Ubuntu (30 min)
     - ouvrir le terminal
-    - répertoires 
+    - répertoires
     - ouvrir R
     - ouvrir sublimeText
-    - exécuter un script sur le terminal 
+    - exécuter un script sur le terminal
 
 
 
@@ -64,7 +64,12 @@ OpenScience015
 - Présentation : définition des données (30 min)
 
 - Activité : Récolte des données dans le cours (60 min)
+<<<<<<< Updated upstream
     - instructions 
+=======
+    - instructions
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     - planification
     - récolte
     - formulaire de saisie
@@ -74,6 +79,10 @@ OpenScience015
     - Format des tables
     - Définition en classe du format standard
     - Gestion des doublons
+
+- Activité de collecte de données
+
+Suite du cours: création d'un formulaire sur libre office.
 
 ### Discussion : est-ce qu'il y a une crise de la reproductibilité en science ? (30 min)
 
@@ -181,6 +190,7 @@ Mills2015
     - Exercice : ajout d'une table (informations sur les cours) depuis R
     - Exercie: requête sur ....
 
+- Devoir: évaluation 1 - Ontologie commune au groupe, formulaire, script pour construire la base + insérer les données. Requêtes sur les tableaux
 
 ### Débat : les enjeux du partage de données
 

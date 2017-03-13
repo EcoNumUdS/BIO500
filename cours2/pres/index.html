@@ -98,7 +98,7 @@
     <h1>La collecte de données</h1>
   </hgroup>
   <article data-timings="">
-    <h2><strong>En biométrie</strong>, il éxiste plusieurs grandes familles de données:</h2>
+    <h2><strong>En biométrie</strong>, il existe plusieurs grandes familles de données:</h2>
 
 <ol>
 <li>Quantitative (variables continues)</li>
@@ -108,7 +108,7 @@
 
 <p>Le type de données collectées conditionne les analyses statistiques que l&#39;on pourra réaliser sur les données.</p>
 
-<!-- ## Probléme - La structure des données est par conséquent déterminé par les analyses que l'on va réaliser. On est une étape plus loin dans notre cheminement (voir schéma précédent) -->
+<!-- ## Problème - La structure des données est par conséquent déterminée par les analyses que l'on va réaliser. On est une étape plus loin dans notre cheminement (voir schéma précédent) -->
 
   </article>
   <!-- Presenter Notes -->
@@ -121,7 +121,7 @@
   <article data-timings="">
     <h2>Alors, qu&#39;en est-il d&#39;une donnée biologique ?</h2>
 
-<!-- Présenter qu'est qu'une données biologiques, comme elle est représenté -->
+<!-- Présenter qu'est qu'une données biologiques, comme elle est représentée -->
 
 <!-- Qu'est ce qui est représenté en ligne versus en colonne -->
 
@@ -138,7 +138,7 @@
     <h1>La collecte de données en biologie</h1>
   </hgroup>
   <article data-timings="">
-    <h2>Le problème de multi-dimensionnalité</h2>
+    <h2>Le problème de multidimensionnalité</h2>
 
 <div style='text-align:center;'>
 <img src="assets/img/data_cube_3n.png" width="100%"></img>
@@ -153,7 +153,7 @@
     <h1>La collecte de données en biologie</h1>
   </hgroup>
   <article data-timings="">
-    <h2>Le problème de multi-dimensionnalité</h2>
+    <h2>Le problème de multidimensionnalité</h2>
 
 <div style='text-align:center;'>
 <img src="assets/img/data_cube_4n.png" width="100%"></img>
@@ -179,7 +179,7 @@
 <li>Spatial</li>
 </ol>
 
-<p>Au cours des diapos suivantes, nous nous attarderons à la façon de stocker ces données. J&#39;aborderais les spécificités propre à chacune des ces dimensions.</p>
+<p>Au sein de ce cours, nous nous attarderons à la façon de structurer ses données. J&#39;aborderais les spécificités propres à chacune de ces dimensions. Nous attarderons d&#39;abord au format des données, puis aux types de données.</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -249,6 +249,11 @@
 </tr>
 </tbody></table>
 
+<ul>
+<li>Privilégier le format long</li>
+<li>Une ligne = une observation</li>
+</ul>
+
     </div>
     <div class='right' style='float:right;width:48%'>
      <h2>Format long</h2>
@@ -257,7 +262,7 @@
 <tr>
 <th align="left">ID</th>
 <th align="left">esp</th>
-<th align="right">year</th>
+<th align="right">annees</th>
 <th align="right">dhp_mm</th>
 </tr>
 </thead><tbody>
@@ -294,8 +299,8 @@
 </tbody></table>
 
 <ul>
-<li>Privilégier le format long</li>
-<li>Nom de colonnes court, sans accent et explicite.</li>
+<li>Nom de colonnes court, sans accent, sans espace et explicite.</li>
+<li>Si possible, attachez les unités au nom de la colonne.</li>
 </ul>
 
     </div>
@@ -303,46 +308,173 @@
 </slide>
 <slide class="" id="slide-11" style="background:;">
   <hgroup>
-    <h1>Le format des données</h1>
+    <h1>Le format des données: tableaux</h1>
   </hgroup>
   <article>
-    <h2>Une colonne = une information</h2>
+    <h2>Garder l&#39;approche un tableau doit contenir un type d&#39;information:</h2>
 
     <div class='left' style='float:left;width:48%'>
      <table><thead>
 <tr>
-<th align="left">ID</th>
+<th align="left">ID_plot</th>
+<th align="right">ID_arbre</th>
+<th align="right">ID_multi</th>
 <th align="left">esp</th>
-<th align="right">year</th>
+<th align="right">annees</th>
 <th align="right">dhp_mm</th>
 </tr>
 </thead><tbody>
 <tr>
-<td align="left">567-1</td>
+<td align="left">A</td>
+<td align="right">567</td>
+<td align="right">1</td>
 <td align="left">acsa</td>
 <td align="right">2010</td>
 <td align="right">460</td>
 </tr>
 <tr>
-<td align="left">567-2</td>
+<td align="left">A</td>
+<td align="right">567</td>
+<td align="right">2</td>
 <td align="left">acsa</td>
 <td align="right">2010</td>
 <td align="right">100</td>
 </tr>
 <tr>
-<td align="left">567-3</td>
+<td align="left">A</td>
+<td align="right">567</td>
+<td align="right">3</td>
 <td align="left">acsa</td>
 <td align="right">2010</td>
 <td align="right">120</td>
 </tr>
 <tr>
-<td align="left">598</td>
+<td align="left">B</td>
+<td align="right">598</td>
+<td align="right">NA</td>
 <td align="left">piru</td>
 <td align="right">2011</td>
 <td align="right">380</td>
 </tr>
 <tr>
-<td align="left">876</td>
+<td align="left">B</td>
+<td align="right">876</td>
+<td align="right">NA</td>
+<td align="left">abba</td>
+<td align="right">2014</td>
+<td align="right">160</td>
+</tr>
+</tbody></table>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <table><thead>
+<tr>
+<th align="left">ID_plot</th>
+<th align="right">annees</th>
+<th align="left">variable</th>
+<th align="right">valeur</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">A</td>
+<td align="right">2010</td>
+<td align="left">pp_tot_mm</td>
+<td align="right">880</td>
+</tr>
+<tr>
+<td align="left">B</td>
+<td align="right">2011</td>
+<td align="left">pp_tot_mm</td>
+<td align="right">560</td>
+</tr>
+<tr>
+<td align="left">B</td>
+<td align="right">2014</td>
+<td align="left">pp_tot_mm</td>
+<td align="right">900</td>
+</tr>
+<tr>
+<td align="left">A</td>
+<td align="right">2010</td>
+<td align="left">temp_max_deg</td>
+<td align="right">24</td>
+</tr>
+<tr>
+<td align="left">B</td>
+<td align="right">2011</td>
+<td align="left">temp_max_deg</td>
+<td align="right">26</td>
+</tr>
+<tr>
+<td align="left">B</td>
+<td align="right">2014</td>
+<td align="left">temp_max_deg</td>
+<td align="right">28</td>
+</tr>
+</tbody></table>
+
+<ul>
+<li>Si l&#39;on veut ajouter des données sur le climat, on ouvrira un nouveau tableau.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h1>Le format des données: colonnes</h1>
+  </hgroup>
+  <article>
+    <h2>Ne pas agréger l&#39;information dans une seule colonne</h2>
+
+    <div class='left' style='float:left;width:48%'>
+     <table><thead>
+<tr>
+<th align="left">ID_plot</th>
+<th align="right">ID_arbre</th>
+<th align="right">ID_multi</th>
+<th align="left">esp</th>
+<th align="right">annees</th>
+<th align="right">dhp_mm</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">A</td>
+<td align="right">567</td>
+<td align="right">1</td>
+<td align="left">acsa</td>
+<td align="right">2010</td>
+<td align="right">460</td>
+</tr>
+<tr>
+<td align="left">A</td>
+<td align="right">567</td>
+<td align="right">2</td>
+<td align="left">acsa</td>
+<td align="right">2010</td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td align="left">A</td>
+<td align="right">567</td>
+<td align="right">3</td>
+<td align="left">acsa</td>
+<td align="right">2010</td>
+<td align="right">120</td>
+</tr>
+<tr>
+<td align="left">B</td>
+<td align="right">598</td>
+<td align="right">NA</td>
+<td align="left">piru</td>
+<td align="right">2011</td>
+<td align="right">380</td>
+</tr>
+<tr>
+<td align="left">B</td>
+<td align="right">876</td>
+<td align="right">NA</td>
 <td align="left">abba</td>
 <td align="right">2014</td>
 <td align="right">160</td>
@@ -350,7 +482,7 @@
 </tbody></table>
 
 <ul>
-<li>Ne concatenner pas l&#39;information dans une seule colonne</li>
+<li>Une colonne = une information</li>
 </ul>
 
     </div>
@@ -360,7 +492,7 @@
 <th align="left">ID</th>
 <th align="left">ID_multi</th>
 <th align="left">esp</th>
-<th align="right">year</th>
+<th align="right">annees</th>
 <th align="right">dhp_mm</th>
 </tr>
 </thead><tbody>
@@ -401,16 +533,22 @@
 </tr>
 </tbody></table>
 
-<!-- - Privilégier le format long, une ligne = une observation
-- Plusieurs tableau: un tableau par type d'observation
-- Éviter de concaténer l'information
-- Stockage des NAs -->
-
     </div>
   </article>
 </slide>
-<slide class="transition" id="slide-12" style="background:;">
-  <!--  <a href="#slide-12"></a> -->
+<slide class="" id="slide-13" style="background:;">
+  <!--  <a href="#slide-13"></a> -->
+  <hgroup>
+    <h1>Le format des données: colonnes</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2><span style="color:rgb(194, 0, 0);"> Important:</span> votre fichier brut de données (destinée au stockage à long terme) ne doit pas contenir de champ calculé (c.a.d. une nouvelle colonne avec une moyenne, etc..)</h2>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-14" style="background:;">
+  <!--  <a href="#slide-14"></a> -->
   <hgroup>
     <h1>Les types de données</h1>
   </hgroup>
@@ -419,19 +557,8 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-13" style="background:;">
-  <!--  <a href="#slide-13"></a> -->
-  <hgroup>
-    <h1>Les données biotiques et abiotiques</h1>
-  </hgroup>
-  <article data-timings="">
-    <p>TABLEAU DE DONNÉES AVEC LES 4 Types de données informatiques</p>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-<slide class="" id="slide-14" style="background:;">
-  <!--  <a href="#slide-14"></a> -->
+<slide class="" id="slide-15" style="background:;">
+  <!--  <a href="#slide-15"></a> -->
   <hgroup>
     <h1>Les données biotiques et abiotiques</h1>
   </hgroup>
@@ -442,26 +569,65 @@
 <li>Les entiers (<code>INTEGER</code>)</li>
 <li>Les nombres réels (<code>DOUBLE</code>, <code>FLOAT</code>)</li>
 <li>Les caractères (<code>CHAR</code>,<code>VARCHAR</code>)</li>
-<li>Les dates (<code>DATE</code>)</li>
+<li>Les dates et heures (<code>TIMESTAMP</code>,<code>DATE</code>,<code>TIME</code>)</li>
 </ol>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-15" style="background:;">
-  <!--  <a href="#slide-15"></a> -->
+<slide class="" id="slide-16" style="background:;">
+  <!--  <a href="#slide-16"></a> -->
   <hgroup>
     <h1>Les données temporelles</h1>
   </hgroup>
   <article data-timings="">
-    <!-- Voir Borer -->
+    <p>La plupart des languages/programmes disposent d&#39;un type <code>TIMESTAMP</code>, <code>DATE</code> et <code>TIME</code> pour représenter une donnée temporelle.</p>
 
-<!-- Représentation en jour julien Annuelle -->
+<p>On utilisera préférablement la norme <a href="https://fr.wikipedia.org/wiki/ISO_8601">ISO8601</a> pour représenter ces données.</p>
+
+<ul>
+<li><code>TIMESTAMP</code> (Heure et temps): On utilisera la notation <code>YYYY-MM-ddThh:mm:ss</code>. <em>ex. <code>1977-04-22T01:00:00-05:00</code></em></li>
+<li><code>DATE</code>: On utilisera la notation <code>YYYY-MM-dd</code>. <em>ex. 1997-04-22</em></li>
+<li><code>TIME</code>: On utilisera la notation <code>HH:mm:ss</code> dans un systéme de 24 heures. <em>ex. 01:30:00.</em></li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-16" style="background:;">
+<slide class="" id="slide-17" style="background:;">
+  <!--  <a href="#slide-17"></a> -->
+  <hgroup>
+    <h1>Les données temporelles</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Garder à l&#39;esprit que vos données pourraient être réutilisées à travers le Monde. Les dates ne sont pas représentées de la même manière que l&#39;on soit en Amérique du Nord ou en Europe. <strong>Il est donc important de normaliser la saisie de ce type d&#39;information.</strong></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h1>Les données temporelles</h1>
+  </hgroup>
+  <article>
+    <p>Une autre représentation de la date du jour peut-être basé sur le calendrier Julien.</p>
+
+    <div class='left' style='float:left;width:48%'>
+     <div style='text-align:center;'>
+<img src="assets/img/jul.jpg" width="105%"></img>
+</div>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <ul>
+<li><strong>Inconvénient:</strong> Le jour julien doit toujours être accompagné de l&#39;année (YYYY).</li>
+<li><strong>Avantage:</strong> simplifie les analyses temporelles intra-annuelles.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-19" style="background:;">
   <hgroup>
     <h1>Les données taxonomiques</h1>
   </hgroup>
@@ -508,7 +674,7 @@
     </div>
   </article>
 </slide>
-<slide class="" id="slide-17" style="background:;">
+<slide class="" id="slide-20" style="background:;">
   <hgroup>
     <h1>Les données taxonomiques</h1>
   </hgroup>
@@ -547,15 +713,15 @@
     </div>
     <div class='right' style='float:right;width:48%'>
      <ul class = "build incremental">
-<li><p><strong>Option 1:</strong> Doit être associé à des métadonnées. Risque de perte du fichier attaché.</p></li>
-<li><p><strong>Option 2:</strong> Le genre et l&#39;espèce peuvent changer à travers le temps.</p></li>
-<li><p><strong>Option 3:</strong> Le nom vernaculaire des espèces est le pire choix. Le nom vernaculaire est propre à un pays, à une région géographique, à une culture.</p></li>
+<li><p><strong>Option 1 et 2:</strong> Doit être associé à des métadonnées. Risque de perte du fichier attaché.</p></li>
+<li><p><strong>Option 3:</strong> Le genre et l&#39;espèce peuvent changer à travers le temps.</p></li>
+<li><p><strong>Option 4:</strong> Le nom vernaculaire des espèces est le pire choix. Le nom vernaculaire est propre à un pays, à une région géographique, à une culture/dialecte.</p></li>
 </ul>
 
     </div>
   </article>
 </slide>
-<slide class="" id="slide-18" style="background:;">
+<slide class="" id="slide-21" style="background:;">
   <hgroup>
     <h1>Les données taxonomiques</h1>
   </hgroup>
@@ -600,13 +766,13 @@
     </div>
   </article>
 </slide>
-<slide class="" id="slide-19" style="background:;">
-  <!--  <a href="#slide-19"></a> -->
+<slide class="" id="slide-22" style="background:;">
+  <!--  <a href="#slide-22"></a> -->
   <hgroup>
     <h1>Les données taxonomiques</h1>
   </hgroup>
   <article data-timings="">
-    <p>On privilégie généralement, l&#39;utilisation de code espèce standardisé:</p>
+    <h2>On privilégie généralement, l&#39;utilisation de code espèce standardisée:</h2>
 
 <ol>
 <li>ITIS</li>
@@ -621,34 +787,120 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-20" style="background:;">
-  <!--   <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-<slide class="" id="slide-21" style="background:;">
-  <!--  <a href="#slide-21"></a> -->
+<slide class="" id="slide-23" style="background:;">
+  <!--  <a href="#slide-23"></a> -->
   <hgroup>
     <h1>Les données spatiales</h1>
   </hgroup>
   <article data-timings="">
-    
+    <h2>Il existe plus de <a href="https://en.wikipedia.org/wiki/List_of_map_projections">65 familles de projections géographiques</a> pour représenter des coordonnées sur la planète, en voici 3 des plus connues:</h2>
+
+<div style='text-align:center;'>
+<img src="assets/img/proj.png" height="200px"></img>
+</div>
+
+<ul>
+<li>Il est important de choisir un bon système de projection pour minimiser la déformation spatiale (surtout à nos latitudes)</li>
+</ul>
+
+<ul class = "build incremental">
+<li>À nos latitudes, on privilégiera l&#39;utilisation d&#39;une projection conique. Les ministères du Québec conseillent généralement l&#39;utilisation d&#39;une <a href="https://fr.wikipedia.org/wiki/Projection_conique_conforme_de_Lambert">projection conique conforme de Lambert</a>.</li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-22" style="background:;">
-  <!--  <a href="#slide-22"></a> -->
+<slide class="" id="slide-24" style="background:;">
+  <!--  <a href="#slide-24"></a> -->
+  <hgroup>
+    <h1>Les données spatiales</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><strong>Ce qu&#39;il est important de savoir:</strong> des coordonnées spatiales sans système de projection ne veulent strictement rien dire.</li>
+<li>Ainsi, lorsque l&#39;on entrepose des données spatiales, trois colonnes doivent être représentées:
+
+<ul>
+<li>La coordonnée en X</li>
+<li>La coordonnée en Y</li>
+<li>La projection écrite en texte (voir votre GPS), ou préférablement l&#39;identifiant unique de la projection.</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-25" style="background:;">
+  <!--  <a href="#slide-25"></a> -->
+  <hgroup>
+    <h1>Les données spatiales</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Deux bases de données connues permettent de fournir des identifiants uniques:</h2>
+
+<ol>
+<li><code>EPSG</code>: <em>European Petroleum Survey Group.</em></li>
+<li><code>SRID</code>: <em>Spatial reference system</em>.</li>
+</ol>
+
+<p>Ces deux identifiants sont généralement identiques et peuvent être trouvés à cette adresse: <a href="http://spatialreference.org/">http://spatialreference.org/</a></p>
+
+<p><strong>Exemple:</strong> <a href="http://spatialreference.org/ref/epsg/2138/">http://spatialreference.org/ref/epsg/2138/</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-26" style="background:;">
   <hgroup>
     <h1>L&#39;absence de données</h1>
   </hgroup>
-  <article data-timings="">
-    
+  <article>
+    <h2>On peut représenter l&#39;absence de données de plusieurs façons:</h2>
+
+<ul>
+<li>Laisser la cellule vide (<code>NULL</code>)</li>
+<li>Mettre un <code>NA</code> (<em>Not Available</em>)</li>
+<li>Mettre un 0</li>
+<li>Mettre <code>-9999</code> dans une colonne numérique</li>
+</ul>
+
+<h2>Selon vous, quelle est l&#39;action la plus appropriée ?</h2>
+
+    <div class='left' style='float:left;width:48%'>
+     
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     
+    </div>
   </article>
-  <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-23" style="background:;">
-  <!--  <a href="#slide-23"></a> -->
+<slide class="" id="slide-27" style="background:;">
+  <hgroup>
+    <h1>Le format des données</h1>
+  </hgroup>
+  <article>
+    <h2>On peut représenter l&#39;absence de données de plusieurs façons:</h2>
+
+<ul>
+<li>Laisser la cellule vide: montre que l&#39;information n&#39;a pas été saisie (un oublie)</li>
+</ul>
+
+<ul class = "build incremental">
+<li><p>Mettre un <code>NA</code> (<em>Not Available</em>): Montre que l&#39;information est réellement indisponible (car le NA est saisie par un humain).</p></li>
+<li><p><span style="text-decoration: line-through;"> Mettre un 0 </span>: <strong>JAMAIS</strong> (empêche la distinction entre un vrai d&#39;un faux 0, influence la moyenne)</p></li>
+<li><p>Mettre <code>-9999</code> dans une colonne numérique: Ce choix peut être utilisé seulement pour les jeux de données très importants (centaine de Megas-octet), et doit être référencé dans les métadonnées.</p></li>
+</ul>
+
+    <div class='left' style='float:left;width:48%'>
+     
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-28" style="background:;">
+  <!--  <a href="#slide-28"></a> -->
   <hgroup>
     <h1>Choisir le bon type et format de données</h1>
   </hgroup>
@@ -666,19 +918,18 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-24" style="background:;">
-  <!--  <a href="#slide-24"></a> -->
+<slide class="" id="slide-29" style="background:;">
+  <!--  <a href="#slide-29"></a> -->
   <hgroup>
-    <h1>Finalement</h1>
+    <h1>Finalement...</h1>
   </hgroup>
   <article data-timings="">
     <p>Pourquoi prendre soin de ces données ?</p>
 
-<p>Les 3 R.
-C&#39;est comme un livre, ca nous raconte l&#39;histoire d&#39;individu, d&#39;une pop à un instant t à un endroit donné.
-Sommes-nous capable de juger de la valeur de ces données?</p>
-
-<!-- ---
+<!--
+Les 3 R.
+C'est comme un livre, ça nous raconte l'histoire d'individu, d'une pop à un instant t à un endroit donné.
+Sommes-nous capables de juger de la valeur de ces données?
 
 TRANSTION vers SQL
 
@@ -686,8 +937,7 @@ TRANSTION vers SQL
 
 En biologie, la collecte de données se résume à un hypercube.
 
-
-Comme nous le verrons plus tard cette multi-dimensionnalité complique notre tâche, car il est difficile de la représenter dans un tableau excel (n-2). -->
+Comme nous le verrons plus tard cette multidimensionnalité complique notre tâche, car il est difficile de la représenter dans un tableau excel (n-2). -->
 
   </article>
   <!-- Presenter Notes -->
@@ -758,49 +1008,49 @@ Comme nous le verrons plus tard cette multi-dimensionnalité complique notre tâ
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='Le format des données'>
+        data-slide=11 title='Le format des données: tableaux'>
          11
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title='Les types de données'>
+        data-slide=12 title='Le format des données: colonnes'>
          12
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=13 title='Les données biotiques et abiotiques'>
+        data-slide=13 title='Le format des données: colonnes'>
          13
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=14 title='Les données biotiques et abiotiques'>
+        data-slide=14 title='Les types de données'>
          14
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=15 title='Les données temporelles'>
+        data-slide=15 title='Les données biotiques et abiotiques'>
          15
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=16 title='Les données taxonomiques'>
+        data-slide=16 title='Les données temporelles'>
          16
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=17 title='Les données taxonomiques'>
+        data-slide=17 title='Les données temporelles'>
          17
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=18 title='Les données taxonomiques'>
+        data-slide=18 title='Les données temporelles'>
          18
       </a>
     </li>
@@ -812,32 +1062,62 @@ Comme nous le verrons plus tard cette multi-dimensionnalité complique notre tâ
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=20 title='NA'>
+        data-slide=20 title='Les données taxonomiques'>
          20
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=21 title='Les données spatiales'>
+        data-slide=21 title='Les données taxonomiques'>
          21
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=22 title='L&#39;absence de données'>
+        data-slide=22 title='Les données taxonomiques'>
          22
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=23 title='Choisir le bon type et format de données'>
+        data-slide=23 title='Les données spatiales'>
          23
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=24 title='Finalement'>
+        data-slide=24 title='Les données spatiales'>
          24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Les données spatiales'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='L&#39;absence de données'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='Le format des données'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='Choisir le bon type et format de données'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Finalement...'>
+         29
       </a>
     </li>
   </ul>
