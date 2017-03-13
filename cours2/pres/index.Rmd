@@ -207,11 +207,18 @@ kable(df,format="markdown")
 
 ## **En informatique**, on distingue plusieurs types de données:
 
-1. Les entiers (`INTEGER`)
-2. Les nombres réels (`DOUBLE`, `FLOAT`)
-3. Les caractères (`CHAR`,`VARCHAR`)
-4. Les dates et heures (`TIMESTAMP`,`DATE`,`TIME`)
+| Appelation                | Type                 | Valeurs     | Taille           |
+|---------------------------|----------------------|-------------|------------------|
+| `BOLEAN`                  | Boléen               | vrai/faux   | 1 octet          |
+| `INTEGER`                 | Entiers              | -998, 123   | 1 à 4 octets     |
+| `DOUBLE`, `FLOAT`         | Nombres réels        | 9.98, -4.34 | 4 à 8 octets     |
+| `CHAR`,`VARCHAR`          | Chaine de caractères | lapin       | n x 1 à 8 octets |
+| `TIMESTAMP`,`DATE`,`TIME` | Dates et heures      | 1998-02-16  | 4 à 8 octets     |
 
+
+
+- Ce sont ces types qui seront utilisés pour entreposer nos données biotiques et abiotiques.
+- Le choix d'un type approprié permet de réduire la taille du fichier de données.
 
 ---
 
@@ -368,7 +375,7 @@ Ces deux identifiants sont généralement identiques et peuvent être trouvés �
 **Exemple:** [http://spatialreference.org/ref/epsg/2138/](http://spatialreference.org/ref/epsg/2138/)
 
 
---- &twocol
+---
 
 #  L'absence de données
 
@@ -381,7 +388,7 @@ Ces deux identifiants sont généralement identiques et peuvent être trouvés �
 
 ## Selon vous, quelle est l'action la plus appropriée ?
 
---- &twocol
+---
 
 #  Le format des données
 
@@ -417,9 +424,65 @@ Pourquoi prendre soin de ces données ?
 <!--
 Les 3 R.
 C'est comme un livre, ça nous raconte l'histoire d'individu, d'une pop à un instant t à un endroit donné.
-Sommes-nous capables de juger de la valeur de ces données?
+Sommes-nous capables de juger de la valeur de ces données? -->
 
-TRANSTION vers SQL
+--- .transition
+
+# La saisie des données dans LibreOffice Calc
+
+--- &twocol
+
+# LibreOffice Calc
+
+*** =left
+
+<div style='text-align:center;'>
+<img src="assets/img/libre1.png" height="450px"></img>
+</div>
+
+*** =right
+
+`LibreOffice Calc` est la version gratuite et *open-source* de Microsoft Excel. L'ensemble des fonctionnalités présenté dans ce cours peuvent être retrouver dans Microsoft Excel.
+
+- Ouvrez LibreOffice Calc, en vous servant de la barre de lancement à votre gauche.
+
+---
+
+# Déterminez vos colonnes et le type de données
+
+<div style='text-align:center;'>
+<img src="assets/img/vid2.gif" height="540px" width="80%"></img>
+</div>
+
+<!-- N'oublier pas les différents points aborder précédemment dans le cours. Il faut dés maintenant les mettre en application. -->
+
+---
+
+# Consolidez vos données à l'aide de la validation
+
+<div style='text-align:center;'>
+<img src="assets/img/vid3.gif" height="540px" width="80%"></img>
+</div>
+
+
+---
+
+# Saisir l'information
+
+
+<div style='text-align:center;'>
+<img src="assets/img/vid4.gif" height="540px" width="80%"></img>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- TRANSTION vers SQL
 
 # La collecte de données
 

@@ -565,12 +565,50 @@
   <article data-timings="">
     <h2><strong>En informatique</strong>, on distingue plusieurs types de données:</h2>
 
-<ol>
-<li>Les entiers (<code>INTEGER</code>)</li>
-<li>Les nombres réels (<code>DOUBLE</code>, <code>FLOAT</code>)</li>
-<li>Les caractères (<code>CHAR</code>,<code>VARCHAR</code>)</li>
-<li>Les dates et heures (<code>TIMESTAMP</code>,<code>DATE</code>,<code>TIME</code>)</li>
-</ol>
+<table><thead>
+<tr>
+<th>Appelation</th>
+<th>Type</th>
+<th>Valeurs</th>
+<th>Taille</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>BOLEAN</code></td>
+<td>Boléen</td>
+<td>vrai/faux</td>
+<td>1 octet</td>
+</tr>
+<tr>
+<td><code>INTEGER</code></td>
+<td>Entiers</td>
+<td>-998, 123</td>
+<td>1 à 4 octets</td>
+</tr>
+<tr>
+<td><code>DOUBLE</code>, <code>FLOAT</code></td>
+<td>Nombres réels</td>
+<td>9.98, -4.34</td>
+<td>4 à 8 octets</td>
+</tr>
+<tr>
+<td><code>CHAR</code>,<code>VARCHAR</code></td>
+<td>Chaine de caractères</td>
+<td>lapin</td>
+<td>n x 1 à 8 octets</td>
+</tr>
+<tr>
+<td><code>TIMESTAMP</code>,<code>DATE</code>,<code>TIME</code></td>
+<td>Dates et heures</td>
+<td>1998-02-16</td>
+<td>4 à 8 octets</td>
+</tr>
+</tbody></table>
+
+<ul>
+<li>Ce sont ces types qui seront utilisés pour entreposer nos données biotiques et abiotiques.</li>
+<li>Le choix d&#39;un type approprié permet de réduire la taille du fichier de données.</li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
@@ -851,10 +889,11 @@
   <!-- Presenter Notes -->
 </slide>
 <slide class="" id="slide-26" style="background:;">
+  <!--  <a href="#slide-26"></a> -->
   <hgroup>
     <h1>L&#39;absence de données</h1>
   </hgroup>
-  <article>
+  <article data-timings="">
     <h2>On peut représenter l&#39;absence de données de plusieurs façons:</h2>
 
 <ul>
@@ -866,19 +905,15 @@
 
 <h2>Selon vous, quelle est l&#39;action la plus appropriée ?</h2>
 
-    <div class='left' style='float:left;width:48%'>
-     
-    </div>
-    <div class='right' style='float:right;width:48%'>
-     
-    </div>
   </article>
+  <!-- Presenter Notes -->
 </slide>
 <slide class="" id="slide-27" style="background:;">
+  <!--  <a href="#slide-27"></a> -->
   <hgroup>
     <h1>Le format des données</h1>
   </hgroup>
-  <article>
+  <article data-timings="">
     <h2>On peut représenter l&#39;absence de données de plusieurs façons:</h2>
 
 <ul>
@@ -891,13 +926,8 @@
 <li><p>Mettre <code>-9999</code> dans une colonne numérique: Ce choix peut être utilisé seulement pour les jeux de données très importants (centaine de Megas-octet), et doit être référencé dans les métadonnées.</p></li>
 </ul>
 
-    <div class='left' style='float:left;width:48%'>
-     
-    </div>
-    <div class='right' style='float:right;width:48%'>
-     
-    </div>
   </article>
+  <!-- Presenter Notes -->
 </slide>
 <slide class="" id="slide-28" style="background:;">
   <!--  <a href="#slide-28"></a> -->
@@ -929,9 +959,82 @@
 <!--
 Les 3 R.
 C'est comme un livre, ça nous raconte l'histoire d'individu, d'une pop à un instant t à un endroit donné.
-Sommes-nous capables de juger de la valeur de ces données?
+Sommes-nous capables de juger de la valeur de ces données? -->
 
-TRANSTION vers SQL
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-30" style="background:;">
+  <!--  <a href="#slide-30"></a> -->
+  <hgroup>
+    <h1>La saisie des données dans LibreOffice Calc</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-31" style="background:;">
+  <hgroup>
+    <h1>LibreOffice Calc</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <div style='text-align:center;'>
+<img src="assets/img/libre1.png" height="450px"></img>
+</div>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><code>LibreOffice Calc</code> est la version gratuite et <em>open-source</em> de Microsoft Excel. L&#39;ensemble des fonctionnalités présenté dans ce cours peuvent être retrouver dans Microsoft Excel.</p>
+
+<ul>
+<li>Ouvrez LibreOffice Calc, en vous servant de la barre de lancement à votre gauche.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-32" style="background:;">
+  <!--  <a href="#slide-32"></a> -->
+  <hgroup>
+    <h1>Déterminez vos colonnes et le type de données</h1>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align:center;'>
+<img src="assets/img/vid2.gif" height="540px" width="80%"></img>
+</div>
+
+<!-- N'oublier pas les différents points aborder précédemment dans le cours. Il faut dés maintenant les mettre en application. -->
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-33" style="background:;">
+  <!--  <a href="#slide-33"></a> -->
+  <hgroup>
+    <h1>Consolidez vos données à l&#39;aide de la validation</h1>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align:center;'>
+<img src="assets/img/vid3.gif" height="540px" width="80%"></img>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-34" style="background:;">
+  <!--  <a href="#slide-34"></a> -->
+  <hgroup>
+    <h1>Saisir l&#39;information</h1>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align:center;'>
+<img src="assets/img/vid4.gif" height="540px" width="80%"></img>
+</div>
+
+<!-- TRANSTION vers SQL
 
 # La collecte de données
 
@@ -1118,6 +1221,36 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
       <a href="#" target="_self" rel='tooltip' 
         data-slide=29 title='Finalement...'>
          29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='La saisie des données dans LibreOffice Calc'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='LibreOffice Calc'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='Déterminez vos colonnes et le type de données'>
+         32
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title='Consolidez vos données à l&#39;aide de la validation'>
+         33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title='Saisir l&#39;information'>
+         34
       </a>
     </li>
   </ul>
