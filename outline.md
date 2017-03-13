@@ -59,17 +59,12 @@ OpenScience015
 
 # BLOC 1 : Planification de la collecte et organisation des données (9 heures)
 
-## Cours 2: Collecte des données
+## Cours 2: Collecte des données (120 min)
 
 - Présentation : définition des données (30 min)
 
-<<<<<<< Updated upstream
-- Activité : Récolte des données dans le cours
-    - instructions
-=======
 - Activité : Récolte des données dans le cours (60 min)
     - instructions 
->>>>>>> Stashed changes
     - planification
     - récolte
     - formulaire de saisie
@@ -96,10 +91,12 @@ Miraldo et al. 2016
  La visualisation de la BD dans pgadmin est envisageable -->
 
 - Présentation : organisation relationnelle des données
+
   1. Pourquoi les bases de données relationnelles.
       - Difficulé de stocker les données en 2D
       - Éviter les redondances (voir règles de normalisation BD)
       - Séparer les données raw des analyses
+
   2. Intro SQL
       - La couche serveur
       - la couche client
@@ -120,16 +117,20 @@ Miraldo et al. 2016
           - Représentation des tables
           - Représentation
       - Exercice : design du schéma de la DB
+
   3. Le language SQL
       - Création de table:
           - CREATE - Déclaration de la table
       - Manipulation de table:
           - DROP
           - UPDATE
-      - Exercice : monter la base de données pour le cours  
+
+
+EXERCICE : monter la base de données pour le cours  
           - Créer les tables
           - Déterminer enregistrement unique (clés primaires)
           - Contrôle des relations
+
 
 ### Discussion : les promesses de l'utilisation des données ouvertes
 
@@ -142,6 +143,7 @@ Mills2015
 ## Cours 4: Input / output
 
 <!-- R sera utiliser pour injecter et retirer les donées -->
+
 - Présentation SQL Suite - saisie de données additionnelles (insert):
     - Les insertions de données en SQL
       - INSERT (ligne par ligne)

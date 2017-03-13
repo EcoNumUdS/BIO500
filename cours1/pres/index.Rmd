@@ -141,7 +141,7 @@ TODO: MISSING FILE bacteries.png
 ---
 # Le projet de session
 
-Est-ce que le réseau de collaboration entre les étudiants du bac en écologie a les mêmes propriétés que les réseaux écologiques ?
+Est-ce que le réseau de collaborations entre les étudiants du bacc en écologie a les mêmes propriétés que les réseaux écologiques ?
 
 ---.transition
 
@@ -153,7 +153,7 @@ Est-ce que le réseau de collaboration entre les étudiants du bac en écologie 
 
 ## Ces situations peuvent survenir lors de votre carrière professionnelle:
 
-**Situation 1.** Un employeur souhaite que vous réalisiez les mêmes analyses 3 ans plus tard sur des données difféntes.
+**Situation 1.** Un employeur souhaite que vous réalisiez les mêmes analyses 3 ans plus tard sur des données différentes.
 
 **Situation 2.** Vous avez commis une erreur dans votre saisie de données, vous devez reconduire vos analyses.
 
@@ -255,7 +255,7 @@ Au terme de ce cours, l'étudiant sera en mesure de réaliser l'ensemble de la  
 
 # Approche
 
-Les cours vont comprendre une période de présentation entrecoupée d'exercices, suivi d'une discussion générale sur des références clés (45).
+Les cours vont comprendre une période de présentation entrecoupée d'exercices, suivi d'une discussion générale sur des références clés.
 
 Nous progresserons dans l'exécution du travail de session et l'évaluation portera sur les étapes intermédiaires.
 
