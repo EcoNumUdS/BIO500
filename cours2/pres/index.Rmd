@@ -26,6 +26,28 @@ assets      :
 
 --- .transition
 
+# Projet de session
+
+---
+
+# Rappel du problème 
+
+Est-ce que le réseau de collaboration entre les étudiants est différent des réseaux écologiques ? 
+
+---
+
+# Rappel du problème 
+
+Est-ce que l'on parvient à expliquer une collaboraiton à partir de caractéristiques des noeuds ?
+
+---
+
+# Pour commencer
+
+En équipe de 4, on vous demande de commencer à planifier une campagne de collecte de données. Commencer par discuter des types de données que vous souhaitez récolter, faites la liste des informations nécessaires pour répondre à la question. Ensuite, établissez un protocole afin de récolter ces données. 
+
+--- .transition
+
 # Les types de données
 
 ---
@@ -475,8 +497,11 @@ Sommes-nous capables de juger de la valeur de ces données? -->
 </div>
 
 
+--- .transition
 
+# Retour sur le projet de session
 
+Maintenant que vous en savez plus sur le format des données et sur les règles de saisie, élaborez votre formulaire et commencez la récolte. Vous devez collecter les données pour le début de la séance de la semaine prochaine. 
 
 
 
