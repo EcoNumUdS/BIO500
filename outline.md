@@ -65,7 +65,7 @@ OpenScience015
 
 - Activité : Récolte des données dans le cours (60 min)
 <<<<<<< Updated upstream
-    - instructions 
+    - instructions
 =======
     - instructions
 >>>>>>> Stashed changes

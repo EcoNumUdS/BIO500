@@ -1,7 +1,7 @@
 ---
-title       : "Séance 2: Les données en biologie"
+title       : "Séance 3: L'organisation des données - 1"
 subtitle    : "BIO 500 - Méthodes en écologie computationnelle"
-author      : "Dominique Gravel"
+author      : "Dominique Gravel & Steve Vissault"
 job         : "Laboratoire d'écologie intégrative"
 logo        : "logo.png"
 framework   : io2012       # {io2012, html5slides, shower, dzslides, ...}

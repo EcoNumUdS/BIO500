@@ -1,0 +1,77 @@
+
+--- .transition
+
+# Les Systèmes de gestion de base de données
+
+--- &twocol
+
+# Les Systèmes de gestion de base de données
+
+*** =left
+
+<div style='text-align:center;'>
+  <img src="assets/img/flow_db.png" height="450px"></img>
+</div>
+
+*** =right
+
+- Les base de données sont présente sur un serveur.
+- Pour créer, interroger, gérer et maintenir des bases de données on utilisera un **[Système de Gestion de Base de Données](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es) (souvent appelé SGBD)** installée sur le serveur.
+
+--- &twocol
+
+# La diversités des SGBDs
+
+*** =left
+
+## Il en existe une multitude:
+
+<div style='text-align:center;'>
+  <img src="assets/img/sgbd.png" width="100%"></img>
+</div>
+
+*** =right
+
+>- Mais ces systèmes disposent tous d'un dénominateur commun: le `langage SQL`
+>- Dans ce cours, nous utiliserons le système de gestion de données `PostgreSQL`.
+
+---
+
+# Le langage SQL
+
+## Définition
+
+> Le SQL (Structured Query Language) est un langage permettant de communiquer avec une base de données.
+
+---
+
+# Le langage SQL
+
+## Le SQL permet:
+
+1. Créer une base de données (`CREATE DATABASE`).
+2. Créer des tables et établir des relations (`CREATE TABLE`)
+3. Insérer des données (`INSERT`)
+4. Interroger les données par requête (`SELECT`)
+5. Supprimer des données ou des tables (`DROP`, `DELETE`)
+6. Mettre à jour des données ou des tables (`UPDATE`, `ALTER`).
+7. Supprimer la base de données (`DROP DATABASE`).
+
+Chacune de ces commandes est une instruction SQL envoyée au serveur pour manipuler et interroger la base de données.
+
+---
+
+# Le langage SQL
+
+## Pour cette séance, nous nous attaderons seulement à:
+
+1. Créer une base de données (`CREATE DATABASE`).
+2. Créer des tables et établir des relations (`CREATE TABLE`).
+3. Supprimer des tables (`DROP TABLE`).
+4. Supprimer la base de données (`DROP DATABASE`).
+
+Soyez attentif car le travail de cette semaine consiste écrire un script qui permet la création de la base de données (tables et relations) pour entreposer vos données que vous avez collecté lors de la séance 2.
+
+--- .transition
+
+# Exercice: Création d'une base de données
