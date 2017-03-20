@@ -1,10 +1,8 @@
 # Séance 2
 
 - Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/cours2/) et en [PDF](./assets/pdf/S2-BIO500.pdf).
-- L'ensemble du matériel de cours est disponible sur la page du portail [moodle](https://www.usherbrooke.ca/moodle2-cours/course/view.php?id=12188).
+- L'ensemble du matériel de cours est disponible sur la page du portail [moodle](https://www.usherbrooke.ca/moodle2-cours/course/view.php?id=12189).
 
-<!-- TODO 1: Mettre cours 2 en PDF -->
-<!-- TODO 2: Changer le lien moodle -->
 
 --- .transition
 
@@ -26,7 +24,7 @@ Est-ce que l'on parvient à expliquer une collaboraiton à partir de caractéris
 
 # Pour commencer
 
-En équipe de 4, on vous demande de commencer à planifier une campagne de collecte de données. Commencez par discuter des types de données que vous souhaitez récolter, faites la liste des informations nécessaires pour répondre à la question. Ensuite, établissez un protocole afin de récolter ces données. 
+En équipe de 4, on vous demande de commencer à planifier une campagne de collecte de données. Commencez par discuter des types de données que vous souhaitez récolter, faites la liste des informations nécessaires pour répondre à la question. Ensuite, établissez un protocole afin de récolter ces données.
 
 --- .transition
 
@@ -502,10 +500,6 @@ Maintenant que vous en savez plus sur le format des données et sur les règles 
 
 - Pereira, H.M. 2016. A latitudinal gradient for genetic diversity. Science 353: 1494-1495.
 - Miraldo et al. 2016. An Anthropocene map of genetic diversity. Science 353: 1532-1535.
-
-
-
-Maintenant que vous en savez plus sur le format des données et sur les règles de saisie, élaborez votre formulaire et commencez la récolte. Vous devez collecter les données pour le début de la séance de la semaine prochaine.
 
 
 
