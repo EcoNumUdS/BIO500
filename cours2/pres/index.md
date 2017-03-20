@@ -48,7 +48,7 @@ En équipe de 4, on vous demande de commencer à planifier une campagne de colle
 
 --- .transition
 
-# Les types de données
+# Les données en biologie
 
 ---
 
@@ -155,7 +155,7 @@ Au sein de ce cours, nous nous attarderons à la façon de structurer ses donné
 ## Format large
 
 
-|ids   |esp  | 2010| 2011| 2014|
+|ID    |esp  | 2010| 2011| 2014|
 |:-----|:----|----:|----:|----:|
 |567-1 |acsa |  460|   NA|   NA|
 |567-2 |acsa |  100|   NA|   NA|
@@ -206,26 +206,27 @@ Au sein de ce cours, nous nous attarderons à la façon de structurer ses donné
 *** =left
 
 
-|ID_plot | ID_arbre| ID_multi|esp  | annees| dhp_mm|
-|:-------|--------:|--------:|:----|------:|------:|
-|A       |      567|        1|acsa |   2010|    460|
-|A       |      567|        2|acsa |   2010|    100|
-|A       |      567|        3|acsa |   2010|    120|
-|B       |      598|       NA|piru |   2011|    380|
-|B       |      876|       NA|abba |   2014|    160|
+|ID_arbre |esp  | annees| dhp_mm|
+|:--------|:----|------:|------:|
+|567-1    |acsa |   2010|    460|
+|567-2    |acsa |   2010|    100|
+|567-3    |acsa |   2010|    120|
+|598      |piru |   2011|    380|
+|876      |abba |   2014|    160|
+
 
 - Une colonne = une information
 
 *** =right
 
 
-|ID  |ID_multi |esp  | annees| dhp_mm|
-|:---|:--------|:----|------:|------:|
-|567 |1        |acsa |   2010|    460|
-|567 |2        |acsa |   2010|    100|
-|567 |3        |acsa |   2010|    120|
-|598 |NA       |piru |   2011|    380|
-|876 |NA       |abba |   2014|    160|
+|ID_arbre |ID_multi |esp  | annees| dhp_mm|
+|:--------|:--------|:----|------:|------:|
+|567      |1        |acsa |   2010|    460|
+|567      |2        |acsa |   2010|    100|
+|567      |3        |acsa |   2010|    120|
+|598      |NA       |piru |   2011|    380|
+|876      |NA       |abba |   2014|    160|
 
 ---
 

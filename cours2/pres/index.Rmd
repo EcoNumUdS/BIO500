@@ -48,7 +48,7 @@ En équipe de 4, on vous demande de commencer à planifier une campagne de colle
 
 --- .transition
 
-# Les types de données
+# Les données en biologie
 
 ---
 
@@ -158,6 +158,7 @@ kable(df,format="markdown")
 ```{r echo=FALSE}
 library(reshape2)
 df2 <- dcast(ids + esp ~ annees, data=df, value.var="dhp_mm")
+names(df2)[1] <- "ID"
 kable(df2,format="markdown")
 ```
 
@@ -198,8 +199,14 @@ kable(melt(clim,id=c("ID_plot",'annees'),value.name="valeur"),format="markdown")
 *** =left
 
 ```{r echo=FALSE}
-kable(df,format="markdown")
+ids <- c("567-1","567-2","567-3","598","876")
+esp <- c("acsa","acsa","acsa","piru","abba")
+annees <- c(2010,2010,2010,2011,2014)
+dhp_mm <- c(460,100,120,380,160)
+df5 <- data.frame(ID_arbre=ids,esp=esp,annees=annees,dhp_mm=dhp_mm)
+kable(df5,format="markdown")
 ```
+
 
 - Une colonne = une information
 
@@ -208,7 +215,7 @@ kable(df,format="markdown")
 ```{r echo=FALSE}
 ids <- c("567","567","567","598","876")
 sub_ids <- c("1","2","3",NA,NA)
-df <- data.frame(ID=ids,ID_multi=sub_ids,esp=esp,annees=annees,dhp_mm=dhp_mm)
+df <- data.frame(ID_arbre=ids,ID_multi=sub_ids,esp=esp,annees=annees,dhp_mm=dhp_mm)
 kable(df,format="markdown")
 ```
 
