@@ -41,7 +41,7 @@
 
 ## Définition
 
-> Le SQL (Structured Query Language) est un langage permettant de communiquer avec une base de données.
+> Le SQL (Structured Query Language) est le langage des SGBDs. Il permet de communiquer avec une base de données.
 
 ---
 
@@ -58,20 +58,77 @@
 7. Supprimer la base de données (`DROP DATABASE`).
 
 Chacune de ces commandes est une instruction SQL envoyée au serveur pour manipuler et interroger la base de données.
+C'est le langage le plus explicite que je connaisse.
 
 ---
 
 # Le langage SQL
 
-## Pour cette séance, nous nous attaderons seulement à:
+## Pour cette séance, nous nous attarderons seulement à:
 
 1. Créer une base de données (`CREATE DATABASE`).
 2. Créer des tables et établir des relations (`CREATE TABLE`).
-3. Supprimer des tables (`DROP TABLE`).
+3. Supprimer ou modifier des tables (`DROP TABLE`, `ALTER TABLE`).
 4. Supprimer la base de données (`DROP DATABASE`).
 
 Soyez attentif car le travail de cette semaine consiste écrire un script qui permet la création de la base de données (tables et relations) pour entreposer vos données que vous avez collecté lors de la séance 2.
 
 --- .transition
 
-# Exercice: Création d'une base de données
+# Exercice: Conceptualisation d'une base de données
+
+---
+
+# Étape 1. Faire une liste des champs
+
+
+---
+
+# Étape 2. Regrouper les champs dans des tables
+
+
+---
+
+# Étape 3. Assigner un type de données
+
+
+---
+
+# Étape 4. Établir les contraintes
+
+
+---
+
+# Étape 5. Établir le type de jointure entre les tables
+
+
+--- .transition
+
+# Transcrire ces étapes en SQL
+
+---
+
+# Se connecter au SGBD (PostgreSQL) via R
+
+---
+
+# Se connecter au SGBD (PostgreSQL) via pgAdmin3
+
+---
+
+# Création de la base de données
+
+
+---
+
+# Création des tables et jointure
+
+
+---
+
+# Modifier une table existante
+
+
+---
+
+# Supprimer la base de données
