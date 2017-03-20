@@ -44,11 +44,11 @@ Est-ce que l'on parvient à expliquer une collaboraiton à partir de caractéris
 
 # Pour commencer
 
-En équipe de 4, on vous demande de commencer à planifier une campagne de collecte de données. Commencer par discuter des types de données que vous souhaitez récolter, faites la liste des informations nécessaires pour répondre à la question. Ensuite, établissez un protocole afin de récolter ces données.
+En équipe de 4, on vous demande de commencer à planifier une campagne de collecte de données. Commencez par discuter des types de données que vous souhaitez récolter, faites la liste des informations nécessaires pour répondre à la question. Ensuite, établissez un protocole afin de récolter ces données. 
 
 --- .transition
 
-# Les types de données
+# Les données en biologie
 
 ---
 
@@ -124,7 +124,7 @@ Le type de données collectées conditionne les analyses statistiques que l'on p
 3. Temporelle
 4. Spatial
 
-Au sein de ce cours, nous nous attarderons à la façon de structurer ses données. J'aborderais les spécificités propres à chacune de ces dimensions. Nous attarderons d'abord au format des données, puis aux types de données.
+Au sein de ce cours, nous nous attarderons à la façon de structurer ses données. Les spécificités propres à chacune de ces dimensions seront présentées. D'abord le format des données, puis les types de données.
 
 --- .transition
 
@@ -231,7 +231,7 @@ Au sein de ce cours, nous nous attarderons à la façon de structurer ses donné
 
 #  Le format des données: colonnes
 
-## <span style="color:rgb(194, 0, 0);"> Important:</span> votre fichier brut de données (destinée au stockage à long terme) ne doit pas contenir de champ calculé (c.a.d. une nouvelle colonne avec une moyenne, etc..)
+## <span style="color:rgb(194, 0, 0);"> Important:</span> votre fichier de données brutes (destiné au stockage à long terme) ne doit pas contenir de champ calculé (c.a.d. une nouvelle colonne avec une moyenne, etc..)
 
 
 --- .transition
@@ -273,7 +273,7 @@ On utilisera préférablement la norme [ISO8601](https://fr.wikipedia.org/wiki/I
 
 # Les données temporelles
 
- Garder à l'esprit que vos données pourraient être réutilisées à travers le Monde. Les dates ne sont pas représentées de la même manière que l'on soit en Amérique du Nord ou en Europe. **Il est donc important de normaliser la saisie de ce type d'information.**
+ Gardez à l'esprit que vos données pourraient être réutilisées à travers le Monde. Les dates ne sont pas représentées de la même manière que l'on soit en Amérique du Nord ou en Europe. **Il est donc important de normaliser la saisie de ce type d'information.**
 
 --- &twocol
 
@@ -364,20 +364,20 @@ Une autre représentation de la date du jour peut-être basé sur le calendrier 
 *** =right
 
 
->- **Option 4:** Cette option couplée à l'option 3, est le meilleur choix.
+>- **Option 5:** Cette option couplée à l'option 3, est le meilleur choix.
 
 
 ---
 
 # Les données taxonomiques
 
-## On privilégie généralement, l'utilisation de code espèce standardisée:
+## On privilégie généralement l'utilisation de code espèce standardisée:
 
 1. ITIS
 2. VASCAN (Plantes vasculaires du Canada)
 3. NCBI
 
-**Avantage:** Chacune de ces institutions/infrastructures, nous permettent de valider et retirer l'ensemble de la classification taxonomique d'une espèce à partir de son code. Même si l'identifiant change (nouvelle classification), nous serons en mesure de trouver le nouvel identifiant taxonomique à partir de l'ancien.
+**Avantage:** Chacune de ces institutions/infrastructures nous permettent de valider et retirer l'ensemble de la classification taxonomique d'une espèce à partir de son code. Même si l'identifiant change (nouvelle classification), nous serons en mesure de trouver le nouvel identifiant taxonomique à partir de l'ancien.
 
 **Exemple:** [https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null)
 
@@ -464,7 +464,7 @@ Si l'on ne choisit pas le type de données approprié, cela aura diverses consé
 
 # Finalement...
 
-Pourquoi prendre soin de ces données ?
+Pourquoi prendre soins de ces données ?
 
 <!--
 Les 3 R.
@@ -487,7 +487,7 @@ Sommes-nous capables de juger de la valeur de ces données? -->
 
 *** =right
 
-`LibreOffice Calc` est la version gratuite et *open-source* de Microsoft Excel. L'ensemble des fonctionnalités présenté dans ce cours peuvent être retrouver dans Microsoft Excel.
+`LibreOffice Calc` est la version gratuite et *open-source* de Microsoft Excel. L'ensemble des fonctionnalités présentées dans ce cours se retrouve dans Microsoft Excel.
 
 - Ouvrez LibreOffice Calc, en vous servant de la barre de lancement à votre gauche.
 
@@ -522,7 +522,22 @@ Sommes-nous capables de juger de la valeur de ces données? -->
 
 --- .transition
 
-# Retour sur le projet de session
+# Lectures et travail pour la semaine prochaine
+
+---
+
+# Lectures et travail pour la semaine prochaine
+
+## Travail
+
+Maintenant que vous en savez plus sur le format des données et sur les règles de saisie, élaborez votre formulaire et commencez la récolte. Vous devez collecter les données pour le début de la séance de la semaine prochaine.
+
+## Lectures
+
+- Pereira, H.M. 2016. A latitudinal gradient for genetic diversity. Science 353: 1494-1495.
+- Miraldo et al. 2016. An Anthropocene map of genetic diversity. Science 353: 1532-1535.
+
+
 
 Maintenant que vous en savez plus sur le format des données et sur les règles de saisie, élaborez votre formulaire et commencez la récolte. Vous devez collecter les données pour le début de la séance de la semaine prochaine.
 
