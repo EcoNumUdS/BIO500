@@ -15,4 +15,4 @@ $(pdf): $(html)
 	$(deckpath)/phantomjs $(deckpath)/decktape.js -s 1280x720 --loadPause=5000 $(html) $(pdf)
 
 clean:
-	rm -rf pres/.cache pres/index.*
+	rm -rf pres/.cache pres/index.* pres/assets/fig/*

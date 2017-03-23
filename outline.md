@@ -2,38 +2,51 @@
 
 ## Cours 1
 
-- Présentation du projet de session
-    - Le "Bacon number"
-    - Exemple
-    - Représentation du réseau de Kevin Bacon
-    - Histoire du Bacon number
-    - Histoire du 'six degrees of separation'
-    - Parallèle avec les réseaux écologiques
-    - Question de session : est-ce que les réseaux de collaboration entre les étudiants du bacc ont les mêmes propriétés que les réseaux écologiques ?
+# Introduction (30 min)
+- Le "Bacon number"
+- Définition
+- Exemple
+- Histoire du Bacon number
+- Histoire du 'six degrees of separation'
+- Internet
+- Réseaux sociaux
+- Réseau trophique
+- Réseau plantes-pollinisateurs
+- Réseau bactéries phages
+- Question de session : est-ce que les réseaux de collaboration entre les étudiants du bacc ont les mêmes propriétés que les réseaux écologiques ?
 
+
+# La crise de reproductibitlié (30min)
 - Les étapes d'une étude scientifique (schéma)
-
-- Discussion sur la crise de reproductibilité : identification des étapes d'une étude scientifique susceptibles d'influer sur la reproductibilité
 
 - Exemples de situations problématiques dans la pratique professionnelle
 
-- Présentation du plan de cours
+- Discussion sur la crise de reproductibilité (30-60min) : identification des étapes d'une étude scientifique susceptibles d'influer sur la reproductibilité
+
+
+
+# Présentation du plan de cours (15 min)
     - Objectif général
     - Objectifs spécifiques
     - Contenu du cours
     - Approche
     - Évaluation
 
-- Présentation sur les réseaux
+# Présentation sur les réseaux (30 min)
     - théorie des graphs en physique, informatique, socio etc...
     - les types de réseaux écologiques
     - descripteurs de base des réseaux
 
-- Utilisation de la VM et utilisation de base de Ubuntu
+# Utilisation de la VM et utilisation de base de Ubuntu (30 min)
     - ouvrir le terminal
-    - organisation des données
+    - répertoires
     - ouvrir R
     - ouvrir sublimeText
+    - exécuter un script sur le terminal
+
+
+
+
 
 *** Lectures pour la semaine suivante:
 Baker2016
@@ -46,23 +59,32 @@ OpenScience015
 
 # BLOC 1 : Planification de la collecte et organisation des données (9 heures)
 
-## Cours 2: Collecte des données
+## Cours 2: Collecte des données (120 min)
 
-- Présentation : définition des données
+- Présentation : définition des données (30 min)
 
-- Activité : Récolte des données dans le cours
+- Activité : Récolte des données dans le cours (60 min)
+<<<<<<< Updated upstream
     - instructions
+=======
+    - instructions
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     - planification
     - récolte
     - formulaire de saisie
 
-- Activité : intégration des données entre les équipes
+- Activité : intégration des données entre les équipes (30 min)
     - Inventaire des champs
     - Format des tables
     - Définition en classe du format standard
     - Gestion des doublons
 
-### Discussion : est-ce qu'il y a une crise de la reproductibilité en science ?
+- Activité de collecte de données
+
+Suite du cours: création d'un formulaire sur libre office.
+
+### Discussion : est-ce qu'il y a une crise de la reproductibilité en science ? (30 min)
 
 *** Lectures pour la semaine suivante:
 Pereira 2016
@@ -78,10 +100,12 @@ Miraldo et al. 2016
  La visualisation de la BD dans pgadmin est envisageable -->
 
 - Présentation : organisation relationnelle des données
+
   1. Pourquoi les bases de données relationnelles.
       - Difficulé de stocker les données en 2D
       - Éviter les redondances (voir règles de normalisation BD)
       - Séparer les données raw des analyses
+
   2. Intro SQL
       - La couche serveur
       - la couche client
@@ -102,16 +126,20 @@ Miraldo et al. 2016
           - Représentation des tables
           - Représentation
       - Exercice : design du schéma de la DB
+
   3. Le language SQL
       - Création de table:
           - CREATE - Déclaration de la table
       - Manipulation de table:
           - DROP
           - UPDATE
-      - Exercice : monter la base de données pour le cours  
+
+
+EXERCICE : monter la base de données pour le cours  
           - Créer les tables
           - Déterminer enregistrement unique (clés primaires)
           - Contrôle des relations
+
 
 ### Discussion : les promesses de l'utilisation des données ouvertes
 
@@ -124,6 +152,7 @@ Mills2015
 ## Cours 4: Input / output
 
 <!-- R sera utiliser pour injecter et retirer les donées -->
+
 - Présentation SQL Suite - saisie de données additionnelles (insert):
     - Les insertions de données en SQL
       - INSERT (ligne par ligne)
@@ -161,6 +190,7 @@ Mills2015
     - Exercice : ajout d'une table (informations sur les cours) depuis R
     - Exercie: requête sur ....
 
+- Devoir: évaluation 1 - Ontologie commune au groupe, formulaire, script pour construire la base + insérer les données. Requêtes sur les tableaux
 
 ### Débat : les enjeux du partage de données
 
