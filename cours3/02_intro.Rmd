@@ -37,15 +37,15 @@
 </div>
 
 - Les BDs permettent de redimensionner ce problème (plusieurs tableaux de n-2 avec des relations) grâce au modèle d'entités-relations.
-- Chaque table corresponds à une dimension. Les tables sont liées entre-elles par des relations. Cette structure est appelé [schéma en étoile](https://en.wikipedia.org/wiki/Star_schema).
+- Chaque table correspond à une dimension. Les tables sont liées entre elles par des relations. Cette structure est appelée [schéma en étoile](https://en.wikipedia.org/wiki/Star_schema).
 
 ---
 
 # Avantages des bases de données
 
 - **Maintenir l'intégrité entre les enregistrements de nos tableaux**. Une observation ne peut être faite sur un site qui n'existe pas.
-- **Normaliser et contrôler la qualité des données**. Chaque colonne est un type précis de données. Des contraintes peuvent être établies sur chaque colonne.
-- **Éviter les redondances dans le stockage de l'information** (obtenir une [forme normale](https://fr.wikipedia.org/wiki/Forme_normale_(bases_de_donn%C3%A9es_relationnelles)), voir la section [Format de donnée du cours 2](https://econumuds.github.io/BIO500/cours2/#14).
+- **Normaliser et contrôler la qualité des données**. Chaque colonne est un type précis de données. Des contraintes peuvent être appliquées sur chaque colonne.
+- **Éviter les redondances dans le stockage de l'information** (obtenir une [forme normale](https://fr.wikipedia.org/wiki/Forme_normale_(bases_de_donn%C3%A9es_relationnelles)), voir la section [Format de donnée du cours 2](https://econumuds.github.io/BIO500/cours2/#14).  
 
 ---
 
@@ -53,7 +53,7 @@
 
 ## Autres avantages indéniables:
 
-- Gain de temps et de performance.
+- Obtenir un gain de temps et de performance.
 - Séparer les données brutes des données destinées aux analyses.
-- Flexibilité dans la préparation des données pour les analyses.
-- Multi-utilisateurs grâce à l'approche client-serveur.
+- Rendre flexible la préparation des données pour les analyses.
+- Pemettre le travail simultané de plusieurs utilisateurs grâce à l'approche client-serveur.

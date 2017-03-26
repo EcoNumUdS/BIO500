@@ -55,15 +55,15 @@ assets      :
 </div>
 
 - Les BDs permettent de redimensionner ce problème (plusieurs tableaux de n-2 avec des relations) grâce au modèle d'entités-relations.
-- Chaque table corresponds à une dimension. Les tables sont liées entre-elles par des relations. Cette structure est appelé [schéma en étoile](https://en.wikipedia.org/wiki/Star_schema).
+- Chaque table correspond à une dimension. Les tables sont liées entre elles par des relations. Cette structure est appelée [schéma en étoile](https://en.wikipedia.org/wiki/Star_schema).
 
 ---
 
 # Avantages des bases de données
 
 - **Maintenir l'intégrité entre les enregistrements de nos tableaux**. Une observation ne peut être faite sur un site qui n'existe pas.
-- **Normaliser et contrôler la qualité des données**. Chaque colonne est un type précis de données. Des contraintes peuvent être établies sur chaque colonne.
-- **Éviter les redondances dans le stockage de l'information** (obtenir une [forme normale](https://fr.wikipedia.org/wiki/Forme_normale_(bases_de_donn%C3%A9es_relationnelles)), voir la section [Format de donnée du cours 2](https://econumuds.github.io/BIO500/cours2/#14).
+- **Normaliser et contrôler la qualité des données**. Chaque colonne est un type précis de données. Des contraintes peuvent être appliquées sur chaque colonne.
+- **Éviter les redondances dans le stockage de l'information** (obtenir une [forme normale](https://fr.wikipedia.org/wiki/Forme_normale_(bases_de_donn%C3%A9es_relationnelles)), voir la section [Format de donnée du cours 2](https://econumuds.github.io/BIO500/cours2/#14).  
 
 ---
 
@@ -71,10 +71,10 @@ assets      :
 
 ## Autres avantages indéniables:
 
-- Gain de temps et de performance.
+- Obtenir un gain de temps et de performance.
 - Séparer les données brutes des données destinées aux analyses.
-- Flexibilité dans la préparation des données pour les analyses.
-- Multi-utilisateurs grâce à l'approche client-serveur.
+- Rendre flexible la préparation des données pour les analyses.
+- Pemettre le travail simultané de plusieurs utilisateurs grâce à l'approche client-serveur.
 
 --- &twocolw w1:40% w2:60%
 
@@ -91,8 +91,8 @@ assets      :
 *** =right
 
 - Le **serveur** est un ordinateur contenant la base de données.
-- Le serveur peut être votre machine, on se connectera alors **localement** (Généralement, environnement de développement).
-- Si le serveur est quelque part d'autre (accessible via le réseau), on parlera de **serveur distant** (Généralement, environnement de production).
+- Si le serveur est votre ordinateur, on se connectera alors **localement** (environnement de développement).
+- Si le serveur est physiquement ailleurs (mais accessible via le réseau), on parlera de **serveur distant** (environnement de production).
 
 
 --- &twocolw w1:40% w2:60%
@@ -109,8 +109,8 @@ assets      :
 
 *** =right
 
-- Le **client** peut être un logiciel tout comme un langage installé sur votre ordinateur. On se sert de ce langage ou logiciel pour interagir avec le serveur de base de données présent localement ou à distance.
-
+- Le **client** peut être un logiciel, tout comme un langage installé sur votre ordinateur.
+- On se sert de ce langage ou logiciel pour interagir avec le serveur de base de données présent localement ou à distance.
 - On peut donc avoir plusieurs **clients** sur un même ordinateur.
 
 --- &twocolw w1:40% w2:60%
@@ -128,10 +128,10 @@ assets      :
 
 *** =right
 
-- Il existe une grande diversité de clients, mais nous utiliserons essentiellement ces trois là:
+- Il existe une grande diversité de clients, mais nous utiliserons essentiellement les trois suivants:
   - **pgadmin3**: logiciel avec une interface graphique.
   - **R**: language de programmation scientifique.
-  - **psql**: un autre language pratique à savoir (si le temps le permet).
+  - **psql**: un autre language utile (si le temps le permet).
 
 <!-- Question, qu'est qui distingue un logiciel d'un langage? -->
 
@@ -151,15 +151,15 @@ assets      :
 
 *** =right
 
-**Le client** se connecte pour réaliser différentes opérations:
+**Le client** se connecte pour effectuer différentes opérations:
 
-1. Créer une base de données
-2. Créer des tables et établir des relations
-3. Insérer des données
-4. Interroger les données par requête
-5. Supprimer des données ou des tables
-6. Mettre à jour des données ou des tables
-7. Supprimer la base de données
+1. Créer une base de données.
+2. Créer des tables avec des relations.
+3. Insérer des données.
+4. Interroger les données par requête.
+5. Supprimer des données ou des tables.
+6. Mettre à jour des données ou des tables.
+7. Supprimer la base de données.
 
 
 --- &twocolw w1:40% w2:60%
@@ -193,11 +193,11 @@ L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant
 
 --- .transition
 
-# Les Systèmes de gestion de base de données
+# Les Systèmes de Gestion de Base de Données (SGBDs)
 
 --- &twocol
 
-# Les Systèmes de gestion de base de données
+# Les SGBDs
 
 *** =left
 
@@ -207,12 +207,12 @@ L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant
 
 *** =right
 
-- Les base de données sont présente sur un serveur.
-- Pour créer, interroger, gérer et maintenir des bases de données on utilisera un **[Système de Gestion de Base de Données](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es) (souvent appelé SGBD)** installée sur le serveur.
+- Les base de données sont présentes sur un serveur.
+- Pour créer, interroger, gérer et maintenir des bases de données, on utilisera un **[Système de Gestion de Base de Données](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es) (souvent appelé SGBD)** installé sur le serveur.
 
 --- &twocol
 
-# La diversités des SGBDs
+# La diversité des SGBDs
 
 *** =left
 
@@ -239,18 +239,17 @@ L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant
 
 # Le langage SQL
 
-## Le SQL permet:
+## Le `SQL` permet de:
 
 1. Créer une base de données (`CREATE DATABASE`).
-2. Créer des tables et établir des relations (`CREATE TABLE`)
-3. Insérer des données (`INSERT`)
-4. Interroger les données par requête (`SELECT`)
-5. Supprimer des données ou des tables (`DROP`, `DELETE`)
+2. Créer des tables et établir des relations (`CREATE TABLE`).
+3. Insérer des données (`INSERT`).
+4. Interroger les données par requête (`SELECT`).
+5. Supprimer des données ou des tables (`DROP`, `DELETE`).
 6. Mettre à jour des données ou des tables (`UPDATE`, `ALTER`).
 7. Supprimer la base de données (`DROP DATABASE`).
 
-Chacune de ces commandes est une instruction SQL envoyée au serveur pour manipuler et interroger la base de données.
-C'est le langage le plus explicite que je connaisse.
+Chacune de ces commandes est une instruction `SQL` envoyée au serveur pour manipuler et interroger la base de données.
 
 ---
 
@@ -263,7 +262,7 @@ C'est le langage le plus explicite que je connaisse.
 3. Supprimer ou modifier des tables (`DROP TABLE`, `ALTER TABLE`).
 4. Supprimer la base de données (`DROP DATABASE`).
 
-Soyez attentif car le travail de cette semaine consiste écrire un script qui permet la création de la base de données (tables et relations) pour entreposer vos données que vous avez collecté lors de la séance 2.
+Soyez attentifs, car le travail de cette semaine consiste à écrire un script qui permet la création de la base de données (les tables et leurs relations) pour entreposer les données que vous avez collectées lors de la séance 2.
 
 --- .transition
 
@@ -293,9 +292,9 @@ Soyez attentif car le travail de cette semaine consiste écrire un script qui pe
 
 ---
 
-# Étape 3. Établir le type d'associations entre les tables
+# Étape 3. Établir le type d'association entre les tables
 
-## Le concept de relations
+## Le concept d'association
 
 <div style='text-align:center;'>
   <img src="assets/img/card.svg" width="80%"></img>
@@ -303,30 +302,30 @@ Soyez attentif car le travail de cette semaine consiste écrire un script qui pe
 
 ---
 
-# Étape 3. Établir le type d'associations entre les tables
+# Étape 3. Établir le type d'association entre les tables
 
-## Ils en existent plusieurs:
+## Il existe plusieurs types d'association:
 
 | Table 1   | Table 2   | Relation                                       | exemple                        |
 |:----------|:----------|:-----------------------------------------------|:-------------------------------|
 | 1         | 1         | *one-to-one*                                   | personne ←→ permis de conduire |
-| 0..1 ou ? | 1         | optionnel dans la table 1, *one-to-one*        | permis de conduire ←→ personne |
+| 0..1      | 1         | optionnel dans la table 1, *one-to-one*        | permis de conduire ←→ personne |
 | 0..n ou n | 0..n or n | optionnel dans les deux tables, *many-to-many* | personne ←→ livre              |
 | 1..n ou n | 1         | *many-to-one*                                  | personne ←→ lieu de naissance  |
 
-**Exercice (5 minutes)**: Quel(s) type(s) d'associations retrouve-t-on entre nos tables?
+**Exercice (5 minutes)**: Quel(s) type(s) d'association retrouve-t-on entre nos tables?
 
 ---
 
 # Étape 4. Établir les clés primaires et étrangères
 
-## Le concept de clés primaires et clés étrangères
+## Le concept des clés primaires et des clés étrangères
 
 <div style='text-align:center;'>
   <img src="assets/img/keys_1.svg" width="70%"></img>
 </div>
 
-**Note:** Une `clé primaire` ne peut jamais être `NULL`.
+**Note:** Une clé primaire ne peut jamais être `NULL`.
 
 ---
 
@@ -334,8 +333,8 @@ Soyez attentif car le travail de cette semaine consiste écrire un script qui pe
 
 **Exercice (5 minutes)**
 
-1. Déterminer qu'elles sont les attributs/colonnes garantissant le caractère unique d'un enregistrement (ligne d'une table).
-2. Déterminer qu'elles sont les clés étrangères.
+1. Déterminer quelles sont les attributs/colonnes garantissant le caractère unique d'un enregistrement (ligne d'une table).
+2. Déterminer quelles sont les clés étrangères.
 
 
 ---
@@ -352,7 +351,7 @@ Chaque attribut d'une table doit correspondre à un type de données:
 | `CHAR`,`VARCHAR`          | Chaine de caractères | lapin       | n x 1 à 8 octets |
 | `TIMESTAMP`,`DATE`,`TIME` | Dates et heures      | 1998-02-16  | 4 à 8 octets     |
 
-Pour plus de détails, [voir la documentation PostgreSQL](http://docs.postgresql.fr/9.2/datatype.html)
+Pour tous les types de données, [voir la documentation PostgreSQL](http://docs.postgresql.fr/9.2/datatype.html)
 
 **Exercice (15 minutes):** Associer à chaque attribut un type de données.
 
@@ -360,12 +359,11 @@ Pour plus de détails, [voir la documentation PostgreSQL](http://docs.postgresql
 
 # En résumé
 
-## Finalement, qu'est ce qu'un modèle conceptuel pour une base de données?
+## Finalement, qu'est-ce qu'un modèle conceptuel pour une base de données?
 
-Une façon de représenter l'information dans un modèle de type entités-relations où chaque entité (table) dispose d'attributs (colonnes).
+Une façon de représenter l'information dans un modèle de type entités-relations où chaque entité (table) possède des attributs (colonnes).
 
 L'étape suivante est de transcrire ce modèle conceptuel des données en modèle logique de données (c.a.d compréhensible par l'ordinateur).
-
 
 --- .transition
 
