@@ -36,8 +36,8 @@
   <img src="assets/img/star_eg.png" width="50%"></img>
 </div>
 
-- Les BDs permettent de redimensionner ce problème (plusieurs tableaux de n-2 avec des relations).
-- Chaque table corresponds à une dimension. Les tables sont liées entre-elles par des relations. Cette structure est appelé [schéma en étoile](https://en.wikipedia.org/wiki/Star_schema)
+- Les BDs permettent de redimensionner ce problème (plusieurs tableaux de n-2 avec des relations) grâce au modèle d'entités-relations.
+- Chaque table corresponds à une dimension. Les tables sont liées entre-elles par des relations. Cette structure est appelé [schéma en étoile](https://en.wikipedia.org/wiki/Star_schema).
 
 ---
 

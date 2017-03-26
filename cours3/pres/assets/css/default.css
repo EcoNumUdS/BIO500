@@ -7,6 +7,10 @@ table th {
     text-transform: none;
 }
 
+table {
+  margin-bottom: 20px;
+}
+
 em {
     font-style: italic
 }
