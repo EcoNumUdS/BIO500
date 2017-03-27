@@ -21,7 +21,7 @@ assets      :
 # Séance 3
 
 - Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/cours3/) et en [PDF](./assets/pdf/S3-BIO500.pdf).
-- L'ensemble du matériel de cours est disponible sur la page du portail [moodle](https://www.usherbrooke.ca/moodle2-cours/course/view.php?id=12188).
+- L'ensemble du matériel de cours est disponible sur la page du portail [moodle](https://www.usherbrooke.ca/moodle2-cours/course/view.php?id=12189).
 
 <!-- TODO 1: Mettre cours 2 en PDF -->
 <!-- TODO 2: Changer le lien moodle -->
