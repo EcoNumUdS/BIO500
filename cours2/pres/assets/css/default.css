@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,400i,600,600i,700|PT+Sans:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,500,500i,600,600i,700');
+
+table th {
+    background: #ffffff;
+    color: rgb(42, 42, 42);
+    text-transform: none;
+}
+
+em {
+    font-style: italic
+}
+strong {
+    font-weight: bold;
+}
+
+slides > slide.backdrop {
+  background: white;
+}
+
+aside.gdbar img {
+    width: auto;
+    height: 85px;
+    position: relative;
+    padding-left: 100px;
+    right: 0;
+    margin: none;
+}
+
+h1, h2, h3 {
+  letter-spacing: normal;
+}
+
+.centerImage {
+    text-align: center;
+    display: block;
+    position: relative;
+}
+
+aside.gdbar {
+    width: 250px;
+}
+
+.title-slide hgroup>h1 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 45px;
+}
+
+.title-slide hgroup>h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 35px;
+}
+
+slide:not(.segue) h1 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+slide:not(.segue) h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 27px;
+    color: rgb(26, 26, 26);
+    font-weight: 600;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
+
+slide:not(.segue) p {
+    font-family: 'PT Sans', sans-serif;
+}
+
+slide:not(.segue) a:link {
+  font-weight: bold;
+  color: darkred;
+}
+
+slide:not(.segue) a:visited {
+    text-decoration: none;
+    color: darkred;
+    font-weight: bold;
+}
+
+
+article p, article li, article li.build, section p, section li {
+    font-family: 'PT Sans', sans-serif;    text-align: left;
+    font-size: 25px;
+    line-height: 1.5em;
+    color: #404040;
+}
+
+.caption {
+    font-weight: bold;
+    font-size: 0.75em;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+pre {
+  margin-bottom: 0px;
+}
