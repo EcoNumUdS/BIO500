@@ -5,22 +5,95 @@
 
 ---
 
+# Se connecter au SGBD (PostgreSQL)
+
+## Pour que le client communique avec la SGBD, les informations de connection au serveur sont indispensables:
+
+1. `host`: L'adresse du serveur. `localhost` si la base de données est sur votre ordinateur.
+2. `port`: La base de données écoute sur un port spécifique du serveur.
+3. `user`: le nom d'utilisateur
+4. `password`: le mot de passe de l'utilisateur.
+5. `dbname`: le nom de la base de données
+
+---&twocolw w1:50% w2:50%
+
 # Se connecter au SGBD (PostgreSQL) via R
 
+*** =right
 
----
+```{r, warnings=FALSE, message=FALSE}
+library(RPostgreSQL)
+con <- dbConnect(PostgreSQL(), host="localhost",
+        port=5432, user= "postgres", password=NA)
+```
+
+```{r, eval=FALSE}
+dbSendQuery(con,"Requête SQL à envoyer")
+```
+
+*** =left
+
+- `con` est un objet contenant la connection avec le serveur.
+- On utilisera la fonction `dbSendQuery()` pour envoyer les instructions SQL.
+- Le deuxième argument de la fonction `dbSendQuery()` est une chaine de caractère contenant la requête SQL.
+
+---&twocolw w1:45% w2:50%
 
 # Se connecter au SGBD (PostgreSQL) via pgAdmin3
 
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/pgadmin.png" width="90%"></img>
+</div>
+
+*** =left
+
+- On préfère parfois une interface graphique pour interagir avec la SGBD.
+
+---&twocolw w1:50% w2:50%
+
+# Création de la base de données via R
+
+## La première étable consiste à créer une base de données.
+
+```{r, error=FALSE}
+dbSendQuery(con,"CREATE DATABASE bd_films;")
+```
+
+La SGBD nous répond... mais elle n'a pas grand chose à ajouter.
+
+## Important:
+
+1. En SQL, chaque instruction se termine par un point-virgule.
+2. Les instructions sont écrites en majuscule et les variables en minuscule.
+3. Toutes les instructions SQL sont énumérées et expliquées en Français à cette adresse: [http://docs.postgresql.fr/9.5/sql-commands.html](http://docs.postgresql.fr/9.5/sql-commands.html)
+
 ---
 
-# Création de la base de données
+# Création de la base de données via R
 
+## Puis, on se connecte à cette nouvelle base de données grâce à la fonction `dbConnect()`:
+
+```{r}
+dbConnect(con,dbname="bd_films")
+```
 
 ---
 
-# Création des tables et jointure
+# Création des tables
 
+```sql
+CREATE TABLE films (
+    code        char(5),
+    titre       varchar(40),
+    did         integer,
+    date_prod   date,
+    genre       varchar(10),
+    duree       interval hour to minute,
+    CONSTRAINT code_titre PRIMARY KEY(code,titre)
+);
+```
 
 ---
 
@@ -30,3 +103,8 @@
 ---
 
 # Supprimer la base de données
+
+```{r}
+dbSendQuery(con,"DROP DATABASE bd_films;")
+dbDisconnect(con)
+```

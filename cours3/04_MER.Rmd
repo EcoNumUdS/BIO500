@@ -130,10 +130,13 @@ Soyez attentifs, car le travail de cette semaine consiste à écrire un script q
 ## Le concept des clés primaires et des clés étrangères
 
 <div style='text-align:center;'>
-  <img src="assets/img/keys_1.svg" width="70%"></img>
+  <img src="assets/img/keys_1.svg" width="45%"></img>
 </div>
 
-**Note:** Une clé primaire ne peut jamais être `NULL`.
+## Important:
+  - Une clé primaire garantie le caractère unique d'un enregistrement (ligne d'une table).
+  - Une clé primaire ne peut donc jamais être `NULL`.
+  - Une clé primaire peut être composite, une combinaison de colonnes.
 
 ---
 

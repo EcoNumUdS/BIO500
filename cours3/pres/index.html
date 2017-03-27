@@ -155,6 +155,8 @@
 <li>Séparer les données brutes des données destinées aux analyses.</li>
 <li>Rendre flexible la préparation des données pour les analyses.</li>
 <li>Pemettre le travail simultané de plusieurs utilisateurs grâce à l&#39;approche client-serveur.</li>
+<li>Déclencher des procédures de sauvegardes.</li>
+<li>Suivre les modifications/ajouts à la BD (journal de transactions).</li>
 </ul>
 
   </article>
@@ -532,10 +534,16 @@
     <h2>Le concept des clés primaires et des clés étrangères</h2>
 
 <div style='text-align:center;'>
-  <img src="assets/img/keys_1.svg" width="70%"></img>
+  <img src="assets/img/keys_1.svg" width="45%"></img>
 </div>
 
-<p><strong>Note:</strong> Une clé primaire ne peut jamais être <code>NULL</code>.</p>
+<h2>Important:</h2>
+
+<ul>
+<li>Une clé primaire garantie le caractère unique d&#39;un enregistrement (ligne d&#39;une table).</li>
+<li>Une clé primaire ne peut donc jamais être <code>NULL</code>.</li>
+<li>Une clé primaire peut être composite, une combinaison de colonnes.</li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
@@ -639,45 +647,138 @@
 <slide class="" id="slide-30" style="background:;">
   <!--  <a href="#slide-30"></a> -->
   <hgroup>
-    <h1>Se connecter au SGBD (PostgreSQL) via R</h1>
+    <h1>Se connecter au SGBD (PostgreSQL)</h1>
   </hgroup>
   <article data-timings="">
-    
+    <h2>Pour que le client communique avec la SGBD, les informations de connection au serveur sont indispensables:</h2>
+
+<ol>
+<li><code>host</code>: L&#39;adresse du serveur. <code>localhost</code> si la base de données est sur votre ordinateur.</li>
+<li><code>port</code>: La base de données écoute sur un port spécifique du serveur.</li>
+<li><code>user</code>: le nom d&#39;utilisateur</li>
+<li><code>password</code>: le mot de passe de l&#39;utilisateur.</li>
+<li><code>dbname</code>: le nom de la base de données</li>
+</ol>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 <slide class="" id="slide-31" style="background:;">
-  <!--  <a href="#slide-31"></a> -->
+  <hgroup>
+    <h1>Se connecter au SGBD (PostgreSQL) via R</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:50%'>
+     <ul>
+<li><code>con</code> est un objet contenant la connection avec le serveur.</li>
+<li>On utilisera la fonction <code>dbSendQuery()</code> pour envoyer les instructions SQL.</li>
+<li>Le deuxième argument de la fonction <code>dbSendQuery()</code> est une chaine de caractère contenant la requête SQL.</li>
+</ul>
+
+    </div>
+    <div class='right' style='float:right;width:50%'>
+     <pre><code class="r">library(RPostgreSQL)
+con &lt;- dbConnect(PostgreSQL(), host=&quot;localhost&quot;,
+        port=5432, user= &quot;postgres&quot;, password=NA)
+</code></pre>
+
+<pre><code class="r">dbSendQuery(con,&quot;Requête SQL à envoyer&quot;)
+</code></pre>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-32" style="background:;">
   <hgroup>
     <h1>Se connecter au SGBD (PostgreSQL) via pgAdmin3</h1>
   </hgroup>
-  <article data-timings="">
+  <article>
     
+    <div class='left' style='float:left;width:45%'>
+     <ul>
+<li>On préfère parfois une interface graphique pour interagir avec la SGBD.</li>
+</ul>
+
+    </div>
+    <div class='right' style='float:right;width:50%'>
+     <div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/pgadmin.png" width="90%"></img>
+</div>
+
+    </div>
   </article>
-  <!-- Presenter Notes -->
-</slide>
-<slide class="" id="slide-32" style="background:;">
-  <!--  <a href="#slide-32"></a> -->
-  <hgroup>
-    <h1>Création de la base de données</h1>
-  </hgroup>
-  <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
 </slide>
 <slide class="" id="slide-33" style="background:;">
-  <!--  <a href="#slide-33"></a> -->
   <hgroup>
-    <h1>Création des tables et jointure</h1>
+    <h1>Création de la base de données via R</h1>
   </hgroup>
-  <article data-timings="">
-    
+  <article>
+    <h2>La première étable consiste à créer une base de données.</h2>
+
+<pre><code class="r">dbSendQuery(con,&quot;CREATE DATABASE bd_films;&quot;)
+</code></pre>
+
+<pre><code>## &lt;PostgreSQLResult&gt;
+</code></pre>
+
+<p>La SGBD nous répond... mais elle n&#39;a pas grand chose à ajouter.</p>
+
+<h2>Important:</h2>
+
+<ol>
+<li>En SQL, chaque instruction se termine par un point-virgule.</li>
+<li>Les instructions sont écrites en majuscule et les variables en minuscule.</li>
+<li>Toutes les instructions SQL sont énumérées et expliquées en Français à cette adresse: <a href="http://docs.postgresql.fr/9.5/sql-commands.html">http://docs.postgresql.fr/9.5/sql-commands.html</a></li>
+</ol>
+
+    <div class='left' style='float:left;width:50%'>
+     
+    </div>
+    <div class='right' style='float:right;width:50%'>
+     
+    </div>
   </article>
-  <!-- Presenter Notes -->
 </slide>
 <slide class="" id="slide-34" style="background:;">
   <!--  <a href="#slide-34"></a> -->
+  <hgroup>
+    <h1>Création de la base de données via R</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Puis, on se connecte à cette nouvelle base de données grâce à la fonction <code>dbConnect()</code>:</h2>
+
+<pre><code class="r">dbConnect(con,dbname=&quot;bd_films&quot;)
+</code></pre>
+
+<pre><code>## &lt;PostgreSQLConnection&gt;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-35" style="background:;">
+  <!--  <a href="#slide-35"></a> -->
+  <hgroup>
+    <h1>Création des tables</h1>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="sql">CREATE TABLE films (
+    code        char(5),
+    titre       varchar(40),
+    did         integer,
+    date_prod   date,
+    genre       varchar(10),
+    duree       interval hour to minute,
+    CONSTRAINT code_titre PRIMARY KEY(code,titre)
+);
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-36" style="background:;">
+  <!--  <a href="#slide-36"></a> -->
   <hgroup>
     <h1>Modifier une table existante</h1>
   </hgroup>
@@ -686,13 +787,24 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-35" style="background:;">
-  <!--  <a href="#slide-35"></a> -->
+<slide class="" id="slide-37" style="background:;">
+  <!--  <a href="#slide-37"></a> -->
   <hgroup>
     <h1>Supprimer la base de données</h1>
   </hgroup>
   <article data-timings="">
-    
+    <pre><code class="r">dbSendQuery(con,&quot;DROP DATABASE bd_films;&quot;)
+</code></pre>
+
+<pre><code>## &lt;PostgreSQLResult&gt;
+</code></pre>
+
+<pre><code class="r">dbDisconnect(con)
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -876,38 +988,50 @@
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=30 title='Se connecter au SGBD (PostgreSQL) via R'>
+        data-slide=30 title='Se connecter au SGBD (PostgreSQL)'>
          30
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=31 title='Se connecter au SGBD (PostgreSQL) via pgAdmin3'>
+        data-slide=31 title='Se connecter au SGBD (PostgreSQL) via R'>
          31
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=32 title='Création de la base de données'>
+        data-slide=32 title='Se connecter au SGBD (PostgreSQL) via pgAdmin3'>
          32
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=33 title='Création des tables et jointure'>
+        data-slide=33 title='Création de la base de données via R'>
          33
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=34 title='Modifier une table existante'>
+        data-slide=34 title='Création de la base de données via R'>
          34
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=35 title='Supprimer la base de données'>
+        data-slide=35 title='Création des tables'>
          35
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title='Modifier une table existante'>
+         36
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title='Supprimer la base de données'>
+         37
       </a>
     </li>
   </ul>
