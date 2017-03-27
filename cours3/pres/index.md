@@ -255,6 +255,7 @@ Il faut ouvrir un terminal avec `<ctrl> <alt> <t>` et ensuite taper R
 - Il existe une grande diversité de clients, mais nous utiliserons essentiellement les trois suivants:
   - **pgadmin3**: logiciel avec une interface graphique.
   - **R**: language de programmation scientifique.
+
 <!-- - **psql**: un autre language utile (si le temps le permet). -->
 
 <!-- Question, qu'est qui distingue un logiciel d'un langage? -->
