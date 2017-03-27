@@ -1,0 +1,177 @@
+
+--- .transition
+
+# Les Systèmes de Gestion de Base de Données (SGBDs)
+
+--- &twocol
+
+# Les SGBDs
+
+*** =left
+
+<div style='text-align:center;'>
+  <img src="assets/img/flow_db.png" height="450px"></img>
+</div>
+
+*** =right
+
+- Les base de données sont présentes sur un serveur.
+- Pour créer, interroger, gérer et maintenir des bases de données, on utilisera un **[Système de Gestion de Base de Données](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es) (souvent appelé SGBD)** installé sur le serveur.
+
+--- &twocol
+
+# La diversité des SGBDs
+
+*** =left
+
+## Il en existe une multitude:
+
+<div style='text-align:center;'>
+  <img src="assets/img/sgbd.png" width="100%"></img>
+</div>
+
+*** =right
+
+>- Mais ces systèmes disposent tous d'un dénominateur commun: le `langage SQL`
+>- Dans ce cours, nous utiliserons le système de gestion de données `PostgreSQL`.
+
+---
+
+# Le langage SQL
+
+## Définition
+
+> Le SQL (Structured Query Language) est le langage des SGBDs. Il permet de communiquer avec une base de données.
+
+---
+
+# Le langage SQL
+
+## Le `SQL` permet de:
+
+1. Créer une base de données (`CREATE DATABASE`).
+2. Créer des tables et établir des relations (`CREATE TABLE`).
+3. Insérer des données (`INSERT`).
+4. Interroger les données par requête (`SELECT`).
+5. Supprimer des données ou des tables (`DROP`, `DELETE`).
+6. Mettre à jour des données ou des tables (`UPDATE`, `ALTER`).
+7. Supprimer la base de données (`DROP DATABASE`).
+
+Chacune de ces commandes est une instruction `SQL` envoyée au serveur pour manipuler et interroger la base de données.
+
+---
+
+# Le langage SQL
+
+## Pour cette séance, nous nous attarderons seulement à:
+
+1. Créer une base de données (`CREATE DATABASE`).
+2. Créer des tables et établir des relations (`CREATE TABLE`).
+3. Supprimer ou modifier des tables (`DROP TABLE`, `ALTER TABLE`).
+4. Supprimer la base de données (`DROP DATABASE`).
+
+Soyez attentifs, car le travail de cette semaine consiste à écrire un script qui permet la création de la base de données (les tables et leurs relations) pour entreposer les données que vous avez collectées lors de la séance 2.
+
+--- .transition
+
+# Conceptualisation d'une base de données en 5 étapes
+
+---
+
+# Étape 1. Faire une liste des variables
+
+**Exercice (15-20 minutes):**
+
+1. Dresser la liste des informations collectées par les différents groupes.
+2. Regrouper les variables communes entre les groupes pour obtenir une ontologie conjointe.
+
+---
+
+# Étape 2. Regrouper les variables dans des tables
+
+**Exercice (15-20 minutes):** Regrouper les variables dans des tables.
+
+1. Déterminer les tables/entités:
+  - Qu'elles sont les unités d'échantillonnage? autrement dit, sur quelles entités portent nos mesures?
+2. Remplir les tables avec les champs de l'étape 1.
+
+
+À ce stade de la conceptualisation, une table est une entité possédant des attributs. Chaque attribut est une colonne.
+
+---
+
+# Étape 3. Établir le type d'association entre les tables
+
+## Le concept d'association
+
+<div style='text-align:center;'>
+  <img src="assets/img/card.svg" width="80%"></img>
+</div>
+
+---
+
+# Étape 3. Établir le type d'association entre les tables
+
+## Il existe plusieurs types d'association:
+
+| Table 1   | Table 2   | Relation                                       | exemple                        |
+|:----------|:----------|:-----------------------------------------------|:-------------------------------|
+| 1         | 1         | *one-to-one*                                   | personne ←→ permis de conduire |
+| 0..1      | 1         | optionnel dans la table 1, *one-to-one*        | permis de conduire ←→ personne |
+| 0..n ou n | 0..n or n | optionnel dans les deux tables, *many-to-many* | personne ←→ livre              |
+| 1..n ou n | 1         | *many-to-one*                                  | personne ←→ lieu de naissance  |
+
+**Exercice (5 minutes)**: Quel(s) type(s) d'association retrouve-t-on entre nos tables?
+
+---
+
+# Étape 4. Établir les clés primaires et étrangères
+
+## Le concept des clés primaires et des clés étrangères
+
+<div style='text-align:center;'>
+  <img src="assets/img/keys_1.svg" width="45%"></img>
+</div>
+
+## Important:
+  - Une clé primaire garantie le caractère unique d'un enregistrement (ligne d'une table).
+  - Une clé primaire ne peut donc jamais être `NULL`.
+  - Une clé primaire peut être composite, une combinaison de colonnes.
+
+---
+
+# Étape 4. Établir les clés primaires et étrangères
+
+**Exercice (5 minutes)**
+
+1. Déterminer quelles sont les attributs/colonnes garantissant le caractère unique d'un enregistrement (ligne d'une table).
+2. Déterminer quelles sont les clés étrangères.
+
+
+---
+
+# Étape 5. Assigner un type de données aux attributs
+
+Chaque attribut d'une table doit correspondre à un type de données:
+
+| Appelation                | Type                 | Valeurs     | Taille           |
+|:--------------------------|:---------------------|:------------|:-----------------|
+| `BOLEAN`                  | Boléen               | vrai/faux   | 1 octet          |
+| `INTEGER`                 | Entiers              | -998, 123   | 1 à 4 octets     |
+| `DOUBLE`, `FLOAT`         | Nombres réels        | 9.98, -4.34 | 4 à 8 octets     |
+| `CHAR`,`VARCHAR`          | Chaine de caractères | lapin       | n x 1 à 8 octets |
+| `TIMESTAMP`,`DATE`,`TIME` | Dates et heures      | 1998-02-16  | 4 à 8 octets     |
+
+Pour tous les types de données, [voir la documentation PostgreSQL](http://docs.postgresql.fr/9.2/datatype.html)
+
+**Exercice (15 minutes):** Associer à chaque attribut un type de données.
+
+---
+
+# En résumé
+
+## Finalement, qu'est-ce qu'un modèle conceptuel pour une base de données?
+
+Une façon de représenter l'information dans un modèle de type entités-relations où chaque entité (table) possède des attributs (colonnes).
+
+L'étape suivante est de transcrire ce modèle conceptuel des données en modèle logique de données (c.a.d compréhensible par l'ordinateur).

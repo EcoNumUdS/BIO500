@@ -1,77 +1,110 @@
 
 --- .transition
 
-# Les Systèmes de gestion de base de données
+# Transcrire ces étapes en SQL
 
---- &twocol
+---
 
-# Les Systèmes de gestion de base de données
+# Se connecter au SGBD (PostgreSQL)
 
-*** =left
+## Pour que le client communique avec la SGBD, les informations de connection au serveur sont indispensables:
 
-<div style='text-align:center;'>
-  <img src="assets/img/flow_db.png" height="450px"></img>
-</div>
+1. `host`: L'adresse du serveur. `localhost` si la base de données est sur votre ordinateur.
+2. `port`: La base de données écoute sur un port spécifique du serveur.
+3. `user`: le nom d'utilisateur
+4. `password`: le mot de passe de l'utilisateur.
+5. `dbname`: le nom de la base de données
+
+---&twocolw w1:50% w2:50%
+
+# Se connecter au SGBD (PostgreSQL) via R
 
 *** =right
 
-- Les base de données sont présente sur un serveur.
-- Pour créer, interroger, gérer et maintenir des bases de données on utilisera un **[Système de Gestion de Base de Données](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es) (souvent appelé SGBD)** installée sur le serveur.
+```{r, warnings=FALSE, message=FALSE}
+library(RPostgreSQL)
+con <- dbConnect(PostgreSQL(), host="localhost",
+        port=5432, user= "postgres", password=NA)
+```
 
---- &twocol
-
-# La diversités des SGBDs
+```{r, eval=FALSE}
+dbSendQuery(con,"Requête SQL à envoyer")
+```
 
 *** =left
 
-## Il en existe une multitude:
+- `con` est un objet contenant la connection avec le serveur.
+- On utilisera la fonction `dbSendQuery()` pour envoyer les instructions SQL.
+- Le deuxième argument de la fonction `dbSendQuery()` est une chaine de caractère contenant la requête SQL.
 
-<div style='text-align:center;'>
-  <img src="assets/img/sgbd.png" width="100%"></img>
-</div>
+---&twocolw w1:45% w2:50%
+
+# Se connecter au SGBD (PostgreSQL) via pgAdmin3
 
 *** =right
 
->- Mais ces systèmes disposent tous d'un dénominateur commun: le `langage SQL`
->- Dans ce cours, nous utiliserons le système de gestion de données `PostgreSQL`.
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/pgadmin.png" width="90%"></img>
+</div>
+
+*** =left
+
+- On préfère parfois une interface graphique pour interagir avec la SGBD.
+
+---&twocolw w1:50% w2:50%
+
+# Création de la base de données via R
+
+## La première étable consiste à créer une base de données.
+
+```{r, error=FALSE}
+dbSendQuery(con,"CREATE DATABASE bd_films;")
+```
+
+La SGBD nous répond... mais elle n'a pas grand chose à ajouter.
+
+## Important:
+
+1. En SQL, chaque instruction se termine par un point-virgule.
+2. Les instructions sont écrites en majuscule et les variables en minuscule.
+3. Toutes les instructions SQL sont énumérées et expliquées en Français à cette adresse: [http://docs.postgresql.fr/9.5/sql-commands.html](http://docs.postgresql.fr/9.5/sql-commands.html)
 
 ---
 
-# Le langage SQL
+# Création de la base de données via R
 
-## Définition
+## Puis, on se connecte à cette nouvelle base de données grâce à la fonction `dbConnect()`:
 
-> Le SQL (Structured Query Language) est un langage permettant de communiquer avec une base de données.
-
----
-
-# Le langage SQL
-
-## Le SQL permet:
-
-1. Créer une base de données (`CREATE DATABASE`).
-2. Créer des tables et établir des relations (`CREATE TABLE`)
-3. Insérer des données (`INSERT`)
-4. Interroger les données par requête (`SELECT`)
-5. Supprimer des données ou des tables (`DROP`, `DELETE`)
-6. Mettre à jour des données ou des tables (`UPDATE`, `ALTER`).
-7. Supprimer la base de données (`DROP DATABASE`).
-
-Chacune de ces commandes est une instruction SQL envoyée au serveur pour manipuler et interroger la base de données.
+```{r}
+dbConnect(con,dbname="bd_films")
+```
 
 ---
 
-# Le langage SQL
+# Création des tables
 
-## Pour cette séance, nous nous attaderons seulement à:
+```sql
+CREATE TABLE films (
+    code        char(5),
+    titre       varchar(40),
+    did         integer,
+    date_prod   date,
+    genre       varchar(10),
+    duree       interval hour to minute,
+    CONSTRAINT code_titre PRIMARY KEY(code,titre)
+);
+```
 
-1. Créer une base de données (`CREATE DATABASE`).
-2. Créer des tables et établir des relations (`CREATE TABLE`).
-3. Supprimer des tables (`DROP TABLE`).
-4. Supprimer la base de données (`DROP DATABASE`).
+---
 
-Soyez attentif car le travail de cette semaine consiste écrire un script qui permet la création de la base de données (tables et relations) pour entreposer vos données que vous avez collecté lors de la séance 2.
+# Modifier une table existante
 
---- .transition
 
-# Exercice: Création d'une base de données
+---
+
+# Supprimer la base de données
+
+```{r}
+dbSendQuery(con,"DROP DATABASE bd_films;")
+dbDisconnect(con)
+```

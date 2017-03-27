@@ -14,8 +14,8 @@
 *** =right
 
 - Le **serveur** est un ordinateur contenant la base de données.
-- Le serveur peut être votre machine, on se connectera alors **localement** (Généralement, environnement de développement).
-- Si le serveur est quelque part d'autre (accessible via le réseau), on parlera de **serveur distant** (Généralement, environnement de production).
+- Si le serveur est votre ordinateur, on se connectera alors **localement** (environnement de développement).
+- Si le serveur est physiquement ailleurs (mais accessible via le réseau), on parlera de **serveur distant** (environnement de production).
 
 
 --- &twocolw w1:40% w2:60%
@@ -32,8 +32,8 @@
 
 *** =right
 
-- Le **client** peut être un logiciel tout comme un langage installé sur votre ordinateur. On se sert de ce langage ou logiciel pour interagir avec le serveur de base de données présent localement ou à distance.
-
+- Le **client** peut être un logiciel, tout comme un langage installé sur votre ordinateur.
+- On se sert de ce langage ou logiciel pour interagir avec le serveur de base de données présent localement ou à distance.
 - On peut donc avoir plusieurs **clients** sur un même ordinateur.
 
 --- &twocolw w1:40% w2:60%
@@ -51,10 +51,10 @@
 
 *** =right
 
-- Il existe une grande diversité de clients, mais nous utiliserons essentiellement ces trois là:
+- Il existe une grande diversité de clients, mais nous utiliserons essentiellement les trois suivants:
   - **pgadmin3**: logiciel avec une interface graphique.
   - **R**: language de programmation scientifique.
-  - **psql**: un autre language pratique à savoir (si le temps le permet).
+  - **psql**: un autre language utile (si le temps le permet).
 
 <!-- Question, qu'est qui distingue un logiciel d'un langage? -->
 
@@ -74,15 +74,15 @@
 
 *** =right
 
-**Le client** se connecte pour réaliser différentes opérations:
+**Le client** se connecte pour effectuer différentes opérations:
 
-1. Créer une base de données
-2. Créer des tables et établir des relations
-3. Insérer des données
-4. Interroger les données par requête
-5. Supprimer des données ou des tables
-6. Mettre à jour des données ou des tables
-7. Supprimer la base de données
+1. Créer une base de données.
+2. Créer des tables avec des relations.
+3. Insérer des données.
+4. Interroger les données par requête.
+5. Supprimer des données ou des tables.
+6. Mettre à jour des données ou des tables.
+7. Supprimer la base de données.
 
 
 --- &twocolw w1:40% w2:60%
