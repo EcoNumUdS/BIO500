@@ -255,7 +255,7 @@ Il faut ouvrir un terminal avec `<ctrl> <alt> <t>` et ensuite taper R
 - Il existe une grande diversité de clients, mais nous utiliserons essentiellement les trois suivants:
   - **pgadmin3**: logiciel avec une interface graphique.
   - **R**: language de programmation scientifique.
-  - **psql**: un autre language utile (si le temps le permet).
+<!-- - **psql**: un autre language utile (si le temps le permet). -->
 
 <!-- Question, qu'est qui distingue un logiciel d'un langage? -->
 
@@ -399,7 +399,7 @@ Soyez attentifs, car le travail de cette semaine consiste à écrire un script q
 **Exercice (15-20 minutes):**
 
 1. Dresser la liste des informations collectées par les différents groupes.
-2. Regrouper les variables communes entre les groupes pour obtenir une ontologie conjointe.
+2. Regrouper les variables communes entre les équipes pour obtenir une ontologie conjointe.
 
 ---
 
@@ -408,7 +408,7 @@ Soyez attentifs, car le travail de cette semaine consiste à écrire un script q
 **Exercice (15-20 minutes):** Regrouper les variables dans des tables.
 
 1. Déterminer les tables/entités:
-  - Qu'elles sont les unités d'échantillonnage? autrement dit, sur quelles entités portent nos mesures?
+  - Qu'elles sont les unités d'échantillonnage? Autrement dit, sur quelles entités portent nos mesures?
 2. Remplir les tables avec les variables de l'étape 1.
 
 
@@ -460,7 +460,7 @@ Soyez attentifs, car le travail de cette semaine consiste à écrire un script q
 
 **Exercice (5 minutes)**
 
-1. Déterminer quelles sont les attributs/colonnes garantissant le caractère unique d'un enregistrement (ligne d'une table).
+1. Déterminer quels sont les attributs/colonnes garantissant le caractère unique d'un enregistrement (ligne d'une table).
 2. Déterminer quelles sont les clés étrangères.
 
 
@@ -498,6 +498,16 @@ L'étape suivante est de transcrire ce modèle conceptuel des données en modèl
 
 ---
 
+# Les grandes étapes
+
+1. Spécifier la connexion avec le serveur
+2. Créer la base de données
+3. Créer les tables et spécifier les clés
+4. Ajouter de l'information dans les tables
+5. Faire des requêtes pour extraire l'information 
+
+---
+
 # Se connecter au SGBD (PostgreSQL)
 
 ## Pour que le client communique avec la SGBD, les informations de connection au serveur sont indispensables:
@@ -526,9 +536,9 @@ dbSendQuery(con,"Instructions SQL à envoyer")
 
 *** =left
 
-- `con` est un objet contenant la connection avec le serveur.
+- `con` est un objet contenant la connexion avec le serveur.
 - On utilisera la fonction `dbSendQuery()` pour envoyer les instructions SQL.
-- Le deuxième argument de la fonction `dbSendQuery()` est une chaine de caractère contenant les instructions SQL.
+- Le deuxième argument de la fonction `dbSendQuery()` est une chaine de caractères contenant les instructions SQL.
 
 ---&twocolw w1:45% w2:50%
 
@@ -542,13 +552,11 @@ dbSendQuery(con,"Instructions SQL à envoyer")
 
 *** =left
 
-- On préfère parfois une interface graphique pour interagir avec la SGBD.
+- On préfère parfois un interface graphique pour interagir avec la SGBD.
 
 ---&twocolw w1:50% w2:50%
 
 # Création de la base de données via R
-
-La première étable consiste à créer une base de données.
 
 ```{r, error=FALSE}
 dbSendQuery(con,"CREATE DATABASE bd_films;")
@@ -559,7 +567,7 @@ La SGBD nous répond... mais elle n'a pas grand chose à ajouter.
 ## Important:
 
 1. En SQL, chaque instruction se termine par un point-virgule.
-2. Les instructions sont écrites en majuscule et les variables en minuscule.
+2. Les instructions sont écrites en majuscules et les variables en minuscules.
 3. Toutes les instructions SQL sont énumérées et expliquées en Français à cette adresse: [http://docs.postgresql.fr/9.5/sql-commands.html](http://docs.postgresql.fr/9.5/sql-commands.html)
 
 ---
@@ -596,7 +604,7 @@ CREATE TABLE films (
 
 - `films` est le nom de la table
 - Chaque attribut de la table (`code`,`titre` etc) dispose d'un type de données (`char(5)`, `varchar(40)` etc)
-- La dernière ligne corresponds aux contraintes de la table telle que la clé primaire. Cette contrainte est nommé `pkey_films`
+- La dernière ligne correspond aux contraintes de la table telle que la clé primaire. Cette contrainte est nommée `pkey_films`
 - **Question:** Cette clé primaire est composite ou simple?
 
 ---&twocol
@@ -623,7 +631,7 @@ CREATE TABLE acteurs (
 *** =right
 
 - On déclare `prenom` et `nom` comme étant la clé primaire de la table `acteurs`.
-- On référence les attributs `code` et `titre` comme étant une clé étrangère.
+- On référence les attributs `code` et `titre` comme étant la clé étrangère.
 
 ---&twocol
 
@@ -651,7 +659,7 @@ CREATE TABLE acteurs (
 ## Important:
 
 - On ne peut plus insérer d'acteurs jouant dans un film qui n'est pas référencé dans la table `films`. C'est ce que l'on appelle l'intégrité référentielle.
-- Lorsque l'on supprime un enregistrement dans `films`, les acteurs référencés à ce film vont être automatiquement être supprimer grâce à l'instruction `CASCADE`.
+- Lorsque l'on supprime un enregistrement dans `films`, les acteurs référencés à ce film vont être automatiquement supprimés grâce à l'instruction `CASCADE`.
 
 
 ---
@@ -682,7 +690,7 @@ dbSendQuery(con,films_sql)
 
 ## Exercice pour le travail de session (20 minutes):
 
-En vous inspirant des [exemples](http://docs.postgresqlfr.org/9.5/sql-createtable.html) et de la syntaxe SQL expliquée précédemment, essayer d'écrire le script contenant les instructions SQL permettant la création de table la `personnes`.
+En vous inspirant des [exemples](http://docs.postgresqlfr.org/9.5/sql-createtable.html) et de la syntaxe SQL expliquée précédemment, écrivez le script contenant les instructions SQL permettant la création de table la `personnes`.
 
 
 ---

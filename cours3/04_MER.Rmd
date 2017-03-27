@@ -83,7 +83,7 @@ Soyez attentifs, car le travail de cette semaine consiste à écrire un script q
 **Exercice (15-20 minutes):**
 
 1. Dresser la liste des informations collectées par les différents groupes.
-2. Regrouper les variables communes entre les groupes pour obtenir une ontologie conjointe.
+2. Regrouper les variables communes entre les équipes pour obtenir une ontologie conjointe.
 
 ---
 
@@ -92,7 +92,7 @@ Soyez attentifs, car le travail de cette semaine consiste à écrire un script q
 **Exercice (15-20 minutes):** Regrouper les variables dans des tables.
 
 1. Déterminer les tables/entités:
-  - Qu'elles sont les unités d'échantillonnage? autrement dit, sur quelles entités portent nos mesures?
+  - Qu'elles sont les unités d'échantillonnage? Autrement dit, sur quelles entités portent nos mesures?
 2. Remplir les tables avec les variables de l'étape 1.
 
 
@@ -144,7 +144,7 @@ Soyez attentifs, car le travail de cette semaine consiste à écrire un script q
 
 **Exercice (5 minutes)**
 
-1. Déterminer quelles sont les attributs/colonnes garantissant le caractère unique d'un enregistrement (ligne d'une table).
+1. Déterminer quels sont les attributs/colonnes garantissant le caractère unique d'un enregistrement (ligne d'une table).
 2. Déterminer quelles sont les clés étrangères.
 
 
