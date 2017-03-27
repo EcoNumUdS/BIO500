@@ -485,20 +485,21 @@ Sommes-nous capables de juger de la valeur de ces données? -->
 
 ---
 
-# Lectures et travail pour la semaine prochaine
+# Lectures et travail pour la semaine prochiane
 
 ## Travail
 
 Maintenant que vous en savez plus sur le format des données et sur les règles de saisie, élaborez votre formulaire et commencez la récolte. Vous devez collecter les données pour le début de la séance de la semaine prochaine.
 
-## Lectures
+---
+
+# Lectures et travail pour la semaine prochaine
+
+## Travail
 
 - Pereira, H.M. 2016. A latitudinal gradient for genetic diversity. Science 353: 1494-1495.
 - Miraldo et al. 2016. An Anthropocene map of genetic diversity. Science 353: 1532-1535.
 
-
-
-Maintenant que vous en savez plus sur le format des données et sur les règles de saisie, élaborez votre formulaire et commencez la récolte. Vous devez collecter les données pour le début de la séance de la semaine prochaine.
 
 
 
