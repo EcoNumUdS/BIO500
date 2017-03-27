@@ -527,19 +527,8 @@ L'étape suivante est de transcrire ce modèle conceptuel des données en modèl
 
 ```r
 library(RPostgreSQL)
-```
-
-```
-## Error in library(RPostgreSQL): there is no package called 'RPostgreSQL'
-```
-
-```r
 con <- dbConnect(PostgreSQL(), host="localhost",
         port=5432, user= "postgres", password=NA)
-```
-
-```
-## Error in eval(expr, envir, enclos): impossible de trouver la fonction "dbConnect"
 ```
 
 
@@ -572,9 +561,167 @@ dbSendQuery(con,"Instructions SQL à envoyer")
 # Création de la base de données via R
 
 
+```r
+dbSendQuery(con,"CREATE DATABASE bd_films;")
+```
+
+```
+## <PostgreSQLResult>
+```
+
+La SGBD nous répond... mais elle n'a pas grand chose à ajouter.
+
+## Important:
+
+1. En SQL, chaque instruction se termine par un point-virgule.
+2. Les instructions sont écrites en majuscules et les variables en minuscules.
+3. Toutes les instructions SQL sont énumérées et expliquées en Français à cette adresse: [http://docs.postgresql.fr/9.5/sql-commands.html](http://docs.postgresql.fr/9.5/sql-commands.html)
+
+---
+
+# Création de la base de données via R
+
+Puis, on se connecte à cette nouvelle base de données grâce à la fonction `dbConnect()`:
 
 
+```r
+dbConnect(con,dbname="bd_films")
+```
+
+```
+## <PostgreSQLConnection>
+```
+
+---&twocol
+
+# Création d'une table avec clé primaire
+
+*** =left
+
+Voici un exemple d'instruction SQL pour créer la table `films`.
+
+```sql
+CREATE TABLE films (
+    code        char(5),
+    titre       varchar(40),
+    did         integer,
+    date_prod   date,
+    genre       varchar(10),
+    duree       interval hour to minute,
+    PRIMARY KEY (code,titre)
+);
+```
+
+*** =right
+
+- `films` est le nom de la table
+- Chaque attribut de la table (`code`,`titre` etc) dispose d'un type de données (`char(5)`, `varchar(40)` etc)
+- La dernière ligne correspond aux contraintes de la table telle que la clé primaire. Cette contrainte est nommée `pkey_films`
+- **Question:** Cette clé primaire est composite ou simple?
+
+---&twocol
+
+# Création d'une table avec clé étrangère
+
+*** =left
+
+Si l'on veut créer une table `acteurs` et référencer cette table à la table `films`.
+
+```sql
+CREATE TABLE acteurs (
+    nom         varchar(40),
+    prenom      varchar(40),
+    naissance   date,
+    code        char(5),
+    titre       varchar(40),
+    PRIMARY KEY (nom,prenom),
+    FOREIGN KEY (code, titre) REFERENCES
+        films (code, titre) ON DELETE CASCADE
+);
+```
+
+*** =right
+
+- On déclare `prenom` et `nom` comme étant la clé primaire de la table `acteurs`.
+- On référence les attributs `code` et `titre` comme étant la clé étrangère.
+
+---&twocol
+
+# Création d'une table avec clé étrangère
+
+*** =left
+
+Si l'on veut créer une table `acteurs` et référencer cette table à la table `films`.
+
+```sql
+CREATE TABLE acteurs (
+    nom         varchar(40),
+    prenom      varchar(40),
+    naissance   date,
+    code        char(5),
+    titre       varchar(40),
+    PRIMARY KEY (nom,prenom),
+    FOREIGN KEY (code, titre) REFERENCES
+        films (code, titre) ON DELETE CASCADE
+);
+```
+
+*** =right
+
+## Important:
+
+- On ne peut plus insérer d'acteurs jouant dans un film qui n'est pas référencé dans la table `films`. C'est ce que l'on appelle l'intégrité référentielle.
+- Lorsque l'on supprime un enregistrement dans `films`, les acteurs référencés à ce film vont être automatiquement supprimés grâce à l'instruction `CASCADE`.
 
 
+---
+
+# Création d'une table avec R
+
+## On se sert de R pour envoyer l'instruction SQL de création de la table:
 
 
+```r
+films_sql <- "
+CREATE TABLE films (
+    code        char(5),
+    titre       varchar(40),
+    did         integer,
+    date_prod   date,
+    genre       varchar(10),
+    duree       interval hour to minute,
+    PRIMARY KEY(code,titre)
+);"
+
+dbSendQuery(con,films_sql)
+```
+
+---
+
+# Création d'une table
+
+## Exercice pour le travail de session (20 minutes):
+
+En vous inspirant des [exemples](http://docs.postgresqlfr.org/9.5/sql-createtable.html) et de la syntaxe SQL expliquée précédemment, écrivez le script contenant les instructions SQL permettant la création de table la `personnes`.
+
+
+---
+
+# Supprimer la base de données
+
+
+```r
+dbSendQuery(con,"DROP DATABASE bd_films;")
+```
+
+```
+## <PostgreSQLResult>
+```
+
+```r
+dbDisconnect(con)
+```
+
+```
+## [1] TRUE
+```

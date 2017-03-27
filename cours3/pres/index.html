@@ -393,8 +393,8 @@
 
 <ul>
 <li><strong>pgadmin3</strong>: logiciel avec une interface graphique.</li>
-<li><strong>R</strong>: language de programmation scientifique.</li>
-<li><strong>psql</strong>: un autre language utile (si le temps le permet).</li>
+<li><strong>R</strong>: language de programmation scientifique.
+&lt;!-- - <strong>psql</strong>: un autre language utile (si le temps le permet). --&gt;</li>
 </ul></li>
 </ul>
 
@@ -600,7 +600,7 @@
 
 <ol>
 <li>Dresser la liste des informations collectées par les différents groupes.</li>
-<li>Regrouper les variables communes entre les groupes pour obtenir une ontologie conjointe.</li>
+<li>Regrouper les variables communes entre les équipes pour obtenir une ontologie conjointe.</li>
 </ol>
 
   </article>
@@ -618,7 +618,7 @@
 <li>Déterminer les tables/entités:
 
 <ul>
-<li>Qu&#39;elles sont les unités d&#39;échantillonnage? autrement dit, sur quelles entités portent nos mesures?</li>
+<li>Qu&#39;elles sont les unités d&#39;échantillonnage? Autrement dit, sur quelles entités portent nos mesures?</li>
 </ul></li>
 <li>Remplir les tables avec les variables de l&#39;étape 1.</li>
 </ol>
@@ -722,7 +722,7 @@
     <p><strong>Exercice (5 minutes)</strong></p>
 
 <ol>
-<li>Déterminer quelles sont les attributs/colonnes garantissant le caractère unique d&#39;un enregistrement (ligne d&#39;une table).</li>
+<li>Déterminer quels sont les attributs/colonnes garantissant le caractère unique d&#39;un enregistrement (ligne d&#39;une table).</li>
 <li>Déterminer quelles sont les clés étrangères.</li>
 </ol>
 
@@ -812,6 +812,23 @@
 <slide class="" id="slide-38" style="background:;">
   <!--  <a href="#slide-38"></a> -->
   <hgroup>
+    <h1>Les grandes étapes</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Spécifier la connexion avec le serveur</li>
+<li>Créer la base de données</li>
+<li>Créer les tables et spécifier les clés</li>
+<li>Ajouter de l&#39;information dans les tables</li>
+<li>Faire des requêtes pour extraire l&#39;information </li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-39" style="background:;">
+  <!--  <a href="#slide-39"></a> -->
+  <hgroup>
     <h1>Se connecter au SGBD (PostgreSQL)</h1>
   </hgroup>
   <article data-timings="">
@@ -828,7 +845,7 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-39" style="background:;">
+<slide class="" id="slide-40" style="background:;">
   <hgroup>
     <h1>Se connecter au SGBD (PostgreSQL) via R</h1>
   </hgroup>
@@ -836,9 +853,9 @@
     
     <div class='left' style='float:left;width:50%'>
      <ul>
-<li><code>con</code> est un objet contenant la connection avec le serveur.</li>
+<li><code>con</code> est un objet contenant la connexion avec le serveur.</li>
 <li>On utilisera la fonction <code>dbSendQuery()</code> pour envoyer les instructions SQL.</li>
-<li>Le deuxième argument de la fonction <code>dbSendQuery()</code> est une chaine de caractère contenant les instructions SQL.</li>
+<li>Le deuxième argument de la fonction <code>dbSendQuery()</code> est une chaine de caractères contenant les instructions SQL.</li>
 </ul>
 
     </div>
@@ -854,7 +871,7 @@ con &lt;- dbConnect(PostgreSQL(), host=&quot;localhost&quot;,
     </div>
   </article>
 </slide>
-<slide class="" id="slide-40" style="background:;">
+<slide class="" id="slide-41" style="background:;">
   <hgroup>
     <h1>Se connecter au SGBD (PostgreSQL) via pgAdmin3</h1>
   </hgroup>
@@ -862,7 +879,7 @@ con &lt;- dbConnect(PostgreSQL(), host=&quot;localhost&quot;,
     
     <div class='left' style='float:left;width:45%'>
      <ul>
-<li>On préfère parfois une interface graphique pour interagir avec la SGBD.</li>
+<li>On préfère parfois un interface graphique pour interagir avec la SGBD.</li>
 </ul>
 
     </div>
@@ -874,14 +891,12 @@ con &lt;- dbConnect(PostgreSQL(), host=&quot;localhost&quot;,
     </div>
   </article>
 </slide>
-<slide class="" id="slide-41" style="background:;">
+<slide class="" id="slide-42" style="background:;">
   <hgroup>
     <h1>Création de la base de données via R</h1>
   </hgroup>
   <article>
-    <p>La première étable consiste à créer une base de données.</p>
-
-<pre><code class="r">dbSendQuery(con,&quot;CREATE DATABASE bd_films;&quot;)
+    <pre><code class="r">dbSendQuery(con,&quot;CREATE DATABASE bd_films;&quot;)
 </code></pre>
 
 <pre><code>## &lt;PostgreSQLResult&gt;
@@ -893,7 +908,7 @@ con &lt;- dbConnect(PostgreSQL(), host=&quot;localhost&quot;,
 
 <ol>
 <li>En SQL, chaque instruction se termine par un point-virgule.</li>
-<li>Les instructions sont écrites en majuscule et les variables en minuscule.</li>
+<li>Les instructions sont écrites en majuscules et les variables en minuscules.</li>
 <li>Toutes les instructions SQL sont énumérées et expliquées en Français à cette adresse: <a href="http://docs.postgresql.fr/9.5/sql-commands.html">http://docs.postgresql.fr/9.5/sql-commands.html</a></li>
 </ol>
 
@@ -905,8 +920,8 @@ con &lt;- dbConnect(PostgreSQL(), host=&quot;localhost&quot;,
     </div>
   </article>
 </slide>
-<slide class="" id="slide-42" style="background:;">
-  <!--  <a href="#slide-42"></a> -->
+<slide class="" id="slide-43" style="background:;">
+  <!--  <a href="#slide-43"></a> -->
   <hgroup>
     <h1>Création de la base de données via R</h1>
   </hgroup>
@@ -922,7 +937,7 @@ con &lt;- dbConnect(PostgreSQL(), host=&quot;localhost&quot;,
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-43" style="background:;">
+<slide class="" id="slide-44" style="background:;">
   <hgroup>
     <h1>Création d&#39;une table avec clé primaire</h1>
   </hgroup>
@@ -947,39 +962,8 @@ con &lt;- dbConnect(PostgreSQL(), host=&quot;localhost&quot;,
      <ul>
 <li><code>films</code> est le nom de la table</li>
 <li>Chaque attribut de la table (<code>code</code>,<code>titre</code> etc) dispose d&#39;un type de données (<code>char(5)</code>, <code>varchar(40)</code> etc)</li>
-<li>La dernière ligne corresponds aux contraintes de la table telle que la clé primaire. Cette contrainte est nommé <code>pkey_films</code></li>
+<li>La dernière ligne correspond aux contraintes de la table telle que la clé primaire. Cette contrainte est nommée <code>pkey_films</code></li>
 <li><strong>Question:</strong> Cette clé primaire est composite ou simple?</li>
-</ul>
-
-    </div>
-  </article>
-</slide>
-<slide class="" id="slide-44" style="background:;">
-  <hgroup>
-    <h1>Création d&#39;une table avec clé étrangère</h1>
-  </hgroup>
-  <article>
-    
-    <div class='left' style='float:left;width:48%'>
-     <p>Si l&#39;on veut créer une table <code>acteurs</code> et référencer cette table à la table <code>films</code>.</p>
-
-<pre><code class="sql">CREATE TABLE acteurs (
-    nom         varchar(40),
-    prenom      varchar(40),
-    naissance   date,
-    code        char(5),
-    titre       varchar(40),
-    PRIMARY KEY (nom,prenom),
-    FOREIGN KEY (code, titre) REFERENCES
-        films (code, titre) ON DELETE CASCADE
-);
-</code></pre>
-
-    </div>
-    <div class='right' style='float:right;width:48%'>
-     <ul>
-<li>On déclare <code>prenom</code> et <code>nom</code> comme étant la clé primaire de la table <code>acteurs</code>.</li>
-<li>On référence les attributs <code>code</code> et <code>titre</code> comme étant une clé étrangère.</li>
 </ul>
 
     </div>
@@ -1008,18 +992,49 @@ con &lt;- dbConnect(PostgreSQL(), host=&quot;localhost&quot;,
 
     </div>
     <div class='right' style='float:right;width:48%'>
-     <h2>Important:</h2>
-
-<ul>
-<li>On ne peut plus insérer d&#39;acteurs jouant dans un film qui n&#39;est pas référencé dans la table <code>films</code>. C&#39;est ce que l&#39;on appelle l&#39;intégrité référentielle.</li>
-<li>Lorsque l&#39;on supprime un enregistrement dans <code>films</code>, les acteurs référencés à ce film vont être automatiquement être supprimer grâce à l&#39;instruction <code>CASCADE</code>.</li>
+     <ul>
+<li>On déclare <code>prenom</code> et <code>nom</code> comme étant la clé primaire de la table <code>acteurs</code>.</li>
+<li>On référence les attributs <code>code</code> et <code>titre</code> comme étant la clé étrangère.</li>
 </ul>
 
     </div>
   </article>
 </slide>
 <slide class="" id="slide-46" style="background:;">
-  <!--  <a href="#slide-46"></a> -->
+  <hgroup>
+    <h1>Création d&#39;une table avec clé étrangère</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <p>Si l&#39;on veut créer une table <code>acteurs</code> et référencer cette table à la table <code>films</code>.</p>
+
+<pre><code class="sql">CREATE TABLE acteurs (
+    nom         varchar(40),
+    prenom      varchar(40),
+    naissance   date,
+    code        char(5),
+    titre       varchar(40),
+    PRIMARY KEY (nom,prenom),
+    FOREIGN KEY (code, titre) REFERENCES
+        films (code, titre) ON DELETE CASCADE
+);
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <h2>Important:</h2>
+
+<ul>
+<li>On ne peut plus insérer d&#39;acteurs jouant dans un film qui n&#39;est pas référencé dans la table <code>films</code>. C&#39;est ce que l&#39;on appelle l&#39;intégrité référentielle.</li>
+<li>Lorsque l&#39;on supprime un enregistrement dans <code>films</code>, les acteurs référencés à ce film vont être automatiquement supprimés grâce à l&#39;instruction <code>CASCADE</code>.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-47" style="background:;">
+  <!--  <a href="#slide-47"></a> -->
   <hgroup>
     <h1>Création d&#39;une table avec R</h1>
   </hgroup>
@@ -1043,21 +1058,21 @@ dbSendQuery(con,films_sql)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-47" style="background:;">
-  <!--  <a href="#slide-47"></a> -->
+<slide class="" id="slide-48" style="background:;">
+  <!--  <a href="#slide-48"></a> -->
   <hgroup>
     <h1>Création d&#39;une table</h1>
   </hgroup>
   <article data-timings="">
     <h2>Exercice pour le travail de session (20 minutes):</h2>
 
-<p>En vous inspirant des <a href="http://docs.postgresqlfr.org/9.5/sql-createtable.html">exemples</a> et de la syntaxe SQL expliquée précédemment, essayer d&#39;écrire le script contenant les instructions SQL permettant la création de table la <code>personnes</code>.</p>
+<p>En vous inspirant des <a href="http://docs.postgresqlfr.org/9.5/sql-createtable.html">exemples</a> et de la syntaxe SQL expliquée précédemment, écrivez le script contenant les instructions SQL permettant la création de table la <code>personnes</code>.</p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-48" style="background:;">
-  <!--  <a href="#slide-48"></a> -->
+<slide class="" id="slide-49" style="background:;">
+  <!--  <a href="#slide-49"></a> -->
   <hgroup>
     <h1>Supprimer la base de données</h1>
   </hgroup>
@@ -1305,25 +1320,25 @@ dbSendQuery(con,films_sql)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=38 title='Se connecter au SGBD (PostgreSQL)'>
+        data-slide=38 title='Les grandes étapes'>
          38
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=39 title='Se connecter au SGBD (PostgreSQL) via R'>
+        data-slide=39 title='Se connecter au SGBD (PostgreSQL)'>
          39
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=40 title='Se connecter au SGBD (PostgreSQL) via pgAdmin3'>
+        data-slide=40 title='Se connecter au SGBD (PostgreSQL) via R'>
          40
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=41 title='Création de la base de données via R'>
+        data-slide=41 title='Se connecter au SGBD (PostgreSQL) via pgAdmin3'>
          41
       </a>
     </li>
@@ -1335,13 +1350,13 @@ dbSendQuery(con,films_sql)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=43 title='Création d&#39;une table avec clé primaire'>
+        data-slide=43 title='Création de la base de données via R'>
          43
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=44 title='Création d&#39;une table avec clé étrangère'>
+        data-slide=44 title='Création d&#39;une table avec clé primaire'>
          44
       </a>
     </li>
@@ -1353,20 +1368,26 @@ dbSendQuery(con,films_sql)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=46 title='Création d&#39;une table avec R'>
+        data-slide=46 title='Création d&#39;une table avec clé étrangère'>
          46
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=47 title='Création d&#39;une table'>
+        data-slide=47 title='Création d&#39;une table avec R'>
          47
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=48 title='Supprimer la base de données'>
+        data-slide=48 title='Création d&#39;une table'>
          48
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=49 title='Supprimer la base de données'>
+         49
       </a>
     </li>
   </ul>
