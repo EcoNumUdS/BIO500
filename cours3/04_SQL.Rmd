@@ -28,14 +28,14 @@ con <- dbConnect(PostgreSQL(), host="localhost",
 ```
 
 ```{r, eval=FALSE}
-dbSendQuery(con,"Requête SQL à envoyer")
+dbSendQuery(con,"Instructions SQL à envoyer")
 ```
 
 *** =left
 
 - `con` est un objet contenant la connection avec le serveur.
 - On utilisera la fonction `dbSendQuery()` pour envoyer les instructions SQL.
-- Le deuxième argument de la fonction `dbSendQuery()` est une chaine de caractère contenant la requête SQL.
+- Le deuxième argument de la fonction `dbSendQuery()` est une chaine de caractère contenant les instructions SQL.
 
 ---&twocolw w1:45% w2:50%
 
@@ -55,7 +55,7 @@ dbSendQuery(con,"Requête SQL à envoyer")
 
 # Création de la base de données via R
 
-## La première étable consiste à créer une base de données.
+La première étable consiste à créer une base de données.
 
 ```{r, error=FALSE}
 dbSendQuery(con,"CREATE DATABASE bd_films;")
@@ -73,15 +73,19 @@ La SGBD nous répond... mais elle n'a pas grand chose à ajouter.
 
 # Création de la base de données via R
 
-## Puis, on se connecte à cette nouvelle base de données grâce à la fonction `dbConnect()`:
+Puis, on se connecte à cette nouvelle base de données grâce à la fonction `dbConnect()`:
 
 ```{r}
 dbConnect(con,dbname="bd_films")
 ```
 
----
+---&twocol
 
-# Création des tables
+# Création d'une table avec clé primaire
+
+*** =left
+
+Voici un exemple d'instruction SQL pour créer la table `films`.
 
 ```sql
 CREATE TABLE films (
@@ -91,13 +95,101 @@ CREATE TABLE films (
     date_prod   date,
     genre       varchar(10),
     duree       interval hour to minute,
-    CONSTRAINT code_titre PRIMARY KEY(code,titre)
+    PRIMARY KEY (code,titre)
 );
+```
+
+*** =right
+
+- `films` est le nom de la table
+- Chaque attribut de la table (`code`,`titre` etc) dispose d'un type de données (`char(5)`, `varchar(40)` etc)
+- La dernière ligne corresponds aux contraintes de la table telle que la clé primaire. Cette contrainte est nommé `pkey_films`
+- **Question:** Cette clé primaire est composite ou simple?
+
+---&twocol
+
+# Création d'une table avec clé étrangère
+
+*** =left
+
+Si l'on veut créer une table `acteurs` et référencer cette table à la table `films`.
+
+```sql
+CREATE TABLE acteurs (
+    nom         varchar(40),
+    prenom      varchar(40),
+    naissance   date,
+    code        char(5),
+    titre       varchar(40),
+    PRIMARY KEY (nom,prenom),
+    FOREIGN KEY (code, titre) REFERENCES
+        films (code, titre) ON DELETE CASCADE
+);
+```
+
+*** =right
+
+- On déclare `prenom` et `nom` comme étant la clé primaire de la table `acteurs`.
+- On référence les attributs `code` et `titre` comme étant une clé étrangère.
+
+---&twocol
+
+# Création d'une table avec clé étrangère
+
+*** =left
+
+Si l'on veut créer une table `acteurs` et référencer cette table à la table `films`.
+
+```sql
+CREATE TABLE acteurs (
+    nom         varchar(40),
+    prenom      varchar(40),
+    naissance   date,
+    code        char(5),
+    titre       varchar(40),
+    PRIMARY KEY (nom,prenom),
+    FOREIGN KEY (code, titre) REFERENCES
+        films (code, titre) ON DELETE CASCADE
+);
+```
+
+*** =right
+
+## Important:
+
+- On ne peut plus insérer d'acteurs jouant dans un film qui n'est pas référencé dans la table `films`. C'est ce que l'on appelle l'intégrité référentielle.
+- Lorsque l'on supprime un enregistrement dans `films`, les acteurs référencés à ce film vont être automatiquement être supprimer grâce à l'instruction `CASCADE`.
+
+
+---
+
+# Création d'une table avec R
+
+## On se sert de R pour envoyer l'instruction SQL de création de la table:
+
+```{r eval=FALSE}
+films_sql <- "
+CREATE TABLE films (
+    code        char(5),
+    titre       varchar(40),
+    did         integer,
+    date_prod   date,
+    genre       varchar(10),
+    duree       interval hour to minute,
+    PRIMARY KEY(code,titre)
+);"
+
+dbSendQuery(con,films_sql)
+
 ```
 
 ---
 
-# Modifier une table existante
+# Création d'une table
+
+## Exercice pour le travail de session (20 minutes):
+
+En vous inspirant des [exemples](http://docs.postgresqlfr.org/9.5/sql-createtable.html) et de la syntaxe SQL expliquée précédemment, essayer d'écrire le script contenant les instructions SQL permettant la création de table la `personnes`.
 
 
 ---

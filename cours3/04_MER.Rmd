@@ -93,7 +93,7 @@ Soyez attentifs, car le travail de cette semaine consiste à écrire un script q
 
 1. Déterminer les tables/entités:
   - Qu'elles sont les unités d'échantillonnage? autrement dit, sur quelles entités portent nos mesures?
-2. Remplir les tables avec les champs de l'étape 1.
+2. Remplir les tables avec les variables de l'étape 1.
 
 
 À ce stade de la conceptualisation, une table est une entité possédant des attributs. Chaque attribut est une colonne.

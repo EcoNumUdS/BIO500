@@ -1,30 +1,38 @@
+
 --- .transition
 
 # Survol de Linux / Ubuntu
 
---- 
+---&twocol
+
 # L'environnement UNITY
 
 *** =left
-- Le lanceur 
-- Naviguer les fichers : <ctrl> <n>
+
+- Le lanceur
+- Naviguer dans les fichers : `<ctrl> <n>`
 - Chercher un programme
 - Changer les paramètres
 
 *** =right
+
 <div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/unity.png" width="90%"></img>
+  <img src="assets/img/unity.png" width="100%"></img>
 </div>
 
---- 
+
+---&twocol
+
 # L'environnement UNITY
-## Le terminal
 
 *** =left
-- Lancer le terminal <ctrl> <alt> <t>
-- Changer de répartoir avec '$ cd'
-- Liste des fichiers dans le dossier actuel avec '$ ls'
-- Installer des programmes $ sudo apt install unity-tweak-tool
+
+## Le terminal
+
+- Lancer le terminal `<ctrl> <alt> <t>`
+- Changer de répertoire avec `cd`
+- Liste des fichiers dans le dossier actuel avec `ls`
+- Installer des programmes `sudo apt install unity-tweak-tool`
 
 *** =right
 
@@ -32,68 +40,81 @@
   <img src="assets/img/terminal.png" width="90%"></img>
 </div>
 
+---&twocol
 
---- 
 # L'environnement UNITY
-## Lire un PDF
 
 *** =left
-- Le programme par défaut est 'Visionneur'
-- D'autres programmes sont disponibles, notamment pour éditer des PDFs. J'utilise 'xournal'
+
+## Lire un PDF
+
+- Le programme par défaut est `Visionneur`
+- D'autres programmes sont disponibles, notamment pour éditer des PDFs. J'utilise `xournal`.
 
 *** =right
+
 <div style='text-align:center;margin-top:10px;'>
   <img src="assets/img/miraldo.png" width="90%"></img>
 </div>
 
---- 
+---&twocol
+
 # L'environnement UNITY
-## Naviguer sur le web
 
 *** =left
-- 'FireFox' est le navigateur par défaut, vous pouvez aussi utiliser 'Chrome'
+
+## Naviguer sur le web
+
+- `FireFox` est le navigateur par défaut, vous pouvez aussi utiliser `Chrome`
 
 *** =right
+
 <div style='text-align:center;margin-top:10px;'>
   <img src="assets/img/firefox.png" width="90%"></img>
 </div>
 
---- 
+---&twocol
+
 # Démarrer des programmes
-## SublimeText2
 
 *** =left
+
+## SublimeText2
+
 - Ouvrir un script
 - Nouveau script
 - Changer le surligneur de syntaxe
 
 *** =right
+
 <div style='text-align:center;margin-top:10px;'>
   <img src="assets/img/sublimetext.png" width="90%"></img>
 </div>
 
---- 
+---
+
 # Démarrer des programmes
+
 ## Lancer R à partir de SublimeText
 
-- Il faut lancer 'SublimeREPL' au moyen des touches <ctrl> <shift> <p> et sélection R
-- Une fois la nouvelle fenêtre ouverte, les commandes peuvent être soumises avec <ctrl> <enter>
+- Il faut lancer 'SublimeREPL' au moyen des touches `<ctrl> <shift> <p>` et sélection R
+- Une fois la nouvelle fenêtre ouverte, les commandes peuvent être soumises avec `<ctrl> <enter>`
 
-ASTUCE : les fenêtres sur Linux peuvent être alignées sur la gauche, la droite ou le centre automatiquement au moyen de la commande <ctr> <alt> <flèche>
+**ASTUCE:** les fenêtres sur Linux peuvent être alignées sur la gauche, la droite ou le centre automatiquement au moyen de la commande `<ctr> <alt> <flèche>`
 
 
---- 
+---&twocol
+
 # Démarrer des programmes
-## R directement dans le terminal
 
 *** =left
-Il faut ouvrir un terminal avec <ctrl> <alt> <t> et ensuite taper R
+
+## R directement dans le terminal
+
+Il faut ouvrir un terminal avec `<ctrl> <alt> <t>` et ensuite taper R
 
 *** =right
+
 <div style='text-align:center;margin-top:10px;'>
   <img src="assets/img/terminalR.png" width="90%"></img>
 </div>
-
-
-
-

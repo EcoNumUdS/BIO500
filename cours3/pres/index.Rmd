@@ -15,7 +15,9 @@ url:
 license     : by-nc-sa
 assets      :
   css: "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
+
 ---
+
 # Séance 3
 
 - Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/cours3/) et en [PDF](./assets/pdf/S3-BIO500.pdf).
@@ -23,6 +25,126 @@ assets      :
 
 <!-- TODO 1: Mettre cours 2 en PDF -->
 <!-- TODO 2: Changer le lien moodle -->
+
+--- .transition
+
+# Survol de Linux / Ubuntu
+
+---&twocol
+
+# L'environnement UNITY
+
+*** =left
+
+- Le lanceur
+- Naviguer dans les fichers : `<ctrl> <n>`
+- Chercher un programme
+- Changer les paramètres
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/unity.png" width="100%"></img>
+</div>
+
+
+---&twocol
+
+# L'environnement UNITY
+
+*** =left
+
+## Le terminal
+
+- Lancer le terminal `<ctrl> <alt> <t>`
+- Changer de répertoire avec `cd`
+- Liste des fichiers dans le dossier actuel avec `ls`
+- Installer des programmes `sudo apt install unity-tweak-tool`
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/terminal.png" width="90%"></img>
+</div>
+
+---&twocol
+
+# L'environnement UNITY
+
+*** =left
+
+## Lire un PDF
+
+- Le programme par défaut est `Visionneur`
+- D'autres programmes sont disponibles, notamment pour éditer des PDFs. J'utilise `xournal`.
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/miraldo.png" width="90%"></img>
+</div>
+
+---&twocol
+
+# L'environnement UNITY
+
+*** =left
+
+## Naviguer sur le web
+
+- `FireFox` est le navigateur par défaut, vous pouvez aussi utiliser `Chrome`
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/firefox.png" width="90%"></img>
+</div>
+
+---&twocol
+
+# Démarrer des programmes
+
+*** =left
+
+## SublimeText2
+
+- Ouvrir un script
+- Nouveau script
+- Changer le surligneur de syntaxe
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/sublimetext.png" width="90%"></img>
+</div>
+
+---
+
+# Démarrer des programmes
+
+## Lancer R à partir de SublimeText
+
+- Il faut lancer 'SublimeREPL' au moyen des touches `<ctrl> <shift> <p>` et sélection R
+- Une fois la nouvelle fenêtre ouverte, les commandes peuvent être soumises avec `<ctrl> <enter>`
+
+**ASTUCE:** les fenêtres sur Linux peuvent être alignées sur la gauche, la droite ou le centre automatiquement au moyen de la commande `<ctr> <alt> <flèche>`
+
+
+---&twocol
+
+# Démarrer des programmes
+
+*** =left
+
+## R directement dans le terminal
+
+Il faut ouvrir un terminal avec `<ctrl> <alt> <t>` et ensuite taper R
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/terminalR.png" width="90%"></img>
+</div>
 
 --- .transition
 
@@ -287,7 +409,7 @@ Soyez attentifs, car le travail de cette semaine consiste à écrire un script q
 
 1. Déterminer les tables/entités:
   - Qu'elles sont les unités d'échantillonnage? autrement dit, sur quelles entités portent nos mesures?
-2. Remplir les tables avec les champs de l'étape 1.
+2. Remplir les tables avec les variables de l'étape 1.
 
 
 À ce stade de la conceptualisation, une table est une entité possédant des attributs. Chaque attribut est une colonne.
@@ -399,14 +521,14 @@ con <- dbConnect(PostgreSQL(), host="localhost",
 ```
 
 ```{r, eval=FALSE}
-dbSendQuery(con,"Requête SQL à envoyer")
+dbSendQuery(con,"Instructions SQL à envoyer")
 ```
 
 *** =left
 
 - `con` est un objet contenant la connection avec le serveur.
 - On utilisera la fonction `dbSendQuery()` pour envoyer les instructions SQL.
-- Le deuxième argument de la fonction `dbSendQuery()` est une chaine de caractère contenant la requête SQL.
+- Le deuxième argument de la fonction `dbSendQuery()` est une chaine de caractère contenant les instructions SQL.
 
 ---&twocolw w1:45% w2:50%
 
@@ -426,7 +548,7 @@ dbSendQuery(con,"Requête SQL à envoyer")
 
 # Création de la base de données via R
 
-## La première étable consiste à créer une base de données.
+La première étable consiste à créer une base de données.
 
 ```{r, error=FALSE}
 dbSendQuery(con,"CREATE DATABASE bd_films;")
@@ -444,15 +566,19 @@ La SGBD nous répond... mais elle n'a pas grand chose à ajouter.
 
 # Création de la base de données via R
 
-## Puis, on se connecte à cette nouvelle base de données grâce à la fonction `dbConnect()`:
+Puis, on se connecte à cette nouvelle base de données grâce à la fonction `dbConnect()`:
 
 ```{r}
 dbConnect(con,dbname="bd_films")
 ```
 
----
+---&twocol
 
-# Création des tables
+# Création d'une table avec clé primaire
+
+*** =left
+
+Voici un exemple d'instruction SQL pour créer la table `films`.
 
 ```sql
 CREATE TABLE films (
@@ -462,13 +588,101 @@ CREATE TABLE films (
     date_prod   date,
     genre       varchar(10),
     duree       interval hour to minute,
-    CONSTRAINT code_titre PRIMARY KEY(code,titre)
+    PRIMARY KEY (code,titre)
 );
+```
+
+*** =right
+
+- `films` est le nom de la table
+- Chaque attribut de la table (`code`,`titre` etc) dispose d'un type de données (`char(5)`, `varchar(40)` etc)
+- La dernière ligne corresponds aux contraintes de la table telle que la clé primaire. Cette contrainte est nommé `pkey_films`
+- **Question:** Cette clé primaire est composite ou simple?
+
+---&twocol
+
+# Création d'une table avec clé étrangère
+
+*** =left
+
+Si l'on veut créer une table `acteurs` et référencer cette table à la table `films`.
+
+```sql
+CREATE TABLE acteurs (
+    nom         varchar(40),
+    prenom      varchar(40),
+    naissance   date,
+    code        char(5),
+    titre       varchar(40),
+    PRIMARY KEY (nom,prenom),
+    FOREIGN KEY (code, titre) REFERENCES
+        films (code, titre) ON DELETE CASCADE
+);
+```
+
+*** =right
+
+- On déclare `prenom` et `nom` comme étant la clé primaire de la table `acteurs`.
+- On référence les attributs `code` et `titre` comme étant une clé étrangère.
+
+---&twocol
+
+# Création d'une table avec clé étrangère
+
+*** =left
+
+Si l'on veut créer une table `acteurs` et référencer cette table à la table `films`.
+
+```sql
+CREATE TABLE acteurs (
+    nom         varchar(40),
+    prenom      varchar(40),
+    naissance   date,
+    code        char(5),
+    titre       varchar(40),
+    PRIMARY KEY (nom,prenom),
+    FOREIGN KEY (code, titre) REFERENCES
+        films (code, titre) ON DELETE CASCADE
+);
+```
+
+*** =right
+
+## Important:
+
+- On ne peut plus insérer d'acteurs jouant dans un film qui n'est pas référencé dans la table `films`. C'est ce que l'on appelle l'intégrité référentielle.
+- Lorsque l'on supprime un enregistrement dans `films`, les acteurs référencés à ce film vont être automatiquement être supprimer grâce à l'instruction `CASCADE`.
+
+
+---
+
+# Création d'une table avec R
+
+## On se sert de R pour envoyer l'instruction SQL de création de la table:
+
+```{r eval=FALSE}
+films_sql <- "
+CREATE TABLE films (
+    code        char(5),
+    titre       varchar(40),
+    did         integer,
+    date_prod   date,
+    genre       varchar(10),
+    duree       interval hour to minute,
+    PRIMARY KEY(code,titre)
+);"
+
+dbSendQuery(con,films_sql)
+
 ```
 
 ---
 
-# Modifier une table existante
+# Création d'une table
+
+## Exercice pour le travail de session (20 minutes):
+
+En vous inspirant des [exemples](http://docs.postgresqlfr.org/9.5/sql-createtable.html) et de la syntaxe SQL expliquée précédemment, essayer d'écrire le script contenant les instructions SQL permettant la création de table la `personnes`.
 
 
 ---
