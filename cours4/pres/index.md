@@ -403,6 +403,10 @@ head(resume_films)
 
 # Exercice
 
+
+Compter le nombre d'acteurs par films
+Ordonner par acteur plus prolifique.
+
 ---
 
 # Jointures entre tables
@@ -467,7 +471,7 @@ head(acteurs_films,4)
 
 ---
 
-# Exercice 1
+# Exercice 3
 
 ## Combien il y a d'acteurs par film depuis les 10 dernières années?
 
@@ -476,12 +480,20 @@ on voudrait savoir le nombre d'acteurs par film depuis les 10 dernières années
 
 ---
 
-# Exercice 2
+# Exercice 4
 
 ## Existe-t-il un film sans acteurs?
 
 En vous servant de la base de données sur le serveur `pyrolle` et des types de jointures, on voudrait savoir s'il existe des films sans acteurs.
 
+
+---
+
+# Exercice 4
+
+## Croisé dynamique
+
+Nombre d'acteurs par année, par film
 
 ---
 
@@ -580,6 +592,6 @@ Avec UPDATE
 
 ---
 
-# supprimer des enregistrements  
+# Supprimer des enregistrements  
 
 Avec DELETE

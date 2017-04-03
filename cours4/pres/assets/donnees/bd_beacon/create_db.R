@@ -4,7 +4,7 @@ library(stringr)
 library(reshape2)
 
 # Open file
-db_films <- read.csv2(file("./donnees/bd_beacon/films_db.txt", encoding="ISO-8859-1"),fill=TRUE,stringsAsFactors=FALSE,header=FALSE)
+db_films <- read.csv2(file("./assets/donnees/bd_beacon/films_db.txt", encoding="ISO-8859-1"),fill=TRUE,stringsAsFactors=FALSE,header=FALSE)
 
 # Extraire les 4 chiffres entre parantheses pour l'années
 annees <- str_extract_all(db_films$V1,"\\([[:digit:]]{4}\\)")
@@ -25,6 +25,9 @@ titre <- str_trim(unlist(lapply(titre,function(x) return(x[1]))))
 # Recompose df
 films <- cbind(titre=titre,annees=annees,db_films[,2:ncol(db_films)],stringsAsFactors=FALSE)
 
+# Drop duplicated films
+films <- films[!duplicated(films$titre),]
+
 # melt films
 films <- melt(films,id=c("titre","annees"),na.rm=TRUE,value.name="acteurs")
 films <- films[,-c(3)]
@@ -34,13 +37,9 @@ films <- subset(films,!is.na(titre))
 films <- subset(films,!is.na(acteurs))
 
 
-
 # split acteur nom et prénom
 films$acteur_nom <- str_trim(unlist(lapply(str_split(films$acteurs,"[,]"),function(x) {return(x[1])})))
 films$acteur_prenom <- str_trim(unlist(lapply(str_split(films$acteurs,"[,]"),function(x) {return(x[2])})))
-
-# Drop duplicated films
-films <- films[!duplicated(films$titre),]
 
 # create subtables
 films$id_film <- as.numeric(as.factor(films$titre))
@@ -55,13 +54,13 @@ films <- unique(films[,c('id_film','titre','annees')])
 films$annees <- as.numeric(films$annees)
 
 # save as CSV and rda
-write.csv2(acteurs,file="./donnees/bd_beacon/bd_acteurs.csv",row.names=FALSE)
-write.csv2(films,file="./donnees/bd_beacon/bd_films.csv",row.names=FALSE)
+write.csv2(acteurs,file="./assets/donnees/bd_beacon/bd_acteurs.csv",row.names=FALSE)
+write.csv2(films,file="./assets/donnees/bd_beacon/bd_films.csv",row.names=FALSE)
 
 
 ## Prep for exercice
 # subset on 2007
 ex_films <- subset(films,annees=="2007")
 ex_acteurs <- subset(acteurs,id_film %in% ex_films$id)
-write.csv2(ex_acteurs,file="./donnees/bd_beacon/ex_2007_acteurs.csv",row.names=FALSE)
-write.csv2(ex_films,file="./donnees/bd_beacon/ex_2007_films.csv",row.names=FALSE)
+write.csv2(ex_acteurs,file="./assets/donnees/bd_beacon/ex_2007_acteurs.csv",row.names=FALSE)
+write.csv2(ex_films,file="./assets/donnees/bd_beacon/ex_2007_films.csv",row.names=FALSE)
