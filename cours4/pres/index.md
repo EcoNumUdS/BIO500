@@ -48,31 +48,34 @@ assets      :
 
 ---
 
-# Connexion au serveur de l'UdS
-
-L'adresse du serveur est `pyrole.dbio.fsci.usherbrooke.ca` sur le port `5432`.
-Il faut remplacer l'objet `pass` par le mot de passe du tableau.
+# Connexion au serveur
 
 
 
-## On ouvre la connexion:
 
 
 ```r
 library(RPostgreSQL)
 
 con <- dbConnect(PostgreSQL(),
-        host="pyrole.dbio.fsci.usherbrooke.ca",
+        host="localhost",
         port=5432,
-        user= "postgres",
-        password=pass)
+        user= "postgres")
 
-# On créé la base de données
+# On créé la base de données et on ferme la connexion
 dbSendQuery(con,"DROP DATABASE IF EXISTS bd_films;")
 dbSendQuery(con,"CREATE DATABASE bd_films;")
-# On se connect à la nouvelle base de données
-con <- dbConnect(con,dbname="bd_films")
+dbDisconnect(con)
+
+# On se connecte à la nouvelle base de données
+con <- dbConnect(PostgreSQL(),
+        host="localhost",
+        port=5432,
+        user= "postgres",
+        dbname="bd_films")
 ```
+
+**Question:** Sur ce script, où sont les instructions SQL? Òu sont les commandes R?
 
 ---
 
@@ -93,8 +96,6 @@ dbSendQuery(con,tbl_films)
 ```
 ## <PostgreSQLResult>
 ```
-
-**Question:** Sur ce script, où sont les instructions SQL? Òu sont les commandes R?
 
 ---
 
@@ -125,6 +126,10 @@ dbSendQuery(con,tbl_acteurs)
 
 `pgAdmin3` est un client avec une interface graphique permettant de visualiser si les opérations de création de tables ont bien été réalisées.
 
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/pgadmin_table.png" width="70%"></img>
+</div>
+
 
 --- .transition
 
@@ -141,12 +146,14 @@ On veut maintenant insérer des données dans les tables `acteurs` et `films`.
 ```sql
 INSERT INTO films(id_film,titre,annee_prod) VALUES (1,'la vie est belle',1997);
 INSERT INTO acteurs(id_acteur,prenom,nom,id_film) VALUES(1,'Nicoletta','Braschi',1);
-INSERT INTO acteurs(id_acteur,prenom,nom,id_film) VALUES(2,'Robertox','Benigni',1);
+INSERT INTO acteurs(id_acteur,prenom,nom,id_film) VALUES(2,'Roberto','Benigni',1);
 ```
 
 ---
 
-# Exercice (10 minutes)
+# Exercice 1 (10 minutes)
+
+## À l'aide de `INSERT`,
 
 1. Prenez un film de votre choix et insérer son titre et son année de parution dans la table `films`.
 2. Insérer les acteurs de ce film dans la tables `acteurs`.
@@ -155,13 +162,14 @@ INSERT INTO acteurs(id_acteur,prenom,nom,id_film) VALUES(2,'Robertox','Benigni',
 
 # SQL - `COPY ... FROM`
 
-L'instruction `COPY ... FROM` permet d'insérer plusieurs ligne à la fois:
+L'instruction SQL `COPY ... FROM` permet d'insérer plusieurs lignes à la fois:
 
 ```sql
-
-COPY  FROM
-
+COPY films FROM '/Users/SteveVissault/Documents/Git/BIO500/cours4/pres/assets/donnees/bd_beacon/bd_films.csv'
+WITH FORMAT CSV HEADER DELIMITER ';';
 ```
+
+Documentation: [http://docs.postgresql.fr/9.5/sql-copy.html](http://docs.postgresql.fr/9.5/sql-copy.html)
 
 ---
 
@@ -197,13 +205,13 @@ dbWriteTable(con,append=TRUE,name="acteurs",value=bd_acteurs, row.names=FALSE)
 
 Il est également possible d'insérer des données à partir du logiciel `pgAdmin3`.
 
-Ajouter
+**SCREENSHOT**
 
 ---
 
-# Exercice (15 minutes)
+# Exercice 2 (15 minutes)
 
-1. Dans une base de données locale `bd_films`, injecter les films de l'année 2007 avec leurs acteurs. Les données brutes sont contenues dans les fichiers [ex_2007_acteurs.csv](./assets/donnees/bd_beacon/ex_2007_acteurs.csv) et [ex_2007_films.csv](./assets/donnees/bd_beacon/ex_2007_films.csv).
+1. Dans la base de données `bd_films`, injecter les films de l'année 2007 avec leurs acteurs. Les données brutes sont contenues dans les fichiers [ex_2007_acteurs.csv](./assets/donnees/bd_beacon/ex_2007_acteurs.csv) et [ex_2007_films.csv](./assets/donnees/bd_beacon/ex_2007_films.csv).
 
 Vous pouvez utiliser la commande R `dbWriteTable`, l'instruction SQL `COPY` ou encore pgAdmin3 pour insérer les données.
 
@@ -215,7 +223,69 @@ Vous pouvez utiliser la commande R `dbWriteTable`, l'instruction SQL `COPY` ou e
 
 # Sélectionner des tables et des colonnes
 
-La connection est ouverte et accessible depuis l'objet `con`.
+
+*** =left
+
+
+
+```r
+sql_requete <- "SELECT * FROM films LIMIT 10;"
+
+films <- dbGetQuery(con,sql_requete)
+head(films)
+```
+
+```
+##   id_film                   titre annee_prod
+## 1       4        'Breaker' Morant       1980
+## 2       5             'burbs, The       1989
+## 3       6   'Crocodile' Dundee II       1988
+## 4       7 *batteries not included       1987
+## 5       3  ...And Justice for All       1979
+## 6       8                      10       1979
+```
+
+*** =right
+
+- `*` permet de ne pas spécifier une colonne en particulier.
+- Cette requête retournera toutes les colonnes de la table `films`
+- Note: L'instruction `LIMIT` est utiliser dans les prochaines diapos afin de permettre le rendu des requêtes sur une diapo.
+
+---&twocol
+
+# Sélectionner des enregistrements unique
+
+*** =left
+
+
+
+```r
+sql_requete <- "SELECT DISTINCT nom, prenom
+FROM acteurs LIMIT 10;"
+
+films <- dbGetQuery(con,sql_requete)
+head(films)
+```
+
+```
+##            nom       prenom
+## 1        Smith Douglas (VI)
+## 2     Hilliard       Ernest
+## 3        Young  Vanessa (I)
+## 4    Carpenter     Jack (I)
+## 5        Maron          Rob
+## 6 Kallianiotes       Helena
+```
+
+*** =right
+
+- L'instruction `DISTINCT` permettra de retourner la combinaison unique de noms et prénoms présent dans la table acteurs.
+
+---&twocol
+
+# Sélectionner des tables et des colonnes
+
+## La connexion est ouverte et toujours accessible depuis l'objet `con`.
 
 *** =left
 
@@ -277,11 +347,11 @@ head(derniers_films)
 
 *** =right
 
-- `ORDER BY` permet de trier par odre croissant (`ASC`) ou décroissant (`DESC`).
+- `ORDER BY` permet de trier par ordre croissant (`ASC`) ou décroissant (`DESC`).
 
 ---&twocol
 
-# Filtrer les absences de valeurs
+# Critères avec `NULL`
 
 *** =left
 
@@ -292,8 +362,8 @@ SELECT id_film, titre, annee_prod
   FROM films WHERE annee_prod IS NOT NULL
   ORDER BY annee_prod DESC
 ;"
-derniers_films <- dbGetQuery(con,sql_requete)
-head(derniers_films)
+annees_films <- dbGetQuery(con,sql_requete)
+head(annees_films)
 ```
 
 ```
@@ -308,12 +378,48 @@ head(derniers_films)
 
 *** =right
 
-- `WHERE`, spécifie les critères de la requète.
-- `IS NULL`
+- `WHERE`, spécifie les critères de la requête.
+- `annee_prod IS NULL` permet d'obtenir seulement les films n'ayant pas d'année de production.
 
----&twocol
+---&twocolw w1:55% w2:45%
 
-# Modifier les critères
+# Combiner les critères
+
+*** =left
+
+
+```r
+sql_requete <- "
+SELECT id_film, titre, annee_prod
+  FROM films WHERE
+  (annee_prod >= 1930 AND annee_prod <= 1940)
+  OR (annee_prod >= 1950 AND annee_prod <= 1960)
+  ORDER BY annee_prod
+;"
+derniers_films <- dbGetQuery(con,sql_requete)
+head(derniers_films)
+```
+
+```
+##   id_film                          titre annee_prod
+## 1     157 All Quiet on the Western Front       1930
+## 2     239                Animal Crackers       1930
+## 3     603               Blaue Engel, Der       1930
+## 4    1820                   Frankenstein       1931
+## 5    3106                              M       1931
+## 6    3398                Monkey Business       1931
+```
+
+*** =right
+
+- Multi-critères avec `AND` et `OR`
+- Les parenthèses définissent les priorités d'opérations.
+- Opérateurs de comparaison: `>=`,`<=`, `=` (Valeurs numériques)
+- [Documentation sur les opérateurs de comparaisons](https://www.postgresql.org/docs/9.1/static/functions-comparison.html)
+
+---&twocolw w1:55% w2:45%
+
+# Critères sur le texte avec `LIKE`
 
 *** =left
 
@@ -322,7 +428,6 @@ head(derniers_films)
 sql_requete <- "
 SELECT id_film, titre, annee_prod
   FROM films WHERE titre LIKE '%Voyage%'
-  AND annee_prod >= 1950
 ;"
 derniers_films <- dbGetQuery(con,sql_requete)
 head(derniers_films)
@@ -331,19 +436,28 @@ head(derniers_films)
 ```
 ##   id_film                         titre annee_prod
 ## 1    1662              Fantastic Voyage       1966
-## 2    4770 Star Trek IV: The Voyage Home       1986
+## 2    3654                  Now, Voyager       1942
+## 3    4770 Star Trek IV: The Voyage Home       1986
+## 4    5330       Voyage dans la lune, Le       1902
 ```
 
 *** =right
 
-- Multi-critères: `AND` `OR`
-- Recherche sur le texte: `LIKE`, `_`
-- Opérateurs de comparaison: `>=`,`<=`, `==` (Valeurs numériques)
-- https://www.postgresql.org/docs/9.1/static/functions-comparison.html
+- Rechercher dans le texte: `LIKE`
+- `%`: n'importe quels caractères
+- `_`: un seul caractère (exemple: `_1_` peut renvoyer `113` ou encore `A1C`)
+- Le critère contraire est aussi possible avec `NOT` (exemple: `WHERE titre NOT LIKE '%voyage%'`)
+
+---
+
+# Exercice 4 (10 minutes)
+
+Dans ta table `acteurs`, essayer de trouver votre acteur préféré avec `LIKE` ou avec `= 'votre_acteur_pref'`
+
 
 ---&twocol
 
-# Opération sur la table
+# Agréger l'information (1 ligne)
 
 *** =left
 
@@ -365,12 +479,13 @@ head(resume_films)
 
 *** =right
 
-- Faire des opérations sur les champs: `max`, `min`, `sum`, `avg`.
-- Renommer les colonnes: `AS`.
+- Pour faire une synthèse de l'information sur une seule ligne.
+- Faire des opérations sur les champs: `max`, `min`, `sum`, `avg`, `count`.
+- Renommer les colonnes avec `AS`.
 
 ---&twocol
 
-# Opération sur la table
+# Agréger l'information (plusieurs lignes par groupe)
 
 *** =left
 
@@ -397,15 +512,20 @@ head(resume_films)
 
 *** =right
 
-- `GROUP BY` définit les champs sur lequel se fera l'aggregation des données.
+- `COUNT` permet de dénombrer le nombre de lignes.
+- `GROUP BY` définit les champs sur lequel se fera l'agrégation des données.
 
 ---
 
-# Exercice
+# Exercice 5 (10 minutes)
 
+À l'aide de la base de données `bd_films`, dénombrer le nombre d'acteurs par films
 
-Compter le nombre d'acteurs par films
-Ordonner par acteur plus prolifique.
+Quels sont les 10 acteurs les plus prolifiques?
+
+---.transition
+
+# Jointures entre tables
 
 ---
 
@@ -471,7 +591,7 @@ head(acteurs_films,4)
 
 ---
 
-# Exercice 3
+# Exercice 4 (10-15 minutes)
 
 ## Combien il y a d'acteurs par film depuis les 10 dernières années?
 
@@ -480,32 +600,29 @@ on voudrait savoir le nombre d'acteurs par film depuis les 10 dernières années
 
 ---
 
-# Exercice 4
+# Exercice 5 (10-15 minutes)
 
 ## Existe-t-il un film sans acteurs?
 
-En vous servant de la base de données sur le serveur `pyrolle` et des types de jointures, on voudrait savoir s'il existe des films sans acteurs.
+En vous servant des types de jointures, on voudrait savoir s'il existe des films sans acteurs.
 
 
----
-
-# Exercice 4
-
-## Croisé dynamique
-
-Nombre d'acteurs par année, par film
-
----
+---&twocolw w1:55% w2:45%
 
 # Requêtes emboitées
 
-On s'interroge sur le nombre moyen d'acteurs par années.
-Pour ce faire, on peut batîr une requête à partir d'autre requête.
+*** =right
+
+- On s'interroge sur le nombre moyen d'acteurs par années.
+
+- Pour ce faire, on peut bâtir une requête à partir d'une autre requête.
+
+*** =left
 
 
 ```r
 sql_requete <- "
-SELECT annee_prod, avg(nb_acteurs) AS mu FROM (
+SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
   SELECT titre, annee_prod, count(nom) AS nb_acteurs
     FROM films
     INNER JOIN acteurs USING (id_film)
@@ -513,32 +630,34 @@ SELECT annee_prod, avg(nb_acteurs) AS mu FROM (
 ) AS nb_acteurs_film
 GROUP BY annee_prod;"
 
-nb_acteurs <- dbGetQuery(con,sql_requete)
-head(nb_acteurs)
+moy_acteurs <- dbGetQuery(con,sql_requete)
+head(moy_acteurs)
 ```
 
 ```
-##   annee_prod mu
-## 1         NA  1
-## 2       1975  1
-## 3       1947  1
-## 4       1981  1
-## 5       1972  1
-## 6       1956  1
+##   annee_prod moy_acteurs
+## 1       1902           9
+## 2       1915          55
+## 3       1916          59
+## 4       1920          11
+## 5       1921          59
+## 6       1922          17
 ```
 
----
+---&twocolw w1:55% w2:45%
 
-# Filtrer les requêtes
+# Filtrer les requêtes à posteriori
 
- <!-- Reprendre ici -->
+*** =right
 
-Avec HAVING
+- Il est possible de filtrer à posteriori sur la requête avec `HAVING`.
+
+*** =left
 
 
 ```r
 sql_requete <- "
-SELECT annee_prod, avg(nb_acteurs) AS mu FROM (
+SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
   SELECT titre, annee_prod, count(nom) AS nb_acteurs
     FROM films
     INNER JOIN acteurs USING (id_film)
@@ -552,7 +671,13 @@ head(nb_acteurs)
 ```
 
 ```
-## data frame with 0 columns and 0 rows
+##   annee_prod moy_acteurs
+## 1       1915          55
+## 2       1916          59
+## 3       1920          11
+## 4       1921          59
+## 5       1922          17
+## 6       1924          24
 ```
 
 ---.transition
@@ -563,22 +688,50 @@ head(nb_acteurs)
 
 # Sauvegarder une requête
 
-Avec COPY ... TO
+Nous avons vu précédemment `COPY ... FROM chemin_vers_fichier` pour insérer des enregistrements dans les tables.
+
+Il existe aussi l'instruction `COPY ... TO chemin_vers_fichier` pour sauvegarder une requête.
+
+```sql
+COPY (SELECT * FROM films WHERE titre LIKE 'A%')
+TO '/home/etudiant/Documents/films_A.csv' WITH DELIMITER ';' CSV HEADER;
+```
 
 ---
 
 # Sauvegarder une requête
 
-Avec RPostgreSQL
+Afin de sauvegarder les requêtes obtenues dans R par `dbGetQuery()`, il est possible d'utiliser les fonctions d'écritures tels que `write.table()` ou encore `write.csv()`.
+
+Il existe une façon de faire des requêtes dans `pgAdmin3` et d'en sauvegarder les résultats grâce à l'outils `Query`.
+
+---.transition
+
+# Les requêtes stockées
 
 ---
 
-# Les vues
+# Les requêtes stockées: les vues
 
-- Deux sortes
-  - Vue normale
-  - Vue qui se met à jour sur demande (vue matérialisé)
+Les vues permettent de stocker directement les requêtes à l'intérieur de la base de données afin d'interroger la vue ultérieurement.
 
+```sql
+CREATE VIEW moyenne_acteurs AS (
+  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+    SELECT titre, annee_prod, count(nom) AS nb_acteurs
+      FROM films
+      INNER JOIN acteurs USING (id_film)
+      GROUP BY annee_prod, titre
+  ) AS nb_acteurs_film
+  GROUP BY annee_prod
+  );
+```
+
+Il sera possible d'atteindre cette vue tout simplement avec:
+
+```sql
+SELECT * FROM moyenne_acteurs;
+```
 
 ---.transition
 

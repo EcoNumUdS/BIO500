@@ -23,9 +23,27 @@
 
 # Connexion au serveur
 
-L'adresse du serveur est `localhost` sur le port `5432`.
 
-## On ouvre la connexion:
+```{r echo=FALSE, include=FALSE}
+library(RPostgreSQL)
+
+con <- dbConnect(PostgreSQL(),
+        host="localhost",
+        port=5432,
+        user= "postgres")
+
+# On créé la base de données et on ferme la connexion
+dbSendQuery(con,"DROP DATABASE IF EXISTS bd_films;")
+dbSendQuery(con,"CREATE DATABASE bd_films;")
+dbDisconnect(con)
+
+# On se connecte à la nouvelle base de données
+con <- dbConnect(PostgreSQL(),
+        host="localhost",
+        port=5432,
+        user= "postgres",
+        dbname="bd_films")
+```
 
 ```{r eval=FALSE}
 library(RPostgreSQL)
@@ -33,15 +51,22 @@ library(RPostgreSQL)
 con <- dbConnect(PostgreSQL(),
         host="localhost",
         port=5432,
-        user= "postgres",
-        password=NA)
+        user= "postgres")
 
-# On créé la base de données
+# On créé la base de données et on ferme la connexion
 dbSendQuery(con,"DROP DATABASE IF EXISTS bd_films;")
 dbSendQuery(con,"CREATE DATABASE bd_films;")
-# On se connect à la nouvelle base de données
-con <- dbConnect(con,dbname="bd_films")
+dbDisconnect(con)
+
+# On se connecte à la nouvelle base de données
+con <- dbConnect(PostgreSQL(),
+        host="localhost",
+        port=5432,
+        user= "postgres",
+        dbname="bd_films")
 ```
+
+**Question:** Sur ce script, où sont les instructions SQL? Òu sont les commandes R?
 
 ---
 
@@ -57,8 +82,6 @@ tbl_films <- "CREATE TABLE films (
 
 dbSendQuery(con,tbl_films)
 ```
-
-**Question:** Sur ce script, où sont les instructions SQL? Òu sont les commandes R?
 
 ---
 
@@ -84,6 +107,10 @@ dbSendQuery(con,tbl_acteurs)
 
 `pgAdmin3` est un client avec une interface graphique permettant de visualiser si les opérations de création de tables ont bien été réalisées.
 
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/pgadmin_table.png" width="70%"></img>
+</div>
+
 
 --- .transition
 
@@ -105,7 +132,9 @@ INSERT INTO acteurs(id_acteur,prenom,nom,id_film) VALUES(2,'Roberto','Benigni',1
 
 ---
 
-# Exercice (10 minutes)
+# Exercice 1 (10 minutes)
+
+## À l'aide de `INSERT`,
 
 1. Prenez un film de votre choix et insérer son titre et son année de parution dans la table `films`.
 2. Insérer les acteurs de ce film dans la tables `acteurs`.
@@ -114,13 +143,11 @@ INSERT INTO acteurs(id_acteur,prenom,nom,id_film) VALUES(2,'Roberto','Benigni',1
 
 # SQL - `COPY ... FROM`
 
-L'instruction SQL `COPY ... FROM` permet d'insérer plusieurs ligne à la fois:
+L'instruction SQL `COPY ... FROM` permet d'insérer plusieurs lignes à la fois:
 
 ```sql
-
-COPY films FROM '/Users/SteveVissault/Documents/Git/BIO500/cours4/pres/assets/donnees/bd_beacon/bd_acteurs.csv'
+COPY films FROM '/Users/SteveVissault/Documents/Git/BIO500/cours4/pres/assets/donnees/bd_beacon/bd_films.csv'
 WITH FORMAT CSV HEADER DELIMITER ';';
-
 ```
 
 Documentation: [http://docs.postgresql.fr/9.5/sql-copy.html](http://docs.postgresql.fr/9.5/sql-copy.html)
@@ -147,12 +174,12 @@ dbWriteTable(con,append=TRUE,name="acteurs",value=bd_acteurs, row.names=FALSE)
 
 Il est également possible d'insérer des données à partir du logiciel `pgAdmin3`.
 
-AJOUTER SCREENSHOT
+**SCREENSHOT**
 
 ---
 
-# Exercice (15 minutes)
+# Exercice 2 (15 minutes)
 
-1. Dans une base de données locale `bd_films`, injecter les films de l'année 2007 avec leurs acteurs. Les données brutes sont contenues dans les fichiers [ex_2007_acteurs.csv](./assets/donnees/bd_beacon/ex_2007_acteurs.csv) et [ex_2007_films.csv](./assets/donnees/bd_beacon/ex_2007_films.csv).
+1. Dans la base de données `bd_films`, injecter les films de l'année 2007 avec leurs acteurs. Les données brutes sont contenues dans les fichiers [ex_2007_acteurs.csv](./assets/donnees/bd_beacon/ex_2007_acteurs.csv) et [ex_2007_films.csv](./assets/donnees/bd_beacon/ex_2007_films.csv).
 
 Vous pouvez utiliser la commande R `dbWriteTable`, l'instruction SQL `COPY` ou encore pgAdmin3 pour insérer les données.
