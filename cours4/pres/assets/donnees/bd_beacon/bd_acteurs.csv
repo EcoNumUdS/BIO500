@@ -1,0 +1,5635 @@
+"id_acteur";"acteur_nom";"acteur_prenom";"id_film"
+1;"Fitz-Gerald";"Lewis";4
+2;"Gage";"Kevin";5
+3;"Carrasco";"Carlos";6
+4;"Vasquez";"David (I)";7
+5;"Blackmore";"Stephen";3
+6;"Anderson";"Adam (I)";8
+7;"Kennedy";"Aidan";9
+8;"Green";"Johnny (V)";10
+9;"Pressly";"Jaime";869
+10;"Peters";"John (I)";11
+11;"Ólafsson";"Ólafur Darri";12
+12;"Crompton";"Ben";13
+13;"Idani";"Rodrigue André";15
+14;"Foster";"Ben (I)";14
+15;"Fiedler";"John (I)";16
+16;"Black";"Alex (I)";17
+17;"O'Meara";"Nancy";1520
+18;"Jolly";"Malcolm";18
+19;"Waddington";"Steven";19
+20;"Alfieri";"Joseph (II)";20
+21;"Dobó";"Kata";2074
+22;"Campbell";"Jimmy (I)";21
+23;"Henry";"Bernie";5210
+24;"O'Shea";"Dick";22
+25;"Tennant";"Andy";23
+26;"Gorman";"Brad (I)";443
+27;"Daniels";"Jeff (I)";24
+28;"Hauser";"Cole";25
+29;"Janney";"Eli";26
+30;"Graham";"Fred (I)";27
+31;"Miller";"Frank (I)";28
+32;"Samuel";"Martin (II)";29
+33;"Barnwell";"Teresa";226
+34;"McGarr";"Gene";30
+35;"Kimura";"Takuya";31
+36;"Nichols";"Nick (III)";32
+37;"Haslam";"Dave";33
+38;"Popplewell";"Paul";1503
+39;"DeGennaro";"Vinny";34
+40;"Drekonja";"Larissa";1242
+41;"Nayyar";"Harsh";35
+42;"Harnett";"Ricci";36
+43;"Hunt";"Neil";38
+44;"Slade";"Max Elliott";39
+45;"McRae";"Alan";40
+46;"Haines";"Ross";41
+47;"Sembach";"Jerry";2648
+48;"Auteuil";"Daniel";42
+49;"Julien";"André";43
+50;"Tearle";"Godfrey";44
+51;"Gauthier";"Chris";45
+52;"Marasco";"Ron";46
+53;"Bottrell";"Laura";1293
+54;"Stone";"George E. (I)";47
+55;"Farnum";"Patsy";1987
+56;"Johnston";"John Dennis";48
+57;"Magwili";"Dom";50
+58;"Jackson";"Samuel L.";51
+59;"Fiorucci";"Elio";52
+60;"Grenville";"Georgina";1970
+61;"Chollet";"Pierre";53
+62;"McIlroy";"Andrew";54
+63;"Lamure";"Dominique";55
+64;"Louiso";"Todd";56
+65;"Wilson";"De'Angelo";57
+66;"Guichard II";"Vernon";59
+67;"Pisu";"Mario";58
+68;"Cini";"Elisabetta";5274
+69;"Black Rebel Motorcycle Club";NA;60
+70;"Gow";"David (I)";64
+71;"Le Maistre";"Philip";1491
+72;"McMahon";"Amelia";2854
+73;"Kaufmann";"Maurice";67
+74;"McNicholl";"Peter";68
+75;"Stephenson";"Denise";2692
+76;"Tiernan";"Tommy";69
+77;"Durkin";"Robert B.";70
+78;"Wenzel";"Vaughan";71
+79;"Matsuoka";"Haruo";72
+80;"Phan";"Thi Kim Phuc";2295
+81;"García";"Luis (II)";73
+82;"Sommer";"Josef";74
+83;"McDaniel";"Charles";75
+84;"Ratray";"Peter";76
+85;"Hova";"Ethan";77
+86;"Cusack";"Ann";4753
+87;"Gouyer";"Gregory";78
+88;"Bibby";"Peter (I)";79
+89;"Archie";"John";80
+90;"Eziashi";"Maynard";81
+91;"Vandeman";"Steve";82
+92;"Lawrence";"DeForrest";83
+93;"Blake";"Madge";3192
+94;"Jensen";"Tomas Villum";84
+95;"Jason";"Peter";85
+96;"Workman";"Jimmy";86
+97;"Wills";"Benny";87
+98;"Benazzo";"Maurizio (I)";88
+99;"Conna";"Edward";89
+100;"Bishop";"Rummy";92
+101;"Henderson";"Don (II)";93
+102;"von Sydow";"Max (I)";94
+103;"Ashton";"John (I)";95
+104;"Loder";"Kurt";96
+105;"Pond";"Pamela";2852
+106;"Rudder";"Michael (I)";97
+107;"Kmet";"Joseph";98
+108;"Rathbone";"Basil";99
+109;"Fairman";"Austin";5509
+110;"Pike";"Gary";100
+111;"Perabo";"Piper";3589
+112;"Davich";"Jacob";101
+113;"Bolognese";"Dino";103
+114;"Osborne";"Holmes";105
+115;"John";"Errol";106
+116;"Evans";"Clarke";107
+117;"Bruynbroek";"Frank";108
+118;"Kelly";"Tom (V)";110
+119;"Lennox";"Doug";111
+120;"Bell";"Sean (I)";2801
+121;"Day-Lewis";"Daniel";112
+122;"Caughlan";"Dennis";113
+123;"Denis";"Marc (I)";114
+124;"González";"Justo";116
+125;"Fuji";"Tatsuya";117
+126;"Osborn";"Graham";118
+127;"Hearn";"Tom";119
+128;"Shor";"Dan";120
+129;"Lychnikoff";"Pavel";414
+130;"Colvin";"Monty";121
+131;"Connors";"Chuck (I)";122
+132;"Levine";"Floyd";2942
+133;"Hollander";"David (I)";123
+134;"Mercier";"Mary";5632
+135;"Adams";"Arthur (I)";125
+136;"Howat";"Clark";124
+137;"Poulsen";"Patty";4448
+138;"Lester";"Terry (I)";126
+139;"Komuro";"Shu";127
+140;"Ong";"Jack";128
+141;"Rose";"Ashlynn";4357
+142;"Shioya";"Kôzô";129
+143;"Grant";"Dougary";5499
+144;"Adler";"Charles (I)";130
+145;"Ryland";"LeRoy";131
+146;"Shannon";"Bill (I)";5468
+147;"Trevino";"Julian";893
+148;"Pipkin";"Turk";1125
+149;"Colantoni";"Enrico";132
+150;"Gulkovski";"A.";134
+151;"Wauthier";"Alexander";135
+152;"Earley";"Robert";136
+153;"Pigott-Smith";"Tim";3583
+154;"Voyagis";"Yorgo";139
+155;"Muratore";"Robert";140
+156;"Tafler";"Sydney";141
+157;"Randazzo";"Steven";142
+158;"Nelson";"John O.";3749
+159;"Shufford";"Charles";2958
+160;"Boswell";"Stephen";143
+161;"Wickham";"Jeffrey";4820
+162;"Williamson";"Matt";144
+163;"Northup";"Harry";145
+164;"Hamlin";"Bob";146
+165;"Holm";"Ian";147
+166;"Murphey";"Mark";148
+167;"Wincott";"Michael";149
+168;"Armstrong";"William (I)";151
+169;"Dance";"Charles (I)";150
+170;"Lucas";"Josh (I)";152
+171;"Hampden";"Walter";153
+172;"Tayback";"Vic";154
+173;"Mattingly";"Hedley";155
+174;"Crompton";"Ben";156
+175;"Summerville";"Slim";157
+176;"Heim";"Alan";158
+177;"Rice";"Cathy";494
+178;"Smith";"Irving (I)";159
+179;"O'Donnell";"Rick";160
+180;"Arkin";"David";5493
+181;"Young";"J.D.";161
+182;"Schneider";"Paul (IV)";162
+183;"Jackson";"Kyle Scott";163
+184;"Goakes";"Stuart";164
+185;"Williams";"Patrick (II)";170
+186;"Weber";"Kris";408
+187;"Cruz";"Gregory Norman";171
+188;"Walker";"Matthew (I)";172
+189;"Hild";"Jim";173
+190;"De La Cruz";"Marco";174
+191;"Parrott";"Tomasina";2285
+192;"Timberlake";"Justin";175
+193;"Léaud";"Jean-Pierre";176
+194;"Brandon";"Peter";177
+195;"Strimling";"Gene";179
+196;"Pokorny";"Ivan";180
+197;"Vackova";"Renata";5325
+198;"Thu";"Truong";181
+199;"Siedhoff";"Joost";182
+200;"Desclozeaux";"Marc";183
+201;"Spaccatini";"Antonio";184
+202;"Graham";"Currie";186
+203;"Lewis";"Huey";187
+204;"Lugosi";"Bela";745
+205;"Koeberlin";"Matthias";188
+206;"Busuioc";"Florin";2526
+207;"Allen";"Byron";189
+208;"Kimbrough";"Matthew";190
+209;"Pressman";"Lawrence";191
+210;"Legg";"Kira";1891
+211;"Carey";"Macdonald";192
+212;"Ford";"Harrison (I)";193
+213;"Fell";"Thom (II)";194
+214;"Sarpong";"Sam";195
+215;"Rorke";"Hayden";196
+216;"Weisman";"Matt";197
+217;"O'Neal";"Ty";198
+218;"Sheridan";"Fletcher";199
+219;"Scott";"Seann William";3197
+220;"Harper";"Derrick (II)";200
+221;"Cindrich";"Christina";5620
+222;"Uhler";"Ray";201
+223;"Newberry";"Kymberly";4572
+224;"Theroux";"Justin";202
+225;"Ganias";"Eli";203
+226;"Ross";"Neil (I)";204
+227;"Tate";"David (I)";205
+228;"Gatto";"Tony";206
+229;"Cooper";"Gypsy Dave";207
+230;"Bearne";"Chris";208
+231;"Rivers";"Victor (I)";209
+232;"Singer";"León";2456
+233;"Paquin";"Anna";1232
+234;"Dukas";"Jim";210
+235;"Herrera";"Jonathan";211
+236;"Dourif";"Brad";212
+237;"Stoltz";"Eric";213
+238;"Aireti";NA;214
+239;"Columbo";"Joe";215
+240;"Vella";"Vinny";4283
+241;"Corl";"Neal A.";216
+242;"Mari";"Francesca";4514
+243;"Lowenstein";"David";217
+244;"Matschoss";"Ulrich";218
+245;"Qualen";"John";219
+246;"Tompkins";"Paul F. (I)";220
+247;"Hahn";"Kathryn";4067
+248;"Chamberlain";"Neville";221
+249;"Hayward";"Louis";222
+250;"Sergeyev";"Nikolai (I)";228
+251;"Hill";"Arthur (I)";229
+252;"Swift";"Joan";4997
+253;"Jagersky";"Brian";231
+254;"Monie";"Rickie";232
+255;"Drake";"Judith (I)";816
+256;"Murphy";"J.J.";233
+257;"Crowley";"Donncha";2714
+258;"Glover";"Danny";235
+259;"Smith";"Jack C. (I)";236
+260;"White";"Leo (I)";2133
+261;"Boldon";"Christopher";237
+262;"Harrelson";"Woody";4809
+263;"Talbert";"Charlie";238
+264;"Marx";"Zeppo";239
+265;"Pagan";"Victor";240
+266;"Amoroso";"Amorika";3998
+267;"Freeman";"John (III)";241
+268;"Deters";"Timmy";242
+269;"Flood";"Hannah K.";3186
+270;"Tsang";"Kenneth";243
+271;"Chrismandu";NA;244
+272;"Henry";"Andrew (II)";868
+273;"Parekh";"Shoha";1141
+274;"Herrmann";"Edward";247
+275;"Goldblum";"Jeff";248
+276;"Kane";"Carol (I)";2119
+277;"Chester";"Craig";249
+278;"Quéant";"Gilles";246
+279;"Murphy";"Eddie (I)";250
+280;"Cummins";"Nicole";830
+281;"Bitten";"Roosevelt";251
+282;"Bacic";"Steve";252
+283;"Levy";"Jacques";253
+284;"Austin";"Jake T.";254
+285;"Streep";"Meryl";437
+286;"Robbins";"Tim (I)";256
+287;"Forlani";"Claire";5576
+288;"Dailly";"Daniel";257
+289;"Dames";"Margo";4114
+290;"Wilson";"De'Angelo";258
+291;"Hackman";"Gene";259
+292;"Selleck";"Tom";260
+293;"Groh III";"Michael";261
+294;"Rasta";"Mighty";4288
+295;"Bachand";"James A.";4112
+296;"Cortez";"Rosa Iveth";1888
+297;"Gavin";"Weston";262
+298;"Menken";"Robin";3559
+299;"Arkin";"Anthony";263
+300;"Sattler";"Bob";264
+301;"Walston";"Ray";265
+302;"Carney";"Larry";266
+303;"Ramos";"Carlos (X)";267
+304;"Sinise";"Gary";268
+305;"Cullen";"Brett";2599
+306;"Bagget";"Brother Paul";269
+307;"Carter Cash";"June";387
+308;"Fernández Vella";"Bruno";270
+309;"Koyasu";"Takehito";271
+310;"Rohner";"Clayton";272
+311;"Artura";"Michael";273
+312;"Lewis";"Lincoln (II)";275
+313;"Goodman";"John (I)";276
+314;"Stephen";"Varazh";277
+315;"Simmons";"Henry (I)";280
+316;"Buttram";"Pat (I)";281
+317;"Martling";"Jackie";282
+318;"Owens";"Gary (I)";5056
+319;"Tocktoo";"Vincent";283
+320;"Hillman";"Sid";285
+321;"Lister";"Tommy 'Tiny'";287
+322;"Webster";"Chris (I)";288
+323;"Broadbent";"Jim";291
+324;"Reid";"Max (II)";292
+325;"Leonard";"Frank (II)";5621
+326;"Hennecke";"Charles";2239
+327;"Kim";"John (I)";1508
+328;"Gee";"Toc Yee";3249
+329;"Bain";"Al";1278
+330;"Estorres";"Marcello";3582
+331;"Astran";"Edward";4670
+332;"Carr";"Mick";1315
+333;"Lockwood";"King";3872
+334;"Fukdo";"Koshihiro";4380
+335;"Joko";"Todd";2096
+336;"Lazelle";"Perk";3440
+337;"Hing";"Jimmy";1176
+338;"Duray";"William";2116
+339;"Mascari";"Mary D.";5453
+340;"Hiroshige";"Kimiko";3819
+341;"Kelley";"Jodi";4578
+342;"Hubbard";"Madelon";1295
+343;"Blagoi";"Tina";1778
+344;"Valentine";"June";1959
+345;"Jan";"Mary";2578
+346;"Villalpando";"David";293
+347;"Glaser";"Vaughan";294
+348;"Huy";"Phong Doan";295
+349;"Davoodian";"David Fariborz";296
+350;"Diaan";"David";4901
+351;"Moore";"Dudley";298
+352;"Cherry";"Eagle Eye";299
+353;"Colantoni";"Enrico";300
+354;"Jay";"Baron";138
+355;"O'Donohue";"John F.";301
+356;"Denys";"Holly";4727
+357;"Brialy";"Jean-Claude";302
+358;"Cliff";"John";303
+359;"Hilliard";"David";304
+360;"Lamar";"John";305
+361;"Skalsky";"Kerry";5490
+362;"Smith";"Maynard";306
+363;"Sarr";"Ndiouga";307
+364;"Noonan";"Tom";310
+365;"Chabat";"Alain";308
+366;"Chetcuti Bonarita";"Kurt";4696
+367;"Baylacq";"Loïc";309
+368;"Vockroth";"Frank";1316
+369;"Fallwell Jr.";"Marshall";311
+370;"Winkler";"Charles";312
+371;"Micheli";"Andrew";313
+372;"Gipp";"Cameron";315
+373;"Bobo";"Genese";3884
+374;"Del Grande";"Louis";316
+375;"Varney";"Jim";317
+376;"Wynne";"Wayne";318
+377;"Dubarry";"Jean-Paul";319
+378;"Metschurat";"Barnaby";320
+379;"Sayre";"Jeffrey";321
+380;"Durell";"R.J.";322
+381;"Cooney";"Kevin (I)";5508
+382;"Sweet";"Matthew (I)";323
+383;"Hurley";"Elizabeth (I)";4942
+384;"Meismer";"Mark";324
+385;"Jay";"Tony";1097
+386;"Marinella";"Bill";325
+387;"Ruggiero";"Jade";376
+388;"Harrold";"Jamie";326
+389;"Hiller";"Bernie";327
+390;"Rubinek";"Frania";3433
+391;"Fiennes";"Ralph";328
+392;"Welsh";"Kenneth";331
+393;"Black";"Gavin (I)";3260
+394;"Filipensky";"Jan Pavel";332
+395;"Ferzetti";"Gabriele";333
+396;"Keating";"Charles (I)";334
+397;"Kovner-Zaks";"Debra";1462
+398;"Hull";"Arthur Stuart";335
+399;"Kaneko";"Takatoshi";337
+400;"Ge";"You";338
+401;"Ergenç";"Halit";339
+402;"Greenaway";"David";340
+403;"Bailey";"Kimberly";2049
+404;"Richardson";"Stevie Lee";341
+405;"Still";"Jeff";1249
+406;"Capizzi";"Bill";342
+407;"Allen";"Elizabeth (III)";4715
+408;"El Koussi";"Mohammed Amal";343
+409;"El Caid";"Boubker Ait";2262
+410;"Kikuchi";"Fumie";3812
+411;"Fanning";"Elle (I)";1907
+412;"Bentzon";"Viggo";344
+413;"Ramis";"Harold";345
+414;"Green";"Dannon";346
+415;"MacNicol";"Peter";347
+416;"Thomas";"Lexi";2779
+417;"Schueneman";"Tim";348
+418;"Maleki";"Hadi";349
+419;"Bancroft";"Bradford";350
+420;"Lovey";NA;1724
+421;"Asner";"Edward";351
+422;"Shelton";"Marley";3535
+423;"Hernandez";"Johnny 'Vatos'";352
+424;"Carlson";"Kimberlee";2199
+425;"Hervey";"Jason";353
+426;"Lloyd";"Christopher (I)";354
+427;"Fox";"Michael J. (I)";355
+428;"Chrisos";"Tony G.";356
+429;"West";"Ron (I)";815
+430;"Simpson";"Reginald";357
+431;"Brown";"Vanessa (I)";597
+432;"Kirkpatrick";"Peter";358
+433;"Gibb";"Steve";359
+434;"Badalamenti II";"Peter Donald";4256
+435;"Massof";"Bill";360
+436;"Souskova";"Magdalena";2134
+437;"Tracy";"Spencer";361
+438;"Summers";"Neil";362
+439;"Jones";"John Steven";363
+440;"Myer";"Wil";364
+441;"Luyben";"Kate";5316
+442;"Haley";"Jackie Earle";365
+443;"Van Ville";"Max";366
+444;"McTavish";"John";367
+445;"Sheen";"Martin";369
+446;"Barrow";"Marc";370
+447;"Ceccaldi";"Daniel";371
+448;"Kennell";"Ron";372
+449;"DeSantis";"John";378
+450;"Alexander";"Stan";380
+451;"Thomas";"Arthur (II)";381
+452;"Hsieh";"Anna";3422
+453;"Suárez";"Miguel Ángel";382
+454;"Staquet";"Georges";383
+455;"Prats";"Eric";384
+456;"García";"José Guillermo";385
+457;"Brighman";"Jonathan 'JB'";386
+458;"Estrade";"Michel";388
+459;"Noseworthy";"Jack";391
+460;"Sabato";"Antonio";392
+461;"Smith Jr.";"Eddie Bo";393
+462;"Randle";"Jasmine";1598
+463;"Stewart";"Cory";394
+464;"Wright";"Marcia";90
+465;"Creighton";"Francis (I)";395
+466;"Redford";"Robert (I)";396
+467;"Termo";"Leonard";397
+468;"Di Maggio";"John";400
+469;"Morell";"André";403
+470;"Goodman";"John (I)";407
+471;"Lewis";"Bret";409
+472;"Sawicki";"Stanley G.";1896
+473;"Fleming";"Cliff";410
+474;"Liebenson";"Ken";411
+475;"Callaghan";"Andy";412
+476;"Cooper";"Roy (I)";413
+477;"Bowie";"David (I)";415
+478;"O'Donnell";"Chris (I)";419
+479;"Chadwick";"Mark (I)";1988
+480;"Cisar";"George";418
+481;"Murphy";"Cillian";420
+482;"Serbedzija";"Rade";4330
+483;"Piemonte";"Pee Wee";421
+484;"Gómez";"Marga";1759
+485;"DePinto";"Joey";422
+486;"Costanzo";"Robert";423
+487;"Nakamura";"Ryôta";424
+488;"Tachikawa";"Mitsuaki";5570
+489;"Nishikawa";"Yûya";425
+490;"Hamada";"Maki";3127
+491;"Bellamy";"Ned";426
+492;"Ben Kassen";"Mohamed";427
+493;"Keen";"Noah";428
+494;"Alberty";"Karl-Otto";430
+495;"Denoncourt";"Rejean";431
+496;"Lucky";"Steve";439
+497;"Susser";"Craig";4857
+498;"Santitarangkul";"Somchai";440
+499;"Applebaum";"Bill";442
+500;"Huff";"Clara (I)";719
+501;"Doty";"David";444
+502;"Whelan";"Jeremy";446
+503;"Perlich";"Max";448
+504;"Allen";"David B.";449
+505;"Crowe";"Russell";607
+506;"Benfield";"John";450
+507;"Adler";"Bruce";451
+508;"Williams";"Brian (X)";452
+509;"Stack";"Robert";453
+510;"Cervi";"Gino";455
+511;"Chaltiel";"Zachary";456
+512;"Hawdon";"Robin";457
+513;"O'Connor";"Frances (II)";5110
+514;"Kane";"Sid";458
+515;"Johnson";"Bjorn (I)";460
+516;"Leigh";"Mandi";2704
+517;"Castile";"Christopher";461
+518;"Corey";"Jeff";462
+519;"Baldwin";"Alec";463
+520;"Molina";"Alfred (I)";464
+521;"Nugent";"Jimmy";465
+522;"Schnabel";"Lola";3207
+523;"Buttinger";"Haymon Maria";466
+524;"Evrard";"Denis";467
+525;"Todorovski";"Ljupco";468
+526;"Van Horn";"Buddy";469
+527;"Van Lynden";"Aernout";470
+528;"Carroll";"Kevin";471
+529;"Cordle";"Kristie";496
+530;"Burdon";"Bryan";472
+531;"Lehne";"Fredric";473
+532;"Hansen";"Danna";763
+533;"Gosling";"Ryan (I)";474
+534;"Castellitto";"Sergio";478
+535;"Charvey";"Marcel";480
+536;"Sacristán";"José Antonio";481
+537;"Blin";"Noël";482
+538;"Lazar";"Paul";486
+539;"Shepherd";"Cue";3191
+540;"Flemyng";"Jason";487
+541;"Yrigoyen";"Joe";489
+542;"Currie";"Finlay";2127
+543;"Munro";"Lochlyn";490
+544;"Kilborn";"Craig";5401
+545;"Hansen";"Alan (I)";491
+546;"Buono";"Victor";492
+547;"Macy";"William H.";495
+548;"Garðarsson";"Gísli Örn";498
+549;"Lowe";"Brent Jefferson";497
+550;"Miller";"Larry (I)";506
+551;"Boyd";"Lynda";4999
+552;"Denny";"Dirty";507
+553;"Smith";"Howard K.";508
+554;"Walker";"Arnetia";3924
+555;"Earle";"Edward (I)";509
+556;"Bohnen";"Roman";4321
+557;"McShane";"Scott";511
+558;"Matoba";"Kenji";5403
+559;"Certo";"Dominick";512
+560;"Varga";"Gerald";513
+561;"Varney";"Jim";514
+562;"Parton";"Dolly";1860
+563;"Kimbro";"Art";515
+564;"Gladstone";"Dana";516
+565;"O'Brien";"Dayna";1697
+566;"Stewart";"Jerra";517
+567;"Avery";"Rick";3033
+568;"Parker";"Nathaniel";518
+569;"Turner";"Jim (I)";519
+570;"Paige";"Brittany";4422
+571;"McCarthy";"Francis X.";520
+572;"Ross";"Jim (III)";521
+573;"Stamp";"Dennis";3693
+574;"Goodman";"John (I)";522
+575;"Walsh";"Gabriel";4379
+576;"Stewart";"Lorraine (III)";1892
+577;"Curry";"Mibb";523
+578;"Hiller";"Igor";524
+579;"Meaney";"Kevin";527
+580;"Keaulana";"Brian L.";528
+581;"Coster";"Nicolas";529
+582;"De Banzie";"Lois";3113
+583;"Goldblum";"Jeff";530
+584;"Talbot";"Slim";531
+585;"Sprouse";"Dylan";532
+586;"Lesser";"Robert";533
+587;"Killam";"Taran";534
+588;"Carroll";"Brandon (III)";535
+589;"Cyrus";"Miley";2169
+590;"Lytton";"Herbert";536
+591;"Birman";"Matt";537
+592;"Dawson";"Paul (II)";538
+593;"Flanagan";"Jesse";539
+594;"Thibodeau";"Sean";540
+595;"LeRoi";"Randolph";541
+596;"Levi";"Zachary";4432
+597;"Appel";"Peter";542
+598;"Williams";"Armstrong";543
+599;"Marchand";"Guy";544
+600;"Welden";"Ben";545
+601;"Tobey";"Kenneth";546
+602;"Koepp";"David";547
+603;"Lew";"James";548
+604;"Turner";"Frank C. (I)";549
+605;"Mutô";"Jun";550
+606;"Whitfield";"Dondre";551
+607;"Martin";"Jim (I)";552
+608;"David";"Clifford";553
+609;"Kinlaw";"Chuck";554
+610;"Self";"Kas";5593
+611;"MacLachlan";"Colin";555
+612;"Tempest";"Matthew";556
+613;"Hughes";"Helen (I)";5495
+614;"Turner";"Allen (I)";557
+615;"Shin";"Tae-suk";558
+616;"McCain";"Ben L.";559
+617;"Healy";"Tim (III)";560
+618;"Loreque";"Kevin";561
+619;"Bailey";"Robert (I)";562
+620;"Weaver";"Doodles";563
+621;"Taylor";"Ed (I)";564
+622;"Giffuni";"Matthew";565
+623;"Lewis";"Ralph (I)";566
+624;"Ghatak";"Raj";567
+625;"Rase";"Jean-Marie";568
+626;"Toomey";"Regis";569
+627;"Albenque";"Patrick";570
+628;"Dotiwala";"Bomie E.";572
+629;"Watt";"Patrick (I)";573
+630;"Lamy";"Sabine";3236
+631;"Byner";"John";574
+632;"Brown";"Syd";575
+633;"MacInnes";"Angus";576
+634;"Bremner";"Ewen";577
+635;"Schell";"Maximilian";578
+636;"Stillwell";"Kevin";579
+637;"Regan";"Vincent";1098
+638;"Sabu (I)";NA;580
+639;"Ibuki";"Taro";581
+640;"Arm";"Mark";582
+641;"McNamara";"Ed (I)";584
+642;"Cerullo";"Al";585
+643;"Dennis";"Danny (II)";587
+644;"Van Douglas";"Erl";589
+645;"Krusalnicky";"Petr";590
+646;"Reiter";"Robert";591
+647;"Ashker";"John";592
+648;"Mason";"Mark (III)";594
+649;"Arantes";"Rômulo";598
+650;"Glasgow";"Gil";601
+651;"Wilson";"Hugh (I)";602
+652;"Silverstone";"Alicia";1509
+653;"Roth";"Hans (I)";603
+654;"Regan";"Tony (I)";604
+655;"Catching";"Bill";1569
+656;"Behrendt";"Herbert";605
+657;"Corazza";"Vince";606
+658;"Bennett";"Marcia (I)";3839
+659;"Stack";"Timothy (I)";608
+660;"Ellis";"David R.";609
+661;"Moran";"Jackie (II)";610
+662;"Rud";"Ove";611
+663;"Sabel";"Eugene";613
+664;"Def";"Mos";615
+665;"Caine";"Michael (I)";616
+666;"Harewood";"David";617
+667;"Robertson";"William Preston";618
+668;"Hanna";"Bryan (II)";619
+669;"Koteyama";"Akira";620
+670;"Meat Loaf";NA;621
+671;"Lai";"Johnny";622
+672;"Erikson";"Rick";4419
+673;"McCallion";"Kevin";623
+674;"Ralph";"Michael (I)";625
+675;"Rosario";"Bert";805
+676;"Bradley";"David (IV)";626
+677;"McMartin";"John";627
+678;"Purwin";"Alan D.";628
+679;"Page";"Jimmy (I)";629
+680;"Miguel";"Nigel";630
+681;"Mills";"Chris (I)";2561
+682;"Dias";"Braden";631
+683;"Lake";"Sanoe";3587
+684;"Yoba";"Malik";632
+685;"Jacoby";"Gert";633
+686;"Jamrog";"Joe";634
+687;"Mechoso";"Julio Oscar";635
+688;"Davis";"Gary (I)";636
+689;"Maxwell";"Robert J.";637
+690;"Kounen";"Jan";638
+691;"Floyd";"Eddie";639
+692;"Rice";"Nicholas";2812
+693;"Callahan";"Jack";640
+694;"Klenfner";"Michael";4421
+695;"Scott";"Shawn (II)";641
+696;"Silvstedt";"Victoria";5410
+697;"Wise";"Ray (I)";642
+698;"Robbins";"Gabrielle (II)";3938
+699;"Geraghty";"Brian";643
+700;"Cantale";"Luna Rocio";5507
+701;"Boyd";"Guy";645
+702;"Marko";"Larry";646
+703;"Langella";"Frank";647
+704;"Livingston";"Ron";648
+705;"Ermey";"R. Lee";649
+706;"Bakri";"Mohammed";650
+707;"Sullivan";"Rob (I)";651
+708;"Bass";"Victoria";4463
+709;"Vogel";"Carlo";652
+710;"Lee";"Dae-yeon";653
+711;"Kim";"Ki-duk (II)";655
+712;"Swanson";"Gary";656
+713;"Vukelic";"Boyan";657
+714;"Rowe";"Hansford";658
+715;"Hanks";"Tom";2298
+716;"Hackman";"Gene";659
+717;"Watson";"Barry (I)";660
+718;"Chaidez";"Jose";661
+719;"Prevost";"Nathan";740
+720;"Loder";"Kurt";662
+721;"Ziegler";"Ronald Edward";663
+722;"Parkes";"Gerard";664
+723;"Alexander";"Lizz";234
+724;"Lamprecht";"Günter";665
+725;"Marcus";"Dominic";666
+726;"Allan";"Bradley James";667
+727;"Rowe";"Bobby";668
+728;"Morris";"Aubrey";669
+729;"Avijit";NA;672
+730;"Miller";"Mark (XVI)";673
+731;"Cruise";"Tom";3092
+732;"Walters";"Mark Edward";3456
+733;"Goodman";"John (I)";674
+734;"Wilson";"Teddy (III)";678
+735;"Goldwyn";"Tony";679
+736;"Meloni";"Christopher";680
+737;"Chloupek";"Chris";681
+738;"Padgett";"Robert";5289
+739;"Fox";"Edward (I)";682
+740;"Cox";"Brian (I)";684
+741;"Medvedev";"Aleksei (III)";685
+742;"De Contreras";"Alfred";687
+743;"North";"Oliver";689
+744;"Fennell";"Denny";1414
+745;"Russell";"Brian (V)";690
+746;"Pigott";"Richie";766
+747;"Mazzocone Sr.";"Carl";691
+748;"Feinberg";"Ron";692
+749;"DiGiacinto";"Mike";694
+750;"Tarazona";"Jessica";1964
+751;"Erickson";"Craig (I)";695
+752;"Dumont";"Sky";696
+753;"Larriva";"Tito";697
+754;"Al-Amir";"Hudhail";698
+755;"Knight";"Christopher (I)";699
+756;"Vere-Jones";"Peter";701
+757;"Davis";"Sarah Scott";5456
+758;"Butler";"Alan G.";702
+759;"Hood";"Adrian (I)";705
+760;"McGovern";"Barry";706
+761;"Austin";"Julie (I)";836
+762;"Pryce";"Jonathan";707
+763;"Davison";"Bruce";708
+764;"Higgins";"John Michael";709
+765;"Cohn";"Linda";3748
+766;"Brinkley";"Ritch";710
+767;"Sherlock";"Charles (I)";711
+768;"Crawford";"Perry";712
+769;"Vonnegut Jr.";"Kurt";713
+770;"Waddington";"Steven";714
+771;"McKenna";"Charlene";4328
+772;"Silveus";"Mike";715
+773;"Reilly";"Desmond";716
+774;"Goodrow";"Garry";717
+775;"Caridi";"Carmine";721
+776;"Charles";"Gloria";3618
+777;"Hamilton";"McJoel";722
+778;"Henderson";"Martin (I)";723
+779;"McKeen";"Roger";724
+780;"DeForrest";"Kansas";725
+781;"Goodwin";"Harold (II)";726
+782;"Gaines";"Latham";727
+783;"Rommel";"Erwin";728
+784;"Ommanney";"Richard";2121
+785;"McKenzie";"Jack";4534
+786;"Lage";"Richard";729
+787;"Brooke";"Paul (I)";731
+788;"Douglas";"Donald (III)";730
+789;"Stevenson";"Jessica (I)";401
+790;"Harkin";"Dennis";732
+791;"Bryar";"Paul";733
+792;"Babchak";"Jim";734
+793;"Wiest";"Dianne";3216
+794;"Howard";"Ashley (I)";735
+795;"Oates";"Warren";736
+796;"Spencer";"Garland R.";737
+797;"Ciornei";"Frank";738
+798;"Newman";"Jennifer Lane";838
+799;"Irving";"George (I)";739
+800;"Brooks";"Albert (I)";742
+801;"Hayes";"Cynthia B.";4200
+802;"Castellotti";"Peter";743
+803;"Barbuto";"Julia";1898
+804;"Prieto";"Rodrigo";748
+805;"Supalert";"Pathompong";749
+806;"Roberts";"Mario";750
+807;"McPeck";"Brain";751
+808;"Weber";"Ben (I)";752
+809;"Elliott Jr.";"John Wesley";753
+810;"Barsky";"Vladimir";754
+811;"Batiste";"David";755
+812;"Attanasio";"Albert";1320
+813;"Magee";"Michael (I)";756
+814;"Hasegawa";"Yuji (I)";757
+815;"Boyar";"Lombardo";3276
+816;"Waters";"Oren";758
+817;"Velecký";"Frantisek";759
+818;"Jakobova";"Alena";2208
+819;"Burns";"Edward (I)";760
+820;"Wood";"Eric (V)";762
+821;"Han";"Young Hwa";769
+822;"Caine";"Allison";416
+823;"Krebs";"Zachary Aaron (I)";770
+824;"Dowe";"Don";1842
+825;"Taylor";"Avery";775
+826;"Clegg";"Ross";776
+827;"Cottini";"Jorge";777
+828;"Dawn";"Carina";4284
+829;"Straight";"Clarence";779
+830;"Licea";"Manuel 'Puntillita'";780
+831;"Corrigan";"Kevin (I)";781
+832;"Rodney";"Alexis";782
+833;"Aldridge";"Bobby";783
+834;"Lander";"David L.";784
+835;"Calfa";"Don";785
+836;"Curry";"Mark (III)";786
+837;"Robinson";"Bill (V)";787
+838;"Covert";"Allen";788
+839;"Lucescu";"Steve (I)";789
+840;"Dauda";"Raven";4650
+841;"Roberts";"Ken (I)";790
+842;"Gordon";"Don (I)";791
+843;"Renfro";"Brad";794
+844;"Keane";"James (I)";795
+845;"Mixon";"Jamal";3382
+846;"Cerra";"Saturno";796
+847;"Burns";"Paul (VI)";806
+848;"Michaely";"Joel";807
+849;"Zika";"Dawn";2610
+850;"Furth";"George";808
+851;"McCabe";"Pat";809
+852;"Kelly";"Brad (I)";811
+853;"Little";"Garry";812
+854;"Scarchilli";"Claudio";818
+855;"Tavier";"Hughes";819
+856;"LaGrange";"Anne";1961
+857;"Vezina";"Christian";817
+858;"Vespermann";"Gerd";820
+859;"Letterman";"David";821
+860;"Adams";"Joe (III)";822
+861;"Simmons";"Heather (II)";2833
+862;"Feher";"Friedrich";823
+863;"Rivera";"Emilio (I)";824
+864;"Hayden";"Julie";5009
+865;"de Lencquesaing";"Louis-Do";825
+866;"Dow";"Dr.";826
+867;"McNamara";"Brian";827
+868;"Bulleit";"James";828
+869;"Luke";"Benny";829
+870;"Johnson";"Van (I)";831
+871;"Owen";"Merryn";834
+872;"Baker";"Angela (V)";3247
+873;"Placido";"Donato";835
+874;"Clark";"Eddie";837
+875;"Dempsey";"Patrick (I)";840
+876;"Segel";"Jason";841
+877;"Stauber";"Liz";1487
+878;"Sullivan";"Brad";842
+879;"Miksak";"Joe";843
+880;"Sullivan";"Jenny (I)";5540
+881;"Harris";"Baxter";844
+882;"Barbareschi";"Luca";846
+883;"Sinatra";"Frank";848
+884;"Reed";"Caroline";2993
+885;"Tatum";"Roy";849
+886;"Savalas";"Telly";851
+887;"Badiuk";"Brad";854
+888;"Coleman";"Bronwen";3318
+889;"Cedar";"Jon";855
+890;"Puglia";"Frank";857
+891;"Pickering";"Mike (I)";858
+892;"Kafterani";"Dina";2800
+893;"Canal";"David";859
+894;"Sgeugloi";"Anthony";860
+895;"Moura";"Wagner";861
+896;"Rebhorn";"James";866
+897;"Conzo";"Joe";833
+898;"Nicholson";"Jack";870
+899;"Rabal";"Liberto";871
+900;"Sollner";"Bill";873
+901;"Gold";"Harry (I)";875
+902;"Romano";"Lou";879
+903;"Eiding";"Paul";476
+904;"Gaye";"Gregory";883
+905;"Bois";"Curt";3058
+906;"Felisatti";"Lorenzo";884
+907;"Reddy";"Brian";886
+908;"Schwartz";"Herb";4464
+909;"Pollak";"Kevin";167
+910;"Lodge";"David (I)";887
+911;"Baker";"Jennifer (I)";3471
+912;"Gethings";"Rebecca";1889
+913;"Nipote";"Joe";888
+914;"Otaki";"Hideji";889
+915;"Citer";"Leonid";890
+916;"Worthington";"Wendy";968
+917;"Gleisner";"Sam";891
+918;"Kwan (I)";NA;894
+919;"Cabot";"Bruce (I)";895
+920;"Morrissey";"Roger W.";896
+921;"Johnson";"Bobby (I)";897
+922;"Napier";"Alan";898
+923;"Naughton";"James";899
+924;"Serafetinis";"Stavros";900
+925;"Newhart";"Bob";901
+926;"Pape";"Paul";903
+927;"Mitchell";"Mike (I)";905
+928;"Kennedy";"David (I)";908
+929;"Keens-Douglas";"Chad";909
+930;"Caggiano";"Tim";910
+931;"Bernier";"Mark";1890
+932;"Millman";"Gabriel";911
+933;"Mottola";"Greg";104
+934;"Turturro";"Aida";5487
+935;"Ross";"Yolonda";1318
+936;"Norris";"Dean";912
+937;"Emmerich";"Noah";913
+938;"Bloch";"Chelsea";4839
+939;"Hendershott";"Adam";914
+940;"Ott";"Mark";915
+941;"Epstein";"Nicole";390
+942;"Baiano";"Erin";1929
+943;"de Lima";"Marcos";916
+944;"Rocha";"David";917
+945;"Dunn";"Kevin (I)";919
+946;"Beesley";"Nina";2789
+947;"Fujikura";"Minori";920
+948;"O'Donnell";"Chris (I)";921
+949;"Trumpower";"Max (I)";924
+950;"Campel";"C.M.";926
+951;"Pollack";"Sydney";927
+952;"Mason";"Maria Alaina";5552
+953;"Armstrong";"Michasha";928
+954;"Goorjian";"Michael A.";929
+955;"Covington";"Ian";3131
+956;"James";"Richard (I)";3102
+957;"Bonifas";"Paul";931
+958;"Campbell";"Wallace";933
+959;"Boyland";"Linda (I)";1216
+960;"Yousry";"Menis";934
+961;"Endoso";"Kenny";935
+962;"Cole";"Jennifer (I)";3016
+963;"Stephenson";"Bob (II)";936
+964;"Hendrickson";"Kate";595
+965;"Yeoman";"Maurice";937
+966;"Holt";"Bob";938
+967;"Bertheau";"Julien";939
+968;"Clifton";"Larry";940
+969;"Suplee";"Ethan";941
+970;"Long";"Joseph (I)";942
+971;"Lu";"Yi";943
+972;"Knight";"Wayne (I)";944
+973;"Henry";"Ely";945
+974;"Davis";"Don S. (II)";946
+975;"Forrester";"Rick";950
+976;"Leung Chiu Wai";"Tony";951
+977;"Sermonia";"Jason";952
+978;"Dean";"Laura (I)";1003
+979;"Pape";"Paul";953
+980;"Gibson";"Mel (I)";954
+981;"Gross";"Edan";955
+982;"Vincent";"Alex";956
+983;"Austine";"Ryan";957
+984;"Hahn III";"Archie";959
+985;"L'Abidine";"Dhaffer";960
+986;"Ashitey";"Claire-Hope";5258
+987;"Horton";"Peter (I)";961
+988;"Macopson";"Dwayne";962
+989;"Kaul";"Alan";963
+990;"Young";"Burt";964
+991;"Song";"Kang-ho";965
+992;"Unwin";"Stanley";966
+993;"Ross";"Malcolm (I)";967
+994;"Houli";"Sam";969
+995;"Du Janerand";"Philippe";970
+996;"Blevins";"Michael";971
+997;"Reed";"Alyson";2862
+998;"Collier";"Richard (I)";973
+999;"Marcantonio";"Jordan-Patrick";974
+1000;"Chase";"Chevy";975
+1001;"Lavan";"René";976
+1002;"Shah";"Kiran";977
+1003;"Zuckermann";"Charles";978
+1004;"Olderman";"Nathaniel";979
+1005;"Yam";"Simon";980
+1006;"Heard";"John";981
+1007;"Kaneshiro";"Takeshi";982
+1008;"Viana";"Marcos (II)";985
+1009;"Estevam";"Guilherme";4666
+1010;"de Souza";"Michel";3288
+1011;"Caine";"Michael (I)";986
+1012;"Mustin";"Burt";987
+1013;"Douglas";"Mike (I)";988
+1014;"Binkowski";"Art";989
+1015;"Kerr";"Ray";1755
+1016;"Zellweger";"Renée";3234
+1017;"Hamilton";"Hunter";990
+1018;"Hamar";"Cricket";600
+1019;"O Mochain";"Liam";991
+1020;"Blystone";"Stanley";992
+1021;"Rubin";"Benny";994
+1022;"Sperry";"George";4815
+1023;"Chase";"Porter";1505
+1024;"Cobb";"Edmund";4806
+1025;"Serrano";"Nestor";995
+1026;"Landau";"Martin";996
+1027;"Prescott";"Jennifer (I)";5028
+1028;"Robinson";"W.C.";997
+1029;"Offerman";"Nick";998
+1030;"Maio";"Fred";999
+1031;"Allen";"Kenneth S.";1000
+1032;"Rubion";"Léo";993
+1033;"Galán";"Mapi";1932
+1034;"Jennings";"Byron";1001
+1035;"Alan";"Sayda";503
+1036;"Johnson";"Matthew (II)";1002
+1037;"Gwillim";"Jack";1004
+1038;"Siemaszko";"Casey";1005
+1039;"Sporleder";"Gregory";1006
+1040;"Ford";"Brendan";1008
+1041;"Venton";"Harley";5034
+1042;"Pine";"Larry";1009
+1043;"Cairney";"John";1012
+1044;"Welch";"Elisabeth";5408
+1045;"Knutson";"Zak";1013
+1046;"Pereira";"Vincent";1014
+1047;"Lacy";"Clay";1016
+1048;"Rose";"Bettina";4374
+1049;"McCarthy";"Jeff (I)";1017
+1050;"McLean";"Shawn (I)";1019
+1051;"Evanson";"David";3978
+1052;"Rawls";"Alphonzo";1020
+1053;"Goldstein";"Jenette";5184
+1054;"DeSantis";"Stanley";1021
+1055;"Rowe";"John (I)";1022
+1056;"Clarke";"Warren";1023
+1057;"Westmoreland";"Bob";1024
+1058;"Haley";"Michael";1026
+1059;"Montgomery Jr.";"Dan";1027
+1060;"Lloyd";"Christopher (I)";1028
+1061;"Reitman";"Joseph D.";1029
+1062;"Tinker";"Levi";1031
+1063;"Tanner";"Antwon";2963
+1064;"Headley";"Lou";1032
+1065;"Kingsley";"Susan (I)";445
+1066;"Morris";"Reverend Gary";1033
+1067;"Decker";"Jennifer";2279
+1068;"Hauk";"John";1036
+1069;"Wise";"Greg";1037
+1070;"Crater";"Rich";1038
+1071;"Maguire";"Ellen";3244
+1072;"Krone";"Irving";1039
+1073;"Brimley";"Wilford";1040
+1074;"Barnes";"Paul (VI)";1041
+1075;"Benigni";"Roberto";1042
+1076;"Coles";"Stan";1043
+1077;"Woodcock";"Leonard (II)";1044
+1078;"Bachrach";"Howard";1048
+1079;"Berg";"Peter (I)";5259
+1080;"Conley";"Jack";1049
+1081;"Doralicia";NA;644
+1082;"Herman";"Paul (I)";1050
+1083;"Lowery";"Andrew";1051
+1084;"Poindexter";"Jeris";1052
+1085;"Duvall";"Robert (I)";1053
+1086;"Rust";"Richard (I)";1893
+1087;"Ryan";"Paul (II)";1055
+1088;"Giraldo";"Greg";1056
+1089;"Van Zandt";"Ned";1057
+1090;"Cyphers";"Charles";5268
+1091;"Najera";"Greg";1155
+1092;"Henderson";"Eric D.";1058
+1093;"Sinclair";"Madge";2690
+1094;"Elam";"Greg Wayne";1059
+1095;"Bowen";"Vincent";1060
+1096;"O'Gorman";"Owen";1061
+1097;"Ryan";"Ger";2708
+1098;"Murillo";"Juan";1062
+1099;"Martinez";"Lizet";1259
+1100;"Morant";"Richard";1063
+1101;"Levine";"Michael (XV)";1064
+1102;"Basden";"Cameron";4537
+1103;"McCoy";"Scott";1065
+1104;"Cobb";"Ron (I)";1066
+1105;"Roach";"Pat";1067
+1106;"Richards";"Michael (I)";1068
+1107;"Tosques";"Dino";1069
+1108;"Noma";"Shu Lan";505
+1109;"Brown";"Kevin (I)";1070
+1110;"Van Holt";"Brian";1071
+1111;"Addobbati";"Giuseppe";1072
+1112;"Walsh";"Dylan";1073
+1113;"Rosemont";"Romy";1814
+1114;"Grunberg";"Greg";1075
+1115;"Darden";"Severn";1077
+1116;"Stanley";"Don";1078
+1117;"Kurtz";"Michael (I)";1281
+1118;"Onyulo";"Sidede";1079
+1119;"Guinan";"Francis";1080
+1120;"Veadov";"Alex";1081
+1121;"Tanaka";"Hiroshi Tom";3246
+1122;"Bevins";"Bill";1082
+1123;"Shaw";"Kristen";3425
+1124;"Rushing";"Josh";1084
+1125;"Cazale";"John";1085
+1126;"O'Donnell";"Spec";1086
+1127;"Stroud";"Don (I)";1087
+1128;"Stoneham";"Ben";1088
+1129;"Malloy";"Matt (I)";1090
+1130;"Swanson";"Ted";1091
+1131;"McLiam";"John";1092
+1132;"Gilman";"Larry";1093
+1133;"Frankfather";"William";1094
+1134;"Hannah";"Frank";1095
+1135;"Reynolds";"Andrew (I)";1099
+1136;"Kalaidjian";"Father William";1100
+1137;"Lecube";"Graciela";1644
+1138;"Greene";"Arlon G.";1102
+1139;"Smith";"Stephanie (I)";4807
+1140;"Winston";"Matt (I)";1103
+1141;"Sheridan";"Dave (I)";1105
+1142;"Barrett";"Chris (IV)";1108
+1143;"Whitehouse";"Paul (I)";1109
+1144;"Metchik";"Asher";1110
+1145;"Ho";"Pak-Kwong";1111
+1146;"Giangiulio";"Nicholas J.";1113
+1147;"Van Peebles";"Mario";3255
+1148;"Graves";"Ruthanna";586
+1149;"Caviezel";"James";1117
+1150;"Aylward";"Rory J.";1118
+1151;"Crawford";"Chace";1120
+1152;"Wyner";"Tom";1121
+1153;"Tada";"Aoi";4375
+1154;"Pearlstein";"Randy";1122
+1155;"Browne";"Roscoe Lee";1123
+1156;"Pitts";"Greg (II)";1124
+1157;"Perkins";"Melody";485
+1158;"Hicks";"Mark (I)";1126
+1159;"Du Page";"Julie";4012
+1160;"Cruz";"Gilbert";1127
+1161;"Stram";"Henry";479
+1162;"Hettinger";"Marianne";3840
+1163;"Genaro";"Tony";1128
+1164;"Graham";"Sean (II)";1131
+1165;"Sarosiak";"Ronn";1132
+1166;"Roye";"Nicolas";1135
+1167;"Guidry";"Emily";2640
+1168;"Castro";"Miguel (III)";1134
+1169;"Chapman";"Ben (III)";1136
+1170;"Scott";"Daniel Joseph";1137
+1171;"Lormer";"Jon";1138
+1172;"John";"Domenick";1139
+1173;"Caballero";"José Luis";1142
+1174;"Allen";"Woody";1143
+1175;"Sanford";"Nadia";3902
+1176;"Tucker";"Jonathan (I)";1144
+1177;"Togunde";"Victor";1145
+1178;"Walsh";"M. Emmet";1147
+1179;"Sparavalo";"Dejan";1148
+1180;"Lounsbery";"Dan";1149
+1181;"Anderson";"Ric";1150
+1182;"Burns";"Jere";525
+1183;"Levi";"Todd";1151
+1184;"Lobo";"Eugenio";1152
+1185;"Brauss";"Arthur";1153
+1186;"Abelar";"Michael";1154
+1187;"Brady";"Wayne";1156
+1188;"Ross";"Jason (I)";1157
+1189;"Osei";"Eddie";1158
+1190;"Hudson";"Ernie";1159
+1191;"Thompson";"Elizabeth (I)";2914
+1192;"Pop";"Iggy";1160
+1193;"Olson";"Jeff (I)";1161
+1194;"Cheeseman";"Ken";1162
+1195;"Hawn";"Phil";1163
+1196;"DeBenning";"Burr";1164
+1197;"Donahue";"Don";1165
+1198;"Hayes";"Deryl";1166
+1199;"Mativenga";"Kimpton";1167
+1200;"Marcell";"Joseph";1729
+1201;"Dafoe";"Willem";1169
+1202;"Locane";"Amy";5203
+1203;"Dulli";"Zach";1168
+1204;"Lam";"Morgan";1170
+1205;"Broadbent";"Jim";1171
+1206;"Miller";"Andrew (I)";1172
+1207;"Ferguson";"Matthew (I)";1173
+1208;"Roach";"Martin (I)";1174
+1209;"Behling";"Robert";1175
+1210;"Mazzello";"Joseph";1179
+1211;"Epcar";"Richard";1180
+1212;"Boinski";"James W.";1181
+1213;"Faragallah";"Ramsey";1183
+1214;"Reddick";"Jaret";1184
+1215;"Bones";"Ken";1185
+1216;"Reid";"R.D.";1186
+1217;"Van Damme";"Jean-Claude";1187
+1218;"Cooke";"Matt (V)";1188
+1219;"Fau";"Michel";1189
+1220;"Gabay";"Claudine";2733
+1221;"Mathews";"Hrothgar";1190
+1222;"Butler";"Matt (I)";1191
+1223;"Duncan";"Michael Clarke";1192
+1224;"Witchard";"Cake";1193
+1225;"Shannon";"Vicellous Reon";1195
+1226;"Day";"Christopher (II)";1196
+1227;"Cui";"Zhihgang";1197
+1228;"Mitchell";"Hugh (I)";1198
+1229;"Huillet";"Aewia";2718
+1230;"Baumel";"Shane";1199
+1231;"Torres";"José Manuel (I)";1200
+1232;"Allan";"Bradley James";1202
+1233;"Lee";"Mu-yeong";1204
+1234;"Thewlis";"David";1205
+1235;"Mountain";"Charles";1206
+1236;"Flessas";"Michael";1207
+1237;"Carreño";"Ignacio";1208
+1238;"Al Levi";"Nur";2944
+1239;"Everett";"Tom";1209
+1240;"Rossatti";"Alberto";1211
+1241;"Erickson";"Christian";1212
+1242;"Long";"Tyler";1213
+1243;"Dzundza";"George";1214
+1244;"Bazelt";"Frank";1215
+1245;"Loffredo";"Gregory";1217
+1246;"Lambert";"Michael Ian";3076
+1247;"Williams";"Justin (I)";1218
+1248;"Kimura";"Yuichi";1219
+1249;"Gutierrez";"Alberto (I)";1220
+1250;"Terra";"Scott";504
+1251;"Kurupt";NA;1221
+1252;"Jones";"Timothy (I)";1222
+1253;"Buck";"David";1223
+1254;"Billock";"Rik";1224
+1255;"Maschemeyer";"Dude";1225
+1256;"Pahich";"Dre";1226
+1257;"da Schemer";"muMs";1227
+1258;"Bean";"Sean";1228
+1259;"Tanaka";"Professor Toru";1229
+1260;"Martí";"David";1230
+1261;"Anderson";"Joshua (I)";1231
+1262;"Willard";"Fred";1234
+1263;"Simon";"Paul (IV)";1235
+1264;"Kuroda";"Joe";4192
+1265;"Forrest Jr.";"J. Clifford";1241
+1266;"Bagley";"Tim";1243
+1267;"Leblanc";"Pierre";3112
+1268;"Baggot";"King (I)";1244
+1269;"Clancy";"Jacqueline";1681
+1270;"Howard";"Sherman";1245
+1271;"Sinden";"Donald";1246
+1272;"Kleemann";"Gunter";1247
+1273;"Negley";"Howard";1248
+1274;"Flournoy";"Elizabeth";435
+1275;"Portman";"Kai";1250
+1276;"Cole";"King";1251
+1277;"Petty";"Richard (I)";1252
+1278;"O'Brien";"Edward (II)";1253
+1279;"Cochrane";"Rory";1254
+1280;"Dirand";"Etienne";1255
+1281;"Frangoulis";"Mario";1260
+1282;"Modeste";"Samantha";3856
+1283;"Kilpatrick";"Erik";1261
+1284;"Robbie (III)";NA;1262
+1285;"Mullinar";"Rod";1263
+1286;"Cain";"Mick";1264
+1287;"Dawson";"Mike (I)";1265
+1288;"Loder";"Kurt";1266
+1289;"Cullen";"Michael (I)";1267
+1290;"Robbins";"Adele";1911
+1291;"Shim";"Andrew";1268
+1292;"Donlevy";"Brian";1269
+1293;"Honda";"Hirotaro";1270
+1294;"Quinn";"James Donnell";1271
+1295;"Faqir";"Michael";1272
+1296;"Bryan";"Deborah A.";1517
+1297;"La Marre";"Jean-Claude";1273
+1298;"Bainborough";"Bob";1274
+1299;"Taylor";"Steven (I)";1275
+1300;"Skerritt";"Tom";1276
+1301;"Butler";"Gerard";1279
+1302;"Gordon";"Danso";1280
+1303;"Valenzuela";"Eduardo (I)";1282
+1304;"Harada";"Ernest";1283
+1305;"Rupp";"Debra Jo";4754
+1306;"Manson";"Andrew (I)";1284
+1307;"Stallone";"Sylvester";1285
+1308;"Stewart";"Jon";1286
+1309;"Ferris";"Pam";5341
+1310;"Payne";"Lee";1287
+1311;"Levine";"Floyd";1288
+1312;"Hayes";"Ron";1289
+1313;"Peck";"George (I)";1290
+1314;"Bell";"Jamie (I)";1291
+1315;"Damon";"Mark";1292
+1316;"McRobbie";"Peter";1294
+1317;"Harris";"Viola";2200
+1318;"Rapaport";"Michael (I)";1296
+1319;"Galbreath";"Haywood";1297
+1320;"Hagen";"Daniel";1298
+1321;"Ellwood";"Kip";1299
+1322;"Stralka";"Benjamin";1300
+1323;"Jostyn";"Jennifer";2948
+1324;"O'Connor";"Kevin J.";1301
+1325;"Tessier";"Robert";1302
+1326;"Nusvanon";"Charan";1303
+1327;"Torn";"Rip";1304
+1328;"Walters";"Susan (I)";571
+1329;"Bissell";"Whit";1305
+1330;"Defever";"David";1308
+1331;"Boorman";"Charley";1309
+1332;"Genuardi";"Pietro";1310
+1333;"Gavriel";"Uri";1311
+1334;"Delaney";"Kim";2868
+1335;"Stallone";"Sylvester";1312
+1336;"Stanton";"Robert (II)";1314
+1337;"Timmis";"Conor";1317
+1338;"Chen";"Lyman";4219
+1339;"RZA";NA;1319
+1340;"Pyatkov";"Aleksandr";1321
+1341;"Conway";"Craig (I)";1323
+1342;"Moroff";"Mike";1324
+1343;"Drago";"Joe (I)";1325
+1344;"Nayyar";"Harsh";1326
+1345;"Bradford";"Daisy";1233
+1346;"Tornek";"Jack";1327
+1347;"Smith";"Robert N.";1328
+1348;"Haggis";"Kathryn";3733
+1349;"McKay";"Kris";1329
+1350;"Simons";"Sylvana";5278
+1351;"Fehr";"Oded";1330
+1352;"Prescott";"Eric";1331
+1353;"Pearce";"Guy (I)";1332
+1354;"Mohit";NA;1333
+1355;"Latimore";"Joseph";1334
+1356;"Hatfield";"Scott";1335
+1357;"Lucci";"Gino";1336
+1358;"Seamon";"Edward";3658
+1359;"McCourt";"Malachy";1337
+1360;"Ellis";"Chris (I)";1338
+1361;"Logue";"Donal";1340
+1362;"Roquevert";"Noël";1341
+1363;"Clark";"Sanders";1342
+1364;"Bauer";"David";1343
+1365;"Ogaz";"Victor Hugo";1344
+1366;"Kolinsky";"Liliana";66
+1367;"Harris";"Steve (I)";1345
+1368;"Schaefer";"Jerry";1346
+1369;"Wilkey";"Jim";1347
+1370;"Bates";"Kathy (I)";4322
+1371;"Berry";"Fred";1348
+1372;"Blumenfeld";"Alan";1047
+1373;"Nash";"Bill (IV)";1349
+1374;"Leong";"Al";1350
+1375;"Broussard";"Rebecca";278
+1376;"Parrott";"Jerry E.";1351
+1377;"Valencia";"Vance";4293
+1378;"Herman";"Glenn";1352
+1379;"Tillotson";"John Robert";2823
+1380;"Woo";"John (I)";1353
+1381;"von Homburg";"Wilhelm";1354
+1382;"Tammi";"Tom";1357
+1383;"Fischer";"Jeff";1359
+1384;"Chow";"Yun-Fat";1360
+1385;"Bryan";"Dwyght";1361
+1386;"Luna";"Diego (I)";1362
+1387;"Maitland";"Colin";1363
+1388;"Deadrick Sr.";"Vince";1364
+1389;"Foraker";"Lois";1489
+1390;"Burgess";"Fisun";1365
+1391;"Rodgers";"Anton";1366
+1392;"Knoxville";"Johnny";1367
+1393;"Lake";"Ricki";4411
+1394;"Coleman";"Gary (I)";1368
+1395;"Shannon";"Polly";3686
+1396;"Urla";"Joe";1369
+1397;"Keltie";"Luke";1370
+1398;"Finnegan";"Tom";1371
+1399;"Prinsloo";"P.J.";1372
+1400;"Boyd";"Lynda";904
+1401;"Bohringer";"Richard";1373
+1402;"Miller";"Mark Jeffrey";1374
+1403;"Ewing";"Alan";1375
+1404;"Sellman";"Marie-Louise";670
+1405;"Safronov";"Nikas";1378
+1406;"Dolgorukova";"Lyudmila";813
+1407;"Thomas";"Leonard L.";1379
+1408;"Shi";"Li (II)";1380
+1409;"Kounen";"Jan";1382
+1410;"Josefsberg";"Ken";1383
+1411;"Schiff";"Richard";1385
+1412;"Maxwell";"Roger";1386
+1413;"Wallace";"Brian W.";1387
+1414;"Boyar";"Sully";1388
+1415;"Robson";"Chris (III)";1389
+1416;"Fraser";"Brendan";1390
+1417;"Ewell";"Dwight";1391
+1418;"Engblom";"Skip";1392
+1419;"Skarsgård";"Stellan";1393
+1420;"Glori";"Enrico";1394
+1421;"Mambor";"Renato";1178
+1422;"Repaci";"Leonida";1884
+1423;"Moremore Jr.";"Sammy";1395
+1424;"Cooper";"Roy (I)";1396
+1425;"Cerin";"Emir";1397
+1426;"Siegel";"Marc (III)";1398
+1427;"Mendez";"Tiger";1399
+1428;"LeRoi";"Randolph";4741
+1429;"Singer";"Stephen (I)";1400
+1430;"Wayans";"Craig";1401
+1431;"Spencer";"Chris";3401
+1432;"Scarpa";"Renato";1402
+1433;"Vanaria";"Louis";1403
+1434;"Dent";"Frank";1404
+1435;"Tobias";"Larry";1408
+1436;"Panagos";"Lisa Marie";3389
+1437;"Moreland";"David";1409
+1438;"Russell";"Robert (VIII)";1410
+1439;"Katt";"Nicky";1411
+1440;"Bridges";"Jeff (I)";1412
+1441;"Severdia";"Ron";1413
+1442;"Jordan";"Will (I)";1355
+1443;"Rogers";"Mimi";4329
+1444;"Collin";"Len";1415
+1445;"Majed";"Verle";1416
+1446;"Lewis";"Geoffrey (I)";1417
+1447;"Cobb";"Edmund";1418
+1448;"Campbell";"Bruce (IV)";1419
+1449;"Coghill";"Joy";5202
+1450;"Carrasco";"Carlos";1420
+1451;"Cauderlier";"Patrick";1421
+1452;"Frérot";"Alain";1422
+1453;"Austin";"Alan (II)";1424
+1454;"Dahlgren";"David";1425
+1455;"Culkin";"Rory";1426
+1456;"Martin";"Duane";1427
+1457;"Palminteri";"Chazz";1428
+1458;"Hechim";"Jim";1429
+1459;"Hanson";"Brad (I)";1430
+1460;"Malloy";"Matt (I)";1432
+1461;"Dougherty";"Pam";5491
+1462;"Sparks";"Hal";1433
+1463;"Robinson";"Shaun (I)";4961
+1464;"Morgan";"Stanley";1434
+1465;"Creley";"Jack";1435
+1466;"Lugosi";"Bela";1436
+1467;"Plummer";"Christopher (I)";1437
+1468;"Mazin";"Stan";1438
+1469;"Anthony";"Lysette";1823
+1470;"Aykroyd";"Dan";1439
+1471;"Raci";"Paul";1440
+1472;"Gilbertson";"Christopher";1441
+1473;"Moreland";"Judith";2344
+1474;"O'Neill";"Terry (I)";1442
+1475;"Kemp";"Roger";1443
+1476;"Fitzpatrick";"Richard (I)";1444
+1477;"MacKay";"Lizbeth";484
+1478;"Wahlberg";"Donnie";1445
+1479;"Sullivan";"Scott (IV)";1446
+1480;"Léaud";"Jean-Pierre";1447
+1481;"Fowler";"Bernard";1448
+1482;"Rice";"Arike";2919
+1483;"Fox";"Carey";1449
+1484;"Williams";"Samm-Art";1450
+1485;"Malicki-Sánchez";"Keram";1451
+1486;"Harlin";"Renny";1452
+1487;"Hall Jr.";"William";1453
+1488;"Holmes";"Paul (I)";1455
+1489;"Minnie";"Josh";1456
+1490;"Rothman";"Darla";3821
+1491;"Boswell";"Charles";1457
+1492;"Spreckley";"Arthur";1458
+1493;"Vernier";"Adam";1459
+1494;"Dillon";"Matt";1460
+1495;"Frederick";"Jayson";1461
+1496;"Dalibert";"André";1464
+1497;"Kinskey";"Leonid";1465
+1498;"Chott";"Bill";1466
+1499;"Swanson";"Kristy";1971
+1500;"Blatch";"Kevin";1467
+1501;"Parker";"Sarah Jessica";1825
+1502;"Webb";"Alan";1468
+1503;"Johnston";"Andrew (II)";1470
+1504;"Prine";"Andrew";1474
+1505;"Foster";"Jenifer Rebecca";881
+1506;"Moran";"Rob (I)";1475
+1507;"Shaye";"Lin";5309
+1508;"Levy";"Eugene";1476
+1509;"Choir";"Hall Johnson";1477
+1510;"Senor";"Andy";1478
+1511;"Jordan";"Richard (I)";1480
+1512;"Blau";"Andrew (I)";1482
+1513;"Lai";"Leon";1483
+1514;"Pallana";"Kumar";1485
+1515;"Callier";"Jesshaye";1486
+1516;"D'Onofrio";"Vincent (I)";1490
+1517;"Bava";"Lamberto";1313
+1518;"Blanch";"Jaime";1339
+1519;"Roubakha";"Rémy";1358
+1520;"Trestini";"Giorgio";1492
+1521;"O'Dell";"David M. (III)";1493
+1522;"Mayne";"Ferdy";1494
+1523;"Overton";"Rick";1495
+1524;"Gortner";"Marjoe";1496
+1525;"Hardin";"Jerry";2725
+1526;"James";"Raji";1497
+1527;"Ives";"Burl";1498
+1528;"Haggerty";"Dan (I)";1499
+1529;"Boche";"Herbert";1506
+1530;"Brooks";"Conrad";4814
+1531;"Murphy";"Eddie (I)";1507
+1532;"Arnold";"Brian";1510
+1533;"Sanchez";"Marco";1511
+1534;"Jensen";"Anthony (I)";1513
+1535;"Hogan";"Chris (II)";5032
+1536;"Pittman";"Marilyn";4424
+1537;"Power";"Derry";1514
+1538;"Davidson";"John (II)";1515
+1539;"Gallion";"Jalaine";4014
+1540;"Davis";"Bob (I)";1519
+1541;"Kraus";"Walter";1521
+1542;"Levins";"Connor Christopher";1522
+1543;"Hahn";"Archie";1523
+1544;"Overton";"Rick";1524
+1545;"Merrill";"Jack";1525
+1546;"Grant";"Patrick (II)";4838
+1547;"Hordern";"Michael";1528
+1548;"Roarke";"Adam";1529
+1549;"Devney";"James";1530
+1550;"Stamp";"Terence";1531
+1551;"Cronin";"Joe (IV)";1532
+1552;"Fletcher";"Dexter (I)";1533
+1553;"Smart";"Patsy";185
+1554;"Castaldo";"Craig";1534
+1555;"O'Conor";"Joseph";1536
+1556;"Ardant";"Fanny";599
+1557;"Daniels";"Bobby";1537
+1558;"North";"Gregory";4196
+1559;"Nguyen";"Johnny";1538
+1560;"Ellefsen";"Per Christian";1540
+1561;"Buster";"Budd";1541
+1562;"Portlock";"David";1543
+1563;"Marinker";"Peter";1544
+1564;"Hawthorne";"Denys";1545
+1565;"Clark";"Matthew (I)";1546
+1566;"Whyte";"Joe";1547
+1567;"Joe";"Fat";1548
+1568;"Hoehn";"Robert (I)";1549
+1569;"Ishimatsu";"Guts";1550
+1570;"Forbes";"Sheridan";3946
+1571;"Morris";"Rob (I)";1551
+1572;"Botka";"John Timothy";1552
+1573;"Ducommun";"Rick";1553
+1574;"Schwarzenegger";"Arnold";1554
+1575;"Rea";"Stephen (I)";1555
+1576;"Bell";"Marshall";1556
+1577;"Wilkinson";"Nick (III)";1557
+1578;"Law";"Jude";1558
+1579;"Burowa";"Keta";1381
+1580;"Obershall";"Frank";1559
+1581;"Jurasik";"Peter";1560
+1582;"Green";"Seth";1561
+1583;"Hunter";"James (VI)";5409
+1584;"Tiberkanine";"Hicham";1562
+1585;"Diéner";"Jean";1563
+1586;"Richie";"Stan";1564
+1587;"Kant";"Paul";1565
+1588;"Hart";"Ian";1566
+1589;"Macfadyen";"Matthew";1567
+1590;"Zsenyuk";"Steven Paul";1568
+1591;"Kelly";"Jim (II)";1570
+1592;"Chaykin";"Maury";1571
+1593;"Hernandez";"Gustavo (I)";1572
+1594;"Smith";"Chadd";1573
+1595;"Simanton";"Jon";5488
+1596;"Barrash";"David";1574
+1597;"Deák";"Tamás (II)";1575
+1598;"Rosin";"James";1576
+1599;"Cromwell";"James (I)";4399
+1600;"Nance";"Jack";1577
+1601;"Martin";"John Scott";1578
+1602;"Brisbin";"David (I)";1579
+1603;"Brown";"John (X)";1580
+1604;"Stuthman";"Fred";1581
+1605;"Campbell";"Bruce (I)";1582
+1606;"Harshbarger";"David E.";1583
+1607;"Gray";"Joe (I)";1584
+1608;"Erciyes";"Ahmet";1585
+1609;"Barroso";"Víctor";1586
+1610;"Flitter";"Josh";1589
+1611;"Harelik";"Mark";1591
+1612;"Mørk";"Erik";1592
+1613;"Gajewski";"Jaroslaw";1593
+1614;"Deadman";"Derek";1594
+1615;"Sakuma";"Sota";1595
+1616;"Zimova";"Tereza";2787
+1617;"Dalcour";"Julian";1599
+1618;"Peterson";"Tom (I)";1600
+1619;"Huntley";"Noah";1601
+1620;"Stadler";"Joerg";1602
+1621;"Silvani";"Al";1603
+1622;"McCloud";"Damon";1604
+1623;"Wilkinson";"Ashley H.";3179
+1624;"Lemeshev";"Yuri (II)";1605
+1625;"Wilder";"Gene";1606
+1626;"Hicks";"Dan (I)";1607
+1627;"Spiegel";"Scott";1608
+1628;"Wandracsek";"Tamás";1609
+1629;"Giraldo";"Diomar";2778
+1630;"Blank";"Kenny (I)";1610
+1631;"Geoffrey";"Paul (I)";1611
+1632;"Large";"Corey (I)";1612
+1633;"Schaub";"Will";1613
+1634;"Boudreau";"Michelle (I)";5626
+1635;"Silverman";"Robert A.";1614
+1636;"Torry";"Joe";1615
+1637;"Harring";"Laura";2395
+1638;"Foroughi";"Shekib Ahmad";1616
+1639;"Hennessy";"Jill";1083
+1640;"Feore";"Colm";1617
+1641;"Beatty";"Ned";1618
+1642;"Fabio (I)";NA;1619
+1643;"von Sydow";"Max (I)";1620
+1644;"Lahai";"Sayoh";1621
+1645;"Green";"Calvin";1622
+1646;"Rudolf";"Markus";1623
+1647;"Hawke";"Ethan";1624
+1648;"Reynolds";"Simon (I)";1625
+1649;"Polson";"Larry";1626
+1650;"Reed";"Rondi";5541
+1651;"Bilerman";"Howard";1627
+1652;"Paul";"John (I)";1628
+1653;"Angus";"Colin";1629
+1654;"Dolenc";"Cindy";5035
+1655;"Brown";"Bryan (I)";1630
+1656;"Mack";"Gene";1631
+1657;"Leung Chiu Wai";"Tony";1632
+1658;"Gibault";"Thierry";1633
+1659;"Heudeline";"Raymonde";3538
+1660;"Nowinski";"Jeffrey J.";1634
+1661;"Smith";"Howard (I)";1635
+1662;"Morts";"Billy";1636
+1663;"Day";"Christopher (II)";1637
+1664;"Schwab";"Lana";166
+1665;"Hartnett";"Josh";1638
+1666;"Balfour";"Michael";1639
+1667;"Lesar";"Dave";1640
+1668;"Niyazov";"Saparmurat";4395
+1669;"Zahn";"Paula";804
+1670;"Overton";"Frank";1641
+1671;"Cooper";"Bradley (I)";1642
+1672;"Campbell";"Scott Michael";1643
+1673;"Ratzenberger";"John";1645
+1674;"Scott";"Byron";1646
+1675;"Barry";"Raymond J.";1647
+1676;"Smith";"Barry R.";1648
+1677;"Kim";"Sang (I)";1650
+1678;"Snyder";"Kate";2071
+1679;"Wong";"B.D.";1651
+1680;"Cage";"Nicolas";1652
+1681;"Young";"Clint (I)";1653
+1682;"Kaler";"Jamie";1654
+1683;"Flores";"Abraham";1655
+1684;"Cisewski";"Larry";1488
+1685;"Keown";"Allan";1656
+1686;"Karte";"Tore";1658
+1687;"Wållgren";"Gunn";5336
+1688;"Smith";"Paul J. (III)";1659
+1689;"Grierson";"Ralph";1660
+1690;"McNulty";"Kevin";1661
+1691;"Richmond-Peck";"David";2299
+1692;"Boyd";"Stephen (I)";1662
+1693;"Walsh";"Gerry";1663
+1694;"Grace";"Wayne";1116
+1695;"Moss";"Ben (I)";1664
+1696;"Gaulke";"James";1666
+1697;"Rule";"Ja";1669
+1698;"Sanford";"Trey";1670
+1699;"Kelley";"Nathalie";2921
+1700;"Willis";"Bruce";1671
+1701;"Russo";"James (I)";1672
+1702;"Lancaster";"Stuart (I)";1673
+1703;"Grandberry";"Omarion";1674
+1704;"Moss";"Larry (III)";1675
+1705;"Luzi";"Simone";1676
+1706;"Howard";"Trevor (I)";1677
+1707;"Irish";"Tom";1678
+1708;"Wieland";"Natasha";2930
+1709;"Lozano";"Vince";1679
+1710;"Hofheimer";"Charlie";1680
+1711;"Fredericks";"David (I)";1682
+1712;"Ludwig";"Walt G.";1683
+1713;"Ford";"Eva";4191
+1714;"Combs";"Jeffrey";1684
+1715;"Culp";"Steven";1685
+1716;"Keegan";"Donna";3110
+1717;"Walters";"Matthew (I)";1686
+1718;"Mewes";"Jason";1687
+1719;"Metchik";"Aaron Michael";1688
+1720;"Lyn";"Vincent (I)";1689
+1721;"Dosanjh";"Kriss";1691
+1722;"Dakkar";NA;1692
+1723;"Silvestre";"Pascal";1693
+1724;"Breheret";"Laurence";2085
+1725;"Ross";"Neil (I)";1696
+1726;"Coffey";"Scott (I)";1698
+1727;"Henningsen";"Bent";1700
+1728;"Heise";"Reiner";1701
+1729;"Stapleton";"Liam";1702
+1730;"Cavallo";"Ron 'Puppy'";984
+1731;"Guthrie";"Shary";5030
+1732;"Preston";"J.A.";1703
+1733;"Ruskin";"Shimen";1705
+1734;"Damon";"Matt";1706
+1735;"Bardon";"John";1709
+1736;"Maskell";"Tina";5350
+1737;"Meedin";"Riz";1710
+1738;"McDonald";"Mac (I)";2732
+1739;"Ortiz";"Louis";1711
+1740;"Sanchez";"Lauren";872
+1741;"Zamfirescu";"Florin";1712
+1742;"Etokyo";"Enzo";1713
+1743;"Gere";"Richard";1714
+1744;"Bird";"Norman";1715
+1745;"Farentino";"James";1716
+1746;"Ross";"Francis";5496
+1747;"Liquette";"Kolja";1717
+1748;"Fauchon";"Guy";1718
+1749;"Landes";"Michael";1719
+1750;"Kalugin";"Alexander";1720
+1751;"Yama";"Kazuyuki";1721
+1752;"Buscemi";"Steve";1722
+1753;"Kenny";"Tom (I)";1723
+1754;"Lentini";"Francisco";1725
+1755;"Cicco";"Dominick";3923
+1756;"Singer";"Gregory (I)";1726
+1757;"Pendleton";"Austin";1727
+1758;"Cullen";"Jonathan";1728
+1759;"Bacchi";"Ivan";1730
+1760;"Mellon";"Brett";1732
+1761;"Lynn";"Patsy";1539
+1762;"Biheller";"Robert";1733
+1763;"Pierre";"Olivier (I)";1734
+1764;"Gunn";"Moses";1735
+1765;"Patrick";"Robert (I)";1736
+1766;"Calderon";"Paul (I)";1737
+1767;"Lombard";"Karina";3817
+1768;"Dennehy";"Brian";1738
+1769;"Moreno";"Ken";1739
+1770;"Chang";"Sophia";1963
+1771;"Glover";"Brian (I)";1740
+1772;"Bunce";"Stuart";1741
+1773;"Mendillo";"Stephen";1742
+1774;"DePriest";"Teresa";178
+1775;"Percival";"Michael (I)";1743
+1776;"Waits";"Tom";1744
+1777;"Simonella";"Liborio";1745
+1778;"Bush";"Billy Green";1747
+1779;"Beach";"Adam";1748
+1780;"Grizzard";"George";2210
+1781;"Guyett";"Lionel";1750
+1782;"Jeffcoat";"Nigel";2136
+1783;"Freeze";"Frosty";1751
+1784;"Delgado";"Miguel (I)";1752
+1785;"Rhee";"Sammy";1753
+1786;"Uhlarik";"Winter B.";4423
+1787;"Fishburne";"Laurence";1754
+1788;"Praml";"Joe";1757
+1789;"Rapaport";"Louis M.";1758
+1790;"Adler";"Matt";1761
+1791;"Hindy";"Martin";1762
+1792;"Kennedy";"George (I)";1763
+1793;"Hickey";"John Benjamin";1764
+1794;"Cho";"John";1765
+1795;"Candell";"MarLee";5485
+1796;"McCary";"Rod";1766
+1797;"Cook";"Jonathan Teague";1767
+1798;"Brown";"Clancy";1770
+1799;"Kirkpatrick";"Karey";1771
+1800;"Graham";"Holter";1772
+1801;"Fraser";"Duncan (II)";1773
+1802;"Roehn";"Franz";1774
+1803;"Hensher-Smith";"Kyle";1775
+1804;"Haugen";"Per Theodor";1749
+1805;"Goldwater";"Barry";1776
+1806;"Taylor";"Bill (I)";1777
+1807;"Carlotti";"Nicolas";1780
+1808;"Valdez";"Angel";1781
+1809;"Barry";"Martyn";1782
+1810;"Egan";"Alison";2973
+1811;"McGinn";"Russ";1783
+1812;"Carroll";"Todd (II)";1784
+1813;"Ibarra";"Jesse";2769
+1814;"Dussud";"Stéphanye";677
+1815;"Breen";"Patrick";1785
+1816;"Kallio";"Angelika";438
+1817;"Angarano";"Michael";1786
+1818;"Eggleston";"Ralph";1787
+1819;"Dooley";"Paul";1788
+1820;"McCormack";"Mary";3101
+1821;"Wyman";"John";1789
+1822;"Harris";"Cassandra (I)";683
+1823;"Harvey Jr.";"Harry";1790
+1824;"Crowther";"Graeme";1791
+1825;"McLaughlin";"Brandon";1792
+1826;"Shelton";"Beverly (I)";1133
+1827;"McGee";"Jackie";1793
+1828;"Semels";"Harry";803
+1829;"Cullum";"JD";1794
+1830;"Rambis";"Kurt";1795
+1831;"Albert";"Marv (I)";4241
+1832;"Alexander";"Diane (I)";1257
+1833;"Kovaleski";"Christopher";1796
+1834;"Osment";"Haley Joel";1797
+1835;"Gadsden";"Calvin";3235
+1836;"McCarthy";"Danté";798
+1837;"Kirkwood";"Bryan";1798
+1838;"Pennick";"Jack";1799
+1839;"Collins Jr.";"Clifton";1800
+1840;"Beck";"Billy (I)";1801
+1841;"Lee";"Michael David";1804
+1842;"Hernandez";"Fernando (III)";1805
+1843;"Hedlund";"Garrett";1806
+1844;"Vergara";"Sofía";5411
+1845;"Ouazanni";"Mohamen Mehdi";1807
+1846;"Finlay";"Frank (I)";1808
+1847;"Verduzco";"Danny";1809
+1848;"Wright";"David (I)";1810
+1849;"Jacobson";"Julian";1811
+1850;"Dickens";"Joanna";704
+1851;"Buttram";"Pat (I)";1812
+1852;"Acovone";"Jay";1815
+1853;"Kreis";"Levi";1817
+1854;"Karloff";"Boris";1820
+1855;"Stern";"Daniel (I)";1821
+1856;"Campanella";"Frank (I)";1822
+1857;"Bronte";"Blanche";3205
+1858;"Delage";"Jean-Pierre";1824
+1859;"Victor";"Henry";1828
+1860;"Molinaro";"Al";1829
+1861;"Tobolowsky";"Stephen";1830
+1862;"Shock";"Colton";1831
+1863;"Arnold";"Tom (I)";1832
+1864;"Williamson";"Mykelti";1833
+1865;"Schellenberg";"August";1834
+1866;"Hawkins";"Ira";1835
+1867;"Richardson";"LaTanya";5539
+1868;"Johansen";"David";1836
+1869;"Mustillo";"Louis";1837
+1870;"Dynam";"Jacques";1838
+1871;"Jurgensen";"Randy";1839
+1872;"Diols";"Williams";1840
+1873;"Falconetti";"Gérard";1841
+1874;"Finch";"Jon";1843
+1875;"Brown";"Timothy (I)";1844
+1876;"Jimenez";"Robert";1845
+1877;"Parks";"Bert";1846
+1878;"Rees";"Roger";1847
+1879;"Cube";"Ice";1848
+1880;"Fox";"Jovun";1849
+1881;"Hernandez";"Jay (I)";1850
+1882;"Clark";"Robert M.";2560
+1883;"Gibbs";"Jeff (I)";5033
+1884;"Millkie";"Ron";1851
+1885;"Brand";"David (I)";1852
+1886;"McCorry";"Terence";1853
+1887;"Gorney";"Walt";1854
+1888;"Munson";"Warren";1855
+1889;"Parker";"Corey (I)";1856
+1890;"Barton";"Peter (I)";1857
+1891;"Lockwood";"Evan";1859
+1892;"Allain-Marcus";"Wade";1862
+1893;"Sarandon";"Chris (I)";1863
+1894;"Chamberlain";"Matthew";1864
+1895;"Berger";"Zachary (I)";1865
+1896;"Glazier";"Christine";3303
+1897;"Lawrence";"Marc (I)";1866
+1898;"Dexter";"Mark";1867
+1899;"Miller";"Patrick (I)";1868
+1900;"Stevens";"Angela";2728
+1901;"Bryan";"Christopher (I)";1869
+1902;"Hill";"William (II)";1870
+1903;"Löwek";"Anton";1872
+1904;"Massey";"Emma";867
+1905;"Cray";"Ed (I)";1873
+1906;"Robinson";"Joel (II)";2644
+1907;"Fischler";"Patrick";1874
+1908;"Hayes";"Tony (II)";1875
+1909;"Duncan";"Gordon";1779
+1910;"Speer";"Hugo";1876
+1911;"Brogger";"Ivar";1877
+1912;"Morrisey";"Bob";4141
+1913;"Gallo";"Vincent";1878
+1914;"Smith";"Paul (I)";1879
+1915;"Duncan";"Judson";1880
+1916;"Frisch";"Arno";1881
+1917;"Pidgeon";"Walter";1882
+1918;"Greene";"Leon";1883
+1919;"Callahan";"Jack";1885
+1920;"Ramsey";"Stephen (II)";1886
+1921;"Sezer";"Safak";1887
+1922;"Richards";"Larry";1894
+1923;"Evans";"Reg";1897
+1924;"Ji";"Han Jae";1899
+1925;"McGuire";"Scott Hunter";1900
+1926;"Flanagan";"Rachel (I)";3039
+1927;"Belancic";"Nenad";1901
+1928;"Mehta";"Hansu";1902
+1929;"Patankar";"Prabhakar";3846
+1930;"Shende";"Sunil";274
+1931;"Murdoch";"Bill (I)";1903
+1932;"Brownsell";"Louie";799
+1933;"Clerkin";"Cavan";1904
+1934;"Magoo (II)";NA;1908
+1935;"Smith";"Wyatt (II)";1909
+1936;"Meyer";"Breckin";1910
+1937;"Masiello";"Al";1914
+1938;"Forrester";"Harry";1915
+1939;"Gamble";"Mason";1916
+1940;"Valenzano";"Carlo";1917
+1941;"Barrett";"Robert (II)";1918
+1942;"Serim";"Tulga";1921
+1943;"Danton";"Steve";1925
+1944;"Baird";"Henry";1924
+1945;"Ball";"Angeline";2225
+1946;"Ratner";"Herbert";1926
+1947;"Deering";"Olive";2280
+1948;"Wilson";"Don (I)";1927
+1949;"Cleese";"John";1928
+1950;"Affleck";"Casey";1933
+1951;"Osborne";"John (II)";1934
+1952;"Roberts";"Shawn (II)";1935
+1953;"Kurtz";"Swoosie";3657
+1954;"Elliot";"David (V)";1936
+1955;"Antoine";"Benz";1937
+1956;"Bishop";"Angus";49
+1957;"Russo";"Melissa";3299
+1958;"Goossen";"Greg";1938
+1959;"Jones";"Whitney";1939
+1960;"Landon";"Tom (I)";1940
+1961;"Mays";"Tom";2858
+1962;"Jittlov";"Mike";1941
+1963;"Sanders";"George (I)";1942
+1964;"Reddy";"Teddy";1943
+1965;"Aykroyd";"Dan";1944
+1966;"Kasem";"Jean";5391
+1967;"Todisco";"Jerry";1945
+1968;"Ghosthawk";"Tony";1946
+1969;"Gardiner";"Iain";1947
+1970;"Healy";"Pat (I)";1948
+1971;"Travis";"Stacey (I)";688
+1972;"Lawner";"Mordecai";1949
+1973;"Cuny";"Marty";1950
+1974;"Rumph";"Sky";1951
+1975;"Louis";"Joe";2237
+1976;"Harris";"Sam (II)";1953
+1977;"Edwards";"Mary Ann";402
+1978;"Pawlak";"D.J.";1956
+1979;"Saget";"Roger";1957
+1980;"Durell";"R.J.";1958
+1981;"Calleia";"Joseph";1960
+1982;"De Cordova";"Leander";5282
+1983;"Yung";"Wai-Ho";1965
+1984;"Wong";"Paul (III)";1966
+1985;"Bully";"Bryon";1967
+1986;"Trigger (IV)";NA;1968
+1987;"Minor";"Bob";1969
+1988;"Young";"Vanessa (I)";5457
+1989;"Phifer";"Mekhi";1972
+1990;"Ok";"Anne";2602
+1991;"Aulicino";"Paul";1973
+1992;"McGoohan";"Catherine";1931
+1993;"Sibenaler";"Robert";1974
+1994;"Bobby";"John";1975
+1995;"Pinero";"Dadi";1976
+1996;"Bendandi";"Poldo";1977
+1997;"Rees";"Norman Campbell";1978
+1998;"Mann";"Harris";1979
+1999;"Weiss";"George (I)";1981
+2000;"Ciccolella";"Jude";1982
+2001;"Williams";"Ellis";1983
+2002;"Davis";"John T. (I)";1984
+2003;"Todd";"Amy";2246
+2004;"Kennedy";"Jihmi";1985
+2005;"Cambise";"Jude";1986
+2006;"Baylor";"Gary G.";4402
+2007;"Evermore";"J.D.";768
+2008;"Paddock";"Josh";1989
+2009;"Becker";"Kuno";1990
+2010;"Heiniger";"Steve";5201
+2011;"Spinell";"Joe";1991
+2012;"Morley";"Carol (I)";2762
+2013;"Kurtz";"Gary (I)";1992
+2014;"Spagnuolo";"Filomena";483
+2015;"Bellante";"Francesco Paolo";1993
+2016;"Robutti";"Enzo";4316
+2017;"Allison";"Keith";1994
+2018;"Cutrona";"Ryan";4853
+2019;"Lowe Jr.";"David (II)";2912
+2020;"James";"Jesse (I)";1995
+2021;"Sabela";"Simon";1996
+2022;"O'Shaughnessy";"Brian";1997
+2023;"Chambers";"Munro";1998
+2024;"Ellis";"Chris (I)";1999
+2025;"Manza";"Ralph";2294
+2026;"Takei";"Sanji";2000
+2027;"Berg";"Peter (I)";2001
+2028;"Tsutsumi";"Yasuhisa";2002
+2029;"Smith";"Joe (I)";2003
+2030;"Walker";"Art (I)";5145
+2031;"Hayward";"Helen";5489
+2032;"Chipalu";"Govind";2004
+2033;"Byfield";"Trevor";2005
+2034;"Benson";"Martin (I)";2006
+2035;"Nasso";"Frank";2008
+2036;"Duval";"James";2009
+2037;"Burkholder";"Scott";3268
+2038;"Chandler";"Eddy";2010
+2039;"Wilkerson";"Guy";1129
+2040;"Gi";"Ju-bong";2011
+2041;"Berman";"Andrew (I)";2012
+2042;"von Watts";"Hamilton";2013
+2043;"Lang";"Bastian";2014
+2044;"Praphawat";"Marakorn";4069
+2045;"White";"Mike (I)";2015
+2046;"O'Hare";"Tim (I)";2016
+2047;"Heslov";"Grant";2017
+2048;"Gambon";"Michael";2018
+2049;"Bohon";"Justin";2768
+2050;"Brava";"Keith";2019
+2051;"Darmon";"Gérard";2020
+2052;"Cannon";"Joe (III)";2021
+2053;"Barbaro";"Antonio";2022
+2054;"Isles";"Frank";2023
+2055;"Cotillard";"Marion";3109
+2056;"Mele";"Nicholas";2024
+2057;"Trevor";"Austin";2025
+2058;"Youngman";"Henny";2026
+2059;"Williams";"Johnny (I)";983
+2060;"Cassaro";"Nancy";2643
+2061;"Cummings";"Jim (I)";2029
+2062;"Davi";"Robert";2030
+2063;"Mbandu";"Konga";2032
+2064;"Dennehy";"Brian";2033
+2065;"Phillippe";"Ryan";2035
+2066;"Guggenheim";"Charles";2036
+2067;"Bernett";"Noah";2037
+2068;"Karmann";"Sam";2038
+2069;"Avery";"Brian (I)";2039
+2070;"Rouiller";"Jan";2040
+2071;"Wallace";"Basil";2041
+2072;"Sallis";"Peter";2042
+2073;"Conroy";"Frank (I)";2043
+2074;"Carette";"Julien";2044
+2075;"Schneider";"Helmuth (I)";2045
+2076;"Halberstadt";"Scott";2046
+2077;"Tyler";"Harry";2048
+2078;"Flaherty";"Pat";1104
+2079;"Rosatti";"Greg";2051
+2080;"McGowan";"Charles (I)";2052
+2081;"Bloom";"John (I)";2053
+2082;"Harris";"Priscilla (I)";5579
+2083;"Moscovitch";"Maurice";2054
+2084;"Adams";"Tom (I)";2055
+2085;"Hyden";"Walford";2056
+2086;"Sherman";"Bob (I)";2057
+2087;"Allwine";"Wayne";2058
+2088;"Grodin";"Charles (I)";2059
+2089;"Ashley";"Cynthia";2101
+2090;"Thompson";"Barry (I)";2060
+2091;"Riddle";"Hal";2061
+2092;"Gardiner";"Iain";2062
+2093;"Anson";"Alvin";839
+2094;"Steele";"Richard (I)";2063
+2095;"Sinelnikoff";"Michael";2064
+2096;"Tilson";"Amanda";882
+2097;"Zoppe";"Alberto";2065
+2098;"Henadas";"The";2721
+2099;"Adams";"Dorothy";1708
+2100;"Gray";"Bee Ho";2066
+2101;"Burns";"Jere";2067
+2102;"Shannon";"Bill (I)";2068
+2103;"Scanlan";"John (II)";2069
+2104;"Browning";"David E.";2070
+2105;"Axton";"Hoyt";2075
+2106;"Glover";"John (I)";2076
+2107;"Mende";"Lisa";902
+2108;"Chandler";"David (IV)";2077
+2109;"Lyons";"Derek";2079
+2110;"Walker";"Charles (I)";2080
+2111;"Pickens Jr.";"James";2081
+2112;"Sharkey";"Billy Ray";2082
+2113;"Troup";"Matt";2083
+2114;"Fallico";"Franc G.";2084
+2115;"O'Neill";"Patrick (I)";2086
+2116;"Campbell";"Ken Hudson";2087
+2117;"Cousins";"Christopher";2088
+2118;"Raimi";"Ted";2089
+2119;"Meredith";"Burgess";2090
+2120;"Lemmon";"Jack (I)";2091
+2121;"Stevens";"Jacob";2093
+2122;"Costner";"Kevin";4742
+2123;"Paris";"Sharief";2094
+2124;"Schiegl";"Kurt";2097
+2125;"Anthony";"Bryan";2098
+2126;"Tracy";"Spencer";2099
+2127;"Lester";"Phillip (I)";2100
+2128;"Collins";"Paul (I)";2102
+2129;"Carr";"Wendall";2103
+2130;"Vincent";"Frank (I)";2104
+2131;"Laidlaw";"Ethan";2105
+2132;"Seals Jr.";"Frank";2106
+2133;"Francis";"Olin";2107
+2134;"Lemkow";"Tutte";2108
+2135;"McNamara";"Pat (I)";2110
+2136;"Creighton";"Georgia";2197
+2137;"Ratner";"Benjamin";2112
+2138;"Malthe";"Natassia";2713
+2139;"Rosa";"Tony (I)";2114
+2140;"Byeon";"Hie-bong";2115
+2141;"Ergüvenç";"Kemal";2117
+2142;"Cámara";"Javier (I)";2118
+2143;"Chaplin";"Geraldine";4373
+2144;"Browne";"Ethan";2120
+2145;"Moreu";"Kristin";5380
+2146;"Weitmann";"Sandor";2123
+2147;"Ray";"Nicholas";2124
+2148;"Way";"Jennifer";1194
+2149;"Cornish";"Harold A.";2125
+2150;"Burton";"Tipper";2795
+2151;"Price";"Russ";2126
+2152;"Colton";"Michael (I)";2128
+2153;"Wilson";"Mickey";2129
+2154;"Corbett";"Nathan";2130
+2155;"Seagal";"Steven";2131
+2156;"Phalen";"Robert";2137
+2157;"Sullivan";"George (I)";2138
+2158;"Starr";"Beau";2139
+2159;"Cassini";"John";2140
+2160;"Verbois";"Jack";2141
+2161;"Wallace";"Tommy Lee";2142
+2162;"Tunnicliffe";"Gary J.";2143
+2163;"Chew";"Lee Ju";2144
+2164;"McDermott";"Dylan";2146
+2165;"Troughton";"Patrick";2148
+2166;"Kawaya";"Setchin";2149
+2167;"Hudson";"Ernie";2150
+2168;"Andrews";"Tod (I)";2151
+2169;"Buck";"R.A.";2152
+2170;"Short";"Bobby";2153
+2171;"Kain";"Rick";2154
+2172;"de Niese";"Danielle";290
+2173;"Kramer";"Todd (I)";2155
+2174;"Lustigova";"Petra";488
+2175;"Read";"Rufus";2156
+2176;"Frazer";"Dan";2157
+2177;"Ritter";"Jason";2158
+2178;"Albrecht";"J. Grant";2159
+2179;"Lynch";"Libby";4125
+2180;"Crescenzo";"James";2160
+2181;"Woolford";"Keo";2161
+2182;"Siple";"Father Donald M.";2162
+2183;"John";"Gilbert";2163
+2184;"Bluthal";"John";2164
+2185;"Duvall";"Wayne";2165
+2186;"Keener";"Eliott";2166
+2187;"Hooker";"Buddy Joe";2167
+2188;"Baines";"Howard 'Stick'";2168
+2189;"Familton";"Don";2172
+2190;"Wheeler";"Margaret";2723
+2191;"Laen";"Sidney";2173
+2192;"Kennedy";"Jamie (I)";2174
+2193;"Dieckoff";"Henry";2175
+2194;"Flynn";"Nick (I)";2177
+2195;"Davis";"Warwick (I)";2178
+2196;"Jones";"Gemma (I)";4610
+2197;"Gambon";"Michael";2179
+2198;"Smith";"Maggie (I)";1256
+2199;"Phelps";"James (I)";2180
+2200;"Hart";"Ian";2181
+2201;"Cantina";"Armando";2183
+2202;"Iures";"Marcel";2185
+2203;"Wessel";"Dick";2186
+2204;"Buttons";"Red";2188
+2205;"Parker";"Nathaniel";2190
+2206;"Dyall";"Valentine";2191
+2207;"Ôtsuka";"Akio";2192
+2208;"Finti";"Andrei";2193
+2209;"Staley";"John Eric";2194
+2210;"Jones";"Ron C.";2202
+2211;"Director";"Kim";862
+2212;"Almendarez";"Val";2203
+2213;"Alexander";"Erika";3349
+2214;"Zane";"Billy";2204
+2215;"La Haye";"David";2205
+2216;"Cruz";"Penélope";3042
+2217;"Thomas";"Cornell D.";2206
+2218;"Morgan";"Tracy (II)";2135
+2219;"Mulamba";"Gwendolyn";5029
+2220;"Ganeev";"Raoul";2207
+2221;"Warren";"Leon";2211
+2222;"Eames";"John (I)";2212
+2223;"Perrone";"Gibran";2213
+2224;"Brenn";"Janni";5486
+2225;"Edwards";"Sean";2214
+2226;"Hopper";"Dennis";2215
+2227;"Daniels";"Max";2216
+2228;"Graves";"Amanda";5293
+2229;"Mabray";"Stuart";2217
+2230;"Chan";"Michael Paul";2219
+2231;"Straus";"Vivien";2916
+2232;"Barra";"Gianfranco";2218
+2233;"Scanlan";"Jerry";2220
+2234;"Cannon";"Dyan";4199
+2235;"Hunter";"Al Nazario";2221
+2236;"Gaidarova";"Nina";5551
+2237;"Maxwell";"Mike (I)";2222
+2238;"Schellenberg";"August";2223
+2239;"Hodges";"Tom (I)";2224
+2240;"Blarasin";"Ermes";2226
+2241;"Harris";"Sam (II)";2228
+2242;"Doucet";"Charles S.";2229
+2243;"Hines";"Robert (I)";2230
+2244;"Caspe";"Brian";2231
+2245;"Stout III";"Cecil Lester";2232
+2246;"Buggy";"Niall";2233
+2247;"Hickox";"James D.R.";2234
+2248;"Dugan";"Tom (II)";2235
+2249;"Evans";"Rupert (I)";2236
+2250;"Myers";"Bruce";2242
+2251;"Latham";"David (II)";2243
+2252;"Sessions";"John";2244
+2253;"Paul";"Rick";2245
+2254;"Pasco";"Peter";2248
+2255;"Bart";"Roger";2249
+2256;"Holiday";"Abe";2250
+2257;"Murphy";"Chuck (I)";2251
+2258;"Muller";"Turk";2253
+2259;"Kinsey";"Lance";3423
+2260;"Taghmaoui";"Saïd";2258
+2261;"Morante";"Mark Edward";2259
+2262;"Kerr";"Judy";1007
+2263;"Summers";"Stewart";2260
+2264;"Saadi";"Abdellatif Jamal";2261
+2265;"Franklyn";"Fred";2263
+2266;"Thornton";"David (I)";2264
+2267;"Scott";"Adam (I)";2265
+2268;"Villanueva";"Robert A.";2266
+2269;"MacDonald";"Ian (I)";2267
+2270;"Kosslyn";"Jack";2268
+2271;"Ruiz";"Francis P.";2269
+2272;"Kawamura";"Kotoko";279
+2273;"Cordell";"Frank (I)";2270
+2274;"Kyle";"Billy";2271
+2275;"Williams";"Bruce (I)";2272
+2276;"Connelly";"Jennifer";5557
+2277;"Banks";"Peter (I)";2273
+2278;"Sapac";"Eduardo";2274
+2279;"Kakon";"Gabriel";2275
+2280;"Nicholls";"David (II)";2276
+2281;"Eisbruch";"Gabriel";2277
+2282;"Gough";"John (II)";2278
+2283;"Lynch";"Alfred";2281
+2284;"Locke";"Peter (I)";2282
+2285;"Dahlenburg";"Tibor";2284
+2286;"Hüsinye";"Ozyer";1922
+2287;"Barbaud";"Pierre";2286
+2288;"Kolb";"Clarence";2288
+2289;"Bock";"Mitchell";2289
+2290;"Welles";"Orson";5616
+2291;"Mortensen";"Viggo";2290
+2292;"Hatfield";"Scott";2291
+2293;"Pedersen";"Jennifer";767
+2294;"Jackson";"John M.";2292
+2295;"Grindle";"Steve";2293
+2296;"Kubaisi";"Zoe";3256
+2297;"Bartlett";"Tom (I)";2296
+2298;"Yesso";"Don";2297
+2299;"Perlov";"Marty";2300
+2300;"Schiff";"Richard";4051
+2301;"Fox";"Laurence";2303
+2302;"Malil";"Shelley";2304
+2303;"Mitchell";"Melissa (III)";1649
+2304;"Largay";"Raymond";2305
+2305;"Bell";"James (I)";2306
+2306;"Law";"Jude";2307
+2307;"Devane";"William";2309
+2308;"McGrath";"Douglas";2311
+2309;"Law";"Kevin (I)";2312
+2310;"Ufland";"Chris";5363
+2311;"Rinaldi";"Walter";2313
+2312;"Robertson";"Kathleen";2808
+2313;"Horovitz";"Avrohom";2316
+2314;"Schmiedt";"Angel";772
+2315;"Brinkmann";"Johannes 'Maddy'";2317
+2316;"Martin";"Éva (II)";3388
+2317;"Ortlieb";"Jim";2319
+2318;"Goethals";"Angela";4521
+2319;"Civitano";"Thomas";2320
+2320;"Devereux";"Aimee";2549
+2321;"Howard";"Jerod";2321
+2322;"Mayer";"Michael (VI)";2322
+2323;"Stone";"Randy (I)";2323
+2324;"Robillard";"Kim";2324
+2325;"Warburton";"Patrick";2325
+2326;"Fox";"Michael J. (I)";2327
+2327;"Cornillon";"Jean-Jacques";2328
+2328;"Romeo";"Lil'";2329
+2329;"Kanal";"Mamoru";2330
+2330;"Rushton";"Jared";2331
+2331;"Gilliam";"Burton (I)";2332
+2332;"Leek";"Tiiu";3025
+2333;"Schultz";"Charlie (II)";2333
+2334;"Cross";"Garvin";2334
+2335;"Yatsu";"Isao";2335
+2336;"O'Ross";"Ed";2336
+2337;"Jones";"J. Michael";4294
+2338;"Stiers";"David Ogden";2337
+2339;"Armstrong";"Bryce (I)";2338
+2340;"Wilhoit";"Lisa";1258
+2341;"Grey";"Matt";2339
+2342;"Brighton";"Mark";168
+2343;"Agee";"Arthur 'Bo'";2340
+2344;"Komenich";"Rich";2341
+2345;"Armstrong";"William (I)";2342
+2346;"Wiley";"Meason";2343
+2347;"Marx";"Groucho";2347
+2348;"Lalonde";"Michel (I)";2348
+2349;"Coates";"Kim";2349
+2350;"Herzan";"Drahoslav";2351
+2351;"Taylor";"Clark";2353
+2352;"Albright";"Nicole";1695
+2353;"Woollan";"Troy";2354
+2354;"Simotes";"Tony";2355
+2355;"Abrahams";"Nancy";3672
+2356;"DeKranis";"J.D.";2356
+2357;"Steen";"Mark";2707
+2358;"Williams";"Roosevelt";2357
+2359;"Leaver";"George";2358
+2360;"Cohen";"Jeffrey (I)";2359
+2361;"Cheadle";"Don";2360
+2362;"De Brulier";"Nigel";2361
+2363;"Stinton";"Colin";2362
+2364;"Young";"John William";2363
+2365;"Mukes";"Robert Allen";2364
+2366;"Keith";"Mark Richard";2365
+2367;"Levin";"G. Roy";2366
+2368;"Venables";"Paul";2367
+2369;"Ahdout";"Jonathan";2368
+2370;"Leitso";"Tyron";2369
+2371;"Siedhoff";"Joost";2370
+2372;"Young";"Nedrick";2371
+2373;"Kennedy";"John F.";2372
+2374;"Long";"Richard (I)";2373
+2375;"Hannegan";"David";2374
+2376;"Lowry";"Morton (I)";2375
+2377;"Liddell";"Chuck";2376
+2378;"Danton";"Steve";2377
+2379;"Howard";"Clint";2378
+2380;"Pryor";"Rain";3933
+2381;"Banas";"Robert";2379
+2382;"Red Bow";"Buddy";3823
+2383;"Astin";"Mackenzie";2380
+2384;"MacDonald";"Rod (II)";2381
+2385;"Estes";"Will (I)";2382
+2386;"Burt";"Benny";2383
+2387;"Griffith";"Hugh (I)";2384
+2388;"Guilfoyle";"Paul (II)";2385
+2389;"Brown";"Duncan (I)";2387
+2390;"Murtaugh";"James";2388
+2391;"Nathan";"John (II)";2390
+2392;"Montana";"Montie";2391
+2393;"Wolpinsky";"Arthur M.";2393
+2394;"Willingham";"Noble";2394
+2395;"Sandel";"Wantland";747
+2396;"Littlefield";"John";2397
+2397;"Bebak";"Chase MacKenzie";2399
+2398;"Ferenczi";"Kim Gandol";2400
+2399;"Beesley";"Terence";2401
+2400;"Trussler";"Menna";686
+2401;"Arno";"Sig";2402
+2402;"Camiller";"George";2403
+2403;"Benden";"Vlado";2404
+2404;"Braun";"Brent";2407
+2405;"Leeder";"Mike";2409
+2406;"Guo";"Tao";2410
+2407;"Palminteri";"Chazz";2411
+2408;"Gray";"David (I)";2412
+2409;"Williams";"Ryan (I)";4031
+2410;"Friedman";"Bruce Jay";2413
+2411;"Lineback";"Richard";2414
+2412;"Kellaway";"Cecil";2415
+2413;"Phillippi";"Dennis";2416
+2414;"Pellow";"Clifford A.";2417
+2415;"Bang-Hansen";"Arne";2352
+2416;"Robertson";"Willard";2421
+2417;"Schwartz";"David Nathan";2422
+2418;"Claire";"Julie (I)";1657
+2419;"Godderis";"Albert";2423
+2420;"Zarp";"Sydney";2424
+2421;"Simpson";"Jay";2425
+2422;"Spang Olsen";"Martin";2426
+2423;"Miller";"Richard Dale";2427
+2424;"Rubinek";"Saul";2428
+2425;"Lin";"Lucy";3320
+2426;"Reeves";"Keanu";2429
+2427;"Lin";"Bill";2430
+2428;"Welch";"Tahnee";1484
+2429;"Poverlo";"Yaroslav";2431
+2430;"Bland";"John Harrington";2432
+2431;"Hardy";"Mark (I)";2435
+2432;"McGee";"Bobby (I)";2436
+2433;"Lewis";"Dawnn";2999
+2434;"McBride";"Chi";2433
+2435;"Curtis";"Keene";2434
+2436;"Bader";"Diedrich";2438
+2437;"DeSève";"Peter";2439
+2438;"Latifah";"Queen";3251
+2439;"Noble";"Bill (III)";2440
+2440;"Abercrombie";"Ian";2441
+2441;"Blumas";"Trevor";2442
+2442;"Kronenfeld";"Ivan";2443
+2443;"Ford Davies";"Oliver";2444
+2444;"Hart";"Joe (I)";2445
+2445;"Mishatkin";"Valentin";2446
+2446;"Reeder";"Richard";2447
+2447;"Wilson";"Andrew (III)";907
+2448;"Bjarke";"Lars";2448
+2449;"Sadler";"Nicholas";2449
+2450;"Moore";"Kevin (I)";2450
+2451;"Yetzes";"Robert";2451
+2452;"Goldblum";"Jeff";2453
+2453;"Kaneko";"Nobuo";2454
+2454;"Cibulka";"Jan";2455
+2455;"Novak";"Anezka";1923
+2456;"Hausmann";"Ernest";2457
+2457;"Donner";"Jack";2458
+2458;"Goode";"Matthew";2459
+2459;"Smith";"Eddie (I)";2460
+2460;"Faulkner";"Leo";2461
+2461;"Constantin";"Javon";2462
+2462;"Kay";"Charles";2463
+2463;"D'Onofrio";"Vincent (I)";2464
+2464;"Lipman";"David (I)";2465
+2465;"Marshall";"Gary DeWitt";2466
+2466;"Lowe";"Jo-Jo";1025
+2467;"Ching";"William";2467
+2468;"Hernández";"Juan Carlos (I)";2468
+2469;"Collins";"John (I)";2469
+2470;"Francis";"Alan (III)";2470
+2471;"Stynes";"Trevor";2471
+2472;"Lenkov";"Kaloyan";2472
+2473;"Jennings";"Benton";2473
+2474;"Pierosh";"Robert";4361
+2475;"Filar";"Gil";2474
+2476;"Fox";"Kirk";2475
+2477;"Norris";"Daran";2476
+2478;"Carlton";"Lisa";4712
+2479;"Bay";"Paul";2477
+2480;"Pope";"Donald";115
+2481;"Janek";"Nisa";4672
+2482;"Maxy";"Max H.";2478
+2483;"Mann";"Larry D.";2479
+2484;"Kirk";"Michael (IV)";2480
+2485;"Gallo";"Robert";2481
+2486;"O'Connor";"Dennis (I)";2482
+2487;"Cashman";"Joe (I)";2483
+2488;"Amsby";"Alan";374
+2489;"Kovács";"Lajos";2484
+2490;"Osekre";"Adjeti";2485
+2491;"Gore";"Al (I)";2486
+2492;"Schallert";"William";2487
+2493;"Brooks";"Joel (I)";2488
+2494;"Costello";"Mariclare";3590
+2495;"Valenzano";"Michael A.";2489
+2496;"Cruz";"Gary W.";2874
+2497;"Devine";"Christine";3791
+2498;"Coogan";"Steve";2490
+2499;"Stabler";"Kenny";2491
+2500;"Murray";"David (II)";2492
+2501;"Powell";"Anthony (I)";2493
+2502;"Turnock";"Jenny";3797
+2503;"Van";"Dang Si";2494
+2504;"Fell";"Norman";2496
+2505;"Ressler";"Scott Andrew";2497
+2506;"Ashton";"Tracy";2092
+2507;"McGovern";"Terence";2498
+2508;"Proval";"David";2499
+2509;"Woodburn";"Eric";2500
+2510;"X";"Mr. (III)";2501
+2511;"Kybart";"Peter";2502
+2512;"Zaher";"Baktash";4989
+2513;"Meyer";"Breckin";2503
+2514;"Bosarge";"Charlene";5592
+2515;"Skarsgård";"Stellan";2504
+2516;"Wise";"Jason (III)";2505
+2517;"Oteri";"Cheri";5094
+2518;"Fuller Jr.";"Anthony L.";2506
+2519;"Coll";"Ivonne";336
+2520;"Albizu";"Fernando";2507
+2521;"Morden";"Roger";2508
+2522;"Hill";"Conleth";2509
+2523;"Snyder";"Arlen Dean";2510
+2524;"Byrne";"Gerry Robert";2511
+2525;"Cameron";"Earl (I)";1665
+2526;"Hurtubise";"David";2512
+2527;"Robson";"Wayne";2513
+2528;"Gardiner";"Ben (I)";2514
+2529;"Ayres";"Fraser";2515
+2530;"Roberts";"Mike (VII)";2516
+2531;"Mazursky";"Paul";2517
+2532;"Evans";"Art";4233
+2533;"O'Brien";"Patrick Thomas";2518
+2534;"Pallette";"Eugene";2519
+2535;"Vidor";"King";2495
+2536;"Langdon";"Lillian";2078
+2537;"McCarthy";"Kevin (I)";2520
+2538;"Domerc";"François";2521
+2539;"Cummins";"Jack";2522
+2540;"Reese";"Merrill";2523
+2541;"Luke Jr.";"Tony";5359
+2542;"Herbert";"Holmes";2524
+2543;"Abatantuono";"Diego";2525
+2544;"Baird";"Anthony";2527
+2545;"Bonneville";"Hugh";2529
+2546;"Palma";"Joe";2530
+2547;"Becker";"Tony";2531
+2548;"Borisoff";"Devon Cole";2532
+2549;"Jara-Millo";NA;2533
+2550;"Ben Driss";"Aziz";2536
+2551;"Rigney";"Daniel";2537
+2552;"Hounsou";"Djimon";2538
+2553;"Coates";"Kim";4536
+2554;"Svoronos";"George";2539
+2555;"Shear";"Claudia";3261
+2556;"Fox";"Allen";2540
+2557;"Colbert";"Claudette";1858
+2558;"Walters";"J.D.";2541
+2559;"Roberts";"Roy (I)";2542
+2560;"Stang";"Arnold";3252
+2561;"Chapin";"Michael";2543
+2562;"Hinds";"Samuel S.";1512
+2563;"Larsen";"Thomas Bo";2544
+2564;"Gold";"Gideon";2545
+2565;"Weiss";"Andrew (I)";2546
+2566;"Mansi";"Louis";2547
+2567;"Zanon";"Silvio";2548
+2568;"Williams";"Frank (I)";2551
+2569;"Smith";"Tyler (III)";2552
+2570;"Garces";"Jennifer";2866
+2571;"Rollins";"Henry";2553
+2572;"Boscovic";"Boris";2554
+2573;"Venora";"Diane";947
+2574;"Landau";"Jason";2555
+2575;"Wormald";"Kenny";5083
+2576;"Iguchi";"Greg";2556
+2577;"Brody";"Adrien";2557
+2578;"Jackson";"Samuel L.";2558
+2579;"McLaughlin";"John Patrick";2564
+2580;"Merkerson";"S. Epatha";3550
+2581;"Cowley";"Graham";2568
+2582;"Heart";"John X.";2570
+2583;"Becker";"Jan (II)";2571
+2584;"Goldstein";"Harry";2572
+2585;"Yedidia";"Mario";2573
+2586;"Como";"Frank";2579
+2587;"Caplin";"Cate";3803
+2588;"Graff";"Sasha";2580
+2589;"Kim";"Kap-su";2582
+2590;"Hashimoto";"Kuni";2583
+2591;"Vargas";"Jacob";2584
+2592;"Davis";"Brianne";477
+2593;"MacGinnis";"Niall";2586
+2594;"Phelps";"Brian";2587
+2595;"Farmer";"Todd";2589
+2596;"Conaway";"Jeff";2590
+2597;"Anastasio";"Chris";2591
+2598;"Gordon";"Keith (I)";2592
+2599;"Gaffey";"John";2593
+2600;"Moss";"Larry (III)";2594
+2601;"Biggs";"Jason";2595
+2602;"Dini";"Paul";2927
+2603;"Souza";"Roger";2596
+2604;"Long";"Justin (I)";2597
+2605;"Butcher";"Kasan";2598
+2606;"Amaro";"Richard";2601
+2607;"Manheim";"Camryn";1473
+2608;"Winlaw";"Mike";2603
+2609;"Martínez";"Joaquín";2606
+2610;"O'Neill";"Dick (I)";2607
+2611;"Barry";"Brent";2608
+2612;"Fontes";"Wayne";3420
+2613;"Friend";"Kerry";4376
+2614;"Fan";"Christian";2609
+2615;"Haggard";"Ted";2611
+2616;"Michaelevski";"Cliff";2612
+2617;"Golden";"Lee";2614
+2618;"von Lifchitz";"Philbert";2615
+2619;"Geerts";"Frédéric";2616
+2620;"Douglas";"Michael (I)";2617
+2621;"MacDonald";"Ryan (I)";2618
+2622;"Robinson";"Chris (II)";224
+2623;"Witt";"Louis Steven";3913
+2624;"O'Connell";"Ruary";2109
+2625;"Stewart";"Patrick (I)";2619
+2626;"Kopsa";"Michael";2620
+2627;"Yuen";"Wah";2621
+2628;"Volokh";"Ilia";2622
+2629;"Danilova";"Raissa";2853
+2630;"Li";"Xuejian";2623
+2631;"Lee";"Quin";2624
+2632;"Chin";"Siu-hou";2625
+2633;"Syvertsen";"Peter";2626
+2634;"Knight";"Marvette";5272
+2635;"Hata";"Harina";2627
+2636;"Daly";"Carson";2628
+2637;"Ebbert";"Alison";4359
+2638;"Wielinski";"Mike";2629
+2639;"Senters";"Marquetta";2793
+2640;"Stack";"Robert";2630
+2641;"Hollis";"Tommy";2631
+2642;"Palomino";"John";2392
+2643;"Jenkins";"Noam";2632
+2644;"Fulton";"Allegra";703
+2645;"McDowell";"Collin";2633
+2646;"Gottlieb";"Carl (I)";2634
+2647;"Wilkinson";"Catherine (II)";284
+2648;"Bernstein";"Simon";2635
+2649;"Brady";"Scott (I)";2636
+2650;"Kitano";"Takeshi";2637
+2651;"Taylor";"Craig (I)";2651
+2652;"Okuma";"Enuka";2534
+2653;"Caillou";"Alan";2652
+2654;"Xia";"Zhi Xiang";2653
+2655;"Levine";"Ted";2654
+2656;"Rossignon";"Christophe";2655
+2657;"Tsuda";"Kanji";2656
+2658;"Tighe";"Darren";2658
+2659;"Leaver";"Huggy";2659
+2660;"Miller";"Harold (I)";2660
+2661;"Cheshier";"Lydell M.";2661
+2662;"Shek";"Dean";2662
+2663;"Chin";"Kar Lok";2663
+2664;"Marchand";"Mitchell";2664
+2665;"Fabre";"Pierre";2665
+2666;"Thiedeke";"Cyrus";2667
+2667;"Hamilton";"Antony";2668
+2668;"Nivola";"Alessandro";2669
+2669;"Phillips";"Bonnie";1526
+2670;"Bostic";"Beth";227
+2671;"Forstenberg";"Leif";2670
+2672;"Giangiulio";"Nicholas J.";2671
+2673;"Wright";"Ben (I)";2672
+2674;"Lauder";"Ewart";2673
+2675;"DeVito";"Danny";2674
+2676;"Collins";"Judy (I)";1746
+2677;"Peck";"Bob (I)";2675
+2678;"Macy";"William H.";2676
+2679;"Gilpin";"Jack";2677
+2680;"Thorpe";"Paul (I)";2678
+2681;"Paz";"Francisco";2679
+2682;"Burant";"Devyn";2680
+2683;"Hacker";"Ron";2681
+2684;"Wilder";"Nicole (II)";4750
+2685;"Föhrweißer";"Guido";2682
+2686;"Poynter";"Dougie";2683
+2687;"Roffe";"Al";2255
+2688;"Firestone";"Mary";2028
+2689;"Clegg";"Troy";2684
+2690;"Aylward";"John";2685
+2691;"Janosi";"Peter";2007
+2692;"Arcand";"Denys";2613
+2693;"Gagné";"Valérie";1952
+2694;"Mannix";"Edward";2657
+2695;"Runyan";"Tygh";2686
+2696;"Castellaneta";"Dan";2687
+2697;"Rhune";"Tony";2688
+2698;"Merediz";"Olga";2941
+2699;"Mueller-Stahl";"Armin";2689
+2700;"Sugizaki";"Akihiko";2691
+2701;"Aikawa";"Sho";2693
+2702;"Hirose";"Shoichi";2694
+2703;"Dullaghan";"John (I)";2695
+2704;"Chabra";"Sunil";2696
+2705;"Walken";"Christopher";2698
+2706;"Reeves";"Jonathan Maxwell";2699
+2707;"Van Eyle";"Marisa";3937
+2708;"Fernandez";"Robert (II)";2700
+2709;"Johnson";"Pat E.";2701
+2710;"Avalon";"Frank Burt";2702
+2711;"Imawano";"Kiyoshiro";2705
+2712;"Nascarella";"Arthur J.";2706
+2713;"Startzman";"Brittney";3411
+2714;"Wajacs";"Michael";2711
+2715;"Yanami";"Jôji";2712
+2716;"Hoffman";"Bridget";434
+2717;"Murley";"Max";2716
+2718;"Saunders";"Robert F.";2717
+2719;"Deadmon";"Kelly";4962
+2720;"Picerni";"Paul (I)";2722
+2721;"Ransone";"James";2724
+2722;"Weiss";"Robert K.";2726
+2723;"Jiminez";"Zetulio";5129
+2724;"Gradney";"Richard R.";4193
+2725;"Hanks";"Christopher";5361
+2726;"Shugs";NA;2729
+2727;"Robinson";"Edward G.";2731
+2728;"Hung";"Lee (I)";2734
+2729;"Hutcherson";"Josh";2735
+2730;"Lackey";"Elizabeth";675
+2731;"Tacchino";"Richard";2736
+2732;"Evans";"Robert (I)";2737
+2733;"Quirk";"Evans";2738
+2734;"Wilson";"Edith (I)";4064
+2735;"Knopfelmacher";"Joseph";2739
+2736;"Stebe-Glorius";"Julie";3441
+2737;"Dixon";"John (IX)";2740
+2738;"Almodóvar";"Agustín";2741
+2739;"Kiyoshi";"Beat";2742
+2740;"Liu";"Chia Hui";2743
+2741;"Hartig";"Tom";2744
+2742;"Thompson";"Melvin";2745
+2743;"Feldman";"Arthur";2746
+2744;"Freeman";"Howard";2747
+2745;"Chey";"Edward Entero";2748
+2746;"Gee";"Donald";2749
+2747;"Chaltiel";"Eric Pascal";2750
+2748;"Williams";"Robert (I)";2751
+2749;"Wattis";"Richard";2752
+2750;"Wylie";"Adam";2753
+2751;"Reitman";"Catherine";4126
+2752;"Bonilla";"Dennis";2754
+2753;"Devine";"Alan";2755
+2754;"Davis";"John (XXXIV)";2756
+2755;"Shackelford";"Floyd";5538
+2756;"Whiteford";"Blackie";2302
+2757;"Henry";"Irene";1210
+2758;"Porras";"Rick";4479
+2759;"De Niro";"Robert";2757
+2760;"Winkler";"Margo";2959
+2761;"Esposito";"Giancarlo";2758
+2762;"Oliver";"Lucille M.";2666
+2763;"Fithen";"Guy";2759
+2764;"Archard";"Bernard";2760
+2765;"Bloom";"Orlando";2763
+2766;"Cerrone";"Mike";2764
+2767;"Cavallo";"Mike";2806
+2768;"Sullivan";"David (III)";398
+2769;"Canuso";"Jake";2765
+2770;"Shreeve";"Draper";2767
+2771;"Redgrave";"Lynn";2926
+2772;"Somers";"Steve (II)";2770
+2773;"Beal";"Eddie";2771
+2774;"De Soto";"Jose";2772
+2775;"Li";"Jet";2773
+2776;"Guilherme";"Luis";2774
+2777;"Brophy";"Brian";2775
+2778;"Beattie";"Ron";2776
+2779;"Palumbo";"Jimmy";2777
+2780;"Collamore";"Jerome";2780
+2781;"Sterne";"David";2783
+2782;"Liesa";"Cesar";2784
+2783;"Chan";"Moses";4262
+2784;"Pellegrino";"Frank (II)";2785
+2785;"Ott";"Christoph";2786
+2786;"Nádasi";"László";2792
+2787;"Ragnerstam";"Göran";2796
+2788;"Kunimura";"Jun";2799
+2789;"Golden";"David (I)";2802
+2790;"Schmitz";"Andreas";2807
+2791;"Peuckert";"Eva";4414
+2792;"Stiers";"David Ogden";2809
+2793;"Bresslaw";"Bernard";2813
+2794;"Ramallo";"Fernando";2804
+2795;"Randall";"Chad";2815
+2796;"Haapasalo";"Ville";2816
+2797;"Sawamura";"Ikio";2817
+2798;"Paichang";"Tenzin Yeshi";2818
+2799;"Chow";"Stephen";2819
+2800;"Kim";"Joon B.";2820
+2801;"Kamijô";"Tsunehiko";2821
+2802;"Duran";"Burhan";2822
+2803;"Özat";"Perihan";3313
+2804;"Ôki";"Tamio";2790
+2805;"Meyers";"Henry";2825
+2806;"Kelly";"Kevin Patrick";454
+2807;"Stewart";"Patrick (I)";2826
+2808;"Gerardi";"Bob";2827
+2809;"Moroff";"Mike";2828
+2810;"Lau";"Kong";2829
+2811;"Angulo";"Álex";2830
+2812;"Sim";"Peter (I)";2831
+2813;"Prell";"Karen";1376
+2814;"Majors";"Paul (I)";2834
+2815;"Williams";"Charlene (I)";5369
+2816;"Henderson-Begg";"Gregor";2835
+2817;"Luke";"J'Mari";2836
+2818;"Stock";"Simone";399
+2819;"Guerzoni";"Fausto";2838
+2820;"Thompson";"Bill (I)";2839
+2821;"Gibson";"Kenneth (I)";2840
+2822;"Flowers";"Bess";3325
+2823;"Recht";"Joe";2841
+2824;"Balaban";"Bob";2842
+2825;"Parker";"Cecil";2843
+2826;"Basil";"Harry";2844
+2827;"Cianfriglia";"Giovanni";2845
+2828;"Guinness";"Alec";2846
+2829;"Lakhia";"Aditya";2847
+2830;"Mushran";"Ashwin";2848
+2831;"Kiernan";"David (II)";2849
+2832;"Walsh";"Dylan";2850
+2833;"Takeuchi";"Warren";2851
+2834;"Valenzuela";"Pepe";2859
+2835;"Palatsi";"Ma Eugenia";3121
+2836;"Damon";"Gabriel";2860
+2837;"Nelson";"Christopher Allen";2861
+2838;"Romero";"George A. (I)";850
+2839;"Dykstra";"Russell";2870
+2840;"Cuenco Jr.";"Jose";2872
+2841;"Tse";"David K.S.";2873
+2842;"Jackson";"Joshua";2875
+2843;"DuVall";"Clea";2995
+2844;"Perrons";"Chris";2877
+2845;"Thorsen";"Sven-Ole";2878
+2846;"Brown";"Bobbie (I)";1472
+2847;"Bourland";"Kevin";2879
+2848;"Field";"Chelsea";4234
+2849;"Thomas";"James Jerome";2880
+2850;"Friberg";"Adam";2881
+2851;"Murtaugh";"James";2882
+2852;"Horn";"Jim (I)";2883
+2853;"Aprahamian";"Gary";2884
+2854;"Shonte";NA;2782
+2855;"Ma";"Guang";2885
+2856;"Wu";"Vivian";3091
+2857;"Bourne";"Amon";2886
+2858;"Edwards";"Ray";2887
+2859;"Kotz";"Adam";2888
+2860;"Corday";"Bill";2889
+2861;"Willis";"Bruce";2890
+2862;"O'Donnell";"Darren";2891
+2863;"Keator";"Steve (I)";2892
+2864;"Oats";"Simon";2893
+2865;"Wood";"Buddy";2894
+2866;"Takayuki";"Noguchi";2895
+2867;"Scriba";"Mik";2896
+2868;"Stevens";"Lee E.";2897
+2869;"Durning";"Charles";2898
+2870;"Rosenberg";"Alan (I)";2899
+2871;"Arkin";"Alan";2900
+2872;"Staples";"Roebuck 'Pops'";2901
+2873;"Schmidt";"Mike (V)";2902
+2874;"Webb";"Wayne (I)";1322
+2875;"Murray";"Forbes";2903
+2876;"Pavel";"Philip";2904
+2877;"Duncan";"Archie";2905
+2878;"Rockwell";"Sam";2907
+2879;"Williams";"Ellis";2909
+2880;"Fontana";"Randall";2910
+2881;"Fortescue";"Kenneth";2911
+2882;"McClatchie";"James";2913
+2883;"Magee";"Francis";2915
+2884;"Flemyng";"Jason";2917
+2885;"Pullman";"Bill";2918
+2886;"Dries";"Dolores 'Pickles'";3348
+2887;"McNamara";"Pat (I)";2920
+2888;"Arroyave";"Karina";624
+2889;"Todoroff";"Tom";2922
+2890;"Milburn";"Jane";5469
+2891;"Stabrowski";"Marek";2923
+2892;"Hartmann";"Hubertus";2924
+2893;"Kliban";"Ken";2931
+2894;"Hutzler";"Brody";2932
+2895;"Beasley";"Allyce";1096
+2896;"Newman";"James (I)";2933
+2897;"Curry";"Tim (I)";2934
+2898;"Ferguson";"J. Don";2935
+2899;"Olivares";"Pepe";2936
+2900;"Bear";"Bart the (I)";2937
+2901;"Roth";"Tim";2939
+2902;"Bro";"Anders Peter";2940
+2903;"Law";"Jude";2943
+2904;"O'Barry";"Rick";2945
+2905;"Baker";"Joe Don";2947
+2906;"Duffin";"Shay";2949
+2907;"Downey Jr.";"Robert";2951
+2908;"Shaner";"Michael";2952
+2909;"Young";"Bruce (IV)";2953
+2910;"Rosen";"Edward J. (I)";2954
+2911;"Archerd";"Selma";4325
+2912;"Pesci";"Joe";2955
+2913;"Michaels";"Shawn (I)";2966
+2914;"Weller";"Peter (I)";2957
+2915;"Lucien";"Didier";2960
+2916;"Grief";"Mike";2967
+2917;"Goodman";"Sue";864
+2918;"Bennett";"Sacha";2968
+2919;"Scanlin Jr.";"Timothy J.";2969
+2920;"Kiley";"Kate";3674
+2921;"Selmour";"Ron";2970
+2922;"Garriga";"Fidel";2971
+2923;"Pugliese";"Al";2972
+2924;"Burke";"Keith";2975
+2925;"DeMilo";"Venus";3412
+2926;"Ayoade";"Richard";2976
+2927;"Irrera";"Christiano";2977
+2928;"Guerra";"Andrea (III)";4468
+2929;"Winkler";"Charles";2978
+2930;"Chaykin";"Maury";2979
+2931;"Colley";"Kenneth";2980
+2932;"Lavender";"Justin";2981
+2933;"Edwards";"Ken (I)";3319
+2934;"Murdoch";"Laurie";2982
+2935;"Trueman";"Tracy";2811
+2936;"Barty";"Billy";2983
+2937;"Crosby";"Joan";510
+2938;"Hodiak";"John";2984
+2939;"Woodnutt";"John";2985
+2940;"Payton";"Gary";2986
+2941;"Smallwood";"Tucker";1769
+2942;"Poitier";"Sidney";2987
+2943;"Yarnel";"Jay B.";2988
+2944;"Bumpass";"Rodger";2989
+2945;"Lang";"Stephen J.";2990
+2946;"Chaplin Jr.";"Charles";2991
+2947;"Dallesandro";"Joe";2992
+2948;"Stock";"Nigel (I)";2996
+2949;"Irons";"Jeremy";2997
+2950;"Bender";"Lawrence";2998
+2951;"Moreno";"Ruben";3000
+2952;"Harpster";"Noah";3001
+2953;"Thaler";"Emma";2027
+2954;"Rinpoche";"Ven. Khyongla Rato";3002
+2955;"Mott";"Paul";3003
+2956;"Adams";"Jane (II)";1707
+2957;"Whittington";"Gene";3004
+2958;"Coppa";"Bret Irving";3005
+2959;"Hann-Byrd";"Adam";3006
+2960;"Camp";"Hamilton";3007
+2961;"Winston";"Matt (I)";3008
+2962;"Howard";"Clint";3009
+2963;"Castaldo";"Craig";5454
+2964;"Schiavelli";"Vincent";3010
+2965;"Wendt";"George (I)";3011
+2966;"Dux";"Frank";3012
+2967;"Griffith";"Jack (I)";3013
+2968;"Gaunt";"Fred";3014
+2969;"Unger";"A.J.";3015
+2970;"Williams";"Arnold";3017
+2971;"Weston";"Paul (II)";3018
+2972;"Devlin";"Sharon";612
+2973;"Griffiths";"Michael (II)";3019
+2974;"Kronenfeld";"Ivan";3020
+2975;"Tomita";"Tamlyn";297
+2976;"Ulmer";"John (I)";3022
+2977;"Marletta";"Franco";3023
+2978;"Castle";"Danny";3024
+2979;"Watson";"Jonathan (I)";3026
+2980;"Gabison";"David";3027
+2981;"Ashley";"Kurek (I)";3028
+2982;"Houchin";"John";3029
+2983;"Westberg";"David (I)";3030
+2984;"Buff";"Volkhard";3031
+2985;"Cockrell";"Gary";3032
+2986;"Evans";"Chris (V)";3034
+2987;"Cuellar Jr.";"Gilbert R.";3035
+2988;"Hayes";"Brian (II)";3036
+2989;"Goldman";"Danny (I)";3037
+2990;"Katz";"Judah";3038
+2991;"Ryan";"Robert (I)";3040
+2992;"Mounier";"Louis";3529
+2993;"Rosay";"Françoise";4157
+2994;"Henry";"Mike (I)";3041
+2995;"Barela";"Richard";4101
+2996;"Hassan";"Nora";4394
+2997;"Tuck";"Douglas";3043
+2998;"Jameson";"Nick";3044
+2999;"Pringle";"Danny";3045
+3000;"Colby";"James";3046
+3001;"Burton";"Kate (I)";1501
+3002;"Ryan";"Will (I)";3047
+3003;"Foray";"June";1535
+3004;"Del Sherman";"Barry";3048
+3005;"St. Clair";"David (I)";3049
+3006;"Davy";"Jean";3050
+3007;"Jordan";"Jonathan (I)";3051
+3008;"McLeod";"Sarah (II)";2562
+3009;"Rangi";"Shane";3052
+3010;"Grieve";"Philip";3053
+3011;"Morgan";"Stewart";3054
+3012;"Abdullah";"Yaseen";4979
+3013;"Peterson";"Travis";3055
+3014;"Burden";"David";3691
+3015;"Isfeld";"Justin";3056
+3016;"Merriman";"Christine";1481
+3017;"McMulkin";"Marc";3059
+3018;"Jacobs";"Tanja";3104
+3019;"Woodburn";"Danny";3060
+3020;"Rosin";"Karen";4168
+3021;"Turner";"Jim (I)";3062
+3022;"Marquez";"Richard";3063
+3023;"Martínez";"Miguel A.";654
+3024;"Blake";"Robert (I)";3064
+3025;"Robles";"Richard (I)";3065
+3026;"Escolar";"José Luis";3066
+3027;"Goddard";"Mark (I)";3067
+3028;"du Bois";"François";3068
+3029;"Mantell";"Michael";3069
+3030;"Darlow";"Cynthia";814
+3031;"Potter";"Peter (I)";3070
+3032;"Silva";"Geno";3071
+3033;"Schultz";"Jacqueline";4198
+3034;"Read";"James (II)";3072
+3035;"Haysbert";"Dennis";3077
+3036;"Prince-Bythewood";"Gina";892
+3037;"Rothhaar";"Will";3078
+3038;"Costa";"Helder";3079
+3039;"Coull";"Colin";2198
+3040;"Lenoir";"Jack";3080
+3041;"Russell";"Bing";3081
+3042;"Glass";"Ned";1115
+3043;"Vitolo";"F.X.";3082
+3044;"Baer";"David (I)";3083
+3045;"Kole";"Warren";3084
+3046;"O'Neal";"Ryan";3085
+3047;"Wolfe";"Ryan";3089
+3048;"Harrigan";"Donald";3093
+3049;"Stoll";"Corey";3096
+3050;"Carreiro";"Tony";3097
+3051;"Cámara";"Javier (I)";3095
+3052;"Talco";NA;3098
+3053;"Valles";"Carlos Alberto";3099
+3054;"Agenant";"Ron";3561
+3055;"Fischer";"Fred";2946
+3056;"Wehrhahn";"Michael";792
+3057;"Nurney";"Fred";3106
+3058;"Grass";"Vincent";3107
+3059;"Torrente";"Vinnie";3108
+3060;"Koppekin";"Adam M.";3114
+3061;"Byrne";"Jenna";2908
+3062;"Starr";"Mike (I)";3115
+3063;"Nadir";"Robert";3116
+3064;"Cameron";"David (IV)";3117
+3065;"Nilsson";"Kjell";3118
+3066;"Kenney";"Flynn";3119
+3067;"Dupre";"Margaret";3581
+3068;"Miller";"Chris (VII)";3120
+3069;"Termath";"Steve J.";3122
+3070;"Levy";"Shawn (I)";3123
+3071;"Page";"John Fitzgerald";3124
+3072;"West";"Roshika";3795
+3073;"Everett";"Rupert";3125
+3074;"Wilder";"Alan (II)";3126
+3075;"Walsh";"Jim (III)";3129
+3076;"August";"Edwin";3132
+3077;"Wilke";"Robert J.";3133
+3078;"Davies";"John S.";3134
+3079;"Massa";"Mike";3905
+3080;"Soul";"David";3135
+3081;"Goodstein";"Ken";3137
+3082;"Vicidomini-Serdaros";"Michelle";1802
+3083;"Adams";"Jeffrey";3139
+3084;"Detmer";"Amanda";1431
+3085;"Ôtsuka";"Akio";3140
+3086;"Unice";"Roger";3141
+3087;"Russo";"Rene";877
+3088;"Sheen";"Charlie (I)";3142
+3089;"Meyett Jr.";"Donny";5178
+3090;"Kirschner";"Walter";1479
+3091;"Ironside";"Michael";3143
+3092;"Poch";"Pau";3144
+3093;"Sinovoi";"Maxwell";3145
+3094;"Lemelle";"Daniel";771
+3095;"Herlihy";"Ed";2720
+3096;"Young";"Charles (I)";2437
+3097;"Wind";"Timothy";1238
+3098;"Brooks";"Sharon (I)";4638
+3099;"Swardson";"Nick";3147
+3100;"Bowe";"David";3148
+3101;"Lee";"Jason (I)";3149
+3102;"Mower";"Jack";3150
+3103;"Castrogiovanni";"Claudio";3146
+3104;"Quatrocchi";"Rori";1704
+3105;"Balbar";"Shaun";3151
+3106;"Kober";"Jeff";3152
+3107;"Chow";"Yun-Fat";3153
+3108;"McKern";"Leo";3154
+3109;"Hémon";"Olivier";3155
+3110;"Ball";"Spencer";3156
+3111;"De'Antone";"Marc";3157
+3112;"Morris";"Sheven";1694
+3113;"Carville";"James";3158
+3114;"Zurita";"Rodrigo";3159
+3115;"Yáñez";"Eduardo";3305
+3116;"Yoakum";"John";3160
+3117;"Zito";"Chuck";2287
+3118;"Mendez";"Tiger";4466
+3119;"Rhea";"Caroline";5392
+3120;"Verón";"Pablo";3161
+3121;"Claire";"Imogen";5205
+3122;"Mascia";"Tony";3162
+3123;"Thomson";"John (I)";3163
+3124;"Molina";"Alfred (I)";1527
+3125;"Stoker";"H.G.";3164
+3126;"Day";"Doris (I)";4504
+3127;"Pennick";"Jack";3165
+3128;"Reeves";"Arthur (II)";3166
+3129;"Larbi";"Doghmi";3167
+3130;"Rayhall";"Tom";3168
+3131;"Loo";"Richard";3169
+3132;"Brestoff";"Richard";3170
+3133;"Stahl";"Nick";3171
+3134;"Bowes";"Geoffrey";3172
+3135;"Bolin";"Nick";3173
+3136;"Lansbury";"Angela";2189
+3137;"LeFevre";"Adam";1516
+3138;"Maneiro Brown";"Dorothy";4158
+3139;"Mydell";"Joseph";3174
+3140;"Waldron";"Adrian";3175
+3141;"Murphy";"Michael (I)";3176
+3142;"Rifkin";"Ron";3177
+3143;"Roberts";"Michael D.";3178
+3144;"Allen";"Joan (I)";932
+3145;"Lampert";"Jeffrey";3180
+3146;"Auteuil";"Daniel";3181
+3147;"Reynolds";"John (I)";3182
+3148;"Purefoy";"James";3183
+3149;"Fiedler";"John (I)";3185
+3150;"Lahoz";"Ferran";3187
+3151;"Dalmau";"Joan";3188
+3152;"Franco";"Chuy";3189
+3153;"Brodarac";"Nikola";3190
+3154;"Berling";"Charles";3193
+3155;"Daniel";"Thomas";3194
+3156;"Peña";"Alejandro (I)";3195
+3157;"Scarpitta";"Jean-Paul";3196
+3158;"Dunst";"Kirsten";1011
+3159;"Breuls";"Laurence";3199
+3160;"Renteria";"Joe";3200
+3161;"Danon";"Leslie";4341
+3162;"Stevens";"Bert (I)";3201
+3163;"Lewis";"Al (III)";3202
+3164;"Willoughby";"Marlene";2647
+3165;"So";"Jay";3203
+3166;"Carlson";"Velletta";4648
+3167;"Borgnine";"Ernest";3208
+3168;"DiCaprio";"Leonardo";3209
+3169;"Breaux";"Marc";3210
+3170;"Cole";"George (I)";3211
+3171;"Miller";"Marvin (I)";3212
+3172;"James";"Steve (I)";3213
+3173;"Jones";"L.Q.";3214
+3174;"Peterson";"Daniel James";3215
+3175;"Benitz";"Max";3217
+3176;"Cedar";"Larry";3218
+3177;"Ginther";"Mark";3584
+3178;"Scott";"Walter (I)";3219
+3179;"Rivera";"Trio Los";3220
+3180;"Bremner";"Ewen";3221
+3181;"King";"David (I)";3222
+3182;"Gibbs";"Nigel";3223
+3183;"Kelly";"Dennis Lee";3224
+3184;"Daring";"Mason";3225
+3185;"Feyer";"Jonathan";3226
+3186;"Barbour";"Kathy";3130
+3187;"Kushnick";"Eric";3227
+3188;"Anthony";"Ray (III)";3229
+3189;"Foster";"Gloria";5109
+3190;"Lennix";"Harry J.";3230
+3191;"Woodward";"Lawrence";3231
+3192;"Massey";"Raymond (I)";3233
+3193;"McKenna";"Breffni";3237
+3194;"Duhame";"Doc";3238
+3195;"Foster";"Jodie";3232
+3196;"Whitelock";"Robert";3239
+3197;"Estevez";"Emilio";3240
+3198;"Kash";"George";3241
+3199;"Medianik";"Svetlana";2247
+3200;"Veague";"John";3242
+3201;"Fischer";"Corey (I)";3245
+3202;"Grier";"David Alan";3254
+3203;"Faulkner";"Edward";3257
+3204;"Rockwell";"Devin";3262
+3205;"Mullany";"Terry";3263
+3206;"Greenbury";"Nicholas";925
+3207;"Crawford";"J.W.";3264
+3208;"Fennell";"Tyson";3265
+3209;"Thompson";"Erin (II)";918
+3210;"David";"Elwin 'Chopper'";3266
+3211;"Argo";"Victor";3267
+3212;"Thomas";"Wally";3269
+3213;"Whitmarsh";"Lorraine";245
+3214;"Hartnett";"John (III)";3272
+3215;"Torres";"Chris";3273
+3216;"Moreira";"Angelo Barra";3274
+3217;"Bisio";"Claudio";3275
+3218;"Adly Guirgis";"Stephen";3277
+3219;"Roquemore";"Henry";3278
+3220;"Ekberg";"Carl";1034
+3221;"Brunette";"Fritzi";1384
+3222;"Harris";"Sam (II)";3279
+3223;"Vere-Jones";"Peter";3280
+3224;"Garcia";"Roberto (I)";3281
+3225;"Abrahams";"Jon (I)";3282
+3226;"Innocenti";"Aldo";3283
+3227;"Mariotti";"Marcella";3286
+3228;"Edelson";"Kenneth";3287
+3229;"Pearce";"Guy (I)";3289
+3230;"Yakusho";"Kôji";3290
+3231;"Ando";"Kiyoko";3759
+3232;"McKean";"Michael (I)";3291
+3233;"Birchard";"Paul";3292
+3234;"Getz";"John (I)";3293
+3235;"Kaliski";"Michael";3294
+3236;"Rivkin";"Michael";3295
+3237;"Macnamara";"Pete";2645
+3238;"Flagler";"Randy";3296
+3239;"Ellis";"Aunjanue";500
+3240;"Duke";"Bill (I)";3297
+3241;"Grand";"Alexander";3298
+3242;"Weaver";"Al";3301
+3243;"Reed";"Darryl Alan (I)";3302
+3244;"Schoeffling";"Michael";3306
+3245;"Ishikura";"Tamio";3308
+3246;"Coltrane";"Robbie";3309
+3247;"Camiller";"George";3310
+3248;"Begg";"David";3311
+3249;"Riach";"Ralph";3907
+3250;"Keenan";"Pepper";3312
+3251;"Price";"Jamieson";3314
+3252;"Peduto";"Ralph";3315
+3253;"Abel";"Alfred";3316
+3254;"Bender";"Lawrence";3317
+3255;"Krigsfeld";"Ilan";3321
+3256;"Perevedentseva";"Julia";2781
+3257;"Deckert";"Blue";3322
+3258;"Clarkin";"Tony";3323
+3259;"Dwyer";"Michael (I)";5433
+3260;"Davies";"Brian (I)";3326
+3261;"Rose";"Crystal";4111
+3262;"Perrin";"Jacques (I)";3327
+3263;"Joshua";"Larry";3328
+3264;"McGiver";"John (I)";3329
+3265;"Smith";"Paul L.";3330
+3266;"Biggers";"Dan";3331
+3267;"Charnoki";"Andy";3332
+3268;"Tucci";"Stanley";3333
+3269;"Nardelli";"Lucia";3887
+3270;"Rosenfeld";"Moishe";3334
+3271;"Hirokane";"David";3335
+3272;"Fujioka";"John";1046
+3273;"Bollström";"Eino";3336
+3274;"Hyytiäinen";"Janne";2994
+3275;"Usvamaa";"Sinikka";4929
+3276;"Berthelsen";"Anders W.";3337
+3277;"Coleman";"Joseph P.";3338
+3278;"Lee";"Adrian (III)";1356
+3279;"Gainey";"M.C.";3339
+3280;"Serbedzija";"Rade";3340
+3281;"Mariye";"Lily";2574
+3282;"Bell";"Jean Paul";3341
+3283;"Piddock";"Jim";3342
+3284;"Culkin";"Kieran";3343
+3285;"Vlahos";"Sam";3344
+3286;"Witz";"Linda";475
+3287;"Rio";"Larry";3345
+3288;"Blyth";"Ann";4483
+3289;"Walsh";"Lee";3347
+3290;"Toner";"Thomas";3350
+3291;"Cantafio";"Jim";3352
+3292;"Larriva";"Tito";3353
+3293;"Kirkham";"Harry";3354
+3294;"Takahashi";"Issei";3355
+3295;"Jones";"Doug (I)";3356
+3296;"Slater";"Christian";3357
+3297;"Wesley";"Paul (II)";3358
+3298;"Harris";"Steve (I)";2187
+3299;"Capshaw";"Jessica";4331
+3300;"Vargas";"John (I)";3359
+3301;"Martin";"Jean (I)";3360
+3302;"Cahill";"Eddie";3361
+3303;"Kopsa";"Michael";4520
+3304;"Bartzen";"Casey";2201
+3305;"Heyes";"Herbert";3362
+3306;"Bliss";"John (I)";3363
+3307;"Moore";"Kirk";3364
+3308;"Batchelor";"Chris";3365
+3309;"Brunelle";"Thomas";3367
+3310;"LaSalle";"Bobby";3368
+3311;"Tidwell";"Clint";3369
+3312;"Guzda";"Laurie";793
+3313;"Llewellyn";"Mark S.";3370
+3314;"Proval";"David";1076
+3315;"Richardson";"Gary (I)";3371
+3316;"Talley";"Chris";3372
+3317;"Musgrave";"Story";3373
+3318;"Pickup";"Ronald";3374
+3319;"Rogers";"Michael (III)";3375
+3320;"Scott";"Dougray";3376
+3321;"McGuire";"William Francis";3377
+3322;"Chouinard";"Abra";137
+3323;"Miller";"Mark Jeffrey";3378
+3324;"White";"Christopher (I)";4277
+3325;"Aletter";"Frank";3379
+3326;"David";"Zdenek";3366
+3327;"Hanna";"Gillian";3574
+3328;"Gustavsson";"Didrik";3380
+3329;"Klein";"Robert (I)";3381
+3330;"Flav";"Flavor";3383
+3331;"Dumitrache";"Bogdan";3384
+3332;"Peck";"Gregory";3385
+3333;"Huff";"Tommy J.";3386
+3334;"Sandford";"Tiny";3387
+3335;"Eastman";"Peter";3390
+3336;"Francomme";"Édouard";3391
+3337;"Strange";"Richard";3392
+3338;"Rigby";"Terence";3393
+3339;"Avalon";"Whitney";1871
+3340;"Trokan";"Trisha";5455
+3341;"Ponazecki";"Joe";3395
+3342;"Benninghoffen";"Mark";3396
+3343;"Tawil";"David";3397
+3344;"Barber";"Bobby (I)";3398
+3345;"Brotherton";"Phil (I)";3399
+3346;"Bruno";"Jon";4945
+3347;"Rasner";"David";3400
+3348;"Sitbon";"Jérémy";3402
+3349;"D'Arno";"Albert";3403
+3350;"Purviance";"Edna";2301
+3351;"Laroiya";"Jyotsana";3404
+3352;"Razdan";"Soni";4590
+3353;"Blackwell";"Rus";3405
+3354;"Cannon";"Nick (I)";3406
+3355;"Barringer";"Daniel W.";3407
+3356;"Haven";"James (I)";3409
+3357;"Caccialanza";"Lorenzo";3408
+3358;"Silverman";"David (I)";3410
+3359;"Palin";"William";3413
+3360;"Chapman";"Graham";3414
+3361;"Clendenin";"Bob";3415
+3362;"Gotell";"Walter";3416
+3363;"Koetting";"Tim";3417
+3364;"Lennon";"Sean";3418
+3365;"Lambert";"Christopher (I)";3427
+3366;"Thompson";"Brian (I)";3428
+3367;"Shamas";"Roger";3429
+3368;"Appicella";"Antonio";3430
+3369;"McHardy";"Duncan";3431
+3370;"King";"Donald (I)";3432
+3371;"Ivanova";"Natalya (I)";2798
+3372;"Clare";"Raymond";3434
+3373;"Callahan";"Shane";3435
+3374;"Kei";"Leung Ho";3436
+3375;"Wong Chau-Sang";"Anthony";3437
+3376;"Tsang";"Kin-Yung";4959
+3377;"Stanley";"Ken";3438
+3378;"Angeles";"Jack (I)";3439
+3379;"Jennings";"Benton";3443
+3380;"Lavin";"Peter";5569
+3381;"Kerber";"Travis";3444
+3382;"Jones";"Evan (I)";1089
+3383;"Kariya";"Nobuyuki";3445
+3384;"Wright";"Will (I)";3446
+3385;"Toda";"Toshi";3447
+3386;"Zsenyuk";"Steven Paul";2565
+3387;"Bradley";"Harry C.";3448
+3388;"Bancroft";"George (I)";2865
+3389;"Kingkade";"Howard";3449
+3390;"Whitaker";"Damon";3450
+3391;"Maitland";"Beth";2209
+3392;"Driesschen";"Marke";3451
+3393;"Black";"Gerry";3452
+3394;"Scott";"Vernon (II)";3453
+3395;"Arnold";"Edward (I)";3454
+3396;"McCullough";"Philo";1895
+3397;"Arthur";"Jean (I)";5358
+3398;"Miller";"Johnny (I)";3455
+3399;"Dormer";"Richard";3457
+3400;"Menzies";"Alex (I)";3458
+3401;"Bellan";"Joe";3459
+3402;"Fisher-Smith";"E.L.";3460
+3403;"Hale";"Bobby (I)";1596
+3404;"Yuill";"Jimmy";3461
+3405;"Guillén";"Fernando";3462
+3406;"Watanabe";"Gedde";3463
+3407;"Karen";"James (I)";3464
+3408;"Salazar";"Theresa";2257
+3409;"Burr";"Britt";3465
+3410;"Lyell";"Dennis R.";3466
+3411;"Helberg";"Simon";3467
+3412;"Armstrong";"Alun";3468
+3413;"Mudie";"Leonard";3469
+3414;"Uziel";"Jonathan";3470
+3415;"Bana";"Eric (I)";5600
+3416;"Spielberg";"Sasha";169
+3417;"Tygner";"Robert";3473
+3418;"Brooks";"Mel (I)";3474
+3419;"Connolly";"Billy";3475
+3420;"Barnett";"Deron";3476
+3421;"Bryson";"James (I)";3477
+3422;"Connolly";"Michael (I)";2863
+3423;"Hoover";"Howard";3478
+3424;"Kinney";"Michael (II)";4363
+3425;"Sellers";"Peter";3479
+3426;"Cockrum";"Dennis";3480
+3427;"Parks";"Wayne";3481
+3428;"Kirshner";"Mia";4458
+3429;"Perkins";"Anthony";3482
+3430;"Igoe";"Christopher";3483
+3431;"Day";"Matt (I)";3484
+3432;"Nevinson";"Gennie";3916
+3433;"Lee";"Du-il";3485
+3434;"Wright";"Steven (I)";3486
+3435;"Potter";"Gary";3488
+3436;"Lowe";"Tarik";3489
+3437;"Coleman";"Rosalyn";2797
+3438;"Gregory";"Dean";3490
+3439;"Fabian";"Patrick";3491
+3440;"Downing";"Vernon";3492
+3441;"Movita";NA;2528
+3442;"Warnecke";"Gordon";3493
+3443;"Trotter";"Chef Charlie";3494
+3444;"Ho";"Tonray";2122
+3445;"Gray";"Bruce (I)";3495
+3446;"Emery";"James (I)";3496
+3447;"Koza";"Bill";3497
+3448;"Stamp";"Terence";3498
+3449;"McGill";"Bruce";3499
+3450;"Woods";"Harry";3500
+3451;"Butler";"Roy (II)";3501
+3452;"Honeycutt";"Daylan";3502
+3453;"Riordan";"Christopher";3503
+3454;"Main";"Laurie";1277
+3455;"Clark";"Paulle (I)";5381
+3456;"Delaney";"Anthony";3504
+3457;"Dempsey";"Michael (I)";3505
+3458;"DiBenedetto";"Tony";3506
+3459;"Kehler";"Jack";3507
+3460;"Howard";"Jean Speegle";2837
+3461;"Goodman";"John (I)";3508
+3462;"Culkin";"Macaulay";3509
+3463;"Stein";"Ben (I)";3510
+3464;"Ngor";"Haing S.";3512
+3465;"Thompson";"Jerry (IV)";3513
+3466;"O'Reilly";"Stephen (I)";3514
+3467;"Mason";"Reginald (I)";3515
+3468;"Mills";"Father Joe";3516
+3469;"Swerdlow";"Lannie";3517
+3470;"Lovitz";"Jon";3518
+3471;"Andrews";"Dean (II)";3519
+3472;"Sing";"Angel";3520
+3473;"Drago";"Billy";3521
+3474;"Cole";"John Brantley";3522
+3475;"Mugglebee";"Christopher";5261
+3476;"Mallon";"Jim";3523
+3477;"Redglare";"Rockets";3524
+3478;"Lacroix";"Marty";3525
+3479;"Nozick";"Bruce";4639
+3480;"Fiore";"John";3526
+3481;"Kyle";"Stephen (I)";3527
+3482;"O'Keefe";"Ed";3848
+3483;"Coutard";"Raoul";3300
+3484;"Chambers";"Donald (II)";3528
+3485;"Tunstall";"Darren";3530
+3486;"Zucker";"David";3531
+3487;"Gabor";"Zsa Zsa";4291
+3488;"Kerr";"William (I)";3532
+3489;"Palmer";"Jim (II)";3533
+3490;"Breslau";"Sharon";2184
+3491;"Campbell";"Nicholas";3534
+3492;"Caporale";"Aristide";3536
+3493;"Bodin-Jorgensen";"Lars";2857
+3494;"Honywood";"Samuel";3537
+3495;"Brewer";"Daniel (IV)";3539
+3496;"Wheeler";"Eli";1588
+3497;"Johnson";"Lacey";368
+3498;"Gibby";"Kathrine";3906
+3499;"John";"Darren";3540
+3500;"Wynn";"Keenan";3541
+3501;"Hinton";"Gregory (II)";3542
+3502;"Brady";"Mike (II)";3543
+3503;"McMullin";"Chris (II)";3544
+3504;"Parisse";"Annie";5574
+3505;"Kalipha";"Stefan";3545
+3506;"Pilgaard";"Ulf";3546
+3507;"Corwin";"Hank";3547
+3508;"Wright";"Steven (I)";4418
+3509;"Castellano";"Joe (I)";3548
+3510;"Close";"Glenn";5283
+3511;"Fadlallah";"Nehme";3549
+3512;"Pierce";"Tony (I)";3551
+3513;"Collins II";"Donald R.";3552
+3514;"Walker";"Herschel";501
+3515;"Jahne";"Graham";3553
+3516;"Howes";"Jim";3676
+3517;"Schneider";"Eric (II)";3554
+3518;"Morrell";"Geoff (II)";3555
+3519;"Major";"Mary";4275
+3520;"Kazurinsky";"Tim";3556
+3521;"Montgomery";"Randy (I)";3557
+3522;"Buren III";"Rob";3558
+3523;"Perez";"Tony (I)";3562
+3524;"Duvall";"Robert (I)";3563
+3525;"Douglas";"David (II)";3564
+3526;"Rogers";"Acacia";405
+3527;"Deadman";"Derek";3565
+3528;"Beckett";"Andreas";3566
+3529;"Rodriguez";"Valente";3567
+3530;"Baraka";"Ameer";878
+3531;"Santiago";"Manuel E.";3568
+3532;"Englund";"Robert";3569
+3533;"Esteban";"John";3570
+3534;"Merrick";"Brian";4410
+3535;"Welker";"Frank";3571
+3536;"Davis";"Mary Bond";2810
+3537;"David";"Larry (I)";3572
+3538;"Giles";"Nancy";1101
+3539;"De Niro";"Robert";3573
+3540;"Middlebrooks";"Wilfred R.";2856
+3541;"Thysell";"Jeff";3575
+3542;"Goorjian";"Michael A.";885
+3543;"McConaughey";"Rooster";3576
+3544;"McDonnell";"Blue";2113
+3545;"Wilson";"Lenny";3577
+3546;"Love";"Faizon";3578
+3547;"Johnson";"Gustave";3579
+3548;"Thompson";"Ernest";3580
+3549;"Alexandra";"Luz";1237
+3550;"Carey Jr.";"Harry";3585
+3551;"Bell";"Jamie (I)";3586
+3552;"Johnson";"Clark (I)";3588
+3553;"Favino";"Pierfrancesco";3591
+3554;"Irving";"George (I)";3592
+3555;"Jenkins";"Roy (I)";3593
+3556;"Jacoby";"Mark";3594
+3557;"Rude";"Dick";3595
+3558;"Chapin";"Michael";3596
+3559;"Hutsko";"Steve";3597
+3560;"Boes";"Richard";3598
+3561;"Keaton";"Michael";3599
+3562;"Vogelbacher";"Joy Michael";1919
+3563;"Ray";"Philip (I)";3600
+3564;"Naismith";"Laurence";5335
+3565;"Nelson";"Kenneth";3601
+3566;"Stewart";"Jean-Pierre";3602
+3567;"Proops";"Greg";3603
+3568;"Cavett";"Dick";3604
+3569;"O'Neal";"Pat";3605
+3570;"Rusler";"Robert";3606
+3571;"Grenier";"Paul";3607
+3572;"Felder";"Clarence";3608
+3573;"Dourif";"Brad";3609
+3574;"Van Riet";"Guy";3610
+3575;"Dupuy";"Alexis";3816
+3576;"Weist";"Dwight";3611
+3577;"Simpkins";"Joseph Quinn";3612
+3578;"Alden";"Priscilla (I)";1731
+3579;"David";"Brad";3613
+3580;"Donaghy";"Pip";3614
+3581;"Bressart";"Felix";3615
+3582;"Holt";"Willy";3616
+3583;"Ninidze";"Merab";3617
+3584;"Pickens Jr.";"James";3619
+3585;"King George VI";NA;5164
+3586;"Stevenson";"Adlai";922
+3587;"Glover";"Tony";3620
+3588;"Bianco";"Dominic";3621
+3589;"Kurt";"Almir";3622
+3590;"Burkley";"Dennis";3623
+3591;"Vince";"Pruitt Taylor";3624
+3592;"Osetrov";"Dmitry";3625
+3593;"McCall";"Jack";3627
+3594;"Matsumoto";"Katsuhei";3628
+3595;"Langley";"Frank";3629
+3596;"Sanderson";"Sara";1236
+3597;"Ferguson";"J. Don";3630
+3598;"Costanzo";"Robert";3631
+3599;"Shroder";"D.L.";958
+3600;"Atterbury";"Malcolm";3632
+3601;"Carroll";"Leo G.";4524
+3602;"Southerland";"Boots";3633
+3603;"Theron";"Charlize";3394
+3604;"MacLachlan";"Kyle";3634
+3605;"Nemetz";"Max";3638
+3606;"van Husen";"Dan";3639
+3607;"Fiorentini";"Sergio";3640
+3608;"Thomas";"Paul (IV)";3641
+3609;"Wall";"Susan Anne";417
+3610;"Shmuel";"Amir";3642
+3611;"Fraisse";"Robert";3643
+3612;"Koon";"Rebecca";1504
+3613;"Skinner";"Leon";3644
+3614;"Hump";"Humpty";3645
+3615;"Martin";"Dan (II)";3646
+3616;"Owen";"Garry (I)";3647
+3617;"Morgan";"Sandra (I)";3057
+3618;"Barbi";"Ciccio";3648
+3619;"Moran";"Dylan (I)";3649
+3620;"D'Adda";"Francesco";3651
+3621;"Wong";"Quincy";3652
+3622;"Crosby";"Kellen";3653
+3623;"Drake";"Charles (I)";3654
+3624;"Lewis";"Thyme";3655
+3625;"Ramsey";"Jeff";3656
+3626;"Arias";"Ernesto";3660
+3627;"Bal";"Walter";3661
+3628;"Himmler";"Heinrich";3662
+3629;"Butcher";"Paul";3663
+3630;"Parker";"Oliver (I)";3665
+3631;"Kennedy";"Mike (VI)";3667
+3632;"Palmer";"Richie (I)";3668
+3633;"Ellis";"Nadine";4740
+3634;"Weaver";"Doodles";3669
+3635;"Reynisson";"Unnar";3626
+3636;"Niemczyk";"Leon";3659
+3637;"Ayers";"Doug";3670
+3638;"Goodman";"John (I)";3671
+3639;"Ochoa";"Steven";3679
+3640;"Polanco";"Iraida";2419
+3641;"Gray";"Joe (I)";3680
+3642;"Wagner";"Max (I)";3637
+3643;"West";"Shane";3882
+3644;"Clayderburg";"Gary";3681
+3645;"Tedesco";"Nerissa";5625
+3646;"Fowler";"Blaque";3682
+3647;"Grahame";"David";3683
+3648;"Andrews";"Janine";109
+3649;"Harrelson";"Bud";3684
+3650;"Siemaszko";"Casey";3687
+3651;"Naidu";"Ajay (I)";3688
+3652;"Laughlin";"John (I)";3689
+3653;"Josephson";"Erland";3690
+3654;"Dunphy";"Jerry";3692
+3655;"MacRae";"Gordon";3694
+3656;"Piven";"Jeremy";3696
+3657;"Reeves";"Perrey";1010
+3658;"York";"Jeff (I)";3697
+3659;"Kim";"Su-hyeon (II)";3698
+3660;"Rydbeck";"Whitney";3699
+3661;"McLaughlin";"Gibb";3700
+3662;"Kemp";"Anthony";3701
+3663;"Inclán";"Miguel (I)";3703
+3664;"Ironside";"Michael";3704
+3665;"Dierkes";"John";3705
+3666;"McAlinney";"Patrick";3706
+3667;"Twofeathers";"Manny";3707
+3668;"Falling Leaves";"Bernice";2805
+3669;"Fonda";"Henry";3708
+3670;"McGlen";"Norman";3709
+3671;"Williams";"Peter (II)";3710
+3672;"Mann";"Hank (I)";3711
+3673;"O'Dowd";"Mike";3712
+3674;"McRae";"Alan";3713
+3675;"Zeely";"Jay";3714
+3676;"Harris";"Estelle";2703
+3677;"Valdes";"Tony (II)";3715
+3678;"Tiopira";"George";3716
+3679;"Hoffsten";"Theodor";3717
+3680;"Viveiros";"Anthony";3718
+3681;"Brown";"Gannon";3719
+3682;"Stewart";"Jackie (I)";3720
+3683;"Jang";"Steven";3721
+3684;"DeVito";"Danny";3722
+3685;"Searcy";"Nick";3723
+3686;"Worlock";"Frederick";3724
+3687;"Neukirch";"Rob";3725
+3688;"Paradise";"Richard";3726
+3689;"Lambton";"Anne";5106
+3690;"Zimmerman";"Peter (I)";3727
+3691;"Graham";"Lauren (I)";801
+3692;"Stoffer";"Joel";3728
+3693;"Kiwe";"Til";3729
+3694;"Gaius";"Paul";3730
+3695;"Chandler";"John Davis";3731
+3696;"Scarpa";"Renato";3732
+3697;"Diablo Del Mar";"Diego";3734
+3698;"Mann";"Danny (I)";3735
+3699;"Travis";"Daniel (II)";3736
+3700;"Doug";"Doug E.";3737
+3701;"Bryant";"William (I)";3738
+3702;"Eastman";"Rodney";3739
+3703;"Kenny";"Tom (I)";3740
+3704;"Azur";"Sybil";718
+3705;"Odore";"Davide";3741
+3706;"Ronan";"Paul";3742
+3707;"Kinney";"Douglas";3743
+3708;"Borkovec";"Chris";3745
+3709;"LaVeaux";"Shayla";5065
+3710;"Medina";"Roberto (I)";3746
+3711;"Jones";"Toby (I)";3747
+3712;"Herati";"Arif";3750
+3713;"Curry";"Tim (I)";3751
+3714;"Lillis";"Andre";3752
+3715;"Doherty Gillin";"Sierra";1182
+3716;"Murphy";"Joe (II)";3753
+3717;"Hyde Pierce";"David";2420
+3718;"Lockhart";"Anne (I)";3754
+3719;"Ferzetti";"Gabriele";3755
+3720;"Coyne";"Paul (II)";3756
+3721;"Hines";"Tom (I)";3757
+3722;"Almayvonne";NA;2964
+3723;"Vince";"Alexander";3758
+3724;"Bear";"Bart the (I)";3760
+3725;"Lehn";"Javas";3761
+3726;"Guardino";"Charles";3762
+3727;"Todd";"Marie";2252
+3728;"McCann";"Donal";3763
+3729;"Palance";"Jack";3764
+3730;"Farina";"Dennis";3765
+3731;"Kellogg";"John (I)";3766
+3732;"Murtaugh";"James";3767
+3733;"Study";"Lomax";3768
+3734;"Johnson";"Philip E.";3769
+3735;"Cheng";"Diane";614
+3736;"Forrest";"Donald (II)";3770
+3737;"Owens";"Albert";2240
+3738;"Glick";"Jeremy";3771
+3739;"MacInnes";"Angus";3772
+3740;"McGrath";"Doug";3773
+3741;"McDonald";"Christopher (I)";3774
+3742;"Cardi";"Nicholas";3775
+3743;"Withrow";"Glenn";3776
+3744;"Church";"Thomas Haden";3777
+3745;"Scarber";"Sam";3778
+3746;"Thorsen";"Sven-Ole";3779
+3747;"McGrath";"James (III)";3782
+3748;"Smits";"Sonja";1542
+3749;"Sharp";"Clint";3783
+3750;"Rutherford";"Nicholas";3784
+3751;"Morales";"Valentino";3785
+3752;"Chow";"Helena";1760
+3753;"Wolff";"Jean-Loup";3786
+3754;"Howell";"Canan J.";3787
+3755;"Mims";"William (I)";3788
+3756;"David";"Alan (I)";3789
+3757;"Adams";"Michael (I)";3790
+3758;"Matuszak";"Sydney";3792
+3759;"Mudd";"John A.";3793
+3760;"Pangborn";"Franklin";3794
+3761;"Booker";"Richard";3796
+3762;"Speziani";"Massimiliano";3798
+3763;"Pitts";"Greg (II)";3801
+3764;"Schulze";"Paul";3802
+3765;"Halligan";"Tim";3805
+3766;"Lillie";"George";3806
+3767;"Carter";"Graydon";3807
+3768;"Truro";"Victor";2386
+3769;"Hanmer";"Don";3808
+3770;"Abu-Aiaash";"Hamza";3809
+3771;"Lieb";"Robert P.";3810
+3772;"Champion";"Jean";3811
+3773;"De Vol";"Frank";3813
+3774;"Gerard";"Greg";3815
+3775;"Dray";"Lionel";3818
+3776;"Shepard";"Sam";3820
+3777;"Gray";"Joey (II)";3824
+3778;"Scully";"Vin";3825
+3779;"Seth";"Roshan";3826
+3780;"Bedford";"Winston";3827
+3781;"Ravet";"Louis";3828
+3782;"Dokyi";"Francis";3829
+3783;"Gerini";"Claudia";4299
+3784;"Taylor";"Dub (I)";3830
+3785;"Carraway";"James";3831
+3786;"Coyle";"J. Stephen";2326
+3787;"Bannerjee";"Subir";3832
+3788;"Stein";"John (I)";3833
+3789;"Armstrong";"Alun";3834
+3790;"Noyce";"Lucia";5413
+3791;"Beene";"Dan";3835
+3792;"Hardin";"Lee";1813
+3793;"Price";"Jamieson";4268
+3794;"Flood";"Gerald";3836
+3795;"Hosking";"Craig";3837
+3796;"Venantini";"Venantino";3838
+3797;"Osment";"Haley Joel";3841
+3798;"Pfeifer";"Ed";3842
+3799;"Connolly";"Brent";3843
+3800;"Piven";"Jeremy";3844
+3801;"Davis";"Viveka";1106
+3802;"Peskov";"Aleksandr";3845
+3803;"Altes";"Steve";379
+3804;"Oeding";"Lin";3847
+3805;"Pyper-Ferguson";"John";3346
+3806;"Francis";"Paul (II)";526
+3807;"Roberts";"Doug (I)";3849
+3808;"Ricci";"Christina";3678
+3809;"Bow";"Simmy";3850
+3810;"Hooks";"Jan";3664
+3811;"Baxter";"Keith (I)";3851
+3812;"Saunders";"Tony (I)";3852
+3813;"Heald";"Anthony";3853
+3814;"Quarterman";"Sandra";4899
+3815;"Hvenegaard";"Pelle";3854
+3816;"Graves";"Michael (V)";3857
+3817;"Porizkova";"Paulina";3804
+3818;"Micheal";"Robert";3858
+3819;"Bynum";"Nate";3859
+3820;"Jackson";"Jaime (II)";433
+3821;"Canalejas";"José";3860
+3822;"Salerno";"Enrico Maria";3861
+3823;"Iglesias";"Miguel (II)";3862
+3824;"Buchholz";"Bob";3863
+3825;"DeYoung";"Dennis";3864
+3826;"Singer";"Stephen (I)";3865
+3827;"Jackson";"Dee Jay";3866
+3828;"Parham";"Ken";3867
+3829;"Duff";"Elizabeth";4684
+3830;"Frank";"Tony";3868
+3831;"Baixas";"Nico";3869
+3832;"Traver";"Laura Vidal";4282
+3833;"Wilson";"Owen (I)";3871
+3834;"Björnstrand";"Gunnar";3873
+3835;"Russell Beale";"Simon";3874
+3836;"Lau";"Jim";3876
+3837;"Raz";"Kavi";3877
+3838;"Binion";"Reid";3878
+3839;"Barnes";"Walter";3879
+3840;"Luske";"Tommy";3880
+3841;"Pickles";"Chris";3881
+3842;"Sawyer";"Joe";3883
+3843;"Labro";"Philippe";3886
+3844;"Cone";"Bill (II)";3888
+3845;"Sedan";"Rolfe";3889
+3846;"Gant";"Ben";3780
+3847;"Cunningham";"Tess";1306
+3848;"Wade";"Adam (I)";3890
+3849;"Blythe";"Janus";4381
+3850;"Smitrovich";"Bill";3891
+3851;"Hahn";"William (I)";3892
+3852;"Hall";"Wes";3893
+3853;"Welch";"Doniela";778
+3854;"Trevisi";"Franco";3894
+3855;"Fridley";"Tom";3895
+3856;"Callen";"Michael";3897
+3857;"Breslo";"Robert";3419
+3858;"Manza";"Ralph";3898
+3859;"Clark";"Russ (I)";3899
+3860;"Lombardozzi";"Domenick";3908
+3861;"Tumminello";"Tom (I)";3909
+3862;"Dziedziel";"Marian";3910
+3863;"Wawer";"Darian";3920
+3864;"Morgensztern";"Noam";3911
+3865;"Garbolino";"Terrence";3912
+3866;"Paraha";"Glynis";3138
+3867;"Sullivan";"Wayne R.";3914
+3868;"Llewellyn-Jones";"Tony";3915
+3869;"Cory";"Robert";3917
+3870;"Pilkington";"Tom";2171
+3871;"Dja";"Devi";880
+3872;"Cromwell";"David";3918
+3873;"Martinez";"Adrian (I)";3919
+3874;"Staquet";"Georges";3922
+3875;"Kha";NA;3925
+3876;"Kimura";"Tatsuya";1454
+3877;"Tong";"Yorks";2345
+3878;"Mell";"Joseph";3926
+3879;"Bemis";"Cliff";3927
+3880;"Hutzler";"Jimmy";3928
+3881;"Crystal";"Nancy";4611
+3882;"Waters";"Roger";3929
+3883;"Haggerty";"Fred";3930
+3884;"Smart";"Patsy";5351
+3885;"Gordon";"Colin";3931
+3886;"Chanéac";"Delphine";949
+3887;"Jones";"Dickie";3932
+3888;"Sullivan";"Mike (IV)";3934
+3889;"Adamson";"Christopher (I)";3935
+3890;"Barnett";"Angus";4595
+3891;"Sari";"Sam";3936
+3892;"Caccia";"Michel";3939
+3893;"Yaconelli";"Frank";3940
+3894;"Inescort";"Frieda";4259
+3895;"Schenkkan";"Robert";3941
+3896;"Breckinridge";"John";3942
+3897;"Tyner";"Charles";3943
+3898;"Chow";"David (I)";3944
+3899;"Kroslak";"Candace";2047
+3900;"Sanchez";"Paul (II)";3945
+3901;"Greene";"Michael (I)";3947
+3902;"Cortez";"Joe (II)";3948
+3903;"Buffer";"Michael";4413
+3904;"Siegel";"Don (I)";3949
+3905;"Kolldehoff";"Reinhard";3950
+3906;"Remsen";"Guy";3951
+3907;"Piven";"Jeremy";5360
+3908;"Mapa";"Alec";3952
+3909;"Garcia";"Ernest M.";3953
+3910;"Daniels";"Jeff (I)";3954
+3911;"Madsen";"Peter (III)";3955
+3912;"Lovitt";"Gordon";3956
+3913;"Connolly";"Billy";3957
+3914;"Sikking";"James";3958
+3915;"Reyes";"Julian";3959
+3916;"Apisa";"Robert";3960
+3917;"Caldwell";"Randall";3961
+3918;"Bartlett";"Philip";3962
+3919;"Henderson";"Devin";3963
+3920;"Payne";"Don (I)";3964
+3921;"Amos";"Beth";4726
+3922;"Graf";"David";3965
+3923;"Winslow";"Michael (I)";3966
+3924;"Leger";"Marc";3967
+3925;"Smith";"Megan (I)";2650
+3926;"Rabasa";"Ruben";3968
+3927;"Mahler";"Bruce";3969
+3928;"Ostroukhov";"Pavel";3970
+3929;"Weisser";"Norbert";3972
+3930;"Simmons";"Craig (II)";3973
+3931;"Hertford";"Whit";3974
+3932;"Skerritt";"Tom";3975
+3933;"Aronin";"Michael";3977
+3934;"O'Brien";"Conan";3979
+3935;"Burgess";"Hovey";3980
+3936;"O'Reilly";"Cyril";3981
+3937;"Christmas";"Eric";3982
+3938;"Jane";"Baby (I)";2408
+3939;"Grant";"Richard E.";3984
+3940;"Jarret";"Gabriel";3985
+3941;"Perry";"Stuart";3986
+3942;"Northam";"Jeremy";3987
+3943;"Serna";"Pepe";3988
+3944;"Neri";"Nando";3989
+3945;"Grant";"A. Cameron";3990
+3946;"Thomason";"Mark (I)";3991
+3947;"Becker";"Brooke";4605
+3948;"D'Anna";"Federico";3993
+3949;"Smith";"Brandon (I)";3994
+3950;"Ivy";"Nigel";3995
+3951;"Ngwenya";"Liz";1035
+3952;"Duncan";"Trevor (II)";3996
+3953;"Russell";"Tim";3997
+3954;"Burnett";"Anthony (I)";3999
+3955;"Mitchell";"Delores";2649
+3956;"Chaves";"Richard";4000
+3957;"Kingi";"Henry";4001
+3958;"Gabbard";"Glendon";4002
+3959;"Graf";"Allan";4004
+3960;"Sheppard";"William Morgan";4006
+3961;"Reidy";"John (I)";4007
+3962;"Anders";"Jamie";4009
+3963;"Hanover";"Jake";4010
+3964;"Keenan";"Harvey";4011
+3965;"Marshall";"Kathleen (I)";832
+3966;"Cumming";"Alan";4015
+3967;"Sheehan";"John (I)";4016
+3968;"Cooper";"Clancy";3304
+3969;"Vaughan";"Dorothy";329
+3970;"Fanning";"Rio";4017
+3971;"Gere";"Richard";4018
+3972;"Levine";"Noah Michael";4019
+3973;"Lawson";"Bianca";1518
+3974;"McCormack";"Will";4020
+3975;"Upadhyaya";"Ashok";4021
+3976;"McGowan";"James (I)";4022
+3977;"Parker";"Jameson (I)";4023
+3978;"Montgomery";"Randall (I)";4024
+3979;"Newman";"Ryan (I)";4025
+3980;"Guest";"Christopher (I)";4026
+3981;"Lewis";"Greg (I)";4027
+3982;"West";"John (I)";1826
+3983;"Perez";"Gwenda";133
+3984;"Michalski";"Jeff";4028
+3985;"Sandler";"Ethan";761
+3986;"Marshall";"Kathleen (I)";3424
+3987;"Sotiropulos";"Kopi";4029
+3988;"Barron";"Chris (I)";4030
+3989;"Young";"Malcolm (I)";1861
+3990;"Baggett";"Alley";3074
+3991;"Barto";"Dominic";4032
+3992;"Galt";"John William";4033
+3993;"Moore";"Norma";2050
+3994;"Oliver";"Michael (I)";4034
+3995;"Kearns";"Billy";4035
+3996;"Mostel";"Zero";4036
+3997;"Stahl";"Jonathan";4722
+3998;"Summers";"Stewart";765
+3999;"McKean";"Michael (I)";3075
+4000;"Klapmeyer";"Renee";2315
+4001;"Pulliam";"Darcy";1962
+4002;"Spies";"Manfred";4037
+4003;"Mariani";"Jacopo";4038
+4004;"Rogers";"George (III)";4039
+4005;"Okko";NA;4040
+4006;"Eastman";"Lynn";2766
+4007;"Hatkoff";"Daniel";4041
+4008;"Frisone";"Roberto";4042
+4009;"Hunter";"Clark";4043
+4010;"Hurt";"John";4044
+4011;"Orpheo";NA;4045
+4012;"Kent";"Tom (II)";4046
+4013;"Robards";"Sam";4008
+4014;"Benson";"Laura (I)";2405
+4015;"McCaffrie";"Pat";4047
+4016;"Holland";"Tom (I)";4048
+4017;"Hendricks Jr.";"Ben (I)";4049
+4018;"Clark";"Eric (I)";4052
+4019;"Clotworthy";"Robert";4053
+4020;"Hampton";"James (I)";4054
+4021;"Martin";"Paul Isaac";4055
+4022;"Henriksen";"Lance";4056
+4023;"Schrempf";"David";4057
+4024;"Pollock";"Michael (I)";4058
+4025;"Michael";"Susan";4986
+4026;"Fraser";"Robert (III)";4059
+4027;"Jarchow";"Bruce";4060
+4028;"Jacobson";"Gil";4061
+4029;"O'Shea";"Milo (I)";4062
+4030;"Edwards";"Annie Joe";3111
+4031;"Raider-Wexler";"Victor";4063
+4032;"Kahn";"Karen";4641
+4033;"Staal";"Jesper";4065
+4034;"Howarth";"Peter James";4066
+4035;"Knowlton";"Sarah";2418
+4036;"Cooper";"Garry (I)";4068
+4037;"Virlojeux";"Henri";4070
+4038;"Schlusser";"Daniel";4072
+4039;"Aaliyah";NA;5580
+4040;"Reith";"Douglas";4073
+4041;"Indtrasathit";"Vichai";4074
+4042;"Molina";"Butch";4075
+4043;"Goodrow";"Garry";4076
+4044;"Johnson";"Deborah Lee";3702
+4045;"Szeto";"Mark";4077
+4046;"Lawrence";"Bruno";4078
+4047;"Horan";"John (I)";4079
+4048;"Wtrrikuwuy";"Wilson";4080
+4049;"Galumay";"Kirsten";1803
+4050;"Jones";"Harry (I)";4081
+4051;"Morrow";"Rob";4082
+4052;"McGrath";"Douglas";2195
+4053;"Billing";"Roy (I)";4083
+4054;"Fernandes";"Miguel (I)";4084
+4055;"Thompson";"Fred Dalton";4085
+4056;"O'Farrell";"Ty";4086
+4057;"Fowlkes";"Hillari";764
+4058;"Joy";"Robert (I)";4087
+4059;"Kotkin";"Edward S.";1930
+4060;"Verduzco";"Abraham";4088
+4061;"Bruno";"Dylan";4089
+4062;"Richards";"Ken (II)";4090
+4063;"Dennis";"Fred";1471
+4064;"Chancer";"Norman";4091
+4065;"Levels";"Calvin";5482
+4066;"Reeves";"Kneeles";4094
+4067;"Jenney";"Lucinda";2950
+4068;"Shroyer";"Sonny";4095
+4069;"Gontier";"Adam";4096
+4070;"Norton";"Ralph";4097
+4071;"Hooks";"Ed";4098
+4072;"Totland";"Steve";4099
+4073;"Shettler";"Joie";406
+4074;"Durban";"Kelly";3799
+4075;"Rasuk";"Silvestre";4100
+4076;"Shoua";"Doudi";4102
+4077;"Collins";"Don";4103
+4078;"Nagasawa";"Ryo";4105
+4079;"Burks";"Jernard";4106
+4080;"Mara";"Kate";2567
+4081;"Mackintosh";"Steven";4107
+4082;"Dorish";"John";4108
+4083;"Sinise";"Gary";5122
+4084;"Katô";"Daisuke (I)";4109
+4085;"McCarthy";"Bart";4110
+4086;"Sood";"Manoj";1469
+4087;"Sungu";"Miezi";4113
+4088;"Ross";"Alex (I)";4115
+4089;"Harrold";"Kathryn";373
+4090;"Groetsch";"Justin";4116
+4091;"Powell";"Clifton";2639
+4092;"Gale";"David (I)";4117
+4093;"Smith";"Tait";4118
+4094;"Moore";"Melanie Deanne";972
+4095;"Miller";"Adam (VII)";4119
+4096;"Billingslea";"Beau";4120
+4097;"Martin";"Sandy (I)";1699
+4098;"Roberts";"Frank (VII)";4121
+4099;"Sites";"Brian (I)";4122
+4100;"Dick";"Andy (I)";4123
+4101;"Cady";"Frank";4124
+4102;"Hitchcock";"Alfred (I)";4127
+4103;"Hopper";"William (I)";4128
+4104;"Wright";"Stephen Lee";4129
+4105;"Venture";"Richard";4130
+4106;"O'Neal";"Ron";4131
+4107;"Nickerson";"Edward";4132
+4108;"Jackson";"Jeanine (I)";5036
+4109;"Chapman";"Guy (II)";4133
+4110;"Maddalena";"Marianne";5332
+4111;"Young";"Christopher Anthony";4134
+4112;"Ross";"Neil (I)";4135
+4113;"Lloyd";"George (I)";4136
+4114;"Levine";"Jeff (II)";4137
+4115;"Petrie";"Hay";4138
+4116;"Dorval";"Lynne";3307
+4117;"Richards";"Terry";4139
+4118;"Shaner";"John Herman";4140
+4119;"La Casa";"Andreas";2727
+4120;"Wong";"B.D.";4144
+4121;"Altman";"Bruce";4145
+4122;"McConaughey";"Matthew";4148
+4123;"de Lancie";"John";4149
+4124;"Hutson";"James";4150
+4125;"Kargol";"Zygmunt";4151
+4126;"Tellez";"Martin S.";4152
+4127;"Kahler";"Wolf";4153
+4128;"Jones";"Walker";4154
+4129;"Cummings";"Shawn";2600
+4130;"Ferrara";"Frank";4155
+4131;"Head";"Robert (I)";4156
+4132;"Tallman";"Chris";4159
+4133;"DuVal";"Cory";4161
+4134;"Delate";"Brian";588
+4135;"Dawson";"Rosario";4050
+4136;"Chow";"Yun-Fat";4162
+4137;"Vique";"Robert";4163
+4138;"Justice Jr.";"Greg";4143
+4139;"Miller";"Royan";2869
+4140;"Katz";"Stanley";4164
+4141;"Boyd";"Thomas R.";4165
+4142;"Martin";"Helen (II)";3976
+4143;"Polanski";"Roman";4166
+4144;"Pollack";"Joshua";4167
+4145;"Goodheart";"Ami";289
+4146;"Fox";"Bernard (I)";4169
+4147;"McIntire";"John (I)";4170
+4148;"Bender";"Lawrence";4171
+4149;"Butler";"Jaymes";4172
+4150;"Ludzik";"Ted";4173
+4151;"Copkov";"Dean";3992
+4152;"Kubba";"Janan";4174
+4153;"Filips";"Jan";4175
+4154;"Northern";"Michael";4176
+4155;"Cindrich";"Reynold";4177
+4156;"Bond";"David (I)";4178
+4157;"Sellers";"Peter";4179
+4158;"Jacks";"Robert (I)";4180
+4159;"Hunt";"Kevin (I)";4181
+4160;"Stevens";"Ken (I)";4182
+4161;"Lee";"Ming (I)";4183
+4162;"Rubi";"Mauricio";4184
+4163;"Urena";"Michael";4185
+4164;"Gardaphe";"Angela C.";3900
+4165;"Busfield";"Timothy";4186
+4166;"Mayne";"Ferdy";4187
+4167;"Lai";"Me Me";3243
+4168;"Irons";"Jeremy";4188
+4169;"Bashir";"Abbi";4189
+4170;"Downey Jr.";"Robert";4197
+4171;"Selznick";"Albie";4201
+4172;"Anderson";"John (I)";4202
+4173;"Denesha";"Roger";4203
+4174;"Auman";"Jeremy W.";2974
+4175;"Abot";"Didier";4204
+4176;"Moscow";"David";4205
+4177;"Damergis";"Anna";4409
+4178;"Eshelman";"Drew";4206
+4179;"Shepard";"Sam";459
+4180;"Dorfman";"David (I)";4207
+4181;"Dorfman";"David (I)";4208
+4182;"Langley";"Adam";4209
+4183;"Smith";"Kerbey";2227
+4184;"Capodice";"John";4210
+4185;"Takeda";"Toshiliko";4211
+4186;"Serizawa";"Reita";4212
+4187;"Shimada";"Joseph";4214
+4188;"Naish";"J. Carrol";4215
+4189;"Winstone";"Ray";4216
+4190;"Imada";"Jeff";4217
+4191;"Tuck";"Jessica";1018
+4192;"Davis";"Nathan (I)";4218
+4193;"Ryan";"Sean (I)";4220
+4194;"Pitt";"Brad";4221
+4195;"Mazzello";"Joseph";4222
+4196;"Richman";"Josh";4223
+4197;"Benaïche";"Wilfred";4224
+4198;"Rousset";"Olivier";4225
+4199;"Green";"Bruce (VI)";4195
+4200;"Elliott";"Sam";4226
+4201;"Michaels";"Julie (I)";4998
+4202;"Branagh";"Kenneth";4227
+4203;"Ahmed";"Riz";4228
+4204;"Law";"Jude";4229
+4205;"Gallagher";"Maureen (I)";3904
+4206;"Kraus";"David (I)";4230
+4207;"Phillips";"Todd (I)";4231
+4208;"Rodriguez";"Guinevere";810
+4209;"Murtagh";"John";4232
+4210;"Holm";"Ian";4235
+4211;"O'Malley";"J. Pat";4236
+4212;"Revill";"Clive";4237
+4213;"Pitofsky";"Peter";2576
+4214;"Riddell";"Graham";4238
+4215;"Graf";"Allan";4242
+4216;"Allen";"Nancy (I)";4239
+4217;"Page";"Frank (I)";4243
+4218;"De Jesus";"Wanda";432
+4219;"Nemeth";"S.D.";4244
+4220;"Brooks";"Mel (I)";4245
+4221;"Elias";"Blas";4246
+4222;"Stevens";"Carrie (I)";4142
+4223;"Gaver";"Duffy";4247
+4224;"Anselmo";"Robert M.";5084
+4225;"Corbitt";"Chance Michael";4248
+4226;"Hardin";"Melora";4005
+4227;"David";"Thayer";4249
+4228;"Tate";"Lahmard J.";4250
+4229;"Jacobson";"Dana";693
+4230;"Collins";"Rufus (I)";4251
+4231;"Coles";"Charles 'Honi'";4252
+4232;"Mr. T";NA;4253
+4233;"Neiman";"LeRoy";4254
+4234;"Gambina";"Jimmy";4255
+4235;"Stallone";"Sylvester";2566
+4236;"Moore";"Michael (II)";4257
+4237;"Savas";"Tommy";4258
+4238;"Lim";"Kay Siu";4260
+4239;"Normington";"John";4261
+4240;"Mourani";"Bruno";3259
+4241;"Paule";"Raout";4263
+4242;"Passarelli";"Eduardo";4264
+4243;"Penza";"Giacomo";4265
+4244;"Wyler";"Catherine (I)";2871
+4245;"Gignoux";"Alexis";4266
+4246;"Arau";"Alfonso";4267
+4247;"Kennedy";"Jamie (I)";4269
+4248;"McEnery";"John";4270
+4249;"Tobolowsky";"Stephen";4271
+4250;"Woodside";"D.B.";4272
+4251;"Mueck";"Eric";4273
+4252;"Skyler";"Robb";4274
+4253;"Maraval";"Lou";4276
+4254;"Lehman";"Ross";4278
+4255;"Forston";"Don";2132
+4256;"Randall";"Pete";4279
+4257;"Guerrero";"Canuto Rey";3271
+4258;"Wilby";"James";4280
+4259;"Granger";"Farley";4281
+4260;"Halloran";"John (I)";4285
+4261;"Soric";"Serge";4287
+4262;"Delain";"Florian";4289
+4263;"Coleman II";"James Edward";4290
+4264;"Camp";"Bill (I)";4295
+4265;"Lombard";"Michael";3635
+4266;"Pollard";"Michael J.";4296
+4267;"Aslanian-Persico";"Aram";4297
+4268;"Wilson";"Luke (I)";2832
+4269;"Ruttajak";"Jakrapan";4298
+4270;"Joyce";"Edmund";4300
+4271;"Banjoman";"Corelle";2256
+4272;"Riley";"Jack (II)";4301
+4273;"Lang";"Matthew";4302
+4274;"Hays";"David Lewis";4303
+4275;"Englander";"Dani";5467
+4276;"Coppola";"Gian-Carlo";4304
+4277;"Ward";"Lyman (I)";4305
+4278;"Bachman";"Alexandria";3250
+4279;"Rickles";"Don";4306
+4280;"Dooley";"Paul";4307
+4281;"Roberts";"Wayne (II)";4308
+4282;"Nunn";"Bill";375
+4283;"Bunker";"Edward";4309
+4284;"Chase";"Jeff (I)";4310
+4285;"Brown";"Jim (I)";4311
+4286;"Young";"Dey";3100
+4287;"Abry";"Jonas";4312
+4288;"Scholvin";"Charles D.";4313
+4289;"Baldwin";"Alec";4314
+4290;"Sholder";"Adam";4315
+4291;"King";"Wayne (I)";4318
+4292;"Tessiero";"Michael A.";4319
+4293;"Fernandez";"Francis";4320
+4294;"Russell";"Ken (I)";4323
+4295;"Gravshin";"Nikolai";4324
+4296;"Sokolov";"Boris (I)";4566
+4297;"Tsarilo";"Vsevolod";2111
+4298;"Tsydalko";"Rasina";2034
+4299;"Vanegas";"Charles A.";4326
+4300;"Fletcher";"Brendan (I)";4327
+4301;"Magnier";"Pierre";4146
+4302;"Egglesfield";"Colin";4332
+4303;"Lyras";"Alexander";4845
+4304;"Saxton";"Richard";4333
+4305;"Martin";"Mitzi";3814
+4306;"Leung Ka Fai";"Tony";4335
+4307;"Bull";"Peter (I)";4336
+4308;"Summers";"Virgil";4337
+4309;"O'Donnell";"Gene (II)";1146
+4310;"Hillaire";"Marcel";4338
+4311;"Teymouri";"Mollazaher";4339
+4312;"Dolan";"Brendan";4340
+4313;"Houcine";"Ouahbou";4342
+4314;"Banks";"Boyd";4343
+4315;"Cubison";"Richard";4345
+4316;"Beard";"Randy";4346
+4317;"Dest";"Jo";4347
+4318;"Choi";"Jong-ryol";4348
+4319;"Jenseg";"Bjørn";4349
+4320;"Brown";"Bob (II)";4351
+4321;"MacMillan";"Will";4352
+4322;"Rubell";"María";5270
+4323;"Valaguzza";"Maurizio";4350
+4324;"Park";"Jung-gi";4354
+4325;"Thorent";"André";4355
+4326;"Ying";"Ng Hoi";4356
+4327;"Li";"Eddie";2824
+4328;"Oakland";"Simon";4358
+4329;"Apisa";"Robert";4360
+4330;"Gagnon";"Rene A.";4362
+4331;"Bishop";"Jim (I)";4366
+4332;"Matheus";"Connor";4367
+4333;"Dougherty";"Tim";4368
+4334;"Krumholtz";"David";4369
+4335;"Tapia";"Teo";4370
+4336;"Dulat";"Pierre";4371
+4337;"Gantry";"Donald";4378
+4338;"Ray";"Ronald (II)";4382
+4339;"Powell";"Whitney";5483
+4340;"Kean";"Greg";4383
+4341;"Sum";"Paul";4384
+4342;"Cole";"Ben (I)";4385
+4343;"Scott";"Andrew (I)";4386
+4344;"Freeman";"Rob (I)";800
+4345;"Camroux";"Ken";4387
+4346;"Detmer";"Amanda";5161
+4347;"Trifunovic";"Sergej";4388
+4348;"Koules";"Oren (I)";4389
+4349;"Poyser";"Mark";4390
+4350;"Vibert";"Bill";4391
+4351;"Lawrence";"Tom (I)";4392
+4352;"Lander";"David L.";4393
+4353;"Harrelson";"Woody";4397
+4354;"Hagopian";"Dean";4398
+4355;"Raft";"George";4400
+4356;"Pacino";"Al";2585
+4357;"Prosky";"Robert";4401
+4358;"Bell";"Dexter";4403
+4359;"Wayans";"Marlon";4404
+4360;"Turner";"Frank C. (I)";4405
+4361;"Sharmrou";"Ahmad";4406
+4362;"Smith";"Kimani Ray";845
+4363;"Sadler";"Nicholas";4407
+4364;"von Thun";"Friedrich";4412
+4365;"Rosner";"Hans";5520
+4366;"Lechner";"Geno";2346
+4367;"Glaser";"Jon";4415
+4368;"Lin";"Robert (II)";4416
+4369;"Fortune";"Mary";746
+4370;"Higgins";"Michael (I)";4417
+4371;"Palanci";"Sinan";4420
+4372;"Bourdo";"Sacha";4425
+4373;"Jackson";"Andrew (II)";4426
+4374;"Fynn";"Tara";4092
+4375;"Ricks";"Robert (I)";4427
+4376;"Banas";"Michala";741
+4377;"Allen";"Woody";4428
+4378;"Carasoulis";"Nick";4429
+4379;"Cueto";"Esteban";4430
+4380;"Reece";"Somaya";3324
+4381;"Rebhorn";"James";4431
+4382;"Kennedy";"Ryan (IV)";4435
+4383;"Parker";"Corey Mendell";4436
+4384;"Petronzio";"Nina";493
+4385;"Emery";"John (V)";4437
+4386;"Lauer";"Andrew";4438
+4387;"Derrick";"Ben";4439
+4388;"Malleson";"Miles";4440
+4389;"Hammer";"Alvin";4441
+4390;"Jarchow";"Bruce";4803
+4391;"Kolman";"Allan";4442
+4392;"Greenaway";"Arun";4443
+4393;"Hernandez";"Julio";4445
+4394;"Bowen";"Cameron";4194
+4395;"Worden";"Hank";4446
+4396;"Birman";"Matt";4447
+4397;"Douglas";"Jason (IV)";4449
+4398;"Brubaker";"Robert (I)";4450
+4399;"Ragno";"Joseph";4452
+4400;"Champlin";"Charles";4453
+4401;"Lally";"Mick";4454
+4402;"Dunn-Hill";"John";4455
+4403;"Buzzington";"Ezra";4456
+4404;"Winter";"Gordon";4457
+4405;"Elliot";"Su";5515
+4406;"Jacobs";"Glen";4459
+4407;"MacDonald";"Pirie";4460
+4408;"El-Balawi";"Beans";4461
+4409;"Tamayo";"Rafael";4462
+4410;"Flores";"Victoria Elena";1768
+4411;"Hayashi";"Koba";4465
+4412;"John";"Alexander";4469
+4413;"Downes";"Kevin";4470
+4414;"Johnson";"Joachim";4471
+4415;"Lee";"Kylanna";2642
+4416;"Kim";"Yoosuk";4472
+4417;"Corbett";"John (I)";4474
+4418;"Logan";"Brenda (I)";4160
+4419;"Baldwin";"Adam";4475
+4420;"Hale";"Creighton";4476
+4421;"Leslie";"Joan";2535
+4422;"Doyle";"John Calvin";4477
+4423;"Lake";"Ricki";3090
+4424;"Tribble";"Kipp";4478
+4425;"Fercilien";"Maxo";4480
+4426;"García Rodríguez";"Betty";4365
+4427;"Brandon";"John (I)";4481
+4428;"Cecere";"Vince";4482
+4429;"Schieler Ziering";"Nikki";3105
+4430;"Guilfoyle";"Paul (II)";4484
+4431;"WC";NA;4485
+4432;"Petrie";"Howard";4486
+4433;"Houseman";"John (I)";4487
+4434;"Strauss";"Robert (I)";4488
+4435;"Chojor";"Ngawang";4489
+4436;"Biehn";"Michael";4490
+4437;"Golding";"Murray";4491
+4438;"Brill";"Steven (I)";4492
+4439;"Monje";"Álvaro";4493
+4440;"Leckner";"Brian";4494
+4441;"Lomax";"Jackie (II)";4495
+4442;"McBride";"'Dirty Dan'";3426
+4443;"O'Rourke";"JoAnn";4517
+4444;"Suddeth";"Greg";4496
+4445;"Roberts";"Tawny";2928
+4446;"Rhodes";"Grandon";4497
+4447;"Elwes";"Cary";4498
+4448;"Gregory";"Andre";4499
+4449;"Mariye";"Lily";2962
+4450;"Burton-Gill";"Chandler";4500
+4451;"Riehle";"Richard";4501
+4452;"Robbins";"Rex";4502
+4453;"Universal";NA;3896
+4454;"Gatins";"John";4503
+4455;"Gostelow";"Harry";4505
+4456;"Jacques";"Stéphane F.";4506
+4457;"Jenkins";"Richard (I)";2814
+4458;"Virshilas";"Katya";4353
+4459;"Takenaka";"Naoto";4507
+4460;"Doonan";"Paul";4508
+4461;"Kennedy";"Brian P.";4509
+4462;"McIlvaine";"Kim";2577
+4463;"Beatty";"Warren";4510
+4464;"Dierkes";"John";4511
+4465;"Gillen";"Aidan";4512
+4466;"Badger";"Russell";4513
+4467;"Heaton";"Tom";5611
+4468;"Rudd";"Paul (I)";4515
+4469;"Yanover";"David (II)";4516
+4470;"Simpson";"Terry (I)";4518
+4471;"Brydon";"Rob";4519
+4472;"Wright";"Edgar";948
+4473;"Ciccolella";"Jude";4523
+4474;"Silver";"Dorothy";593
+4475;"Santy";"Charles";4525
+4476;"Endo";"Sandra";3088
+4477;"McGrath";"Frank (I)";4526
+4478;"Vincent";"Christopher";4528
+4479;"Morgan";"Debbi";5182
+4480;"Hankin";"Larry";4529
+4481;"Alvarado";"Angela (I)";847
+4482;"Bozian";"Jamie";4530
+4483;"Moger";"Luke";4531
+4484;"Hidalgo";"Sofia";4013
+4485;"McGlone";"Mike";4532
+4486;"Kodisch";"George";4527
+4487;"Azoum";"Ahmed";4533
+4488;"Patrick";"John (I)";4535
+4489;"Xu";"Ge";4538
+4490;"Kichijoji";"Akira";4539
+4491;"Ito";"Hisaya";2709
+4492;"Ross";"Michael (XXV)";4540
+4493;"Coombes";"Gordon";4541
+4494;"Cox";"Danielle";797
+4495;"Hope";"William";4542
+4496;"Crothers";"Scatman";4543
+4497;"Postlethwaite";"Pete";4544
+4498;"Ducharme";"Camil";4545
+4499;"Hudis";"Stephen R.";4546
+4500;"Jagdeep";NA;4547
+4501;"Wasserman";"Jerry";4548
+4502;"Peterson";"Alan C.";4549
+4503;"Mafham";"Dominic";4550
+4504;"Martin";"Charles G.";4551
+4505;"Stewart";"James (I)";4552
+4506;"Sally";"Zak";4553
+4507;"Garber";"John";4554
+4508;"Shanne";"Peter";4555
+4509;"Estes";"Gene";4556
+4510;"Bond";"Margery";4589
+4511;"Jusick";"Stephen Kent";4558
+4512;"Marcum";"Quince";4444
+4513;"Benson";"Martin (I)";4559
+4514;"Rhee";"Simon";4560
+4515;"Jacquet Jr.";"John";4561
+4516;"Johnston";"Michelle (I)";2730
+4517;"Cochran Jr.";"Johnnie L.";4562
+4518;"Borstein";"Alex";3855
+4519;"Myers";"Mike (I)";4563
+4520;"Murphy";"Eddie (I)";4564
+4521;"Everingham";"Ananda";4565
+4522;"Hardy";"Robert (I)";4567
+4523;"Syril";"Mambo";3695
+4524;"Jaques";"Peter";4568
+4525;"Bartholome";"Tricia";853
+4526;"Krumholtz";"David";4569
+4527;"Kassis";"Simon";4570
+4528;"Salama";"Amro";4571
+4529;"Willis";"Bruce";2876
+4530;"Way";"Adam";4573
+4531;"White";"Ian (II)";4574
+4532;"Lussier";"Robert";4575
+4533;"Persons";"Mark";4576
+4534;"Walsh";"M. Emmet";4577
+4535;"Russom";"Leon";4579
+4536;"Crothers";"Scatman";4580
+4537;"Jenkins";"Richard (I)";4581
+4538;"Schuitemaker";"Ron";4583
+4539;"Habberstad";"Trevor";4584
+4540;"Winde";"Beatrice";2710
+4541;"Gjernes";"Jay";4585
+4542;"Walker";"Matt (III)";4586
+4543;"Del Toro";"Benicio";4587
+4544;"Bledel";"Alexis";1819
+4545;"West";"Timothy";4588
+4546;"Clark";"Lyle";4591
+4547;"George";"Jack (I)";2575
+4548;"Neyland";"Anne";1913
+4549;"Rubinek";"Saul";4592
+4550;"Poppick";"Eric";4593
+4551;"Hazen";"Mykol";4594
+4552;"Fonda";"Bridget";1130
+4553;"Jiang";"Jin";4596
+4554;"Mendelsohn";"Ben";4597
+4555;"Pedegana";"Tim";4598
+4556;"Trupin";"Gabriel";4599
+4557;"Najimy";"Kathy";2638
+4558;"Schmid";"Kyle";4600
+4559;"Ticotin";"Rachel";4372
+4560;"Yong";"Zhao";4601
+4561;"Yen";"Donnie";4602
+4562;"Gorman";"Greg";4603
+4563;"Hoxie";"Richmond";4604
+4564;"Meisels";"Annie";4292
+4565;"Orsi";"Bill";4606
+4566;"Donnelly";"Tony Michael";4607
+4567;"Borong";"Tor";4608
+4568;"Anderson";"Rico E.";4609
+4569;"Stevens";"L.J.";3885
+4570;"Kahn";"Dominic";4612
+4571;"Hamada";"Mido";4613
+4572;"Berman";"Loren (II)";4614
+4573;"Boyd";"Bob";4615
+4574;"Mackey";"Louis";2350
+4575;"Anderson";"Sam (I)";4616
+4576;"Roberge";"Dick";4617
+4577;"Wood";"John (I)";4619
+4578;"Segel";"Jason";4620
+4579;"Churchill";"John (II)";4621
+4580;"Mason";"Jackie";4622
+4581;"Maria Jr.";"Juan";4623
+4582;"Parisi";"Carmine";4213
+4583;"Ravenscroft";"Thurl";4624
+4584;"Noday";"Patt";4625
+4585;"Stevenson";"Butch";4626
+4586;"Haynie";"Jim";4627
+4587;"Lee";"Christopher (I)";4628
+4588;"Cawthorne";"Alec";4629
+4589;"English";"Terry";4630
+4590;"Glasscock";"Bill";4631
+4591;"Rooker";"Michael";4632
+4592;"Rey";"José";4633
+4593;"Laskaway";"Harris";4634
+4594;"McKean";"Michael (I)";4635
+4595;"Mawe";"Richard";4636
+4596;"Vogel";"Jürgen";4637
+4597;"Argo";"Victor";4642
+4598;"Lightning";"Cody";4643
+4599;"Credel";"Curtis";4644
+4600;"Reed";"Jerry (I)";4645
+4601;"Walsh";"Richard (III)";4646
+4602;"Conkle";"James";4647
+4603;"Hellman";"Peder";4649
+4604;"Napoli";"Christain";4651
+4605;"René";"Jacynthe";1177
+4606;"Neale";"David (I)";4652
+4607;"Roussounis";"Jimmy";4653
+4608;"Campbell";"Sol";4147
+4609;"Jones";"Eddie (I)";4654
+4610;"Gebert";"Teo";4656
+4611;"Paetkau";"David";4657
+4612;"Goncalves";"Oscar";4658
+4613;"Crook";"Peter";4659
+4614;"Samgushak";"Yvo";4660
+4615;"Gilbert";"Billy (I)";4661
+4616;"Brophy";"Anthony";4662
+4617;"Johnson";"Ken (I)";4664
+4618;"Camilletti";"Rob";4665
+4619;"Walko";"Jude S.";4668
+4620;"Löwenstein";"Bob";4669
+4621;"Bleu";"Corbin";4671
+4622;"Semyonov";"Yulian";4673
+4623;"McCharen";"David";4674
+4624;"Lemmon";"Jack (I)";4675
+4625;"Summer";"Tegan";4676
+4626;"Kane";"Billy (I)";4677
+4627;"Duvall";"Robert (I)";4679
+4628;"Heriq";"Jeff";4680
+4629;"Spears";"Peter";4681
+4630;"Block";"Taylor";2283
+4631;"Billingsley";"Pat";4682
+4632;"Melin";"John";4683
+4633;"Gere";"Richard";4685
+4634;"Wiesner";"Michael";4686
+4635;"Goldberg";"Adam (I)";4687
+4636;"Penn";"Kal";4688
+4637;"Jackson";"Emma (III)";3270
+4638;"Zushi";"Tonbo";4689
+4639;"Leedy";"Glenn";4690
+4640;"Nishina";"Hioko";4691
+4641;"Doucette";"John (I)";4692
+4642;"Hoening";"Christian";4693
+4643;"Tobin";"Joseph";4694
+4644;"Williams";"Harland";4695
+4645;"Wright";"Max (I)";4697
+4646;"Mulligan";"Brian (I)";4698
+4647;"Travis";"Stacey (I)";3744
+4648;"Moreno";"Ken";4699
+4649;"Haydn";"Richard (I)";4700
+4650;"Burns";"Edward (I)";4701
+4651;"Antoni";"Maurice";4702
+4652;"Strong";"Frank D.";4703
+4653;"Mos";"Santiago";4240
+4654;"McAvoy";"Ila";1406
+4655;"Cross-Thomas";"Anthony";4704
+4656;"Dowd";"Ned";4705
+4657;"Romero";"Carlos (I)";4706
+4658;"Huckabee";"Cooper";4707
+4659;"Rashad";"Ahmad";4708
+4660;"McCrimmon";"Nicky";3285
+4661;"Sweeney";"Gary";4709
+4662;"Wyner";"George";4710
+4663;"Harris";"Ron (I)";4711
+4664;"Martin";"Eddy";4713
+4665;"Blamire";"Larry";4714
+4666;"Douglas";"Kirk (I)";4716
+4667;"Sears";"Jim";1920
+4668;"FitzGerald";"Mark";4717
+4669;"Hanani";"Yasmine";4655
+4670;"McFarlane";"Todd";4718
+4671;"Waugh";"Scott";4719
+4672;"Whitaker";"Forest";4720
+4673;"James";"Beau (I)";4721
+4674;"Cyr";"Myriam";1502
+4675;"Schiff";"Richard";4723
+4676;"Williams";"Carmen";2398
+4677;"Svenson";"Bo";4724
+4678;"Kilian";"Victor (I)";4725
+4679;"Hocke";"Bernard";4728
+4680;"Geldof";"Bob";4729
+4681;"Craig";"Philip (I)";4730
+4682;"Avery";"Rick";4731
+4683;"Ward";"James Kevin";3636
+4684;"Jefferies";"Marc John";4732
+4685;"Lee";"Stan (I)";1074
+4686;"Conder";"Terrance";4733
+4687;"McClarnon";"Zahn";4734
+4688;"Mulroney";"Kieran";4735
+4689;"Dano";"Rick";4736
+4690;"Sasson";"Lilian";3094
+4691;"Roche";"Eugene (I)";4737
+4692;"Zelaya";"Jose (XI)";4738
+4693;"Djahnit";"Aziz";4739
+4694;"Leguizamo";"John";4743
+4695;"Porter";"Ian (I)";4744
+4696;"Buell";"Bill (I)";3800
+4697;"Kassir";"John";4745
+4698;"Betts";"Erik";1912
+4699;"Sabara";"Evan";4746
+4700;"Edwards";"Ken (I)";4747
+4701;"Judge";"Mike (I)";4748
+4702;"Sheedy";"Robert";4749
+4703;"Auker";"David";91
+4704;"Kirsch";"Matthew (II)";4751
+4705;"Hubley";"Whip";4752
+4706;"Dunn";"Robin (III)";4755
+4707;"Berkeley";"Ballard";4756
+4708;"McGrail";"Walter";4757
+4709;"Davies";"Jackson";4759
+4710;"Mitchum";"John";4760
+4711;"Horwitz";"Dominique";4761
+4712;"Solonitsyn";"Anatoli";4762
+4713;"Frohman";"Star";4763
+4714;"Popeye (IV)";NA;4764
+4715;"Berkoff";"Steven";4765
+4716;"Santamaria";"Claudio";4766
+4717;"Aguayo";"Troy (I)";4767
+4718;"Pepper";"Jack (I)";4768
+4719;"Heindorf";"Ray";1667
+4720;"Davenport";"Havis";1203
+4721;"Liska";"Stephen";4769
+4722;"Thatcher";"Kirk R.";4770
+4723;"Doohan";"James";4771
+4724;"Auberjonois";"Rene";4772
+4725;"Braga";"Brannon";4773
+4726;"Thompson";"Brian (I)";4774
+4727;"Ruskin";"Joseph";4775
+4728;"Perlman";"Ron";4776
+4729;"McIntosh";"Bill (I)";4777
+4730;"Marstan";"Joel";4778
+4731;"Jones";"James Earl";4779
+4732;"Roubicek";"George";2238
+4733;"Shay";"Jeff";4780
+4734;"Secombe";"Andrew";4473
+4735;"Edgerton";"Joel";4781
+4736;"O'Neill Joti";"Dipika";3983
+4737;"Akindoyeni";"Tux";4782
+4738;"Davies";"Paul (VII)";1816
+4739;"Tucker";"Burnell";4783
+4740;"Fisher";"Carrie";3472
+4741;"Frishman";"Daniel";4784
+4742;"Jones";"Glynn (I)";2646
+4743;"Chew";"Dalyn";876
+4744;"Miranti";"Bob";4785
+4745;"Harter";"James";2308
+4746;"Roberts";"Judith (I)";4618
+4747;"Gray";"George (II)";4786
+4748;"Jaeckel";"Richard";4787
+4749;"Valenzano";"Michael A.";4789
+4750;"Kasdorf";"Lenore";5290
+4751;"Glaser";"Paul Michael";4790
+4752;"LaGue";"Kathleen";4900
+4753;"Baldwin";"Alec";4791
+4754;"Duffy";"Thomas F.";4792
+4755;"Cannavale";"Bobby";4793
+4756;"Van Kay";"Conor";4795
+4757;"Percle Jr.";"Gary R.";4796
+4758;"Dishy";"Bob";4797
+4759;"Horbachuk";"Tracy";5097
+4760;"Reina";"Mark (I)";4798
+4761;"Fair";"LaLanya";744
+4762;"Oliva";"Ignazio";4799
+4763;"Offerman";"Nick";4800
+4764;"Schlosberg";"Rowan";4801
+4765;"McGuire";"Tom (I)";4802
+4766;"Roundtree";"Richard";4804
+4767;"Shapkoff III";"James";4805
+4768;"Radcliff";"Damaine";4811
+4769;"Shankman";"Adam";2559
+4770;"Boyd";"Dominique";1955
+4771;"McMillan";"Kenneth";4812
+4772;"McGann";"Shannon";3228
+4773;"Gochros";"Jordan";4813
+4774;"Gattas";"Brian";4816
+4775;"Miyagi";"Jessica";2938
+4776;"Latessa";"Dick";4817
+4777;"Connolly";"Billy";4818
+4778;"Sullivan";"Brad";4819
+4779;"Looney";"Peter";4821
+4780;"Cotovsky";"Richard";4822
+4781;"Ne-Yo";NA;4824
+4782;"Harrison";"Jerry";4825
+4783;"Walters";"J.D.";4826
+4784;"Kenna";"Jamie";4827
+4785;"Tang";"Tommy";4828
+4786;"Fleiss";"Noah";4829
+4787;"Quinn";"Anthony (I)";4830
+4788;"Guidry";"Matt";4831
+4789;"Katt";"Nicky";4832
+4790;"Wilkerson";"Lori Simone";377
+4791;"Dick";"William (I)";4833
+4792;"Watkins";"Donna (II)";1587
+4793;"DiCillo";"Tom";4834
+4794;"Godoy";"Fred";4835
+4795;"Benedict";"Brooks";4836
+4796;"Larkin";"Christopher (II)";4837
+4797;"Norton";"Jim (I)";4840
+4798;"Saqoaf";"Saleh";4841
+4799;"George";"John (I)";4842
+4800;"Bazz";"John";4843
+4801;"McKenney";"Todd";4847
+4802;"Farina";"Dennis";4848
+4803;"Thomas";"Dave (I)";4849
+4804;"Crane";"Darreck";4850
+4805;"Freberg";"Stan";4851
+4806;"McCarty";"Conan (I)";4852
+4807;"Blank";"Brad";4854
+4808;"Bourgoin";"Daniel";4663
+4809;"Mascolo";"'Trader Fred'";2788
+4810;"Soucy";"Ron";2761
+4811;"Mugar";"Jon";3781
+4812;"Kassyutina";"Natasha";2803
+4813;"Carson";"Candy";3673
+4814;"Beetson";"Frank";4855
+4815;"Jewison";"Norman";4856
+4816;"Anthony";"Marc (I)";4858
+4817;"Miller";"Larry (I)";4859
+4818;"Katt";"Nicky";4860
+4819;"Anglade";"Jean-Hugues";4861
+4820;"Terajima";"Susumu";4862
+4821;"Spano";"Phil";4863
+4822;"Watts";"Shawn";4286
+4823;"DuVal";"Pat";4864
+4824;"Raymond";"Gary (I)";4865
+4825;"Cram";"Paul (I)";4866
+4826;"Rader";"Gene";4867
+4827;"Sisto";"Jeremy";4868
+4828;"Rosenthal";"Harry";4869
+4829;"MacDonald";"J. Farrell";2389
+4830;"Donnelly";"Brent";4870
+4831;"O'Neal";"Mike (II)";773
+4832;"Kellogg";"Jeff";4871
+4833;"Zappin";"Dan";4872
+4834;"Rispoli";"Michael";2318
+4835;"Galbreath";"Jessica";4823
+4836;"Crenna";"Richard";4873
+4837;"Harmon";"Mark (I)";4874
+4838;"Bracey";"Sidney";4875
+4839;"Montgomery";"Ralph";4876
+4840;"Bognár";"Dr. Zoltán";4877
+4841;"Andorai";"Péter";3073
+4842;"Leipold";"Ronnie Jay";4878
+4843;"Jordan";"Michael (I)";4879
+4844;"Heffernan";"E. Michael";4880
+4845;"Chatwin";"Justin (I)";4881
+4846;"Sommers";"Russell";4882
+4847;"Gavin";"Weston";4883
+4848;"O'Halloran";"Jack";330
+4849;"Cooper";"Jack (II)";4884
+4850;"Smolinski";"Aaron";4885
+4851;"Reeve";"Christopher";4886
+4852;"Fisher";"Kevin (VI)";4887
+4853;"Harrison";"Lisa (I)";4344
+4854;"Rice Jr.";"Eddy";4888
+4855;"Robbins";"Jonathan (II)";4889
+4856;"Hoyt";"Richard (I)";4890
+4857;"Wintousky";"Philippe";4891
+4858;"Connella";"David";4892
+4859;"Gandolfini";"James";4893
+4860;"Ice-T";NA;4894
+4861;"Hjelmervik";"Paul";4895
+4862;"Moriarty";"Daniel Patrick";4896
+4863;"Craig";"Alec";4897
+4864;"Scarpa";"Renato";4898
+4865;"Bauer";"Chris (I)";4902
+4866;"Mowat";"Rick";5082
+4867;"McCamus";"Tom";4903
+4868;"Beck";"Gary (II)";4904
+4869;"Franklin";"Kelli";499
+4870;"Rosenbaum";"Michael (I)";4905
+4871;"Walker";"Chris (VIII)";4906
+4872;"Baker";"Jackie (I)";225
+4873;"Frisco";"Joe";4907
+4874;"Rodriguez";"Manny (I)";4908
+4875;"Adams";"Lillian";1045
+4876;"Ciompi";"Lorenzo";4909
+4877;"Epps";"Ben (I)";4910
+4878;"Fayolle";"Marc";4911
+4879;"Del Toro";"Benicio";4912
+4880;"Svoboda";"Pavel";4913
+4881;"Chamberlain";"Jennifer";2794
+4882;"Morris";"Jacob (XI)";4914
+4883;"Cole";"Caitlyn Tyler";2697
+4884;"Jang";"Hyeong-seong";4915
+4885;"Corcoran";"Kevin (I)";4916
+4886;"King";"Perry";4917
+4887;"Reese";"Michelle";1405
+4888;"Clark";"James (I)";4918
+4889;"Matthews";"Junius";4919
+4890;"Travolta";"John";4920
+4891;"Farber";"Sierra";4667
+4892;"Breen";"Andy";4921
+4893;"Birkin";"David (I)";4922
+4894;"Manners";"David J.";4923
+4895;"Siddig";"Alexander";5610
+4896;"Sjöberg";"André";4334
+4897;"Andreasson";"Björn";4364
+4898;"Grahn";"Marjatta";3184
+4899;"Björnstrand";"Gunnar";4377
+4900;"Biehn";"Michael";4924
+4901;"Ansari";"Ahmad";4925
+4902;"Pino";"Hilario (I)";4926
+4903;"Stanford";"Aaron";4927
+4904;"Cappelletti";"Joe";4928
+4905;"Yu";"Hai";4930
+4906;"Polito";"Jon";4931
+4907;"Givry";"Edgar";4932
+4908;"Souphommanychanh";"Soupy";4933
+4909;"Rose";"Mickey";4934
+4910;"Suplee";"Ethan";4935
+4911;"Sutherland";"Kiefer";4936
+4912;"Bond";"Rudy";4937
+4913;"Roberts";"Doris";3560
+4914;"Carucci Viterbi";"Emanuele";4938
+4915;"Deregibus";"Caterina";676
+4916;"Grenier";"Zach";4940
+4917;"McMurray";"Jamie (II)";4941
+4918;"Koon";"Rebecca";2715
+4919;"Tsugawa";"Masahiko";4943
+4920;"Han";"Yin-Chieh";4944
+4921;"Martinez";"Jerry";4946
+4922;"Rubenstein";"Phil";4810
+4923;"Jones";"Doug (I)";4947
+4924;"Manville";"Holly";2855
+4925;"Wills";"James 'Kimo'";4948
+4926;"Leonard";"Robert Sean";4949
+4927;"McCleery";"Gary";4950
+4928;"Davis";"Adolph";4951
+4929;"Cummings";"Jim (I)";4952
+4930;"Tanaka";"Teruhiko";4953
+4931;"Leleu";"Jérôme";4955
+4932;"Pons";"Sébastien";4956
+4933;"Farcy";"Bernard";4957
+4934;"Brooks";"Albert (I)";4958
+4935;"Gonnella";"Giacomo";4963
+4936;"Glenar";"Cameron";4964
+4937;"Hendrie";"Phil";4965
+4938;"Cisse";"Nafisatou";4966
+4939;"Kargbo";"Fatmata";4071
+4940;"Steven";"Carl";4967
+4941;"Parks";"Lawrence";4968
+4942;"Feldman";"Corey";4969
+4943;"Doerr";"Mark (I)";4970
+4944;"Akahoshi";"Steve";4971
+4945;"Merton";"John (I)";4972
+4946;"Coby";"Fred";5560
+4947;"Hamilton";"Chuck (I)";3903
+4948;"Conklin";"Rus";3258
+4949;"Stevens";"Emilie";2254
+4950;"Warner";"Joan";4434
+4951;"Palange";"Inez";2196
+4952;"Milligan";"Wayne";4974
+4953;"Saccarola";"Gianpaolo";4975
+4954;"Katô";"Takeshi (I)";4976
+4955;"Hamill";"Mark (I)";4977
+4956;"Figueroa";"Efrain (I)";4978
+4957;"Howes";"Hans";4980
+4958;"Adsit";"Scott";4981
+4959;"Alacchi";"Carl";4190
+4960;"Simotes";"Tony";4982
+4961;"Rodriguez";"Diane";2147
+4962;"Gorton";"Kiki";4983
+4963;"Stone";"Wayne (I)";4984
+4964;"Wees";"Tom";4985
+4965;"Hernández";"Paco";4987
+4966;"Lawson";"Leigh";4988
+4967;"Taguchi";"Tomorowo";4990
+4968;"Partain";"Paul A.";4991
+4969;"Siedow";"Jim";4992
+4970;"Tucker";"Jonathan (I)";4993
+4971;"Ermey";"R. Lee";4994
+4972;"Louiso";"Todd";4995
+4973;"Kramer";"Ted";4996
+4974;"Whalen";"Sean (I)";4408
+4975;"Zajonc";"Robert 'Bobby Z'";5001
+4976;"Bouchey";"Willis";5002
+4977;"Hokanson";"Mary Alan";863
+4978;"Rosenberg";"Scott";5003
+4979;"Mone";"Brian";5204
+4980;"O'Brien";"Kelly (I)";4582
+4981;"Hildreth";"Mark (I)";5004
+4982;"Shan";"Rezza";5005
+4983;"Chissel";"Noble 'Kid'";5006
+4984;"Young";"Bruce A.";5007
+4985;"Cozier";"Joseph";5008
+4986;"White";"Dennis (II)";5010
+4987;"Hall";"Porter";5011
+4988;"Boone Junior";"Mark";5012
+4989;"Smith";"John Dee";2581
+4990;"Cooper";"Ted (I)";5013
+4991;"Hays";"Kent";5014
+4992;"Garson";"Willie";5015
+4993;"Fleiss";"Noah";5016
+4994;"Wheeler";"Ed (I)";5017
+4995;"Duncanson";"Herbert";5018
+4996;"Boddey";"Martin";5019
+4997;"Mo (I)";NA;5020
+4998;"Elliott";"Shawn";5021
+4999;"Scholz";"Dorothy";3087
+5000;"Kumar";"Pramod (I)";5022
+5001;"Culp";"Steven";1818
+5002;"Boussom";"Ron";5023
+5003;"Maguire";"Tobey";5024
+5004;"Ansen";"David";5025
+5005;"Levin";"Charles (I)";5026
+5006;"Orchard";"John (I)";5027
+5007;"Ambrozy";"Bill";1954
+5008;"Boyce";"Rodger";5037
+5009;"Devlin";"Jay";5038
+5010;"McGill";"Bruce";5039
+5011;"Rosete";"Jose";5040
+5012;"McCoy";"Randy W.";255
+5013;"York";"Michael (I)";5041
+5014;"Staines";"Kent";5042
+5015;"Arnold";"Mark (I)";5043
+5016;"Birk";"Raye";5044
+5017;"Normington";"Eric";5045
+5018;"Becker";"Carissa";1905
+5019;"Leech";"George";5046
+5020;"Hirsch";"Lou";5047
+5021;"Gilliam";"Burton (I)";5048
+5022;"Graber";"Terry";5049
+5023;"Hooks";"Brian";5050
+5024;"Wheaton";"James";5051
+5025;"Rosenblum";"Joey Meyer";5052
+5026;"Adair";"Alden";5053
+5027;"Schafer";"Ronnie";5054
+5028;"Baker-Bergen";"Stuart";5055
+5029;"Blomgren";"Mats";5057
+5030;"McConnell";"Keith";5058
+5031;"Rappaport";"David";5059
+5032;"Bissell";"Whit";5060
+5033;"St. Vincent";"Ryk";5061
+5034;"Stewart";"Tonea";4846
+5035;"Berkeley";"Xander";5062
+5036;"Rennie";"Callum Keith";5063
+5037;"Moss";"Jerry (IV)";5064
+5038;"Rakestraw";"Barrett";5066
+5039;"Herthum";"Harold G.";3198
+5040;"Danoff";"Bill";5067
+5041;"Heymann";"Claude";5068
+5042;"Campbell";"Ken Hudson";5069
+5043;"Walcutt";"John";5070
+5044;"Butters";"Mike";930
+5045;"Bates";"Bobbie";2406
+5046;"D'Ambrosi";"Dario";5071
+5047;"Caldwell";"Peter (I)";5073
+5048;"McCarthy";"Winnie";1500
+5049;"Adrian";"George";5074
+5050;"Richards";"Simon (I)";5075
+5051;"Kanome";"Masa";5076
+5052;"Passin";"Jack";5077
+5053;"O'Brien";"William H.";5078
+5054;"Dalton";"Rick (I)";5079
+5055;"Charles";"Grahame";5080
+5056;"Tiburcio";"Lionel";5081
+5057;"Chandler";"Mishell";5232
+5058;"Páez";"Fito";5085
+5059;"Sugita";"Mitsuru";5086
+5060;"Itokawa";"Kazuhiro";5087
+5061;"Griffith";"Hugh (I)";5088
+5062;"Markus Schuetz";"Erik";5089
+5063;"Garcia";"Michael N.";5090
+5064;"Bernstein";"Jesse (I)";5091
+5065;"Smith";"Amber (I)";3901
+5066;"Stacey";"Eddie";5092
+5067;"Lewis";"Roy (I)";5093
+5068;"Webb";"Bunty";4758
+5069;"Watkins";"Jason (I)";5095
+5070;"Daly";"Timothy (I)";5096
+5071;"Durning";"Charles";5098
+5072;"Garr";"Teri";1407
+5073;"Kilmer";"Val";5099
+5074;"Impolito";"John";5100
+5075;"Bonehill";"Richard";5101
+5076;"Stephenson";"John (I)";5102
+5077;"Kelly";"Sam (I)";5103
+5078;"Henderson";"Shirley (I)";906
+5079;"Ames";"Leon";5104
+5080;"Conway";"Harold";2452
+5081;"Montgomery";"Nick (I)";5105
+5082;"Roth";"Gene (I)";5107
+5083;"Schulze";"Matt";5108
+5084;"Göktay";"Zihni";5111
+5085;"Van Barthold";"Bruce";5112
+5086;"Bergen";"Bob";5113
+5087;"Rios";"Lalo";5114
+5088;"Hawking";"Richard";5115
+5089;"Chamberlain";"Richard (I)";5116
+5090;"Sexton";"Ryan";5117
+5091;"Hall";"Dolly";3870
+5092;"Gossett Jr.";"Louis";5118
+5093;"Eisman";"Mimi";4794
+5094;"Shawn";"Wallace";5119
+5095;"Burton";"Tony (I)";5120
+5096;"Rowland";"Lucy Campbell";3253
+5097;"Mechoso";"Julio Oscar";5121
+5098;"Clark";"Bryan (I)";5123
+5099;"Stucker";"Stephen";1239
+5100;"Roberts";"Mario";5124
+5101;"Brown";"Tracey (II)";223
+5102;"Gleason";"Mary Pat";1240
+5103;"Ashton";"Nigel";5125
+5104;"Bercq";"Jean-Claude";5126
+5105;"Barry";"Raymond J.";5127
+5106;"Ross";"Hugh (I)";5128
+5107;"Young";"Burt";5130
+5108;"Jones";"Buster";5131
+5109;"Gazio";"Christian";5132
+5110;"MacKinnon";"Doug (I)";5133
+5111;"Bacon";"Kevin";5134
+5112;"Larocque";"Pierre (I)";5135
+5113;"Bennett";"Bruce (I)";5136
+5114;"Hyde Pierce";"David";5137
+5115;"Imperioli";"Michael";5138
+5116;"Bowen";"Richard (II)";5139
+5117;"Spiner";"Brent";700
+5118;"Clabaugh";"Richard";3021
+5119;"Hawthorne";"Sharon";1201
+5120;"Bachmann";"Conrad";5140
+5121;"White";"De'voreaux";5141
+5122;"Williams";"Jim Cody";5142
+5123;"Leupp";"Clinton";5143
+5124;"Tann";"Tyrone";5144
+5125;"Robin";"Michel (I)";5146
+5126;"Montgomery";"Jack (II)";5147
+5127;"Hitler";"Adolf";5148
+5128;"Nordey";"Stanislas";5149
+5129;"Régent";"Benoît";5150
+5130;"Carlson";"Gary (II)";5151
+5131;"Jurasik";"Peter";5152
+5132;"Byrnes";"Edd";5153
+5133;"Fish";"Nancy";441
+5134;"Ruggles";"Charles";5154
+5135;"Hitchcock";"Alfred (I)";5155
+5136;"Fitzgerald";"Frankie (I)";5156
+5137;"Richmond";"Dennis";5157
+5138;"McMullen";"Dennis";5158
+5139;"Gal";"Uzi";5159
+5140;"Argo";"Victor";5160
+5141;"Kempner";"Teddy";5162
+5142;"Vaughn";"Judson";5163
+5143;"Smiga";"Carly";2864
+5144;"Sauer";"Gary (I)";5165
+5145;"McCaffrey";"James";5166
+5146;"Robbins";"Tim (I)";5167
+5147;"Varda";"Agnès";3284
+5148;"Pearl";"Aaron";5168
+5149;"Paplinski";"Adam";5169
+5150;"Vilakazi";"Bheki";5171
+5151;"Hari";"Tatsuhiko";5172
+5152;"Caton";"Robert Randolph";5173
+5153;"Anger";"Mark";5174
+5154;"Lindman";"Åke";5175
+5155;"Foster";"Blake";5176
+5156;"Bush";"Grand L.";5177
+5157;"Guterres";"Raul";5179
+5158;"Kusatsu";"Clyde";5180
+5159;"McEntire";"Timothy";5183
+5160;"Gonzales";"Phoenix";2961
+5161;"Golden";"Lee";5185
+5162;"Fennell";"Arthur";4396
+5163;"Ortiz";"Peter (I)";5186
+5164;"Clarke";"Jason (I)";5187
+5165;"Johnston";"John Dennis";5188
+5166;"Fenmore";"Tanya";4522
+5167;"Ant";NA;5189
+5168;"Hormel";"Gregory 'Smokey'";5190
+5169;"Gaybis";"Anne";436
+5170;"Reitman";"Jason";5191
+5171;"Hechim";"Jim";5192
+5172;"Busey";"Jake";5193
+5173;"Pitts";"Ron (I)";5194
+5174;"Rome";"Jim";5373
+5175;"Barsacq";"Yves";5195
+5176;"David";"Angel";5196
+5177;"Amodeo";"Daniel";5197
+5178;"Ent";"James";5198
+5179;"Masse";"Javier";5199
+5180;"Thourlby";"William";5200
+5181;"Cherry";"Elizabeth";5505
+5182;"Nolte";"Nick";5206
+5183;"McConaughey";"Matthew";5207
+5184;"Rosales Jr.";"Thomas";5208
+5185;"Kurcz";"Robert";2965
+5186;"King";"B.B.";5209
+5187;"Koshikawa";"Hajime";5211
+5188;"Carlson";"Francis M.";5212
+5189;"Cummins";"Wilma Jeanne";5334
+5190;"Campbell";"J. Kenneth";5213
+5191;"Santamaria";"Claudio";5214
+5192;"Lepennec";"Gérard";5215
+5193;"Spurrier";"Pete";5216
+5194;"Carotenuto";"Memmo";5217
+5195;"Batcheff";"Pierre";5218
+5196;"Rothmann";"Xavier";5219
+5197;"Perie";"Christophe";5220
+5198;"Levantal";"François";2925
+5199;"Myers";"Bruce";5221
+5200;"Roehm Sr.";"David C.";5222
+5201;"Hale";"Jennifer (I)";4808
+5202;"Underwood";"Jay (I)";5223
+5203;"Dickenson";"Tim";5224
+5204;"Dye";"Dale";5225
+5205;"Nichols";"Robert (V)";3675
+5206;"Brown";"Wren T.";5226
+5207;"Miro";"Richard";5227
+5208;"Tambor";"Jeffrey";5228
+5209;"Greene";"Michael (I)";5229
+5210;"Rapovski";"Paul";5230
+5211;"Tatic";"Josif";5231
+5212;"Poston";"Charles 'Jester'";5233
+5213;"Sheen";"Michael";5234
+5214;"Rogerson";"Sean";5235
+5215;"Williams";"Johnny (I)";5236
+5216;"Sermet";"Christophe";5237
+5217;"Roy";"Deep";5238
+5218;"Gupton";"Damon";5239
+5219;"Lewis";"Damian (I)";5240
+5220;"Koons";"Robert";5241
+5221;"Berdouni";"Omar";5242
+5222;"Morris";"Libby";3248
+5223;"McCleery";"Michael (I)";5243
+5224;"DiGregorio";"David";5244
+5225;"Wagner";"Rachel";2170
+5226;"Southers";"Derek";5245
+5227;"Williamson";"Blair";5246
+5228;"Narita";"Richard";5247
+5229;"Gamoke";"John Paul";5248
+5230;"Ganz";"Bruno";5249
+5231;"Kind";"Michael";671
+5232;"Martana";"Bob";5250
+5233;"Noland";"Charles";5251
+5234;"Channing";"Stockard";4317
+5235;"Avery";"Val";5252
+5236;"Costner";"Kevin";5253
+5237;"Baglia";"Greg";5254
+5238;"Frazer";"Susanna";865
+5239;"Ogle";"David (I)";5255
+5240;"Hutchings";"Shalen";5256
+5241;"Tilden";"Leland";5257
+5242;"McRae";"Frank";5260
+5243;"D'Ambrosio";"Vito";5262
+5244;"Basharov";"Marat";5263
+5245;"Bugay";"Ahmet";5264
+5246;"Hayes";"Carsten";5265
+5247;"Burchell";"Raife Patrick";3204
+5248;"Dubois";"André (I)";5266
+5249;"Staley";"James";5267
+5250;"Duhamel";"Claude (I)";5269
+5251;"Peacock";"Harry";5271
+5252;"Crawford";"Wayne";5273
+5253;"Laloux";"Daniel";5275
+5254;"Garcia";"Jsu";5276
+5255;"Huddleston";"Michael";5277
+5256;"Vasut";"Marek";5279
+5257;"Evans";"Chad (I)";5280
+5258;"Burns";"Alex";720
+5259;"Galecki";"Johnny";5284
+5260;"Will";"Christie";4788
+5261;"Reese";"Tom";5285
+5262;"Bridges";"Jeff (I)";5286
+5263;"Bentinck";"Tim";5287
+5264;"Gopalakrishnan";"Anu";1463
+5265;"Azzaro";"Rome";5288
+5266;"Brown";"Wayne (I)";5291
+5267;"Brinkley";"Christie";1112
+5268;"Cumming";"Alastair";5292
+5269;"McKinley";"Mairead";5544
+5270;"Conway";"Craig (I)";5294
+5271;"White";"Liz (III)";3650
+5272;"Rives";"Jean-Pierre";5295
+5273;"Doucette";"Gregory";5296
+5274;"Dennehy";"Ned";5297
+5275;"Duffy";"Veronica";3442
+5276;"Matsuda";"Kenji";5298
+5277;"Siddig";"Alexander";5299
+5278;"Stevlingson";"Ed";5300
+5279;"Demmings";"Pancho";5301
+5280;"RuPaul";NA;5302
+5281;"Chevit";"Maurice";5303
+5282;"Edwards";"Geoffrey (I)";5304
+5283;"Diffring";"Anton";5305
+5284;"Creley";"Jack";5306
+5285;"Plutus";"Xavier";5307
+5286;"Cailleret";"Christian";5308
+5287;"Evans";"Troy (I)";5310
+5288;"Curtis";"Clive";5311
+5289;"Donald";"James (I)";5312
+5290;"Vernon";"Richard (II)";5313
+5291;"Sartori";"Cody";5314
+5292;"Price";"Vincent (I)";5315
+5293;"Groll";"Florentín";5317
+5294;"Christensen";"Hayden";5318
+5295;"Karsemeyer";"Jaya";2073
+5296;"Brook";"Claudio";5319
+5297;"Forsythe";"William (I)";5320
+5298;"Hope";"Margot";4640
+5299;"Augustus";"Sherman";5321
+5300;"Wojciechowski";"Olivier";5322
+5301;"Ek";"Anders (I)";5323
+5302;"Tidona";"Andrea";5324
+5303;"Smith";"Shepard";5326
+5304;"Goldner";"Rich";5510
+5305;"Heche";"Anne";3086
+5306;"Hanks";"Tom";5327
+5307;"Almodóvar";"Agustín";5328
+5308;"André";"Victor";5330
+5309;"Dubovik";"Lazar";5331
+5310;"Masterson";"Sean (I)";5333
+5311;"Franklin";"John (I)";596
+5312;"Benson";"Robby";5337
+5313;"Balaban";"Bob";5338
+5314;"Haysbert";"Dennis";5339
+5315;"Nickleson";"Loronzo";5340
+5316;"Soderbergh";"Steven";5342
+5317;"Cain";"Norman";5343
+5318;"Crebbin";"Edwina";3103
+5319;"Ledezma";"Marco";5344
+5320;"Lindsey";"Joseph";5345
+5321;"Liboiron";"James Hayes";5346
+5322;"Harkins";"Ross";5347
+5323;"Wright";"Jim (VI)";1140
+5324;"West";"Shane";5348
+5325;"McDarra";"Robert";5349
+5326;"Stewart";"John (I)";5352
+5327;"MacDonald";"Pirie";5353
+5328;"Bielinska";"Marlena";852
+5329;"Sallis";"Peter";5354
+5330;"Smith";"Nicholas (I)";5355
+5331;"Sallis";"Peter";5356
+5332;"Terajima";"Susumu";5362
+5333;"Jones";"Morris";5364
+5334;"Mozzetti";"Nicholas";5365
+5335;"Chatwin";"Justin (I)";4557
+5336;"Spoke";"Suanne";4960
+5337;"Kruschen";"Jack";5366
+5338;"Hecht";"Ted";1107
+5339;"Cunliffe";"Freddie";5367
+5340;"Henderson";"Adam (II)";5368
+5341;"Berwick";"Brad David";5370
+5342;"Johnson";"Harry (I)";5371
+5343;"Wright";"Dorsey";5372
+5344;"Greco";"Paul";165
+5345;"Kagaya";"Kei";5374
+5346;"Reineman";"Peter J.";5375
+5347;"Jhangiani";"Mohan";5376
+5348;"Corso";"Lee";5377
+5349;"Alia";"Phyllis";447
+5350;"Hordern";"Michael";5378
+5351;"Preston";"William";5379
+5352;"Pollock";"Neil";5382
+5353;"Kelly";"Brendan (III)";5383
+5354;"Melhuse";"Peder";5384
+5355;"Valenti";"Duke";5385
+5356;"Gorman";"William (II)";5386
+5357;"Thompson";"Jody (II)";5357
+5358;"Ruffalo";"Mark";5387
+5359;"Roebuck";"Daniel";5388
+5360;"Allison";"Ben";2867
+5361;"Demers";"Sylvain";5389
+5362;"McMahon";"Ed (I)";5390
+5363;"Moody";"Sia A.";2569
+5364;"Caton";"Robert Randolph";5393
+5365;"Orrico";"Laura";5170
+5366;"Sackville";"John";5394
+5367;"Givens";"Samuel";5395
+5368;"Castellucci";"Teddy";5396
+5369;"Barrymore";"Drew (I)";5000
+5370;"Staquet";"Georges";5397
+5371;"Woliner";"Jason";5398
+5372;"Silverman";"Jonathan (I)";5399
+5373;"Curry";"Adam (II)";5400
+5374;"Walker";"Rock A.";5402
+5375;"Guzmán";"Luis (I)";5404
+5376;"Savage";"Fred";5405
+5377;"Street";"Carly";2031
+5378;"Dillane";"Frank";5406
+5379;"Gould";"Richard (I)";5407
+5380;"Rogers";"Jaime";5412
+5381;"Seel";"Charles";5414
+5382;"Carmeci";"Matt";5415
+5383;"Patuwai";"Peter";5416
+5384;"Davey";"Malcolm";5417
+5385;"Lane";"Stephanie (IV)";314
+5386;"Bobbitt";"Russell";5418
+5387;"Dorrance";"Jared";5419
+5388;"Buono";"Victor";5420
+5389;"Samaroo";"Dennison";5421
+5390;"Goodman";"John (I)";5422
+5391;"Silverman";"Sarah";1906
+5392;"Wolf";"Fred Alan";5423
+5393;"Hendrix";"Elaine";3875
+5394;"Frazier";"Jon";5424
+5395;"Tomlinson";"LeShay N.";5181
+5396;"Coleman";"Brady";5425
+5397;"McBride";"Chi";5426
+5398;"Vant";"Joe";1597
+5399;"Hahn";"Jess";5427
+5400;"Bryan";"Arthur Q.";5428
+5401;"Roberts";"Hunter F.";5429
+5402;"Scheiwiller";"Fred";5430
+5403;"Rose";"Mickey";5431
+5404;"Hodgin";"Hubert";5432
+5405;"Bass";"Ronald";5434
+5406;"Holloway";"Escher";5435
+5407;"Rooney";"Kevin (I)";5436
+5408;"Frazier";"Joe";5437
+5409;"Beatty";"Robert (I)";5438
+5410;"Cummings";"Brian";5439
+5411;"Williard";"Carol";1054
+5412;"Nance";"Richard (I)";5440
+5413;"Hoard";"Margaret Ann";65
+5414;"Hoziel";"Eric";5441
+5415;"Reynolds";"Michael J.";5442
+5416;"Cusack";"Dick";5443
+5417;"Cox";"Brian (XV)";5444
+5418;"Lazenby";"Paul";5445
+5419;"Taggart";"Hal";5446
+5420;"Clift";"Van";5447
+5421;"Gorman";"Buddy";5448
+5422;"Fullilove";"Donald";5449
+5423;"Hawkins";"Lester";3206
+5424;"Chapin";"Colin";5450
+5425;"Haas";"Vernon";5451
+5426;"Savage";"John (I)";5452
+5427;"Deare";"Morgan";5458
+5428;"Segal";"George (I)";5459
+5429;"Hernandez";"Frank T.";5460
+5430;"Filpi";"Carmen";5461
+5431;"Nunn";"Alice";2906
+5432;"Moore";"John Sanford";5462
+5433;"Williams";"Johnny (I)";5463
+5434;"Eisenhower";"Dwight D.";5464
+5435;"Wilson";"Ian (I)";5465
+5436;"Camacho";"Mark";5466
+5437;"Henderson";"Connall";5470
+5438;"Caruso";"Frank A.";5471
+5439;"Urueta";"Chano";5472
+5440;"Baumel";"Shane";5473
+5441;"Keith";"Robert (I)";5474
+5442;"Rourke";"Mickey";5475
+5443;"Murray";"Bill (I)";5476
+5444;"Boen";"Earl";5477
+5445;"Levine";"Ted";5478
+5446;"Anthony";"Keith (I)";5479
+5447;"Austin";"Gary (II)";5480
+5448;"Lee";"Jamie (II)";5481
+5449;"Horn";"Edward (II)";5484
+5450;"Powell";"Nosher";5492
+5451;"Woods";"Aubrey";5494
+5452;"Bettany";"Paul";5497
+5453;"Renner";"Brian";5498
+5454;"Biberman";"Abner";5500
+5455;"Cunningham";"Liam";5501
+5456;"Stormare";"Peter";5502
+5457;"O'Connor";"Frances (II)";2095
+5458;"Treacher";"Jamie";5503
+5459;"Miles";"Ben (I)";5504
+5460;"Hawthorne";"Nigel";5506
+5461;"Nicotero";"Frank";5511
+5462;"Carrier";"Corey";5512
+5463;"Rossummoen";"Sverre";5513
+5464;"Kolzow";"Harve";5514
+5465;"Brown";"Ralph (I)";5516
+5466;"Carty-Squires";"Connor";5517
+5467;"Young";"Rozwill";5518
+5468;"Laughton";"Charles";5519
+5469;"Ward";"Joey";5521
+5470;"Vandross";"Luther";2314
+5471;"White";"Brenda (I)";2641
+5472;"O'Docharty";"William H.";5522
+5473;"Sawhorse";NA;2176
+5474;"Houghton";"Shep";1114
+5475;"Robinson";"Ruth (I)";4093
+5476;"Frizzelle";"Zed";5523
+5477;"Liu";"Qi (I)";5524
+5478;"Feng";"Jian Hua";5525
+5479;"Chanlekha";"Yutphichai";5526
+5480;"Abrahams";"Caz";923
+5481;"Puri";"Om";5527
+5482;"Blaikie";"Jon";5528
+5483;"Lugosi";"Bela";5529
+5484;"Grodin";"Charles (I)";5530
+5485;"Freeman";"Jim (II)";5531
+5486;"Falk";"Peter (I)";5532
+5487;"Boley";"May";5533
+5488;"Blake";"Gladys";3421
+5489;"Torn";"Rip";5534
+5490;"Kilmer";"Val";5535
+5491;"King";"Mark (I)";5536
+5492;"Prochaska";"Bobby";5542
+5493;"Moon";"Keith (I)";5543
+5494;"Grenier";"Zach";5545
+5495;"Davis";"Ryan (I)";5546
+5496;"Shapi";"Hassani";5547
+5497;"Schleiffer";"Norman";5548
+5498;"Wright";"Tom (I)";4844
+5499;"Skerrett";"Peter";5549
+5500;"Goggins";"Walton";2605
+5501;"Melhuse";"Peder";5550
+5502;"Treacy";"Emerson";5553
+5503;"Barrett";"Laurinda";874
+5504;"Huband";"David (I)";5554
+5505;"Fox";"Mark (I)";5555
+5506;"Kennedy";"Ellen";2241
+5507;"Sanada";"Hiroyuki";5556
+5508;"Mander";"Miles";5558
+5509;"Lawlor";"John";5559
+5510;"Taylor";"Adam (I)";3971
+5511;"Turner";"Marcus (I)";5561
+5512;"Brar";"Rupinder";5562
+5513;"Hayter";"David";774
+5514;"Blecker";"Ron";5563
+5515;"Zurowski";"Desiree";4104
+5516;"Cudmore";"Daniel";5564
+5517;"Greenbank";"Jackie A.";5537
+5518;"McMeel";"Mickey";5565
+5519;"Burnett";"Judith";2604
+5520;"Hoffman";"Mat";5566
+5521;"Arcieri";"Leila";2072
+5522;"Shapiro";"Kenny (I)";5567
+5523;"Cube";"Ice";2310
+5524;"García Bernal";"Gael";5568
+5525;"Bialkowski";"Tomasz";5571
+5526;"Flipo";"Chloé";1377
+5527;"Davidson";"William B.";5572
+5528;"Heywood";"Herbert";1030
+5529;"Vallone";"Peter";5573
+5530;"Pergament";"Annika";802
+5531;"Allan";"Bradley James";5575
+5532;"Hung Kam-Bo";"Sammo";1423
+5533;"Kerr";"Bill (I)";5577
+5534;"Gardner";"Raymond";5578
+5535;"Fuji";"Pat";3822
+5536;"Angelis";"Paul";5581
+5537;"Mayne";"Ferdy";5582
+5538;"Baker";"Frank (II)";5583
+5539;"Lee";"Mu-yeong";5584
+5540;"Shulan";"Wang";5585
+5541;"Chen";"Hsi-Sheng";5586
+5542;"Hong";"Chi-Der";5587
+5543;"Leung";"Patrick";5588
+5544;"Lung";"Ming Yan";5589
+5545;"Yi";"Zhang";5590
+5546;"Tachikawa";"Hiroshi";5591
+5547;"Lonergan";"Kenneth";5594
+5548;"Bond";"Ward";5595
+5549;"Semels";"Harry";3351
+5550;"Farrington";"Betty";5031
+5551;"Kirby";"Troy (II)";5596
+5552;"Burton";"Anwar";2719
+5553;"Tamba";"Tetsuro";5597
+5554;"Ling";"Mai (I)";2145
+5555;"Badalucco";"Michael";5599
+5556;"McCrillis";"Houston";5598
+5557;"Yule";"John";5601
+5558;"Coleman";"Warren";5602
+5559;"Kadogo";"Aku";2563
+5560;"Dobbs";"Randolph";5603
+5561;"Kamin";"Danny";5604
+5562;"Coburn";"James";5605
+5563;"Blanchard";"Danielle";1980
+5564;"Stock";"Nigel (I)";5606
+5565;"Legros";"Michael";5607
+5566;"Stiller";"Ben";5608
+5567;"Presley";"A.J.";5609
+5568;"Ishikawa";"Kou";5612
+5569;"Kase";"Koichi";2550
+5570;"Yamabe";"Chika";4954
+5571;"Périer";"François";5613
+5572;"De Meyere";"Jo";5614
+5573;"Lake";"Peter (I)";5615
+5574;"Buggy";"Niall";5617
+5575;"Bobo";"Jonah";5618
+5576;"Ohta";"Kosuke";5619
+5577;"Craig";"Wendell";5622
+5578;"Chapin";"Ken";5329
+5579;"Yankovsky";"Oleg";5623
+5580;"Sanders";"Marvin LaRoy";5624
+5581;"Sisic";"Aco";5627
+5582;"Callan";"Geoff";5628
+5583;"McCulloch";"Ian (I)";5629
+5584;"Vaughn";"Vince";5630
+5585;"Brame";"Charles L.";1690
+5586;"Trump";"Melania";502
+5587;"McCarthy";"Danny (IV)";5631
+5588;"Emmanuel";"Ivor";5633
+5589;"Lint";"Derek de";5634
+5590;"Dobbelman";"Diana";3136
+5591;"Chase";"Chevy";2
+5592;"Tasso";"José María";1
+5593;"Hanin";"Roger";61
+5594;"Vilers";"Vania";62
+5595;"Goupil";"Romain";63
+5596;"Rambal";"Enrique";230
+5597;"Schreiber";"Axel";102
+5598;"Franck (II)";NA;1590
+5599;"Saiki";"Shigeru";3685
+5600;"Lacey";"Ronald (I)";1756
+5601;"Mathews";"Thom";2588
+5602;"Daniel";"Marek";2791
+5603;"O'Leary";"Jer";3511
+5604;"Corcoran";"Caromy";3921
+5605;"Bosco";"Philip";37
+5606;"Catalano";"Franco";3666
+5607;"Heckler";"Andrew (I)";286
+5608;"Maniaci";"Jim";1827
+5609;"Krumbiegel";"Crock";389
+5610;"Chen";"Kelly";3128
+5611;"Hoyle";"Myles";429
+5612;"York";"Susannah";404
+5613;"Sharpe";"T.C.";583
+5614;"Preston";"Wayde";856
+5615;"Cassola";"Carla";1668
+5616;"Coraci";"Frank";1015
+5617;"McCann";"Tatum";3677
+5618;"Rhodes";"'Little Billy'";1119
+5619;"Gaige";"Russell";2396
+5620;"Umberger";"Andy";1307
+5621;"Brennan";"Maureen (II)";4433
+5622;"López";"Sergi (I)";2182
+5623;"Manchester";"Jay";2929
+5624;"Abe";"Hiro";2956
+5625;"Greene";"Graham (II)";3061
+5626;"Korsch";"Conrad";3487
+5627;"McMahon";"Julian";4003
+5628;"Spreckley";"Arthur";4451
+5629;"Ishimori";"Takkô";4467
+5630;"Ratzenberger";"John";4678
+5631;"Salome";"Tony";4939
+5632;"Dio";"Ronnie James";4973
+5633;"Baldwin";"Greg";5072
+5634;"Sidles";"Bart";5281

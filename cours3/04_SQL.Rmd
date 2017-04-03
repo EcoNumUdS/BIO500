@@ -99,7 +99,6 @@ Voici un exemple d'instruction SQL pour créer la table `films`.
 CREATE TABLE films (
     code        char(5),
     titre       varchar(40),
-    did         integer,
     date_prod   date,
     genre       varchar(10),
     duree       interval hour to minute,

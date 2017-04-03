@@ -1,0 +1,182 @@
+
+---
+
+# Les grandes étapes
+
+1. Spécifier la connexion avec le serveur
+2. Créer la base de données
+3. Créer les tables et spécifier les clés
+4. Ajouter de l'information dans les tables
+5. Faire des requêtes pour extraire l'information
+
+**Important:**
+
+1. Pour cette partie assurez vous que êtes connecté au réseau **Aerius Sécurisé**.
+2. Pour ceux dont la VM ne fonctionne pas, il possible de faire les exercices de ce cours sur Windows ou MacOSX.
+
+
+--- .transition
+
+# Retour rapide sur la séance de la semaine dernière
+
+---
+
+# Connexion au serveur de l'UdS
+
+L'adresse du serveur est `pyrole.dbio.fsci.usherbrooke.ca` sur le port `5432`.
+Il faut remplacer l'objet `pass` par le mot de passe du tableau.
+
+```{r echo=FALSE, error=FALSE, message=FALSE}
+## Cette partie ne s'affiche pas dans la présentation est c'est normale
+library(RPostgreSQL)
+
+  # On peut se connecter à distance sur le serveur pyrole (seulement à l'intérieur de l'UdS)
+  # mdp <- readLines("assets/donnees/password.txt")
+  #
+  # con <- dbConnect(PostgreSQL(), host="pyrole.dbio.fsci.usherbrooke.ca",
+  #         port=5432, user= "postgres", password=mdp)
+  # dbSendQuery(con,"DROP DATABASE IF EXISTS bd_films;")
+  # dbSendQuery(con,"CREATE DATABASE bd_films;")
+  # con <- dbConnect(PostgreSQL(), host="pyrole.dbio.fsci.usherbrooke.ca",
+  #         port=5432, user= "postgres", password=mdp,dbname="bd_films")
+
+  # On peut pas se connecter à distance, alors on ouvre une connexion local.
+  con <- dbConnect(PostgreSQL(), host="localhost",
+          port=5432, user= "postgres")
+  rs <- dbSendQuery(con,"DROP DATABASE IF EXISTS bd_films;")
+  rs <- dbSendQuery(con,"CREATE DATABASE bd_films;")
+
+  con <- dbConnect(PostgreSQL(), host="localhost",
+          port=5432, user= "postgres",dbname="bd_films")
+
+```
+
+## On ouvre la connexion:
+
+```{r eval=FALSE}
+library(RPostgreSQL)
+
+con <- dbConnect(PostgreSQL(),
+        host="pyrole.dbio.fsci.usherbrooke.ca",
+        port=5432,
+        user= "postgres",
+        password=pass)
+
+# On créé la base de données
+dbSendQuery(con,"DROP DATABASE IF EXISTS bd_films;")
+dbSendQuery(con,"CREATE DATABASE bd_films;")
+# On se connect à la nouvelle base de données
+con <- dbConnect(con,dbname="bd_films")
+```
+
+---
+
+# Création de la table `films`
+
+```{r}
+tbl_films <- "CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+);"
+
+dbSendQuery(con,tbl_films)
+```
+
+**Question:** Sur ce script, où sont les instructions SQL? Òu sont les commandes R?
+
+---
+
+# Création de la table `acteurs`
+
+
+```{r}
+tbl_acteurs <- "CREATE TABLE acteurs (
+    id_acteur   integer,
+    nom         varchar(100),
+    prenom      varchar(100),
+    id_film     integer,
+    PRIMARY KEY (id_acteur),
+    FOREIGN KEY (id_film) REFERENCES films (id_film) ON DELETE CASCADE
+);"
+
+dbSendQuery(con,tbl_acteurs)
+
+```
+
+---
+
+# pgAdmin3
+
+`pgAdmin3` est un client avec une interface graphique permettant de visualiser si les opérations de création de tables ont bien été réalisées.
+
+
+--- .transition
+
+# Ajouter de l'information dans les tables
+
+---
+
+# SQL - `INSERT`
+
+On veut maintenant insérer des données dans les tables `acteurs` et `films`.
+
+## L'instruction `INSERT` permet d'insérer une ligne à la fois:
+
+```sql
+INSERT INTO films(id_film,titre,annee_prod) VALUES (1,'la vie est belle',1997);
+INSERT INTO acteurs(id_acteur,prenom,nom,id_film) VALUES(1,'Nicoletta','Braschi',1);
+INSERT INTO acteurs(id_acteur,prenom,nom,id_film) VALUES(2,'Robertox','Benigni',1);
+```
+
+---
+
+# Exercice (10 minutes)
+
+1. Prenez un film de votre choix et insérer son titre et son année de parution dans la table `films`.
+2. Insérer les acteurs de ce film dans la tables `acteurs`.
+
+---
+
+# SQL - `COPY ... FROM`
+
+L'instruction `COPY ... FROM` permet d'insérer plusieurs ligne à la fois:
+
+```sql
+
+COPY  FROM
+
+```
+
+---
+
+# RPostgreSQL - `dbWriteTable`
+
+La librairie RPostgreSQL peut nous aider plus facilement à accomplir cette tâche:
+
+```{r}
+# Lecture des fichiers CSV
+bd_films <- read.csv2(file='./assets/donnees/bd_beacon/bd_films.csv')
+bd_acteurs <- read.csv2(file='./assets/donnees/bd_beacon/bd_acteurs.csv')
+
+# Injection des enregistrements dans la BD
+dbWriteTable(con,append=TRUE,name="films",value=bd_films, row.names=FALSE)
+dbWriteTable(con,append=TRUE,name="acteurs",value=bd_acteurs, row.names=FALSE)
+```
+
+---
+
+# pgAdmin3
+
+Il est également possible d'insérer des données à partir du logiciel `pgAdmin3`.
+
+Ajouter
+
+---
+
+# Exercice (15 minutes)
+
+1. Dans une base de données locale `bd_films`, injecter les films de l'année 2007 avec leurs acteurs. Les données brutes sont contenues dans les fichiers [ex_2007_acteurs.csv](./assets/donnees/bd_beacon/ex_2007_acteurs.csv) et [ex_2007_films.csv](./assets/donnees/bd_beacon/ex_2007_films.csv).
+
+Vous pouvez utiliser la commande R `dbWriteTable`, l'instruction SQL `COPY` ou encore pgAdmin3 pour insérer les données.
