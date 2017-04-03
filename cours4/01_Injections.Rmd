@@ -174,8 +174,6 @@ dbWriteTable(con,append=TRUE,name="acteurs",value=bd_acteurs, row.names=FALSE)
 
 Il est également possible d'insérer des données à partir du logiciel `pgAdmin3`.
 
-**SCREENSHOT**
-
 ---
 
 # Exercice 2 (15 minutes)

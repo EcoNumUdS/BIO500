@@ -183,7 +183,8 @@ head(resume_films)
 *** =right
 
 - Pour faire une synthèse de l'information sur une seule ligne.
-- Faire des opérations sur les champs: `max`, `min`, `sum`, `avg`, `count`.
+- Faire des opérations sur les champs numérique: `max`, `min`, `sum`, `avg`, `count`.
+- Mais aussi les opérations classiques: `*`, `/`, `-` etc.
 - Renommer les colonnes avec `AS`.
 
 ---&twocol
@@ -331,72 +332,3 @@ HAVING avg(nb_acteurs) > 10;"
 nb_acteurs <- dbGetQuery(con,sql_requete)
 head(nb_acteurs)
 ```
-
----.transition
-
-# Sauvegarder les requêtes
-
----
-
-# Sauvegarder une requête
-
-Nous avons vu précédemment `COPY ... FROM chemin_vers_fichier` pour insérer des enregistrements dans les tables.
-
-Il existe aussi l'instruction `COPY ... TO chemin_vers_fichier` pour sauvegarder une requête.
-
-```sql
-COPY (SELECT * FROM films WHERE titre LIKE 'A%')
-TO '/home/etudiant/Documents/films_A.csv' WITH DELIMITER ';' CSV HEADER;
-```
-
----
-
-# Sauvegarder une requête
-
-Afin de sauvegarder les requêtes obtenues dans R par `dbGetQuery()`, il est possible d'utiliser les fonctions d'écritures tels que `write.table()` ou encore `write.csv()`.
-
-Il existe une façon de faire des requêtes dans `pgAdmin3` et d'en sauvegarder les résultats grâce à l'outils `Query`.
-
----.transition
-
-# Les requêtes stockées
-
----
-
-# Les requêtes stockées: les vues
-
-Les vues permettent de stocker directement les requêtes à l'intérieur de la base de données afin d'interroger la vue ultérieurement.
-
-```sql
-CREATE VIEW moyenne_acteurs AS (
-  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
-    SELECT titre, annee_prod, count(nom) AS nb_acteurs
-      FROM films
-      INNER JOIN acteurs USING (id_film)
-      GROUP BY annee_prod, titre
-  ) AS nb_acteurs_film
-  GROUP BY annee_prod
-  );
-```
-
-Il sera possible d'atteindre cette vue tout simplement avec:
-
-```sql
-SELECT * FROM moyenne_acteurs;
-```
-
----.transition
-
-# Manipuler les enregistrements
-
----
-
-# Mettre à jour des enregistrements
-
-Avec UPDATE
-
----
-
-# Supprimer des enregistrements  
-
-Avec DELETE
