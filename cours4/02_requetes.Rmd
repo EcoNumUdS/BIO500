@@ -263,7 +263,6 @@ acteurs_films <- dbGetQuery(con,sql_requete)
 head(acteurs_films,4)
 ```
 
-
 ---
 
 # Exercice 4 (10-15 minutes)

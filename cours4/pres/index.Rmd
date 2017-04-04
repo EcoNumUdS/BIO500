@@ -159,15 +159,6 @@ INSERT INTO acteurs(id_acteur,prenom,nom,id_film) VALUES(2,'Roberto','Benigni',1
 
 ---
 
-# Exercice 1 (10 minutes)
-
-## À l'aide de `INSERT`,
-
-1. Prenez un film de votre choix et insérer son titre et son année de parution dans la table `films`.
-2. Insérer les acteurs de ce film dans la tables `acteurs`.
-
----
-
 # SQL - `COPY ... FROM`
 
 L'instruction SQL `COPY ... FROM` permet d'insérer plusieurs lignes à la fois:
@@ -197,17 +188,18 @@ dbWriteTable(con,append=TRUE,name="acteurs",value=bd_acteurs, row.names=FALSE)
 
 ---
 
-# pgAdmin3
+# Exercice 1 (10-15 minutes)
 
-Il est également possible d'insérer des données à partir du logiciel `pgAdmin3`.
+Ce premier exercice est important pour la suite de la séance.  
+
+1. Recréer la base de données `bd_films` avec ses deux tables `films` et `acteurs`
+2. Insérer les données [bd_acteurs.csv](./assets/donnees/bd_beacon/bd_acteurs.csv) et [bd_films.csv](./assets/donnees/bd_beacon/bd_acteurs.csv) dans les deux tables à l'aide de la commande R `dbWriteTable()`
 
 ---
 
-# Exercice 2 (15 minutes)
+# pgAdmin3
 
-1. Dans la base de données `bd_films`, injecter les films de l'année 2007 avec leurs acteurs. Les données brutes sont contenues dans les fichiers [ex_2007_acteurs.csv](./assets/donnees/bd_beacon/ex_2007_acteurs.csv) et [ex_2007_films.csv](./assets/donnees/bd_beacon/ex_2007_films.csv).
-
-Vous pouvez utiliser la commande R `dbWriteTable`, l'instruction SQL `COPY` ou encore pgAdmin3 pour insérer les données.
+Il est également possible d'insérer des données à partir du logiciel `pgAdmin3`.
 
 ---.transition
 
@@ -472,7 +464,6 @@ SELECT titre, annee_prod, nom, prenom
 acteurs_films <- dbGetQuery(con,sql_requete)
 head(acteurs_films,4)
 ```
-
 
 ---
 

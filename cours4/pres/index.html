@@ -226,22 +226,6 @@ INSERT INTO acteurs(id_acteur,prenom,nom,id_film) VALUES(2,&#39;Roberto&#39;,&#3
 <slide class="" id="slide-10" style="background:;">
   <!--  <a href="#slide-10"></a> -->
   <hgroup>
-    <h1>Exercice 1 (10 minutes)</h1>
-  </hgroup>
-  <article data-timings="">
-    <h2>À l&#39;aide de <code>INSERT</code>,</h2>
-
-<ol>
-<li>Prenez un film de votre choix et insérer son titre et son année de parution dans la table <code>films</code>.</li>
-<li>Insérer les acteurs de ce film dans la tables <code>acteurs</code>.</li>
-</ol>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-<slide class="" id="slide-11" style="background:;">
-  <!--  <a href="#slide-11"></a> -->
-  <hgroup>
     <h1>SQL - <code>COPY ... FROM</code></h1>
   </hgroup>
   <article data-timings="">
@@ -256,8 +240,8 @@ WITH FORMAT CSV HEADER DELIMITER &#39;;&#39;;
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-12" style="background:;">
-  <!--  <a href="#slide-12"></a> -->
+<slide class="" id="slide-11" style="background:;">
+  <!--  <a href="#slide-11"></a> -->
   <hgroup>
     <h1>RPostgreSQL - <code>dbWriteTable</code></h1>
   </hgroup>
@@ -284,6 +268,22 @@ dbWriteTable(con,append=TRUE,name=&quot;films&quot;,value=bd_films, row.names=FA
   </article>
   <!-- Presenter Notes -->
 </slide>
+<slide class="" id="slide-12" style="background:;">
+  <!--  <a href="#slide-12"></a> -->
+  <hgroup>
+    <h1>Exercice 1 (10-15 minutes)</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Ce premier exercice est important pour la suite de la séance.  </p>
+
+<ol>
+<li>Recréer la base de données <code>bd_films</code> avec ses deux tables <code>films</code> et <code>acteurs</code></li>
+<li>Insérer les données <a href="./assets/donnees/bd_beacon/bd_acteurs.csv">bd_acteurs.csv</a> et <a href="./assets/donnees/bd_beacon/bd_acteurs.csv">bd_films.csv</a> dans les deux tables à l&#39;aide de la commande R <code>dbWriteTable()</code></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 <slide class="" id="slide-13" style="background:;">
   <!--  <a href="#slide-13"></a> -->
   <hgroup>
@@ -295,23 +295,8 @@ dbWriteTable(con,append=TRUE,name=&quot;films&quot;,value=bd_films, row.names=FA
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-14" style="background:;">
+<slide class="transition" id="slide-14" style="background:;">
   <!--  <a href="#slide-14"></a> -->
-  <hgroup>
-    <h1>Exercice 2 (15 minutes)</h1>
-  </hgroup>
-  <article data-timings="">
-    <ol>
-<li>Dans la base de données <code>bd_films</code>, injecter les films de l&#39;année 2007 avec leurs acteurs. Les données brutes sont contenues dans les fichiers <a href="./assets/donnees/bd_beacon/ex_2007_acteurs.csv">ex_2007_acteurs.csv</a> et <a href="./assets/donnees/bd_beacon/ex_2007_films.csv">ex_2007_films.csv</a>.</li>
-</ol>
-
-<p>Vous pouvez utiliser la commande R <code>dbWriteTable</code>, l&#39;instruction SQL <code>COPY</code> ou encore pgAdmin3 pour insérer les données.</p>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-<slide class="transition" id="slide-15" style="background:;">
-  <!--  <a href="#slide-15"></a> -->
   <hgroup>
     <h1>Les requêtes</h1>
   </hgroup>
@@ -320,7 +305,7 @@ dbWriteTable(con,append=TRUE,name=&quot;films&quot;,value=bd_films, row.names=FA
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-16" style="background:;">
+<slide class="" id="slide-15" style="background:;">
   <hgroup>
     <h1>Sélectionner des tables et des colonnes</h1>
   </hgroup>
@@ -353,7 +338,7 @@ head(films)
     </div>
   </article>
 </slide>
-<slide class="" id="slide-17" style="background:;">
+<slide class="" id="slide-16" style="background:;">
   <hgroup>
     <h1>Sélectionner des enregistrements unique</h1>
   </hgroup>
@@ -385,7 +370,7 @@ head(films)
     </div>
   </article>
 </slide>
-<slide class="" id="slide-18" style="background:;">
+<slide class="" id="slide-17" style="background:;">
   <hgroup>
     <h1>Sélectionner des tables et des colonnes</h1>
   </hgroup>
@@ -423,7 +408,7 @@ head(films)
     </div>
   </article>
 </slide>
-<slide class="" id="slide-19" style="background:;">
+<slide class="" id="slide-18" style="background:;">
   <hgroup>
     <h1>Ordonner la table</h1>
   </hgroup>
@@ -456,7 +441,7 @@ head(derniers_films)
     </div>
   </article>
 </slide>
-<slide class="" id="slide-20" style="background:;">
+<slide class="" id="slide-19" style="background:;">
   <hgroup>
     <h1>Critères avec <code>NULL</code></h1>
   </hgroup>
@@ -491,7 +476,7 @@ head(annees_films)
     </div>
   </article>
 </slide>
-<slide class="" id="slide-21" style="background:;">
+<slide class="" id="slide-20" style="background:;">
   <hgroup>
     <h1>Combiner les critères</h1>
   </hgroup>
@@ -530,7 +515,7 @@ head(derniers_films)
     </div>
   </article>
 </slide>
-<slide class="" id="slide-22" style="background:;">
+<slide class="" id="slide-21" style="background:;">
   <hgroup>
     <h1>Critères sur le texte avec <code>LIKE</code></h1>
   </hgroup>
@@ -564,8 +549,8 @@ head(derniers_films)
     </div>
   </article>
 </slide>
-<slide class="" id="slide-23" style="background:;">
-  <!--  <a href="#slide-23"></a> -->
+<slide class="" id="slide-22" style="background:;">
+  <!--  <a href="#slide-22"></a> -->
   <hgroup>
     <h1>Exercice 4 (10 minutes)</h1>
   </hgroup>
@@ -575,7 +560,7 @@ head(derniers_films)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-24" style="background:;">
+<slide class="" id="slide-23" style="background:;">
   <hgroup>
     <h1>Agréger l&#39;information (1 ligne)</h1>
   </hgroup>
@@ -607,7 +592,7 @@ head(resume_films)
     </div>
   </article>
 </slide>
-<slide class="" id="slide-25" style="background:;">
+<slide class="" id="slide-24" style="background:;">
   <hgroup>
     <h1>Agréger l&#39;information (plusieurs lignes par groupe)</h1>
   </hgroup>
@@ -642,8 +627,8 @@ head(resume_films)
     </div>
   </article>
 </slide>
-<slide class="" id="slide-26" style="background:;">
-  <!--  <a href="#slide-26"></a> -->
+<slide class="" id="slide-25" style="background:;">
+  <!--  <a href="#slide-25"></a> -->
   <hgroup>
     <h1>Exercice 5 (10 minutes)</h1>
   </hgroup>
@@ -655,8 +640,8 @@ head(resume_films)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-27" style="background:;">
-  <!--  <a href="#slide-27"></a> -->
+<slide class="transition" id="slide-26" style="background:;">
+  <!--  <a href="#slide-26"></a> -->
   <hgroup>
     <h1>Jointures entre tables</h1>
   </hgroup>
@@ -665,8 +650,8 @@ head(resume_films)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-28" style="background:;">
-  <!--  <a href="#slide-28"></a> -->
+<slide class="" id="slide-27" style="background:;">
+  <!--  <a href="#slide-27"></a> -->
   <hgroup>
     <h1>Jointures entre tables</h1>
   </hgroup>
@@ -693,8 +678,8 @@ head(acteurs_films,4)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-29" style="background:;">
-  <!--  <a href="#slide-29"></a> -->
+<slide class="" id="slide-28" style="background:;">
+  <!--  <a href="#slide-28"></a> -->
   <hgroup>
     <h1>Les type de jointures</h1>
   </hgroup>
@@ -706,8 +691,8 @@ head(acteurs_films,4)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-30" style="background:;">
-  <!--  <a href="#slide-30"></a> -->
+<slide class="" id="slide-29" style="background:;">
+  <!--  <a href="#slide-29"></a> -->
   <hgroup>
     <h1>Jointures entre tables</h1>
   </hgroup>
@@ -734,8 +719,8 @@ head(acteurs_films,4)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-31" style="background:;">
-  <!--  <a href="#slide-31"></a> -->
+<slide class="" id="slide-30" style="background:;">
+  <!--  <a href="#slide-30"></a> -->
   <hgroup>
     <h1>Exercice 4 (10-15 minutes)</h1>
   </hgroup>
@@ -748,8 +733,8 @@ on voudrait savoir le nombre d&#39;acteurs par film depuis les 10 dernières ann
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-32" style="background:;">
-  <!--  <a href="#slide-32"></a> -->
+<slide class="" id="slide-31" style="background:;">
+  <!--  <a href="#slide-31"></a> -->
   <hgroup>
     <h1>Exercice 5 (10-15 minutes)</h1>
   </hgroup>
@@ -761,7 +746,7 @@ on voudrait savoir le nombre d&#39;acteurs par film depuis les 10 dernières ann
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-33" style="background:;">
+<slide class="" id="slide-32" style="background:;">
   <hgroup>
     <h1>Requêtes emboitées</h1>
   </hgroup>
@@ -800,7 +785,7 @@ head(moy_acteurs)
     </div>
   </article>
 </slide>
-<slide class="" id="slide-34" style="background:;">
+<slide class="" id="slide-33" style="background:;">
   <hgroup>
     <h1>Filtrer les requêtes à posteriori</h1>
   </hgroup>
@@ -839,8 +824,8 @@ head(nb_acteurs)
     </div>
   </article>
 </slide>
-<slide class="transition" id="slide-35" style="background:;">
-  <!--  <a href="#slide-35"></a> -->
+<slide class="transition" id="slide-34" style="background:;">
+  <!--  <a href="#slide-34"></a> -->
   <hgroup>
     <h1>Sauvegarder les requêtes</h1>
   </hgroup>
@@ -849,8 +834,8 @@ head(nb_acteurs)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-36" style="background:;">
-  <!--  <a href="#slide-36"></a> -->
+<slide class="" id="slide-35" style="background:;">
+  <!--  <a href="#slide-35"></a> -->
   <hgroup>
     <h1>Sauvegarder une requête</h1>
   </hgroup>
@@ -866,8 +851,8 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-37" style="background:;">
-  <!--  <a href="#slide-37"></a> -->
+<slide class="" id="slide-36" style="background:;">
+  <!--  <a href="#slide-36"></a> -->
   <hgroup>
     <h1>Sauvegarder une requête</h1>
   </hgroup>
@@ -879,8 +864,8 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-38" style="background:;">
-  <!--  <a href="#slide-38"></a> -->
+<slide class="transition" id="slide-37" style="background:;">
+  <!--  <a href="#slide-37"></a> -->
   <hgroup>
     <h1>Les requêtes stockées</h1>
   </hgroup>
@@ -889,8 +874,8 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-39" style="background:;">
-  <!--  <a href="#slide-39"></a> -->
+<slide class="" id="slide-38" style="background:;">
+  <!--  <a href="#slide-38"></a> -->
   <hgroup>
     <h1>Les requêtes stockées: les vues</h1>
   </hgroup>
@@ -916,8 +901,8 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-40" style="background:;">
-  <!--  <a href="#slide-40"></a> -->
+<slide class="transition" id="slide-39" style="background:;">
+  <!--  <a href="#slide-39"></a> -->
   <hgroup>
     <h1>Manipuler les enregistrements</h1>
   </hgroup>
@@ -926,8 +911,8 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-41" style="background:;">
-  <!--  <a href="#slide-41"></a> -->
+<slide class="" id="slide-40" style="background:;">
+  <!--  <a href="#slide-40"></a> -->
   <hgroup>
     <h1>Mettre à jour des enregistrements</h1>
   </hgroup>
@@ -944,8 +929,8 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-42" style="background:;">
-  <!--  <a href="#slide-42"></a> -->
+<slide class="" id="slide-41" style="background:;">
+  <!--  <a href="#slide-41"></a> -->
   <hgroup>
     <h1>Supprimer des enregistrements</h1>
   </hgroup>
@@ -965,8 +950,8 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-43" style="background:;">
-  <!--  <a href="#slide-43"></a> -->
+<slide class="transition" id="slide-42" style="background:;">
+  <!--  <a href="#slide-42"></a> -->
   <hgroup>
     <h1>Travail de la semaine</h1>
   </hgroup>
@@ -975,8 +960,8 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-44" style="background:;">
-  <!--  <a href="#slide-44"></a> -->
+<slide class="" id="slide-43" style="background:;">
+  <!--  <a href="#slide-43"></a> -->
   <hgroup>
     <h1>Travail de la semaine</h1>
   </hgroup>
@@ -1004,8 +989,8 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-45" style="background:;">
-  <!--  <a href="#slide-45"></a> -->
+<slide class="transition" id="slide-44" style="background:;">
+  <!--  <a href="#slide-44"></a> -->
   <hgroup>
     <h1>Découper les scripts avec R</h1>
   </hgroup>
@@ -1014,7 +999,7 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-46" style="background:;">
+<slide class="" id="slide-45" style="background:;">
   <hgroup>
     <h1>Découper les étapes de son travail</h1>
   </hgroup>
@@ -1062,8 +1047,8 @@ ls()
     </div>
   </article>
 </slide>
-<slide class="transition" id="slide-47" style="background:;">
-  <!--  <a href="#slide-47"></a> -->
+<slide class="transition" id="slide-46" style="background:;">
+  <!--  <a href="#slide-46"></a> -->
   <hgroup>
     <h1>Discussion</h1>
   </hgroup>
@@ -1132,19 +1117,19 @@ ls()
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=10 title='Exercice 1 (10 minutes)'>
+        data-slide=10 title='SQL - <code>COPY ... FROM</code>'>
          10
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='SQL - <code>COPY ... FROM</code>'>
+        data-slide=11 title='RPostgreSQL - <code>dbWriteTable</code>'>
          11
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title='RPostgreSQL - <code>dbWriteTable</code>'>
+        data-slide=12 title='Exercice 1 (10-15 minutes)'>
          12
       </a>
     </li>
@@ -1156,79 +1141,79 @@ ls()
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=14 title='Exercice 2 (15 minutes)'>
+        data-slide=14 title='Les requêtes'>
          14
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=15 title='Les requêtes'>
+        data-slide=15 title='Sélectionner des tables et des colonnes'>
          15
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=16 title='Sélectionner des tables et des colonnes'>
+        data-slide=16 title='Sélectionner des enregistrements unique'>
          16
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=17 title='Sélectionner des enregistrements unique'>
+        data-slide=17 title='Sélectionner des tables et des colonnes'>
          17
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=18 title='Sélectionner des tables et des colonnes'>
+        data-slide=18 title='Ordonner la table'>
          18
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=19 title='Ordonner la table'>
+        data-slide=19 title='Critères avec <code>NULL</code>'>
          19
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=20 title='Critères avec <code>NULL</code>'>
+        data-slide=20 title='Combiner les critères'>
          20
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=21 title='Combiner les critères'>
+        data-slide=21 title='Critères sur le texte avec <code>LIKE</code>'>
          21
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=22 title='Critères sur le texte avec <code>LIKE</code>'>
+        data-slide=22 title='Exercice 4 (10 minutes)'>
          22
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=23 title='Exercice 4 (10 minutes)'>
+        data-slide=23 title='Agréger l&#39;information (1 ligne)'>
          23
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=24 title='Agréger l&#39;information (1 ligne)'>
+        data-slide=24 title='Agréger l&#39;information (plusieurs lignes par groupe)'>
          24
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=25 title='Agréger l&#39;information (plusieurs lignes par groupe)'>
+        data-slide=25 title='Exercice 5 (10 minutes)'>
          25
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=26 title='Exercice 5 (10 minutes)'>
+        data-slide=26 title='Jointures entre tables'>
          26
       </a>
     </li>
@@ -1240,49 +1225,49 @@ ls()
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=28 title='Jointures entre tables'>
+        data-slide=28 title='Les type de jointures'>
          28
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=29 title='Les type de jointures'>
+        data-slide=29 title='Jointures entre tables'>
          29
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=30 title='Jointures entre tables'>
+        data-slide=30 title='Exercice 4 (10-15 minutes)'>
          30
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=31 title='Exercice 4 (10-15 minutes)'>
+        data-slide=31 title='Exercice 5 (10-15 minutes)'>
          31
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=32 title='Exercice 5 (10-15 minutes)'>
+        data-slide=32 title='Requêtes emboitées'>
          32
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=33 title='Requêtes emboitées'>
+        data-slide=33 title='Filtrer les requêtes à posteriori'>
          33
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=34 title='Filtrer les requêtes à posteriori'>
+        data-slide=34 title='Sauvegarder les requêtes'>
          34
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=35 title='Sauvegarder les requêtes'>
+        data-slide=35 title='Sauvegarder une requête'>
          35
       </a>
     </li>
@@ -1294,37 +1279,37 @@ ls()
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=37 title='Sauvegarder une requête'>
+        data-slide=37 title='Les requêtes stockées'>
          37
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=38 title='Les requêtes stockées'>
+        data-slide=38 title='Les requêtes stockées: les vues'>
          38
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=39 title='Les requêtes stockées: les vues'>
+        data-slide=39 title='Manipuler les enregistrements'>
          39
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=40 title='Manipuler les enregistrements'>
+        data-slide=40 title='Mettre à jour des enregistrements'>
          40
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=41 title='Mettre à jour des enregistrements'>
+        data-slide=41 title='Supprimer des enregistrements'>
          41
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=42 title='Supprimer des enregistrements'>
+        data-slide=42 title='Travail de la semaine'>
          42
       </a>
     </li>
@@ -1336,26 +1321,20 @@ ls()
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=44 title='Travail de la semaine'>
+        data-slide=44 title='Découper les scripts avec R'>
          44
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=45 title='Découper les scripts avec R'>
+        data-slide=45 title='Découper les étapes de son travail'>
          45
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=46 title='Découper les étapes de son travail'>
+        data-slide=46 title='Discussion'>
          46
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=47 title='Discussion'>
-         47
       </a>
     </li>
   </ul>
