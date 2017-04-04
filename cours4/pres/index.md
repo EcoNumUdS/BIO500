@@ -38,8 +38,7 @@ assets      :
 
 **Important:**
 
-1. Pour cette partie assurez vous que êtes connecté au réseau **Aerius Sécurisé**.
-2. Pour ceux dont la VM ne fonctionne pas, il possible de faire les exercices de ce cours sur Windows ou MacOSX.
+Pour ceux dont la VM ne fonctionne pas, il possible de faire les exercices de ce cours sur Windows ou MacOSX.
 
 
 --- .transition
@@ -239,7 +238,7 @@ head(films)
 
 - `*` permet de ne pas spécifier une colonne en particulier.
 - Cette requête retournera toutes les colonnes de la table `films`
-- Note: L'instruction `LIMIT` est utiliser dans les prochaines diapos afin de permettre le rendu des requêtes sur une diapo.
+- Note: L'instruction `LIMIT` est utilisée dans les prochaines diapos afin de permettre le rendu des requêtes sur une diapo.
 
 ---&twocol
 
@@ -470,7 +469,7 @@ head(resume_films)
 *** =right
 
 - Pour faire une synthèse de l'information sur une seule ligne.
-- Faire des opérations sur les champs numérique: `max`, `min`, `sum`, `avg`, `count`.
+- Faire des opérations sur les champs numériques: `max`, `min`, `sum`, `avg`, `count`.
 - Mais aussi les opérations classiques: `*`, `/`, `-` etc.
 - Renommer les colonnes avec `AS`.
 
@@ -626,12 +625,12 @@ head(moy_acteurs)
 
 ```
 ##   annee_prod moy_acteurs
-## 1       1902           9
-## 2       1915          55
-## 3       1916          59
-## 4       1920          11
-## 5       1921          59
-## 6       1922          17
+## 1         NA    25.27230
+## 2       1975    32.13793
+## 3       1947    40.44444
+## 4       1981    39.40909
+## 5       1972    30.11111
+## 6       1956    39.81818
 ```
 
 ---&twocolw w1:55% w2:45%
@@ -662,12 +661,12 @@ head(nb_acteurs)
 
 ```
 ##   annee_prod moy_acteurs
-## 1       1915          55
-## 2       1916          59
-## 3       1920          11
-## 4       1921          59
-## 5       1922          17
-## 6       1924          24
+## 1         NA    25.27230
+## 2       1975    32.13793
+## 3       1947    40.44444
+## 4       1981    39.40909
+## 5       1972    30.11111
+## 6       1956    39.81818
 ```
 
 ---.transition
@@ -768,17 +767,36 @@ DELETE FROM films;
 
 # Travail de la semaine
 
-1. Créer la base de données et injecter les données
-2. Faire les requêtes suivantes :
+1. Créer la base de données 
+
+2. Injecter les données
+
+3. Faire les requêtes suivantes :
   - Nombre de liens par étudiant
   - Décompte de liens par paire d'étudiants
-  - Enregistrer le résultat des requêtes
-3. En post-traitement sur R :
+
+4. Enregistrer le résultat des requêtes
+
+---
+
+# Travail de la semaine
+
+5. En post-traitement sur R :
   - Calculer le nombre d'étudiants, le nombre de liens et la connectance du réseau
   - Calculer le nombre de liens moyens par étudiant et la variance
-4. Écrire un script qui réalise les étapes 1-3 d'un bloc
 
-Vous devez remettre les 4 scripts qui permettent d'exécuter l'ensemble de ces étapes. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.
+6. Écrire un script qui réalise les étapes 1-3 d'un bloc
+
+Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l'une après l'autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.
+
+---
+
+# Lectures
+
+## Débat sur le partage des données
+
+- Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
+- Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution. 
 
 ---.transition
 
@@ -786,7 +804,7 @@ Vous devez remettre les 4 scripts qui permettent d'exécuter l'ensemble de ces �
 
 ---&twocol
 
-# Découper les étapes de son travail
+# Découper les étapes de son travail et les automatiser au moyen d'un seul script (un "pipeline")
 
 *** =left
 
@@ -824,7 +842,7 @@ annees <- dbGetQuery(con,"SELECT DISTINCT
 # On appelle le script 1
 source('/chemin/vers/script1/scrip1.R')
 
-# List les objets R dans l'environnement
+# Lister les objets R dans l'environnement
 ls()
 
 # On verra apparaitre l'objet 'annees'

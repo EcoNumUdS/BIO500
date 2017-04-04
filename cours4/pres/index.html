@@ -85,10 +85,7 @@
 
 <p><strong>Important:</strong></p>
 
-<ol>
-<li>Pour cette partie assurez vous que êtes connecté au réseau <strong>Aerius Sécurisé</strong>.</li>
-<li>Pour ceux dont la VM ne fonctionne pas, il possible de faire les exercices de ce cours sur Windows ou MacOSX.</li>
-</ol>
+<p>Pour ceux dont la VM ne fonctionne pas, il possible de faire les exercices de ce cours sur Windows ou MacOSX.</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -332,7 +329,7 @@ head(films)
      <ul>
 <li><code>*</code> permet de ne pas spécifier une colonne en particulier.</li>
 <li>Cette requête retournera toutes les colonnes de la table <code>films</code></li>
-<li>Note: L&#39;instruction <code>LIMIT</code> est utiliser dans les prochaines diapos afin de permettre le rendu des requêtes sur une diapo.</li>
+<li>Note: L&#39;instruction <code>LIMIT</code> est utilisée dans les prochaines diapos afin de permettre le rendu des requêtes sur une diapo.</li>
 </ul>
 
     </div>
@@ -584,7 +581,7 @@ head(resume_films)
     <div class='right' style='float:right;width:48%'>
      <ul>
 <li>Pour faire une synthèse de l&#39;information sur une seule ligne.</li>
-<li>Faire des opérations sur les champs numérique: <code>max</code>, <code>min</code>, <code>sum</code>, <code>avg</code>, <code>count</code>.</li>
+<li>Faire des opérations sur les champs numériques: <code>max</code>, <code>min</code>, <code>sum</code>, <code>avg</code>, <code>count</code>.</li>
 <li>Mais aussi les opérations classiques: <code>*</code>, <code>/</code>, <code>-</code> etc.</li>
 <li>Renommer les colonnes avec <code>AS</code>.</li>
 </ul>
@@ -767,12 +764,12 @@ head(moy_acteurs)
 </code></pre>
 
 <pre><code>##   annee_prod moy_acteurs
-## 1       1902           9
-## 2       1915          55
-## 3       1916          59
-## 4       1920          11
-## 5       1921          59
-## 6       1922          17
+## 1         NA    25.27230
+## 2       1975    32.13793
+## 3       1947    40.44444
+## 4       1981    39.40909
+## 5       1972    30.11111
+## 6       1956    39.81818
 </code></pre>
 
     </div>
@@ -807,12 +804,12 @@ head(nb_acteurs)
 </code></pre>
 
 <pre><code>##   annee_prod moy_acteurs
-## 1       1915          55
-## 2       1916          59
-## 3       1920          11
-## 4       1921          59
-## 5       1922          17
-## 6       1924          24
+## 1         NA    25.27230
+## 2       1975    32.13793
+## 3       1947    40.44444
+## 4       1981    39.40909
+## 5       1972    30.11111
+## 6       1956    39.81818
 </code></pre>
 
     </div>
@@ -967,30 +964,59 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </hgroup>
   <article data-timings="">
     <ol>
-<li>Créer la base de données et injecter les données</li>
-<li>Faire les requêtes suivantes :
+<li><p>Créer la base de données </p></li>
+<li><p>Injecter les données</p></li>
+<li><p>Faire les requêtes suivantes :</p>
 
 <ul>
 <li>Nombre de liens par étudiant</li>
 <li>Décompte de liens par paire d&#39;étudiants</li>
-<li>Enregistrer le résultat des requêtes</li>
 </ul></li>
-<li>En post-traitement sur R :
+<li><p>Enregistrer le résultat des requêtes</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-44" style="background:;">
+  <!--  <a href="#slide-44"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>En post-traitement sur R :</p>
 
 <ul>
 <li>Calculer le nombre d&#39;étudiants, le nombre de liens et la connectance du réseau</li>
 <li>Calculer le nombre de liens moyens par étudiant et la variance</li>
 </ul></li>
-<li>Écrire un script qui réalise les étapes 1-3 d&#39;un bloc</li>
+<li><p>Écrire un script qui réalise les étapes 1-3 d&#39;un bloc</p></li>
 </ol>
 
-<p>Vous devez remettre les 4 scripts qui permettent d&#39;exécuter l&#39;ensemble de ces étapes. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.</p>
+<p>Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l&#39;une après l&#39;autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.</p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-44" style="background:;">
-  <!--  <a href="#slide-44"></a> -->
+<slide class="" id="slide-45" style="background:;">
+  <!--  <a href="#slide-45"></a> -->
+  <hgroup>
+    <h1>Lectures</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Débat sur le partage des données</h2>
+
+<ul>
+<li>Poisot et al. 2014. Moving toward a sustainable ecological science: don&#39;t let data go to waste ! Ideas in Ecology and Evolution 6: 11-19</li>
+<li>Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution. </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-46" style="background:;">
+  <!--  <a href="#slide-46"></a> -->
   <hgroup>
     <h1>Découper les scripts avec R</h1>
   </hgroup>
@@ -999,9 +1025,9 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-45" style="background:;">
+<slide class="" id="slide-47" style="background:;">
   <hgroup>
-    <h1>Découper les étapes de son travail</h1>
+    <h1>Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)</h1>
   </hgroup>
   <article>
     
@@ -1036,7 +1062,7 @@ annees &lt;- dbGetQuery(con,&quot;SELECT DISTINCT
 <pre><code class="r"># On appelle le script 1
 source(&#39;/chemin/vers/script1/scrip1.R&#39;)
 
-# List les objets R dans l&#39;environnement
+# Lister les objets R dans l&#39;environnement
 ls()
 
 # On verra apparaitre l&#39;objet &#39;annees&#39;
@@ -1047,8 +1073,8 @@ ls()
     </div>
   </article>
 </slide>
-<slide class="transition" id="slide-46" style="background:;">
-  <!--  <a href="#slide-46"></a> -->
+<slide class="transition" id="slide-48" style="background:;">
+  <!--  <a href="#slide-48"></a> -->
   <hgroup>
     <h1>Discussion</h1>
   </hgroup>
@@ -1321,20 +1347,32 @@ ls()
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=44 title='Découper les scripts avec R'>
+        data-slide=44 title='Travail de la semaine'>
          44
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=45 title='Découper les étapes de son travail'>
+        data-slide=45 title='Lectures'>
          45
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=46 title='Discussion'>
+        data-slide=46 title='Découper les scripts avec R'>
          46
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=47 title='Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)'>
+         47
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=48 title='Discussion'>
+         48
       </a>
     </li>
   </ul>

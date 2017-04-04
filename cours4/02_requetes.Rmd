@@ -22,7 +22,7 @@ head(films)
 
 - `*` permet de ne pas spécifier une colonne en particulier.
 - Cette requête retournera toutes les colonnes de la table `films`
-- Note: L'instruction `LIMIT` est utiliser dans les prochaines diapos afin de permettre le rendu des requêtes sur une diapo.
+- Note: L'instruction `LIMIT` est utilisée dans les prochaines diapos afin de permettre le rendu des requêtes sur une diapo.
 
 ---&twocol
 
@@ -183,7 +183,7 @@ head(resume_films)
 *** =right
 
 - Pour faire une synthèse de l'information sur une seule ligne.
-- Faire des opérations sur les champs numérique: `max`, `min`, `sum`, `avg`, `count`.
+- Faire des opérations sur les champs numériques: `max`, `min`, `sum`, `avg`, `count`.
 - Mais aussi les opérations classiques: `*`, `/`, `-` etc.
 - Renommer les colonnes avec `AS`.
 
