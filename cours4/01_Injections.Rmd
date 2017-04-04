@@ -165,7 +165,7 @@ dbWriteTable(con,append=TRUE,name="acteurs",value=bd_acteurs, row.names=FALSE)
 Ce premier exercice est important pour la suite de la séance.  
 
 1. Recréer la base de données `bd_films` avec ses deux tables `films` et `acteurs`
-2. Insérer les données [bd_acteurs.csv](./assets/donnees/bd_beacon/bd_acteurs.csv) et [bd_films.csv](./assets/donnees/bd_beacon/bd_acteurs.csv) dans les deux tables à l'aide de la commande R `dbWriteTable()`
+2. Insérer les données [bd_acteurs.csv](./assets/donnees/bd_beacon/bd_acteurs.csv) et [bd_films.csv](./assets/donnees/bd_beacon/bd_films.csv) dans les deux tables à l'aide de la commande R `dbWriteTable()`
 
 ---
 
