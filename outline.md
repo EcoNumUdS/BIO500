@@ -259,55 +259,72 @@ Weissberger2015
 
 ## Cours 6 : figures 1
 
-
 ### Discussion : critique de figures
-    - cas pathologiques mélangés avec figures très informatives
+  cas pathologiques mélangés avec figures très informatives
 
 Présentation: notions de base pour la visualisation
-    - objectif: exploration / communication
-    - règles de base
-    - types de figures
-        scatter plot
-        barplot
-        histograms
-        3D plots
-        contour plot
-    - formats de base: vectoriel versus bitmap
+  objectifs: exploration / statistiques / communication
+  règles de base
+  types de figures
+    scatter plot
+    barplot
+    histograms
+    3D plots
+    contour plot
+  formats de base: vectoriel versus bitmap
 
-Présentation : fonctions de base sur R
-        ouvrir une fenêtre graphique
-        plot
-        superposition de figures
-        barplot
-        boxplot
-        hist
-        image
-        contour
+Faire une figure étape par étape sur R avec 'plot'
+  ouvrir une fenêtre graphique
+  fixer les marges
+  plot
+  modification des axes
+  ajout d'une légende
+  ajout de texte
+  ajout d'un titre
+  ajout d'une ligne (abline)
+  ajout de flèches
+  superposition de figures
 
 Enregistrer une figure
-    Commandes de base
-    Différences entre formats
+  Commandes de base
+  Différences entre formats
 
-Paramètres graphiques
-        par
-        layout
+Autres figures
+  barplot
+  boxplot
+  hist
+  image
+  contour
 
-Présentation : édition supplémentaire
-        legend
-        text
-        title
-        axis
-        abline
-        point
-        polygon
-        arrows
+Représentation de réseaux avec iGraph
+    matrice adjacence
+    plot
+    changer les tailles et couleurs de noeuds
+    changer les tailles et couleurs de liens
+    changer la représentation
+    Calcul de propriétés de réseau avec igraph
+      modularité
+      path length
+      centrality
 
-Exercice : illustrer les données d'une régression linéaire
+Faire des tableaux: kable
+
+Exercice 
+- Discussion en équipe sur les questions
+- Trouver les figures et représentations
+
 
 *** Lectures pour la semaine suivante
 Silberzahn2015
 
-## Cours 7 : figres 2
+
+
+
+
+
+
+
+## Cours 7 : figures 2
 
 
 - Packages R spécialisés
@@ -337,8 +354,6 @@ Fawcett2012
 
 ### Discussion : comment présenter adéquatement un article scientifique
 
-*** Lectures pour la semaine suivante :
-Borregaard2016
 
 - Présentation : pourquoi LaTeX
     - Historique
@@ -362,16 +377,26 @@ Borregaard2016
 
 - Exercice : préparer la mise en page du travail de session
 
-- Intégration dans le makefile
-
-
-## Cours 9 : LaTeX (suite)
-
 - Gestion des références
     - bibtex : le format
     - compiler
     - bst
 
+
+
+
+
+
+- Intégration dans le makefile
+
+
+
+*** Lectures pour la semaine suivante :
+Borregaard2016
+
+
+
+============================================================
 - Notions avancées de mise en page
     - Page titre
     - Table des matières
