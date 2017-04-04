@@ -292,8 +292,6 @@ dbWriteTable(con,append=TRUE,name=&quot;films&quot;,value=bd_films, row.names=FA
   <article data-timings="">
     <p>Il est également possible d&#39;insérer des données à partir du logiciel <code>pgAdmin3</code>.</p>
 
-<p><strong>SCREENSHOT</strong></p>
-
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -601,7 +599,8 @@ head(resume_films)
     <div class='right' style='float:right;width:48%'>
      <ul>
 <li>Pour faire une synthèse de l&#39;information sur une seule ligne.</li>
-<li>Faire des opérations sur les champs: <code>max</code>, <code>min</code>, <code>sum</code>, <code>avg</code>, <code>count</code>.</li>
+<li>Faire des opérations sur les champs numérique: <code>max</code>, <code>min</code>, <code>sum</code>, <code>avg</code>, <code>count</code>.</li>
+<li>Mais aussi les opérations classiques: <code>*</code>, <code>/</code>, <code>-</code> etc.</li>
 <li>Renommer les colonnes avec <code>AS</code>.</li>
 </ul>
 
@@ -909,7 +908,7 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   );
 </code></pre>
 
-<p>Il sera possible d&#39;atteindre cette vue tout simplement avec:</p>
+<p>Il sera possible d&#39;atteindre cette vue plus tard avec:</p>
 
 <pre><code class="sql">SELECT * FROM moyenne_acteurs;
 </code></pre>
@@ -933,7 +932,14 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
     <h1>Mettre à jour des enregistrements</h1>
   </hgroup>
   <article data-timings="">
-    <p>Avec UPDATE</p>
+    <p>On peut mettre à jour des enregistrements d&#39;une table avec des critères spécifiques.</p>
+
+<pre><code class="sql">UPDATE films SET genre = &#39;Dramatique&#39; WHERE genre = &#39;Drame&#39;;
+</code></pre>
+
+<p><strong>Note:</strong> On peut pas faire de modifications d&#39;enregistrements sur des vues, seulement sur les tables directement.</p>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-update.html">Documentation sur la commande UPDATE</a></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -944,8 +950,125 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
     <h1>Supprimer des enregistrements</h1>
   </hgroup>
   <article data-timings="">
-    <p>Avec DELETE</p>
+    <p>On peut supprimer des enregistrements d&#39;une table avec des critères spécifiques.</p>
 
+<pre><code class="sql">DELETE FROM films WHERE genre &lt;&gt; &#39;Comédie musicale&#39;;
+</code></pre>
+
+<p>Ou sans critères, pour supprimer tous les enregistrements.</p>
+
+<pre><code class="sql">DELETE FROM films;
+</code></pre>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-delete.html">Documentation sur la commande DELETE</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-43" style="background:;">
+  <!--  <a href="#slide-43"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-44" style="background:;">
+  <!--  <a href="#slide-44"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Créer la base de données et injecter les données</li>
+<li>Faire les requêtes suivantes :
+
+<ul>
+<li>Nombre de liens par étudiant</li>
+<li>Décompte de liens par paire d&#39;étudiants</li>
+<li>Enregistrer le résultat des requêtes</li>
+</ul></li>
+<li>En post-traitement sur R :
+
+<ul>
+<li>Calculer le nombre d&#39;étudiants, le nombre de liens et la connectance du réseau</li>
+<li>Calculer le nombre de liens moyens par étudiant et la variance</li>
+</ul></li>
+<li>Écrire un script qui réalise les étapes 1-3 d&#39;un bloc</li>
+</ol>
+
+<p>Vous devez remettre les 4 scripts qui permettent d&#39;exécuter l&#39;ensemble de ces étapes. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-45" style="background:;">
+  <!--  <a href="#slide-45"></a> -->
+  <hgroup>
+    <h1>Découper les scripts avec R</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-46" style="background:;">
+  <hgroup>
+    <h1>Découper les étapes de son travail</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <h2>Script 1 - Créer et interroger la BD</h2>
+
+<pre><code class="r"># Création des tables
+dbSendQuery(con, &quot;CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+);&quot;)
+
+# On lit le fichier à insérer
+bd_films &lt;- read.csv2(file=&#39;./assets/donnees/
+                      bd_beacon/bd_films.csv&#39;)
+
+# On écrit dans la table
+dbWriteTable(con,append=TRUE,name=&quot;films&quot;,
+            value=bd_films, row.names=FALSE)
+
+# On fait une Requête
+annees &lt;- dbGetQuery(con,&quot;SELECT DISTINCT
+                  annee_prod FROM films;&quot;)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <h2>Script 2 - Analyse des données</h2>
+
+<pre><code class="r"># On appelle le script 1
+source(&#39;/chemin/vers/script1/scrip1.R&#39;)
+
+# List les objets R dans l&#39;environnement
+ls()
+
+# On verra apparaitre l&#39;objet &#39;annees&#39;
+# que l&#39;on pourra utiliser
+# pour la suite du travail
+</code></pre>
+
+    </div>
+  </article>
+</slide>
+<slide class="transition" id="slide-47" style="background:;">
+  <!--  <a href="#slide-47"></a> -->
+  <hgroup>
+    <h1>Discussion</h1>
+  </hgroup>
+  <article data-timings="">
+    
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -1203,6 +1326,36 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
       <a href="#" target="_self" rel='tooltip' 
         data-slide=42 title='Supprimer des enregistrements'>
          42
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=43 title='Travail de la semaine'>
+         43
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=44 title='Travail de la semaine'>
+         44
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=45 title='Découper les scripts avec R'>
+         45
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=46 title='Découper les étapes de son travail'>
+         46
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=47 title='Discussion'>
+         47
       </a>
     </li>
   </ul>
