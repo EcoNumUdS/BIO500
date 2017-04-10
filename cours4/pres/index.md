@@ -196,7 +196,8 @@ dbWriteTable(con,append=TRUE,name="acteurs",value=bd_acteurs, row.names=FALSE)
 Ce premier exercice est important pour la suite de la séance.  
 
 1. Recréer la base de données `bd_films` avec ses deux tables `films` et `acteurs`
-2. Insérer les données [bd_acteurs.csv](./assets/donnees/bd_beacon/bd_acteurs.csv) et [bd_films.csv](./assets/donnees/bd_beacon/bd_acteurs.csv) dans les deux tables à l'aide de la commande R `dbWriteTable()`
+2. Insérer les données [bd_acteurs.csv](./assets/donnees/bd_beacon/bd_acteurs.csv) et [bd_films.csv](./assets/donnees/bd_beacon/bd_films.csv) dans les deux tables à l'aide de la commande R `dbWriteTable()`
+
 
 ---
 
@@ -207,6 +208,44 @@ Il est également possible d'insérer des données à partir du logiciel `pgAdmi
 ---.transition
 
 # Les requêtes
+
+---&twocol
+
+# Sélectionner des tables et des colonnes
+
+## La connexion est ouverte et toujours accessible depuis l'objet `con`.
+
+*** =left
+
+
+
+```r
+sql_requete <- "
+SELECT id_film, titre, annee_prod
+  FROM films LIMIT 10
+;"
+
+films <- dbGetQuery(con,sql_requete)
+head(films)
+```
+
+```
+##   id_film                   titre annee_prod
+## 1       4        'Breaker' Morant       1980
+## 2       5             'burbs, The       1989
+## 3       6   'Crocodile' Dundee II       1988
+## 4       7 *batteries not included       1987
+## 5       3  ...And Justice for All       1979
+## 6       8                      10       1979
+```
+
+*** =right
+
+- `SELECT` spécifie les colonnes.
+- `FROM` spécifie la table.
+- On peut également ajouter une `LIMIT`.
+- [Documentation SQL Select](http://docs.postgresqlfr.org/9.5/sql-select.html).
+
 
 ---&twocol
 
@@ -269,43 +308,6 @@ head(films)
 *** =right
 
 - L'instruction `DISTINCT` permettra de retourner la combinaison unique de noms et prénoms présent dans la table acteurs.
-
----&twocol
-
-# Sélectionner des tables et des colonnes
-
-## La connexion est ouverte et toujours accessible depuis l'objet `con`.
-
-*** =left
-
-
-
-```r
-sql_requete <- "
-SELECT id_film, titre, annee_prod
-  FROM films LIMIT 10
-;"
-
-films <- dbGetQuery(con,sql_requete)
-head(films)
-```
-
-```
-##   id_film                   titre annee_prod
-## 1       4        'Breaker' Morant       1980
-## 2       5             'burbs, The       1989
-## 3       6   'Crocodile' Dundee II       1988
-## 4       7 *batteries not included       1987
-## 5       3  ...And Justice for All       1979
-## 6       8                      10       1979
-```
-
-*** =right
-
-- `SELECT` spécifie les colonnes.
-- `FROM` spécifie la table.
-- On peut également ajouter une `LIMIT`.
-- [Documentation SQL Select](http://docs.postgresqlfr.org/9.5/sql-select.html).
 
 
 ---&twocol
@@ -625,12 +627,12 @@ head(moy_acteurs)
 
 ```
 ##   annee_prod moy_acteurs
-## 1         NA    25.27230
-## 2       1975    32.13793
-## 3       1947    40.44444
-## 4       1981    39.40909
-## 5       1972    30.11111
-## 6       1956    39.81818
+## 1       1902           9
+## 2       1915          55
+## 3       1916          59
+## 4       1920          11
+## 5       1921          59
+## 6       1922          17
 ```
 
 ---&twocolw w1:55% w2:45%
@@ -661,12 +663,12 @@ head(nb_acteurs)
 
 ```
 ##   annee_prod moy_acteurs
-## 1         NA    25.27230
-## 2       1975    32.13793
-## 3       1947    40.44444
-## 4       1981    39.40909
-## 5       1972    30.11111
-## 6       1956    39.81818
+## 1       1915          55
+## 2       1916          59
+## 3       1920          11
+## 4       1921          59
+## 5       1922          17
+## 6       1924          24
 ```
 
 ---.transition
@@ -847,7 +849,7 @@ ls()
 
 # On verra apparaitre l'objet 'annees'
 # que l'on pourra utiliser
-# pour la suite du travail
+# pour la suite du maketravail
 ```
 
 ---.transition

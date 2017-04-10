@@ -275,7 +275,7 @@ dbWriteTable(con,append=TRUE,name=&quot;films&quot;,value=bd_films, row.names=FA
 
 <ol>
 <li>Recréer la base de données <code>bd_films</code> avec ses deux tables <code>films</code> et <code>acteurs</code></li>
-<li>Insérer les données <a href="./assets/donnees/bd_beacon/bd_acteurs.csv">bd_acteurs.csv</a> et <a href="./assets/donnees/bd_beacon/bd_acteurs.csv">bd_films.csv</a> dans les deux tables à l&#39;aide de la commande R <code>dbWriteTable()</code></li>
+<li>Insérer les données <a href="./assets/donnees/bd_beacon/bd_acteurs.csv">bd_acteurs.csv</a> et <a href="./assets/donnees/bd_beacon/bd_films.csv">bd_films.csv</a> dans les deux tables à l&#39;aide de la commande R <code>dbWriteTable()</code></li>
 </ol>
 
   </article>
@@ -303,71 +303,6 @@ dbWriteTable(con,append=TRUE,name=&quot;films&quot;,value=bd_films, row.names=FA
   <!-- Presenter Notes -->
 </slide>
 <slide class="" id="slide-15" style="background:;">
-  <hgroup>
-    <h1>Sélectionner des tables et des colonnes</h1>
-  </hgroup>
-  <article>
-    
-    <div class='left' style='float:left;width:48%'>
-     <pre><code class="r">sql_requete &lt;- &quot;SELECT * FROM films LIMIT 10;&quot;
-
-films &lt;- dbGetQuery(con,sql_requete)
-head(films)
-</code></pre>
-
-<pre><code>##   id_film                   titre annee_prod
-## 1       4        &#39;Breaker&#39; Morant       1980
-## 2       5             &#39;burbs, The       1989
-## 3       6   &#39;Crocodile&#39; Dundee II       1988
-## 4       7 *batteries not included       1987
-## 5       3  ...And Justice for All       1979
-## 6       8                      10       1979
-</code></pre>
-
-    </div>
-    <div class='right' style='float:right;width:48%'>
-     <ul>
-<li><code>*</code> permet de ne pas spécifier une colonne en particulier.</li>
-<li>Cette requête retournera toutes les colonnes de la table <code>films</code></li>
-<li>Note: L&#39;instruction <code>LIMIT</code> est utilisée dans les prochaines diapos afin de permettre le rendu des requêtes sur une diapo.</li>
-</ul>
-
-    </div>
-  </article>
-</slide>
-<slide class="" id="slide-16" style="background:;">
-  <hgroup>
-    <h1>Sélectionner des enregistrements unique</h1>
-  </hgroup>
-  <article>
-    
-    <div class='left' style='float:left;width:48%'>
-     <pre><code class="r">sql_requete &lt;- &quot;SELECT DISTINCT nom, prenom
-FROM acteurs LIMIT 10;&quot;
-
-films &lt;- dbGetQuery(con,sql_requete)
-head(films)
-</code></pre>
-
-<pre><code>##            nom       prenom
-## 1        Smith Douglas (VI)
-## 2     Hilliard       Ernest
-## 3        Young  Vanessa (I)
-## 4    Carpenter     Jack (I)
-## 5        Maron          Rob
-## 6 Kallianiotes       Helena
-</code></pre>
-
-    </div>
-    <div class='right' style='float:right;width:48%'>
-     <ul>
-<li>L&#39;instruction <code>DISTINCT</code> permettra de retourner la combinaison unique de noms et prénoms présent dans la table acteurs.</li>
-</ul>
-
-    </div>
-  </article>
-</slide>
-<slide class="" id="slide-17" style="background:;">
   <hgroup>
     <h1>Sélectionner des tables et des colonnes</h1>
   </hgroup>
@@ -400,6 +335,71 @@ head(films)
 <li><code>FROM</code> spécifie la table.</li>
 <li>On peut également ajouter une <code>LIMIT</code>.</li>
 <li><a href="http://docs.postgresqlfr.org/9.5/sql-select.html">Documentation SQL Select</a>.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h1>Sélectionner des tables et des colonnes</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">sql_requete &lt;- &quot;SELECT * FROM films LIMIT 10;&quot;
+
+films &lt;- dbGetQuery(con,sql_requete)
+head(films)
+</code></pre>
+
+<pre><code>##   id_film                   titre annee_prod
+## 1       4        &#39;Breaker&#39; Morant       1980
+## 2       5             &#39;burbs, The       1989
+## 3       6   &#39;Crocodile&#39; Dundee II       1988
+## 4       7 *batteries not included       1987
+## 5       3  ...And Justice for All       1979
+## 6       8                      10       1979
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <ul>
+<li><code>*</code> permet de ne pas spécifier une colonne en particulier.</li>
+<li>Cette requête retournera toutes les colonnes de la table <code>films</code></li>
+<li>Note: L&#39;instruction <code>LIMIT</code> est utilisée dans les prochaines diapos afin de permettre le rendu des requêtes sur une diapo.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h1>Sélectionner des enregistrements unique</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">sql_requete &lt;- &quot;SELECT DISTINCT nom, prenom
+FROM acteurs LIMIT 10;&quot;
+
+films &lt;- dbGetQuery(con,sql_requete)
+head(films)
+</code></pre>
+
+<pre><code>##            nom       prenom
+## 1        Smith Douglas (VI)
+## 2     Hilliard       Ernest
+## 3        Young  Vanessa (I)
+## 4    Carpenter     Jack (I)
+## 5        Maron          Rob
+## 6 Kallianiotes       Helena
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <ul>
+<li>L&#39;instruction <code>DISTINCT</code> permettra de retourner la combinaison unique de noms et prénoms présent dans la table acteurs.</li>
 </ul>
 
     </div>
@@ -764,12 +764,12 @@ head(moy_acteurs)
 </code></pre>
 
 <pre><code>##   annee_prod moy_acteurs
-## 1         NA    25.27230
-## 2       1975    32.13793
-## 3       1947    40.44444
-## 4       1981    39.40909
-## 5       1972    30.11111
-## 6       1956    39.81818
+## 1       1902           9
+## 2       1915          55
+## 3       1916          59
+## 4       1920          11
+## 5       1921          59
+## 6       1922          17
 </code></pre>
 
     </div>
@@ -804,12 +804,12 @@ head(nb_acteurs)
 </code></pre>
 
 <pre><code>##   annee_prod moy_acteurs
-## 1         NA    25.27230
-## 2       1975    32.13793
-## 3       1947    40.44444
-## 4       1981    39.40909
-## 5       1972    30.11111
-## 6       1956    39.81818
+## 1       1915          55
+## 2       1916          59
+## 3       1920          11
+## 4       1921          59
+## 5       1922          17
+## 6       1924          24
 </code></pre>
 
     </div>
@@ -1067,7 +1067,7 @@ ls()
 
 # On verra apparaitre l&#39;objet &#39;annees&#39;
 # que l&#39;on pourra utiliser
-# pour la suite du travail
+# pour la suite du maketravail
 </code></pre>
 
     </div>
@@ -1179,13 +1179,13 @@ ls()
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=16 title='Sélectionner des enregistrements unique'>
+        data-slide=16 title='Sélectionner des tables et des colonnes'>
          16
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=17 title='Sélectionner des tables et des colonnes'>
+        data-slide=17 title='Sélectionner des enregistrements unique'>
          17
       </a>
     </li>

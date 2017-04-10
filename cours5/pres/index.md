@@ -1,5 +1,5 @@
 ---
-title       : "Séance 4: L'organisation des données - 2"
+title       : "Séance 5: La visualisation des données"
 subtitle    : "BIO 500 - Méthodes en écologie computationnelle"
 author      : "Dominique Gravel & Steve Vissault"
 job         : "Laboratoire d'écologie intégrative"
@@ -18,838 +18,852 @@ assets      :
 
 ---
 
-# Séance 4
+# Séance 5
 
-- Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/cours4/) et en [PDF](./assets/pdf/S4-BIO500.pdf).
+- Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/cours5/) et en [PDF](./assets/pdf/S5-BIO500.pdf).
 - L'ensemble du matériel de cours est disponible sur la page du portail [moodle](https://www.usherbrooke.ca/moodle2-cours/course/view.php?id=12189).
-
-<!-- TODO 1: Mettre cours 2 en PDF -->
-<!-- TODO 2: Changer le lien moodle -->
-
----
-
-# Les grandes étapes
-
-1. Spécifier la connexion avec le serveur
-2. Créer la base de données
-3. Créer les tables et spécifier les clés
-4. Ajouter de l'information dans les tables
-5. Faire des requêtes pour extraire l'information
-
-**Important:**
-
-Pour ceux dont la VM ne fonctionne pas, il possible de faire les exercices de ce cours sur Windows ou MacOSX.
-
+- La plupart des diapositives sont extraites du [cours](http://kevincazelles.fr/talks/assets/QCBSGraphsR/Rgraphics.html#4) de [Kevin Cazelles](http://kevincazelles.fr/) et [Nicolas Casajus](http://www.cen.ulaval.ca/membre.aspx?id=3945098&membre=ncasajus) lors d'un atelier de communication visuelle du CSBQ.
+- Certaines diapositives sont également extraites de la présentation de [David Taylor](http://dtdata.io/prm/intro_dataviz_csbq.pdf)
 
 --- .transition
 
-# Retour rapide sur la séance de la semaine dernière
+# Qu'est-ce qui fait une bonne figure ?
 
 ---
 
-# Connexion au serveur
-
-
-
-
-
-```r
-library(RPostgreSQL)
-
-con <- dbConnect(PostgreSQL(),
-        host="localhost",
-        port=5432,
-        user= "postgres")
-
-# On créé la base de données et on ferme la connexion
-dbSendQuery(con,"DROP DATABASE IF EXISTS bd_films;")
-dbSendQuery(con,"CREATE DATABASE bd_films;")
-dbDisconnect(con)
-
-# On se connecte à la nouvelle base de données
-con <- dbConnect(PostgreSQL(),
-        host="localhost",
-        port=5432,
-        user= "postgres",
-        dbname="bd_films")
-```
-
-**Question:** Sur ce script, où sont les instructions SQL? Òu sont les commandes R?
-
----
-
-# Création de la table `films`
-
-
-```r
-tbl_films <- "CREATE TABLE films (
-    id_film     integer,
-    titre       varchar(300),
-    annee_prod   integer,
-    PRIMARY KEY (id_film)
-);"
-
-dbSendQuery(con,tbl_films)
-```
-
-```
-## <PostgreSQLResult>
-```
-
----
-
-# Création de la table `acteurs`
-
-
-
-```r
-tbl_acteurs <- "CREATE TABLE acteurs (
-    id_acteur   integer,
-    nom         varchar(100),
-    prenom      varchar(100),
-    id_film     integer,
-    PRIMARY KEY (id_acteur),
-    FOREIGN KEY (id_film) REFERENCES films (id_film) ON DELETE CASCADE
-);"
-
-dbSendQuery(con,tbl_acteurs)
-```
-
-```
-## <PostgreSQLResult>
-```
-
----
-
-# pgAdmin3
-
-`pgAdmin3` est un client avec une interface graphique permettant de visualiser si les opérations de création de tables ont bien été réalisées.
+# Trop d'information
 
 <div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/pgadmin_table.png" width="70%"></img>
+  <img src="assets/img/pacala.png" width="70%"></img>
+</div>
+
+---
+
+# Non respect des normes graphiques
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/desjardins.png" width="70%"></img>
+</div>
+
+---
+
+# Abus de symboles et de couleurs
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/Boulangeat.png" width="100%"></img>
+</div>
+
+
+---.transition
+
+# L'art graphique
+
+---
+
+# L'importance des graphiques
+
+<!-- La représentation visuelle de nos données est un **outil de persuasion** permettant d'illustrer nos résultats auprès du public et de nos pairs. Cet outil permet également de mieux comprendre les relations à l'intérieur de nos données par la visualisation. -->
+
+## La représentation visuelle des données permet de:
+
+- Synthétiser l'information.
+- Communiquer plus efficacement qu'un tableau.
+- Explorer nos données par la visualisation.
+- Présenter nos résultats et convaincre.
+
+---
+
+# Explorer nos données par la visualisation
+
+## Voici un exemple illustrant l'importance de visualiser ces données:
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/table_visu.png" width="100%"></img>
+</div>
+
+---
+
+# Explorer nos données par la visualisation
+
+## Voici un exemple illustrant l'importance de visualiser ces données:
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/plot_visu.png" height="450px"></img>
+</div>
+
+--- &twocol
+
+# Communiquer par les graphiques
+
+*** =left
+
+- Les graphiques sont généralement **plus efficace à communiquer** un message/un résultat qu'un tableau.
+
+- **Problème:** La représentation graphique peut parfois nous conduire à une **fausse interprétation**. L'idée est transmettre une idée sans biaisé le lecteur.
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/fox.jpg" width="100%"></img>
+</div>
+
+<!-- - Problème: ratio 8/3 -->
+
+--- &twocol
+
+# Communiquer par les graphiques
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/deformation.png" width="100%"></img>
+</div>
+
+
+<!-- - Problème: ratio 8/3 -->
+
+
+---
+
+# Communiquer par les graphiques
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/Weisgerber_1.png" width="70%"></img>
+</div>
+
+---
+
+# Communiquer par les graphiques
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/Weisgerber2.png" width="70%"></img>
+</div>
+
+
+---.transition
+
+# Règles et composantes graphiques
+
+--- &twocol
+
+# Les composantes graphiques
+
+*** =left
+
+- Les axes et échelles.
+- Le titre de la figure.
+- La légende
+- Le [type de représentation des données](http://www.datavizcatalogue.com/).
+
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/viz.png" width="100%"></img>
+</div>
+
+--- &twocol
+
+# Les règles graphiques
+
+*** =left
+
+- Une figure doit renvoyer un seul message/résultat.
+- Chaque élément d'une figure doit **aider à comprendre** ce message.
+- **Choisir le bon type de représentation** permet de mettre en valeur plus facilement ce qui doit être montré.
+- **Attention aux normes graphiques**: Choix des couleurs, taille des caractères, épaisseur de la ligne, disposition des marges, cadrage etc.
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/viz.png" width="100%"></img>
+</div>
+
+---
+
+# Quelques conseils
+
+- Ne pas **JAMAIS** utiliser de diagramme en pointe de tarte
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/pies_vs_bars.png" width="80%"></img>
+</div>
+
+--- &twocol
+
+# Quelques conseils
+
+*** =left
+
+- Éviter les figures 3D.
+- Limiter le nombre de dimensions (3 ou 4 dimensions max).
+- La multi-dimensionnalité peut être gérer en:
+  - Modifiant la forme et la la taille des points
+  - Ajoutant des couleurs
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/pacala.png" height="350px"></img>
+</div>
+
+
+--- &twocol
+
+# Quelques conseils
+
+- Limiter le ratio encre/données afin de faciliter la lecture.
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/data2ink.jpg" width="100%"></img>
 </div>
 
 
 --- .transition
 
-# Ajouter de l'information dans les tables
+# Types de figures
 
 ---
 
-# SQL - `INSERT`
+# Diagramme de dispersion (Scatter plot)
 
-On veut maintenant insérer des données dans les tables `acteurs` et `films`.
-
-## L'instruction `INSERT` permet d'insérer une ligne à la fois:
-
-```sql
-INSERT INTO films(id_film,titre,annee_prod) VALUES (1,'la vie est belle',1997);
-INSERT INTO acteurs(id_acteur,prenom,nom,id_film) VALUES(1,'Nicoletta','Braschi',1);
-INSERT INTO acteurs(id_acteur,prenom,nom,id_film) VALUES(2,'Roberto','Benigni',1);
-```
+<img src="assets/fig/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" height="550px" style="display: block; margin: auto;" />
 
 ---
 
-# SQL - `COPY ... FROM`
+# Diagrammes à bâtons (Bar plot)
 
-L'instruction SQL `COPY ... FROM` permet d'insérer plusieurs lignes à la fois:
-
-```sql
-COPY films FROM '/Users/SteveVissault/Documents/Git/BIO500/cours4/pres/assets/donnees/bd_beacon/bd_films.csv'
-WITH FORMAT CSV HEADER DELIMITER ';';
-```
-
-Documentation: [http://docs.postgresql.fr/9.5/sql-copy.html](http://docs.postgresql.fr/9.5/sql-copy.html)
+<img src="assets/fig/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" height="550px" style="display: block; margin: auto;" />
 
 ---
 
-# RPostgreSQL - `dbWriteTable`
+# Histogrammes
 
-La librairie RPostgreSQL peut nous aider plus facilement à accomplir cette tâche:
+<img src="assets/fig/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" height="550px" style="display: block; margin: auto;" />
 
+--- &twocol
 
-```r
-# Lecture des fichiers CSV
-bd_films <- read.csv2(file='./assets/donnees/bd_beacon/bd_films.csv')
-bd_acteurs <- read.csv2(file='./assets/donnees/bd_beacon/bd_acteurs.csv')
+# Représentation 3-D
 
-# Injection des enregistrements dans la BD
-dbWriteTable(con,append=TRUE,name="films",value=bd_films, row.names=FALSE)
-```
-
-```
-## [1] TRUE
-```
-
-```r
-dbWriteTable(con,append=TRUE,name="acteurs",value=bd_acteurs, row.names=FALSE)
-```
-
-```
-## [1] TRUE
-```
+<img src="assets/fig/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" height="550px" style="display: block; margin: auto;" />
 
 ---
 
-# Exercice 1 (10-15 minutes)
+# Lignes de contour
 
-Ce premier exercice est important pour la suite de la séance.  
+<img src="assets/fig/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" height="550px" style="display: block; margin: auto;" />
 
-1. Recréer la base de données `bd_films` avec ses deux tables `films` et `acteurs`
-2. Insérer les données [bd_acteurs.csv](./assets/donnees/bd_beacon/bd_acteurs.csv) et [bd_films.csv](./assets/donnees/bd_beacon/bd_acteurs.csv) dans les deux tables à l'aide de la commande R `dbWriteTable()`
+--- .transition
+
+# Faire une figure étape par étape avec R
 
 ---
 
-# pgAdmin3
+# Prépares les données adéquatement
 
-Il est également possible d'insérer des données à partir du logiciel `pgAdmin3`.
+- Habituellement un `data.frame` ou `une matrice`
+- Une observation par ligne (format long)
 
----.transition
+--- &twocol
 
-# Les requêtes
-
----&twocol
-
-# Sélectionner des tables et des colonnes
-
+# Ouvrir une fenêtre graphique
 
 *** =left
 
-
-
 ```r
-sql_requete <- "SELECT * FROM films LIMIT 10;"
-
-films <- dbGetQuery(con,sql_requete)
-head(films)
-```
-
-```
-##   id_film                   titre annee_prod
-## 1       4        'Breaker' Morant       1980
-## 2       5             'burbs, The       1989
-## 3       6   'Crocodile' Dundee II       1988
-## 4       7 *batteries not included       1987
-## 5       3  ...And Justice for All       1979
-## 6       8                      10       1979
+dev.new(width = 10, height = 7)
 ```
 
 *** =right
 
-- `*` permet de ne pas spécifier une colonne en particulier.
-- Cette requête retournera toutes les colonnes de la table `films`
-- Note: L'instruction `LIMIT` est utilisée dans les prochaines diapos afin de permettre le rendu des requêtes sur une diapo.
 
----&twocol
+--- &twocol
 
-# Sélectionner des enregistrements unique
-
-*** =left
-
+# Fixer certains paramètres
 
 
 ```r
-sql_requete <- "SELECT DISTINCT nom, prenom
-FROM acteurs LIMIT 10;"
+# Fixer la largeur et la hauteur des marges
+par(mar = c(5,6,2,1))
 
-films <- dbGetQuery(con,sql_requete)
-head(films)
-```
-
-```
-##            nom       prenom
-## 1        Smith Douglas (VI)
-## 2     Hilliard       Ernest
-## 3        Young  Vanessa (I)
-## 4    Carpenter     Jack (I)
-## 5        Maron          Rob
-## 6 Kallianiotes       Helena
+# Fixer le nombre de figures en colonnes et rangées
+par(mfrow = c(1,1))
 ```
 
 *** =right
 
-- L'instruction `DISTINCT` permettra de retourner la combinaison unique de noms et prénoms présent dans la table acteurs.
 
----&twocol
+--- &twocol
 
-# Sélectionner des tables et des colonnes
-
-## La connexion est ouverte et toujours accessible depuis l'objet `con`.
+# Démarrer une figure avec `plot()`
 
 *** =left
 
+```r
+arbres <- read.csv2("donnees/arbres.csv")
+densite <- table(arbres[,c(3,5)])
+elevation <- as.numeric(row.names(densite))
+plot(elevation, densite[,1], axes = FALSE,
+      xlab = "Élévation", ylab = "Densité")
+```
 
+*** =right
+<img src="assets/fig/unnamed-chunk-11-1.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" width="100%" style="display: block; margin: auto;" />
+
+--- &twocol
+
+# Échelles logarithmiques
+
+*** =left
 
 ```r
-sql_requete <- "
-SELECT id_film, titre, annee_prod
-  FROM films LIMIT 10
-;"
-
-films <- dbGetQuery(con,sql_requete)
-head(films)
+plot(elevation, densite[,1], axes = FALSE,
+      xlab = "Élévation", ylab = "Densité",
+      log = "xy")
 ```
 
+*** =right
+<img src="assets/fig/unnamed-chunk-13-1.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" width="100%" style="display: block; margin: auto;" />
+
+--- &twocol
+
+# Ajuster les tailles de caractères
+
+## Arguments `cex`, `cex.lab` et `cex.axis`
+
+*** =left
+
+```r
+plot(elevation, densite[,1], axes = FALSE,
+      xlab = "Élévation", ylab = "Densité",
+      cex.lab = 1.5, cex.axis = 1.25, cex = 1.5)
 ```
-##   id_film                   titre annee_prod
-## 1       4        'Breaker' Morant       1980
-## 2       5             'burbs, The       1989
-## 3       6   'Crocodile' Dundee II       1988
-## 4       7 *batteries not included       1987
-## 5       3  ...And Justice for All       1979
-## 6       8                      10       1979
+
+*** =right
+<img src="assets/fig/unnamed-chunk-15-1.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" width="100%" style="display: block; margin: auto;" />
+
+--- &twocol
+
+# Modifier les axes
+
+*** =left
+
+```r
+axis(1, seq(0,1000,100))
+axis(2)
+```
+
+*** =right
+<img src="assets/fig/unnamed-chunk-17-1.png" title="plot of chunk unnamed-chunk-17" alt="plot of chunk unnamed-chunk-17" width="100%" style="display: block; margin: auto;" />
+
+--- &twocolw w1:55% w2:45%
+
+# Ajouter un titre
+
+*** =left
+
+```r
+title(main = "Densité au long du gradient d'élévation")
+```
+
+*** =right
+<img src="assets/fig/unnamed-chunk-19-1.png" title="plot of chunk unnamed-chunk-19" alt="plot of chunk unnamed-chunk-19" width="100%" style="display: block; margin: auto;" />
+
+--- &twocol
+
+# Superposer des points d'une autre série de données
+
+*** =left
+
+```r
+points(elevation, densite[,3], pch = 19, cex = 1.5)
+```
+
+*** =right
+<img src="assets/fig/unnamed-chunk-21-1.png" title="plot of chunk unnamed-chunk-21" alt="plot of chunk unnamed-chunk-21" width="100%" style="display: block; margin: auto;" />
+
+--- &twocol
+
+# Superposer des lignes
+
+*** =left
+
+```r
+lines(elevation, densite[,1],lty = 1, lwd = 1.5)
+lines(elevation, densite[,3], lty  = 3, lwd = 1.5)
+```
+
+*** =right
+<img src="assets/fig/unnamed-chunk-23-1.png" title="plot of chunk unnamed-chunk-23" alt="plot of chunk unnamed-chunk-23" width="100%" style="display: block; margin: auto;" />
+
+--- &twocolw w1:40% w2:60%
+
+# Ajouter une ligne de tendance
+
+*** =left
+
+```r
+model = lm(densite[,3]~elevation)
+summary(model)
+abline(model, col = "darkred")
 ```
 
 *** =right
 
-- `SELECT` spécifie les colonnes.
-- `FROM` spécifie la table.
-- On peut également ajouter une `LIMIT`.
-- [Documentation SQL Select](http://docs.postgresqlfr.org/9.5/sql-select.html).
+```
+## 
+## Call:
+## lm(formula = densite[, 3] ~ elevation)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -59.796 -26.743  -3.565  24.050  92.175 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) 148.10588   11.23433  13.183   <2e-16 ***
+## elevation    -0.16650    0.01976  -8.428    5e-11 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 40.32 on 48 degrees of freedom
+## Multiple R-squared:  0.5968,	Adjusted R-squared:  0.5884 
+## F-statistic: 71.04 on 1 and 48 DF,  p-value: 4.999e-11
+```
 
+--- &twocol
 
----&twocol
-
-# Ordonner la table
+# Ajouter une ligne de tendance
 
 *** =left
 
-
 ```r
-sql_requete <- "
-SELECT titre, annee_prod, id_film
-  FROM films ORDER BY annee_prod DESC
-;"
-derniers_films <- dbGetQuery(con,sql_requete)
-head(derniers_films)
-```
-
-```
-##              titre annee_prod id_film
-## 1  Wilson, Michael         NA    5496
-## 2     Khan, George         NA    2732
-## 3   Walker, Amanda         NA    5350
-## 4 Franklin, Cherie         NA    1823
-## 5     Thomas, Meda         NA    5030
-## 6    Cicco, Johnny         NA     984
+model = lm(densite[,3]~elevation)
+abline(model, col = "darkred")
 ```
 
 *** =right
+<img src="assets/fig/unnamed-chunk-27-1.png" title="plot of chunk unnamed-chunk-27" alt="plot of chunk unnamed-chunk-27" width="100%" style="display: block; margin: auto;" />
 
-- `ORDER BY` permet de trier par ordre croissant (`ASC`) ou décroissant (`DESC`).
 
----&twocol
+--- &twocol
 
-# Critères avec `NULL`
+# Ajouter une légende
 
 *** =left
 
-
 ```r
-sql_requete <- "
-SELECT id_film, titre, annee_prod
-  FROM films WHERE annee_prod IS NOT NULL
-  ORDER BY annee_prod DESC
-;"
-annees_films <- dbGetQuery(con,sql_requete)
-head(annees_films)
-```
-
-```
-##   id_film                titre annee_prod
-## 1    2354             Hot Fuzz       2007
-## 2    3663       Number 23, The       2007
-## 3    5473            Wild Hogs       2007
-## 4     727 Bridge to Terabithia       2007
-## 5    3487     Music and Lyrics       2007
-## 6    4159     Reno 911!: Miami       2007
+legend("top", bty = "n", pch = c(19,1), lty = 1,
+    legend = c("Érable à sucre", "Sapin baumier"),
+    cex = 1.5)
 ```
 
 *** =right
+<img src="assets/fig/unnamed-chunk-29-1.png" title="plot of chunk unnamed-chunk-29" alt="plot of chunk unnamed-chunk-29" width="100%" style="display: block; margin: auto;" />
 
-- `WHERE`, spécifie les critères de la requête.
-- `annee_prod IS NULL` permet d'obtenir seulement les films n'ayant pas d'année de production.
+--- &twocol
 
----&twocolw w1:55% w2:45%
-
-# Combiner les critères
+# Ajouter du texte
 
 *** =left
 
-
 ```r
-sql_requete <- "
-SELECT id_film, titre, annee_prod
-  FROM films WHERE
-  (annee_prod >= 1930 AND annee_prod <= 1940)
-  OR (annee_prod >= 1950 AND annee_prod <= 1960)
-  ORDER BY annee_prod
-;"
-derniers_films <- dbGetQuery(con,sql_requete)
-head(derniers_films)
-```
-
-```
-##   id_film                          titre annee_prod
-## 1     157 All Quiet on the Western Front       1930
-## 2     239                Animal Crackers       1930
-## 3     603               Blaue Engel, Der       1930
-## 4    1820                   Frankenstein       1931
-## 5    3106                              M       1931
-## 6    3398                Monkey Business       1931
+r2 <- round(summary(model)$r.squared, 2)
+text(x = 850, y = 25, paste("R2=",r2),
+    cex = 21.5)
 ```
 
 *** =right
+<img src="assets/fig/unnamed-chunk-31-1.png" title="plot of chunk unnamed-chunk-31" alt="plot of chunk unnamed-chunk-31" width="100%" style="display: block; margin: auto;" />
 
-- Multi-critères avec `AND` et `OR`
-- Les parenthèses définissent les priorités d'opérations.
-- Opérateurs de comparaison: `>=`,`<=`, `=` (Valeurs numériques)
-- [Documentation sur les opérateurs de comparaisons](https://www.postgresql.org/docs/9.1/static/functions-comparison.html)
+---
 
----&twocolw w1:55% w2:45%
+# Pour plus d'information
 
-# Critères sur le texte avec `LIKE`
+- `?plot`
+- `?par`
+- `?axis`
+- `?mtext`
+
+
+--- .transition
+
+# Créer d'autres types de figure
+
+--- &twocol
+
+# Diagramme de dispersion (Scatter plot)
 
 *** =left
 
 
 ```r
-sql_requete <- "
-SELECT id_film, titre, annee_prod
-  FROM films WHERE titre LIKE '%Voyage%'
-;"
-derniers_films <- dbGetQuery(con,sql_requete)
-head(derniers_films)
-```
-
-```
-##   id_film                         titre annee_prod
-## 1    1662              Fantastic Voyage       1966
-## 2    3654                  Now, Voyager       1942
-## 3    4770 Star Trek IV: The Voyage Home       1986
-## 4    5330       Voyage dans la lune, Le       1902
+arbres  <- read.csv2("donnees/arbres.csv")
+densite <- table(arbres[,c(3,5)])
+elevation <- as.numeric(row.names(densite))
+plot(elevation, densite[,1], pch = 19,
+  xlab = "Elevation", ylab = "Densité")
+points(elevation, densite[,3])
 ```
 
 *** =right
 
-- Rechercher dans le texte: `LIKE`
-- `%`: n'importe quels caractères
-- `_`: un seul caractère (exemple: `_1_` peut renvoyer `113` ou encore `A1C`)
-- Le critère contraire est aussi possible avec `NOT` (exemple: `WHERE titre NOT LIKE '%voyage%'`)
+<img src="assets/fig/unnamed-chunk-33-1.png" title="plot of chunk unnamed-chunk-33" alt="plot of chunk unnamed-chunk-33" height="500px" style="display: block; margin: auto;" />
 
----
+--- &twocol
 
-# Exercice 4 (10 minutes)
+# Diagrammes à bâtons (Bar plot)
 
-Dans ta table `acteurs`, essayer de trouver votre acteur préféré avec `LIKE` ou avec `= 'votre_acteur_pref'`
+*** =left
 
+```r
+arbres  <- read.csv2("donnees/arbres.csv")
+n_tot <- table(arbres$esp)
+barplot(n_tot)
+```
 
----&twocol
+*** =right
+<img src="assets/fig/unnamed-chunk-35-1.png" title="plot of chunk unnamed-chunk-35" alt="plot of chunk unnamed-chunk-35" height="500px" style="display: block; margin: auto;" />
 
-# Agréger l'information (1 ligne)
+--- &twocol
+
+# Histogrammes
 
 *** =left
 
 
 ```r
-sql_requete <- "
-SELECT avg(annee_prod) AS moyenne,
-  min(annee_prod), max(annee_prod)
-  FROM films;"
-
-resume_films <- dbGetQuery(con,sql_requete)
-head(resume_films)
-```
-
-```
-##    moyenne  min  max
-## 1 1989.853 1902 2007
+hist(densite[,3])
 ```
 
 *** =right
+<img src="assets/fig/unnamed-chunk-37-1.png" title="plot of chunk unnamed-chunk-37" alt="plot of chunk unnamed-chunk-37" height="500px" style="display: block; margin: auto;" />
 
-- Pour faire une synthèse de l'information sur une seule ligne.
-- Faire des opérations sur les champs numériques: `max`, `min`, `sum`, `avg`, `count`.
-- Mais aussi les opérations classiques: `*`, `/`, `-` etc.
-- Renommer les colonnes avec `AS`.
+--- &twocol
 
----&twocol
-
-# Agréger l'information (plusieurs lignes par groupe)
+# Représentation 3-D
 
 *** =left
 
 
 ```r
-sql_requete <- "
-SELECT count(titre) AS nb_films, annee_prod
-  FROM films
-  GROUP BY annee_prod;"
+x <- 10*(1:nrow(volcano))
+y <- 10*(1:ncol(volcano))
 
-resume_films <- dbGetQuery(con,sql_requete)
-head(resume_films)
-```
+image(x, y, volcano,
+  col = terrain.colors(100), axes = FALSE)
 
-```
-##   nb_films annee_prod
-## 1     1278         NA
-## 2       29       1975
-## 3        9       1947
-## 4       44       1981
-## 5       27       1972
-## 6       11       1956
+axis(1, at = seq(100, 800, by = 100))
+axis(2, at = seq(100, 600, by = 100))
+box()
+
+title(main = "Maunga Whau Volcano", font.main = 4)
 ```
 
 *** =right
 
-- `COUNT` permet de dénombrer le nombre de lignes.
-- `GROUP BY` définit les champs sur lequel se fera l'agrégation des données.
+<img src="assets/fig/unnamed-chunk-39-1.png" title="plot of chunk unnamed-chunk-39" alt="plot of chunk unnamed-chunk-39" height="500px" style="display: block; margin: auto;" />
 
----
+--- &twocol
 
-# Exercice 5 (10 minutes)
-
-À l'aide de la base de données `bd_films`, dénombrer le nombre d'acteurs par films
-
-Quels sont les 10 acteurs les plus prolifiques?
-
----.transition
-
-# Jointures entre tables
-
----
-
-# Jointures entre tables
-
-Le `INNER JOIN` est un type de jointure, renvoyant seulement les films et les acteurs ayant un identifiant `id_film` commun.
-
-
-```r
-sql_requete <- "
-SELECT titre, annee_prod, films.id_film, acteurs.id_film
-  FROM films
-  INNER JOIN acteurs ON films.id_film = acteurs.id_film
-  ;"
-
-acteurs_films <- dbGetQuery(con,sql_requete)
-head(acteurs_films,4)
-```
-
-```
-##                     titre annee_prod id_film id_film
-## 1        'Breaker' Morant       1980       4       4
-## 2             'burbs, The       1989       5       5
-## 3   'Crocodile' Dundee II       1988       6       6
-## 4 *batteries not included       1987       7       7
-```
-
----
-
-# Les type de jointures
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/sql_joins.png" width="80%"></img>
-</div>
-
-
----
-
-# Jointures entre tables
-
-On peut spécifier la jointure avec `USING` seulement si les deux clés possèdent le même nom.
-
-
-```r
-sql_requete <- "
-SELECT titre, annee_prod, nom, prenom
-  FROM films
-  INNER JOIN acteurs USING (id_film)
-  ;"
-
-acteurs_films <- dbGetQuery(con,sql_requete)
-head(acteurs_films,4)
-```
-
-```
-##                     titre annee_prod         nom    prenom
-## 1        'Breaker' Morant       1980 Fitz-Gerald     Lewis
-## 2             'burbs, The       1989        Gage     Kevin
-## 3   'Crocodile' Dundee II       1988    Carrasco    Carlos
-## 4 *batteries not included       1987     Vasquez David (I)
-```
-
----
-
-# Exercice 4 (10-15 minutes)
-
-## Combien il y a d'acteurs par film depuis les 10 dernières années?
-
-Toujours avec la même base de données,
-on voudrait savoir le nombre d'acteurs par film depuis les 10 dernières années.
-
----
-
-# Exercice 5 (10-15 minutes)
-
-## Existe-t-il un film sans acteurs?
-
-En vous servant des types de jointures, on voudrait savoir s'il existe des films sans acteurs.
-
-
----&twocolw w1:55% w2:45%
-
-# Requêtes emboitées
-
-*** =right
-
-- On s'interroge sur le nombre moyen d'acteurs par années.
-
-- Pour ce faire, on peut bâtir une requête à partir d'une autre requête.
+# Lignes de contour
 
 *** =left
 
-
 ```r
-sql_requete <- "
-SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
-  SELECT titre, annee_prod, count(nom) AS nb_acteurs
-    FROM films
-    INNER JOIN acteurs USING (id_film)
-    GROUP BY annee_prod, titre
-) AS nb_acteurs_film
-GROUP BY annee_prod;"
+x <- 10*(1:nrow(volcano))
+y <- 10*(1:ncol(volcano))
 
-moy_acteurs <- dbGetQuery(con,sql_requete)
-head(moy_acteurs)
+image(x, y, volcano,
+  col = terrain.colors(100), axes = FALSE)
+
+axis(1, at = seq(100, 800, by = 100))
+axis(2, at = seq(100, 600, by = 100))
+box()
+
+title(main = "Maunga Whau Volcano", font.main = 4)
+
+contour(x, y, volcano,
+  levels = seq(90, 200, by = 5),
+  add = TRUE, col = "black")
 ```
-
-```
-##   annee_prod moy_acteurs
-## 1         NA    25.27230
-## 2       1975    32.13793
-## 3       1947    40.44444
-## 4       1981    39.40909
-## 5       1972    30.11111
-## 6       1956    39.81818
-```
-
----&twocolw w1:55% w2:45%
-
-# Filtrer les requêtes à posteriori
 
 *** =right
 
-- Il est possible de filtrer à posteriori sur la requête avec `HAVING`.
+<img src="assets/fig/unnamed-chunk-41-1.png" title="plot of chunk unnamed-chunk-41" alt="plot of chunk unnamed-chunk-41" height="500px" style="display: block; margin: auto;" />
 
-*** =left
+---
+
+# Enregistrer une figure
+
 
 
 ```r
-sql_requete <- "
-SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
-  SELECT titre, annee_prod, count(nom) AS nb_acteurs
-    FROM films
-    INNER JOIN acteurs USING (id_film)
-    GROUP BY annee_prod, titre
-) AS nb_acteurs_film
-GROUP BY annee_prod
-HAVING avg(nb_acteurs) > 10;"
-
-nb_acteurs <- dbGetQuery(con,sql_requete)
-head(nb_acteurs)
+dev.copy2pdf(file = "test.pdf")
+dev.copy2pnd(file = "PNG.png")
+dev.copy2eps(file = "test.eps")
 ```
 
-```
-##   annee_prod moy_acteurs
-## 1         NA    25.27230
-## 2       1975    32.13793
-## 3       1947    40.44444
-## 4       1981    39.40909
-## 5       1972    30.11111
-## 6       1956    39.81818
-```
+--- .transition
 
----.transition
+# Exercice: faire une représentation visuelle de la distribution de degrés
 
-# Sauvegarder les requêtes
+--- .transition
+
+# La visualisation de réseau avec igraph
 
 ---
 
-# Sauvegarder une requête
+# Installation
 
-Nous avons vu précédemment `COPY ... FROM chemin_vers_fichier` pour insérer des enregistrements dans les tables.
 
-Il existe aussi l'instruction `COPY ... TO chemin_vers_fichier` pour sauvegarder une requête.
+```r
+install.packages("igraph")
+```
 
-```sql
-COPY (SELECT * FROM films WHERE titre LIKE 'A%')
-TO '/home/etudiant/Documents/films_A.csv' WITH DELIMITER ';' CSV HEADER;
+```
+## Installing package into '/usr/local/lib/R/3.3/site-library'
+## (as 'lib' is unspecified)
+```
+
+```
+## Error in contrib.url(repos, type): trying to use CRAN without setting a mirror
+```
+
+```r
+library(igraph)
+```
+
+```
+## Loading required package: methods
+```
+
+```
+## 
+## Attaching package: 'igraph'
+```
+
+```
+## The following objects are masked from 'package:stats':
+## 
+##     decompose, spectrum
+```
+
+```
+## The following object is masked from 'package:base':
+## 
+##     union
 ```
 
 ---
 
-# Sauvegarder une requête
-
-Afin de sauvegarder les requêtes obtenues dans R par `dbGetQuery()`, il est possible d'utiliser les fonctions d'écritures tels que `write.table()` ou encore `write.csv()`.
-
-Il existe une façon de faire des requêtes dans `pgAdmin3` et d'en sauvegarder les résultats grâce à l'outils `Query`.
-
----.transition
-
-# Les requêtes stockées
+# Le format `igraph`
 
 ---
 
-# Les requêtes stockées: les vues
+# Transformer une matrice d'adjacence en objet `igraph`
 
-Les vues permettent de stocker directement les requêtes à l'intérieur de la base de données afin d'interroger la vue ultérieurement.
 
-```sql
-CREATE VIEW moyenne_acteurs AS (
-  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
-    SELECT titre, annee_prod, count(nom) AS nb_acteurs
-      FROM films
-      INNER JOIN acteurs USING (id_film)
-      GROUP BY annee_prod, titre
-  ) AS nb_acteurs_film
-  GROUP BY annee_prod
-  );
+```r
+C <- 0.1
+S <- 15
+L <- matrix(0, nr = S, nc = S)
+L[runif(S*S) < C] = 1
+sum(L)
 ```
 
-Il sera possible d'atteindre cette vue plus tard avec:
-
-```sql
-SELECT * FROM moyenne_acteurs;
+```
+## [1] 35
 ```
 
----.transition
+```r
+g <- graph.adjacency(L)
+```
 
-# Manipuler les enregistrements
+--- &twocol
+
+# Utiliser la fonction `plot` pour faire une représentation d'un réseau
+
+*** =left
+
+```r
+plot(g)
+```
+
+*** =right
+<img src="assets/fig/unnamed-chunk-46-1.png" title="plot of chunk unnamed-chunk-46" alt="plot of chunk unnamed-chunk-46" width="100%" style="display: block; margin: auto;" />
+
+--- &twocol
+
+# Version moins moche dans les paramètres par défaut
+
+*** =left
+
+```r
+plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA)
+```
+
+*** =right
+<img src="assets/fig/unnamed-chunk-48-1.png" title="plot of chunk unnamed-chunk-48" alt="plot of chunk unnamed-chunk-48" width="100%" style="display: block; margin: auto;" />
+
+
+--- .transition
+
+# Exercice : Compiler la matrice d'adjacence et faire une première représentation du réseau avec `igraph`
 
 ---
 
-# Mettre à jour des enregistrements
+# Changer la couleur des noeuds
 
-On peut mettre à jour des enregistrements d'une table avec des critères spécifiques.
 
-```sql
-UPDATE films SET genre = 'Dramatique' WHERE genre = 'Drame';
+```r
+# Calculer le degré
+deg <- apply(L, 2, sum) + apply(L, 1, sum)
+
+# Le rang pour chaque noeud
+rk <- rank(deg)
+
+# Faire un code de couleur
+col.vec <- heat.colors(S)
+
+# Attribuer aux noeuds la couleur
+V(g)$color = col.vec[rk]
+
+# Refaire la figure
+plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA)
 ```
 
-**Note:** On peut pas faire de modifications d'enregistrements sur des vues, seulement sur les tables directement.
+![plot of chunk unnamed-chunk-49](assets/fig/unnamed-chunk-49-1.png)
 
-[Documentation sur la commande UPDATE](http://docs.postgresqlfr.org/8.3/sql-update.html)
+---
+
+# Changer la taille des noeuds
+
+
+```r
+# Faire un code de ctaille
+col.vec <- seq(0.5, 3, length.out = S)
+
+# Attribuer aux noeuds la couleur
+V(g)$size = col.vec[rk]
+
+# Refaire la figure
+plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA)
+```
+
+![plot of chunk unnamed-chunk-50](assets/fig/unnamed-chunk-50-1.png)
+
+---
+
+# Changer la disposition des noeuds
 
 
 ---
 
-# Supprimer des enregistrements  
+# Calcul de propriétés
 
-On peut supprimer des enregistrements d'une table avec des critères spécifiques.
-
-```sql
-DELETE FROM films WHERE genre <> 'Comédie musicale';
-```
-
-Ou sans critères, pour supprimer tous les enregistrements.
-
-```sql
-DELETE FROM films;
-```
-
-[Documentation sur la commande DELETE](http://docs.postgresqlfr.org/8.3/sql-delete.html)
-
----.transition
-
-# Travail de la semaine
+## La modularité
 
 ---
 
-# Travail de la semaine
+# Calcul de propriétés
 
-1. Créer la base de données 
-
-2. Injecter les données
-
-3. Faire les requêtes suivantes :
-  - Nombre de liens par étudiant
-  - Décompte de liens par paire d'étudiants
-
-4. Enregistrer le résultat des requêtes
+## Le 'patch length'
 
 ---
 
-# Travail de la semaine
+# Calcul de propriétés
 
-5. En post-traitement sur R :
-  - Calculer le nombre d'étudiants, le nombre de liens et la connectance du réseau
-  - Calculer le nombre de liens moyens par étudiant et la variance
+## La centralité
 
-6. Écrire un script qui réalise les étapes 1-3 d'un bloc
 
-Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l'une après l'autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.
+--- .transition
+
+# Travail # 2
+
+---
+
+# Consignes
+
+- Identifier clairement vos questions de recherche
+- Illustrer le réseau de collaborations
+- Compléter votre analyse au moyen de 3 figures et 1 tableau
+
+---
+
+# Évaluation
+
+- Clareté des questions et adéquation des figures et du tableau
+- Efficacité de la présentation
+- Respect de normes graphiques
+- Originalité
+
+
+--- .transition
+
+# Exporter des tableaux
+
+---
+
+# Exporter des tableaux
+
+Exporter des tableaux depuis R vers son document de travail peut être difficile.
+
+## La procédure habituelle serait:
+
+1. Enregistrer le `data.frame` dans un fichier avec la fonction `write.table()` ou `write.csv()`
+2. Éditer et faire la mise en page dans MS Excel ou MS Word.
+
+Le package `knitr` permet de faciliter cette procédure en exportant le `data.frame` directement dans son document de travail LaTeX.
+
+---
+
+# Exporter des tableaux
+
+Prenons le jeu de données `iris` directement disponible sous R.
+
+
+```r
+data(iris)
+class(iris)
+```
+
+```
+## [1] "data.frame"
+```
+
+```r
+head(iris)
+```
+
+```
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa
+```
+
+---
+
+# Exporter des tableaux
+
+Je souhaite maintenant exporter ce `data.frame` en LateX (un format que nous verrons lors de la prochaine séance):
+
+
+```r
+library(knitr)
+iris_tex <- kable(iris,format="latex")
+writeLines(iris_tex, con = "./donnees/iris.tex", sep = "\n", useBytes = FALSE)
+```
 
 ---
 
 # Lectures
 
-## Débat sur le partage des données
+Sandve et al. 2013. Ten Simple Rules for Reproducible Computational
+Research. PLoS Computational Biology. 9: e1003285
 
-- Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
-- Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution. 
+Silberzahn et Uhlman. 2015. Many hands make tight work. Nature 526 : 189-191.
 
----.transition
-
-# Découper les scripts avec R
-
----&twocol
-
-# Découper les étapes de son travail et les automatiser au moyen d'un seul script (un "pipeline")
-
-*** =left
-
-## Script 1 - Créer et interroger la BD
-
-
-```r
-# Création des tables
-dbSendQuery(con, "CREATE TABLE films (
-    id_film     integer,
-    titre       varchar(300),
-    annee_prod   integer,
-    PRIMARY KEY (id_film)
-);")
-
-# On lit le fichier à insérer
-bd_films <- read.csv2(file='./assets/donnees/
-                      bd_beacon/bd_films.csv')
-
-# On écrit dans la table
-dbWriteTable(con,append=TRUE,name="films",
-            value=bd_films, row.names=FALSE)
-
-# On fait une Requête
-annees <- dbGetQuery(con,"SELECT DISTINCT
-                  annee_prod FROM films;")
-```
-
-*** =right
-
-## Script 2 - Analyse des données
-
-
-```r
-# On appelle le script 1
-source('/chemin/vers/script1/scrip1.R')
-
-# Lister les objets R dans l'environnement
-ls()
-
-# On verra apparaitre l'objet 'annees'
-# que l'on pourra utiliser
-# pour la suite du travail
-```
-
----.transition
-
-# Discussion
+Barba. 2016. The hard road to reproducibility. Science 354: 142.
