@@ -1,0 +1,650 @@
+--- .transition
+
+# Qu'est-ce qui fait une bonne figure ?
+
+---
+
+# Trop d'information
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/pacala.png" width="100%"></img>
+</div>
+
+---
+
+# Npn respect de normes graphiques
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/desjardins.png" width="100%"></img>
+</div>
+
+---
+
+# Abus de symboles et de couleurs
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/Boulangeat.png" width="100%"></img>
+</div>
+
+---
+
+# Lecture en 3 dimensions
+
+
+
+--- .transition
+
+# Introduction
+
+--- 
+
+# L'importance des figures
+
+- Sommaire visuel des données
+- Plus efficace qu'un tableau
+- Utile pour l'exploration de données
+- Essentiel pour la présentation de résultats
+
+--- 
+
+# Mais attention
+
+- Une mauvaise figure peut vous mentir
+- Une figure n'est pas toujours la solution
+
+--- 
+
+# Mais attention
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/weisgerber1.png" width="100%"></img>
+</div>
+
+--- 
+
+# Mais attention
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/weisgerber2.png" width="100%"></img>
+</div>
+
+--- 
+
+# Mais attention
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/weisgerber3.png" width="100%"></img>
+</div>
+
+--- 
+
+# Objectifs d'une figure
+
+- Communiquer
+- Explorer des données
+- Accompagner des analyses statistiques
+
+--- 
+
+# Quelques règles de base
+
+- Chaque élément d'une figure doit aider à comprendre les données
+- Chosir le type de représentation qui met en valeur ce qui doit être montré
+- Attention aux normes graphiques (choix des couleurs, taille des caractères, épaisseur de la ligne, disposition des marges, cadrage)
+
+--- 
+
+# Types de figures
+
+## Diagramme de dispersion (Scatter plot)
+
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+arbres  <- read.csv2("pres/donnees/arbres.csv")
+densite <- table(arbres[,c(3,5)])
+elevation <- as.numeric(row.names(densite))
+plot(elevation, densite[,1], pch = 19, xlab = "Elevation", ylab = "Densité")
+points(elevation, densite[,3])
+```
+
+---
+
+# Types de figures
+
+## Diagrammes à bâtons (Bar plot)
+
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+arbres  <- read.csv2("arbres.csv")
+n_tot <- table(arbres$esp)
+barplot(n_tot)
+```
+
+---
+
+# Types de figures
+
+## Histogrammes
+
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+hist(densite[,3])
+```
+
+--- &twocol
+
+# Types de figures
+
+## Représentation 3-D
+
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+x <- 10*(1:nrow(volcano))
+y <- 10*(1:ncol(volcano))
+image(x, y, volcano, col = terrain.colors(100), axes = FALSE)
+axis(1, at = seq(100, 800, by = 100))
+axis(2, at = seq(100, 600, by = 100))
+box()
+title(main = "Maunga Whau Volcano", font.main = 4)
+```
+
+---
+
+# Types de figures
+
+## Lignes de contour
+
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+contour(x, y, volcano, levels = seq(90, 200, by = 5),
+add = TRUE, col = "peru")
+```
+
+--- .transition
+
+# Faire une figure étape par étape avec R
+
+--- 
+
+# Prépares les données adéquatement
+- Habituellement un data.frame ou une matrice
+- Une observation par ligne
+
+--- &twocol
+
+# Ouvrir une fenêtre graphique
+
+*** =left
+```{r, eval = FALSE}
+dev.new(width = 10, height = 7)
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+dev.new(width = 10, height = 7)
+```
+
+--- &twocol
+
+# Fixer certains paramètres
+
+```{r, eval = FALSE}
+# Fixer la largeur et la hauteur des marges
+par(mar = c(5,6,2,1))
+
+# Fixer le nombre de figures en colonnes et rangées
+par(mfrow = c(1,1))
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+par(mar = c(5,6,2,1))
+```
+
+--- &twocol
+
+# Démarrer une figure avec plot()
+
+*** =left
+```{r, eval = FALSE}
+arbres <- read.csv2("pres/donnees/arbres.csv")
+densite <- table(arbres[,c(3,5)])
+elevation <- as.numeric(row.names(densite))
+plot(elevation, densite[,1], axes = FALSE, xlab = "Élévation", ylab = "Densité")
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+arbres <- read.csv2("pres/donnees/arbres.csv")
+densite <- table(arbres[,c(3,5)])
+elevation <- as.numeric(row.names(densite))
+plot(elevation, densite[,1], axes = FALSE, xlab = "Élévation", ylab = "Densité")
+```
+
+--- &twocol
+
+# Échelles logarithmiques
+
+*** =left
+```{r, eval = FALSE}
+plot(elevation, densite[,1], axes = FALSE, xlab = "Élévation", ylab = "Densité", log = "xy")
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+plot(elevation, densite[,1], axes = FALSE, xlab = "Élévation", ylab = "Densité", log = "xy")
+```
+
+--- &twocol
+
+# Ajuster les tailles de caractères
+## Arguments 'cex', cex.lab' et 'cex.axis'
+
+*** =left
+```{r, eval = FALSE}
+plot(elevation, densite[,1], axes = FALSE, xlab = "Élévation", ylab = "Densité", cex.lab = 1.5, cex.axis = 1.25, cex = 1.5)
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+plot(elevation, densite[,1], axes = FALSE, xlab = "Élévation", ylab = "Densité", cex.lab = 1.5, cex.axis = 1.25, cex = 1.5)
+```
+
+--- &twocol 
+
+# Modifier les axes
+
+*** =left
+```{r, eval = FALSE}
+axis(1, seq(0,1000,100))
+axis(2)
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+axis(1, seq(0,1000,100))
+axis(2)
+```
+
+--- &twocol 
+
+# Ajouter un titre
+
+*** =left
+```{r, eval = FALSE}
+title(main = "Densité au long du gradient d'élévation")
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+title(main = "Densité au long du gradient d'élévation")
+```
+
+--- &twocol 
+
+# Superper des points d'une autre série de données
+
+*** =left
+```{r, eval = FALSE}
+points(elevation, densite[,3], pch = 19, cex = 1.5)
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+points(elevation, densite[,3], pch = 19, cex = 1.5)
+```
+
+--- &twocol 
+
+# Superposer des lignes
+
+*** =left
+```{r, eval = FALSE}
+lines(elevation, densite[,1],lty = 1, lwd = 1.5)
+lines(elevation, densite[,3], lty  = 3, lwd = 1.5)
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+lines(elevation, densite[,1], lty = 1, lwd = 1.5)
+lines(elevation, densite[,3], lty = 3, lwd = 1.5)
+```
+
+--- &twocol 
+
+# Ajouter une ligne de tendance
+
+*** =left
+```{r, eval = FALSE}
+model = lm(densite[,3]~elevation)
+summary(model)
+abline(model, col = "darkred")
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+model = lm(densite[,3]~elevation)
+summary(model)
+abline(model)
+```
+
+
+--- &twocol 
+
+# Ajouter une légende
+
+*** =left
+```{r, eval = FALSE}
+legend("top", bty = "n", pch = c(19,1), lty = 1, legend = c("Érable à sucre", "Sapin baumier"), cex = 2)
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+legend("top", bty = "n", pch = c(19,1), lty = 1, legend = c("Érable à sucre", "Sapin baumier"), cex = 2)
+```
+
+--- &twocol 
+
+# Ajouter du texte
+
+*** =left
+```{r, eval = FALSE}
+r2 <- round(summary(model)$r.squared, 2)
+text(x = 850, y = 25, paste(expression(R^2 ==), r2), cex = 2)
+
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+text(x = 875, y = 25, paste(expression(R^2 ==), r2), cex = 2)
+```
+
+---
+
+# Pour plus d'information
+
+- ?plot
+- ?par
+- ?axis
+- ?mtext
+
+---
+
+# Et de nombreux exemples
+
+--- .transition
+
+# Exercie: faire une représentation visuelle de la distribution de degrés
+
+--- 
+
+# Enregistrer une figure
+
+## Commandes de base
+
+```{r}
+dev.copy2pdf(file = "test.pdf")
+dev.copy2pnd(file = "PNG.png")
+dev.copy2eps(file = "test.eps")
+```
+
+---
+
+# Types de figures
+
+## Diagramme de dispersion (Scatter plot)
+
+*** =left
+
+```{r, eval = FALSE}
+arbres  <- read.csv2("pres/donnees/arbres.csv")
+densite <- table(arbres[,c(3,5)])
+elevation <- as.numeric(row.names(densite))
+plot(elevation, densite[,1], pch = 19, xlab = "Elevation", ylab = "Densité")
+points(elevation, densite[,3])
+```.
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+arbres  <- read.csv2("pres/donnees/arbres.csv")
+densite <- table(arbres[,c(3,5)])
+elevation <- as.numeric(row.names(densite))
+plot(elevation, densite[,1], pch = 19, xlab = "Elevation", ylab = "Densité")
+points(elevation, densite[,3])
+```
+
+--- &twocol
+
+# Types de figures
+
+## Diagrammes à bâtons (Bar plot)
+
+*** =left
+```{r, eval = FALSE}
+arbres  <- read.csv2("pres/donnees/arbres.csv")
+n_tot <- table(arbres$esp)
+barplot(n_tot)
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+arbres  <- read.csv2("arbres.csv")
+n_tot <- table(arbres$esp)
+barplot(n_tot)
+```
+
+--- &twocol
+
+# Types de figures
+
+## Histogrammes
+
+*** =left
+```{r, eval = FALSE}
+hist(densite[,3])
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+hist(densite[,3])
+```
+
+--- &twocol
+
+# Types de figures
+
+## Représentation 3-D
+
+*** =left
+```{r, eval = FALSE}
+x <- 10*(1:nrow(volcano))
+y <- 10*(1:ncol(volcano))
+image(x, y, volcano, col = terrain.colors(100), axes = FALSE)
+axis(1, at = seq(100, 800, by = 100))
+axis(2, at = seq(100, 600, by = 100))
+box()
+title(main = "Maunga Whau Volcano", font.main = 4)
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+x <- 10*(1:nrow(volcano))
+y <- 10*(1:ncol(volcano))
+image(x, y, volcano, col = terrain.colors(100), axes = FALSE)
+axis(1, at = seq(100, 800, by = 100))
+axis(2, at = seq(100, 600, by = 100))
+box()
+title(main = "Maunga Whau Volcano", font.main = 4)
+```
+
+--- &twocol
+
+# Types de figures
+
+## Lignes de contour
+
+*** =left
+```{r, eval = FALSE}
+contour(x, y, volcano, levels = seq(90, 200, by = 5),
+add = TRUE, col = "peru")
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+contour(x, y, volcano, levels = seq(90, 200, by = 5),
+add = TRUE, col = "peru")
+```
+
+--- .transition
+
+# Le package igraph
+
+--- 
+
+# Installation
+
+### install.packages("igraph")
+### library(igraph)
+
+--- 
+
+# Le format igraph
+
+--- 
+
+# Transformer une matrice d'adjacence en objet igraph
+
+```{r}
+C <- 0.1
+S <- 15
+L <- matrix(0, nr = S, nc = S)
+L[runif(S*S) < C] = 1
+sum(L)
+g <- graph.adjacency(L)
+```
+
+--- &twocol
+
+# Utiliser la fonction 'plot' pour faire une représentation d'un réseau
+
+*** =left
+```{r, eval = FALSE}
+plot(g)
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+plot(g)
+```
+
+--- &twocol
+
+# Version moins moche dans les paramètres par défaut
+
+*** =left
+```{r, eval = FALSE}
+plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA)
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA)
+```
+
+
+--- .transition
+
+# Exercice : Compiler la matrice d'adjacence et faire une première représentation du réseau avec igraph
+
+---
+
+# Changer la couleur des noeuds
+
+```{r}
+# Calculer le degré 
+deg <- apply(L, 2, sum) + apply(L, 1, sum) 
+
+# Le rang pour chaque noeud
+rk <- rank(deg)
+
+# Faire un code de couleur
+col.vec <- heat.colors(S)
+
+# Attribuer aux noeuds la couleur
+V(g)$color = col.vec[rk] 
+
+# Refaire la figure 
+plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA)
+```
+
+---
+
+# Changer la taille des noeuds
+
+```{r}
+# Faire un code de ctaille
+col.vec <- seq(0.5, 3, length.out = S)
+
+# Attribuer aux noeuds la couleur
+V(g)$size = col.vec[rk] 
+
+# Refaire la figure 
+plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA)
+```
+
+--- 
+
+# Changer la disposition des noeuds
+
+
+
+
+
+--- 
+
+# Calcul de propriétés
+## La modularité
+
+--- 
+
+# Calcul de propriétés
+## Le 'patch length'
+
+--- 
+
+# Calcul de propriétés 
+## La centralité
+
+
+--- .transition
+
+# Travail # 2
+
+---
+
+# Consignes
+
+- Identifier clairement vos questions de recherche
+- Illustrer le réseau de collaborations
+- Compléter votre analyse au moyen de 3 figures et 1 tableau
+
+---
+
+# Évaluation
+
+- Clareté des questions et adéquation des figures et du tableau
+- Efficacité de la présentation
+- Respect de normes graphiques
+- Originalité
+
+---
+
+# Lectures
+
+Sandve et al. 2013. Ten Simple Rules for Reproducible Computational
+Research. PLoS Computational Biology. 9: e1003285
+
+Silberzahn et Uhlman. 2015. Many hands make tight work. Nature 526 : 189-191.
+
+Barba. 2016. The hard road to reproducibility. Science 354: 142. 
+
+
+
+
+
+

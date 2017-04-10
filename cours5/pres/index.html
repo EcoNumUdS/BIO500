@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Séance 4: L'organisation des données - 2</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Séance 4: L'organisation des données - 2">
+  <meta name="author" content="Dominique Gravel &amp; Steve Vissault">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="./libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="./libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="./libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="./libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/default.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+<link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="./libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="./libraries/frameworks/io2012/js/slides" 
+    src="./libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/logo.png">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>Séance 4: L'organisation des données - 2</h1>
+    <h2>BIO 500 - Méthodes en écologie computationnelle</h2>
+    <p>Dominique Gravel &amp; Steve Vissault<br/>Laboratoire d'écologie intégrative</p>
+  </hgroup>
+  <article></article>
+  <footer class = 'license'>
+    <a href='http://creativecommons.org/licenses/by-nc-sa/3.0/'>
+    <img width = '80px' src = 'http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png'>
+    </a>
+  </footer>
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <!--  <a href="#slide-1"></a> -->
+  <hgroup>
+    <h1>Séance 4</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Ces diapositives sont disponibles en <a href="https://econumuds.github.io/BIO500/cours4/">version web</a> et en <a href="./assets/pdf/S4-BIO500.pdf">PDF</a>.</li>
+<li>L&#39;ensemble du matériel de cours est disponible sur la page du portail <a href="https://www.usherbrooke.ca/moodle2-cours/course/view.php?id=12189">moodle</a>.</li>
+</ul>
+
+<!-- TODO 1: Mettre cours 2 en PDF -->
+
+<!-- TODO 2: Changer le lien moodle -->
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-2" style="background:;">
+  <!--  <a href="#slide-2"></a> -->
+  <hgroup>
+    <h1>Les grandes étapes</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Spécifier la connexion avec le serveur</li>
+<li>Créer la base de données</li>
+<li>Créer les tables et spécifier les clés</li>
+<li>Ajouter de l&#39;information dans les tables</li>
+<li>Faire des requêtes pour extraire l&#39;information</li>
+</ol>
+
+<p><strong>Important:</strong></p>
+
+<p>Pour ceux dont la VM ne fonctionne pas, il possible de faire les exercices de ce cours sur Windows ou MacOSX.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-3" style="background:;">
+  <!--  <a href="#slide-3"></a> -->
+  <hgroup>
+    <h1>Retour rapide sur la séance de la semaine dernière</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-4" style="background:;">
+  <!--  <a href="#slide-4"></a> -->
+  <hgroup>
+    <h1>Connexion au serveur</h1>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">library(RPostgreSQL)
+
+con &lt;- dbConnect(PostgreSQL(),
+        host=&quot;localhost&quot;,
+        port=5432,
+        user= &quot;postgres&quot;)
+
+# On créé la base de données et on ferme la connexion
+dbSendQuery(con,&quot;DROP DATABASE IF EXISTS bd_films;&quot;)
+dbSendQuery(con,&quot;CREATE DATABASE bd_films;&quot;)
+dbDisconnect(con)
+
+# On se connecte à la nouvelle base de données
+con &lt;- dbConnect(PostgreSQL(),
+        host=&quot;localhost&quot;,
+        port=5432,
+        user= &quot;postgres&quot;,
+        dbname=&quot;bd_films&quot;)
+</code></pre>
+
+<p><strong>Question:</strong> Sur ce script, où sont les instructions SQL? Òu sont les commandes R?</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-5" style="background:;">
+  <!--  <a href="#slide-5"></a> -->
+  <hgroup>
+    <h1>Création de la table <code>films</code></h1>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">tbl_films &lt;- &quot;CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+);&quot;
+
+dbSendQuery(con,tbl_films)
+</code></pre>
+
+<pre><code>## &lt;PostgreSQLResult&gt;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-6" style="background:;">
+  <!--  <a href="#slide-6"></a> -->
+  <hgroup>
+    <h1>Création de la table <code>acteurs</code></h1>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">tbl_acteurs &lt;- &quot;CREATE TABLE acteurs (
+    id_acteur   integer,
+    nom         varchar(100),
+    prenom      varchar(100),
+    id_film     integer,
+    PRIMARY KEY (id_acteur),
+    FOREIGN KEY (id_film) REFERENCES films (id_film) ON DELETE CASCADE
+);&quot;
+
+dbSendQuery(con,tbl_acteurs)
+</code></pre>
+
+<pre><code>## &lt;PostgreSQLResult&gt;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-7" style="background:;">
+  <!--  <a href="#slide-7"></a> -->
+  <hgroup>
+    <h1>pgAdmin3</h1>
+  </hgroup>
+  <article data-timings="">
+    <p><code>pgAdmin3</code> est un client avec une interface graphique permettant de visualiser si les opérations de création de tables ont bien été réalisées.</p>
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/pgadmin_table.png" width="70%"></img>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-8" style="background:;">
+  <!--  <a href="#slide-8"></a> -->
+  <hgroup>
+    <h1>Ajouter de l&#39;information dans les tables</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-9" style="background:;">
+  <!--  <a href="#slide-9"></a> -->
+  <hgroup>
+    <h1>SQL - <code>INSERT</code></h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On veut maintenant insérer des données dans les tables <code>acteurs</code> et <code>films</code>.</p>
+
+<h2>L&#39;instruction <code>INSERT</code> permet d&#39;insérer une ligne à la fois:</h2>
+
+<pre><code class="sql">INSERT INTO films(id_film,titre,annee_prod) VALUES (1,&#39;la vie est belle&#39;,1997);
+INSERT INTO acteurs(id_acteur,prenom,nom,id_film) VALUES(1,&#39;Nicoletta&#39;,&#39;Braschi&#39;,1);
+INSERT INTO acteurs(id_acteur,prenom,nom,id_film) VALUES(2,&#39;Roberto&#39;,&#39;Benigni&#39;,1);
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-10" style="background:;">
+  <!--  <a href="#slide-10"></a> -->
+  <hgroup>
+    <h1>SQL - <code>COPY ... FROM</code></h1>
+  </hgroup>
+  <article data-timings="">
+    <p>L&#39;instruction SQL <code>COPY ... FROM</code> permet d&#39;insérer plusieurs lignes à la fois:</p>
+
+<pre><code class="sql">COPY films FROM &#39;/Users/SteveVissault/Documents/Git/BIO500/cours4/pres/assets/donnees/bd_beacon/bd_films.csv&#39;
+WITH FORMAT CSV HEADER DELIMITER &#39;;&#39;;
+</code></pre>
+
+<p>Documentation: <a href="http://docs.postgresql.fr/9.5/sql-copy.html">http://docs.postgresql.fr/9.5/sql-copy.html</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-11" style="background:;">
+  <!--  <a href="#slide-11"></a> -->
+  <hgroup>
+    <h1>RPostgreSQL - <code>dbWriteTable</code></h1>
+  </hgroup>
+  <article data-timings="">
+    <p>La librairie RPostgreSQL peut nous aider plus facilement à accomplir cette tâche:</p>
+
+<pre><code class="r"># Lecture des fichiers CSV
+bd_films &lt;- read.csv2(file=&#39;./assets/donnees/bd_beacon/bd_films.csv&#39;)
+bd_acteurs &lt;- read.csv2(file=&#39;./assets/donnees/bd_beacon/bd_acteurs.csv&#39;)
+
+# Injection des enregistrements dans la BD
+dbWriteTable(con,append=TRUE,name=&quot;films&quot;,value=bd_films, row.names=FALSE)
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="r">dbWriteTable(con,append=TRUE,name=&quot;acteurs&quot;,value=bd_acteurs, row.names=FALSE)
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-12" style="background:;">
+  <!--  <a href="#slide-12"></a> -->
+  <hgroup>
+    <h1>Exercice 1 (10-15 minutes)</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Ce premier exercice est important pour la suite de la séance.  </p>
+
+<ol>
+<li>Recréer la base de données <code>bd_films</code> avec ses deux tables <code>films</code> et <code>acteurs</code></li>
+<li>Insérer les données <a href="./assets/donnees/bd_beacon/bd_acteurs.csv">bd_acteurs.csv</a> et <a href="./assets/donnees/bd_beacon/bd_acteurs.csv">bd_films.csv</a> dans les deux tables à l&#39;aide de la commande R <code>dbWriteTable()</code></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-13" style="background:;">
+  <!--  <a href="#slide-13"></a> -->
+  <hgroup>
+    <h1>pgAdmin3</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Il est également possible d&#39;insérer des données à partir du logiciel <code>pgAdmin3</code>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-14" style="background:;">
+  <!--  <a href="#slide-14"></a> -->
+  <hgroup>
+    <h1>Les requêtes</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h1>Sélectionner des tables et des colonnes</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">sql_requete &lt;- &quot;SELECT * FROM films LIMIT 10;&quot;
+
+films &lt;- dbGetQuery(con,sql_requete)
+head(films)
+</code></pre>
+
+<pre><code>##   id_film                   titre annee_prod
+## 1       4        &#39;Breaker&#39; Morant       1980
+## 2       5             &#39;burbs, The       1989
+## 3       6   &#39;Crocodile&#39; Dundee II       1988
+## 4       7 *batteries not included       1987
+## 5       3  ...And Justice for All       1979
+## 6       8                      10       1979
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <ul>
+<li><code>*</code> permet de ne pas spécifier une colonne en particulier.</li>
+<li>Cette requête retournera toutes les colonnes de la table <code>films</code></li>
+<li>Note: L&#39;instruction <code>LIMIT</code> est utilisée dans les prochaines diapos afin de permettre le rendu des requêtes sur une diapo.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h1>Sélectionner des enregistrements unique</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">sql_requete &lt;- &quot;SELECT DISTINCT nom, prenom
+FROM acteurs LIMIT 10;&quot;
+
+films &lt;- dbGetQuery(con,sql_requete)
+head(films)
+</code></pre>
+
+<pre><code>##            nom       prenom
+## 1        Smith Douglas (VI)
+## 2     Hilliard       Ernest
+## 3        Young  Vanessa (I)
+## 4    Carpenter     Jack (I)
+## 5        Maron          Rob
+## 6 Kallianiotes       Helena
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <ul>
+<li>L&#39;instruction <code>DISTINCT</code> permettra de retourner la combinaison unique de noms et prénoms présent dans la table acteurs.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h1>Sélectionner des tables et des colonnes</h1>
+  </hgroup>
+  <article>
+    <h2>La connexion est ouverte et toujours accessible depuis l&#39;objet <code>con</code>.</h2>
+
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">sql_requete &lt;- &quot;
+SELECT id_film, titre, annee_prod
+  FROM films LIMIT 10
+;&quot;
+
+films &lt;- dbGetQuery(con,sql_requete)
+head(films)
+</code></pre>
+
+<pre><code>##   id_film                   titre annee_prod
+## 1       4        &#39;Breaker&#39; Morant       1980
+## 2       5             &#39;burbs, The       1989
+## 3       6   &#39;Crocodile&#39; Dundee II       1988
+## 4       7 *batteries not included       1987
+## 5       3  ...And Justice for All       1979
+## 6       8                      10       1979
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <ul>
+<li><code>SELECT</code> spécifie les colonnes.</li>
+<li><code>FROM</code> spécifie la table.</li>
+<li>On peut également ajouter une <code>LIMIT</code>.</li>
+<li><a href="http://docs.postgresqlfr.org/9.5/sql-select.html">Documentation SQL Select</a>.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h1>Ordonner la table</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">sql_requete &lt;- &quot;
+SELECT titre, annee_prod, id_film
+  FROM films ORDER BY annee_prod DESC
+;&quot;
+derniers_films &lt;- dbGetQuery(con,sql_requete)
+head(derniers_films)
+</code></pre>
+
+<pre><code>##              titre annee_prod id_film
+## 1  Wilson, Michael         NA    5496
+## 2     Khan, George         NA    2732
+## 3   Walker, Amanda         NA    5350
+## 4 Franklin, Cherie         NA    1823
+## 5     Thomas, Meda         NA    5030
+## 6    Cicco, Johnny         NA     984
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <ul>
+<li><code>ORDER BY</code> permet de trier par ordre croissant (<code>ASC</code>) ou décroissant (<code>DESC</code>).</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h1>Critères avec <code>NULL</code></h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">sql_requete &lt;- &quot;
+SELECT id_film, titre, annee_prod
+  FROM films WHERE annee_prod IS NOT NULL
+  ORDER BY annee_prod DESC
+;&quot;
+annees_films &lt;- dbGetQuery(con,sql_requete)
+head(annees_films)
+</code></pre>
+
+<pre><code>##   id_film                titre annee_prod
+## 1    2354             Hot Fuzz       2007
+## 2    3663       Number 23, The       2007
+## 3    5473            Wild Hogs       2007
+## 4     727 Bridge to Terabithia       2007
+## 5    3487     Music and Lyrics       2007
+## 6    4159     Reno 911!: Miami       2007
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <ul>
+<li><code>WHERE</code>, spécifie les critères de la requête.</li>
+<li><code>annee_prod IS NULL</code> permet d&#39;obtenir seulement les films n&#39;ayant pas d&#39;année de production.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h1>Combiner les critères</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:55%'>
+     <pre><code class="r">sql_requete &lt;- &quot;
+SELECT id_film, titre, annee_prod
+  FROM films WHERE
+  (annee_prod &gt;= 1930 AND annee_prod &lt;= 1940)
+  OR (annee_prod &gt;= 1950 AND annee_prod &lt;= 1960)
+  ORDER BY annee_prod
+;&quot;
+derniers_films &lt;- dbGetQuery(con,sql_requete)
+head(derniers_films)
+</code></pre>
+
+<pre><code>##   id_film                          titre annee_prod
+## 1     157 All Quiet on the Western Front       1930
+## 2     239                Animal Crackers       1930
+## 3     603               Blaue Engel, Der       1930
+## 4    1820                   Frankenstein       1931
+## 5    3106                              M       1931
+## 6    3398                Monkey Business       1931
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:45%'>
+     <ul>
+<li>Multi-critères avec <code>AND</code> et <code>OR</code></li>
+<li>Les parenthèses définissent les priorités d&#39;opérations.</li>
+<li>Opérateurs de comparaison: <code>&gt;=</code>,<code>&lt;=</code>, <code>=</code> (Valeurs numériques)</li>
+<li><a href="https://www.postgresql.org/docs/9.1/static/functions-comparison.html">Documentation sur les opérateurs de comparaisons</a></li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h1>Critères sur le texte avec <code>LIKE</code></h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:55%'>
+     <pre><code class="r">sql_requete &lt;- &quot;
+SELECT id_film, titre, annee_prod
+  FROM films WHERE titre LIKE &#39;%Voyage%&#39;
+;&quot;
+derniers_films &lt;- dbGetQuery(con,sql_requete)
+head(derniers_films)
+</code></pre>
+
+<pre><code>##   id_film                         titre annee_prod
+## 1    1662              Fantastic Voyage       1966
+## 2    3654                  Now, Voyager       1942
+## 3    4770 Star Trek IV: The Voyage Home       1986
+## 4    5330       Voyage dans la lune, Le       1902
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:45%'>
+     <ul>
+<li>Rechercher dans le texte: <code>LIKE</code></li>
+<li><code>%</code>: n&#39;importe quels caractères</li>
+<li><code>_</code>: un seul caractère (exemple: <code>_1_</code> peut renvoyer <code>113</code> ou encore <code>A1C</code>)</li>
+<li>Le critère contraire est aussi possible avec <code>NOT</code> (exemple: <code>WHERE titre NOT LIKE &#39;%voyage%&#39;</code>)</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-22" style="background:;">
+  <!--  <a href="#slide-22"></a> -->
+  <hgroup>
+    <h1>Exercice 4 (10 minutes)</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Dans ta table <code>acteurs</code>, essayer de trouver votre acteur préféré avec <code>LIKE</code> ou avec <code>= &#39;votre_acteur_pref&#39;</code></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-23" style="background:;">
+  <hgroup>
+    <h1>Agréger l&#39;information (1 ligne)</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">sql_requete &lt;- &quot;
+SELECT avg(annee_prod) AS moyenne,
+  min(annee_prod), max(annee_prod)
+  FROM films;&quot;
+
+resume_films &lt;- dbGetQuery(con,sql_requete)
+head(resume_films)
+</code></pre>
+
+<pre><code>##    moyenne  min  max
+## 1 1989.853 1902 2007
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <ul>
+<li>Pour faire une synthèse de l&#39;information sur une seule ligne.</li>
+<li>Faire des opérations sur les champs numériques: <code>max</code>, <code>min</code>, <code>sum</code>, <code>avg</code>, <code>count</code>.</li>
+<li>Mais aussi les opérations classiques: <code>*</code>, <code>/</code>, <code>-</code> etc.</li>
+<li>Renommer les colonnes avec <code>AS</code>.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-24" style="background:;">
+  <hgroup>
+    <h1>Agréger l&#39;information (plusieurs lignes par groupe)</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">sql_requete &lt;- &quot;
+SELECT count(titre) AS nb_films, annee_prod
+  FROM films
+  GROUP BY annee_prod;&quot;
+
+resume_films &lt;- dbGetQuery(con,sql_requete)
+head(resume_films)
+</code></pre>
+
+<pre><code>##   nb_films annee_prod
+## 1     1278         NA
+## 2       29       1975
+## 3        9       1947
+## 4       44       1981
+## 5       27       1972
+## 6       11       1956
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <ul>
+<li><code>COUNT</code> permet de dénombrer le nombre de lignes.</li>
+<li><code>GROUP BY</code> définit les champs sur lequel se fera l&#39;agrégation des données.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-25" style="background:;">
+  <!--  <a href="#slide-25"></a> -->
+  <hgroup>
+    <h1>Exercice 5 (10 minutes)</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>À l&#39;aide de la base de données <code>bd_films</code>, dénombrer le nombre d&#39;acteurs par films</p>
+
+<p>Quels sont les 10 acteurs les plus prolifiques?</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-26" style="background:;">
+  <!--  <a href="#slide-26"></a> -->
+  <hgroup>
+    <h1>Jointures entre tables</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-27" style="background:;">
+  <!--  <a href="#slide-27"></a> -->
+  <hgroup>
+    <h1>Jointures entre tables</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Le <code>INNER JOIN</code> est un type de jointure, renvoyant seulement les films et les acteurs ayant un identifiant <code>id_film</code> commun.</p>
+
+<pre><code class="r">sql_requete &lt;- &quot;
+SELECT titre, annee_prod, films.id_film, acteurs.id_film
+  FROM films
+  INNER JOIN acteurs ON films.id_film = acteurs.id_film
+  ;&quot;
+
+acteurs_films &lt;- dbGetQuery(con,sql_requete)
+head(acteurs_films,4)
+</code></pre>
+
+<pre><code>##                     titre annee_prod id_film id_film
+## 1        &#39;Breaker&#39; Morant       1980       4       4
+## 2             &#39;burbs, The       1989       5       5
+## 3   &#39;Crocodile&#39; Dundee II       1988       6       6
+## 4 *batteries not included       1987       7       7
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-28" style="background:;">
+  <!--  <a href="#slide-28"></a> -->
+  <hgroup>
+    <h1>Les type de jointures</h1>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/sql_joins.png" width="80%"></img>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-29" style="background:;">
+  <!--  <a href="#slide-29"></a> -->
+  <hgroup>
+    <h1>Jointures entre tables</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On peut spécifier la jointure avec <code>USING</code> seulement si les deux clés possèdent le même nom.</p>
+
+<pre><code class="r">sql_requete &lt;- &quot;
+SELECT titre, annee_prod, nom, prenom
+  FROM films
+  INNER JOIN acteurs USING (id_film)
+  ;&quot;
+
+acteurs_films &lt;- dbGetQuery(con,sql_requete)
+head(acteurs_films,4)
+</code></pre>
+
+<pre><code>##                     titre annee_prod         nom    prenom
+## 1        &#39;Breaker&#39; Morant       1980 Fitz-Gerald     Lewis
+## 2             &#39;burbs, The       1989        Gage     Kevin
+## 3   &#39;Crocodile&#39; Dundee II       1988    Carrasco    Carlos
+## 4 *batteries not included       1987     Vasquez David (I)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-30" style="background:;">
+  <!--  <a href="#slide-30"></a> -->
+  <hgroup>
+    <h1>Exercice 4 (10-15 minutes)</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Combien il y a d&#39;acteurs par film depuis les 10 dernières années?</h2>
+
+<p>Toujours avec la même base de données,
+on voudrait savoir le nombre d&#39;acteurs par film depuis les 10 dernières années.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-31" style="background:;">
+  <!--  <a href="#slide-31"></a> -->
+  <hgroup>
+    <h1>Exercice 5 (10-15 minutes)</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Existe-t-il un film sans acteurs?</h2>
+
+<p>En vous servant des types de jointures, on voudrait savoir s&#39;il existe des films sans acteurs.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-32" style="background:;">
+  <hgroup>
+    <h1>Requêtes emboitées</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:55%'>
+     <pre><code class="r">sql_requete &lt;- &quot;
+SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+  SELECT titre, annee_prod, count(nom) AS nb_acteurs
+    FROM films
+    INNER JOIN acteurs USING (id_film)
+    GROUP BY annee_prod, titre
+) AS nb_acteurs_film
+GROUP BY annee_prod;&quot;
+
+moy_acteurs &lt;- dbGetQuery(con,sql_requete)
+head(moy_acteurs)
+</code></pre>
+
+<pre><code>##   annee_prod moy_acteurs
+## 1         NA    25.27230
+## 2       1975    32.13793
+## 3       1947    40.44444
+## 4       1981    39.40909
+## 5       1972    30.11111
+## 6       1956    39.81818
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:45%'>
+     <ul>
+<li><p>On s&#39;interroge sur le nombre moyen d&#39;acteurs par années.</p></li>
+<li><p>Pour ce faire, on peut bâtir une requête à partir d&#39;une autre requête.</p></li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-33" style="background:;">
+  <hgroup>
+    <h1>Filtrer les requêtes à posteriori</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:55%'>
+     <pre><code class="r">sql_requete &lt;- &quot;
+SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+  SELECT titre, annee_prod, count(nom) AS nb_acteurs
+    FROM films
+    INNER JOIN acteurs USING (id_film)
+    GROUP BY annee_prod, titre
+) AS nb_acteurs_film
+GROUP BY annee_prod
+HAVING avg(nb_acteurs) &gt; 10;&quot;
+
+nb_acteurs &lt;- dbGetQuery(con,sql_requete)
+head(nb_acteurs)
+</code></pre>
+
+<pre><code>##   annee_prod moy_acteurs
+## 1         NA    25.27230
+## 2       1975    32.13793
+## 3       1947    40.44444
+## 4       1981    39.40909
+## 5       1972    30.11111
+## 6       1956    39.81818
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:45%'>
+     <ul>
+<li>Il est possible de filtrer à posteriori sur la requête avec <code>HAVING</code>.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="transition" id="slide-34" style="background:;">
+  <!--  <a href="#slide-34"></a> -->
+  <hgroup>
+    <h1>Sauvegarder les requêtes</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-35" style="background:;">
+  <!--  <a href="#slide-35"></a> -->
+  <hgroup>
+    <h1>Sauvegarder une requête</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Nous avons vu précédemment <code>COPY ... FROM chemin_vers_fichier</code> pour insérer des enregistrements dans les tables.</p>
+
+<p>Il existe aussi l&#39;instruction <code>COPY ... TO chemin_vers_fichier</code> pour sauvegarder une requête.</p>
+
+<pre><code class="sql">COPY (SELECT * FROM films WHERE titre LIKE &#39;A%&#39;)
+TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV HEADER;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-36" style="background:;">
+  <!--  <a href="#slide-36"></a> -->
+  <hgroup>
+    <h1>Sauvegarder une requête</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Afin de sauvegarder les requêtes obtenues dans R par <code>dbGetQuery()</code>, il est possible d&#39;utiliser les fonctions d&#39;écritures tels que <code>write.table()</code> ou encore <code>write.csv()</code>.</p>
+
+<p>Il existe une façon de faire des requêtes dans <code>pgAdmin3</code> et d&#39;en sauvegarder les résultats grâce à l&#39;outils <code>Query</code>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-37" style="background:;">
+  <!--  <a href="#slide-37"></a> -->
+  <hgroup>
+    <h1>Les requêtes stockées</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-38" style="background:;">
+  <!--  <a href="#slide-38"></a> -->
+  <hgroup>
+    <h1>Les requêtes stockées: les vues</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Les vues permettent de stocker directement les requêtes à l&#39;intérieur de la base de données afin d&#39;interroger la vue ultérieurement.</p>
+
+<pre><code class="sql">CREATE VIEW moyenne_acteurs AS (
+  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+    SELECT titre, annee_prod, count(nom) AS nb_acteurs
+      FROM films
+      INNER JOIN acteurs USING (id_film)
+      GROUP BY annee_prod, titre
+  ) AS nb_acteurs_film
+  GROUP BY annee_prod
+  );
+</code></pre>
+
+<p>Il sera possible d&#39;atteindre cette vue plus tard avec:</p>
+
+<pre><code class="sql">SELECT * FROM moyenne_acteurs;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-39" style="background:;">
+  <!--  <a href="#slide-39"></a> -->
+  <hgroup>
+    <h1>Manipuler les enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-40" style="background:;">
+  <!--  <a href="#slide-40"></a> -->
+  <hgroup>
+    <h1>Mettre à jour des enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On peut mettre à jour des enregistrements d&#39;une table avec des critères spécifiques.</p>
+
+<pre><code class="sql">UPDATE films SET genre = &#39;Dramatique&#39; WHERE genre = &#39;Drame&#39;;
+</code></pre>
+
+<p><strong>Note:</strong> On peut pas faire de modifications d&#39;enregistrements sur des vues, seulement sur les tables directement.</p>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-update.html">Documentation sur la commande UPDATE</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-41" style="background:;">
+  <!--  <a href="#slide-41"></a> -->
+  <hgroup>
+    <h1>Supprimer des enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On peut supprimer des enregistrements d&#39;une table avec des critères spécifiques.</p>
+
+<pre><code class="sql">DELETE FROM films WHERE genre &lt;&gt; &#39;Comédie musicale&#39;;
+</code></pre>
+
+<p>Ou sans critères, pour supprimer tous les enregistrements.</p>
+
+<pre><code class="sql">DELETE FROM films;
+</code></pre>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-delete.html">Documentation sur la commande DELETE</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-42" style="background:;">
+  <!--  <a href="#slide-42"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-43" style="background:;">
+  <!--  <a href="#slide-43"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>Créer la base de données </p></li>
+<li><p>Injecter les données</p></li>
+<li><p>Faire les requêtes suivantes :</p>
+
+<ul>
+<li>Nombre de liens par étudiant</li>
+<li>Décompte de liens par paire d&#39;étudiants</li>
+</ul></li>
+<li><p>Enregistrer le résultat des requêtes</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-44" style="background:;">
+  <!--  <a href="#slide-44"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>En post-traitement sur R :</p>
+
+<ul>
+<li>Calculer le nombre d&#39;étudiants, le nombre de liens et la connectance du réseau</li>
+<li>Calculer le nombre de liens moyens par étudiant et la variance</li>
+</ul></li>
+<li><p>Écrire un script qui réalise les étapes 1-3 d&#39;un bloc</p></li>
+</ol>
+
+<p>Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l&#39;une après l&#39;autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-45" style="background:;">
+  <!--  <a href="#slide-45"></a> -->
+  <hgroup>
+    <h1>Lectures</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Débat sur le partage des données</h2>
+
+<ul>
+<li>Poisot et al. 2014. Moving toward a sustainable ecological science: don&#39;t let data go to waste ! Ideas in Ecology and Evolution 6: 11-19</li>
+<li>Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution. </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-46" style="background:;">
+  <!--  <a href="#slide-46"></a> -->
+  <hgroup>
+    <h1>Découper les scripts avec R</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-47" style="background:;">
+  <hgroup>
+    <h1>Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <h2>Script 1 - Créer et interroger la BD</h2>
+
+<pre><code class="r"># Création des tables
+dbSendQuery(con, &quot;CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+);&quot;)
+
+# On lit le fichier à insérer
+bd_films &lt;- read.csv2(file=&#39;./assets/donnees/
+                      bd_beacon/bd_films.csv&#39;)
+
+# On écrit dans la table
+dbWriteTable(con,append=TRUE,name=&quot;films&quot;,
+            value=bd_films, row.names=FALSE)
+
+# On fait une Requête
+annees &lt;- dbGetQuery(con,&quot;SELECT DISTINCT
+                  annee_prod FROM films;&quot;)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <h2>Script 2 - Analyse des données</h2>
+
+<pre><code class="r"># On appelle le script 1
+source(&#39;/chemin/vers/script1/scrip1.R&#39;)
+
+# Lister les objets R dans l&#39;environnement
+ls()
+
+# On verra apparaitre l&#39;objet &#39;annees&#39;
+# que l&#39;on pourra utiliser
+# pour la suite du travail
+</code></pre>
+
+    </div>
+  </article>
+</slide>
+<slide class="transition" id="slide-48" style="background:;">
+  <!--  <a href="#slide-48"></a> -->
+  <hgroup>
+    <h1>Discussion</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Séance 4'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Les grandes étapes'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Retour rapide sur la séance de la semaine dernière'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Connexion au serveur'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Création de la table <code>films</code>'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Création de la table <code>acteurs</code>'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='pgAdmin3'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Ajouter de l&#39;information dans les tables'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='SQL - <code>INSERT</code>'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='SQL - <code>COPY ... FROM</code>'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='RPostgreSQL - <code>dbWriteTable</code>'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Exercice 1 (10-15 minutes)'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='pgAdmin3'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Les requêtes'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Sélectionner des tables et des colonnes'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Sélectionner des enregistrements unique'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Sélectionner des tables et des colonnes'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Ordonner la table'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Critères avec <code>NULL</code>'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Combiner les critères'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='Critères sur le texte avec <code>LIKE</code>'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Exercice 4 (10 minutes)'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Agréger l&#39;information (1 ligne)'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Agréger l&#39;information (plusieurs lignes par groupe)'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Exercice 5 (10 minutes)'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='Jointures entre tables'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='Jointures entre tables'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='Les type de jointures'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Jointures entre tables'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='Exercice 4 (10-15 minutes)'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='Exercice 5 (10-15 minutes)'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='Requêtes emboitées'>
+         32
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title='Filtrer les requêtes à posteriori'>
+         33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title='Sauvegarder les requêtes'>
+         34
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title='Sauvegarder une requête'>
+         35
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title='Sauvegarder une requête'>
+         36
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title='Les requêtes stockées'>
+         37
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=38 title='Les requêtes stockées: les vues'>
+         38
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=39 title='Manipuler les enregistrements'>
+         39
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=40 title='Mettre à jour des enregistrements'>
+         40
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=41 title='Supprimer des enregistrements'>
+         41
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=42 title='Travail de la semaine'>
+         42
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=43 title='Travail de la semaine'>
+         43
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=44 title='Travail de la semaine'>
+         44
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=45 title='Lectures'>
+         45
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=46 title='Découper les scripts avec R'>
+         46
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=47 title='Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)'>
+         47
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=48 title='Discussion'>
+         48
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="./libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="./libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
