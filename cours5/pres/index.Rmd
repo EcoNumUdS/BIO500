@@ -22,7 +22,7 @@ assets      :
 
 - Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/cours5/) et en [PDF](./assets/pdf/S5-BIO500.pdf).
 - L'ensemble du matériel de cours est disponible sur la page du portail [moodle](https://www.usherbrooke.ca/moodle2-cours/course/view.php?id=12189).
-- La plupart des diapositives sont extraites du [cours](http://kevincazelles.fr/talks/assets/QCBSGraphsR/Rgraphics.html#4) de [Kevin Cazelles](http://kevincazelles.fr/) et [Nicolas Casajus](http://www.cen.ulaval.ca/membre.aspx?id=3945098&membre=ncasajus) lors d'un atelier de communication visuelle du CSBQ.
+- Vous trouverez du matériel supplémentaire dans le [cours](http://kevincazelles.fr/talks/assets/QCBSGraphsR/Rgraphics.html#4) de [Kevin Cazelles](http://kevincazelles.fr/) et [Nicolas Casajus](http://www.cen.ulaval.ca/membre.aspx?id=3945098&membre=ncasajus) lors d'un atelier de communication visuelle du CSBQ.
 - Certaines diapositives sont également extraites de la présentation de [David Taylor](http://dtdata.io/prm/intro_dataviz_csbq.pdf)
 
 --- .transition
@@ -34,7 +34,7 @@ assets      :
 # Trop d'information
 
 <div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/pacala.png" width="70%"></img>
+  <img src="assets/img/Pacala.png" width="70%"></img>
 </div>
 
 ---
@@ -42,7 +42,7 @@ assets      :
 # Non respect des normes graphiques
 
 <div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/desjardins.png" width="70%"></img>
+  <img src="assets/img/Desjardins.png" width="70%"></img>
 </div>
 
 ---
@@ -75,7 +75,7 @@ assets      :
 
 # Explorer nos données par la visualisation
 
-## Voici un exemple illustrant l'importance de visualiser ces données:
+## Voici un exemple illustrant l'importance de visualiser ses données:
 
 <div style='text-align:center;margin-top:10px;'>
   <img src="assets/img/table_visu.png" width="100%"></img>
@@ -85,7 +85,7 @@ assets      :
 
 # Explorer nos données par la visualisation
 
-## Voici un exemple illustrant l'importance de visualiser ces données:
+## Voici un exemple illustrant l'importance de visualiser ses données:
 
 <div style='text-align:center;margin-top:10px;'>
   <img src="assets/img/plot_visu.png" height="450px"></img>
@@ -97,9 +97,9 @@ assets      :
 
 *** =left
 
-- Les graphiques sont généralement **plus efficace à communiquer** un message/un résultat qu'un tableau.
+- Les graphiques sont généralement **plus efficaces à communiquer** un message/un résultat qu'un tableau.
 
-- **Problème:** La représentation graphique peut parfois nous conduire à une **fausse interprétation**. L'idée est transmettre une idée sans biaisé le lecteur.
+- **Problème:** La représentation graphique peut parfois nous conduire à une **fausse interprétation**. L'idée est de transmettre une idée sans biaiser le lecteur.
 
 *** =right
 
@@ -168,7 +168,7 @@ assets      :
 
 - Une figure doit renvoyer un seul message/résultat.
 - Chaque élément d'une figure doit **aider à comprendre** ce message.
-- **Choisir le bon type de représentation** permet de mettre en valeur plus facilement ce qui doit être montré.
+- **Choisir le bon type de représentation** permet de mettre en valeur plus facilement ce qui doit être illustré.
 - **Attention aux normes graphiques**: Choix des couleurs, taille des caractères, épaisseur de la ligne, disposition des marges, cadrage etc.
 
 *** =right
@@ -195,14 +195,14 @@ assets      :
 
 - Éviter les figures 3D.
 - Limiter le nombre de dimensions (3 ou 4 dimensions max).
-- La multi-dimensionnalité peut être gérer en:
+- La multi-dimensionnalité peut être gérée en:
   - Modifiant la forme et la la taille des points
   - Ajoutant des couleurs
 
 *** =right
 
 <div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/pacala.png" height="350px"></img>
+  <img src="assets/img/Pacala.png" height="350px"></img>
 </div>
 
 
@@ -714,7 +714,7 @@ contour(x, y, volcano,
 
 ```{r, eval=FALSE}
 dev.copy2pdf(file = "test.pdf")
-dev.copy2pnd(file = "PNG.png")
+dev.copy2png(file = "test.png")
 dev.copy2eps(file = "test.eps")
 ```
 
@@ -737,13 +737,10 @@ library(igraph)
 
 ---
 
-# Le format `igraph`
-
----
-
 # Transformer une matrice d'adjacence en objet `igraph`
 
 ```{r}
+library(igraph)
 C <- 0.1
 S <- 15
 L <- matrix(0, nr = S, nc = S)
@@ -772,7 +769,8 @@ plot(g)
 
 *** =left
 ```{r, eval = FALSE}
-plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA)
+plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+    vertex.frame.color = NA)
 ```
 
 *** =right
@@ -785,11 +783,31 @@ plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA)
 
 # Exercice : Compiler la matrice d'adjacence et faire une première représentation du réseau avec `igraph`
 
----
+--- &twocol
 
 # Changer la couleur des noeuds
 
-```{r}
+*** =left
+```{r, eval = FALSE}
+# Calculer le degré
+deg <- apply(L, 2, sum) + apply(L, 1, sum)
+
+# Le rang pour chaque noeud
+rk <- rank(deg)
+
+# Faire un code de couleur
+col.vec <- heat.colors(S)
+
+# Attribuer aux noeuds la couleur
+V(g)$color = col.vec[rk]
+
+# Refaire la figure
+plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+    vertex.frame.color = NA)
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
 # Calculer le degré
 deg <- apply(L, 2, sum) + apply(L, 1, sum)
 
@@ -806,13 +824,27 @@ V(g)$color = col.vec[rk]
 plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA)
 ```
 
----
+--- &twocol
 
 # Changer la taille des noeuds
 
-```{r}
+*** =left
+```{r, eval = FALSE}
 # Faire un code de ctaille
-col.vec <- seq(0.5, 3, length.out = S)
+col.vec <- seq(10, 25, length.out = S)
+
+# Attribuer aux noeuds la couleur
+V(g)$size = col.vec[rk]
+
+# Refaire la figure
+plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+    vertex.frame.color = NA)
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+# Faire un code de ctaille
+col.vec <- seq(10, 25, length.out = S)
 
 # Attribuer aux noeuds la couleur
 V(g)$size = col.vec[rk]
@@ -821,10 +853,50 @@ V(g)$size = col.vec[rk]
 plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA)
 ```
 
----
+--- &twocol
 
 # Changer la disposition des noeuds
 
+*** =left
+```{r, eval = FALSE}
+plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+    vertex.frame.color = NA, layout = layout.reingold.tilford(g))
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA, layout = layout.circle(g))
+```
+
+--- &twocol
+
+# Changer la disposition des noeuds
+
+*** =left
+```{r, eval = FALSE}
+plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+    vertex.frame.color = NA, layout = layout.circle(g))
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA, layout = layout.circle(g))
+```
+
+--- &twocol
+
+# Changer la disposition des noeuds
+
+*** =left
+```{r, eval = FALSE}
+plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+    vertex.frame.color = NA, layout = layout.kamada.kawai(g))
+```
+
+*** =right
+```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
+plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA, layout = layout.kamada.kawai(g))
+```
 
 ---
 
@@ -832,40 +904,30 @@ plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA)
 
 ## La modularité
 
+```{r}
+wtc = walktrap.community(g)
+modularity(wtc)
+```
+
 ---
 
 # Calcul de propriétés
 
-## Le 'patch length'
+## La distance entre les noeuds
+
+```{r}
+distances(g)
+```
 
 ---
 
 # Calcul de propriétés
 
-## La centralité
+## La centralité des noeuds
 
-
---- .transition
-
-# Travail # 2
-
----
-
-# Consignes
-
-- Identifier clairement vos questions de recherche
-- Illustrer le réseau de collaborations
-- Compléter votre analyse au moyen de 3 figures et 1 tableau
-
----
-
-# Évaluation
-
-- Clareté des questions et adéquation des figures et du tableau
-- Efficacité de la présentation
-- Respect de normes graphiques
-- Originalité
-
+```{r}
+eigen_centrality(g)$vector
+```
 
 --- .transition
 
@@ -907,6 +969,27 @@ library(knitr)
 iris_tex <- kable(iris,format="latex")
 writeLines(iris_tex, con = "./donnees/iris.tex", sep = "\n", useBytes = FALSE)
 ```
+
+--- .transition
+
+# Travail # 2
+
+---
+
+# Consignes
+
+- Identifier clairement vos questions de recherche
+- Illustrer le réseau de collaborations
+- Compléter votre analyse au moyen de 3 figures et 1 tableau
+
+---
+
+# Évaluation
+
+- Clareté des questions et adéquation des figures et du tableau
+- Efficacité de la présentation
+- Respect de normes graphiques
+- Originalité
 
 ---
 
