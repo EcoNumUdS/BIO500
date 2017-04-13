@@ -366,22 +366,39 @@ Fawcett2012
     - Automatisation
     - Stabilité
 
-- Présentation : un exemple de base avec un template par défaut
+- Un exemple de base avec un template par défaut
 
-- Présentation : autres templates
+- Comment compiler 
 
-- Préparer la présentation d'un rapport de session
-    - Page titre
-    - Intégration des figures
-    - Intégration des tableaux
+- Comparaison de différents templates -- passer d'un type de document à l'autre 
 
-- Exercice : préparer la mise en page du travail de session
+- Faire des commentaires
 
-- Gestion des références
-    - bibtex : le format
-    - compiler
-    - bst
+- Préparer la présentation du travail de session
+    - Titre
+    - Auteurs
+    - Résumé
+    - Sections
+    - Ajout de figures
+    - Ajout de tableaux
+    - Ajouter des énumérations
+    - Table des matières
+    - types de caractères (gras, italique, taille)
+    - Ajouter des symboles
+    - Ajouter une équation
+    - LaTeX Cheat sheet
 
+- Comment citer une référence
+
+- Le format bibtex
+
+- Comment générer un bibtex avec Mendeley
+
+- Le fichier bst
+
+- Compiler le bibtex et le document
+
+- Révisions: comparaison de deux documents avec la commande diff
 
 
 
