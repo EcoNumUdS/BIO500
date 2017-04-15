@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Séance 6: Documents dynamiques avec LaTeX</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Séance 6: Documents dynamiques avec LaTeX">
+  <meta name="author" content="Dominique Gravel &amp; Steve Vissault">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="./libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="./libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="./libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="./libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/default.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+<link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="./libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="./libraries/frameworks/io2012/js/slides" 
+    src="./libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/logo.png">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>Séance 6: Documents dynamiques avec LaTeX</h1>
+    <h2>BIO 500 - Méthodes en écologie computationnelle</h2>
+    <p>Dominique Gravel &amp; Steve Vissault<br/>Laboratoire d'écologie intégrative</p>
+  </hgroup>
+  <article></article>
+  <footer class = 'license'>
+    <a href='http://creativecommons.org/licenses/by-nc-sa/3.0/'>
+    <img width = '80px' src = 'http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png'>
+    </a>
+  </footer>
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <!--  <a href="#slide-1"></a> -->
+  <hgroup>
+    <h1>Séance 6</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Ces diapositives sont disponibles en <a href="https://econumuds.github.io/BIO500/cours6/">version web</a> et en <a href="./assets/pdf/S6-BIO500.pdf">PDF</a>.</li>
+<li>L&#39;ensemble du matériel de cours est disponible sur la page du portail <a href="https://www.usherbrooke.ca/moodle2-cours/course/view.php?id=12189">moodle</a>.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-2" style="background:;">
+  <!--  <a href="#slide-2"></a> -->
+  <hgroup>
+    <h1>Introduction</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-3" style="background:;">
+  <!--  <a href="#slide-3"></a> -->
+  <hgroup>
+    <h1>Où sommes-nous?</h1>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align:center;'>
+<img src="assets/img/flow_full.png" width="100%"></img>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-4" style="background:;">
+  <!--  <a href="#slide-4"></a> -->
+  <hgroup>
+    <h1>Qu&#39;est ce que \(\LaTeX\)?</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Language introduit en **** par un mathématicien.</li>
+<li>C&#39;est un language à balise.</li>
+<li>Concu sépcifiquement pour la production de rapports scientifiques.</li>
+<li>L&#39;utilisation de \(\LaTeX\) est une norme pour les mathématiciens et les physiciens.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h1>La structure d&#39;un document \(\LaTeX\)</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="tex">\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+
+\title{Un document minimalist}
+\author{Dominique Gravel}
+
+\begin{document}
+
+Je peux écrire du texte ici.
+
+\end{document}
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <ol>
+<li><code>\documentclass</code> détermine la class du document.</li>
+<li><code>\usepackage</code>: Comme R, \(\LaTeX\) permet l&#39;utilisation de librairies. <code>inputec</code> et <code>fontec</code> sont des libraries permettant de gérer <em>l&#39;encoding</em> du document (caractères avec accent etc.). Les <code>[]</code> déterminent les options.</li>
+<li>On définit les métadonnées avec <code>\title</code>, <code>\author</code>, <code>\date</code></li>
+<li>On ouvre l&#39;environnement <code>Document</code> avec <code>\begin</code></li>
+</ol>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-6" style="background:;">
+  <!--  <a href="#slide-6"></a> -->
+  <hgroup>
+    <h1>Séparer le contenu du contenant</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>La mise en page est gérer par des balises (environnement)</li>
+<li>Les balises déclarent le contenant (la forme)</li>
+<li>Le texte se place entre les balises (le contenu)</li>
+<li>Le contenu est écrit entre les balises.</li>
+<li>Si l&#39;on change tout simplement de balises \(\LaTeX\), on obtient une nouvelle mise en forme.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-7" style="background:;">
+  <!--  <a href="#slide-7"></a> -->
+  <hgroup>
+    <h1>Avantages</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>\(\LaTeX\) est un language gratuit et OpenSource.</li>
+<li>Stable et doté d&#39;une riche communauté d&#39;utilisateur.</li>
+<li>Stack Overflow entièrement dédié à \(\LaTeX\): <a href="https://tex.stackexchange.com/">https://tex.stackexchange.com/</a></li>
+<li>Ajustement automatique du contenant au contenu
+
+<ul>
+<li>Mise en page automatique (Figure etc.)</li>
+<li>Table des matières</li>
+<li>Gestion des références</li>
+</ul></li>
+<li>Comme R, \(\LaTeX\) dispose de plusieurs libraries (packages) pour satisfaire nos besoins.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-8" style="background:;">
+  <!--  <a href="#slide-8"></a> -->
+  <hgroup>
+    <h1>Désavantages</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>La courbe d&#39;apprentissage peut être plus rude.</li>
+<li>La compilation requière plusieurs étapes</li>
+<li><p>Les erreurs de compilation sont souvent difficile à comprendre.</p></li>
+<li><p>Son principal point faible réside dans l&#39;abscence d&#39;un système de révision multi-utilisateurs.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-9" style="background:;">
+  <!--  <a href="#slide-9"></a> -->
+  <hgroup>
+    <h1>Faire du \(\LaTeX\) avec Sublime Text2</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-10" style="background:;">
+  <!--  <a href="#slide-10"></a> -->
+  <hgroup>
+    <h1>La compilation du document \(\LaTeX\)</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-11" style="background:;">
+  <!--   <article data-timings="">
+    <!-- Sans biblio -->
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-12" style="background:;">
+  <!--  <a href="#slide-12"></a> -->
+  <hgroup>
+    <h1>Les balises de base \(\LaTeX\)</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-13" style="background:;">
+  <!--  <a href="#slide-13"></a> -->
+  <hgroup>
+    <h1>Ouvrir un document</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-14" style="background:;">
+  <!--  <a href="#slide-14"></a> -->
+  <hgroup>
+    <h1>Définir les métadonnées</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-15" style="background:;">
+  <!--  <a href="#slide-15"></a> -->
+  <hgroup>
+    <h1>Créer la page titre à partir des métadonnées</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-16" style="background:;">
+  <!--  <a href="#slide-16"></a> -->
+  <hgroup>
+    <h1>Insérer un résumé</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-17" style="background:;">
+  <!--  <a href="#slide-17"></a> -->
+  <hgroup>
+    <h1>Ajouter des sections</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-18" style="background:;">
+  <!--  <a href="#slide-18"></a> -->
+  <hgroup>
+    <h1>Insérer la table des matières</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-19" style="background:;">
+  <!--  <a href="#slide-19"></a> -->
+  <hgroup>
+    <h1>Mise en forme du texte</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-20" style="background:;">
+  <!--  <a href="#slide-20"></a> -->
+  <hgroup>
+    <h1>Mise en forme standard</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Texte en gras, italique, souligné</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-21" style="background:;">
+  <!--   <article data-timings="">
+    <ul>
+<li>URL</li>
+<li>Equation Symbole Inline</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-22" style="background:;">
+  <!--  <a href="#slide-22"></a> -->
+  <hgroup>
+    <h1>Les principaux environnement \(\LaTeX\)</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-23" style="background:;">
+  <!--  <a href="#slide-23"></a> -->
+  <hgroup>
+    <h1>Ajouter une figure</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-24" style="background:;">
+  <!--  <a href="#slide-24"></a> -->
+  <hgroup>
+    <h1>Ajouter une équation</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-25" style="background:;">
+  <!--  <a href="#slide-25"></a> -->
+  <hgroup>
+    <h1>Ajouter un tableau</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-26" style="background:;">
+  <!--  <a href="#slide-26"></a> -->
+  <hgroup>
+    <h1>Ajouter un label à ces environnements</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Définir un label</li>
+<li>Référer la figure, l&#39;équation à l&#39;aide du label</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-27" style="background:;">
+  <!--  <a href="#slide-27"></a> -->
+  <hgroup>
+    <h1>Ajouter des énumérations</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-28" style="background:;">
+  <!--  <a href="#slide-28"></a> -->
+  <hgroup>
+    <h1>La bibliographie</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-29" style="background:;">
+  <!--  <a href="#slide-29"></a> -->
+  <hgroup>
+    <h1>Organiser son travail</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Séance 6'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Introduction'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Où sommes-nous?'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Qu&#39;est ce que \(\LaTeX\)?'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='La structure d&#39;un document \(\LaTeX\)'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Séparer le contenu du contenant'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Avantages'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Désavantages'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Faire du \(\LaTeX\) avec Sublime Text2'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='La compilation du document \(\LaTeX\)'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='NA'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Les balises de base \(\LaTeX\)'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Ouvrir un document'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Définir les métadonnées'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Créer la page titre à partir des métadonnées'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Insérer un résumé'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Ajouter des sections'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Insérer la table des matières'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Mise en forme du texte'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Mise en forme standard'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='NA'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Les principaux environnement \(\LaTeX\)'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Ajouter une figure'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Ajouter une équation'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Ajouter un tableau'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='Ajouter un label à ces environnements'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='Ajouter des énumérations'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='La bibliographie'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Organiser son travail'>
+         29
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="./libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="./libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
