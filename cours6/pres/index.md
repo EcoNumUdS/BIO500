@@ -38,13 +38,21 @@ assets      :
 
 ---
 
+# Pourquoi $\LaTeX$?
+
+<div style='text-align:center;'>
+<img src="assets/img/latex_comp.gif" width="60%"></img>
+</div>
+
+
+---
+
 # Qu'est ce que $\LaTeX$?
 
-- Language introduit en **** par un mathématicien.
+- Language introduit en 1983 par l'informaticien Leslie Lamport.
 - C'est un language à balise.
-- Concu sépcifiquement pour la production de rapports scientifiques.
-- L'utilisation de $\LaTeX$ est une norme pour les mathématiciens et les physiciens.
-
+- Concu spécifiquement pour l'écriture de rapports scientifiques.
+- L'utilisation de $\LaTeX$ est une norme chez les mathématiciens et les physiciens.
 
 
 --- &twocol
@@ -57,7 +65,7 @@ assets      :
 \documentclass[12pt]{article}
 
 \usepackage[T1]{fontenc}
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 
 \title{Un document minimalist}
 \author{Dominique Gravel}
@@ -74,7 +82,6 @@ Je peux écrire du texte ici.
 
 1. ```\documentclass``` détermine la class du document.
 2. ```\usepackage```: Comme R, $\LaTeX$ permet l'utilisation de librairies. ```inputec``` et ```fontec``` sont des libraries permettant de gérer *l'encoding* du document (caractères avec accent etc.). Les ```[]``` déterminent les options.
-3. On définit les métadonnées avec ```\title```, ```\author```, ```\date```
 4. On ouvre l'environnement ```Document``` avec ```\begin```
 
 ---
@@ -84,7 +91,6 @@ Je peux écrire du texte ici.
 - La mise en page est gérer par des balises (environnement)
 - Les balises déclarent le contenant (la forme)
 - Le texte se place entre les balises (le contenu)
-- Le contenu est écrit entre les balises.
 - Si l'on change tout simplement de balises $\LaTeX$, on obtient une nouvelle mise en forme.
 
 ---
@@ -95,7 +101,7 @@ Je peux écrire du texte ici.
 - Stable et doté d'une riche communauté d'utilisateur.
 - Stack Overflow entièrement dédié à $\LaTeX$: [https://tex.stackexchange.com/](https://tex.stackexchange.com/)
 - Ajustement automatique du contenant au contenu
-  - Mise en page automatique (Figure etc.)
+  - Mise en page automatique (Figures etc.)
   - Table des matières
   - Gestion des références
 - Comme R, $\LaTeX$ dispose de plusieurs libraries (packages) pour satisfaire nos besoins.
@@ -108,50 +114,188 @@ Je peux écrire du texte ici.
 - La courbe d'apprentissage peut être plus rude.
 - La compilation requière plusieurs étapes
 - Les erreurs de compilation sont souvent difficile à comprendre.
-
-- Son principal point faible réside dans l'abscence d'un système de révision multi-utilisateurs.
+- Son principal point faible réside dans l'absence d'un système de révision multi-utilisateurs.
 
 ---
 
 # Faire du $\LaTeX$ avec Sublime Text2
 
+1. Créer un dossier sur votre bureau qui va contenir votre document $\LaTeX$
+2. Ouvrir Sublime Text2
+3. Sélectionner votre dossier nouvelle créer: ```Fichier > Ouvrir```
+4. Créer un nouveau document: ```Fichier > Nouveau```
+5. Enregistrer votre document avec l'extension ```.tex```: ```Fichier > Enregistrer sous```
 
----.transition
-
-# La compilation du document $\LaTeX$
-
-
----
-
-<!-- Sans biblio -->
+Et voilà, l'extension ```.tex``` détermine que le fichier est un document $\LaTeX$.
 
 
 ---.transition
 
-# Les balises de base $\LaTeX$
+# Mon premier document $\LaTeX$
+
+---&twocolw w1:60% w2:35%
+
+# Mon premier document $\LaTeX$
+
+*** =left
+
+```tex
+\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{lipsum}
+
+\begin{document}
+
+\section{Mon premier article en latin}
+
+\lipsum[2-4]
+
+\end{document}
+```
+
+*** =right
+
+## Exercice (10 minutes):
+
+Recopier dans votre document ```.tex``` ce code.
+
+**Note:** ```\usepackage{lipsum}``` est un package permettant de générer du faux texte (latin de mise en forme).
+
+
+
+---.transition
+
+# La compilation d'un document $\LaTeX$ sans bibliographie
 
 
 ---
 
-# Ouvrir un document
+# La compilation
+
+Afin d'obtenir le rendu PDF de notre document, nous devons compiler ce dernier à l'aide du compilateur ```pdflatex```.
 
 
+**Étape 1.** Ouvrez votre terminal.
 
----
+**Étape 2.** À l'aide de la commande ```cd``` (*Change Directory*), vous devez vous déplacer dans le terminal vers le dossier que vous venez de créer:
+
+```bash
+cd ~/Bureau
+```
+```bash
+cd /home/etudiant/Bureau
+```
+
+---&twocolw w1:50% w2:45%
+
+# La compilation
+
+*** =left
+
+**Étape 3.** Nous pouvons maintenant compiler le document avec la commande:
+
+```bash
+pdflatex mon_document.tex
+```
+
+**Étape 4.** Une fois la compilation terminé, les deux dernières lignes de la sortie devraient être:
+
+```bash
+Output written on doc.pdf (1 page, 31402 bytes).
+Transcript written on doc.log.
+```
+
+*** =right
+
+<div style='text-align:center;'>
+<img src="assets/img/doc.png" height="500px" style="border-style:solid;border-width:1px;"></img>
+</div>
+
+
+---&twocolw w1:50% w2:45%
 
 # Définir les métadonnées
 
+*** =left
+
+```bash
+\title{Comment structurer un document \LaTeX{}}
+\author{Prof. Dominique Gravel\\
+   Chaire de recherche en Écologie Intégrative,\\
+   Faculté des Sciences,\\
+   Département de Biologie,\\
+   Université de Sherbrooke,\\
+   \texttt{dominique.gravel@usherbrooke.ca}}
+\date{\today}
+```
+
+## Exercice 3:
+
+- Ajouter vos métadonnées puis compilé à nouveau votre document ```.tex```.
+
+*** =right
+
+- On définit les métadonnées avec ```\title```, ```\author```, ```\date```.
+- Ces métadonnées seront attachées au PDF garantissant la propriété du document.
+- Les métadonnées doivent être placé avant l'environnement ```\begin{document}```.
+- Les ```\\``` dans la balise ```\author``` permettent une mise à la ligne.
+- Enfin, la balise ```\today``` remplie la date du jour pour nous.
 
 
----
+---&twocolw w1:50% w2:45%
 
 # Créer la page titre à partir des métadonnées
 
+*** =left
 
+Nous pouvons utiliser ces métadonnées pour produire la page titre de notre document.
+
+
+```bash
+[...]
+
+\begin{document}
+
+\maketitle
+
+\section{Mon premier article en latin}
+\lipsum[2-4]
+
+\end{document}
+```
+
+La page titre est généré grâce à la balise ```\maketitle``` dans l'environnement document.
+
+*** =right
+
+<div style='text-align:center;'>
+<img src="assets/img/doc2.png" height="500px" style="border-style:solid;border-width:1px;"></img>
+</div>
 
 ---
 
 # Insérer un résumé
+
+
+```bash
+[...]
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\lipsum[1]
+\end{abstract}
+
+\section{Mon premier article en latin}
+\lipsum[2-4]
+
+\end{document}
+```
 
 
 ---

@@ -91,20 +91,33 @@
 <slide class="" id="slide-4" style="background:;">
   <!--  <a href="#slide-4"></a> -->
   <hgroup>
-    <h1>Qu&#39;est ce que \(\LaTeX\)?</h1>
+    <h1>Pourquoi \(\LaTeX\)?</h1>
   </hgroup>
   <article data-timings="">
-    <ul>
-<li>Language introduit en **** par un mathématicien.</li>
-<li>C&#39;est un language à balise.</li>
-<li>Concu sépcifiquement pour la production de rapports scientifiques.</li>
-<li>L&#39;utilisation de \(\LaTeX\) est une norme pour les mathématiciens et les physiciens.</li>
-</ul>
+    <div style='text-align:center;'>
+<img src="assets/img/latex_comp.gif" width="60%"></img>
+</div>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 <slide class="" id="slide-5" style="background:;">
+  <!--  <a href="#slide-5"></a> -->
+  <hgroup>
+    <h1>Qu&#39;est ce que \(\LaTeX\)?</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Language introduit en 1983 par l&#39;informaticien Leslie Lamport.</li>
+<li>C&#39;est un language à balise.</li>
+<li>Concu spécifiquement pour l&#39;écriture de rapports scientifiques.</li>
+<li>L&#39;utilisation de \(\LaTeX\) est une norme chez les mathématiciens et les physiciens.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-6" style="background:;">
   <hgroup>
     <h1>La structure d&#39;un document \(\LaTeX\)</h1>
   </hgroup>
@@ -114,7 +127,7 @@
      <pre><code class="tex">\documentclass[12pt]{article}
 
 \usepackage[T1]{fontenc}
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 
 \title{Un document minimalist}
 \author{Dominique Gravel}
@@ -131,15 +144,14 @@ Je peux écrire du texte ici.
      <ol>
 <li><code>\documentclass</code> détermine la class du document.</li>
 <li><code>\usepackage</code>: Comme R, \(\LaTeX\) permet l&#39;utilisation de librairies. <code>inputec</code> et <code>fontec</code> sont des libraries permettant de gérer <em>l&#39;encoding</em> du document (caractères avec accent etc.). Les <code>[]</code> déterminent les options.</li>
-<li>On définit les métadonnées avec <code>\title</code>, <code>\author</code>, <code>\date</code></li>
 <li>On ouvre l&#39;environnement <code>Document</code> avec <code>\begin</code></li>
 </ol>
 
     </div>
   </article>
 </slide>
-<slide class="" id="slide-6" style="background:;">
-  <!--  <a href="#slide-6"></a> -->
+<slide class="" id="slide-7" style="background:;">
+  <!--  <a href="#slide-7"></a> -->
   <hgroup>
     <h1>Séparer le contenu du contenant</h1>
   </hgroup>
@@ -148,15 +160,14 @@ Je peux écrire du texte ici.
 <li>La mise en page est gérer par des balises (environnement)</li>
 <li>Les balises déclarent le contenant (la forme)</li>
 <li>Le texte se place entre les balises (le contenu)</li>
-<li>Le contenu est écrit entre les balises.</li>
 <li>Si l&#39;on change tout simplement de balises \(\LaTeX\), on obtient une nouvelle mise en forme.</li>
 </ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-7" style="background:;">
-  <!--  <a href="#slide-7"></a> -->
+<slide class="" id="slide-8" style="background:;">
+  <!--  <a href="#slide-8"></a> -->
   <hgroup>
     <h1>Avantages</h1>
   </hgroup>
@@ -168,7 +179,7 @@ Je peux écrire du texte ici.
 <li>Ajustement automatique du contenant au contenu
 
 <ul>
-<li>Mise en page automatique (Figure etc.)</li>
+<li>Mise en page automatique (Figures etc.)</li>
 <li>Table des matières</li>
 <li>Gestion des références</li>
 </ul></li>
@@ -178,8 +189,8 @@ Je peux écrire du texte ici.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-8" style="background:;">
-  <!--  <a href="#slide-8"></a> -->
+<slide class="" id="slide-9" style="background:;">
+  <!--  <a href="#slide-9"></a> -->
   <hgroup>
     <h1>Désavantages</h1>
   </hgroup>
@@ -187,54 +198,80 @@ Je peux écrire du texte ici.
     <ul>
 <li>La courbe d&#39;apprentissage peut être plus rude.</li>
 <li>La compilation requière plusieurs étapes</li>
-<li><p>Les erreurs de compilation sont souvent difficile à comprendre.</p></li>
-<li><p>Son principal point faible réside dans l&#39;abscence d&#39;un système de révision multi-utilisateurs.</p></li>
+<li>Les erreurs de compilation sont souvent difficile à comprendre.</li>
+<li>Son principal point faible réside dans l&#39;absence d&#39;un système de révision multi-utilisateurs.</li>
 </ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-9" style="background:;">
-  <!--  <a href="#slide-9"></a> -->
+<slide class="" id="slide-10" style="background:;">
+  <!--  <a href="#slide-10"></a> -->
   <hgroup>
     <h1>Faire du \(\LaTeX\) avec Sublime Text2</h1>
   </hgroup>
   <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-<slide class="transition" id="slide-10" style="background:;">
-  <!--  <a href="#slide-10"></a> -->
-  <hgroup>
-    <h1>La compilation du document \(\LaTeX\)</h1>
-  </hgroup>
-  <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-<slide class="" id="slide-11" style="background:;">
-  <!--   <article data-timings="">
-    <!-- Sans biblio -->
+    <ol>
+<li>Créer un dossier sur votre bureau qui va contenir votre document \(\LaTeX\)</li>
+<li>Ouvrir Sublime Text2</li>
+<li>Sélectionner votre dossier nouvelle créer: <code>Fichier &gt; Ouvrir</code></li>
+<li>Créer un nouveau document: <code>Fichier &gt; Nouveau</code></li>
+<li>Enregistrer votre document avec l&#39;extension <code>.tex</code>: <code>Fichier &gt; Enregistrer sous</code></li>
+</ol>
+
+<p>Et voilà, l&#39;extension <code>.tex</code> détermine que le fichier est un document \(\LaTeX\).</p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-12" style="background:;">
-  <!--  <a href="#slide-12"></a> -->
+<slide class="transition" id="slide-11" style="background:;">
+  <!--  <a href="#slide-11"></a> -->
   <hgroup>
-    <h1>Les balises de base \(\LaTeX\)</h1>
+    <h1>Mon premier document \(\LaTeX\)</h1>
   </hgroup>
   <article data-timings="">
     
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-13" style="background:;">
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h1>Mon premier document \(\LaTeX\)</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:60%'>
+     <pre><code class="tex">\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{lipsum}
+
+\begin{document}
+
+\section{Mon premier article en latin}
+
+\lipsum[2-4]
+
+\end{document}
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:35%'>
+     <h2>Exercice (10 minutes):</h2>
+
+<p>Recopier dans votre document <code>.tex</code> ce code.</p>
+
+<p><strong>Note:</strong> <code>\usepackage{lipsum}</code> est un package permettant de générer du faux texte (latin de mise en forme).</p>
+
+    </div>
+  </article>
+</slide>
+<slide class="transition" id="slide-13" style="background:;">
   <!--  <a href="#slide-13"></a> -->
   <hgroup>
-    <h1>Ouvrir un document</h1>
+    <h1>La compilation d&#39;un document \(\LaTeX\) sans bibliographie</h1>
   </hgroup>
   <article data-timings="">
     
@@ -244,35 +281,146 @@ Je peux écrire du texte ici.
 <slide class="" id="slide-14" style="background:;">
   <!--  <a href="#slide-14"></a> -->
   <hgroup>
-    <h1>Définir les métadonnées</h1>
+    <h1>La compilation</h1>
   </hgroup>
   <article data-timings="">
-    
+    <p>Afin d&#39;obtenir le rendu PDF de notre document, nous devons compiler ce dernier à l&#39;aide du compilateur <code>pdflatex</code>.</p>
+
+<p><strong>Étape 1.</strong> Ouvrez votre terminal.</p>
+
+<p><strong>Étape 2.</strong> À l&#39;aide de la commande <code>cd</code> (<em>Change Directory</em>), vous devez vous déplacer dans le terminal vers le dossier que vous venez de créer:</p>
+
+<pre><code class="bash">cd ~/Bureau
+</code></pre>
+
+<pre><code class="bash">cd /home/etudiant/Bureau
+</code></pre>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 <slide class="" id="slide-15" style="background:;">
-  <!--  <a href="#slide-15"></a> -->
+  <hgroup>
+    <h1>La compilation</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:50%'>
+     <p><strong>Étape 3.</strong> Nous pouvons maintenant compiler le document avec la commande:</p>
+
+<pre><code class="bash">pdflatex mon_document.tex
+</code></pre>
+
+<p><strong>Étape 4.</strong> Une fois la compilation terminé, les deux dernières lignes de la sortie devraient être:</p>
+
+<pre><code class="bash">Output written on doc.pdf (1 page, 31402 bytes).
+Transcript written on doc.log.
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:45%'>
+     <div style='text-align:center;'>
+<img src="assets/img/doc.png" height="500px" style="border-style:solid;border-width:1px;"></img>
+</div>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h1>Définir les métadonnées</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:50%'>
+     <pre><code class="bash">\title{Comment structurer un document \LaTeX{}}
+\author{Prof. Dominique Gravel\\
+   Chaire de recherche en Écologie Intégrative,\\
+   Faculté des Sciences,\\
+   Département de Biologie,\\
+   Université de Sherbrooke,\\
+   \texttt{dominique.gravel@usherbrooke.ca}}
+\date{\today}
+</code></pre>
+
+<h2>Exercice 3:</h2>
+
+<ul>
+<li>Ajouter vos métadonnées puis compilé à nouveau votre document <code>.tex</code>.</li>
+</ul>
+
+    </div>
+    <div class='right' style='float:right;width:45%'>
+     <ul>
+<li>On définit les métadonnées avec <code>\title</code>, <code>\author</code>, <code>\date</code>.</li>
+<li>Ces métadonnées seront attachées au PDF garantissant la propriété du document.</li>
+<li>Les métadonnées doivent être placé avant l&#39;environnement <code>\begin{document}</code>.</li>
+<li>Les <code>\\</code> dans la balise <code>\author</code> permettent une mise à la ligne.</li>
+<li>Enfin, la balise <code>\today</code> remplie la date du jour pour nous.</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-17" style="background:;">
   <hgroup>
     <h1>Créer la page titre à partir des métadonnées</h1>
   </hgroup>
-  <article data-timings="">
+  <article>
     
+    <div class='left' style='float:left;width:50%'>
+     <p>Nous pouvons utiliser ces métadonnées pour produire la page titre de notre document.</p>
+
+<pre><code class="bash">[...]
+
+\begin{document}
+
+\maketitle
+
+\section{Mon premier article en latin}
+\lipsum[2-4]
+
+\end{document}
+</code></pre>
+
+<p>La page titre est généré grâce à la balise <code>\maketitle</code> dans l&#39;environnement document.</p>
+
+    </div>
+    <div class='right' style='float:right;width:45%'>
+     <div style='text-align:center;'>
+<img src="assets/img/doc2.png" height="500px" style="border-style:solid;border-width:1px;"></img>
+</div>
+
+    </div>
   </article>
-  <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-16" style="background:;">
-  <!--  <a href="#slide-16"></a> -->
+<slide class="" id="slide-18" style="background:;">
+  <!--  <a href="#slide-18"></a> -->
   <hgroup>
     <h1>Insérer un résumé</h1>
   </hgroup>
   <article data-timings="">
-    
+    <pre><code class="bash">[...]
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\lipsum[1]
+\end{abstract}
+
+\section{Mon premier article en latin}
+\lipsum[2-4]
+
+\end{document}
+</code></pre>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-17" style="background:;">
-  <!--  <a href="#slide-17"></a> -->
+<slide class="" id="slide-19" style="background:;">
+  <!--  <a href="#slide-19"></a> -->
   <hgroup>
     <h1>Ajouter des sections</h1>
   </hgroup>
@@ -281,8 +429,8 @@ Je peux écrire du texte ici.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-18" style="background:;">
-  <!--  <a href="#slide-18"></a> -->
+<slide class="" id="slide-20" style="background:;">
+  <!--  <a href="#slide-20"></a> -->
   <hgroup>
     <h1>Insérer la table des matières</h1>
   </hgroup>
@@ -291,8 +439,8 @@ Je peux écrire du texte ici.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-19" style="background:;">
-  <!--  <a href="#slide-19"></a> -->
+<slide class="transition" id="slide-21" style="background:;">
+  <!--  <a href="#slide-21"></a> -->
   <hgroup>
     <h1>Mise en forme du texte</h1>
   </hgroup>
@@ -301,8 +449,8 @@ Je peux écrire du texte ici.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-20" style="background:;">
-  <!--  <a href="#slide-20"></a> -->
+<slide class="" id="slide-22" style="background:;">
+  <!--  <a href="#slide-22"></a> -->
   <hgroup>
     <h1>Mise en forme standard</h1>
   </hgroup>
@@ -314,7 +462,7 @@ Je peux écrire du texte ici.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-21" style="background:;">
+<slide class="" id="slide-23" style="background:;">
   <!--   <article data-timings="">
     <ul>
 <li>URL</li>
@@ -324,30 +472,10 @@ Je peux écrire du texte ici.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-22" style="background:;">
-  <!--  <a href="#slide-22"></a> -->
-  <hgroup>
-    <h1>Les principaux environnement \(\LaTeX\)</h1>
-  </hgroup>
-  <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-<slide class="" id="slide-23" style="background:;">
-  <!--  <a href="#slide-23"></a> -->
-  <hgroup>
-    <h1>Ajouter une figure</h1>
-  </hgroup>
-  <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-<slide class="" id="slide-24" style="background:;">
+<slide class="transition" id="slide-24" style="background:;">
   <!--  <a href="#slide-24"></a> -->
   <hgroup>
-    <h1>Ajouter une équation</h1>
+    <h1>Les principaux environnement \(\LaTeX\)</h1>
   </hgroup>
   <article data-timings="">
     
@@ -357,7 +485,7 @@ Je peux écrire du texte ici.
 <slide class="" id="slide-25" style="background:;">
   <!--  <a href="#slide-25"></a> -->
   <hgroup>
-    <h1>Ajouter un tableau</h1>
+    <h1>Ajouter une figure</h1>
   </hgroup>
   <article data-timings="">
     
@@ -366,6 +494,26 @@ Je peux écrire du texte ici.
 </slide>
 <slide class="" id="slide-26" style="background:;">
   <!--  <a href="#slide-26"></a> -->
+  <hgroup>
+    <h1>Ajouter une équation</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-27" style="background:;">
+  <!--  <a href="#slide-27"></a> -->
+  <hgroup>
+    <h1>Ajouter un tableau</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-28" style="background:;">
+  <!--  <a href="#slide-28"></a> -->
   <hgroup>
     <h1>Ajouter un label à ces environnements</h1>
   </hgroup>
@@ -378,8 +526,8 @@ Je peux écrire du texte ici.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-27" style="background:;">
-  <!--  <a href="#slide-27"></a> -->
+<slide class="" id="slide-29" style="background:;">
+  <!--  <a href="#slide-29"></a> -->
   <hgroup>
     <h1>Ajouter des énumérations</h1>
   </hgroup>
@@ -388,8 +536,8 @@ Je peux écrire du texte ici.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-28" style="background:;">
-  <!--  <a href="#slide-28"></a> -->
+<slide class="transition" id="slide-30" style="background:;">
+  <!--  <a href="#slide-30"></a> -->
   <hgroup>
     <h1>La bibliographie</h1>
   </hgroup>
@@ -398,8 +546,8 @@ Je peux écrire du texte ici.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-29" style="background:;">
-  <!--  <a href="#slide-29"></a> -->
+<slide class="transition" id="slide-31" style="background:;">
+  <!--  <a href="#slide-31"></a> -->
   <hgroup>
     <h1>Organiser son travail</h1>
   </hgroup>
@@ -432,158 +580,170 @@ Je peux écrire du texte ici.
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Qu&#39;est ce que \(\LaTeX\)?'>
+        data-slide=4 title='Pourquoi \(\LaTeX\)?'>
          4
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='La structure d&#39;un document \(\LaTeX\)'>
+        data-slide=5 title='Qu&#39;est ce que \(\LaTeX\)?'>
          5
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='Séparer le contenu du contenant'>
+        data-slide=6 title='La structure d&#39;un document \(\LaTeX\)'>
          6
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=7 title='Avantages'>
+        data-slide=7 title='Séparer le contenu du contenant'>
          7
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=8 title='Désavantages'>
+        data-slide=8 title='Avantages'>
          8
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=9 title='Faire du \(\LaTeX\) avec Sublime Text2'>
+        data-slide=9 title='Désavantages'>
          9
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=10 title='La compilation du document \(\LaTeX\)'>
+        data-slide=10 title='Faire du \(\LaTeX\) avec Sublime Text2'>
          10
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='NA'>
+        data-slide=11 title='Mon premier document \(\LaTeX\)'>
          11
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title='Les balises de base \(\LaTeX\)'>
+        data-slide=12 title='Mon premier document \(\LaTeX\)'>
          12
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=13 title='Ouvrir un document'>
+        data-slide=13 title='La compilation d&#39;un document \(\LaTeX\) sans bibliographie'>
          13
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=14 title='Définir les métadonnées'>
+        data-slide=14 title='La compilation'>
          14
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=15 title='Créer la page titre à partir des métadonnées'>
+        data-slide=15 title='La compilation'>
          15
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=16 title='Insérer un résumé'>
+        data-slide=16 title='Définir les métadonnées'>
          16
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=17 title='Ajouter des sections'>
+        data-slide=17 title='Créer la page titre à partir des métadonnées'>
          17
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=18 title='Insérer la table des matières'>
+        data-slide=18 title='Insérer un résumé'>
          18
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=19 title='Mise en forme du texte'>
+        data-slide=19 title='Ajouter des sections'>
          19
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=20 title='Mise en forme standard'>
+        data-slide=20 title='Insérer la table des matières'>
          20
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=21 title='NA'>
+        data-slide=21 title='Mise en forme du texte'>
          21
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=22 title='Les principaux environnement \(\LaTeX\)'>
+        data-slide=22 title='Mise en forme standard'>
          22
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=23 title='Ajouter une figure'>
+        data-slide=23 title='NA'>
          23
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=24 title='Ajouter une équation'>
+        data-slide=24 title='Les principaux environnement \(\LaTeX\)'>
          24
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=25 title='Ajouter un tableau'>
+        data-slide=25 title='Ajouter une figure'>
          25
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=26 title='Ajouter un label à ces environnements'>
+        data-slide=26 title='Ajouter une équation'>
          26
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=27 title='Ajouter des énumérations'>
+        data-slide=27 title='Ajouter un tableau'>
          27
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=28 title='La bibliographie'>
+        data-slide=28 title='Ajouter un label à ces environnements'>
          28
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=29 title='Organiser son travail'>
+        data-slide=29 title='Ajouter des énumérations'>
          29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='La bibliographie'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='Organiser son travail'>
+         31
       </a>
     </li>
   </ul>
