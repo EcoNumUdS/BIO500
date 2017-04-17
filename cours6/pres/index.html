@@ -147,7 +147,7 @@
   <article>
     
     <div class='left' style='float:left;width:48%'>
-     <pre><code class="TeX">\documentclass[12pt]{article}
+     <pre><code class="tex">\documentclass[12pt]{article}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -1132,9 +1132,9 @@ Il a été écrit par \@author\space le \@date
   <article>
     
     <div class='left' style='float:left;width:48%'>
-     <h2>Dans le texte</h2>
+     <p>Dans le texte:</p>
 
-<pre><code class="TeX">La théorie de la biogéographie
+<pre><code>La théorie de la biogéographie
 des îles donne la richesse
 en espèces $S$ à l&#39;équilibre
 au point où les courbes
@@ -1143,7 +1143,7 @@ $I(S)$ et $E(S)$ se croisent.
 
     </div>
     <div class='right' style='float:right;width:48%'>
-     <h2>En retrait du texte</h2>
+     <p>En retrait du texte:</p>
 
 <pre><code>\begin{equation}
   S^* = \frac{I}{I+E}
@@ -1159,35 +1159,36 @@ $I(S)$ et $E(S)$ se croisent.
     <h1>Ajouter un tableau</h1>
   </hgroup>
   <article data-timings="">
-    <p>Nous avons vu la semaine dernière comment extraire un tableau à l&#39;aide de la fonction <code>kable()</code></p>
+    <p>Nous avons vu la semaine dernière comment extraire un tableau à l&#39;aide de la fonction <code>kable()</code>.</p>
+
+<p>TODO</p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 <slide class="" id="slide-48" style="background:;">
+  <!--  <a href="#slide-48"></a> -->
   <hgroup>
-    <h1>Ajouter un label à ces environnements</h1>
+    <h1>Ajouter une ancre à ces environnements</h1>
   </hgroup>
-  <article>
-    <pre><code>\begin{equation}
-  label{e:tib}
+  <article data-timings="">
+    <p>On utilise <code>\label</code> comme pour les sections.</p>
+
+<pre><code>\begin{equation}
+  label{eq:tib}
   S^* = \frac{I}{I+E}
 \end{equation}
 </code></pre>
 
-    <div class='left' style='float:left;width:'>
-     <h2>Et ensuite on y réfère dans le texte ainsi</h2>
+<p>Et ensuite on y réfère dans le texte ainsi:</p>
 
 <pre><code>La théorie de la biogéographie des îles donne la richesse
 en espèces $S$ à l&#39;équilibre au point où les courbes
-$I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{tib}.
+$I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
 </code></pre>
 
-    </div>
-    <div class='right' style='float:right;width:'>
-     
-    </div>
   </article>
+  <!-- Presenter Notes -->
 </slide>
 <slide class="" id="slide-49" style="background:;">
   <hgroup>
@@ -1217,13 +1218,64 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{tib}.
     <h1>La bibliographie</h1>
   </hgroup>
   <article data-timings="">
-    <p>steve</p>
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-51" style="background:;">
+  <!--  <a href="#slide-51"></a> -->
+  <hgroup>
+    <h1>Les entrées <code>bibtex</code></h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Les références que l&#39;on va citer sont entreposer dans un fichier <code>.bib</code>.</p>
+
+<p>Le fichier doit contenir des entrées <code>bibtex</code> qui ressemble à cela:</p>
+
+<pre><code class="tex">@article{gravel2006reconciling,
+  title={Reconciling niche and neutrality: the continuum hypothesis},
+  author={Gravel, Dominique and Canham, Charles D and Beaudet, Marilou and Messier, Christian},
+  journal={Ecology letters},
+  volume={9},
+  number={4},
+  pages={399--409},
+  year={2006},
+  publisher={Wiley Online Library}
+}
+</code></pre>
+
+<h2>Exercice 6</h2>
+
+<p><strong>Étape 1.</strong> Ouvrez un nouveau fichier et enregistrer ce fichier <code>mabiblio.bib</code> au même emplacement que votre fichier <code>.tex</code></p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-51" style="background:;">
-  <!--  <a href="#slide-51"></a> -->
+<slide class="" id="slide-52" style="background:;">
+  <!--  <a href="#slide-52"></a> -->
+  <hgroup>
+    <h1>Faire sa première bibliographie</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>La plupart des journaux et portail de recherche fournissent des entrées <code>bibtex</code> pour citer les publications:</p>
+
+<ul>
+<li>Par exemple: <a href="https://scholar.google.fr/scholar?q=Dominique+Gravel&amp;btnG=&amp;hl=en&amp;as_sdt=0%2C5">Google scholar</a></li>
+</ul>
+
+<p>Des logiciels de bibliographie telle que EndNote, Zotero et Mendeley pemettent d&#39;obtenir des entrées <code>bibtex</code>.</p>
+
+<p>Si vous voulez en savoir davantage: <a href="http://steveviss.github.io/Talk_bib/#1">http://steveviss.github.io/Talk_bib/#1</a></p>
+
+<h2>Exercice 6 (suite):</h2>
+
+<p><strong>Étape 2.</strong> En vous servant de Google Scholar, remplisser votre fichier <code>mabiblio.bib</code> avec 2 entrées bibtex.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-53" style="background:;">
+  <!--  <a href="#slide-53"></a> -->
   <hgroup>
     <h1>Organiser son travail</h1>
   </hgroup>
@@ -1232,8 +1284,8 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{tib}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-52" style="background:;">
-  <!--  <a href="#slide-52"></a> -->
+<slide class="transition" id="slide-54" style="background:;">
+  <!--  <a href="#slide-54"></a> -->
   <hgroup>
     <h1>Travail 3</h1>
   </hgroup>
@@ -1242,8 +1294,8 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{tib}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-53" style="background:;">
-  <!--  <a href="#slide-53"></a> -->
+<slide class="" id="slide-55" style="background:;">
+  <!--  <a href="#slide-55"></a> -->
   <hgroup>
     <h1>Objectif</h1>
   </hgroup>
@@ -1253,8 +1305,8 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{tib}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-54" style="background:;">
-  <!--  <a href="#slide-54"></a> -->
+<slide class="" id="slide-56" style="background:;">
+  <!--  <a href="#slide-56"></a> -->
   <hgroup>
     <h1>Consignes</h1>
   </hgroup>
@@ -1277,8 +1329,8 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{tib}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-55" style="background:;">
-  <!--  <a href="#slide-55"></a> -->
+<slide class="" id="slide-57" style="background:;">
+  <!--  <a href="#slide-57"></a> -->
   <hgroup>
     <h1>Consignes</h1>
   </hgroup>
@@ -1290,8 +1342,8 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{tib}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-56" style="background:;">
-  <!--  <a href="#slide-56"></a> -->
+<slide class="" id="slide-58" style="background:;">
+  <!--  <a href="#slide-58"></a> -->
   <hgroup>
     <h1>Évaluation</h1>
   </hgroup>
@@ -1593,7 +1645,7 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{tib}.
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=48 title='Ajouter un label à ces environnements'>
+        data-slide=48 title='Ajouter une ancre à ces environnements'>
          48
       </a>
     </li>
@@ -1611,38 +1663,50 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{tib}.
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=51 title='Organiser son travail'>
+        data-slide=51 title='Les entrées <code>bibtex</code>'>
          51
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=52 title='Travail 3'>
+        data-slide=52 title='Faire sa première bibliographie'>
          52
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=53 title='Objectif'>
+        data-slide=53 title='Organiser son travail'>
          53
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=54 title='Consignes'>
+        data-slide=54 title='Travail 3'>
          54
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=55 title='Consignes'>
+        data-slide=55 title='Objectif'>
          55
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=56 title='Évaluation'>
+        data-slide=56 title='Consignes'>
          56
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=57 title='Consignes'>
+         57
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=58 title='Évaluation'>
+         58
       </a>
     </li>
   </ul>

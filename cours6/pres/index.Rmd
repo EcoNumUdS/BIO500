@@ -72,7 +72,7 @@ assets      :
 
 *** =left
 
-```TeX
+```tex
 \documentclass[12pt]{article}
 
 \usepackage[T1]{fontenc}
@@ -883,9 +883,9 @@ Il a été écrit par \@author\space le \@date
 
 *** =left
 
-## Dans le texte
+Dans le texte:
 
-```TeX
+```
 La théorie de la biogéographie
 des îles donne la richesse
 en espèces $S$ à l'équilibre
@@ -895,7 +895,7 @@ $I(S)$ et $E(S)$ se croisent.
 
 *** =right
 
-## En retrait du texte
+En retrait du texte:
 
 ```
 \begin{equation}
@@ -907,27 +907,31 @@ $I(S)$ et $E(S)$ se croisent.
 
 # Ajouter un tableau
 
-Nous avons vu la semaine dernière comment extraire un tableau à l'aide de la fonction ```kable()```
+Nous avons vu la semaine dernière comment extraire un tableau à l'aide de la fonction ```kable()```.
 
----&twocolw
 
-# Ajouter un label à ces environnements
+TODO
+
+
+---
+
+# Ajouter une ancre à ces environnements
+
+On utilise ```\label``` comme pour les sections.
 
 ```
 \begin{equation}
-  label{e:tib}
+  label{eq:tib}
   S^* = \frac{I}{I+E}
 \end{equation}
 ```
 
-*** =left
-
-## Et ensuite on y réfère dans le texte ainsi
+Et ensuite on y réfère dans le texte ainsi:
 
 ```
 La théorie de la biogéographie des îles donne la richesse
 en espèces $S$ à l'équilibre au point où les courbes
-$I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{tib}.
+$I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
 ```
 
 ---&twocol
@@ -962,7 +966,47 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{tib}.
 
 # La bibliographie
 
-steve
+---
+
+# Les entrées ```bibtex```
+
+Les références que l'on va citer sont entreposer dans un fichier ```.bib```.
+
+Le fichier doit contenir des entrées ```bibtex``` qui ressemble à cela:
+
+```tex
+@article{gravel2006reconciling,
+  title={Reconciling niche and neutrality: the continuum hypothesis},
+  author={Gravel, Dominique and Canham, Charles D and Beaudet, Marilou and Messier, Christian},
+  journal={Ecology letters},
+  volume={9},
+  number={4},
+  pages={399--409},
+  year={2006},
+  publisher={Wiley Online Library}
+}
+```
+
+## Exercice 6
+
+**Étape 1.** Ouvrez un nouveau fichier et enregistrer ce fichier ```mabiblio.bib``` au même emplacement que votre fichier ```.tex```
+
+---
+
+# Faire sa première bibliographie
+
+La plupart des journaux et portail de recherche fournissent des entrées ```bibtex``` pour citer les publications:
+
+- Par exemple: [Google scholar](https://scholar.google.fr/scholar?q=Dominique+Gravel&btnG=&hl=en&as_sdt=0%2C5)
+
+Des logiciels de bibliographie telle que EndNote, Zotero et Mendeley pemettent d'obtenir des entrées ```bibtex```.
+
+Si vous voulez en savoir davantage: [http://steveviss.github.io/Talk_bib/#1](http://steveviss.github.io/Talk_bib/#1)
+
+## Exercice 6 (suite):
+
+**Étape 2.** En vous servant de Google Scholar, remplisser votre fichier ```mabiblio.bib``` avec 2 entrées bibtex.
+
 
 ---.transition
 
