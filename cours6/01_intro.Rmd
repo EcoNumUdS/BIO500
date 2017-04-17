@@ -979,7 +979,7 @@ Des logiciels de bibliographie telle que EndNote, Zotero et Mendeley pemettent d
 
 Si vous voulez en savoir davantage: [http://steveviss.github.io/Talk_bib/#1](http://steveviss.github.io/Talk_bib/#1)
 
-## Exercice 6 (suite):
+## Exercice 6 (suite)
 
 **Étape 2.** En vous servant de Google Scholar, remplisser votre fichier ```mabiblio.bib``` avec 2 entrées bibtex.
 
