@@ -22,18 +22,25 @@
 
 ---
 
-# Word vs $\LaTeX$
-
-
-
----
-
 # Qu'est ce que $\LaTeX$?
 
 - Language introduit en 1983 par l'informaticien Leslie Lamport.
 - C'est un language à balise.
 - Concu spécifiquement pour l'écriture de rapports scientifiques.
 - L'utilisation de $\LaTeX$ est une norme chez les mathématiciens et les physiciens.
+
+---
+
+# Avantages de $\LaTeX$?
+
+1. Qualité de la mise en page
+  - Mise en page automatique
+  - Table des matières
+  - Gestion des références
+2. Performance pour l'intégration de matériel (e.g. figures, tableaux)
+3. Stabilité 
+4. Inter-opérabilité
+5. Reproductibilité (tout est scripté)
 
 --- &twocol
 
@@ -60,7 +67,7 @@ Je peux écrire du texte ici.
 *** =right
 
 
-1. ```\documentclass``` détermine la class du document.
+1. ```\documentclass``` détermine la classe du document.
 2. ```\usepackage```: Comme R, $\LaTeX$ permet l'utilisation de librairies. ```inputec``` et ```fontec``` sont des libraries permettant de gérer *l'encoding* du document (caractères avec accent etc.). Les ```[]``` déterminent les options.
 4. On ouvre l'environnement ```Document``` avec ```\begin```
 
@@ -68,24 +75,82 @@ Je peux écrire du texte ici.
 
 # Séparer le contenu du contenant
 
-- La mise en page est gérer par des balises et environnements.
+- La mise en page est gérée par des balises et environnements.
 - Les balises et environnements déclarent le contenant (la forme)
 - Le texte se place entre les balises (le contenu)
 - Si l'on change tout simplement de balises $\LaTeX$, on obtient une nouvelle mise en forme.
 
+--- &twocol
+
+# Un exemple d'efficacité 
+
+*** =left
+
+```tex
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{color,dcolumn,graphicx,hyperref}
+\usepackage{wrapfig}
+
+\begin{document}
+
+\title{How likely is speciation in neutral ecology ?}
+
+\author{Philippe Desjardins-Proulx, Dominique Gravel}
+
+\maketitle
+
+%=====================
+\section{Introduction}
+```
+
+*** =right
+
+<div style='text-align:center;'>
+<img src="assets/img/ex2_pg1.pdf" height="500px" style="border-style:solid;border-width:1px;"></img>
+</div>
+
 ---
 
-# Avantages
+--- &twocol
+
+# Un exemple d'efficacité 
+
+*** =left
+
+```tex
+\documentclass[letterpaper,twocolumn,showkeys]{revtex4-1}
+\usepackage[utf8]{inputenc}
+\usepackage{color,dcolumn,graphicx,hyperref}
+\usepackage{wrapfig}
+
+\begin{document}
+
+\title{How likely is speciation in neutral ecology ?}
+
+\author{Philippe Desjardins-Proulx, Dominique Gravel}
+
+\maketitle
+
+%=====================
+\section{Introduction}
+```
+
+*** =right
+
+<div style='text-align:center;'>
+<img src="assets/img/ex1_pg1.pdf" height="500px" style="border-style:solid;border-width:1px;"></img>
+</div>
+
+---
+
+# Autres avantages
 
 - $\LaTeX$ est un language gratuit et OpenSource.
 - Stable et doté d'une riche communauté d'utilisateur.
 - Stack Overflow entièrement dédié à $\LaTeX$: [https://tex.stackexchange.com/](https://tex.stackexchange.com/)
 - Ajustement automatique du contenant au contenu
-  - Mise en page automatique (Figures etc.)
-  - Table des matières
-  - Gestion des références
 - Comme R, $\LaTeX$ dispose de plusieurs libraries (packages) pour satisfaire nos besoins.
-
 
 ---
 
@@ -93,7 +158,7 @@ Je peux écrire du texte ici.
 
 - La courbe d'apprentissage peut être plus rude.
 - La compilation requière plusieurs étapes
-- Les erreurs de compilation sont souvent difficile à comprendre.
+- Les erreurs de compilation sont souvent difficiles à comprendre.
 - Son principal point faible réside dans l'absence d'un système de révision multi-utilisateurs.
 
 ---
@@ -124,13 +189,13 @@ Et voilà, l'extension ```.tex``` détermine que le fichier est un document $\La
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-
 \usepackage{lipsum}
 
 \begin{document}
 
 \section{Mon premier article en latin}
 
+% Ceci est un commentaire
 \lipsum[2-4]
 
 \end{document}
@@ -138,9 +203,9 @@ Et voilà, l'extension ```.tex``` détermine que le fichier est un document $\La
 
 *** =right
 
-## Exercice (10 minutes):
+## Exercice 1 (10 minutes):
 
-Recopier dans votre document ```.tex``` ce code.
+Recopier dans Sublime Text 2 ce code ```.tex```.
 
 **Note:** ```\usepackage{lipsum}``` est un package permettant de générer du faux texte (latin de mise en forme).
 
@@ -150,7 +215,6 @@ Recopier dans votre document ```.tex``` ce code.
 
 # La compilation d'un document $\LaTeX$ sans bibliographie
 
-
 ---
 
 # La compilation
@@ -158,7 +222,7 @@ Recopier dans votre document ```.tex``` ce code.
 Afin d'obtenir le rendu PDF de notre document, nous devons compiler ce dernier à l'aide du compilateur ```pdflatex```.
 
 
-- **Étape 1.** Ouvrez votre terminal.
+- **Étape 1.** Ouvrez votre terminal (touches Ctrl+Alt+t).
 
 - **Étape 2.** À l'aide de la commande ```cd``` (*Change Directory*), vous devez vous déplacer dans le terminal vers le dossier que vous venez de créer:
 
@@ -175,13 +239,13 @@ cd /home/etudiant/Bureau
 
 *** =left
 
-- **Étape 3.** Nous pouvons maintenant compiler le document avec la commande:
+- **Étape 3.** Vous pouvez maintenant compiler le document avec la commande:
 
 ```bash
 pdflatex mon_document.tex
 ```
 
-- **Étape 4.** Une fois la compilation terminé, les deux dernières lignes de la sortie devraient être:
+- **Étape 4.** Une fois la compilation terminée, les deux dernières lignes de la sortie devraient être:
 
 ```bash
 Output written on doc.pdf (1 page, 31402 bytes).
@@ -215,10 +279,11 @@ Transcript written on doc.log.
 *** =right
 
 - On définit les métadonnées avec ```\title```, ```\author```, ```\date```.
-- Les métadonnées doivent être placé avant l'environnement ```\begin{document}```.
+- Les métadonnées doivent être placées avant l'environnement ```\begin{document}```.
 - Les ```\\``` dans la balise ```\author``` permettent une mise à la ligne.
 - Enfin, la balise ```\today``` remplie la date du jour pour nous.
 
+Note : pour une date en français, il faut utiliser le package ```\usepackage[rench]{babel}```
 
 ---&twocolw w1:50% w2:45%
 
@@ -241,16 +306,17 @@ La page titre est généré grâce à la balise ```\maketitle``` dans l'environn
 \end{document}
 ```
 
-## Exercice 3:
-
-Ajouter vos métadonnées puis compiler votre document avec la page titre.
-
 *** =right
 
 <div style='text-align:center;'>
 <img src="assets/img/doc2.png" height="500px" style="border-style:solid;border-width:1px;"></img>
 </div>
 
+---
+
+# Exercice 3
+
+Ajoutez vos métadonnées puis compilez votre document avec la page titre.
 
 ---&twocolw w1:50% w2:45%
 
@@ -310,7 +376,7 @@ On écrit notre résumé entre dans l'environnement ```abstract```.
 *** =right
 
 - Nous n'avons pas besoin d'utiliser de ```\begin``` ou ```\end```.
-- Une section est par défault numéroté.
+- Une section est numérotée par défault. 
 - Pour éviter cette numérotation vous pouvez ajouter une ```*``` avant les accolades.
 
 ---&twocolw w1:50% w2:45%
@@ -345,18 +411,20 @@ On écrit notre résumé entre dans l'environnement ```abstract```.
 
 La simple déclaration de la balise ```\tableofcontent``` permet la création d'une table des matières.
 
-## Exercice 4:
+---
 
-Ajouter des sections à votre document, et construisez la table des matières.
+# Exercice 4
+
+Ajoutez des sections à votre document, et construisez la table des matières.
 Prenez le temps de lire la sortie affichée par le compilateur ```pdflatex```.
 
 ---
 
 # Le fichier auxiliaire (```.aux```)
 
-Lors du dernier exercice, vous avez remarqué que la table des matières n'était pas insérer dans le document.
+Lors du dernier exercice, vous avez remarqué que la table des matières n'était pas insérée dans le document.
 
-1. La première compilation scanne le document à la recherche de références internes tels que les sections.
+1. La première compilation scanne le document à la recherche de références internes telles que les sections.
 
   #### Écriture d'un fichier ```mon_document.aux```:
 
@@ -420,6 +488,14 @@ ou {\large{plus grand}}.
 ``` -->
 
 [Documentation complémentaire en FR](https://fr.wikibooks.org/wiki/LaTeX/Mise_en_forme_du_texte)
+
+---
+
+# Votre meilleur professeur
+
+<div style='text-align:center;'>
+<img src="assets/img/cheat.png" width="100%" style="border-style:solid;border-width:1px;"></img>
+</div>
 
 ---
 
@@ -530,35 +606,108 @@ ou {\large{plus grand}}.
 
 ---.transition
 
-# Les principaux environnement $\LaTeX$
+# Les principaux environnements $\LaTeX$
 
 
----
+---&twocolw
 
 # Ajouter une figure
 
+*** =left
 
----
+```
+\begin{figure}
+\includegraphics[width=0.35\textwidth]{fig.eps}
+\caption{The metacommunity as a graph of local communities. Each community is
+connected by dispersal to one or more communities.}  
+\end{figure}
+```
+*** =right
+
+- ```\begin{figure}``` ouvre l'environnement figure
+- ```\includegraphics``` spécifie la figure à ajouter et sa taille relative
+- ```\caption``` définie la légende de la figure
+- ```\end{figure}``` ferme l'environnement figure
+
+---&twocolw
 
 # Ajouter une équation
 
+*** =left
+
+## Dans le texte
+
+```
+La théorie de la biogéographie des îles donne la richesse 
+en espèces $S$ à l'équilibre au point où les courbes 
+$I(S)$ et $E(S)$ se croisent.
+```
+
+*** =right
+
+## En retrait du texte
+
+\begin{equation}
+  S^* = \frac{I}{I+E}
+\end{equation}
 
 ---
 
 # Ajouter un tableau
 
 
----
+---&twocolw
 
 # Ajouter un label à ces environnements
 
-- Définir un label
-- Référer la figure, l'équation à l'aide du label
+*** =left
 
+## On rajoute le label à l'environnement ainsi 
 
----
+```
+\begin{equation}
+  label{e:tib}
+  S^* = \frac{I}{I+E}
+\end{equation}
+```
+
+*** =left
+
+## Et ensuite on y réfère dans le texte ainsi 
+
+```
+La théorie de la biogéographie des îles donne la richesse 
+en espèces $S$ à l'équilibre au point où les courbes 
+$I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{tib}.
+```
+
+---&twocolw
 
 # Ajouter des énumérations
+
+*** =left
+
+## On peut y aller simplement de points
+
+```
+\begin{itemize}
+  \item Premier élément
+  \item Second élément
+  \item Troisième élément
+\end{itemize}
+```
+
+*** =left
+
+## Ou encore d'une liste numérotée
+
+```
+\begin{enumerate}
+  \item Premier élément
+  \item Second élément
+  \item Troisième élément
+\end{enumerate}
+```
 
 ---.transition
 
@@ -568,3 +717,50 @@ ou {\large{plus grand}}.
 ---.transition
 
 # Organiser son travail
+
+---.transition
+
+# Travail 3
+
+---
+
+# Objectif
+
+Mettre en forme un rapport sous forme d'article scientifiques
+
+---
+
+# Consignes
+
+Vous devez remettre les résultats de votre analyse des données de collaboration entre les étudiants de la classe. 
+
+Le rapport doit contenir : 
+
+- L'illustration du réseau
+- 3 figures
+- 1 tableau
+- Un titre et un résumé
+- Une courte introduction spécifiant les questions
+- Une courte description de la méthode et des résultats
+- Une discussion, enriche de citations provenant de la littérature scientifique
+- Une bibliographie
+
+---
+
+# Consignes
+
+Nous vous demandons de remettre les scripts permettant de générer l'ensemble du document, incluant la création de la base de données, les requêtes, les figures et tableaux, ainsi que le document LaTeX. 
+
+À terme, selon les principes de science reproductible, nous devrions pouvoir exécuter l'ensemble de votre analyse sur un autre ordinateur, sans avoir à changer le code. 
+
+---
+
+# Évaluation 
+
+- Respect des consignes (tous les éléments sont inclus - 60%)
+- Reproductibilité (30%)
+- Originalité (10%)
+
+
+
+
