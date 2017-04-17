@@ -343,12 +343,6 @@ Transcript written on doc.log.
 \date{\today}
 </code></pre>
 
-<h2>Exercice 3:</h2>
-
-<ul>
-<li>Ajouter vos métadonnées puis compilé à nouveau votre document <code>.tex</code>.</li>
-</ul>
-
     </div>
     <div class='right' style='float:right;width:45%'>
      <ul>
@@ -369,7 +363,7 @@ Transcript written on doc.log.
   <article>
     
     <div class='left' style='float:left;width:50%'>
-     <p>Nous pouvons utiliser ces métadonnées pour produire la page titre de notre document.</p>
+     <p>La page titre est généré grâce à la balise <code>\maketitle</code> dans l&#39;environnement document.</p>
 
 <pre><code class="bash">[...]
 
@@ -377,13 +371,14 @@ Transcript written on doc.log.
 
 \maketitle
 
-\section{Mon premier article en latin}
-\lipsum[2-4]
+[...]
 
 \end{document}
 </code></pre>
 
-<p>La page titre est généré grâce à la balise <code>\maketitle</code> dans l&#39;environnement document.</p>
+<h2>Exercice 3:</h2>
+
+<p>Ajouter vos métadonnées puis compiler votre document avec la page titre.</p>
 
     </div>
     <div class='right' style='float:right;width:45%'>
@@ -395,12 +390,15 @@ Transcript written on doc.log.
   </article>
 </slide>
 <slide class="" id="slide-18" style="background:;">
-  <!--  <a href="#slide-18"></a> -->
   <hgroup>
     <h1>Insérer un résumé</h1>
   </hgroup>
-  <article data-timings="">
-    <pre><code class="bash">[...]
+  <article>
+    
+    <div class='left' style='float:left;width:50%'>
+     <p>On écrit notre résumé entre dans l&#39;environnement <code>abstract</code>.</p>
+
+<pre><code class="bash">[...]
 
 \begin{document}
 
@@ -416,31 +414,120 @@ Transcript written on doc.log.
 \end{document}
 </code></pre>
 
+    </div>
+    <div class='right' style='float:right;width:45%'>
+     <div style='text-align:center;'>
+<img src="assets/img/doc3.png" height="500px" style="border-style:solid;border-width:1px;"></img>
+</div>
+
+    </div>
   </article>
-  <!-- Presenter Notes -->
 </slide>
 <slide class="" id="slide-19" style="background:;">
-  <!--  <a href="#slide-19"></a> -->
   <hgroup>
     <h1>Ajouter des sections</h1>
   </hgroup>
-  <article data-timings="">
+  <article>
     
+    <div class='left' style='float:left;width:50%'>
+     <pre><code class="bash">[...]
+
+\begin{document}
+
+\section{Ma première section}
+
+\section{Ma seconde section}
+
+\subsection{Une sous-section de la seconde section}
+
+\subsubsection{Une sous-section de sous-section}
+
+\section*{Une troisième section sans numéro}
+
+\end{document}
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:45%'>
+     <ul>
+<li>Nous n&#39;avons pas besoin d&#39;utiliser de <code>\begin</code> ou <code>\end</code>.</li>
+<li>Une section est par défault numéroté.</li>
+<li>Pour éviter cette numérotation vous pouvez ajouter une <code>*</code> avant les accolades.</li>
+</ul>
+
+    </div>
   </article>
-  <!-- Presenter Notes -->
 </slide>
 <slide class="" id="slide-20" style="background:;">
-  <!--  <a href="#slide-20"></a> -->
   <hgroup>
     <h1>Insérer la table des matières</h1>
   </hgroup>
-  <article data-timings="">
+  <article>
     
+    <div class='left' style='float:left;width:50%'>
+     <pre><code class="bash">[...]
+
+\begin{document}
+
+\maketitle
+
+\tableofcontent
+
+\section{Ma première section}
+
+\section{Ma seconde section}
+
+\subsection{Une sous-section de la seconde section}
+
+\subsubsection{Une sous-section de sous-section}
+
+\section*{Une troisième section sans numéro}
+
+\end{document}
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:45%'>
+     <p>La simple déclaration de la balise <code>\tableofcontent</code> permet la création d&#39;une table des matières.</p>
+
+<h2>Exercice 4:</h2>
+
+<p>Ajouter des sections à votre document, et construisez la table des matières.
+Prenez le temps de lire la sortie affichée par le compilateur <code>pdflatex</code>.</p>
+
+    </div>
   </article>
-  <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-21" style="background:;">
-  <!--  <a href="#slide-21"></a> -->
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h1>Le fichier auxiliaire (<code>.aux</code>)</h1>
+  </hgroup>
+  <article>
+    <p>Lors du dernier exercice, vous avez remarqué que la table des matières n&#39;était pas insérer dans le document.</p>
+
+<ol>
+<li><p>La première compilation scanne le document à la recherche de références internes tels que les sections.</p>
+
+<h4>Écriture d&#39;un fichier <code>mon_document.aux</code>:</h4>
+
+<pre><code class="bash">\relax
+\@writefile{toc}{\contentsline {section}{\numberline {1}Mon premier article en latin}{1}}
+</code></pre></li>
+<li><p>La deuxième compilation assemble l&#39;ensemble du document à partir du fichier <code>mon_document.aux</code> de la première compilation.</p></li>
+</ol>
+
+<h2>Il faut deux compilations successives pour obtenir la table des matières dans le document pdf.</h2>
+
+    <div class='left' style='float:left;width:50%'>
+     
+    </div>
+    <div class='right' style='float:right;width:45%'>
+     
+    </div>
+  </article>
+</slide>
+<slide class="transition" id="slide-22" style="background:;">
+  <!--  <a href="#slide-22"></a> -->
   <hgroup>
     <h1>Mise en forme du texte</h1>
   </hgroup>
@@ -449,8 +536,8 @@ Transcript written on doc.log.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-22" style="background:;">
-  <!--  <a href="#slide-22"></a> -->
+<slide class="" id="slide-23" style="background:;">
+  <!--  <a href="#slide-23"></a> -->
   <hgroup>
     <h1>Mise en forme standard</h1>
   </hgroup>
@@ -462,7 +549,7 @@ Transcript written on doc.log.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-23" style="background:;">
+<slide class="" id="slide-24" style="background:;">
   <!--   <article data-timings="">
     <ul>
 <li>URL</li>
@@ -472,20 +559,10 @@ Transcript written on doc.log.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-24" style="background:;">
-  <!--  <a href="#slide-24"></a> -->
-  <hgroup>
-    <h1>Les principaux environnement \(\LaTeX\)</h1>
-  </hgroup>
-  <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-<slide class="" id="slide-25" style="background:;">
+<slide class="transition" id="slide-25" style="background:;">
   <!--  <a href="#slide-25"></a> -->
   <hgroup>
-    <h1>Ajouter une figure</h1>
+    <h1>Les principaux environnement \(\LaTeX\)</h1>
   </hgroup>
   <article data-timings="">
     
@@ -495,7 +572,7 @@ Transcript written on doc.log.
 <slide class="" id="slide-26" style="background:;">
   <!--  <a href="#slide-26"></a> -->
   <hgroup>
-    <h1>Ajouter une équation</h1>
+    <h1>Ajouter une figure</h1>
   </hgroup>
   <article data-timings="">
     
@@ -505,7 +582,7 @@ Transcript written on doc.log.
 <slide class="" id="slide-27" style="background:;">
   <!--  <a href="#slide-27"></a> -->
   <hgroup>
-    <h1>Ajouter un tableau</h1>
+    <h1>Ajouter une équation</h1>
   </hgroup>
   <article data-timings="">
     
@@ -514,6 +591,16 @@ Transcript written on doc.log.
 </slide>
 <slide class="" id="slide-28" style="background:;">
   <!--  <a href="#slide-28"></a> -->
+  <hgroup>
+    <h1>Ajouter un tableau</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-29" style="background:;">
+  <!--  <a href="#slide-29"></a> -->
   <hgroup>
     <h1>Ajouter un label à ces environnements</h1>
   </hgroup>
@@ -526,8 +613,8 @@ Transcript written on doc.log.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-29" style="background:;">
-  <!--  <a href="#slide-29"></a> -->
+<slide class="" id="slide-30" style="background:;">
+  <!--  <a href="#slide-30"></a> -->
   <hgroup>
     <h1>Ajouter des énumérations</h1>
   </hgroup>
@@ -536,8 +623,8 @@ Transcript written on doc.log.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-30" style="background:;">
-  <!--  <a href="#slide-30"></a> -->
+<slide class="transition" id="slide-31" style="background:;">
+  <!--  <a href="#slide-31"></a> -->
   <hgroup>
     <h1>La bibliographie</h1>
   </hgroup>
@@ -546,8 +633,8 @@ Transcript written on doc.log.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-31" style="background:;">
-  <!--  <a href="#slide-31"></a> -->
+<slide class="transition" id="slide-32" style="background:;">
+  <!--  <a href="#slide-32"></a> -->
   <hgroup>
     <h1>Organiser son travail</h1>
   </hgroup>
@@ -682,68 +769,74 @@ Transcript written on doc.log.
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=21 title='Mise en forme du texte'>
+        data-slide=21 title='Le fichier auxiliaire (<code>.aux</code>)'>
          21
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=22 title='Mise en forme standard'>
+        data-slide=22 title='Mise en forme du texte'>
          22
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=23 title='NA'>
+        data-slide=23 title='Mise en forme standard'>
          23
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=24 title='Les principaux environnement \(\LaTeX\)'>
+        data-slide=24 title='NA'>
          24
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=25 title='Ajouter une figure'>
+        data-slide=25 title='Les principaux environnement \(\LaTeX\)'>
          25
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=26 title='Ajouter une équation'>
+        data-slide=26 title='Ajouter une figure'>
          26
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=27 title='Ajouter un tableau'>
+        data-slide=27 title='Ajouter une équation'>
          27
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=28 title='Ajouter un label à ces environnements'>
+        data-slide=28 title='Ajouter un tableau'>
          28
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=29 title='Ajouter des énumérations'>
+        data-slide=29 title='Ajouter un label à ces environnements'>
          29
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=30 title='La bibliographie'>
+        data-slide=30 title='Ajouter des énumérations'>
          30
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=31 title='Organiser son travail'>
+        data-slide=31 title='La bibliographie'>
          31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='Organiser son travail'>
+         32
       </a>
     </li>
   </ul>

@@ -232,10 +232,6 @@ Transcript written on doc.log.
 \date{\today}
 ```
 
-## Exercice 3:
-
-- Ajouter vos métadonnées puis compilé à nouveau votre document ```.tex```.
-
 *** =right
 
 - On définit les métadonnées avec ```\title```, ```\author```, ```\date```.
@@ -249,9 +245,9 @@ Transcript written on doc.log.
 
 # Créer la page titre à partir des métadonnées
 
----&twocolw w1:50% w2:45%
+*** =left
 
-Nous pouvons utiliser ces métadonnées pour produire la page titre de notre document.
+La page titre est généré grâce à la balise ```\maketitle``` dans l'environnement document.
 
 
 ```bash
@@ -261,13 +257,14 @@ Nous pouvons utiliser ces métadonnées pour produire la page titre de notre doc
 
 \maketitle
 
-\section{Mon premier article en latin}
-\lipsum[2-4]
+[...]
 
 \end{document}
 ```
 
-La page titre est généré grâce à la balise ```\maketitle``` dans l'environnement document.
+## Exercice 3:
+
+Ajouter vos métadonnées puis compiler votre document avec la page titre.
 
 *** =right
 
@@ -275,11 +272,14 @@ La page titre est généré grâce à la balise ```\maketitle``` dans l'environn
 <img src="assets/img/doc2.png" height="500px" style="border-style:solid;border-width:1px;"></img>
 </div>
 
+
 ---&twocolw w1:50% w2:45%
 
 # Insérer un résumé
 
 *** =left
+
+On écrit notre résumé entre dans l'environnement ```abstract```.
 
 ```bash
 [...]
@@ -298,22 +298,97 @@ La page titre est généré grâce à la balise ```\maketitle``` dans l'environn
 \end{document}
 ```
 
-On écrit notre résumé entre dans l'environnement ```abstract```.
-
 *** =right
 
 <div style='text-align:center;'>
 <img src="assets/img/doc3.png" height="500px" style="border-style:solid;border-width:1px;"></img>
 </div>
 
----
+---&twocolw w1:50% w2:45%
 
 # Ajouter des sections
 
+*** =left
 
----
+```bash
+[...]
+
+\begin{document}
+
+\section{Ma première section}
+
+\section{Ma seconde section}
+
+\subsection{Une sous-section de la seconde section}
+
+\subsubsection{Une sous-section de sous-section}
+
+\section*{Une troisième section sans numéro}
+
+\end{document}
+```
+
+*** =right
+
+- Nous n'avons pas besoin d'utiliser de ```\begin``` ou ```\end```.
+- Une section est par défault numéroté.
+- Pour éviter cette numérotation vous pouvez ajouter une ```*``` avant les accolades.
+
+---&twocolw w1:50% w2:45%
 
 # Insérer la table des matières
+
+*** =left
+
+```bash
+[...]
+
+\begin{document}
+
+\maketitle
+
+\tableofcontent
+
+\section{Ma première section}
+
+\section{Ma seconde section}
+
+\subsection{Une sous-section de la seconde section}
+
+\subsubsection{Une sous-section de sous-section}
+
+\section*{Une troisième section sans numéro}
+
+\end{document}
+```
+
+*** =right
+
+La simple déclaration de la balise ```\tableofcontent``` permet la création d'une table des matières.
+
+## Exercice 4:
+
+Ajouter des sections à votre document, et construisez la table des matières.
+Prenez le temps de lire la sortie affichée par le compilateur ```pdflatex```.
+
+---&twocolw w1:50% w2:45%
+
+# Le fichier auxiliaire (```.aux```)
+
+Lors du dernier exercice, vous avez remarqué que la table des matières n'était pas insérer dans le document.
+
+1. La première compilation scanne le document à la recherche de références internes tels que les sections.
+
+  #### Écriture d'un fichier ```mon_document.aux```:
+
+  ```bash
+  \relax
+  \@writefile{toc}{\contentsline {section}{\numberline {1}Mon premier article en latin}{1}}
+  ```
+
+2. La deuxième compilation assemble l'ensemble du document à partir du fichier ```mon_document.aux``` de la première compilation.
+
+## Il faut deux compilations successives pour obtenir la table des matières dans le document pdf.
 
 
 ---.transition
