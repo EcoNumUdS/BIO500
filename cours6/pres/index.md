@@ -44,6 +44,11 @@ assets      :
 <img src="assets/img/latex_comp.gif" width="60%"></img>
 </div>
 
+---
+
+# Word vs $\LaTeX$
+
+
 
 ---
 
@@ -53,7 +58,6 @@ assets      :
 - C'est un language à balise.
 - Concu spécifiquement pour l'écriture de rapports scientifiques.
 - L'utilisation de $\LaTeX$ est une norme chez les mathématiciens et les physiciens.
-
 
 --- &twocol
 
@@ -88,8 +92,8 @@ Je peux écrire du texte ici.
 
 # Séparer le contenu du contenant
 
-- La mise en page est gérer par des balises (environnement)
-- Les balises déclarent le contenant (la forme)
+- La mise en page est gérer par des balises et environnements.
+- Les balises et environnements déclarent le contenant (la forme)
 - Le texte se place entre les balises (le contenu)
 - Si l'on change tout simplement de balises $\LaTeX$, on obtient une nouvelle mise en forme.
 
@@ -371,7 +375,7 @@ La simple déclaration de la balise ```\tableofcontent``` permet la création d'
 Ajouter des sections à votre document, et construisez la table des matières.
 Prenez le temps de lire la sortie affichée par le compilateur ```pdflatex```.
 
----&twocolw w1:50% w2:45%
+---
 
 # Le fichier auxiliaire (```.aux```)
 
@@ -391,6 +395,15 @@ Lors du dernier exercice, vous avez remarqué que la table des matières n'étai
 ## Il faut deux compilations successives pour obtenir la table des matières dans le document pdf.
 
 
+---
+
+# Le fichier auxiliaire (```.aux```)
+
+<div style='text-align:center;'>
+<img src="assets/img/flow_comp1.png" height="500px" style="border-style:solid;border-width:1px;"></img>
+</div>
+
+
 ---.transition
 
 # Mise en forme du texte
@@ -405,7 +418,7 @@ Lors du dernier exercice, vous avez remarqué que la table des matières n'étai
 ---
 
 - URL
-- Equation Symbole Inline
+-
 
 
 ---.transition

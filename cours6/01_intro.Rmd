@@ -351,7 +351,7 @@ La simple déclaration de la balise ```\tableofcontent``` permet la création d'
 Ajouter des sections à votre document, et construisez la table des matières.
 Prenez le temps de lire la sortie affichée par le compilateur ```pdflatex```.
 
----&twocolw w1:50% w2:45%
+---
 
 # Le fichier auxiliaire (```.aux```)
 
@@ -369,6 +369,15 @@ Lors du dernier exercice, vous avez remarqué que la table des matières n'étai
 2. La deuxième compilation assemble l'ensemble du document à partir du fichier ```mon_document.aux``` de la première compilation.
 
 ## Il faut deux compilations successives pour obtenir la table des matières dans le document pdf.
+
+
+---
+
+# Le fichier auxiliaire (```.aux```)
+
+<div style='text-align:center;'>
+<img src="assets/img/flow_comp1.png" height="500px" style="border-style:solid;border-width:1px;"></img>
+</div>
 
 
 ---.transition
