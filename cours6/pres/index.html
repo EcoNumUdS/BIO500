@@ -296,9 +296,10 @@ Je peux écrire du texte ici.
   <article data-timings="">
     <p>Afin d&#39;obtenir le rendu PDF de notre document, nous devons compiler ce dernier à l&#39;aide du compilateur <code>pdflatex</code>.</p>
 
-<p><strong>Étape 1.</strong> Ouvrez votre terminal.</p>
-
-<p><strong>Étape 2.</strong> À l&#39;aide de la commande <code>cd</code> (<em>Change Directory</em>), vous devez vous déplacer dans le terminal vers le dossier que vous venez de créer:</p>
+<ul>
+<li><p><strong>Étape 1.</strong> Ouvrez votre terminal.</p></li>
+<li><p><strong>Étape 2.</strong> À l&#39;aide de la commande <code>cd</code> (<em>Change Directory</em>), vous devez vous déplacer dans le terminal vers le dossier que vous venez de créer:</p></li>
+</ul>
 
 <pre><code class="bash">cd ~/Bureau
 </code></pre>
@@ -316,12 +317,16 @@ Je peux écrire du texte ici.
   <article>
     
     <div class='left' style='float:left;width:50%'>
-     <p><strong>Étape 3.</strong> Nous pouvons maintenant compiler le document avec la commande:</p>
+     <ul>
+<li><strong>Étape 3.</strong> Nous pouvons maintenant compiler le document avec la commande:</li>
+</ul>
 
 <pre><code class="bash">pdflatex mon_document.tex
 </code></pre>
 
-<p><strong>Étape 4.</strong> Une fois la compilation terminé, les deux dernières lignes de la sortie devraient être:</p>
+<ul>
+<li><strong>Étape 4.</strong> Une fois la compilation terminé, les deux dernières lignes de la sortie devraient être:</li>
+</ul>
 
 <pre><code class="bash">Output written on doc.pdf (1 page, 31402 bytes).
 Transcript written on doc.log.
@@ -357,7 +362,6 @@ Transcript written on doc.log.
     <div class='right' style='float:right;width:45%'>
      <ul>
 <li>On définit les métadonnées avec <code>\title</code>, <code>\author</code>, <code>\date</code>.</li>
-<li>Ces métadonnées seront attachées au PDF garantissant la propriété du document.</li>
 <li>Les métadonnées doivent être placé avant l&#39;environnement <code>\begin{document}</code>.</li>
 <li>Les <code>\\</code> dans la balise <code>\author</code> permettent une mise à la ligne.</li>
 <li>Enfin, la balise <code>\today</code> remplie la date du jour pour nous.</li>
@@ -539,7 +543,7 @@ Prenez le temps de lire la sortie affichée par le compilateur <code>pdflatex</c
   </hgroup>
   <article data-timings="">
     <div style='text-align:center;'>
-<img src="assets/img/flow_comp1.png" height="500px" style="border-style:solid;border-width:1px;"></img>
+<img src="assets/img/flow_comp1.png" height="500px"></img>
 </div>
 
   </article>
@@ -548,7 +552,7 @@ Prenez le temps de lire la sortie affichée par le compilateur <code>pdflatex</c
 <slide class="transition" id="slide-24" style="background:;">
   <!--  <a href="#slide-24"></a> -->
   <hgroup>
-    <h1>Mise en forme du texte</h1>
+    <h1>Mise en forme du document</h1>
   </hgroup>
   <article data-timings="">
     
@@ -556,30 +560,191 @@ Prenez le temps de lire la sortie affichée par le compilateur <code>pdflatex</c
   <!-- Presenter Notes -->
 </slide>
 <slide class="" id="slide-25" style="background:;">
-  <!--  <a href="#slide-25"></a> -->
   <hgroup>
-    <h1>Mise en forme standard</h1>
+    <h1>Mise en forme du texte</h1>
+  </hgroup>
+  <article>
+    <h2>Emphase sur le texte</h2>
+
+    <div class='left' style='float:left;width:50%'>
+     <pre><code>[...]
+\begin{document}
+
+Voici un texte
+\textit{en italique},
+\textbf{en gras},
+\textsc{avec des petites capitales},
+\textsf{avec des caractères sans empattement},
+\texttt{avec des caractères à chasse fixe},
+avec des mots avec {\small{un corps plus petit}}
+ou {\large{plus grand}}.
+
+\end{document}
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:45%'>
+     <div style='text-align:center;'>
+<img src="assets/img/doc4.png" width="100%" style="border-style:solid;border-width:1px;"></img>
+</div>
+
+<!-- Il est également possible de combiner la mise en forme:
+
+```bash
+\textit{\textbf{Ceci est du texte}}
+``` -->
+
+<p><a href="https://fr.wikibooks.org/wiki/LaTeX/Mise_en_forme_du_texte">Documentation complémentaire en FR</a></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-26" style="background:;">
+  <!--  <a href="#slide-26"></a> -->
+  <hgroup>
+    <h1>Taille de la police de caractères</h1>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Corps très petit</strong></p>
+
+<pre><code>\footnotesize texte très petit \normalsize, ou bien
+\begin{footnotesize} texte très petit \end{footnotesize}
+</code></pre>
+
+<p><strong>Corps petit</strong></p>
+
+<pre><code>\small texte petit \normalsize, ou bien
+\begin{small} texte petit \end{small}
+</code></pre>
+
+<p><strong>Corps grand</strong></p>
+
+<pre><code>\large texte grand \normalsize, ou bien
+\begin{large} texte grand \end{large}
+</code></pre>
+
+<p><strong>Corps très grand</strong></p>
+
+<pre><code>\Large texte très grand \normalsize, ou bien
+\begin{Large} texte très grand \end{Large}.
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-27" style="background:;">
+  <!--  <a href="#slide-27"></a> -->
+  <hgroup>
+    <h1>Alignement des paragraphes</h1>
   </hgroup>
   <article data-timings="">
     <ul>
-<li>Texte en gras, italique, souligné</li>
+<li>\textbf{...}</li>
+<li>\textit{...}</li>
+<li>\texttt{...}</li>
+<li>\underline{...}</li>
+<li>\emph{...}</li>
 </ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-26" style="background:;">
-  <!--  <a href="#slide-26"></a> -->
+<slide class="" id="slide-28" style="background:;">
+  <!--  <a href="#slide-28"></a> -->
   <hgroup>
-    <h2>- URL</h2>
+    <h1>Interligne</h1>
   </hgroup>
   <article data-timings="">
-    
+    <ul>
+<li>\textbf{...}</li>
+<li>\textit{...}</li>
+<li>\texttt{...}</li>
+<li>\underline{...}</li>
+<li>\emph{...}</li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-27" style="background:;">
-  <!--  <a href="#slide-27"></a> -->
+<slide class="" id="slide-29" style="background:;">
+  <!--  <a href="#slide-29"></a> -->
+  <hgroup>
+    <h1>Séparateur entre paragraphes</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>\textbf{...}</li>
+<li>\textit{...}</li>
+<li>\texttt{...}</li>
+<li>\underline{...}</li>
+<li>\emph{...}</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-30" style="background:;">
+  <!--  <a href="#slide-30"></a> -->
+  <hgroup>
+    <h1>Saut de page et saut de section</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>\textbf{...}</li>
+<li>\textit{...}</li>
+<li>\texttt{...}</li>
+<li>\underline{...}</li>
+<li>\emph{...}</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-31" style="background:;">
+  <!--  <a href="#slide-31"></a> -->
+  <hgroup>
+    <h1>Référence interne au document</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>URL</li>
+<li>Ancre de page</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-32" style="background:;">
+  <!--  <a href="#slide-32"></a> -->
+  <hgroup>
+    <h1>Personnalisation du document</h1>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="bash">
+\hypersetup{
+   backref=true,                           % Permet d ajouter des liens dans
+   pagebackref=true,                       % les bibliographies
+   hyperindex=true,                        % Ajoute des liens dans les index.
+   colorlinks=true,                        % Colorise les liens.
+   breaklinks=true,                        % Permet le retour à la ligne dans les liens trop longs.
+   urlcolor= blue,                         % Couleur des hyperliens.
+   linkcolor= blue,                        % Couleur des liens internes.
+   bookmarks=true,                         % Créé des signets pour Acrobat.
+   bookmarksopen=true,                     % Si les signets Acrobat sont créés,
+                                           % les afficher complètement.
+   pdftitle={Mon document au format TeX},  % Titre du document.
+                                           % Informations apparaissant dans
+   pdfauthor={PoluX},                      % dans les informations du document
+   pdfsubject={Projet wikiBooks}           % sous Acrobat.
+}
+
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-33" style="background:;">
+  <!--  <a href="#slide-33"></a> -->
   <hgroup>
     <h1>Les principaux environnement \(\LaTeX\)</h1>
   </hgroup>
@@ -588,8 +753,8 @@ Prenez le temps de lire la sortie affichée par le compilateur <code>pdflatex</c
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-28" style="background:;">
-  <!--  <a href="#slide-28"></a> -->
+<slide class="" id="slide-34" style="background:;">
+  <!--  <a href="#slide-34"></a> -->
   <hgroup>
     <h1>Ajouter une figure</h1>
   </hgroup>
@@ -598,8 +763,8 @@ Prenez le temps de lire la sortie affichée par le compilateur <code>pdflatex</c
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-29" style="background:;">
-  <!--  <a href="#slide-29"></a> -->
+<slide class="" id="slide-35" style="background:;">
+  <!--  <a href="#slide-35"></a> -->
   <hgroup>
     <h1>Ajouter une équation</h1>
   </hgroup>
@@ -608,8 +773,8 @@ Prenez le temps de lire la sortie affichée par le compilateur <code>pdflatex</c
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-30" style="background:;">
-  <!--  <a href="#slide-30"></a> -->
+<slide class="" id="slide-36" style="background:;">
+  <!--  <a href="#slide-36"></a> -->
   <hgroup>
     <h1>Ajouter un tableau</h1>
   </hgroup>
@@ -618,8 +783,8 @@ Prenez le temps de lire la sortie affichée par le compilateur <code>pdflatex</c
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-31" style="background:;">
-  <!--  <a href="#slide-31"></a> -->
+<slide class="" id="slide-37" style="background:;">
+  <!--  <a href="#slide-37"></a> -->
   <hgroup>
     <h1>Ajouter un label à ces environnements</h1>
   </hgroup>
@@ -632,8 +797,8 @@ Prenez le temps de lire la sortie affichée par le compilateur <code>pdflatex</c
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-32" style="background:;">
-  <!--  <a href="#slide-32"></a> -->
+<slide class="" id="slide-38" style="background:;">
+  <!--  <a href="#slide-38"></a> -->
   <hgroup>
     <h1>Ajouter des énumérations</h1>
   </hgroup>
@@ -642,8 +807,8 @@ Prenez le temps de lire la sortie affichée par le compilateur <code>pdflatex</c
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-33" style="background:;">
-  <!--  <a href="#slide-33"></a> -->
+<slide class="transition" id="slide-39" style="background:;">
+  <!--  <a href="#slide-39"></a> -->
   <hgroup>
     <h1>La bibliographie</h1>
   </hgroup>
@@ -652,8 +817,8 @@ Prenez le temps de lire la sortie affichée par le compilateur <code>pdflatex</c
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-34" style="background:;">
-  <!--  <a href="#slide-34"></a> -->
+<slide class="transition" id="slide-40" style="background:;">
+  <!--  <a href="#slide-40"></a> -->
   <hgroup>
     <h1>Organiser son travail</h1>
   </hgroup>
@@ -806,68 +971,104 @@ Prenez le temps de lire la sortie affichée par le compilateur <code>pdflatex</c
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=24 title='Mise en forme du texte'>
+        data-slide=24 title='Mise en forme du document'>
          24
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=25 title='Mise en forme standard'>
+        data-slide=25 title='Mise en forme du texte'>
          25
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=26 title='- URL'>
+        data-slide=26 title='Taille de la police de caractères'>
          26
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=27 title='Les principaux environnement \(\LaTeX\)'>
+        data-slide=27 title='Alignement des paragraphes'>
          27
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=28 title='Ajouter une figure'>
+        data-slide=28 title='Interligne'>
          28
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=29 title='Ajouter une équation'>
+        data-slide=29 title='Séparateur entre paragraphes'>
          29
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=30 title='Ajouter un tableau'>
+        data-slide=30 title='Saut de page et saut de section'>
          30
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=31 title='Ajouter un label à ces environnements'>
+        data-slide=31 title='Référence interne au document'>
          31
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=32 title='Ajouter des énumérations'>
+        data-slide=32 title='Personnalisation du document'>
          32
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=33 title='La bibliographie'>
+        data-slide=33 title='Les principaux environnement \(\LaTeX\)'>
          33
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=34 title='Organiser son travail'>
+        data-slide=34 title='Ajouter une figure'>
          34
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title='Ajouter une équation'>
+         35
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title='Ajouter un tableau'>
+         36
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title='Ajouter un label à ces environnements'>
+         37
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=38 title='Ajouter des énumérations'>
+         38
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=39 title='La bibliographie'>
+         39
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=40 title='Organiser son travail'>
+         40
       </a>
     </li>
   </ul>

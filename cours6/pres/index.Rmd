@@ -182,9 +182,9 @@ Recopier dans votre document ```.tex``` ce code.
 Afin d'obtenir le rendu PDF de notre document, nous devons compiler ce dernier à l'aide du compilateur ```pdflatex```.
 
 
-**Étape 1.** Ouvrez votre terminal.
+- **Étape 1.** Ouvrez votre terminal.
 
-**Étape 2.** À l'aide de la commande ```cd``` (*Change Directory*), vous devez vous déplacer dans le terminal vers le dossier que vous venez de créer:
+- **Étape 2.** À l'aide de la commande ```cd``` (*Change Directory*), vous devez vous déplacer dans le terminal vers le dossier que vous venez de créer:
 
 ```bash
 cd ~/Bureau
@@ -199,13 +199,13 @@ cd /home/etudiant/Bureau
 
 *** =left
 
-**Étape 3.** Nous pouvons maintenant compiler le document avec la commande:
+- **Étape 3.** Nous pouvons maintenant compiler le document avec la commande:
 
 ```bash
 pdflatex mon_document.tex
 ```
 
-**Étape 4.** Une fois la compilation terminé, les deux dernières lignes de la sortie devraient être:
+- **Étape 4.** Une fois la compilation terminé, les deux dernières lignes de la sortie devraient être:
 
 ```bash
 Output written on doc.pdf (1 page, 31402 bytes).
@@ -239,7 +239,6 @@ Transcript written on doc.log.
 *** =right
 
 - On définit les métadonnées avec ```\title```, ```\author```, ```\date```.
-- Ces métadonnées seront attachées au PDF garantissant la propriété du document.
 - Les métadonnées doivent être placé avant l'environnement ```\begin{document}```.
 - Les ```\\``` dans la balise ```\author``` permettent une mise à la ligne.
 - Enfin, la balise ```\today``` remplie la date du jour pour nous.
@@ -400,25 +399,157 @@ Lors du dernier exercice, vous avez remarqué que la table des matières n'étai
 # Le fichier auxiliaire (```.aux```)
 
 <div style='text-align:center;'>
-<img src="assets/img/flow_comp1.png" height="500px" style="border-style:solid;border-width:1px;"></img>
+<img src="assets/img/flow_comp1.png" height="500px"></img>
 </div>
 
 
 ---.transition
 
+# Mise en forme du document
+
+---&twocolw w1:50% w2:45%
+
 # Mise en forme du texte
 
+## Emphase sur le texte
+
+*** =left
+
+```
+[...]
+\begin{document}
+
+Voici un texte
+\textit{en italique},
+\textbf{en gras},
+\textsc{avec des petites capitales},
+\textsf{avec des caractères sans empattement},
+\texttt{avec des caractères à chasse fixe},
+avec des mots avec {\small{un corps plus petit}}
+ou {\large{plus grand}}.
+
+\end{document}
+```
+
+*** =right
+
+<div style='text-align:center;'>
+<img src="assets/img/doc4.png" width="100%" style="border-style:solid;border-width:1px;"></img>
+</div>
+
+<!-- Il est également possible de combiner la mise en forme:
+
+```bash
+\textit{\textbf{Ceci est du texte}}
+``` -->
+
+[Documentation complémentaire en FR](https://fr.wikibooks.org/wiki/LaTeX/Mise_en_forme_du_texte)
+
 ---
 
-# Mise en forme standard
+# Taille de la police de caractères
 
-- Texte en gras, italique, souligné
+**Corps très petit**
+
+```
+\footnotesize texte très petit \normalsize, ou bien
+\begin{footnotesize} texte très petit \end{footnotesize}
+```
+
+**Corps petit**
+
+```
+\small texte petit \normalsize, ou bien
+\begin{small} texte petit \end{small}
+```
+
+**Corps grand**
+
+```
+\large texte grand \normalsize, ou bien
+\begin{large} texte grand \end{large}
+```
+
+**Corps très grand**
+
+```
+\Large texte très grand \normalsize, ou bien
+\begin{Large} texte très grand \end{Large}.
+```
+
+---
+
+# Alignement des paragraphes
+
+- \textbf{...}
+- \textit{...}
+- \texttt{...}
+- \underline{...}
+- \emph{...}
+
+---
+
+# Interligne
+
+- \textbf{...}
+- \textit{...}
+- \texttt{...}
+- \underline{...}
+- \emph{...}
+
+---
+
+# Séparateur entre paragraphes
+
+- \textbf{...}
+- \textit{...}
+- \texttt{...}
+- \underline{...}
+- \emph{...}
+
+---
+
+# Saut de page et saut de section
+
+- \textbf{...}
+- \textit{...}
+- \texttt{...}
+- \underline{...}
+- \emph{...}
 
 
 ---
+
+# Référence interne au document
 
 - URL
--
+- Ancre de page
+
+
+---
+
+# Personnalisation du document
+
+```bash
+
+\hypersetup{
+   backref=true,                           % Permet d ajouter des liens dans
+   pagebackref=true,                       % les bibliographies
+   hyperindex=true,                        % Ajoute des liens dans les index.
+   colorlinks=true,                        % Colorise les liens.
+   breaklinks=true,                        % Permet le retour à la ligne dans les liens trop longs.
+   urlcolor= blue,                         % Couleur des hyperliens.
+   linkcolor= blue,                        % Couleur des liens internes.
+   bookmarks=true,                         % Créé des signets pour Acrobat.
+   bookmarksopen=true,                     % Si les signets Acrobat sont créés,
+                                           % les afficher complètement.
+   pdftitle={Mon document au format TeX},  % Titre du document.
+                                           % Informations apparaissant dans
+   pdfauthor={PoluX},                      % dans les informations du document
+   pdfsubject={Projet wikiBooks}           % sous Acrobat.
+}
+
+```
 
 
 ---.transition
