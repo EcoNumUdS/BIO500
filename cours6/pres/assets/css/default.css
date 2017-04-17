@@ -74,7 +74,7 @@ slide:not(.segue) h2 {
 
 slide:not(.segue) p {
     font-family: 'PT Sans', sans-serif;
-    line-height: 1.5em;
+    line-height: 1.3em;
 }
 
 article p, article li, article li.build, section p, section li {
