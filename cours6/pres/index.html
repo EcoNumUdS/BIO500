@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="./libraries/frameworks/io2012/css/phone.css" 
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="./libraries/frameworks/io2012/css/slidify.css" >
-  <link rel="stylesheet" href="./libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <link rel="stylesheet" href="./libraries/highlighters/highlight.js/css/sunburst.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/default.css"></link>
 <link rel=stylesheet href="./assets/css/ribbons.css"></link>
 <link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"></link>
@@ -420,7 +420,7 @@ Transcript written on doc.log.
   <article>
     
     <div class='left' style='float:left;width:50%'>
-     <pre><code class="bash">\title{Comment structurer un document \LaTeX{}}
+     <pre><code class="tex">\title{Comment structurer un document \LaTeX{}}
 \author{Prof. Dominique Gravel\\
    Chaire de recherche en Écologie Intégrative,\\
    Faculté des Sciences,\\
@@ -453,7 +453,7 @@ Transcript written on doc.log.
     <div class='left' style='float:left;width:50%'>
      <p>La page titre est généré grâce à la balise <code>\maketitle</code> dans l&#39;environnement document.</p>
 
-<pre><code class="bash">[...]
+<pre><code class="tex">[...]
 
 \begin{document}
 
@@ -493,7 +493,7 @@ Transcript written on doc.log.
     <div class='left' style='float:left;width:50%'>
      <p>On écrit notre résumé entre dans l&#39;environnement <code>abstract</code>.</p>
 
-<pre><code class="bash">[...]
+<pre><code class="tex">[...]
 
 \begin{document}
 
@@ -525,7 +525,7 @@ Transcript written on doc.log.
   <article>
     
     <div class='left' style='float:left;width:50%'>
-     <pre><code class="bash">[...]
+     <pre><code class="tex">[...]
 
 \begin{document}
 
@@ -560,7 +560,7 @@ Transcript written on doc.log.
   <article>
     
     <div class='left' style='float:left;width:50%'>
-     <pre><code class="bash">[...]
+     <pre><code class="tex">[...]
 
 \begin{document}
 
@@ -654,7 +654,7 @@ Prenez le temps de lire la sortie affichée par le compilateur <code>pdflatex</c
   <article>
     
     <div class='left' style='float:left;width:50%'>
-     <pre><code>[...]
+     <pre><code class="tex">[...]
 \begin{document}
 
 Voici un texte
@@ -707,25 +707,25 @@ ou {\large{plus grand}}.
   <article data-timings="">
     <p><strong>Corps très petit</strong></p>
 
-<pre><code>\footnotesize texte très petit \normalsize, ou bien
+<pre><code class="tex">\footnotesize texte très petit \normalsize, ou bien
 \begin{footnotesize} texte très petit \end{footnotesize}
 </code></pre>
 
 <p><strong>Corps petit</strong></p>
 
-<pre><code>\small texte petit \normalsize, ou bien
+<pre><code class="tex">\small texte petit \normalsize, ou bien
 \begin{small} texte petit \end{small}
 </code></pre>
 
 <p><strong>Corps grand</strong></p>
 
-<pre><code>\large texte grand \normalsize, ou bien
+<pre><code class="tex">\large texte grand \normalsize, ou bien
 \begin{large} texte grand \end{large}
 </code></pre>
 
 <p><strong>Corps très grand</strong></p>
 
-<pre><code>\Large texte très grand \normalsize, ou bien
+<pre><code class="tex">\Large texte très grand \normalsize, ou bien
 \begin{Large} texte très grand \end{Large}.
 </code></pre>
 
@@ -742,19 +742,19 @@ ou {\large{plus grand}}.
 
 <p><strong>Alignement gauche</strong></p>
 
-<pre><code>\raggedleft texte à gauche
+<pre><code class="tex">\raggedleft texte à gauche
 \begin{flushleft} texte très petit \end{flushleft}
 </code></pre>
 
 <p><strong>Alignement à droite</strong></p>
 
-<pre><code>\raggedright texte à droite
+<pre><code class="tex">\raggedright texte à droite
 \begin{flushright} texte à droite \end{flushright}
 </code></pre>
 
 <p><strong>Alignement au centre</strong></p>
 
-<pre><code>\centering texte au centre
+<pre><code class="tex">\centering texte au centre
 \begin{center} texte au centre \end{center}
 </code></pre>
 
@@ -770,7 +770,7 @@ ou {\large{plus grand}}.
     <div class='left' style='float:left;width:50%'>
      <p>Par défault, la première ligne des paragraphes est indentée.</p>
 
-<pre><code>[...]
+<pre><code class="tex">[...]
 \setlength{\parindent}{10mm}
 
 \begin{document}
@@ -821,7 +821,7 @@ ou {\large{plus grand}}.
   <article data-timings="">
     <p>Pour spécifier si le document doit être en double ou simple interligne, il suffit d&#39;ajouter le package <code>setspace</code> et d&#39;y rattacher l&#39;option désiré.</p>
 
-<pre><code class="bash">\documentclass[12pt]{article}
+<pre><code class="tex">\documentclass[12pt]{article}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -850,7 +850,7 @@ OU
     <p>Par défault, il n&#39;y a pas d&#39;espace entre les paragraphes.</p>
 
     <div class='left' style='float:left;width:50%'>
-     <pre><code>[...]
+     <pre><code class="tex">[...]
 \setlength{\parskip}{2em}
 
 \begin{document}
@@ -880,7 +880,7 @@ OU
   <article data-timings="">
     <p>Il est possible de basculer un document d&#39;une colonne à deux colonnes en une ligne de commande grâce aux options de la classe de document (<code>\documentclass</code>).</p>
 
-<pre><code>\documentclass[11pt,twocolumn,doublepage]{article}
+<pre><code class="tex">\documentclass[11pt,twocolumn,doublepage]{article}
 
 \begin{document}
 
@@ -904,7 +904,7 @@ Pour le constater, vous pouvez vous rendre sur <a href="https://fr.sharelatex.co
   <article>
     
     <div class='left' style='float:left;width:50%'>
-     <pre><code>\documentclass[11pt,twocolumn]{article}
+     <pre><code class="tex">\documentclass[11pt,twocolumn]{article}
 
 \begin{document}
 
@@ -970,7 +970,7 @@ Pour le constater, vous pouvez vous rendre sur <a href="https://fr.sharelatex.co
   <article data-timings="">
     <p>Les marges du document peuvent être définis grâce au package <code>geometry</code>:</p>
 
-<pre><code>\usepackage{geometry}
+<pre><code class="tex">\usepackage{geometry}
 
 \geometry{
 letterpaper,
@@ -999,7 +999,7 @@ OU
   <article data-timings="">
     <p>Il est possible à tout moment de référer une partie de son document à une section particulière grâce aux balises <code>\label</code> et <code>\ref</code>. On appelle ça des <em>ancres de page</em>.</p>
 
-<pre><code>[...]
+<pre><code class="tex">[...]
 \begin{document}
 
 \section{Introduction}
@@ -1034,7 +1034,7 @@ je vous ai présenté les réseaux écologiques (section \ref{subsec:res},
     <p>Les références internes (<code>\ref</code> et <code>\href</code>) du document auront des couleurs par défault.
 Vous pouvez modifier ce comportement par défaut en modifiant la balise <code>\hypersetup</code> suivante:</p>
 
-<pre><code class="bash">\hypersetup{
+<pre><code class="tex">\hypersetup{
    backref=true,                           % Permet d ajouter des liens dans
    pagebackref=true,                       % les bibliographies
    hyperindex=true,                        % Ajoute des liens dans les index.
@@ -1065,7 +1065,7 @@ Vous pouvez modifier ce comportement par défaut en modifiant la balise <code>\h
 
 <p>Si vous désirez utiliser les métadonnées pour produire la page titre, la procédure est la suivante:</p>
 
-<pre><code>[...]
+<pre><code class="tex">[...]
 
 \begin{document}
 
@@ -1101,7 +1101,7 @@ Il a été écrit par \@author\space le \@date
   <article>
     
     <div class='left' style='float:left;width:50%'>
-     <pre><code>\begin{figure}
+     <pre><code class="tex">\begin{figure}
 
 \includegraphics[width=0.35\textwidth]{fig.eps}
 
@@ -1134,7 +1134,7 @@ Il a été écrit par \@author\space le \@date
     <div class='left' style='float:left;width:48%'>
      <p>Dans le texte:</p>
 
-<pre><code>La théorie de la biogéographie
+<pre><code class="tex">La théorie de la biogéographie
 des îles donne la richesse
 en espèces $S$ à l&#39;équilibre
 au point où les courbes
@@ -1145,7 +1145,7 @@ $I(S)$ et $E(S)$ se croisent.
     <div class='right' style='float:right;width:48%'>
      <p>En retrait du texte:</p>
 
-<pre><code>\begin{equation}
+<pre><code class="tex">\begin{equation}
   S^* = \frac{I}{I+E}
 \end{equation}
 </code></pre>
@@ -1174,7 +1174,7 @@ $I(S)$ et $E(S)$ se croisent.
   <article data-timings="">
     <p>On utilise <code>\label</code> comme pour les sections.</p>
 
-<pre><code>\begin{equation}
+<pre><code class="tex">\begin{equation}
   label{eq:tib}
   S^* = \frac{I}{I+E}
 \end{equation}
@@ -1182,7 +1182,7 @@ $I(S)$ et $E(S)$ se croisent.
 
 <p>Et ensuite on y réfère dans le texte ainsi:</p>
 
-<pre><code>La théorie de la biogéographie des îles donne la richesse
+<pre><code class="tex">La théorie de la biogéographie des îles donne la richesse
 en espèces $S$ à l&#39;équilibre au point où les courbes
 $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
 </code></pre>
@@ -1199,7 +1199,7 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
     <div class='left' style='float:left;width:48%'>
      <h2>On peut y aller simplement de points</h2>
 
-<pre><code>\begin{itemize}
+<pre><code class="tex">\begin{itemize}
   \item Premier élément
   \item Second élément
   \item Troisième élément
@@ -1232,7 +1232,7 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
 
 <p>Le fichier doit contenir des entrées <code>bibtex</code> qui ressemble à cela:</p>
 
-<pre><code class="tex">@article{gravel2006reconciling,
+<pre><code class="tex">@article{gravel2006a,
   title={Reconciling niche and neutrality: the continuum hypothesis},
   author={Gravel, Dominique and Canham, Charles D and Beaudet, Marilou and Messier, Christian},
   journal={Ecology letters},
@@ -1254,7 +1254,7 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
 <slide class="" id="slide-52" style="background:;">
   <!--  <a href="#slide-52"></a> -->
   <hgroup>
-    <h1>Faire sa première bibliographie</h1>
+    <h1>Les entrées <code>bibtex</code></h1>
   </hgroup>
   <article data-timings="">
     <p>La plupart des journaux et portail de recherche fournissent des entrées <code>bibtex</code> pour citer les publications:</p>
@@ -1267,15 +1267,48 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
 
 <p>Si vous voulez en savoir davantage: <a href="http://steveviss.github.io/Talk_bib/#1">http://steveviss.github.io/Talk_bib/#1</a></p>
 
-<h2>Exercice 6 (suite):</h2>
+<h2>Exercice 6 (suite)</h2>
 
 <p><strong>Étape 2.</strong> En vous servant de Google Scholar, remplisser votre fichier <code>mabiblio.bib</code> avec 2 entrées bibtex.</p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-53" style="background:;">
-  <!--  <a href="#slide-53"></a> -->
+<slide class="" id="slide-53" style="background:;">
+  <hgroup>
+    <h1>Déclarer le fichier <code>bibtex</code></h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:45%'>
+     <p>Nous désirons maintenant nous servir des entrées <code>bibtex</code> dans le document \(\LaTeX\) afin de citer ces références.</p>
+
+<pre><code class="tex">\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+
+\section{Mon premier article}
+
+Je vais citer un très bon
+article \cite{gravel2006a}.
+
+\end{document}
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:52%'>
+     <h2>Exercice 6 (suite)</h2>
+
+<p><strong>Étape 3.</strong> En vous servant de votre fichier <code>mabiblio.bib</code>, citer vos deux références dans votre document à l&#39;aide de la commande <code>\cite</code>.</p>
+
+    </div>
+  </article>
+</slide>
+<slide class="transition" id="slide-54" style="background:;">
+  <!--  <a href="#slide-54"></a> -->
   <hgroup>
     <h1>Organiser son travail</h1>
   </hgroup>
@@ -1284,8 +1317,8 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-54" style="background:;">
-  <!--  <a href="#slide-54"></a> -->
+<slide class="transition" id="slide-55" style="background:;">
+  <!--  <a href="#slide-55"></a> -->
   <hgroup>
     <h1>Travail 3</h1>
   </hgroup>
@@ -1294,8 +1327,8 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-55" style="background:;">
-  <!--  <a href="#slide-55"></a> -->
+<slide class="" id="slide-56" style="background:;">
+  <!--  <a href="#slide-56"></a> -->
   <hgroup>
     <h1>Objectif</h1>
   </hgroup>
@@ -1305,8 +1338,8 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-56" style="background:;">
-  <!--  <a href="#slide-56"></a> -->
+<slide class="" id="slide-57" style="background:;">
+  <!--  <a href="#slide-57"></a> -->
   <hgroup>
     <h1>Consignes</h1>
   </hgroup>
@@ -1329,8 +1362,8 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-57" style="background:;">
-  <!--  <a href="#slide-57"></a> -->
+<slide class="" id="slide-58" style="background:;">
+  <!--  <a href="#slide-58"></a> -->
   <hgroup>
     <h1>Consignes</h1>
   </hgroup>
@@ -1342,8 +1375,8 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-58" style="background:;">
-  <!--  <a href="#slide-58"></a> -->
+<slide class="" id="slide-59" style="background:;">
+  <!--  <a href="#slide-59"></a> -->
   <hgroup>
     <h1>Évaluation</h1>
   </hgroup>
@@ -1669,31 +1702,31 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=52 title='Faire sa première bibliographie'>
+        data-slide=52 title='Les entrées <code>bibtex</code>'>
          52
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=53 title='Organiser son travail'>
+        data-slide=53 title='Déclarer le fichier <code>bibtex</code>'>
          53
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=54 title='Travail 3'>
+        data-slide=54 title='Organiser son travail'>
          54
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=55 title='Objectif'>
+        data-slide=55 title='Travail 3'>
          55
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=56 title='Consignes'>
+        data-slide=56 title='Objectif'>
          56
       </a>
     </li>
@@ -1705,8 +1738,14 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=58 title='Évaluation'>
+        data-slide=58 title='Consignes'>
          58
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=59 title='Évaluation'>
+         59
       </a>
     </li>
   </ul>

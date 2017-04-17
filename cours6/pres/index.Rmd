@@ -6,7 +6,7 @@ job         : "Laboratoire d'écologie intégrative"
 logo        : "logo.png"
 framework   : io2012       # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      #
+hitheme     : sunburst      #
 mode        : selfcontained
 knit        : slidify::knit2slides
 widgets     : [mathjax]
@@ -286,7 +286,7 @@ Transcript written on doc.log.
 
 *** =left
 
-```bash
+```tex
 \title{Comment structurer un document \LaTeX{}}
 \author{Prof. Dominique Gravel\\
    Chaire de recherche en Écologie Intégrative,\\
@@ -315,7 +315,7 @@ Note : pour une date en français, il faut utiliser le package ```\usepackage[re
 La page titre est généré grâce à la balise ```\maketitle``` dans l'environnement document.
 
 
-```bash
+```tex
 [...]
 
 \begin{document}
@@ -347,7 +347,7 @@ Ajoutez vos métadonnées puis compilez votre document avec la page titre.
 
 On écrit notre résumé entre dans l'environnement ```abstract```.
 
-```bash
+```tex
 [...]
 
 \begin{document}
@@ -376,7 +376,7 @@ On écrit notre résumé entre dans l'environnement ```abstract```.
 
 *** =left
 
-```bash
+```tex
 [...]
 
 \begin{document}
@@ -406,7 +406,7 @@ On écrit notre résumé entre dans l'environnement ```abstract```.
 
 *** =left
 
-```bash
+```tex
 [...]
 
 \begin{document}
@@ -478,7 +478,7 @@ Lors du dernier exercice, vous avez remarqué que la table des matières n'étai
 
 *** =left
 
-```
+```tex
 [...]
 \begin{document}
 
@@ -522,28 +522,28 @@ ou {\large{plus grand}}.
 
 **Corps très petit**
 
-```
+```tex
 \footnotesize texte très petit \normalsize, ou bien
 \begin{footnotesize} texte très petit \end{footnotesize}
 ```
 
 **Corps petit**
 
-```
+```tex
 \small texte petit \normalsize, ou bien
 \begin{small} texte petit \end{small}
 ```
 
 **Corps grand**
 
-```
+```tex
 \large texte grand \normalsize, ou bien
 \begin{large} texte grand \end{large}
 ```
 
 **Corps très grand**
 
-```
+```tex
 \Large texte très grand \normalsize, ou bien
 \begin{Large} texte très grand \end{Large}.
 ```
@@ -556,21 +556,21 @@ Par défault, les paragraphes sont justifiés.
 
 **Alignement gauche**
 
-```
+```tex
 \raggedleft texte à gauche
 \begin{flushleft} texte très petit \end{flushleft}
 ```
 
 **Alignement à droite**
 
-```
+```tex
 \raggedright texte à droite
 \begin{flushright} texte à droite \end{flushright}
 ```
 
 **Alignement au centre**
 
-```
+```tex
 \centering texte au centre
 \begin{center} texte au centre \end{center}
 ```
@@ -583,7 +583,7 @@ Par défault, les paragraphes sont justifiés.
 
 Par défault, la première ligne des paragraphes est indentée.
 
-```
+```tex
 [...]
 \setlength{\parindent}{10mm}
 
@@ -623,7 +623,7 @@ Par défault, la première ligne des paragraphes est indentée.
 
 Pour spécifier si le document doit être en double ou simple interligne, il suffit d'ajouter le package ```setspace``` et d'y rattacher l'option désiré.
 
-```bash
+```tex
 \documentclass[12pt]{article}
 
 \usepackage[T1]{fontenc}
@@ -650,7 +650,7 @@ Par défault, il n'y a pas d'espace entre les paragraphes.
 
 *** =left
 
-```
+```tex
 [...]
 \setlength{\parskip}{2em}
 
@@ -675,7 +675,7 @@ Par défault, il n'y a pas d'espace entre les paragraphes.
 
 Il est possible de basculer un document d'une colonne à deux colonnes en une ligne de commande grâce aux options de la classe de document (```\documentclass```).
 
-```
+```tex
 \documentclass[11pt,twocolumn,doublepage]{article}
 
 \begin{document}
@@ -696,7 +696,7 @@ Pour le constater, vous pouvez vous rendre sur [https://fr.sharelatex.com/learn/
 
 *** =left
 
-```
+```tex
 \documentclass[11pt,twocolumn]{article}
 
 \begin{document}
@@ -747,7 +747,7 @@ Pour ceux qui sont familiés avec le traitement de texte (MS Word), c'est l'équ
 
 Les marges du document peuvent être définis grâce au package ```geometry```:
 
-```
+```tex
 \usepackage{geometry}
 
 \geometry{
@@ -773,7 +773,7 @@ Pour un contrôle fin des marges, vous pouvez vous rendre sur ce site: [https://
 
 Il est possible à tout moment de référer une partie de son document à une section particulière grâce aux balises ```\label``` et ```\ref```. On appelle ça des *ancres de page*.
 
-```
+```tex
 [...]
 \begin{document}
 
@@ -804,7 +804,7 @@ Les numéros de sections s'ajusteront automatiquement si vous ajouter ou enlever
 Les références internes (```\ref``` et ```\href```) du document auront des couleurs par défault.
 Vous pouvez modifier ce comportement par défaut en modifiant la balise ```\hypersetup``` suivante:
 
-```bash
+```tex
 \hypersetup{
    backref=true,                           % Permet d ajouter des liens dans
    pagebackref=true,                       % les bibliographies
@@ -831,7 +831,7 @@ Essayer de produire la page titre du département de Biologie (sans utiliser les
 
 Si vous désirez utiliser les métadonnées pour produire la page titre, la procédure est la suivante:
 
-```
+```tex
 [...]
 
 \begin{document}
@@ -858,7 +858,7 @@ Il a été écrit par \@author\space le \@date
 
 *** =left
 
-```
+```tex
 \begin{figure}
 
 \includegraphics[width=0.35\textwidth]{fig.eps}
@@ -885,7 +885,7 @@ Il a été écrit par \@author\space le \@date
 
 Dans le texte:
 
-```
+```tex
 La théorie de la biogéographie
 des îles donne la richesse
 en espèces $S$ à l'équilibre
@@ -897,7 +897,7 @@ $I(S)$ et $E(S)$ se croisent.
 
 En retrait du texte:
 
-```
+```tex
 \begin{equation}
   S^* = \frac{I}{I+E}
 \end{equation}
@@ -919,7 +919,7 @@ TODO
 
 On utilise ```\label``` comme pour les sections.
 
-```
+```tex
 \begin{equation}
   label{eq:tib}
   S^* = \frac{I}{I+E}
@@ -928,7 +928,7 @@ On utilise ```\label``` comme pour les sections.
 
 Et ensuite on y réfère dans le texte ainsi:
 
-```
+```tex
 La théorie de la biogéographie des îles donne la richesse
 en espèces $S$ à l'équilibre au point où les courbes
 $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
@@ -942,7 +942,7 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
 
 ## On peut y aller simplement de points
 
-```
+```tex
 \begin{itemize}
   \item Premier élément
   \item Second élément
@@ -954,7 +954,7 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
 
 ## Ou encore d'une liste numérotée
 
-```
+```tex
 \begin{enumerate}
   \item Premier élément
   \item Second élément
@@ -975,7 +975,7 @@ Les références que l'on va citer sont entreposer dans un fichier ```.bib```.
 Le fichier doit contenir des entrées ```bibtex``` qui ressemble à cela:
 
 ```tex
-@article{gravel2006reconciling,
+@article{gravel2006a,
   title={Reconciling niche and neutrality: the continuum hypothesis},
   author={Gravel, Dominique and Canham, Charles D and Beaudet, Marilou and Messier, Christian},
   journal={Ecology letters},
@@ -993,7 +993,7 @@ Le fichier doit contenir des entrées ```bibtex``` qui ressemble à cela:
 
 ---
 
-# Faire sa première bibliographie
+# Les entrées ```bibtex```
 
 La plupart des journaux et portail de recherche fournissent des entrées ```bibtex``` pour citer les publications:
 
@@ -1003,9 +1003,41 @@ Des logiciels de bibliographie telle que EndNote, Zotero et Mendeley pemettent d
 
 Si vous voulez en savoir davantage: [http://steveviss.github.io/Talk_bib/#1](http://steveviss.github.io/Talk_bib/#1)
 
-## Exercice 6 (suite):
+
+## Exercice 6 (suite)
 
 **Étape 2.** En vous servant de Google Scholar, remplisser votre fichier ```mabiblio.bib``` avec 2 entrées bibtex.
+
+
+---&twocolw w1:45% w2:52%
+
+# Déclarer le fichier ```bibtex```
+
+*** =left
+
+Nous désirons maintenant nous servir des entrées ```bibtex``` dans le document $\LaTeX$ afin de citer ces références.
+
+```tex
+\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+
+\section{Mon premier article}
+
+Je vais citer un très bon
+article \cite{gravel2006a}.
+
+\end{document}
+```
+
+*** =right
+
+## Exercice 6 (suite)
+
+**Étape 3.** En vous servant de votre fichier ```mabiblio.bib```, citer vos deux références dans votre document à l'aide de la commande ```\cite```.
 
 
 ---.transition
