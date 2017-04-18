@@ -619,7 +619,6 @@ Par défault, la première ligne des paragraphes est indentée.
 
 ---
 
-
 # Interlignes
 
 Pour spécifier si le document doit être en double ou simple interlignes, il suffit d'ajouter le package `setspace` et d'y rattacher l'option désiré.
@@ -943,7 +942,6 @@ kable(CO2, format="latex")
 
 - 2- Pour des tableaux de formes plus complexes, la tâche peut être lourde, il existe des outils en ligne pour dessiner des tableaux et obtenir le code $\LaTeX$ associé (voir  [http://www.tablesgenerator.com](http://www.tablesgenerator.com)).
 
-
 ---
 
 # Ajouter une ancre à ces environnements
@@ -1073,7 +1071,6 @@ Nous désirons maintenant nous servir des entrées `bibtex` dans le document $\L
 
 - `\bibliography{}`: permet de spécifier le nom du fichier `.bib`.
 - `\bibliographystyle{}`: permet de choisir le style de bibliographie. Il en existe plusieurs: `plain`, `unsrt`, `alpha`, `abbrv`, `apalike` etc..
-
 
 Vous pouvez trouver davantage d'information [ici](https://fr.wikibooks.org/wiki/LaTeX/Gestion_de_la_bibliographie).
 
