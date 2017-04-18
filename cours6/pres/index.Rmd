@@ -979,7 +979,7 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
 \end{itemize}
 ```
 
-*** =left
+*** =right
 
 ## Ou encore d'une liste numérotée
 
