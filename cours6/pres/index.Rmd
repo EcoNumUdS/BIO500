@@ -619,7 +619,8 @@ Par défault, la première ligne des paragraphes est indentée.
 
 ---
 
-# interlignes
+
+# Interlignes
 
 Pour spécifier si le document doit être en double ou simple interlignes, il suffit d'ajouter le package `setspace` et d'y rattacher l'option désiré.
 
@@ -629,13 +630,9 @@ Pour spécifier si le document doit être en double ou simple interlignes, il su
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[singlespacing]{setspace}
-
 OU
-
 \usepackage[onehalfspacing]{setspace}
-
 OU
-
 \usepackage[doublespacing]{setspace}
 
 ```
@@ -704,13 +701,11 @@ Pour le constater, vous pouvez vous rendre sur [https://fr.sharelatex.com/learn/
 \section{Introduction}
 
 \lipsum[1]
-
 \clearsection
 
 \section{Matériels et méthodes}
 
 \lipsum[2]
-
 \clearpage
 
 \lipsum[3]
@@ -769,7 +764,7 @@ Pour un contrôle fin des marges, vous pouvez vous rendre sur ce site: [https://
 
 ---
 
-# Référence interne au document
+# Références internes au document
 
 Il est possible à tout moment de référer une partie de son document à une section particulière grâce aux balises `\label` et `\ref`. On appelle ça des *ancres de page*.
 
@@ -783,11 +778,8 @@ Il est possible à tout moment de référer une partie de son document à une se
 \subsection{Les réseaux écologiques}
 \label{subsec:res}
 
-\section{Matériel et méthodes}
-
-Dans mon introduction (section \ref{sec:intro}),
-je vous ai présenté les réseaux écologiques (section \ref{subsec:res},
-\href{ielab.recherche.usherbrooke.ca}{site internet}).
+Dans mon introduction (section \ref{sec:intro}), je vous ai présenté les réseaux écologiques
+(section \ref{subsec:res},\href{ielab.recherche.usherbrooke.ca}{site internet}).
 
 \end{document}
 ```
@@ -952,8 +944,6 @@ kable(CO2, format="latex")
 - 2- Pour des tableaux de formes plus complexes, la tâche peut être lourde, il existe des outils en ligne pour dessiner des tableaux et obtenir le code $\LaTeX$ associé (voir  [http://www.tablesgenerator.com](http://www.tablesgenerator.com)).
 
 
-
-
 ---
 
 # Ajouter une ancre à ces environnements
@@ -1056,34 +1046,100 @@ Si vous voulez en savoir davantage: [http://steveviss.github.io/Talk_bib/#1](htt
 
 *** =left
 
-Nous désirons maintenant nous servir des entrées `bibtex` dans le document $\LaTeX$ afin de citer ces références.
-
 ```tex
 \documentclass[12pt]{article}
 
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+[...]
 
 \begin{document}
 
-\section{Mon premier article}
-
 Je vais citer un très bon
 article \cite{gravel2006a}.
+
+\bibliographystyle{plain}
+% Le fichier .bib doit
+% être avec le fichier .tex
+
+\bibliography{monfichierbib}
+% Noter ici que l'on ne met
+% pas l'extension du fichier.
 
 \end{document}
 ```
 
 *** =right
 
-## Exercice 6 (suite)
+Nous désirons maintenant nous servir des entrées `bibtex` dans le document $\LaTeX$ afin de citer ces références.
 
-**Étape 3.** En vous servant de votre fichier `mabiblio.bib`, citer vos deux références dans votre document à l'aide de la commande `\cite`.
+- `\bibliography{}`: permet de spécifier le nom du fichier `.bib`.
+- `\bibliographystyle{}`: permet de choisir le style de bibliographie. Il en existe plusieurs: `plain`, `unsrt`, `alpha`, `abbrv`, `apalike` etc..
 
 
----.transition
+Vous pouvez trouver davantage d'information [ici](https://fr.wikibooks.org/wiki/LaTeX/Gestion_de_la_bibliographie).
 
-# Organiser son travail
+---
+
+# Exercice 6 (suite)
+
+**Étape 3.** En vous servant de votre fichier que vous venez d'enregistrer (`mabiblio.bib`), citer vos deux références dans votre document à l'aide de la commande `\cite`.
+
+```tex
+\documentclass[12pt]{article}
+
+[...]
+
+\begin{document}
+
+Je vais citer un très bon
+article \cite{gravel2006a}.
+
+\bibliographystyle{plain}
+% Le fichier .bib doit être avec le fichier .tex
+
+\bibliography{monfichierbib}
+% Noter ici que l'on ne met pas l'extension du fichier.
+
+\end{document}
+```
+
+---
+
+# Compiler le document $\LaTeX$ avec bibliographie
+
+La compilation d'un document avec bibliographie requière l'utilisation du compilateur `bibtex`.
+## La compilation se déroule donc en trois étapes dans le terminal:
+
+1. Scanner le fichier `.tex` à la recherche de références aux figures, sections etc.
+
+  ```bash
+  pdflatex monfichier.tex
+  ```
+
+2. Scanner le fichier `.tex` à la recherche des balises `\cite{}`
+
+  ```bash
+  bibtex monfichier.tex
+  ```
+
+3. Compiler le document final en se servant des `.aux` (étape 1) et `.bbl` (étape 2)
+
+  ```bash
+  pdflatex monfichier.tex
+  ```
+
+Et voilà, nous avons un document final.
+
+---
+
+# Exercice 6 (suite)
+
+**Étape 4.** En vous servant de votre terminal, compiler votre document $\LaTeX$ avec vos deux citations.
+
+## Rappel, la compilation se déroule en trois étapes:
+
+1. `pdflatex monfichier.tex` scanne le fichier `.tex` à la recherche de références aux figures, tableaux et sections etc.
+2. `bibtex monfichier.tex` scanne le fichier `.tex` à la recherche des balises `\cite{}`
+3. `pdflatex monfichier.tex` compile le document final en se servant des `.aux` (étape 1) et `.bbl` (étape 2)
 
 
 ---.transition
