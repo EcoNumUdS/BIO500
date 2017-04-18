@@ -816,10 +816,10 @@ ou {\large{plus grand}}.
 <slide class="" id="slide-35" style="background:;">
   <!--  <a href="#slide-35"></a> -->
   <hgroup>
-    <h1>Interligne</h1>
+    <h1>interlignes</h1>
   </hgroup>
   <article data-timings="">
-    <p>Pour spécifier si le document doit être en double ou simple interligne, il suffit d&#39;ajouter le package <code>setspace</code> et d&#39;y rattacher l&#39;option désiré.</p>
+    <p>Pour spécifier si le document doit être en double ou simple interlignes, il suffit d&#39;ajouter le package <code>setspace</code> et d&#39;y rattacher l&#39;option désiré.</p>
 
 <pre><code class="tex">\documentclass[12pt]{article}
 
@@ -1154,20 +1154,63 @@ $I(S)$ et $E(S)$ se croisent.
   </article>
 </slide>
 <slide class="" id="slide-47" style="background:;">
-  <!--  <a href="#slide-47"></a> -->
   <hgroup>
-    <h1>Ajouter un tableau</h1>
+    <h1>Ajouter un tableau - structure</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="tex">\begin{table}[]
+\centering
+\caption{Une légende adéquate}
+\label{my-label}
+\begin{tabular}{lc|r}
+aligné à gauche &amp; au centre &amp; à droite  \\
+\hline
+val11 &amp; val12 &amp; val13   \\
+val21 &amp; val22 &amp; val23   \\
+val31 &amp; val32 &amp; va33  
+\end{tabular}
+\end{table}
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><br/>
+<br/></p>
+
+<div style='text-align:center;'>
+<img src="assets/img/table.png" height="200px" style="border-style:solid;border-width:1px;"></img>
+</div>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-48" style="background:;">
+  <!--  <a href="#slide-48"></a> -->
+  <hgroup>
+    <h1>Ajouter un tableau - quelques astuces</h1>
   </hgroup>
   <article data-timings="">
-    <p>Nous avons vu la semaine dernière comment extraire un tableau à l&#39;aide de la fonction <code>kable()</code>.</p>
+    <ul>
+<li>1- Nous avons vu, la semaine dernière, la fonction R <code>kable()</code>. Cette fonction nous permet d&#39;obtenir un tableau de R directement en format \(\LaTeX\):</li>
+</ul>
 
-<p>TODO</p>
+<pre><code class="r">library(knitr)
+kable(CO2, format=&quot;latex&quot;)
+</code></pre>
+
+<p><br/></p>
+
+<ul>
+<li>2- Pour des tableaux de formes plus complexes, la tâche peut être lourde, il existe des outils en ligne pour dessiner des tableaux et obtenir le code \(\LaTeX\) associé (voir  <a href="http://www.tablesgenerator.com">http://www.tablesgenerator.com</a>).</li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-48" style="background:;">
-  <!--  <a href="#slide-48"></a> -->
+<slide class="" id="slide-49" style="background:;">
+  <!--  <a href="#slide-49"></a> -->
   <hgroup>
     <h1>Ajouter une ancre à ces environnements</h1>
   </hgroup>
@@ -1190,7 +1233,7 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-49" style="background:;">
+<slide class="" id="slide-50" style="background:;">
   <hgroup>
     <h1>Ajouter des énumérations</h1>
   </hgroup>
@@ -1212,8 +1255,8 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
     </div>
   </article>
 </slide>
-<slide class="transition" id="slide-50" style="background:;">
-  <!--  <a href="#slide-50"></a> -->
+<slide class="transition" id="slide-51" style="background:;">
+  <!--  <a href="#slide-51"></a> -->
   <hgroup>
     <h1>La bibliographie</h1>
   </hgroup>
@@ -1222,8 +1265,8 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-51" style="background:;">
-  <!--  <a href="#slide-51"></a> -->
+<slide class="" id="slide-52" style="background:;">
+  <!--  <a href="#slide-52"></a> -->
   <hgroup>
     <h1>Les entrées <code>bibtex</code></h1>
   </hgroup>
@@ -1251,8 +1294,8 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-52" style="background:;">
-  <!--  <a href="#slide-52"></a> -->
+<slide class="" id="slide-53" style="background:;">
+  <!--  <a href="#slide-53"></a> -->
   <hgroup>
     <h1>Les entrées <code>bibtex</code></h1>
   </hgroup>
@@ -1274,7 +1317,7 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-53" style="background:;">
+<slide class="" id="slide-54" style="background:;">
   <hgroup>
     <h1>Déclarer le fichier <code>bibtex</code></h1>
   </hgroup>
@@ -1307,8 +1350,8 @@ article \cite{gravel2006a}.
     </div>
   </article>
 </slide>
-<slide class="transition" id="slide-54" style="background:;">
-  <!--  <a href="#slide-54"></a> -->
+<slide class="transition" id="slide-55" style="background:;">
+  <!--  <a href="#slide-55"></a> -->
   <hgroup>
     <h1>Organiser son travail</h1>
   </hgroup>
@@ -1317,8 +1360,8 @@ article \cite{gravel2006a}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-55" style="background:;">
-  <!--  <a href="#slide-55"></a> -->
+<slide class="transition" id="slide-56" style="background:;">
+  <!--  <a href="#slide-56"></a> -->
   <hgroup>
     <h1>Travail 3</h1>
   </hgroup>
@@ -1327,8 +1370,8 @@ article \cite{gravel2006a}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-56" style="background:;">
-  <!--  <a href="#slide-56"></a> -->
+<slide class="" id="slide-57" style="background:;">
+  <!--  <a href="#slide-57"></a> -->
   <hgroup>
     <h1>Objectif</h1>
   </hgroup>
@@ -1338,8 +1381,8 @@ article \cite{gravel2006a}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-57" style="background:;">
-  <!--  <a href="#slide-57"></a> -->
+<slide class="" id="slide-58" style="background:;">
+  <!--  <a href="#slide-58"></a> -->
   <hgroup>
     <h1>Consignes</h1>
   </hgroup>
@@ -1362,8 +1405,8 @@ article \cite{gravel2006a}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-58" style="background:;">
-  <!--  <a href="#slide-58"></a> -->
+<slide class="" id="slide-59" style="background:;">
+  <!--  <a href="#slide-59"></a> -->
   <hgroup>
     <h1>Consignes</h1>
   </hgroup>
@@ -1375,8 +1418,8 @@ article \cite{gravel2006a}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-59" style="background:;">
-  <!--  <a href="#slide-59"></a> -->
+<slide class="" id="slide-60" style="background:;">
+  <!--  <a href="#slide-60"></a> -->
   <hgroup>
     <h1>Évaluation</h1>
   </hgroup>
@@ -1600,7 +1643,7 @@ article \cite{gravel2006a}.
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=35 title='Interligne'>
+        data-slide=35 title='interlignes'>
          35
       </a>
     </li>
@@ -1672,31 +1715,31 @@ article \cite{gravel2006a}.
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=47 title='Ajouter un tableau'>
+        data-slide=47 title='Ajouter un tableau - structure'>
          47
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=48 title='Ajouter une ancre à ces environnements'>
+        data-slide=48 title='Ajouter un tableau - quelques astuces'>
          48
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=49 title='Ajouter des énumérations'>
+        data-slide=49 title='Ajouter une ancre à ces environnements'>
          49
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=50 title='La bibliographie'>
+        data-slide=50 title='Ajouter des énumérations'>
          50
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=51 title='Les entrées <code>bibtex</code>'>
+        data-slide=51 title='La bibliographie'>
          51
       </a>
     </li>
@@ -1708,31 +1751,31 @@ article \cite{gravel2006a}.
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=53 title='Déclarer le fichier <code>bibtex</code>'>
+        data-slide=53 title='Les entrées <code>bibtex</code>'>
          53
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=54 title='Organiser son travail'>
+        data-slide=54 title='Déclarer le fichier <code>bibtex</code>'>
          54
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=55 title='Travail 3'>
+        data-slide=55 title='Organiser son travail'>
          55
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=56 title='Objectif'>
+        data-slide=56 title='Travail 3'>
          56
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=57 title='Consignes'>
+        data-slide=57 title='Objectif'>
          57
       </a>
     </li>
@@ -1744,8 +1787,14 @@ article \cite{gravel2006a}.
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=59 title='Évaluation'>
+        data-slide=59 title='Consignes'>
          59
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=60 title='Évaluation'>
+         60
       </a>
     </li>
   </ul>
