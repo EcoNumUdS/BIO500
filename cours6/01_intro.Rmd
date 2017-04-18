@@ -870,15 +870,53 @@ En retrait du texte:
 \end{equation}
 ```
 
+
+---&twocol
+
+# Ajouter un tableau - structure
+
+*** =left
+
+```tex
+\begin{table}[]
+\centering
+\caption{Une légende adéquate}
+\label{my-label}
+\begin{tabular}{lc|r}
+aligné à gauche & au centre & à droite  \\
+\hline
+val11 & val12 & val13   \\
+val21 & val22 & val23   \\
+val31 & val32 & va33  
+\end{tabular}
+\end{table}
+```
+
+
+*** =right
+
+<br/>
+<br/>
+<div style='text-align:center;'>
+<img src="assets/img/table.png" height="200px" style="border-style:solid;border-width:1px;"></img>
+</div>
+
+
 ---
 
-# Ajouter un tableau
-
-Nous avons vu la semaine dernière comment extraire un tableau à l'aide de la fonction `kable()`.
+# Ajouter un tableau - quelques astuces
 
 
-TODO
+- 1- Nous avons vu, la semaine dernière, la fonction R `kable()`. Cette fonction nous permet d'obtenir un tableau de R directement en format $\LaTeX$:
 
+```r
+library(knitr)
+kable(CO2, format="latex")
+```
+
+<br/>
+
+- 2- Pour des tableaux de formes plus complexes, la tâche peut être lourde, il existe des outils en ligne pour dessiner des tableaux et obtenir le code $\LaTeX$ associé (voir  [http://www.tablesgenerator.com](http://www.tablesgenerator.com)).
 
 ---
 
