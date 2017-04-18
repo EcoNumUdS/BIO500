@@ -621,7 +621,7 @@ Par défault, la première ligne des paragraphes est indentée.
 
 # Interlignes
 
-Pour spécifier si le document doit être en double ou simple interlignes, il suffit d'ajouter le package `setspace` et d'y rattacher l'option désiré.
+Pour spécifier si le document doit être en double ou simple interlignes, il suffit d'ajouter le package `setspace` et d'y rattacher l'option désirée.
 
 ```tex
 \documentclass[12pt]{article}
@@ -663,7 +663,7 @@ Par défault, il n'y a pas d'espace entre les paragraphes.
 
 - `\setlength{\parskip}{2em}`: permet de mettre de déterminer l'espace désiré entre les paragraphes.
 
-- Attention, comme `\setlength{\parindent}{10mm}`, cette configuration doit être placé dans le préambule pour être appliqué sur l'ensemble du document.
+- Attention, comme `\setlength{\parindent}{10mm}`, cette configuration doit être placée dans le préambule pour être appliquée sur l'ensemble du document.
 
 ---
 
@@ -783,7 +783,7 @@ Dans mon introduction (section \ref{sec:intro}), je vous ai présenté les rése
 \end{document}
 ```
 
-Les numéros de sections s'ajusteront automatiquement si vous ajouter ou enlever des sections.
+Les numéros de sections s'ajusteront automatiquement si vous ajoutez ou enlevez des sections.
 
 <!-- **Important:** Tout comme la table des matières, il faudra deux compilations consécutives pour visualiser les références dans le texte.
 -->
@@ -818,9 +818,9 @@ Vous pouvez modifier ce comportement par défaut en modifiant la balise `\hypers
 
 # Exercice 5 (15 minutes):
 
-Essayer de produire la page titre du département de Biologie (sans utiliser les métadonnées et `\maketitle`).
+Reproduire la page titre du département de Biologie (sans utiliser les métadonnées et `\maketitle`).
 
-Si vous désirez utiliser les métadonnées pour produire la page titre, la procédure est la suivante:
+Si vous désirez, utilisez les métadonnées pour produire la page titre. La procédure est la suivante:
 
 ```tex
 [...]
@@ -1001,7 +1001,7 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
 
 Les références que l'on va citer sont entreposer dans un fichier `.bib`.
 
-Le fichier doit contenir des entrées `bibtex` qui ressemble à cela:
+Le fichier doit contenir des entrées `bibtex` qui ressemblent à:
 
 ```tex
 @article{gravel2006a,
@@ -1035,7 +1035,7 @@ Si vous voulez en savoir davantage: [http://steveviss.github.io/Talk_bib/#1](htt
 
 ## Exercice 6 (suite)
 
-**Étape 2.** En vous servant de Google Scholar, remplisser votre fichier `mabiblio.bib` avec 2 entrées bibtex.
+**Étape 2.** En vous servant de Google Scholar, remplissez votre fichier `mabiblio.bib` avec 2 entrées bibtex.
 
 
 ---&twocolw w1:45% w2:52%
@@ -1078,7 +1078,7 @@ Vous pouvez trouver davantage d'information [ici](https://fr.wikibooks.org/wiki/
 
 # Exercice 6 (suite)
 
-**Étape 3.** En vous servant de votre fichier que vous venez d'enregistrer (`mabiblio.bib`), citer vos deux références dans votre document à l'aide de la commande `\cite`.
+**Étape 3.** En vous servant de votre fichier que vous venez d'enregistrer (`mabiblio.bib`), citez vos deux références dans votre document à l'aide de la commande `\cite`.
 
 ```tex
 \documentclass[12pt]{article}
@@ -1130,7 +1130,7 @@ Et voilà, nous avons un document final.
 
 # Exercice 6 (suite)
 
-**Étape 4.** En vous servant de votre terminal, compiler votre document $\LaTeX$ avec vos deux citations.
+**Étape 4.** En vous servant de votre terminal, compilez votre document $\LaTeX$ avec vos deux citations.
 
 ## Rappel, la compilation se déroule en trois étapes:
 
@@ -1147,7 +1147,7 @@ Et voilà, nous avons un document final.
 
 # Objectif
 
-Écrire un rapport sous forme d'article scientifiques
+Écrire un rapport sous forme d'article scientifique
 
 ---
 
