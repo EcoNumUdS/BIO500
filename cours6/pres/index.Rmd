@@ -167,7 +167,7 @@ Je peux écrire du texte ici.
 # Autres avantages
 
 - $\LaTeX$ est un language gratuit et OpenSource.
-- Stable et doté d'une riche communauté d'utilisateur.
+- Stable et doté d'une riche communauté d'utilisateurs.
 - Stack Overflow entièrement dédié à $\LaTeX$: [https://tex.stackexchange.com/](https://tex.stackexchange.com/)
 - Compilateur en ligne: [https://fr.sharelatex.com/](https://fr.sharelatex.com/)
 - Ajustement automatique du contenant au contenu
@@ -186,11 +186,11 @@ Je peux écrire du texte ici.
 
 # Faire du $\LaTeX$ avec Sublime Text2
 
-1. Créer un dossier sur votre bureau qui va contenir votre document $\LaTeX$
+1. Créer un dossier sur le bureau qui va contenir le document $\LaTeX$
 2. Ouvrir Sublime Text2
-3. Sélectionner votre dossier nouvelle créer: ```Fichier > Ouvrir```
+3. Sélectionner le dossier nouvellement créé: ```Fichier > Ouvrir```
 4. Créer un nouveau document: ```Fichier > Nouveau```
-5. Enregistrer votre document avec l'extension `.tex`: ```Fichier > Enregistrer sous```
+5. Enregistrer le document avec l'extension `.tex`: ```Fichier > Enregistrer sous```
 
 Et voilà, l'extension `.tex` détermine que le fichier est un document $\LaTeX$.
 
@@ -243,9 +243,9 @@ Recopier dans Sublime Text 2 ce code `.tex`.
 Afin d'obtenir le rendu PDF de notre document, nous devons compiler ce dernier à l'aide du compilateur `pdflatex`.
 
 
-- **Étape 1.** Ouvrez votre terminal (touches Ctrl+Alt+t).
+- **Étape 1.** Ouvrir le terminal (touches Ctrl+Alt+t).
 
-- **Étape 2.** À l'aide de la commande `cd` (*Change Directory*), vous devez vous déplacer dans le terminal vers le dossier que vous venez de créer:
+- **Étape 2.** À l'aide de la commande `cd` (*Change Directory*), se déplacer dans le terminal vers le dossier qui vient d'être créé:
 
 ```bash
 cd ~/Bureau
@@ -260,7 +260,7 @@ cd /home/etudiant/Bureau
 
 *** =left
 
-- **Étape 3.** Vous pouvez maintenant compiler le document avec la commande:
+- **Étape 3.** Compiler le document avec la commande:
 
 ```bash
 pdflatex mon_document.tex
@@ -304,7 +304,7 @@ Transcript written on doc.log.
 - Les `\\` dans la balise `\author` permettent une mise à la ligne.
 - Enfin, la balise `\today` remplie la date du jour pour nous.
 
-Note : pour une date en français, il faut utiliser le package `\usepackage[rench]{babel}`
+Note : pour une date en français, il faut utiliser le package `\usepackage[french]{babel}`
 
 ---&twocolw w1:50% w2:45%
 
@@ -312,7 +312,7 @@ Note : pour une date en français, il faut utiliser le package `\usepackage[renc
 
 *** =left
 
-La page titre est généré grâce à la balise `\maketitle` dans l'environnement document.
+La page titre est générée grâce à la balise `\maketitle` dans l'environnement document.
 
 
 ```tex
@@ -337,7 +337,7 @@ La page titre est généré grâce à la balise `\maketitle` dans l'environnemen
 
 # Exercice 3
 
-Ajoutez vos métadonnées puis compilez votre document avec la page titre.
+Ajouter les métadonnées puis compiler le document avec la page titre.
 
 ---&twocolw w1:50% w2:45%
 
@@ -436,14 +436,14 @@ La simple déclaration de la balise `\tableofcontent` permet la création d'une 
 
 # Exercice 4
 
-Ajoutez des sections à votre document, et construisez la table des matières.
-Prenez le temps de lire la sortie affichée par le compilateur `pdflatex`.
+Ajouter des sections au document, et construir la table des matières.
+Prendre le temps de lire la sortie affichée par le compilateur `pdflatex`.
 
 ---
 
 # Le fichier auxiliaire (`.aux`)
 
-Lors du dernier exercice, vous avez remarqué que la table des matières n'était pas insérée dans le document.
+Lors du dernier exercice, la table des matières n'était pas insérée dans le document.
 
 1. La première compilation scanne le document à la recherche de références internes telles que les sections.
 
@@ -464,7 +464,7 @@ Lors du dernier exercice, vous avez remarqué que la table des matières n'étai
 # Le fichier auxiliaire (`.aux`)
 
 <div style='text-align:center;'>
-<img src="assets/img/flow_comp1.png" height="500px"></img>
+<img src="assets/img/flow_comp1.png" height="400px"></img>
 </div>
 
 
@@ -621,7 +621,7 @@ Par défault, la première ligne des paragraphes est indentée.
 
 # Interlignes
 
-Pour spécifier si le document doit être en double ou simple interlignes, il suffit d'ajouter le package `setspace` et d'y rattacher l'option désiré.
+Pour spécifier si le document doit être en double ou simple interlignes, il suffit d'ajouter le package `setspace` et d'y rattacher l'option désirée.
 
 ```tex
 \documentclass[12pt]{article}
@@ -663,7 +663,7 @@ Par défault, il n'y a pas d'espace entre les paragraphes.
 
 - `\setlength{\parskip}{2em}`: permet de mettre de déterminer l'espace désiré entre les paragraphes.
 
-- Attention, comme `\setlength{\parindent}{10mm}`, cette configuration doit être placé dans le préambule pour être appliqué sur l'ensemble du document.
+- Attention, comme `\setlength{\parindent}{10mm}`, cette configuration doit être placée dans le préambule pour être appliquée sur l'ensemble du document.
 
 ---
 
@@ -783,7 +783,7 @@ Dans mon introduction (section \ref{sec:intro}), je vous ai présenté les rése
 \end{document}
 ```
 
-Les numéros de sections s'ajusteront automatiquement si vous ajouter ou enlever des sections.
+Les numéros de sections s'ajusteront automatiquement si vous ajoutez ou enlevez des sections.
 
 <!-- **Important:** Tout comme la table des matières, il faudra deux compilations consécutives pour visualiser les références dans le texte.
 -->
@@ -818,9 +818,9 @@ Vous pouvez modifier ce comportement par défaut en modifiant la balise `\hypers
 
 # Exercice 5 (15 minutes):
 
-Essayer de produire la page titre du département de Biologie (sans utiliser les métadonnées et `\maketitle`).
+Reproduire la page titre du département de Biologie (sans utiliser les métadonnées et `\maketitle`).
 
-Si vous désirez utiliser les métadonnées pour produire la page titre, la procédure est la suivante:
+Si vous désirez, utilisez les métadonnées pour produire la page titre. La procédure est la suivante:
 
 ```tex
 [...]
@@ -1001,7 +1001,7 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
 
 Les références que l'on va citer sont entreposer dans un fichier `.bib`.
 
-Le fichier doit contenir des entrées `bibtex` qui ressemble à cela:
+Le fichier doit contenir des entrées `bibtex` qui ressemblent à:
 
 ```tex
 @article{gravel2006a,
@@ -1035,7 +1035,7 @@ Si vous voulez en savoir davantage: [http://steveviss.github.io/Talk_bib/#1](htt
 
 ## Exercice 6 (suite)
 
-**Étape 2.** En vous servant de Google Scholar, remplisser votre fichier `mabiblio.bib` avec 2 entrées bibtex.
+**Étape 2.** En vous servant de Google Scholar, remplissez votre fichier `mabiblio.bib` avec 2 entrées bibtex.
 
 
 ---&twocolw w1:45% w2:52%
@@ -1078,7 +1078,7 @@ Vous pouvez trouver davantage d'information [ici](https://fr.wikibooks.org/wiki/
 
 # Exercice 6 (suite)
 
-**Étape 3.** En vous servant de votre fichier que vous venez d'enregistrer (`mabiblio.bib`), citer vos deux références dans votre document à l'aide de la commande `\cite`.
+**Étape 3.** En vous servant de votre fichier que vous venez d'enregistrer (`mabiblio.bib`), citez vos deux références dans votre document à l'aide de la commande `\cite`.
 
 ```tex
 \documentclass[12pt]{article}
@@ -1130,7 +1130,7 @@ Et voilà, nous avons un document final.
 
 # Exercice 6 (suite)
 
-**Étape 4.** En vous servant de votre terminal, compiler votre document $\LaTeX$ avec vos deux citations.
+**Étape 4.** En vous servant de votre terminal, compilez votre document $\LaTeX$ avec vos deux citations.
 
 ## Rappel, la compilation se déroule en trois étapes:
 
@@ -1147,7 +1147,7 @@ Et voilà, nous avons un document final.
 
 # Objectif
 
-Écrire un rapport sous forme d'article scientifiques
+Écrire un rapport sous forme d'article scientifique
 
 ---
 
