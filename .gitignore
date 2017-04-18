@@ -38,3 +38,7 @@ vignettes/*.pdf
 
 # Mac Junks
 .DS_Store
+
+# Tex file
+*.log
+*.aux
