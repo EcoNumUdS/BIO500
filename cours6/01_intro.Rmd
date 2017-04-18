@@ -67,9 +67,9 @@ Je peux écrire du texte ici.
 *** =right
 
 
-1. ```\documentclass``` détermine la classe du document.
-2. ```\usepackage```: Comme R, $\LaTeX$ permet l'utilisation de librairies. ```inputec``` et ```fontec``` sont des librairies permettant de gérer *l'encoding* du document (caractères avec accent etc.). Les ```[]``` déterminent les options.
-4. On ouvre l'environnement ```Document``` avec ```\begin```
+1. `\documentclass` détermine la classe du document.
+2. `\usepackage`: Comme R, $\LaTeX$ permet l'utilisation de librairies. `inputec` et `fontec` sont des librairies permettant de gérer *l'encoding* du document (caractères avec accent etc.). Les `[]` déterminent les options.
+4. On ouvre l'environnement `Document` avec `\begin`
 
 ---
 
@@ -166,9 +166,9 @@ Je peux écrire du texte ici.
 2. Ouvrir Sublime Text2
 3. Sélectionner votre dossier nouvelle créer: ```Fichier > Ouvrir```
 4. Créer un nouveau document: ```Fichier > Nouveau```
-5. Enregistrer votre document avec l'extension ```.tex```: ```Fichier > Enregistrer sous```
+5. Enregistrer votre document avec l'extension `.tex`: ```Fichier > Enregistrer sous```
 
-Et voilà, l'extension ```.tex``` détermine que le fichier est un document $\LaTeX$.
+Et voilà, l'extension `.tex` détermine que le fichier est un document $\LaTeX$.
 
 
 ---.transition
@@ -202,9 +202,9 @@ Et voilà, l'extension ```.tex``` détermine que le fichier est un document $\La
 
 ## Exercice 1 (10 minutes):
 
-Recopier dans Sublime Text 2 ce code ```.tex```.
+Recopier dans Sublime Text 2 ce code `.tex`.
 
-**Note:** ```\usepackage{lipsum}``` est un package permettant de générer du faux texte (latin de mise en forme).
+**Note:** `\usepackage{lipsum}` est un package permettant de générer du faux texte (latin de mise en forme).
 
 
 
@@ -216,12 +216,12 @@ Recopier dans Sublime Text 2 ce code ```.tex```.
 
 # La compilation
 
-Afin d'obtenir le rendu PDF de notre document, nous devons compiler ce dernier à l'aide du compilateur ```pdflatex```.
+Afin d'obtenir le rendu PDF de notre document, nous devons compiler ce dernier à l'aide du compilateur `pdflatex`.
 
 
 - **Étape 1.** Ouvrez votre terminal (touches Ctrl+Alt+t).
 
-- **Étape 2.** À l'aide de la commande ```cd``` (*Change Directory*), vous devez vous déplacer dans le terminal vers le dossier que vous venez de créer:
+- **Étape 2.** À l'aide de la commande `cd` (*Change Directory*), vous devez vous déplacer dans le terminal vers le dossier que vous venez de créer:
 
 ```bash
 cd ~/Bureau
@@ -275,12 +275,12 @@ Transcript written on doc.log.
 
 *** =right
 
-- On définit les métadonnées avec ```\title```, ```\author```, ```\date```.
-- Les métadonnées doivent être placées avant l'environnement ```\begin{document}```.
-- Les ```\\``` dans la balise ```\author``` permettent une mise à la ligne.
-- Enfin, la balise ```\today``` remplie la date du jour pour nous.
+- On définit les métadonnées avec `\title`, `\author`, `\date`.
+- Les métadonnées doivent être placées avant l'environnement `\begin{document}`.
+- Les `\\` dans la balise `\author` permettent une mise à la ligne.
+- Enfin, la balise `\today` remplie la date du jour pour nous.
 
-Note : pour une date en français, il faut utiliser le package ```\usepackage[rench]{babel}```
+Note : pour une date en français, il faut utiliser le package `\usepackage[rench]{babel}`
 
 ---&twocolw w1:50% w2:45%
 
@@ -288,7 +288,7 @@ Note : pour une date en français, il faut utiliser le package ```\usepackage[re
 
 *** =left
 
-La page titre est généré grâce à la balise ```\maketitle``` dans l'environnement document.
+La page titre est généré grâce à la balise `\maketitle` dans l'environnement document.
 
 
 ```tex
@@ -321,7 +321,7 @@ Ajoutez vos métadonnées puis compilez votre document avec la page titre.
 
 *** =left
 
-On écrit notre résumé entre dans l'environnement ```abstract```.
+On écrit notre résumé entre dans l'environnement `abstract`.
 
 ```tex
 [...]
@@ -372,9 +372,9 @@ On écrit notre résumé entre dans l'environnement ```abstract```.
 
 *** =right
 
-- Nous n'avons pas besoin d'utiliser de ```\begin``` ou ```\end```.
+- Nous n'avons pas besoin d'utiliser de `\begin` ou `\end`.
 - Une section est numérotée par défault.
-- Pour éviter cette numérotation vous pouvez ajouter une ```*``` avant les accolades.
+- Pour éviter cette numérotation vous pouvez ajouter une `*` avant les accolades.
 
 ---&twocolw w1:50% w2:45%
 
@@ -406,38 +406,38 @@ On écrit notre résumé entre dans l'environnement ```abstract```.
 
 *** =right
 
-La simple déclaration de la balise ```\tableofcontent``` permet la création d'une table des matières.
+La simple déclaration de la balise `\tableofcontent` permet la création d'une table des matières.
 
 ---
 
 # Exercice 4
 
 Ajoutez des sections à votre document, et construisez la table des matières.
-Prenez le temps de lire la sortie affichée par le compilateur ```pdflatex```.
+Prenez le temps de lire la sortie affichée par le compilateur `pdflatex`.
 
 ---
 
-# Le fichier auxiliaire (```.aux```)
+# Le fichier auxiliaire (`.aux`)
 
 Lors du dernier exercice, vous avez remarqué que la table des matières n'était pas insérée dans le document.
 
 1. La première compilation scanne le document à la recherche de références internes telles que les sections.
 
-  #### Écriture d'un fichier ```mon_document.aux```:
+  #### Écriture d'un fichier `mon_document.aux`:
 
   ```bash
   \relax
   \@writefile{toc}{\contentsline {section}{\numberline {1}Mon premier article en latin}{1}}
   ```
 
-2. La deuxième compilation assemble l'ensemble du document à partir du fichier ```mon_document.aux``` de la première compilation.
+2. La deuxième compilation assemble l'ensemble du document à partir du fichier `mon_document.aux` de la première compilation.
 
 ## Il faut deux compilations successives pour obtenir la table des matières dans le document pdf.
 
 
 ---
 
-# Le fichier auxiliaire (```.aux```)
+# Le fichier auxiliaire (`.aux`)
 
 <div style='text-align:center;'>
 <img src="assets/img/flow_comp1.png" height="500px"></img>
@@ -572,8 +572,8 @@ Par défault, la première ligne des paragraphes est indentée.
 \end{document}
 ```
 
-```\noindent```: permet de retirer l'indentation pour un paragraphe spécifique.
-```\setlength{\parindent}{10mm}```: permet de spécifier l'indentation pour l'ensemble du document.
+`\noindent`: permet de retirer l'indentation pour un paragraphe spécifique.
+`\setlength{\parindent}{10mm}`: permet de spécifier l'indentation pour l'ensemble du document.
 
 *** =right
 
@@ -587,17 +587,17 @@ Par défault, la première ligne des paragraphes est indentée.
 
 ## $\LaTeX$ couvre un grand nombre d'unités:
 
-- ```pt```: 1/72.27 pouces, utilisé dans la plupart des éditeurs de texte.
-- ```mm```: Millimètres
-- ```cm```: Centimètres
-- ```em```: Grossièrement la hauteur d'un 'M' (relatif à la police de caractères)
-- ```ex```: Grossièrement la hauteur d'un 'x' (relatif à la police de caractères)
+- `pt`: 1/72.27 pouces, utilisé dans la plupart des éditeurs de texte.
+- `mm`: Millimètres
+- `cm`: Centimètres
+- `em`: Grossièrement la hauteur d'un 'M' (relatif à la police de caractères)
+- `ex`: Grossièrement la hauteur d'un 'x' (relatif à la police de caractères)
 
 ---
 
-# interlignes
+# Interlignes
 
-Pour spécifier si le document doit être en double ou simple interlignes, il suffit d'ajouter le package ```setspace``` et d'y rattacher l'option désiré.
+Pour spécifier si le document doit être en double ou simple interlignes, il suffit d'ajouter le package `setspace` et d'y rattacher l'option désiré.
 
 ```tex
 \documentclass[12pt]{article}
@@ -605,18 +605,14 @@ Pour spécifier si le document doit être en double ou simple interlignes, il su
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[singlespacing]{setspace}
-
 OU
-
 \usepackage[onehalfspacing]{setspace}
-
 OU
-
 \usepackage[doublespacing]{setspace}
 
 ```
 
-**Attention:** Les packages doivent toujours se retrouver dans le préambule, c.a.d avant le ```\begin{document}```
+**Attention:** Les packages doivent toujours se retrouver dans le préambule, c.a.d avant le `\begin{document}`
 
 ---&twocolw w1:50% w2:45%
 
@@ -641,15 +637,15 @@ Par défault, il n'y a pas d'espace entre les paragraphes.
 
 *** =right
 
-- ```\setlength{\parskip}{2em}```: permet de mettre de déterminer l'espace désiré entre les paragraphes.
+- `\setlength{\parskip}{2em}`: permet de mettre de déterminer l'espace désiré entre les paragraphes.
 
-- Attention, comme ```\setlength{\parindent}{10mm}```, cette configuration doit être placé dans le préambule pour être appliqué sur l'ensemble du document.
+- Attention, comme `\setlength{\parindent}{10mm}`, cette configuration doit être placé dans le préambule pour être appliqué sur l'ensemble du document.
 
 ---
 
 # Double colonnes et double page
 
-Il est possible de basculer un document d'une colonne à deux colonnes en une ligne de commande grâce aux options de la classe de document (```\documentclass```).
+Il est possible de basculer un document d'une colonne à deux colonnes en une ligne de commande grâce aux options de la classe de document (`\documentclass`).
 
 ```tex
 \documentclass[11pt,twocolumn,doublepage]{article}
@@ -663,7 +659,7 @@ Il est possible de basculer un document d'une colonne à deux colonnes en une li
 \end{document}
 ```
 
-```\usepackage{multicol}``` permet encore d'aller plus loin en offrant davantage de fonctionnalités.
+`\usepackage{multicol}` permet encore d'aller plus loin en offrant davantage de fonctionnalités.
 Pour le constater, vous pouvez vous rendre sur [https://fr.sharelatex.com/learn/Multiple_columns](https://fr.sharelatex.com/learn/Multiple_columns)
 
 ---&twocolw w1:50% w2:45%
@@ -680,13 +676,11 @@ Pour le constater, vous pouvez vous rendre sur [https://fr.sharelatex.com/learn/
 \section{Introduction}
 
 \lipsum[1]
-
 \clearsection
 
 \section{Matériels et méthodes}
 
 \lipsum[2]
-
 \clearpage
 
 \lipsum[3]
@@ -696,9 +690,9 @@ Pour le constater, vous pouvez vous rendre sur [https://fr.sharelatex.com/learn/
 
 *** =right
 
-- ```\clearpage```: le texte écrit après cette commande est renvoyé sur une nouvelle page.
-- ```\cleardoublepage```: le texte écrit après cette commande est renvoyé sur une nouvelle page (recto).
-- ```\clearsection```: même comportement que ```\clearpage``` mais pour une section.
+- `\clearpage`: le texte écrit après cette commande est renvoyé sur une nouvelle page.
+- `\cleardoublepage`: le texte écrit après cette commande est renvoyé sur une nouvelle page (recto).
+- `\clearsection`: même comportement que `\clearpage` mais pour une section.
 
 ---
 
@@ -706,14 +700,14 @@ Pour le constater, vous pouvez vous rendre sur [https://fr.sharelatex.com/learn/
 
 ## Justification:
 
-- ```\vfill``` introduit un espace « ressort » : cette balise pousse ce qu'il y a à gauche et à droite pour occuper tout l'espace restant sur la ligne.
-- ```\hfill```, même chose mais cette balise pousse ce qu'il y a au dessus et en dessous pour occuper tout l'espace restant sur la page.
+- `\vfill` introduit un espace « ressort » : cette balise pousse ce qu'il y a à gauche et à droite pour occuper tout l'espace restant sur la ligne.
+- `\hfill`, même chose mais cette balise pousse ce qu'il y a au dessus et en dessous pour occuper tout l'espace restant sur la page.
 
-Le ```\hfill``` est très pratique pour la page titre d'un document qui a généralement besoin d'une justification horizontale.
+Le `\hfill` est très pratique pour la page titre d'un document qui a généralement besoin d'une justification horizontale.
 
 ## Espacements:
 
-- ```\hspace{1em}``` et ```\vspace{1em}``` déterminent un espacement fixe entre deux éléments (une figure et un texte par exemple)
+- `\hspace{1em}` et `\vspace{1em}` déterminent un espacement fixe entre deux éléments (une figure et un texte par exemple)
 
 Pour ceux qui sont familiés avec le traitement de texte (MS Word), c'est l'équivalent (en mieux) des tabulations.
 
@@ -721,7 +715,7 @@ Pour ceux qui sont familiés avec le traitement de texte (MS Word), c'est l'équ
 
 # Taille et marges du document
 
-Les marges du document peuvent être définis grâce au package ```geometry```:
+Les marges du document peuvent être définis grâce au package `geometry`:
 
 ```tex
 \usepackage{geometry}
@@ -745,9 +739,9 @@ Pour un contrôle fin des marges, vous pouvez vous rendre sur ce site: [https://
 
 ---
 
-# Référence interne au document
+# Références internes au document
 
-Il est possible à tout moment de référer une partie de son document à une section particulière grâce aux balises ```\label``` et ```\ref```. On appelle ça des *ancres de page*.
+Il est possible à tout moment de référer une partie de son document à une section particulière grâce aux balises `\label` et `\ref`. On appelle ça des *ancres de page*.
 
 ```tex
 [...]
@@ -759,11 +753,8 @@ Il est possible à tout moment de référer une partie de son document à une se
 \subsection{Les réseaux écologiques}
 \label{subsec:res}
 
-\section{Matériel et méthodes}
-
-Dans mon introduction (section \ref{sec:intro}),
-je vous ai présenté les réseaux écologiques (section \ref{subsec:res},
-\href{ielab.recherche.usherbrooke.ca}{site internet}).
+Dans mon introduction (section \ref{sec:intro}), je vous ai présenté les réseaux écologiques
+(section \ref{subsec:res},\href{ielab.recherche.usherbrooke.ca}{site internet}).
 
 \end{document}
 ```
@@ -777,8 +768,8 @@ Les numéros de sections s'ajusteront automatiquement si vous ajouter ou enlever
 
 # Personnalisation du document
 
-Les références internes (```\ref``` et ```\href```) du document auront des couleurs par défault.
-Vous pouvez modifier ce comportement par défaut en modifiant la balise ```\hypersetup``` suivante:
+Les références internes (`\ref` et `\href`) du document auront des couleurs par défault.
+Vous pouvez modifier ce comportement par défaut en modifiant la balise `\hypersetup` suivante:
 
 ```tex
 \hypersetup{
@@ -803,7 +794,7 @@ Vous pouvez modifier ce comportement par défaut en modifiant la balise ```\hype
 
 # Exercice 5 (15 minutes):
 
-Essayer de produire la page titre du département de Biologie (sans utiliser les métadonnées et ```\maketitle```).
+Essayer de produire la page titre du département de Biologie (sans utiliser les métadonnées et `\maketitle`).
 
 Si vous désirez utiliser les métadonnées pour produire la page titre, la procédure est la suivante:
 
@@ -848,10 +839,10 @@ Il a été écrit par \@author\space le \@date
 ```
 *** =right
 
-- ```\begin{figure}``` ouvre l'environnement figure
-- ```\includegraphics``` spécifie la figure à ajouter et sa taille relative
-- ```\caption``` définie la légende de la figure
-- ```\end{figure}``` ferme l'environnement figure
+- `\begin{figure}` ouvre l'environnement figure
+- `\includegraphics` spécifie la figure à ajouter et sa taille relative
+- `\caption` définie la légende de la figure
+- `\end{figure}` ferme l'environnement figure
 
 ---&twocol
 
@@ -883,7 +874,7 @@ En retrait du texte:
 
 # Ajouter un tableau
 
-Nous avons vu la semaine dernière comment extraire un tableau à l'aide de la fonction ```kable()```.
+Nous avons vu la semaine dernière comment extraire un tableau à l'aide de la fonction `kable()`.
 
 
 TODO
@@ -893,7 +884,7 @@ TODO
 
 # Ajouter une ancre à ces environnements
 
-On utilise ```\label``` comme pour les sections.
+On utilise `\label` comme pour les sections.
 
 ```tex
 \begin{equation}
@@ -944,11 +935,11 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
 
 ---
 
-# Les entrées ```bibtex```
+# Les entrées `bibtex`
 
-Les références que l'on va citer sont entreposer dans un fichier ```.bib```.
+Les références que l'on va citer sont entreposer dans un fichier `.bib`.
 
-Le fichier doit contenir des entrées ```bibtex``` qui ressemble à cela:
+Le fichier doit contenir des entrées `bibtex` qui ressemble à cela:
 
 ```tex
 @article{gravel2006a,
@@ -965,60 +956,125 @@ Le fichier doit contenir des entrées ```bibtex``` qui ressemble à cela:
 
 ## Exercice 6
 
-**Étape 1.** Ouvrez un nouveau fichier et enregistrer ce fichier ```mabiblio.bib``` au même emplacement que votre fichier ```.tex```
+**Étape 1.** Ouvrez un nouveau fichier et enregistrer ce fichier `mabiblio.bib` au même emplacement que votre fichier `.tex`
 
 ---
 
-# Les entrées ```bibtex```
+# Les entrées `bibtex`
 
-La plupart des journaux et portail de recherche fournissent des entrées ```bibtex``` pour citer les publications:
+La plupart des journaux et portail de recherche fournissent des entrées `bibtex` pour citer les publications:
 
 - Par exemple: [Google scholar](https://scholar.google.fr/scholar?q=Dominique+Gravel&btnG=&hl=en&as_sdt=0%2C5)
 
-Des logiciels de bibliographie telle que EndNote, Zotero et Mendeley pemettent d'obtenir des entrées ```bibtex```.
+Des logiciels de bibliographie telle que EndNote, Zotero et Mendeley pemettent d'obtenir des entrées `bibtex`.
 
 Si vous voulez en savoir davantage: [http://steveviss.github.io/Talk_bib/#1](http://steveviss.github.io/Talk_bib/#1)
 
 
 ## Exercice 6 (suite)
 
-**Étape 2.** En vous servant de Google Scholar, remplisser votre fichier ```mabiblio.bib``` avec 2 entrées bibtex.
+**Étape 2.** En vous servant de Google Scholar, remplisser votre fichier `mabiblio.bib` avec 2 entrées bibtex.
 
 
 ---&twocolw w1:45% w2:52%
 
-# Déclarer le fichier ```bibtex```
+# Déclarer le fichier `bibtex`
 
 *** =left
-
-Nous désirons maintenant nous servir des entrées ```bibtex``` dans le document $\LaTeX$ afin de citer ces références.
 
 ```tex
 \documentclass[12pt]{article}
 
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+[...]
 
 \begin{document}
 
-\section{Mon premier article}
-
 Je vais citer un très bon
 article \cite{gravel2006a}.
+
+\bibliographystyle{plain}
+% Le fichier .bib doit
+% être avec le fichier .tex
+
+\bibliography{monfichierbib}
+% Noter ici que l'on ne met
+% pas l'extension du fichier.
 
 \end{document}
 ```
 
 *** =right
 
-## Exercice 6 (suite)
+Nous désirons maintenant nous servir des entrées `bibtex` dans le document $\LaTeX$ afin de citer ces références.
 
-**Étape 3.** En vous servant de votre fichier ```mabiblio.bib```, citer vos deux références dans votre document à l'aide de la commande ```\cite```.
+- `\bibliography{}`: permet de spécifier le nom du fichier `.bib`.
+- `\bibliographystyle{}`: permet de choisir le style de bibliographie. Il en existe plusieurs: `plain`, `unsrt`, `alpha`, `abbrv`, `apalike` etc..
 
+Vous pouvez trouver davantage d'information [ici](https://fr.wikibooks.org/wiki/LaTeX/Gestion_de_la_bibliographie).
 
----.transition
+---
 
-# Organiser son travail
+# Exercice 6 (suite)
+
+**Étape 3.** En vous servant de votre fichier que vous venez d'enregistrer (`mabiblio.bib`), citer vos deux références dans votre document à l'aide de la commande `\cite`.
+
+```tex
+\documentclass[12pt]{article}
+
+[...]
+
+\begin{document}
+
+Je vais citer un très bon
+article \cite{gravel2006a}.
+
+\bibliographystyle{plain}
+% Le fichier .bib doit être avec le fichier .tex
+
+\bibliography{monfichierbib}
+% Noter ici que l'on ne met pas l'extension du fichier.
+
+\end{document}
+```
+
+---
+
+# Compiler le document $\LaTeX$ avec bibliographie
+
+La compilation d'un document avec bibliographie requière l'utilisation du compilateur `bibtex`.
+## La compilation se déroule donc en trois étapes dans le terminal:
+
+1. Scanner le fichier `.tex` à la recherche de références aux figures, sections etc.
+
+  ```bash
+  pdflatex monfichier.tex
+  ```
+
+2. Scanner le fichier `.tex` à la recherche des balises `\cite{}`
+
+  ```bash
+  bibtex monfichier.tex
+  ```
+
+3. Compiler le document final en se servant des `.aux` (étape 1) et `.bbl` (étape 2)
+
+  ```bash
+  pdflatex monfichier.tex
+  ```
+
+Et voilà, nous avons un document final.
+
+---
+
+# Exercice 6 (suite)
+
+**Étape 4.** En vous servant de votre terminal, compiler votre document $\LaTeX$ avec vos deux citations.
+
+## Rappel, la compilation se déroule en trois étapes:
+
+1. `pdflatex monfichier.tex` scanne le fichier `.tex` à la recherche de références aux figures, tableaux et sections etc.
+2. `bibtex monfichier.tex` scanne le fichier `.tex` à la recherche des balises `\cite{}`
+3. `pdflatex monfichier.tex` compile le document final en se servant des `.aux` (étape 1) et `.bbl` (étape 2)
 
 
 ---.transition

@@ -816,23 +816,19 @@ ou {\large{plus grand}}.
 <slide class="" id="slide-35" style="background:;">
   <!--  <a href="#slide-35"></a> -->
   <hgroup>
-    <h1>Interligne</h1>
+    <h1>Interlignes</h1>
   </hgroup>
   <article data-timings="">
-    <p>Pour spécifier si le document doit être en double ou simple interligne, il suffit d&#39;ajouter le package <code>setspace</code> et d&#39;y rattacher l&#39;option désiré.</p>
+    <p>Pour spécifier si le document doit être en double ou simple interlignes, il suffit d&#39;ajouter le package <code>setspace</code> et d&#39;y rattacher l&#39;option désiré.</p>
 
 <pre><code class="tex">\documentclass[12pt]{article}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[singlespacing]{setspace}
-
 OU
-
 \usepackage[onehalfspacing]{setspace}
-
 OU
-
 \usepackage[doublespacing]{setspace}
 
 </code></pre>
@@ -911,13 +907,11 @@ Pour le constater, vous pouvez vous rendre sur <a href="https://fr.sharelatex.co
 \section{Introduction}
 
 \lipsum[1]
-
 \clearsection
 
 \section{Matériels et méthodes}
 
 \lipsum[2]
-
 \clearpage
 
 \lipsum[3]
@@ -994,7 +988,7 @@ OU
 <slide class="" id="slide-41" style="background:;">
   <!--  <a href="#slide-41"></a> -->
   <hgroup>
-    <h1>Référence interne au document</h1>
+    <h1>Références internes au document</h1>
   </hgroup>
   <article data-timings="">
     <p>Il est possible à tout moment de référer une partie de son document à une section particulière grâce aux balises <code>\label</code> et <code>\ref</code>. On appelle ça des <em>ancres de page</em>.</p>
@@ -1008,11 +1002,8 @@ OU
 \subsection{Les réseaux écologiques}
 \label{subsec:res}
 
-\section{Matériel et méthodes}
-
-Dans mon introduction (section \ref{sec:intro}),
-je vous ai présenté les réseaux écologiques (section \ref{subsec:res},
-\href{ielab.recherche.usherbrooke.ca}{site internet}).
+Dans mon introduction (section \ref{sec:intro}), je vous ai présenté les réseaux écologiques
+(section \ref{subsec:res},\href{ielab.recherche.usherbrooke.ca}{site internet}).
 
 \end{document}
 </code></pre>
@@ -1281,44 +1272,120 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
   <article>
     
     <div class='left' style='float:left;width:45%'>
-     <p>Nous désirons maintenant nous servir des entrées <code>bibtex</code> dans le document \(\LaTeX\) afin de citer ces références.</p>
+     <pre><code class="tex">\documentclass[12pt]{article}
 
-<pre><code class="tex">\documentclass[12pt]{article}
-
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+[...]
 
 \begin{document}
 
-\section{Mon premier article}
-
 Je vais citer un très bon
 article \cite{gravel2006a}.
+
+\bibliographystyle{plain}
+% Le fichier .bib doit
+% être avec le fichier .tex
+
+\bibliography{monfichierbib}
+% Noter ici que l&#39;on ne met
+% pas l&#39;extension du fichier.
 
 \end{document}
 </code></pre>
 
     </div>
     <div class='right' style='float:right;width:52%'>
-     <h2>Exercice 6 (suite)</h2>
+     <p>Nous désirons maintenant nous servir des entrées <code>bibtex</code> dans le document \(\LaTeX\) afin de citer ces références.</p>
 
-<p><strong>Étape 3.</strong> En vous servant de votre fichier <code>mabiblio.bib</code>, citer vos deux références dans votre document à l&#39;aide de la commande <code>\cite</code>.</p>
+<ul>
+<li><code>\bibliography{}</code>: permet de spécifier le nom du fichier <code>.bib</code>.</li>
+<li><code>\bibliographystyle{}</code>: permet de choisir le style de bibliographie. Il en existe plusieurs: <code>plain</code>, <code>unsrt</code>, <code>alpha</code>, <code>abbrv</code>, <code>apalike</code> etc..</li>
+</ul>
+
+<p>Vous pouvez trouver davantage d&#39;information <a href="https://fr.wikibooks.org/wiki/LaTeX/Gestion_de_la_bibliographie">ici</a>.</p>
 
     </div>
   </article>
 </slide>
-<slide class="transition" id="slide-54" style="background:;">
+<slide class="" id="slide-54" style="background:;">
   <!--  <a href="#slide-54"></a> -->
   <hgroup>
-    <h1>Organiser son travail</h1>
+    <h1>Exercice 6 (suite)</h1>
   </hgroup>
   <article data-timings="">
-    
+    <p><strong>Étape 3.</strong> En vous servant de votre fichier que vous venez d&#39;enregistrer (<code>mabiblio.bib</code>), citer vos deux références dans votre document à l&#39;aide de la commande <code>\cite</code>.</p>
+
+<pre><code class="tex">\documentclass[12pt]{article}
+
+[...]
+
+\begin{document}
+
+Je vais citer un très bon
+article \cite{gravel2006a}.
+
+\bibliographystyle{plain}
+% Le fichier .bib doit être avec le fichier .tex
+
+\bibliography{monfichierbib}
+% Noter ici que l&#39;on ne met pas l&#39;extension du fichier.
+
+\end{document}
+</code></pre>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-55" style="background:;">
+<slide class="" id="slide-55" style="background:;">
   <!--  <a href="#slide-55"></a> -->
+  <hgroup>
+    <h1>Compiler le document \(\LaTeX\) avec bibliographie</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>La compilation d&#39;un document avec bibliographie requière l&#39;utilisation du compilateur <code>bibtex</code>.</p>
+
+<h2>La compilation se déroule donc en trois étapes dans le terminal:</h2>
+
+<ol>
+<li><p>Scanner le fichier <code>.tex</code> à la recherche de références aux figures, sections etc.</p>
+
+<pre><code class="bash">pdflatex monfichier.tex
+</code></pre></li>
+<li><p>Scanner le fichier <code>.tex</code> à la recherche des balises <code>\cite{}</code></p>
+
+<pre><code class="bash">bibtex monfichier.tex
+</code></pre></li>
+<li><p>Compiler le document final en se servant des <code>.aux</code> (étape 1) et <code>.bbl</code> (étape 2)</p>
+
+<pre><code class="bash">pdflatex monfichier.tex
+</code></pre></li>
+</ol>
+
+<p>Et voilà, nous avons un document final.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-56" style="background:;">
+  <!--  <a href="#slide-56"></a> -->
+  <hgroup>
+    <h1>Exercice 6 (suite)</h1>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Étape 4.</strong> En vous servant de votre terminal, compiler votre document \(\LaTeX\) avec vos deux citations.</p>
+
+<h2>Rappel, la compilation se déroule en trois étapes:</h2>
+
+<ol>
+<li><code>pdflatex monfichier.tex</code> scanne le fichier <code>.tex</code> à la recherche de références aux figures, tableaux et sections etc.</li>
+<li><code>bibtex monfichier.tex</code> scanne le fichier <code>.tex</code> à la recherche des balises <code>\cite{}</code></li>
+<li><code>pdflatex monfichier.tex</code> compile le document final en se servant des <code>.aux</code> (étape 1) et <code>.bbl</code> (étape 2)</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-57" style="background:;">
+  <!--  <a href="#slide-57"></a> -->
   <hgroup>
     <h1>Travail 3</h1>
   </hgroup>
@@ -1327,8 +1394,8 @@ article \cite{gravel2006a}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-56" style="background:;">
-  <!--  <a href="#slide-56"></a> -->
+<slide class="" id="slide-58" style="background:;">
+  <!--  <a href="#slide-58"></a> -->
   <hgroup>
     <h1>Objectif</h1>
   </hgroup>
@@ -1338,8 +1405,8 @@ article \cite{gravel2006a}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-57" style="background:;">
-  <!--  <a href="#slide-57"></a> -->
+<slide class="" id="slide-59" style="background:;">
+  <!--  <a href="#slide-59"></a> -->
   <hgroup>
     <h1>Consignes</h1>
   </hgroup>
@@ -1362,8 +1429,8 @@ article \cite{gravel2006a}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-58" style="background:;">
-  <!--  <a href="#slide-58"></a> -->
+<slide class="" id="slide-60" style="background:;">
+  <!--  <a href="#slide-60"></a> -->
   <hgroup>
     <h1>Consignes</h1>
   </hgroup>
@@ -1375,8 +1442,8 @@ article \cite{gravel2006a}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-59" style="background:;">
-  <!--  <a href="#slide-59"></a> -->
+<slide class="" id="slide-61" style="background:;">
+  <!--  <a href="#slide-61"></a> -->
   <hgroup>
     <h1>Évaluation</h1>
   </hgroup>
@@ -1600,7 +1667,7 @@ article \cite{gravel2006a}.
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=35 title='Interligne'>
+        data-slide=35 title='Interlignes'>
          35
       </a>
     </li>
@@ -1636,7 +1703,7 @@ article \cite{gravel2006a}.
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=41 title='Référence interne au document'>
+        data-slide=41 title='Références internes au document'>
          41
       </a>
     </li>
@@ -1714,38 +1781,50 @@ article \cite{gravel2006a}.
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=54 title='Organiser son travail'>
+        data-slide=54 title='Exercice 6 (suite)'>
          54
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=55 title='Travail 3'>
+        data-slide=55 title='Compiler le document \(\LaTeX\) avec bibliographie'>
          55
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=56 title='Objectif'>
+        data-slide=56 title='Exercice 6 (suite)'>
          56
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=57 title='Consignes'>
+        data-slide=57 title='Travail 3'>
          57
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=58 title='Consignes'>
+        data-slide=58 title='Objectif'>
          58
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=59 title='Évaluation'>
+        data-slide=59 title='Consignes'>
          59
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=60 title='Consignes'>
+         60
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=61 title='Évaluation'>
+         61
       </a>
     </li>
   </ul>
