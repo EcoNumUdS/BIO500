@@ -36,7 +36,7 @@ Notre ami robot, [Travis](https://travis-ci.org) est en charge de la mise en lig
 - [Présentation HTML](https://econumuds.github.io/BIO500/cours4)
 - [Présentation PDF](./cours4/pres/assets/pdf/S4-BIO500.pdf)
 
-## Séance 5: La communication visuelle
+## Séance 5: La visualisation des données
 
 - [Présentation HTML](https://econumuds.github.io/BIO500/cours5)
 - [Présentation PDF](./cours5/pres/assets/pdf/S5-BIO500.pdf)
