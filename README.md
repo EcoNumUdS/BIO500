@@ -36,12 +36,12 @@ Notre ami robot, [Travis](https://travis-ci.org) est en charge de la mise en lig
 - [Présentation HTML](https://econumuds.github.io/BIO500/cours4)
 - [Présentation PDF](./cours4/pres/assets/pdf/S4-BIO500.pdf)
 
-# B2: La visualisation de données
+## Séance 5: La communication visuelle
 
 - [Présentation HTML](https://econumuds.github.io/BIO500/cours5)
 - [Présentation PDF](./cours5/pres/assets/pdf/S5-BIO500.pdf)
 
-# B3: Communiquer ses résultats avec LaTeX
+## Séance 6: Communiquer ses résultats avec LaTeX
 
 - [Présentation HTML](https://econumuds.github.io/BIO500/cours6)
 - [Présentation PDF](./cours6/pres/assets/pdf/S6-BIO500.pdf)
