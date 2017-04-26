@@ -566,7 +566,7 @@ Transcript written on doc.log.
 
 \maketitle
 
-\tableofcontent
+\tableofcontents
 
 \section{Ma première section}
 
@@ -583,7 +583,7 @@ Transcript written on doc.log.
 
     </div>
     <div class='right' style='float:right;width:45%'>
-     <p>La simple déclaration de la balise <code>\tableofcontent</code> permet la création d&#39;une table des matières.</p>
+     <p>La simple déclaration de la balise <code>\tableofcontents</code> permet la création d&#39;une table des matières.</p>
 
     </div>
   </article>
@@ -1427,9 +1427,18 @@ article \cite{gravel2006a}.
 <h2>Rappel, la compilation se déroule en trois étapes:</h2>
 
 <ol>
-<li><code>pdflatex monfichier.tex</code> scanne le fichier <code>.tex</code> à la recherche de références aux figures, tableaux et sections etc.</li>
-<li><code>bibtex monfichier.tex</code> scanne le fichier <code>.tex</code> à la recherche des balises <code>\cite{}</code></li>
-<li><code>pdflatex monfichier.tex</code> compile le document final en se servant des <code>.aux</code> (étape 1) et <code>.bbl</code> (étape 2)</li>
+<li><p>Scanner le fichier <code>.tex</code> à la recherche de références aux figures, sections etc.</p>
+
+<pre><code class="bash">pdflatex monfichier.tex
+</code></pre></li>
+<li><p>Scanner le fichier <code>.tex</code> à la recherche des balises <code>\cite{}</code></p>
+
+<pre><code class="bash">bibtex monfichier.tex
+</code></pre></li>
+<li><p>Compiler le document final en se servant des <code>.aux</code> (étape 1) et <code>.bbl</code> (étape 2)</p>
+
+<pre><code class="bash">pdflatex monfichier.tex
+</code></pre></li>
 </ol>
 
   </article>

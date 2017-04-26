@@ -413,7 +413,7 @@ On écrit notre résumé entre dans l'environnement `abstract`.
 
 \maketitle
 
-\tableofcontent
+\tableofcontents
 
 \section{Ma première section}
 
@@ -430,7 +430,7 @@ On écrit notre résumé entre dans l'environnement `abstract`.
 
 *** =right
 
-La simple déclaration de la balise `\tableofcontent` permet la création d'une table des matières.
+La simple déclaration de la balise `\tableofcontents` permet la création d'une table des matières.
 
 ---
 
@@ -1134,10 +1134,23 @@ Et voilà, nous avons un document final.
 
 ## Rappel, la compilation se déroule en trois étapes:
 
-1. `pdflatex monfichier.tex` scanne le fichier `.tex` à la recherche de références aux figures, tableaux et sections etc.
-2. `bibtex monfichier.tex` scanne le fichier `.tex` à la recherche des balises `\cite{}`
-3. `pdflatex monfichier.tex` compile le document final en se servant des `.aux` (étape 1) et `.bbl` (étape 2)
+1. Scanner le fichier `.tex` à la recherche de références aux figures, sections etc.
 
+  ```bash
+  pdflatex monfichier.tex
+  ```
+
+2. Scanner le fichier `.tex` à la recherche des balises `\cite{}`
+
+  ```bash
+  bibtex monfichier.tex
+  ```
+
+3. Compiler le document final en se servant des `.aux` (étape 1) et `.bbl` (étape 2)
+
+  ```bash
+  pdflatex monfichier.tex
+  ```
 
 ---.transition
 
