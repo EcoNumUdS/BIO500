@@ -180,7 +180,7 @@ Est-ce que le réseau de collaborations entre les étudiants du bacc en écologi
 
 ---
 
-# Discussion:
+# Discussion
 
 Identification des étapes d'une étude scientifique susceptibles d'influer sur la reproductibilité.
 
@@ -255,15 +255,319 @@ Au terme de ce cours, l'étudiant sera en mesure de réaliser l'ensemble de la  
 
 # Approche
 
-Les cours vont comprendre une période de présentation entrecoupée d'exercices, suivi d'une discussion générale sur des références clés.
+Les cours vont comprendre une période de présentation entrecoupée d'exercices, suivie d'une discussion générale sur des références clés.
 
-Nous progresserons dans l'exécution du travail de session et l'évaluation portera sur les étapes intermédiaires.
+Nous progresserons dans l'exécution du travail de session. Le travail sera divisé en étapes et l'évaluation portera sur son intégration.
 
 ---
 
 # Évaluation
 
 L'évaluation porte sur la réalisation d'un travail de session (75%), réalisé en équipe de 4 personnes. Le travail sera divisé en 3 étapes réparties au cours de la session. L'évaluation finale (25%) portera sur la rédaction d'un essai de 1500 mots sur les enjeux de reproductibilité en science expérimentale.  
+
+--- .transition
+
+# Survol de Linux / Ubuntu
+
+--- &twocol
+
+# Un nouveau monde s'ouvre à vous...
+
+*** =left
+
+Il existe une [grande diversité de distributions](https://fr.wikipedia.org/wiki/Liste_des_distributions_Linux) Linux (Systèmes d'exploitation). L'ensemble de ces distributions sont gratuites et libres (OpenSource) !
+
+
+## Alors, pourquoi Ubuntu?
+
+- Une importante communauté d'utilisateurs (estimé à 25 millions)
+- Aussi facile d'utilisation que Microsoft Windows
+
+
+*** =right
+
+<div style='text-align:center;'>
+<img src="assets/img/linux_distros.png" width="90%"></img>
+</div>
+
+---
+
+# Sur la machine virtuelle Ubuntu...
+
+**Les logiciels/langages que nous utiliserons dans le cours ont déjà été installés pour vous.**
+
+- R (avec les librairies nécessaires)
+- La distribution complète de LaTeX
+- Git
+- SQL
+- SublimeText
+- Le terminal (crt+alt+t)
+
+---&twocol
+
+# L'environnement UNITY
+
+*** =left
+
+- Le lanceur
+- Naviguer dans les fichers : `<ctrl> <n>`
+- Chercher un programme
+- Changer les paramètres
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/unity.png" width="100%"></img>
+</div>
+
+---&twocol
+
+# L'environnement UNITY
+
+*** =left
+
+## Le terminal
+
+- Lancer le terminal `<ctrl> <alt> <t>`
+- Changer de répertoire avec `cd`
+- Liste des fichiers dans le dossier actuel avec `ls`
+- Installer des programmes `sudo apt install unity-tweak-tool`
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/terminal.png" width="90%"></img>
+</div>
+
+---&twocol
+
+# L'environnement UNITY
+
+*** =left
+
+## Lire un PDF
+
+- Le programme par défaut est `Visionneur`
+- D'autres programmes sont disponibles, notamment pour éditer des PDFs. J'utilise `xournal`.
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/miraldo.png" width="90%"></img>
+</div>
+
+---&twocol
+
+# L'environnement UNITY
+
+*** =left
+
+## Naviguer sur le web
+
+- `FireFox` est le navigateur par défaut, vous pouvez aussi utiliser `Chrome`
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/firefox.png" width="90%"></img>
+</div>
+
+---&twocol
+
+# Démarrer des programmes
+
+*** =left
+
+## SublimeText2
+
+- Ouvrir un script
+- Nouveau script
+- Changer le surligneur de syntaxe
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/sublimetext.png" width="90%"></img>
+</div>
+
+---
+
+# Démarrer des programmes
+
+## Lancer R à partir de SublimeText
+
+- Il faut lancer 'SublimeREPL' au moyen des touches `<ctrl> <shift> <p>` et sélection R
+- Une fois la nouvelle fenêtre ouverte, les commandes peuvent être soumises avec `<ctrl> <enter>`
+
+**ASTUCE:** les fenêtres sur Linux peuvent être alignées sur la gauche, la droite ou le centre automatiquement au moyen de la commande `<ctr> <alt> <flèche>`
+
+---&twocol
+
+# Démarrer des programmes
+
+*** =left
+
+## R directement dans le terminal
+
+Il faut ouvrir un terminal avec `<ctrl> <alt> <t>` et ensuite taper R
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/terminalR.png" width="90%"></img>
+</div>
+
+--- .transition
+
+# Projet de session
+
+---
+
+# Rappel du problème
+
+Est-ce que le réseau de collaboration entre les étudiants est différent des réseaux écologiques ?
+
+---
+
+# Rappel du problème
+
+Est-ce que l'on parvient à expliquer une collaboration à partir de caractéristiques des noeuds ?
+
+---
+
+# Pour commencer
+
+En équipe de 4, on vous demande de commencer à planifier une campagne de collecte de données. Commencez par discuter des types de données que vous souhaitez récolter, faites la liste des informations nécessaires pour répondre à la question. Ensuite, établissez un protocole afin de récolter ces données.
+
+---
+
+# Deuxième étape
+
+Préparez un formulaire de saisie de données avec Excel et commencez à le remplir avec les données entre les membres de votre équipe. 
+
+---
+
+# Troisième étape
+
+Retour en classe : partage de l'information et harmonisation des formulaires. 
+
+---.transition
+
+# Lectures et travail pour la semaine prochaine
+
+---
+
+# Lectures et travail
+
+## Travail
+
+- Prenez le temps de vous familiariser avec la Machine virtuelle Ubuntu.
+  - Exemples: Créer des fichiers et des dossiers, changer le fond d'écran, etc.
+
+- Commencez à récolter les données pour le travail de session.
+
+## Lectures
+
+- Baker, M. 2016. Is there a reproducibility crisis ? Nature, 533 : 452:454
+- Munafo, M.R. et al. 2017. A manifesto for reproducible science. Nature Human Behaviour 1: 0021
+- Open Science Collaboration. 2015. Estimating the reproducibility of psychological science. Science 349 : 943.
+
+--- .transition
+
+# Diapos hors cours
+
+--- .transition
+
+# L'utilisation d'une machine virtuelle (VM)
+
+--- &twocolw w1:50% w2:50%
+
+# Définition
+
+*** =left
+
+[VirtualBox](https://www.virtualbox.org/) est une application qui `émule` une machine/ordinateur virtuelle à l'intérieur de votre ordinateur.
+
+Une machine virtuelle est donc un environnement confiné sur lequel on peut installer un autre système d'exploitation qui utilise les ressources matérielles de l'hôte (votre ordinateur).
+
+Nous utiliserons [VirtualBox](https://www.virtualbox.org/) pour exécuter une machine Linux (distribution Ubuntu 16.04), sur votre PC Windows ou votre Mac créé spécifiquement pour ce cours.
+
+*** =right
+
+<div style='text-align:center;'>
+<img src="assets/img/mv.png" width="90%"></img>
+</div>
+
+
+---
+
+# Pourquoi une VM?
+
+- Simplifier l'installation des outils nécessaires pour le cours
+- Être certain que tout le monde dispose des mêmes outils
+- Permet d'uniformiser l'enseignement
+- Un système d'exploitation de type `UNIX` est nécessaire pour exécuter certaines tâches de ce cours
+
+
+--- &twocolw w1:40% w2:60%
+
+# Procédure d'importation et de lancement de la VM
+
+*** =left
+
+- Étape 1: Installer [VirtualBox](https://www.virtualbox.org/)
+
+--
+
+- Étape 2: Téléchargez [l'image de la machine virtuelle](https://ielab-o.dbio.usherbrooke.ca/index.php/s/W8XIQcC1Dc9tUYD) créée pour le cours
+
+
+--- &twocolw w1:40% w2:60%
+
+# Procédure d'importation de la VM
+
+*** =left
+
+- Étape 3: Ouvrir **VirtualBox**
+- Étape 4: Dans le menu **Machine**, sélectionnez **Ajouter**
+
+*** =right
+
+<div style='text-align:center;'>
+<img src="assets/img/mv_1.png" width="95%"></img>
+</div>
+
+--- &twocolw w1:40% w2:60%
+
+# Procédure d'importation de la VM
+
+*** =left
+
+- Étape 5: **Sélectionner le fichier de l'image de la machine virtuelle** créé pour le cours (téléchargé à l'étape 2)
+
+*** =right
+
+<div style='text-align:center;'>
+<img src="assets/img/mv_2.png" width="95%"></img>
+</div>
+
+--- &twocolw w1:40% w2:60%
+
+# Procédure de lancement de la VM
+
+*** =left
+
+- Étape 6: Clique droit sur la machine virtuelle `VM-BIO500`, puis `Démarrer` et enfin sur `Démarrage normal`.
+- Étape 7: Et voilà ! La machine virtuelle est en train de démarrer.
+
+**Veuillez prendre note que le mot de passe utilisateur est: `etudiant`**
+
+*** =right
+
+<div style='text-align:center;'>
+<img src="assets/img/mv_3.png" width="95%"></img>
+</div>
+
 
 --- .transition
 
@@ -422,149 +726,166 @@ L'évaluation porte sur la réalisation d'un travail de session (75%), réalisé
 <img src="assets/img/robustesse.png" height="500px"></img>
 </div>
 
+
+
+
+
+
 --- .transition
 
-# L'utilisation d'une machine virtuelle (VM)
+# Présentation sur les réseaux écologiques
 
---- &twocolw w1:50% w2:50%
+---
 
 # Définition
 
-*** =left
-
-[VirtualBox](https://www.virtualbox.org/) est une application qui `émule` une machine/ordinateur virtuelle à l'intérieur de votre ordinateur.
-
-Une machine virtuelle est donc un environnement confiné sur lequel on peut installer un autre système d'exploitation qui utilise les ressources matérielles de l'hôte (votre ordinateur).
-
-Nous utiliserons [VirtualBox](https://www.virtualbox.org/) pour exécuter une machine Linux (distribution Ubuntu 16.04), sur votre PC Windows ou votre Mac créé spécifiquement pour ce cours.
-
-*** =right
-
 <div style='text-align:center;'>
-<img src="assets/img/mv.png" width="90%"></img>
+<img src="assets/img/def.png" width="90%"></img>
 </div>
-
 
 ---
 
-# Pourquoi une VM?
+# Types de réseaux
 
-- Simplifier l'installation des outils nécessaires pour le cours
-- Être certain que tout le monde dispose des mêmes outils
-- Permet d'uniformiser l'enseignement
-- Un système d'exploitation de type `UNIX` est nécessaire pour exécuter certaines tâches de ce cours
-
-
---- &twocolw w1:40% w2:60%
-
-# Procédure d'importation et de lancement de la VM
-
-*** =left
-
-- Étape 1: Installer [VirtualBox](https://www.virtualbox.org/)
-
---
-
-- Étape 2: Téléchargez [l'image de la machine virtuelle](https://ielab-o.dbio.usherbrooke.ca/index.php/s/W8XIQcC1Dc9tUYD) créée pour le cours
-
-
---- &twocolw w1:40% w2:60%
-
-# Procédure d'importation de la VM
-
-*** =left
-
-- Étape 3: Ouvrir **VirtualBox**
-- Étape 4: Dans le menu **Machine**, sélectionnez **Ajouter**
-
-*** =right
+## Internet
 
 <div style='text-align:center;'>
-<img src="assets/img/mv_1.png" width="95%"></img>
+<img src="assets/img/internet.png" width="60%"></img>
 </div>
-
---- &twocolw w1:40% w2:60%
-
-# Procédure d'importation de la VM
-
-*** =left
-
-- Étape 5: **Sélectionner le fichier de l'image de la machine virtuelle** créé pour le cours (téléchargé à l'étape 2)
-
-*** =right
-
-<div style='text-align:center;'>
-<img src="assets/img/mv_2.png" width="95%"></img>
-</div>
-
---- &twocolw w1:40% w2:60%
-
-# Procédure de lancement de la VM
-
-*** =left
-
-- Étape 6: Clique droit sur la machine virtuelle `VM-BIO500`, puis `Démarrer` et enfin sur `Démarrage normal`.
-- Étape 7: Et voilà ! La machine virtuelle est en train de démarrer.
-
-**Veuillez prendre note que le mot de passe utilisateur est: `etudiant`**
-
-*** =right
-
-<div style='text-align:center;'>
-<img src="assets/img/mv_3.png" width="95%"></img>
-</div>
-
---- &twocol
-
-# Un nouveau monde s'ouvre à vous...
-
-*** =left
-
-Il existe une [grande diversité de distributions](https://fr.wikipedia.org/wiki/Liste_des_distributions_Linux) Linux (Systèmes d'exploitation). L'ensemble de ces distributions sont gratuites et libres (OpenSource) !
-
-
-## Alors, pourquoi Ubuntu?
-
-- Une importante communauté d'utilisateurs (estimé à 25 millions)
-- Aussi facile d'utilisation que Microsoft Windows
-
-
-*** =right
-
-<div style='text-align:center;'>
-<img src="assets/img/linux_distros.png" width="90%"></img>
-</div>
-
 
 ---
 
-# Sur la machine virtuelle Ubuntu...
+# Types de réseaux
+## Sociaux
 
-**Les logiciels/langages que nous utiliserons dans le cours ont déjà été installés pour vous.**
-
-- R (avec les librairies nécessaires)
-- La distribution complète de LaTeX
-- Git
-- SQL
-- SublimeText
-- Le terminal (crt+alt+t)
-
-
----.transition
-
-# Lectures et travail pour la semaine prochaine
+<div style='text-align:center;'>
+<img src="assets/img/sociaux.png" width="50%"></img>
+</div>
 
 ---
 
-# Lectures et travail
+# Types de réseaux
+## Trophiques
 
-## Travail
+<div style='text-align:center;'>
+<img src="assets/img/foodweb.png" width="65%"></img>
+</div>
 
-- Prenez le temps de vous familiariser avec la Machine virtuelle Ubuntu.
-  - Exemples: Créer des fichiers et des dossiers, changer le fond d'écran, etc.
+---
 
-## Lectures
+# Types de réseaux
+## Plante-pollinisateur
 
-- Baker, M. 2016. Is there a reproducibility crisis ? Nature, 533 : 452:454
-- Munafo, M.R. et al. 2017. A manifesto for reproducible science. Nature Human Behaviour 1: 0021
-- Open Science Collaboration. 2015. Estimating the reproducibility of psychological science. Science 349 : 943.
+<div style='text-align:center;'>
+<img src="assets/img/pollinisateur.png" height="500px;"></img>
+</div>
+
+---
+
+# Types de réseaux
+## Plante-vecteur de dispersion
+
+<div style='text-align:center;'>
+<img src="assets/img/dispersion.png" height="500px;"></img>
+</div>
+
+---
+
+# Types de réseaux
+## Plante-herbivore
+
+<div style='text-align:center;'>
+<img src="assets/img/herbivore.png" height="500px"></img>
+</div>
+
+---
+
+# Types de réseaux
+## Plante-fongi
+
+<div style='text-align:center;'>
+<img src="assets/img/fongi.png" width="90%"></img>
+</div>
+
+---
+
+# Types de réseaux
+## Hôte-parasite
+
+<div style='text-align:center;'>
+<img src="assets/img/parasite.png" height="500px"></img>
+</div>
+
+---
+
+# Glossaire
+## S, L, C
+
+<div style='text-align:center;'>
+<img src="assets/img/foodweb.png" height="500px;"></img>
+</div>
+
+---
+
+# Glossaire
+## Rang trophique
+
+<div style='text-align:center;'>
+<img src="assets/img/rang.png" height="500px"></img>
+</div>
+
+---
+
+# Glossaire
+## Distribution de degrés
+
+<div style='text-align:center;'>
+<img src="assets/img/degres.png" height="500px"></img>
+</div>
+
+---
+
+# Glossaire
+## Centralité
+
+<div style='text-align:center;'>
+<img src="assets/img/centralite.png" height="500px"></img>
+</div>
+
+---
+
+# Glossaire
+## Nestedness
+
+<div style='text-align:center;'>
+<img src="assets/img/nestedness.png" height="500px"></img>
+</div>
+
+---
+
+# Glossaire
+## Modularité
+
+<div style='text-align:center;'>
+<img src="assets/img/modularite.png" height="500px"></img>
+</div>
+
+---
+
+# Glossaire
+## Motifs
+
+<div style='text-align:center;'>
+<img src="assets/img/motifs.png" width="90%"></img>
+</div>
+
+---
+
+# Glossaire
+## Robustesse
+
+<div style='text-align:center;'>
+<img src="assets/img/robustesse.png" height="500px"></img>
+</div>
+
+

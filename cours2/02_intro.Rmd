@@ -6,28 +6,6 @@
 
 --- .transition
 
-# Projet de session
-
----
-
-# Rappel du problème
-
-Est-ce que le réseau de collaboration entre les étudiants est différent des réseaux écologiques ?
-
----
-
-# Rappel du problème
-
-Est-ce que l'on parvient à expliquer une collaboraiton à partir de caractéristiques des noeuds ?
-
----
-
-# Pour commencer
-
-En équipe de 4, on vous demande de commencer à planifier une campagne de collecte de données. Commencez par discuter des types de données que vous souhaitez récolter, faites la liste des informations nécessaires pour répondre à la question. Ensuite, établissez un protocole afin de récolter ces données.
-
---- .transition
-
 # Les données en biologie
 
 ---

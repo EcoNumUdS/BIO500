@@ -1,0 +1,164 @@
+
+
+
+
+
+
+--- .transition
+
+# Présentation sur les réseaux écologiques
+
+---
+
+# Définition
+
+<div style='text-align:center;'>
+<img src="assets/img/def.png" width="90%"></img>
+</div>
+
+---
+
+# Types de réseaux
+
+## Internet
+
+<div style='text-align:center;'>
+<img src="assets/img/internet.png" width="60%"></img>
+</div>
+
+---
+
+# Types de réseaux
+## Sociaux
+
+<div style='text-align:center;'>
+<img src="assets/img/sociaux.png" width="50%"></img>
+</div>
+
+---
+
+# Types de réseaux
+## Trophiques
+
+<div style='text-align:center;'>
+<img src="assets/img/foodweb.png" width="65%"></img>
+</div>
+
+---
+
+# Types de réseaux
+## Plante-pollinisateur
+
+<div style='text-align:center;'>
+<img src="assets/img/pollinisateur.png" height="500px;"></img>
+</div>
+
+---
+
+# Types de réseaux
+## Plante-vecteur de dispersion
+
+<div style='text-align:center;'>
+<img src="assets/img/dispersion.png" height="500px;"></img>
+</div>
+
+---
+
+# Types de réseaux
+## Plante-herbivore
+
+<div style='text-align:center;'>
+<img src="assets/img/herbivore.png" height="500px"></img>
+</div>
+
+---
+
+# Types de réseaux
+## Plante-fongi
+
+<div style='text-align:center;'>
+<img src="assets/img/fongi.png" width="90%"></img>
+</div>
+
+---
+
+# Types de réseaux
+## Hôte-parasite
+
+<div style='text-align:center;'>
+<img src="assets/img/parasite.png" height="500px"></img>
+</div>
+
+---
+
+# Glossaire
+## S, L, C
+
+<div style='text-align:center;'>
+<img src="assets/img/foodweb.png" height="500px;"></img>
+</div>
+
+---
+
+# Glossaire
+## Rang trophique
+
+<div style='text-align:center;'>
+<img src="assets/img/rang.png" height="500px"></img>
+</div>
+
+---
+
+# Glossaire
+## Distribution de degrés
+
+<div style='text-align:center;'>
+<img src="assets/img/degres.png" height="500px"></img>
+</div>
+
+---
+
+# Glossaire
+## Centralité
+
+<div style='text-align:center;'>
+<img src="assets/img/centralite.png" height="500px"></img>
+</div>
+
+---
+
+# Glossaire
+## Nestedness
+
+<div style='text-align:center;'>
+<img src="assets/img/nestedness.png" height="500px"></img>
+</div>
+
+---
+
+# Glossaire
+## Modularité
+
+<div style='text-align:center;'>
+<img src="assets/img/modularite.png" height="500px"></img>
+</div>
+
+---
+
+# Glossaire
+## Motifs
+
+<div style='text-align:center;'>
+<img src="assets/img/motifs.png" width="90%"></img>
+</div>
+
+---
+
+# Glossaire
+## Robustesse
+
+<div style='text-align:center;'>
+<img src="assets/img/robustesse.png" height="500px"></img>
+</div>
+
+
