@@ -1,7 +1,13 @@
 language: r
-sudo: required
+sudo: false
 cache: packages
 cran: https://cloud.r-project.org
+r:
+  - devel
+
+r_github_packages:
+  - ramnathv/slidify
+  - ramnathv/slidifyLibraries
 
 before_script:
   - chmod +x ./_build.sh
