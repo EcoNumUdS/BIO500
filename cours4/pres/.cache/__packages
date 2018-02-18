@@ -1,5 +1,5 @@
 base
 devtools
 slidify
-DBI
-RPostgreSQL
+igraph
+knitr

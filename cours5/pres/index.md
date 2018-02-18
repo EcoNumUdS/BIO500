@@ -1,12 +1,12 @@
 ---
-title       : "Séance 5: La visualisation des données"
+title       : "Séance 6: Documents dynamiques avec LaTeX"
 subtitle    : "BIO 500 - Méthodes en écologie computationnelle"
 author      : "Dominique Gravel & Steve Vissault"
 job         : "Laboratoire d'écologie intégrative"
 logo        : "logo.png"
 framework   : io2012       # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      #
+hitheme     : sunburst      #
 mode        : selfcontained
 knit        : slidify::knit2slides
 widgets     : [mathjax]
@@ -18,952 +18,1179 @@ assets      :
 
 ---
 
-# Séance 5
+# Séance 6
 
-- Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/cours5/) et en [PDF](./assets/pdf/S5-BIO500.pdf).
+- Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/cours6/) et en [PDF](./assets/pdf/S6-BIO500.pdf).
 - L'ensemble du matériel de cours est disponible sur la page du portail [moodle](https://www.usherbrooke.ca/moodle2-cours/course/view.php?id=12189).
-- Vous trouverez du matériel supplémentaire dans le [cours](http://kevincazelles.fr/talks/assets/QCBSGraphsR/Rgraphics.html#4) de [Kevin Cazelles](http://kevincazelles.fr/) et [Nicolas Casajus](http://www.cen.ulaval.ca/membre.aspx?id=3945098&membre=ncasajus) lors d'un atelier de communication visuelle du CSBQ.
-- Certaines diapositives sont également extraites de la présentation de [David Taylor](http://dtdata.io/prm/intro_dataviz_csbq.pdf)
 
 --- .transition
 
-# Qu'est-ce qui fait une bonne figure ?
+# Introduction
 
 ---
 
-# Trop d'information
+# Où sommes-nous?
 
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/Pacala.png" width="70%"></img>
+<div style='text-align:center;'>
+<img src="assets/img/flow_full.png" width="100%"></img>
+</div>
+
+
+---
+
+# Pourquoi $\LaTeX$?
+
+<div style='text-align:center;'>
+<img src="assets/img/latex_comp.gif" width="60%"></img>
 </div>
 
 ---
 
-# Non respect des normes graphiques
+# Qu'est ce que $\LaTeX$?
 
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/Desjardins.png" width="70%"></img>
-</div>
-
----
-
-# Abus de symboles et de couleurs
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/Boulangeat.png" width="100%"></img>
-</div>
-
-
----.transition
-
-# L'art graphique
+- Language introduit en 1983 par l'informaticien Leslie Lamport.
+- C'est un language à balise.
+- Concu spécifiquement pour l'écriture de rapports scientifiques.
+- L'utilisation de $\LaTeX$ est une norme chez les mathématiciens et les physiciens.
 
 ---
 
-# L'importance des graphiques
+# Avantages de $\LaTeX$?
 
-<!-- La représentation visuelle de nos données est un **outil de persuasion** permettant d'illustrer nos résultats auprès du public et de nos pairs. Cet outil permet également de mieux comprendre les relations à l'intérieur de nos données par la visualisation. -->
+1. Qualité de la mise en page
+  - Mise en page automatique
+  - Table des matières
+  - Gestion des références
+2. Performance pour l'intégration de matériel (e.g. figures, tableaux)
+3. Stabilité
+4. Inter-opérabilité
+5. Reproductibilité (tout est scripté)
 
-## La représentation visuelle des données permet de:
+---&twocol
 
-- Synthétiser l'information.
-- Communiquer plus efficacement qu'un tableau.
-- Explorer nos données par la visualisation.
-- Présenter nos résultats et convaincre.
-
----
-
-# Explorer nos données par la visualisation
-
-## Voici un exemple illustrant l'importance de visualiser ses données:
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/table_visu.png" width="100%"></img>
-</div>
-
----
-
-# Explorer nos données par la visualisation
-
-## Voici un exemple illustrant l'importance de visualiser ses données:
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/plot_visu.png" height="450px"></img>
-</div>
-
---- &twocol
-
-# Communiquer par les graphiques
+# La structure d'un document $\LaTeX$
 
 *** =left
 
-- Les graphiques sont généralement **plus efficaces à communiquer** un message/un résultat qu'un tableau.
+```tex
+\documentclass[12pt]{article}
 
-- **Problème:** La représentation graphique peut parfois nous conduire à une **fausse interprétation**. L'idée est de transmettre une idée sans biaiser le lecteur.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 
-*** =right
+\title{Un document minimalist}
+\author{Dominique Gravel}
 
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/fox.jpg" width="100%"></img>
-</div>
+\begin{document}
 
-<!-- - Problème: ratio 8/3 -->
+Je peux écrire du texte ici.
 
---- &twocol
-
-# Communiquer par les graphiques
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/deformation.png" width="100%"></img>
-</div>
-
-
-<!-- - Problème: ratio 8/3 -->
-
-
----
-
-# Communiquer par les graphiques
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/Weisgerber_1.png" width="70%"></img>
-</div>
-
----
-
-# Communiquer par les graphiques
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/Weisgerber2.png" width="70%"></img>
-</div>
-
-
----.transition
-
-# Règles et composantes graphiques
-
---- &twocol
-
-# Les composantes graphiques
-
-*** =left
-
-- Les axes et échelles.
-- Le titre de la figure.
-- La légende
-- Le [type de représentation des données](http://www.datavizcatalogue.com/).
-
-
-*** =right
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/viz.png" width="100%"></img>
-</div>
-
---- &twocol
-
-# Les règles graphiques
-
-*** =left
-
-- Une figure doit renvoyer un seul message/résultat.
-- Chaque élément d'une figure doit **aider à comprendre** ce message.
-- **Choisir le bon type de représentation** permet de mettre en valeur plus facilement ce qui doit être illustré.
-- **Attention aux normes graphiques**: Choix des couleurs, taille des caractères, épaisseur de la ligne, disposition des marges, cadrage etc.
-
-*** =right
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/viz.png" width="100%"></img>
-</div>
-
----
-
-# Quelques conseils
-
-- Ne pas **JAMAIS** utiliser de diagramme en pointe de tarte
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/pies_vs_bars.png" width="80%"></img>
-</div>
-
---- &twocol
-
-# Quelques conseils
-
-*** =left
-
-- Éviter les figures 3D.
-- Limiter le nombre de dimensions (3 ou 4 dimensions max).
-- La multi-dimensionnalité peut être gérée en:
-  - Modifiant la forme et la la taille des points
-  - Ajoutant des couleurs
-
-*** =right
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/Pacala.png" height="350px"></img>
-</div>
-
-
---- &twocol
-
-# Quelques conseils
-
-- Limiter le ratio encre/données afin de faciliter la lecture.
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/data2ink.jpg" width="100%"></img>
-</div>
-
-
---- .transition
-
-# Types de figures
-
----
-
-# Diagramme de dispersion (Scatter plot)
-
-<img src="assets/fig/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" height="550px" style="display: block; margin: auto;" />
-
----
-
-# Diagrammes à bâtons (Bar plot)
-
-<img src="assets/fig/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" height="550px" style="display: block; margin: auto;" />
-
----
-
-# Histogrammes
-
-<img src="assets/fig/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" height="550px" style="display: block; margin: auto;" />
-
---- &twocol
-
-# Représentation 3-D
-
-<img src="assets/fig/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" height="550px" style="display: block; margin: auto;" />
-
----
-
-# Lignes de contour
-
-<img src="assets/fig/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" height="550px" style="display: block; margin: auto;" />
-
---- .transition
-
-# Faire une figure étape par étape avec R
-
----
-
-# Prépares les données adéquatement
-
-- Habituellement un `data.frame` ou `une matrice`
-- Une observation par ligne (format long)
-
---- &twocol
-
-# Ouvrir une fenêtre graphique
-
-*** =left
-
-```r
-dev.new(width = 10, height = 7)
+\end{document}
 ```
 
 *** =right
 
 
---- &twocol
+1. `\documentclass` détermine la classe du document.
+2. `\usepackage`: Comme R, $\LaTeX$ permet l'utilisation de librairies. `inputec` et `fontec` sont des librairies permettant de gérer *l'encoding* du document (caractères avec accent etc.). Les `[]` déterminent les options.
+4. On ouvre l'environnement `Document` avec `\begin`
 
-# Fixer certains paramètres
+---
 
+# Séparer le contenu du contenant
 
-```r
-# Fixer la largeur et la hauteur des marges
-par(mar = c(5,6,2,1))
-
-# Fixer le nombre de figures en colonnes et rangées
-par(mfrow = c(1,1))
-```
-
-*** =right
-
-
---- &twocol
-
-# Démarrer une figure avec `plot()`
-
-*** =left
-
-```r
-arbres <- read.csv2("donnees/arbres.csv")
-densite <- table(arbres[,c(3,5)])
-elevation <- as.numeric(row.names(densite))
-plot(elevation, densite[,1], axes = FALSE,
-      xlab = "Élévation", ylab = "Densité")
-```
-
-*** =right
-<img src="assets/fig/unnamed-chunk-11-1.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" width="100%" style="display: block; margin: auto;" />
-
---- &twocol
-
-# Échelles logarithmiques
-
-*** =left
-
-```r
-plot(elevation, densite[,1], axes = FALSE,
-      xlab = "Élévation", ylab = "Densité",
-      log = "xy")
-```
-
-*** =right
-<img src="assets/fig/unnamed-chunk-13-1.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" width="100%" style="display: block; margin: auto;" />
-
---- &twocol
-
-# Ajuster les tailles de caractères
-
-## Arguments `cex`, `cex.lab` et `cex.axis`
-
-*** =left
-
-```r
-plot(elevation, densite[,1], axes = FALSE,
-      xlab = "Élévation", ylab = "Densité",
-      cex.lab = 1.5, cex.axis = 1.25, cex = 1.5)
-```
-
-*** =right
-<img src="assets/fig/unnamed-chunk-15-1.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" width="100%" style="display: block; margin: auto;" />
-
---- &twocol
-
-# Modifier les axes
-
-*** =left
-
-```r
-axis(1, seq(0,1000,100))
-axis(2)
-```
-
-*** =right
-<img src="assets/fig/unnamed-chunk-17-1.png" title="plot of chunk unnamed-chunk-17" alt="plot of chunk unnamed-chunk-17" width="100%" style="display: block; margin: auto;" />
+- La mise en page est gérée par des balises et environnements.
+- Les balises et environnements déclarent le contenant (la forme)
+- Le texte se place entre les balises (le contenu)
+- Si l'on change tout simplement de balises $\LaTeX$, on obtient une nouvelle mise en forme.
 
 --- &twocolw w1:55% w2:45%
 
-# Ajouter un titre
+# Un exemple d'efficacité
 
 *** =left
 
-```r
-title(main = "Densité au long du gradient d'élévation")
-```
+```tex
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{color,dcolumn,graphicx,hyperref}
+\usepackage{wrapfig}
 
-*** =right
-<img src="assets/fig/unnamed-chunk-19-1.png" title="plot of chunk unnamed-chunk-19" alt="plot of chunk unnamed-chunk-19" width="100%" style="display: block; margin: auto;" />
+\begin{document}
 
---- &twocol
+\title{How likely is speciation in neutral ecology ?}
 
-# Superposer des points d'une autre série de données
+\author{Philippe Desjardins-Proulx, Dominique Gravel}
 
-*** =left
+\maketitle
 
-```r
-points(elevation, densite[,3], pch = 19, cex = 1.5)
-```
-
-*** =right
-<img src="assets/fig/unnamed-chunk-21-1.png" title="plot of chunk unnamed-chunk-21" alt="plot of chunk unnamed-chunk-21" width="100%" style="display: block; margin: auto;" />
-
---- &twocol
-
-# Superposer des lignes
-
-*** =left
-
-```r
-lines(elevation, densite[,1],lty = 1, lwd = 1.5)
-lines(elevation, densite[,3], lty  = 3, lwd = 1.5)
-```
-
-*** =right
-<img src="assets/fig/unnamed-chunk-23-1.png" title="plot of chunk unnamed-chunk-23" alt="plot of chunk unnamed-chunk-23" width="100%" style="display: block; margin: auto;" />
-
---- &twocolw w1:40% w2:60%
-
-# Ajouter une ligne de tendance
-
-*** =left
-
-```r
-model = lm(densite[,3]~elevation)
-summary(model)
-abline(model, col = "darkred")
+\section{Introduction}
 ```
 
 *** =right
 
-```
-## 
-## Call:
-## lm(formula = densite[, 3] ~ elevation)
-## 
-## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -59.796 -26.743  -3.565  24.050  92.175 
-## 
-## Coefficients:
-##              Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) 148.10588   11.23433  13.183   <2e-16 ***
-## elevation    -0.16650    0.01976  -8.428    5e-11 ***
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Residual standard error: 40.32 on 48 degrees of freedom
-## Multiple R-squared:  0.5968,	Adjusted R-squared:  0.5884 
-## F-statistic: 71.04 on 1 and 48 DF,  p-value: 4.999e-11
-```
+<div style='text-align:center;'>
+<img src="assets/img/ex2_pg1.png" height="500px" style="border-style:solid;border-width:1px;"></img>
+</div>
 
---- &twocol
+--- &twocolw w1:55% w2:45%
 
-# Ajouter une ligne de tendance
+# Un exemple d'efficacité
 
 *** =left
 
-```r
-model = lm(densite[,3]~elevation)
-abline(model, col = "darkred")
+```tex
+\documentclass[letterpaper,twocolumn,showkeys]{revtex4-1}
+\usepackage[utf8]{inputenc}
+\usepackage{color,dcolumn,graphicx,hyperref}
+\usepackage{wrapfig}
+
+\begin{document}
+
+\title{How likely is speciation in neutral ecology ?}
+
+\author{Philippe Desjardins-Proulx, Dominique Gravel}
+
+\maketitle
+
+\section{Introduction}
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-27-1.png" title="plot of chunk unnamed-chunk-27" alt="plot of chunk unnamed-chunk-27" width="100%" style="display: block; margin: auto;" />
 
-
---- &twocol
-
-# Ajouter une légende
-
-*** =left
-
-```r
-legend("top", bty = "n", pch = c(19,1), lty = 1,
-    legend = c("Érable à sucre", "Sapin baumier"),
-    cex = 1.5)
-```
-
-*** =right
-<img src="assets/fig/unnamed-chunk-29-1.png" title="plot of chunk unnamed-chunk-29" alt="plot of chunk unnamed-chunk-29" width="100%" style="display: block; margin: auto;" />
-
---- &twocol
-
-# Ajouter du texte
-
-*** =left
-
-```r
-r2 <- round(summary(model)$r.squared, 2)
-text(x = 850, y = 25, paste("R2=",r2),
-    cex = 21.5)
-```
-
-*** =right
-<img src="assets/fig/unnamed-chunk-31-1.png" title="plot of chunk unnamed-chunk-31" alt="plot of chunk unnamed-chunk-31" width="100%" style="display: block; margin: auto;" />
+<div style='text-align:center;'>
+<img src="assets/img/ex1_pg1.png" height="500px" style="border-style:solid;border-width:1px;"></img>
+</div>
 
 ---
 
-# Pour plus d'information
+# Autres avantages
 
-- `?plot`
-- `?par`
-- `?axis`
-- `?mtext`
-
-
---- .transition
-
-# Créer d'autres types de figure
-
---- &twocol
-
-# Diagramme de dispersion (Scatter plot)
-
-*** =left
-
-
-```r
-arbres  <- read.csv2("donnees/arbres.csv")
-densite <- table(arbres[,c(3,5)])
-elevation <- as.numeric(row.names(densite))
-plot(elevation, densite[,1], pch = 19,
-  xlab = "Elevation", ylab = "Densité")
-points(elevation, densite[,3])
-```
-
-*** =right
-
-<img src="assets/fig/unnamed-chunk-33-1.png" title="plot of chunk unnamed-chunk-33" alt="plot of chunk unnamed-chunk-33" height="500px" style="display: block; margin: auto;" />
-
---- &twocol
-
-# Diagrammes à bâtons (Bar plot)
-
-*** =left
-
-```r
-arbres  <- read.csv2("donnees/arbres.csv")
-n_tot <- table(arbres$esp)
-barplot(n_tot)
-```
-
-*** =right
-<img src="assets/fig/unnamed-chunk-35-1.png" title="plot of chunk unnamed-chunk-35" alt="plot of chunk unnamed-chunk-35" height="500px" style="display: block; margin: auto;" />
-
---- &twocol
-
-# Histogrammes
-
-*** =left
-
-
-```r
-hist(densite[,3])
-```
-
-*** =right
-<img src="assets/fig/unnamed-chunk-37-1.png" title="plot of chunk unnamed-chunk-37" alt="plot of chunk unnamed-chunk-37" height="500px" style="display: block; margin: auto;" />
-
---- &twocol
-
-# Représentation 3-D
-
-*** =left
-
-
-```r
-x <- 10*(1:nrow(volcano))
-y <- 10*(1:ncol(volcano))
-
-image(x, y, volcano,
-  col = terrain.colors(100), axes = FALSE)
-
-axis(1, at = seq(100, 800, by = 100))
-axis(2, at = seq(100, 600, by = 100))
-box()
-
-title(main = "Maunga Whau Volcano", font.main = 4)
-```
-
-*** =right
-
-<img src="assets/fig/unnamed-chunk-39-1.png" title="plot of chunk unnamed-chunk-39" alt="plot of chunk unnamed-chunk-39" height="500px" style="display: block; margin: auto;" />
-
---- &twocol
-
-# Lignes de contour
-
-*** =left
-
-```r
-x <- 10*(1:nrow(volcano))
-y <- 10*(1:ncol(volcano))
-
-image(x, y, volcano,
-  col = terrain.colors(100), axes = FALSE)
-
-axis(1, at = seq(100, 800, by = 100))
-axis(2, at = seq(100, 600, by = 100))
-box()
-
-title(main = "Maunga Whau Volcano", font.main = 4)
-
-contour(x, y, volcano,
-  levels = seq(90, 200, by = 5),
-  add = TRUE, col = "black")
-```
-
-*** =right
-
-<img src="assets/fig/unnamed-chunk-41-1.png" title="plot of chunk unnamed-chunk-41" alt="plot of chunk unnamed-chunk-41" height="500px" style="display: block; margin: auto;" />
+- $\LaTeX$ est un language gratuit et OpenSource.
+- Stable et doté d'une riche communauté d'utilisateurs.
+- Stack Overflow entièrement dédié à $\LaTeX$: [https://tex.stackexchange.com/](https://tex.stackexchange.com/)
+- Compilateur en ligne: [https://fr.sharelatex.com/](https://fr.sharelatex.com/)
+- Ajustement automatique du contenant au contenu
+- Comme R, $\LaTeX$ dispose de plusieurs libraries (packages) pour satisfaire nos besoins.
 
 ---
 
-# Enregistrer une figure
+# Désavantages
 
-
-
-```r
-dev.copy2pdf(file = "test.pdf")
-dev.copy2png(file = "test.png")
-dev.copy2eps(file = "test.eps")
-```
-
---- .transition
-
-# Exercice: faire une représentation visuelle de la distribution de degrés
-
---- .transition
-
-# La visualisation de réseau avec igraph
+- La courbe d'apprentissage peut être plus rude.
+- La compilation requière plusieurs étapes
+- Les erreurs de compilation sont souvent difficiles à comprendre.
+- Son principal point faible réside dans l'absence d'un système de révision multi-utilisateurs.
 
 ---
 
-# Installation
+# Faire du $\LaTeX$ avec Sublime Text2
+
+1. Créer un dossier sur le bureau qui va contenir le document $\LaTeX$
+2. Ouvrir Sublime Text2
+3. Sélectionner le dossier nouvellement créé: ```Fichier > Ouvrir```
+4. Créer un nouveau document: ```Fichier > Nouveau```
+5. Enregistrer le document avec l'extension `.tex`: ```Fichier > Enregistrer sous```
+
+Et voilà, l'extension `.tex` détermine que le fichier est un document $\LaTeX$.
 
 
-```r
-install.packages("igraph")
+---.transition
+
+# Mon premier document $\LaTeX$
+
+---&twocolw w1:60% w2:35%
+
+# Mon premier document $\LaTeX$
+
+*** =left
+
+```tex
+\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+
+\begin{document}
+
+\section{Mon premier article en latin}
+
+% Ceci est un commentaire
+\lipsum[2-4]
+
+\end{document}
 ```
 
-```
-## Installing package into '/usr/local/lib/R/3.3/site-library'
-## (as 'lib' is unspecified)
-```
+*** =right
 
-```
-## Error in contrib.url(repos, type): trying to use CRAN without setting a mirror
-```
+## Exercice 1 (10 minutes):
 
-```r
-library(igraph)
-```
+Recopier dans Sublime Text 2 ce code `.tex`.
 
-```
-## Loading required package: methods
-```
+**Note:** `\usepackage{lipsum}` est un package permettant de générer du faux texte (latin de mise en forme).
 
-```
-## 
-## Attaching package: 'igraph'
-```
 
-```
-## The following objects are masked from 'package:stats':
-## 
-##     decompose, spectrum
-```
 
-```
-## The following object is masked from 'package:base':
-## 
-##     union
-```
+---.transition
+
+# La compilation d'un document $\LaTeX$ sans bibliographie
 
 ---
 
-# Transformer une matrice d'adjacence en objet `igraph`
+# La compilation
+
+Afin d'obtenir le rendu PDF de notre document, nous devons compiler ce dernier à l'aide du compilateur `pdflatex`.
 
 
-```r
-library(igraph)
-C <- 0.1
-S <- 15
-L <- matrix(0, nr = S, nc = S)
-L[runif(S*S) < C] = 1
-sum(L)
+- **Étape 1.** Ouvrir le terminal (touches Ctrl+Alt+t).
+
+- **Étape 2.** À l'aide de la commande `cd` (*Change Directory*), se déplacer dans le terminal vers le dossier qui vient d'être créé:
+
+```bash
+cd ~/Bureau
+```
+```bash
+cd /home/etudiant/Bureau
 ```
 
-```
-## [1] 26
-```
+---&twocolw w1:50% w2:45%
 
-```r
-g <- graph.adjacency(L)
-```
-
---- &twocol
-
-# Utiliser la fonction `plot` pour faire une représentation d'un réseau
+# La compilation
 
 *** =left
 
-```r
-plot(g)
+- **Étape 3.** Compiler le document avec la commande:
+
+```bash
+pdflatex mon_document.tex
+```
+
+- **Étape 4.** Une fois la compilation terminée, les deux dernières lignes de la sortie devraient être:
+
+```bash
+Output written on doc.pdf (1 page, 31402 bytes).
+Transcript written on doc.log.
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-46-1.png" title="plot of chunk unnamed-chunk-46" alt="plot of chunk unnamed-chunk-46" width="100%" style="display: block; margin: auto;" />
 
---- &twocol
+<div style='text-align:center;'>
+<img src="assets/img/doc.png" height="500px" style="border-style:solid;border-width:1px;"></img>
+</div>
 
-# Version moins moche dans les paramètres par défaut
+
+---&twocolw w1:50% w2:45%
+
+# Définir les métadonnées
 
 *** =left
 
-```r
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
-    vertex.frame.color = NA)
+```tex
+\title{Comment structurer un document \LaTeX{}}
+\author{Prof. Dominique Gravel\\
+   Chaire de recherche en Écologie Intégrative,\\
+   Faculté des Sciences,\\
+   Département de Biologie,\\
+   Université de Sherbrooke,\\
+   \texttt{dominique.gravel@usherbrooke.ca}}
+\date{\today}
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-48-1.png" title="plot of chunk unnamed-chunk-48" alt="plot of chunk unnamed-chunk-48" width="100%" style="display: block; margin: auto;" />
 
+- On définit les métadonnées avec `\title`, `\author`, `\date`.
+- Les métadonnées doivent être placées avant l'environnement `\begin{document}`.
+- Les `\\` dans la balise `\author` permettent une mise à la ligne.
+- Enfin, la balise `\today` remplie la date du jour pour nous.
 
---- .transition
+Note : pour une date en français, il faut utiliser le package `\usepackage[french]{babel}`
 
-# Exercice : Compiler la matrice d'adjacence et faire une première représentation du réseau avec `igraph`
+---&twocolw w1:50% w2:45%
 
---- &twocol
-
-# Changer la couleur des noeuds
+# Créer la page titre à partir des métadonnées
 
 *** =left
 
-```r
-# Calculer le degré
-deg <- apply(L, 2, sum) + apply(L, 1, sum)
+La page titre est générée grâce à la balise `\maketitle` dans l'environnement document.
 
-# Le rang pour chaque noeud
-rk <- rank(deg)
 
-# Faire un code de couleur
-col.vec <- heat.colors(S)
+```tex
+[...]
 
-# Attribuer aux noeuds la couleur
-V(g)$color = col.vec[rk]
+\begin{document}
 
-# Refaire la figure
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
-    vertex.frame.color = NA)
+\maketitle
+
+[...]
+
+\end{document}
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-50-1.png" title="plot of chunk unnamed-chunk-50" alt="plot of chunk unnamed-chunk-50" width="100%" style="display: block; margin: auto;" />
 
---- &twocol
-
-# Changer la taille des noeuds
-
-*** =left
-
-```r
-# Faire un code de ctaille
-col.vec <- seq(10, 25, length.out = S)
-
-# Attribuer aux noeuds la couleur
-V(g)$size = col.vec[rk]
-
-# Refaire la figure
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
-    vertex.frame.color = NA)
-```
-
-*** =right
-<img src="assets/fig/unnamed-chunk-52-1.png" title="plot of chunk unnamed-chunk-52" alt="plot of chunk unnamed-chunk-52" width="100%" style="display: block; margin: auto;" />
-
---- &twocol
-
-# Changer la disposition des noeuds
-
-*** =left
-
-```r
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
-    vertex.frame.color = NA, layout = layout.reingold.tilford(g))
-```
-
-*** =right
-<img src="assets/fig/unnamed-chunk-54-1.png" title="plot of chunk unnamed-chunk-54" alt="plot of chunk unnamed-chunk-54" width="100%" style="display: block; margin: auto;" />
-
---- &twocol
-
-# Changer la disposition des noeuds
-
-*** =left
-
-```r
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
-    vertex.frame.color = NA, layout = layout.circle(g))
-```
-
-*** =right
-<img src="assets/fig/unnamed-chunk-56-1.png" title="plot of chunk unnamed-chunk-56" alt="plot of chunk unnamed-chunk-56" width="100%" style="display: block; margin: auto;" />
-
---- &twocol
-
-# Changer la disposition des noeuds
-
-*** =left
-
-```r
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
-    vertex.frame.color = NA, layout = layout.kamada.kawai(g))
-```
-
-*** =right
-<img src="assets/fig/unnamed-chunk-58-1.png" title="plot of chunk unnamed-chunk-58" alt="plot of chunk unnamed-chunk-58" width="100%" style="display: block; margin: auto;" />
+<div style='text-align:center;'>
+<img src="assets/img/doc2.png" height="500px" style="border-style:solid;border-width:1px;"></img>
+</div>
 
 ---
 
-# Calcul de propriétés
+# Exercice 3
 
-## La modularité
+Ajouter les métadonnées puis compiler le document avec la page titre.
 
+---&twocolw w1:50% w2:45%
 
-```r
-wtc = walktrap.community(g)
-modularity(wtc)
+# Insérer un résumé
+
+*** =left
+
+On écrit notre résumé entre dans l'environnement `abstract`.
+
+```tex
+[...]
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\lipsum[1]
+\end{abstract}
+
+\section{Mon premier article en latin}
+\lipsum[2-4]
+
+\end{document}
 ```
 
+*** =right
+
+<div style='text-align:center;'>
+<img src="assets/img/doc3.png" height="500px" style="border-style:solid;border-width:1px;"></img>
+</div>
+
+---&twocolw w1:50% w2:45%
+
+# Ajouter des sections
+
+*** =left
+
+```tex
+[...]
+
+\begin{document}
+
+\section{Ma première section}
+
+\section{Ma seconde section}
+
+\subsection{Une sous-section de la seconde section}
+
+\subsubsection{Une sous-section de sous-section}
+
+\section*{Une troisième section sans numéro}
+
+\end{document}
 ```
-## [1] 0.2248521
+
+*** =right
+
+- Nous n'avons pas besoin d'utiliser de `\begin` ou `\end`.
+- Une section est numérotée par défault.
+- Pour éviter cette numérotation vous pouvez ajouter une `*` avant les accolades.
+
+---&twocolw w1:50% w2:45%
+
+# Insérer la table des matières
+
+*** =left
+
+```tex
+[...]
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Ma première section}
+
+\section{Ma seconde section}
+
+\subsection{Une sous-section de la seconde section}
+
+\subsubsection{Une sous-section de sous-section}
+
+\section*{Une troisième section sans numéro}
+
+\end{document}
+```
+
+*** =right
+
+La simple déclaration de la balise `\tableofcontents` permet la création d'une table des matières.
+
+---
+
+# Exercice 4
+
+Ajouter des sections au document, et construir la table des matières.
+Prendre le temps de lire la sortie affichée par le compilateur `pdflatex`.
+
+---
+
+# Le fichier auxiliaire (`.aux`)
+
+Lors du dernier exercice, la table des matières n'était pas insérée dans le document.
+
+1. La première compilation scanne le document à la recherche de références internes telles que les sections.
+
+  #### Écriture d'un fichier `mon_document.aux`:
+
+  ```bash
+  \relax
+  \@writefile{toc}{\contentsline {section}{\numberline {1}Mon premier article en latin}{1}}
+  ```
+
+2. La deuxième compilation assemble l'ensemble du document à partir du fichier `mon_document.aux` de la première compilation.
+
+## Il faut deux compilations successives pour obtenir la table des matières dans le document pdf.
+
+
+---
+
+# Le fichier auxiliaire (`.aux`)
+
+<div style='text-align:center;'>
+<img src="assets/img/flow_comp1.png" height="400px"></img>
+</div>
+
+
+---.transition
+
+# Mise en forme du document
+
+---&twocolw w1:50% w2:45%
+
+# Emphase sur le texte
+
+*** =left
+
+```tex
+[...]
+\begin{document}
+
+Voici un texte
+\textit{en italique},
+\textbf{en gras},
+\textsc{avec des petites capitales},
+\textsf{avec des caractères sans empattement},
+\texttt{avec des caractères à chasse fixe},
+avec des mots avec {\small{un corps plus petit}}
+ou {\large{plus grand}}.
+
+\end{document}
+```
+
+*** =right
+
+<div style='text-align:center;'>
+<img src="assets/img/doc4.png" width="100%" style="border-style:solid;border-width:1px;"></img>
+</div>
+
+<!-- Il est également possible de combiner la mise en forme:
+
+```bash
+\textit{\textbf{Ceci est du texte}}
+``` -->
+
+[Documentation complémentaire en FR](https://fr.wikibooks.org/wiki/LaTeX/Mise_en_forme_du_texte)
+
+---
+
+# Votre meilleur professeur
+
+<div style='text-align:center;'>
+<img src="assets/img/latexsheet.png" height="500px" style="border-style:solid;border-width:1px;"></img>
+</div>
+
+---
+
+# Taille de la police de caractères
+
+**Corps très petit**
+
+```tex
+\footnotesize texte très petit \normalsize, ou bien
+\begin{footnotesize} texte très petit \end{footnotesize}
+```
+
+**Corps petit**
+
+```tex
+\small texte petit \normalsize, ou bien
+\begin{small} texte petit \end{small}
+```
+
+**Corps grand**
+
+```tex
+\large texte grand \normalsize, ou bien
+\begin{large} texte grand \end{large}
+```
+
+**Corps très grand**
+
+```tex
+\Large texte très grand \normalsize, ou bien
+\begin{Large} texte très grand \end{Large}.
 ```
 
 ---
 
-# Calcul de propriétés
+# Alignement des paragraphes
 
-## La distance entre les noeuds
+Par défault, les paragraphes sont justifiés.
 
+**Alignement gauche**
 
-```r
-distances(g)
+```tex
+\raggedleft texte à gauche
+\begin{flushleft} texte très petit \end{flushleft}
 ```
 
+**Alignement à droite**
+
+```tex
+\raggedright texte à droite
+\begin{flushright} texte à droite \end{flushright}
 ```
-##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13]
-##  [1,]    0    2    1    2    3    3    2    1    1     3     2     2     1
-##  [2,]    2    0    3    2    3    4    2    1    2     2     1     3     1
-##  [3,]    1    3    0    3    4    2    1    2    2     2     2     1     2
-##  [4,]    2    2    3    0    1    3    2    2    1     1     1     2     1
-##  [5,]    3    3    4    1    0    4    3    3    2     2     2     3     2
-##  [6,]    3    4    2    3    4    0    3    4    4     2     3     1     4
-##  [7,]    2    2    1    2    3    3    0    3    3     2     1     2     1
-##  [8,]    1    1    2    2    3    4    3    0    1     3     2     3     2
-##  [9,]    1    2    2    1    2    4    3    1    0     2     2     3     2
-## [10,]    3    2    2    1    2    2    2    3    2     0     1     1     2
-## [11,]    2    1    2    1    2    3    1    2    2     1     0     2     1
-## [12,]    2    3    1    2    3    1    2    3    3     1     2     0     3
-## [13,]    1    1    2    1    2    4    1    2    2     2     1     3     0
-## [14,]    3    2    3    2    3    3    2    3    2     1     1     2     2
-## [15,]    2    3    3    2    3    4    3    2    1     2     2     3     3
-##       [,14] [,15]
-##  [1,]     3     2
-##  [2,]     2     3
-##  [3,]     3     3
-##  [4,]     2     2
-##  [5,]     3     3
-##  [6,]     3     4
-##  [7,]     2     3
-##  [8,]     3     2
-##  [9,]     2     1
-## [10,]     1     2
-## [11,]     1     2
-## [12,]     2     3
-## [13,]     2     3
-## [14,]     0     1
-## [15,]     1     0
+
+**Alignement au centre**
+
+```tex
+\centering texte au centre
+\begin{center} texte au centre \end{center}
+```
+
+---&twocolw w1:50% w2:45%
+
+# Indentation des paragraphes
+
+*** =left
+
+Par défault, la première ligne des paragraphes est indentée.
+
+```tex
+[...]
+\setlength{\parindent}{10mm}
+
+\begin{document}
+
+\lipsum[1]
+\noindent\lipsum[2]
+\lipsum[3]
+
+\end{document}
+```
+
+`\noindent`: permet de retirer l'indentation pour un paragraphe spécifique.
+`\setlength{\parindent}{10mm}`: permet de spécifier l'indentation pour l'ensemble du document.
+
+*** =right
+
+<div style='text-align:center;'>
+<img src="assets/img/doc5.png" height="500px" style="border-style:solid;border-width:1px;"></img>
+</div>
+
+---
+
+# Indentation des paragraphes
+
+## $\LaTeX$ couvre un grand nombre d'unités:
+
+- `pt`: 1/72.27 pouces, utilisé dans la plupart des éditeurs de texte.
+- `mm`: Millimètres
+- `cm`: Centimètres
+- `em`: Grossièrement la hauteur d'un 'M' (relatif à la police de caractères)
+- `ex`: Grossièrement la hauteur d'un 'x' (relatif à la police de caractères)
+
+---
+
+# Interlignes
+
+Pour spécifier si le document doit être en double ou simple interlignes, il suffit d'ajouter le package `setspace` et d'y rattacher l'option désirée.
+
+```tex
+\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[singlespacing]{setspace}
+OU
+\usepackage[onehalfspacing]{setspace}
+OU
+\usepackage[doublespacing]{setspace}
+
+```
+
+**Attention:** Les packages doivent toujours se retrouver dans le préambule, c.a.d avant le `\begin{document}`
+
+---&twocolw w1:50% w2:45%
+
+# Séparateur entre paragraphes
+
+Par défault, il n'y a pas d'espace entre les paragraphes.
+
+*** =left
+
+```tex
+[...]
+\setlength{\parskip}{2em}
+
+\begin{document}
+
+\lipsum[1]
+\noindent\lipsum[2]
+\lipsum[3]
+
+\end{document}
+```
+
+*** =right
+
+- `\setlength{\parskip}{2em}`: permet de mettre de déterminer l'espace désiré entre les paragraphes.
+
+- Attention, comme `\setlength{\parindent}{10mm}`, cette configuration doit être placée dans le préambule pour être appliquée sur l'ensemble du document.
+
+---
+
+# Double colonnes et double page
+
+Il est possible de basculer un document d'une colonne à deux colonnes en une ligne de commande grâce aux options de la classe de document (`\documentclass`).
+
+```tex
+\documentclass[11pt,twocolumn,doublepage]{article}
+
+\begin{document}
+
+\lipsum[1]
+\noindent\lipsum[2]
+\lipsum[3]
+
+\end{document}
+```
+
+`\usepackage{multicol}` permet encore d'aller plus loin en offrant davantage de fonctionnalités.
+Pour le constater, vous pouvez vous rendre sur [https://fr.sharelatex.com/learn/Multiple_columns](https://fr.sharelatex.com/learn/Multiple_columns)
+
+---&twocolw w1:50% w2:45%
+
+# Saut de page et saut de section
+
+*** =left
+
+```tex
+\documentclass[11pt,twocolumn]{article}
+
+\begin{document}
+
+\section{Introduction}
+
+\lipsum[1]
+\clearsection
+
+\section{Matériels et méthodes}
+
+\lipsum[2]
+\clearpage
+
+\lipsum[3]
+
+\end{document}
+```
+
+*** =right
+
+- `\clearpage`: le texte écrit après cette commande est renvoyé sur une nouvelle page.
+- `\cleardoublepage`: le texte écrit après cette commande est renvoyé sur une nouvelle page (recto).
+- `\clearsection`: même comportement que `\clearpage` mais pour une section.
+
+---
+
+# Espacements, justification verticale et horizontale.
+
+## Justification:
+
+- `\vfill` introduit un espace « ressort » : cette balise pousse ce qu'il y a à gauche et à droite pour occuper tout l'espace restant sur la ligne.
+- `\hfill`, même chose mais cette balise pousse ce qu'il y a au dessus et en dessous pour occuper tout l'espace restant sur la page.
+
+Le `\hfill` est très pratique pour la page titre d'un document qui a généralement besoin d'une justification horizontale.
+
+## Espacements:
+
+- `\hspace{1em}` et `\vspace{1em}` déterminent un espacement fixe entre deux éléments (une figure et un texte par exemple)
+
+Pour ceux qui sont familiés avec le traitement de texte (MS Word), c'est l'équivalent (en mieux) des tabulations.
+
+---
+
+# Taille et marges du document
+
+Les marges du document peuvent être définis grâce au package `geometry`:
+
+```tex
+\usepackage{geometry}
+
+\geometry{
+letterpaper,
+landscape,
+left=20mm,
+right=20mm,
+top=20mm,
+bottom=20mm
+}
+
+OU
+
+\usepackage[letterpaper,landscape,margin=20mm]{geometry}
+```
+
+Pour un contrôle fin des marges, vous pouvez vous rendre sur ce site: [https://fr.sharelatex.com/learn/Page_size_and_margins](https://fr.sharelatex.com/learn/Page_size_and_margins).
+
+
+---
+
+# Références internes au document
+
+Il est possible à tout moment de référer une partie de son document à une section particulière grâce aux balises `\label` et `\ref`. On appelle ça des *ancres de page*.
+
+```tex
+[...]
+\begin{document}
+
+\section{Introduction}
+\label{sec:intro}
+
+\subsection{Les réseaux écologiques}
+\label{subsec:res}
+
+Dans mon introduction (section \ref{sec:intro}), je vous ai présenté les réseaux écologiques
+(section \ref{subsec:res},\href{ielab.recherche.usherbrooke.ca}{site internet}).
+
+\end{document}
+```
+
+Les numéros de sections s'ajusteront automatiquement si vous ajoutez ou enlevez des sections.
+
+<!-- **Important:** Tout comme la table des matières, il faudra deux compilations consécutives pour visualiser les références dans le texte.
+-->
+
+---
+
+# Personnalisation du document
+
+Les références internes (`\ref` et `\href`) du document auront des couleurs par défault.
+Vous pouvez modifier ce comportement par défaut en modifiant la balise `\hypersetup` suivante:
+
+```tex
+\hypersetup{
+   backref=true,                           % Permet d ajouter des liens dans
+   pagebackref=true,                       % les bibliographies
+   hyperindex=true,                        % Ajoute des liens dans les index.
+   colorlinks=true,                        % Colorise les liens.
+   breaklinks=true,                        % Permet le retour à la ligne dans les liens trop longs.
+   urlcolor= blue,                         % Couleur des hyperliens.
+   linkcolor= blue,                        % Couleur des liens internes.
+   bookmarks=true,                         % Créé des signets pour Acrobat.
+   bookmarksopen=true,                     % Si les signets Acrobat sont créés,
+                                           % les afficher complètement.
+   pdftitle={Mon document au format TeX},  % Titre du document.
+                                           % Informations apparaissant dans
+   pdfauthor={PoluX},                      % dans les informations du document
+   pdfsubject={Projet wikiBooks}           % sous Acrobat.
+}
 ```
 
 ---
 
-# Calcul de propriétés
+# Exercice 5 (15 minutes):
 
-## La centralité des noeuds
+Reproduire la page titre du département de Biologie (sans utiliser les métadonnées et `\maketitle`).
 
+Si vous désirez, utilisez les métadonnées pour produire la page titre. La procédure est la suivante:
 
-```r
-eigen_centrality(g)$vector
+```tex
+[...]
+
+\begin{document}
+
+\makeatletter
+\begin{titlepage}
+
+Ceci est le titre du document: \@title
+Il a été écrit par \@author\space le \@date
+
+\end{titlepage}
+\makeatother
+
+[...]
 ```
 
+---.transition
+
+# Les principaux environnements $\LaTeX$
+
+---&twocolw w1:50% w2:45%
+
+# Ajouter une figure
+
+*** =left
+
+```tex
+\begin{figure}
+
+\includegraphics[width=0.35\textwidth]{fig.eps}
+
+\caption{The metacommunity as a graph
+  of local communities. Each community is
+  connected by dispersal to one or more
+  communities.}  
+
+\end{figure}
 ```
-##  [1] 0.54525807 0.57588016 0.34372408 0.82046697 0.20596409 0.06680901
-##  [7] 0.55784521 0.41556710 0.53429148 0.64963376 1.00000000 0.26613662
-## [13] 0.87847671 0.50124092 0.34708135
+*** =right
+
+- `\begin{figure}` ouvre l'environnement figure
+- `\includegraphics` spécifie la figure à ajouter et sa taille relative
+- `\caption` définie la légende de la figure
+- `\end{figure}` ferme l'environnement figure
+
+---&twocol
+
+# Ajouter une équation
+
+*** =left
+
+Dans le texte:
+
+```tex
+La théorie de la biogéographie
+des îles donne la richesse
+en espèces $S$ à l'équilibre
+au point où les courbes
+$I(S)$ et $E(S)$ se croisent.
 ```
 
---- .transition
+*** =right
 
-# Exporter des tableaux
+En retrait du texte:
+
+```tex
+\begin{equation}
+  S^* = \frac{I}{I+E}
+\end{equation}
+```
+
+
+---&twocol
+
+# Ajouter un tableau - structure
+
+*** =left
+
+```tex
+\begin{table}[]
+\centering
+\caption{Une légende adéquate}
+\label{my-label}
+\begin{tabular}{lc|r}
+aligné à gauche & au centre & à droite  \\
+\hline
+val11 & val12 & val13   \\
+val21 & val22 & val23   \\
+val31 & val32 & va33  
+\end{tabular}
+\end{table}
+```
+
+
+*** =right
+
+<br/>
+<br/>
+<div style='text-align:center;'>
+<img src="assets/img/table.png" height="200px" style="border-style:solid;border-width:1px;"></img>
+</div>
+
 
 ---
 
-# Exporter des tableaux
-
-Exporter des tableaux depuis R vers son document de travail peut être difficile.
-
-## La procédure habituelle serait:
-
-1. Enregistrer le `data.frame` dans un fichier avec la fonction `write.table()` ou `write.csv()`
-2. Éditer et faire la mise en page dans MS Excel ou MS Word.
-
-Le package `knitr` permet de faciliter cette procédure en exportant le `data.frame` directement dans son document de travail LaTeX.
-
----
-
-# Exporter des tableaux
-
-Prenons le jeu de données `iris` directement disponible sous R.
+# Ajouter un tableau - quelques astuces
 
 
-```r
-data(iris)
-class(iris)
-```
-
-```
-## [1] "data.frame"
-```
-
-```r
-head(iris)
-```
-
-```
-##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-## 1          5.1         3.5          1.4         0.2  setosa
-## 2          4.9         3.0          1.4         0.2  setosa
-## 3          4.7         3.2          1.3         0.2  setosa
-## 4          4.6         3.1          1.5         0.2  setosa
-## 5          5.0         3.6          1.4         0.2  setosa
-## 6          5.4         3.9          1.7         0.4  setosa
-```
-
----
-
-# Exporter des tableaux
-
-Je souhaite maintenant exporter ce `data.frame` en LateX (un format que nous verrons lors de la prochaine séance):
-
+- 1- Nous avons vu, la semaine dernière, la fonction R `kable()`. Cette fonction nous permet d'obtenir un tableau de R directement en format $\LaTeX$:
 
 ```r
 library(knitr)
-iris_tex <- kable(iris,format="latex")
-writeLines(iris_tex, con = "./donnees/iris.tex", sep = "\n", useBytes = FALSE)
+kable(CO2, format="latex")
 ```
 
---- .transition
+<br/>
 
-# Travail # 2
+- 2- Pour des tableaux de formes plus complexes, la tâche peut être lourde, il existe des outils en ligne pour dessiner des tableaux et obtenir le code $\LaTeX$ associé (voir  [http://www.tablesgenerator.com](http://www.tablesgenerator.com)).
+
+---
+
+# Ajouter une ancre à ces environnements
+
+On utilise `\label` comme pour les sections.
+
+```tex
+\begin{equation}
+  label{eq:tib}
+  S^* = \frac{I}{I+E}
+\end{equation}
+```
+
+Et ensuite on y réfère dans le texte ainsi:
+
+```tex
+La théorie de la biogéographie des îles donne la richesse
+en espèces $S$ à l'équilibre au point où les courbes
+$I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
+```
+
+---&twocol
+
+# Ajouter des énumérations
+
+*** =left
+
+## On peut y aller simplement de points
+
+```tex
+\begin{itemize}
+  \item Premier élément
+  \item Second élément
+  \item Troisième élément
+\end{itemize}
+```
+
+*** =right
+
+## Ou encore d'une liste numérotée
+
+```tex
+\begin{enumerate}
+  \item Premier élément
+  \item Second élément
+  \item Troisième élément
+\end{enumerate}
+```
+
+---.transition
+
+# La bibliographie
+
+---
+
+# Les entrées `bibtex`
+
+Les références que l'on va citer sont entreposer dans un fichier `.bib`.
+
+Le fichier doit contenir des entrées `bibtex` qui ressemblent à:
+
+```tex
+@article{gravel2006a,
+  title={Reconciling niche and neutrality: the continuum hypothesis},
+  author={Gravel, Dominique and Canham, Charles D and Beaudet, Marilou and Messier, Christian},
+  journal={Ecology letters},
+  volume={9},
+  number={4},
+  pages={399--409},
+  year={2006},
+  publisher={Wiley Online Library}
+}
+```
+
+## Exercice 6
+
+**Étape 1.** Ouvrez un nouveau fichier et enregistrer ce fichier `mabiblio.bib` au même emplacement que votre fichier `.tex`
+
+---
+
+# Les entrées `bibtex`
+
+La plupart des journaux et portail de recherche fournissent des entrées `bibtex` pour citer les publications:
+
+- Par exemple: [Google scholar](https://scholar.google.fr/scholar?q=Dominique+Gravel&btnG=&hl=en&as_sdt=0%2C5)
+
+Des logiciels de bibliographie telle que EndNote, Zotero et Mendeley pemettent d'obtenir des entrées `bibtex`.
+
+Si vous voulez en savoir davantage: [http://steveviss.github.io/Talk_bib/#1](http://steveviss.github.io/Talk_bib/#1)
+
+
+## Exercice 6 (suite)
+
+**Étape 2.** En vous servant de Google Scholar, remplissez votre fichier `mabiblio.bib` avec 2 entrées bibtex.
+
+
+---&twocolw w1:45% w2:52%
+
+# Déclarer le fichier `bibtex`
+
+*** =left
+
+```tex
+\documentclass[12pt]{article}
+
+[...]
+
+\begin{document}
+
+Je vais citer un très bon
+article \cite{gravel2006a}.
+
+\bibliographystyle{plain}
+% Le fichier .bib doit
+% être avec le fichier .tex
+
+\bibliography{monfichierbib}
+% Noter ici que l'on ne met
+% pas l'extension du fichier.
+
+\end{document}
+```
+
+*** =right
+
+Nous désirons maintenant nous servir des entrées `bibtex` dans le document $\LaTeX$ afin de citer ces références.
+
+- `\bibliography{}`: permet de spécifier le nom du fichier `.bib`.
+- `\bibliographystyle{}`: permet de choisir le style de bibliographie. Il en existe plusieurs: `plain`, `unsrt`, `alpha`, `abbrv`, `apalike` etc..
+
+Vous pouvez trouver davantage d'information [ici](https://fr.wikibooks.org/wiki/LaTeX/Gestion_de_la_bibliographie).
+
+---
+
+# Exercice 6 (suite)
+
+**Étape 3.** En vous servant de votre fichier que vous venez d'enregistrer (`mabiblio.bib`), citez vos deux références dans votre document à l'aide de la commande `\cite`.
+
+```tex
+\documentclass[12pt]{article}
+
+[...]
+
+\begin{document}
+
+Je vais citer un très bon
+article \cite{gravel2006a}.
+
+\bibliographystyle{plain}
+% Le fichier .bib doit être avec le fichier .tex
+
+\bibliography{monfichierbib}
+% Noter ici que l'on ne met pas l'extension du fichier.
+
+\end{document}
+```
+
+---
+
+# Compiler le document $\LaTeX$ avec bibliographie
+
+La compilation d'un document avec bibliographie requière l'utilisation du compilateur `bibtex`.
+## La compilation se déroule donc en trois étapes dans le terminal:
+
+1. Scanner le fichier `.tex` à la recherche de références aux figures, sections etc.
+
+  ```bash
+  pdflatex monfichier.tex
+  ```
+
+2. Scanner le fichier `.tex` à la recherche des balises `\cite{}`
+
+  ```bash
+  bibtex monfichier.tex
+  ```
+
+3. Compiler le document final en se servant des `.aux` (étape 1) et `.bbl` (étape 2)
+
+  ```bash
+  pdflatex monfichier.tex
+  ```
+
+Et voilà, nous avons un document final.
+
+---
+
+# Exercice 6 (suite)
+
+**Étape 4.** En vous servant de votre terminal, compilez votre document $\LaTeX$ avec vos deux citations.
+
+## Rappel, la compilation se déroule en trois étapes:
+
+1. Scanner le fichier `.tex` à la recherche de références aux figures, sections etc.
+
+  ```bash
+  pdflatex monfichier.tex
+  ```
+
+2. Scanner le fichier `.tex` à la recherche des balises `\cite{}`
+
+  ```bash
+  bibtex monfichier.tex
+  ```
+
+3. Compiler le document final en se servant des `.aux` (étape 1) et `.bbl` (étape 2)
+
+  ```bash
+  pdflatex monfichier.tex
+  ```
+
+---.transition
+
+# Travail 3
+
+---
+
+# Objectif
+
+Écrire un rapport sous forme d'article scientifique
 
 ---
 
 # Consignes
 
-- Identifier clairement vos questions de recherche
-- Illustrer le réseau de collaborations
-- Compléter votre analyse au moyen de 3 figures et 1 tableau
+Vous devez remettre les résultats de votre analyse des données de collaboration entre les étudiants de la classe.
+
+Le rapport doit contenir :
+
+- L'illustration du réseau
+- 3 figures
+- 1 tableau
+- Un titre et un résumé
+- Une courte introduction spécifiant les questions
+- Une courte description de la méthode et des résultats
+- Une discussion, enrichie de citations provenant de la littérature scientifique
+- Une bibliographie
+
+---
+
+# Consignes
+
+Nous vous demandons de remettre les scripts permettant de générer l'ensemble du document, incluant la création de la base de données, les requêtes, les figures et tableaux, ainsi que le document LaTeX.
+
+À terme, selon les principes de science reproductible, nous devrions pouvoir exécuter l'ensemble de votre analyse sur un autre ordinateur, sans avoir à changer le code.
 
 ---
 
 # Évaluation
 
-- Clareté des questions et adéquation des figures et du tableau
-- Efficacité de la présentation
-- Respect de normes graphiques
-- Originalité
-
----
-
-# Lectures
-
-Sandve et al. 2013. Ten Simple Rules for Reproducible Computational
-Research. PLoS Computational Biology. 9: e1003285
-
-Silberzahn et Uhlman. 2015. Many hands make tight work. Nature 526 : 189-191.
-
-Barba. 2016. The hard road to reproducibility. Science 354: 142.
+- Respect des consignes (tous les éléments sont inclus - 60%)
+- Reproductibilité (30%)
+- Originalité (10%)

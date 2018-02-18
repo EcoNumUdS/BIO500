@@ -413,82 +413,10 @@ Les 3 R.
 C'est comme un livre, ça nous raconte l'histoire d'individu, d'une pop à un instant t à un endroit donné.
 Sommes-nous capables de juger de la valeur de ces données? -->
 
---- .transition
-
-# La saisie des données dans LibreOffice Calc
-
---- &twocol
-
-# LibreOffice Calc
-
-*** =left
-
-<div style='text-align:center;'>
-<img src="assets/img/libre1.png" height="450px"></img>
-</div>
-
-*** =right
-
-`LibreOffice Calc` est la version gratuite et *open-source* de Microsoft Excel. L'ensemble des fonctionnalités présentées dans ce cours se retrouve dans Microsoft Excel.
-
-- Ouvrez LibreOffice Calc, en vous servant de la barre de lancement à votre gauche.
-
----
-
-# Déterminez vos colonnes et le type de données
-
-<div style='text-align:center;'>
-<img src="assets/img/vid2.gif" height="540px" width="80%"></img>
-</div>
-
-<!-- N'oublier pas les différents points aborder précédemment dans le cours. Il faut dés maintenant les mettre en application. -->
-
----
-
-# Consolidez vos données à l'aide de la validation
-
-<div style='text-align:center;'>
-<img src="assets/img/vid3.gif" height="540px" width="80%"></img>
-</div>
-
-
----
-
-# Saisir l'information
-
-
-<div style='text-align:center;'>
-<img src="assets/img/vid4.gif" height="540px" width="80%"></img>
-</div>
-
 
 --- .transition
 
-# Lectures et travail pour la semaine prochaine
-
----
-
-# Lectures et travail pour la semaine prochiane
-
-## Travail
-
-Maintenant que vous en savez plus sur le format des données et sur les règles de saisie, élaborez votre formulaire et commencez la récolte. Vous devez collecter les données pour le début de la séance de la semaine prochaine.
-
----
-
-# Lectures et travail pour la semaine prochaine
-
-## Travail
-
-- Pereira, H.M. 2016. A latitudinal gradient for genetic diversity. Science 353: 1494-1495.
-- Miraldo et al. 2016. An Anthropocene map of genetic diversity. Science 353: 1532-1535.
-
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 19b26bfbbf6ca562aaccbd842d7238ba59328029
+# Les bases de données relationnelles
 
 
 <!-- TRANSTION vers SQL
