@@ -1,5 +1,5 @@
 ---
-title       : "Séance 2: La collecte de données"
+title       : "Séance 2: La gestion des données biologiques"
 subtitle    : "BIO 500 - Méthodes en écologie computationnelle"
 author      : "Steve Vissault & Dominique Gravel"
 job         : "Laboratoire d'écologie intégrative"

@@ -1,7 +1,17 @@
 
 --- .transition
 
-# L'organisation des données
+# Entreposer et archiver ses données écologiques
+
+
+<!-- TRANSTION vers SQL
+
+# La collecte de données
+
+En biologie, la collecte de données se résume à un hypercube.
+
+Comme nous le verrons plus tard cette multidimensionnalité complique notre tâche, car il est difficile de la représenter dans un tableau excel (n-2). -->
+
 
 ---
 
@@ -13,6 +23,27 @@
 
 ---
 
+# Pourquoi bien entreposer ces données?
+
+<div style='text-align:center;'>
+<figure>
+  <img src="assets/img/data_trends.jpg" height="500px"></img>
+</figure>
+</div>
+
+[Vines et al., 2013](https://www.nature.com/news/scientists-losing-data-at-a-rapid-rate-1.14416)
+
+---
+
+# Les entrepôts existants
+
+1. Les fichiers textes comme les CSV, TSV (Format libre et ouvert)
+2. Les tableurs comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
+3. Les fichiers hierarchiques/structurés HDF, NetCDF (Format libre et ouvert)
+4. Les bases de données relationnelles
+
+---
+
 # Le Tesseract de la biologie
 
 <div style='text-align:center;'>
@@ -20,6 +51,7 @@
 </div>
 
 - Il est difficile de stocker les données écologiques dans un tableau excel (n-2) lorsque les données écologiques ont (n-4).
+- Conduit à une redondance dans l'information (par exemple. repeter les coordonnées de l'emplacement du site lorsqu'il est mesuré plusieurs fois).
 
 ---
 
@@ -38,7 +70,7 @@
 
 - **Maintenir l'intégrité entre les enregistrements de nos tableaux**. Une observation ne peut être faite sur un site qui n'existe pas.
 - **Normaliser et contrôler la qualité des données**. Chaque colonne est un type précis de données. Des contraintes peuvent être appliquées sur chaque colonne.
-- **Éviter les redondances dans le stockage de l'information** (obtenir une [forme normale](https://fr.wikipedia.org/wiki/Forme_normale_(bases_de_donn%C3%A9es_relationnelles)), voir la section [Format de donnée du cours 2](https://econumuds.github.io/BIO500/cours2/#14).  
+- **Éviter les redondances dans le stockage de l'information** (obtenir une [forme normale](https://fr.wikipedia.org/wiki/Forme_normale_(bases_de_donn%C3%A9es_relationnelles)), voir la section [Format de donnée du cours 2](https://econumuds.github.io/BIO500/cours2/#14).
 
 ---
 

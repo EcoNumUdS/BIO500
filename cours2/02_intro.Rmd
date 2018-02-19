@@ -16,27 +16,30 @@
 <img src="assets/img/flow_cours2.png" width="90%"></img>
 </div>
 
----
+--- &twocol
 
-# La collecte de données
+# Le constat
 
-## **En biométrie**, il existe plusieurs grandes familles de données:
+*** =left
 
-1. Quantitative (variables continues)
-2. Semi-quantitative (variables discrètes)
-3. Qualitatives (variables de rang)
+Trop souvent en écologie, les données sont représentées et entreposées dans un format proche des analyses que l'on veut réaliser.
 
-Le type de données collectées conditionne les analyses statistiques que l'on pourra réaliser sur les données.
+Par exemple, on utilise une matrice $site \times espèces$ pour analyser la structure des communautées.
 
-<!-- ## Problème - La structure des données est par conséquent déterminée par les analyses que l'on va réaliser. On est une étape plus loin dans notre cheminement (voir schéma précédent) -->
+La question ne devrait jamais conditionner notre facon de stocker l'information sur un système écologique.
+
+*** =right
+
+<div style='text-align:center;'>
+<img src="assets/img/matrix.jpg" width="90%"></img>
+</div>
 
 
 ---
 
 # La collecte de données en biologie
 
-## Alors, qu'en est-il d'une donnée biologique ?
-
+## D'abord, qu'est ce qu'une donnée en écologie?
 
 
 <!-- Présenter qu'est qu'une données biologiques, comme elle est représentée -->
@@ -297,7 +300,7 @@ kable(df,format="markdown")
 
 ```{r echo=FALSE}
 library("knitr")
-way <- c("Code spécifique à l'étude","Code du ministère","Genre et espèce","Nom vernaculaire","Numéro Taxonomique (TSN - ITIS)")
+way <- c("1. Code spécifique à l'étude","2. Code du ministère","3. Genre et espèce","4. Nom vernaculaire","5. Numéro Taxonomique (TSN - ITIS)")
 ex <- c("ACSA","ERS","Acer saccharum","Érable à sucre","28731")
 df <- data.frame(Option=way,Exemple=ex)
 kable(df,format="markdown")
@@ -408,21 +411,7 @@ Si l'on ne choisit pas le type de données approprié, cela aura diverses consé
 
 Pourquoi prendre soins de ces données ?
 
-<!--
-Les 3 R.
-C'est comme un livre, ça nous raconte l'histoire d'individu, d'une pop à un instant t à un endroit donné.
-Sommes-nous capables de juger de la valeur de ces données? -->
+Pour en savoir davantage:
 
-
---- .transition
-
-# Les bases de données relationnelles
-
-
-<!-- TRANSTION vers SQL
-
-# La collecte de données
-
-En biologie, la collecte de données se résume à un hypercube.
-
-Comme nous le verrons plus tard cette multidimensionnalité complique notre tâche, car il est difficile de la représenter dans un tableau excel (n-2). -->
+- [Broman KW, Kara W (2017) Data organization in spreadsheets. The American Statistician.](http://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375989)
+- [Hart EM, Barmby P, LeBauer D, Michonneau F, Mount S, Mulrooney P, et al. (2016) Ten Simple Rules for Digital Data Storage. PLoS Comput Biol](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005097)

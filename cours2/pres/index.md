@@ -1,7 +1,7 @@
 ---
-title       : "Séance 2: La collecte de données"
+title       : "Séance 2: La gestion des données biologiques"
 subtitle    : "BIO 500 - Méthodes en écologie computationnelle"
-author      : "Dominique Gravel"
+author      : "Steve Vissault & Dominique Gravel"
 job         : "Laboratoire d'écologie intégrative"
 logo        : "logo.png"
 framework   : io2012       # {io2012, html5slides, shower, dzslides, ...}
@@ -34,27 +34,30 @@ assets      :
 <img src="assets/img/flow_cours2.png" width="90%"></img>
 </div>
 
----
+--- &twocol
 
-# La collecte de données
+# Le constat
 
-## **En biométrie**, il existe plusieurs grandes familles de données:
+*** =left
 
-1. Quantitative (variables continues)
-2. Semi-quantitative (variables discrètes)
-3. Qualitatives (variables de rang)
+Trop souvent en écologie, les données sont représentées et entreposées dans un format proche des analyses que l'on veut réaliser.
 
-Le type de données collectées conditionne les analyses statistiques que l'on pourra réaliser sur les données.
+Par exemple, on utilise une matrice $site \times espèces$ pour analyser la structure des communautées.
 
-<!-- ## Problème - La structure des données est par conséquent déterminée par les analyses que l'on va réaliser. On est une étape plus loin dans notre cheminement (voir schéma précédent) -->
+La question ne devrait jamais conditionner notre facon de stocker l'information sur un système écologique.
+
+*** =right
+
+<div style='text-align:center;'>
+<img src="assets/img/matrix.jpg" width="90%"></img>
+</div>
 
 
 ---
 
 # La collecte de données en biologie
 
-## Alors, qu'en est-il d'une donnée biologique ?
-
+## D'abord, qu'est ce qu'une donnée en écologie?
 
 
 <!-- Présenter qu'est qu'une données biologiques, comme elle est représentée -->
@@ -330,13 +333,13 @@ Une autre représentation de la date du jour peut-être basé sur le calendrier 
 *** =left
 
 
-|Option                          |Exemple        |
-|:-------------------------------|:--------------|
-|Code spécifique à l'étude       |ACSA           |
-|Code du ministère               |ERS            |
-|Genre et espèce                 |Acer saccharum |
-|Nom vernaculaire                |Érable à sucre |
-|Numéro Taxonomique (TSN - ITIS) |28731          |
+|Option                             |Exemple        |
+|:----------------------------------|:--------------|
+|1. Code spécifique à l'étude       |ACSA           |
+|2. Code du ministère               |ERS            |
+|3. Genre et espèce                 |Acer saccharum |
+|4. Nom vernaculaire                |Érable à sucre |
+|5. Numéro Taxonomique (TSN - ITIS) |28731          |
 
 *** =right
 
@@ -443,15 +446,14 @@ Si l'on ne choisit pas le type de données approprié, cela aura diverses consé
 
 Pourquoi prendre soins de ces données ?
 
-<!--
-Les 3 R.
-C'est comme un livre, ça nous raconte l'histoire d'individu, d'une pop à un instant t à un endroit donné.
-Sommes-nous capables de juger de la valeur de ces données? -->
+Pour en savoir davantage:
 
+- [Broman KW, Kara W (2017) Data organization in spreadsheets. The American Statistician.](http://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375989)
+- [Hart EM, Barmby P, LeBauer D, Michonneau F, Mount S, Mulrooney P, et al. (2016) Ten Simple Rules for Digital Data Storage. PLoS Comput Biol](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005097)
 
 --- .transition
 
-# Les bases de données relationnelles
+# Entreposer et archiver ses données écologiques
 
 
 <!-- TRANSTION vers SQL
@@ -462,9 +464,6 @@ En biologie, la collecte de données se résume à un hypercube.
 
 Comme nous le verrons plus tard cette multidimensionnalité complique notre tâche, car il est difficile de la représenter dans un tableau excel (n-2). -->
 
---- .transition
-
-# L'organisation des données
 
 ---
 
@@ -476,6 +475,27 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 
 ---
 
+# Pourquoi bien entreposer ces données?
+
+<div style='text-align:center;'>
+<figure>
+  <img src="assets/img/data_trends.jpg" height="500px"></img>
+</figure>
+</div>
+
+[Vines et al., 2013](https://www.nature.com/news/scientists-losing-data-at-a-rapid-rate-1.14416)
+
+---
+
+# Les entrepôts existants
+
+1. Les fichiers textes comme les CSV, TSV (Format libre et ouvert)
+2. Les tableurs comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
+3. Les fichiers hierarchiques/structurés HDF, NetCDF (Format libre et ouvert)
+4. Les bases de données relationnelles
+
+---
+
 # Le Tesseract de la biologie
 
 <div style='text-align:center;'>
@@ -483,6 +503,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 </div>
 
 - Il est difficile de stocker les données écologiques dans un tableau excel (n-2) lorsque les données écologiques ont (n-4).
+- Conduit à une redondance dans l'information (par exemple. repeter les coordonnées de l'emplacement du site lorsqu'il est mesuré plusieurs fois).
 
 ---
 
@@ -501,7 +522,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 
 - **Maintenir l'intégrité entre les enregistrements de nos tableaux**. Une observation ne peut être faite sur un site qui n'existe pas.
 - **Normaliser et contrôler la qualité des données**. Chaque colonne est un type précis de données. Des contraintes peuvent être appliquées sur chaque colonne.
-- **Éviter les redondances dans le stockage de l'information** (obtenir une [forme normale](https://fr.wikipedia.org/wiki/Forme_normale_(bases_de_donn%C3%A9es_relationnelles)), voir la section [Format de donnée du cours 2](https://econumuds.github.io/BIO500/cours2/#14).  
+- **Éviter les redondances dans le stockage de l'information** (obtenir une [forme normale](https://fr.wikipedia.org/wiki/Forme_normale_(bases_de_donn%C3%A9es_relationnelles)), voir la section [Format de donnée du cours 2](https://econumuds.github.io/BIO500/cours2/#14).
 
 ---
 
