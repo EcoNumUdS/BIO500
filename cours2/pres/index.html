@@ -1520,7 +1520,7 @@ L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant
 <td align="left">1 à 4 octets</td>
 </tr>
 <tr>
-<td align="left"><code>DOUBLE</code>, <code>FLOAT</code></td>
+<td align="left"><code>DOUBLE</code>, <code>FLOAT</code>, <code>REAL</code></td>
 <td align="left">Nombres réels</td>
 <td align="left">9.98, -4.34</td>
 <td align="left">4 à 8 octets</td>
@@ -1539,7 +1539,7 @@ L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant
 </tr>
 </tbody></table>
 
-<p>Pour tous les types de données, <a href="http://docs.postgresql.fr/9.2/datatype.html">voir la documentation PostgreSQL</a></p>
+<p>Pour tous les types de données, <a href="https://www.sqlite.org/datatype3.html">voir la documentation SQLite3</a></p>
 
 <p><strong>Exercice (15 minutes):</strong> Associer à chaque attribut un type de données.</p>
 
@@ -1668,12 +1668,13 @@ con &lt;- dbConnect(SQLite(), dbname=&quot;./assets/data/films.db&quot;)
      <p>Voici un exemple d&#39;instruction SQL pour créer la table <code>films</code>.</p>
 
 <pre><code class="sql">CREATE TABLE films (
-    code        char(5),
-    titre       varchar(40),
-    date_prod   date,
-    genre       varchar(10),
-    duree       interval hour to minute,
-    PRIMARY KEY (code,titre)
+    code        VARCHAR(5),
+    titre       VARCHAR(40),
+    did         INTEGER,
+    date_prod   DATE,
+    genre       VARCHAR(10),
+    duree       INTEGER,
+    PRIMARY KEY(code,titre)
 );
 </code></pre>
 
@@ -1681,7 +1682,7 @@ con &lt;- dbConnect(SQLite(), dbname=&quot;./assets/data/films.db&quot;)
     <div class='right' style='float:right;width:48%'>
      <ul>
 <li><code>films</code> est le nom de la table</li>
-<li>Chaque attribut de la table (<code>code</code>,<code>titre</code> etc) dispose d&#39;un type de données (<code>char(5)</code>, <code>varchar(40)</code> etc)</li>
+<li>Chaque attribut de la table (<code>code</code>,<code>titre</code> etc) dispose d&#39;un type de données (<code>char(5)</code>, <code>varchar(40)</code> etc) <a href="https://www.sqlite.org/datatype3.html">Type de données SQLite</a></li>
 <li>La dernière ligne correspond aux contraintes de la table telle que la clé primaire.</li>
 <li><strong>Question:</strong> Cette clé primaire est composite ou simple?</li>
 </ul>
@@ -1699,11 +1700,11 @@ con &lt;- dbConnect(SQLite(), dbname=&quot;./assets/data/films.db&quot;)
      <p>Si l&#39;on veut créer une table <code>acteurs</code> et référencer cette table à la table <code>films</code>.</p>
 
 <pre><code class="sql">CREATE TABLE acteurs (
-    nom         varchar(40),
-    prenom      varchar(40),
-    naissance   date,
-    code        char(5),
-    titre       varchar(40),
+    nom         VARCHAR(40),
+    prenom      VARCHAR(40),
+    naissance   DATE,
+    code        CHAR(5),
+    titre       VARCHAR(40),
     PRIMARY KEY (nom,prenom),
     FOREIGN KEY (code, titre) REFERENCES
         films (code, titre) ON DELETE CASCADE
@@ -1730,11 +1731,11 @@ con &lt;- dbConnect(SQLite(), dbname=&quot;./assets/data/films.db&quot;)
      <p>Si l&#39;on veut créer une table <code>acteurs</code> et référencer cette table à la table <code>films</code>.</p>
 
 <pre><code class="sql">CREATE TABLE acteurs (
-    nom         varchar(40),
-    prenom      varchar(40),
-    naissance   date,
-    code        char(5),
-    titre       varchar(40),
+    nom         VARCHAR(40),
+    prenom      VARCHAR(40),
+    naissance   DATE,
+    code        CHAR(5),
+    titre       VARCHAR(40),
     PRIMARY KEY (nom,prenom),
     FOREIGN KEY (code, titre) REFERENCES
         films (code, titre) ON DELETE CASCADE
@@ -1756,23 +1757,20 @@ con &lt;- dbConnect(SQLite(), dbname=&quot;./assets/data/films.db&quot;)
 <slide class="" id="slide-69" style="background:;">
   <!--  <a href="#slide-69"></a> -->
   <hgroup>
-    <h1>Création d&#39;une table avec R</h1>
+    <h1>Ajout de contraintes à une table</h1>
   </hgroup>
   <article data-timings="">
-    <h2>On se sert de R pour envoyer l&#39;instruction SQL de création de la table:</h2>
+    <p>SQL présente également l&#39;avantage de pouvoir mettre des contraintes sur les champs:</p>
 
-<pre><code class="r">films_sql &lt;- &quot;
-CREATE TABLE films (
-    code        char(5),
-    titre       varchar(40),
-    did         integer,
-    date_prod   date,
-    genre       varchar(10),
-    duree       interval hour to minute,
+<pre><code class="sql">CREATE TABLE films (
+    code        VARCHAR(5) NOT NULL,
+    titre       VARCHAR(40) NOT NULL,
+    did         INTEGER,
+    date_prod   DATE,
+    genre       VARCHAR(10) DEFAULT &quot;COMEDIE&quot;,
+    duree       INTEGER CHECK( duree &gt; 0 ),
     PRIMARY KEY(code,titre)
-);&quot;
-
-dbSendQuery(con,films_sql)
+);
 </code></pre>
 
   </article>
@@ -1780,6 +1778,32 @@ dbSendQuery(con,films_sql)
 </slide>
 <slide class="" id="slide-70" style="background:;">
   <!--  <a href="#slide-70"></a> -->
+  <hgroup>
+    <h1>Création d&#39;une table avec R</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>On se sert de R pour envoyer l&#39;instruction SQL de création de la table:</h2>
+
+<pre><code class="r">films_sql &lt;- &quot;
+CREATE TABLE films (
+    code        VARCHAR(5),
+    titre       VARCHAR(40),
+    did         INTEGER,
+    date_prod   DATE,
+    genre       VARCHAR(10),
+    duree       INTEGER,
+    PRIMARY KEY(code,titre)
+);&quot;
+
+dbSendQuery(con,films_sql)
+dbListTables(con)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-71" style="background:;">
+  <!--  <a href="#slide-71"></a> -->
   <hgroup>
     <h1>Création d&#39;une table</h1>
   </hgroup>
@@ -1790,18 +1814,52 @@ dbSendQuery(con,films_sql)
 
 <ul>
 <li><a href="https://www.sqlite.org/lang.html">Documentation SQL pour SQLite3</a></li>
+<li><a href="https://www.sqlite.org/datatype3.html">Type de données SQLite</a></li>
 </ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-71" style="background:;">
-  <!--  <a href="#slide-71"></a> -->
+<slide class="" id="slide-72" style="background:;">
+  <!--  <a href="#slide-72"></a> -->
+  <hgroup>
+    <h1>Modifier la table existante</h1>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="sql">ALTER TABLE database_name.table_name RENAME TO new_table_name;
+ALTER TABLE database_name.table_name ADD COLUMN column_def...;
+</code></pre>
+
+<p>Il peut être parfois préférable supprimer la table et de la reconstruire plutôt que de la modifier à la volée.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-73" style="background:;">
+  <!--  <a href="#slide-73"></a> -->
+  <hgroup>
+    <h1>Supprimer la table de données et se déconnecter du fichier de base de données</h1>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">dbSendQuery(con,&quot;DROP TABLE films;&quot;)
+dbDisconnect(con)
+</code></pre>
+
+<ul>
+<li><code>DROP TABLE</code> supprime l&#39;ensemble de la table et ses données.</li>
+<li><code>dbDisconnect(con)</code> permet de fermer la connection avec le fichier de base de données (permet à un autre utilisateur de se connecter).</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-74" style="background:;">
+  <!--  <a href="#slide-74"></a> -->
   <hgroup>
     <h1>Supprimer la base de données</h1>
   </hgroup>
   <article data-timings="">
-    <pre><code class="r">dbSendQuery(con,&quot;DROP DATABASE bd_films;&quot;)
+    <pre><code class="r">dbSendQuery(con,&quot;DROP DATABASE films;&quot;)
 dbDisconnect(con)
 </code></pre>
 
@@ -1813,8 +1871,8 @@ dbDisconnect(con)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-72" style="background:;">
-  <!--  <a href="#slide-72"></a> -->
+<slide class="" id="slide-75" style="background:;">
+  <!--  <a href="#slide-75"></a> -->
   <hgroup>
     <h1>Lectures et travail pour la semaine prochiane</h1>
   </hgroup>
@@ -1826,8 +1884,8 @@ dbDisconnect(con)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-73" style="background:;">
-  <!--  <a href="#slide-73"></a> -->
+<slide class="" id="slide-76" style="background:;">
+  <!--  <a href="#slide-76"></a> -->
   <hgroup>
     <h1>Lectures et travail pour la semaine prochaine</h1>
   </hgroup>
@@ -2256,32 +2314,50 @@ dbDisconnect(con)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=69 title='Création d&#39;une table avec R'>
+        data-slide=69 title='Ajout de contraintes à une table'>
          69
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=70 title='Création d&#39;une table'>
+        data-slide=70 title='Création d&#39;une table avec R'>
          70
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=71 title='Supprimer la base de données'>
+        data-slide=71 title='Création d&#39;une table'>
          71
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=72 title='Lectures et travail pour la semaine prochiane'>
+        data-slide=72 title='Modifier la table existante'>
          72
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=73 title='Lectures et travail pour la semaine prochaine'>
+        data-slide=73 title='Supprimer la table de données et se déconnecter du fichier de base de données'>
          73
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=74 title='Supprimer la base de données'>
+         74
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=75 title='Lectures et travail pour la semaine prochiane'>
+         75
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=76 title='Lectures et travail pour la semaine prochaine'>
+         76
       </a>
     </li>
   </ul>

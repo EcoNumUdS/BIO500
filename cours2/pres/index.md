@@ -800,11 +800,11 @@ Chaque attribut d'une table doit correspondre à un type de données:
 |:--------------------------|:---------------------|:------------|:-----------------|
 | `BOLEAN`                  | Boléen               | vrai/faux   | 1 octet          |
 | `INTEGER`                 | Entiers              | -998, 123   | 1 à 4 octets     |
-| `DOUBLE`, `FLOAT`         | Nombres réels        | 9.98, -4.34 | 4 à 8 octets     |
+| `DOUBLE`, `FLOAT`, `REAL` | Nombres réels        | 9.98, -4.34 | 4 à 8 octets     |
 | `CHAR`,`VARCHAR`          | Chaine de caractères | lapin       | n x 1 à 8 octets |
 | `TIMESTAMP`,`DATE`,`TIME` | Dates et heures      | 1998-02-16  | 4 à 8 octets     |
 
-Pour tous les types de données, [voir la documentation PostgreSQL](http://docs.postgresql.fr/9.2/datatype.html)
+Pour tous les types de données, [voir la documentation SQLite3](https://www.sqlite.org/datatype3.html)
 
 **Exercice (15 minutes):** Associer à chaque attribut un type de données.
 
@@ -903,19 +903,20 @@ Voici un exemple d'instruction SQL pour créer la table `films`.
 
 ```sql
 CREATE TABLE films (
-    code        char(5),
-    titre       varchar(40),
-    date_prod   date,
-    genre       varchar(10),
-    duree       interval hour to minute,
-    PRIMARY KEY (code,titre)
+    code        VARCHAR(5),
+    titre       VARCHAR(40),
+    did         INTEGER,
+    date_prod   DATE,
+    genre       VARCHAR(10),
+    duree       INTEGER,
+    PRIMARY KEY(code,titre)
 );
 ```
 
 *** =right
 
 - `films` est le nom de la table
-- Chaque attribut de la table (`code`,`titre` etc) dispose d'un type de données (`char(5)`, `varchar(40)` etc)
+- Chaque attribut de la table (`code`,`titre` etc) dispose d'un type de données (`char(5)`, `varchar(40)` etc) [Type de données SQLite](https://www.sqlite.org/datatype3.html)
 - La dernière ligne correspond aux contraintes de la table telle que la clé primaire.
 - **Question:** Cette clé primaire est composite ou simple?
 
@@ -929,11 +930,11 @@ Si l'on veut créer une table `acteurs` et référencer cette table à la table 
 
 ```sql
 CREATE TABLE acteurs (
-    nom         varchar(40),
-    prenom      varchar(40),
-    naissance   date,
-    code        char(5),
-    titre       varchar(40),
+    nom         VARCHAR(40),
+    prenom      VARCHAR(40),
+    naissance   DATE,
+    code        CHAR(5),
+    titre       VARCHAR(40),
     PRIMARY KEY (nom,prenom),
     FOREIGN KEY (code, titre) REFERENCES
         films (code, titre) ON DELETE CASCADE
@@ -955,11 +956,11 @@ Si l'on veut créer une table `acteurs` et référencer cette table à la table 
 
 ```sql
 CREATE TABLE acteurs (
-    nom         varchar(40),
-    prenom      varchar(40),
-    naissance   date,
-    code        char(5),
-    titre       varchar(40),
+    nom         VARCHAR(40),
+    prenom      VARCHAR(40),
+    naissance   DATE,
+    code        CHAR(5),
+    titre       VARCHAR(40),
     PRIMARY KEY (nom,prenom),
     FOREIGN KEY (code, titre) REFERENCES
         films (code, titre) ON DELETE CASCADE
@@ -976,6 +977,25 @@ CREATE TABLE acteurs (
 
 ---
 
+# Ajout de contraintes à une table
+
+SQL présente également l'avantage de pouvoir mettre des contraintes sur les champs:
+
+```sql
+CREATE TABLE films (
+    code        VARCHAR(5) NOT NULL,
+    titre       VARCHAR(40) NOT NULL,
+    did         INTEGER,
+    date_prod   DATE,
+    genre       VARCHAR(10) DEFAULT "COMEDIE",
+    duree       INTEGER CHECK( duree > 0 ),
+    PRIMARY KEY(code,titre)
+);
+```
+
+
+---
+
 # Création d'une table avec R
 
 ## On se sert de R pour envoyer l'instruction SQL de création de la table:
@@ -984,16 +1004,17 @@ CREATE TABLE acteurs (
 ```r
 films_sql <- "
 CREATE TABLE films (
-    code        char(5),
-    titre       varchar(40),
-    did         integer,
-    date_prod   date,
-    genre       varchar(10),
-    duree       interval hour to minute,
+    code        VARCHAR(5),
+    titre       VARCHAR(40),
+    did         INTEGER,
+    date_prod   DATE,
+    genre       VARCHAR(10),
+    duree       INTEGER,
     PRIMARY KEY(code,titre)
 );"
 
 dbSendQuery(con,films_sql)
+dbListTables(con)
 ```
 
 ---
@@ -1005,6 +1026,32 @@ dbSendQuery(con,films_sql)
 En vous inspirant des [exemples](http://www.sqlitetutorial.net/sqlite-create-table/) et de la syntaxe SQL expliquée précédemment, écrivez le script contenant les instructions SQL permettant la création de table la `personnes`.
 
 - [Documentation SQL pour SQLite3](https://www.sqlite.org/lang.html)
+- [Type de données SQLite](https://www.sqlite.org/datatype3.html)
+
+
+---
+
+# Modifier la table existante
+
+```sql
+ALTER TABLE database_name.table_name RENAME TO new_table_name;
+ALTER TABLE database_name.table_name ADD COLUMN column_def...;
+```
+
+Il peut être parfois préférable supprimer la table et de la reconstruire plutôt que de la modifier à la volée.
+
+---
+
+# Supprimer la table de données et se déconnecter du fichier de base de données
+
+
+```r
+dbSendQuery(con,"DROP TABLE films;")
+dbDisconnect(con)
+```
+
+- `DROP TABLE` supprime l'ensemble de la table et ses données.
+- `dbDisconnect(con)` permet de fermer la connection avec le fichier de base de données (permet à un autre utilisateur de se connecter).
 
 ---
 
@@ -1012,9 +1059,10 @@ En vous inspirant des [exemples](http://www.sqlitetutorial.net/sqlite-create-tab
 
 
 ```r
-dbSendQuery(con,"DROP DATABASE bd_films;")
+dbSendQuery(con,"DROP DATABASE films;")
 dbDisconnect(con)
 ```
+
 - `DROP DATABASE` fonctionne seulement avec d'autres SGBDs (approche serveur).
 - Dans le cas de SQLite3, on supprime simplement le fichier `*.db`.
 

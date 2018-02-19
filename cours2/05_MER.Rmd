@@ -145,11 +145,11 @@ Chaque attribut d'une table doit correspondre à un type de données:
 |:--------------------------|:---------------------|:------------|:-----------------|
 | `BOLEAN`                  | Boléen               | vrai/faux   | 1 octet          |
 | `INTEGER`                 | Entiers              | -998, 123   | 1 à 4 octets     |
-| `DOUBLE`, `FLOAT`         | Nombres réels        | 9.98, -4.34 | 4 à 8 octets     |
+| `DOUBLE`, `FLOAT`, `REAL` | Nombres réels        | 9.98, -4.34 | 4 à 8 octets     |
 | `CHAR`,`VARCHAR`          | Chaine de caractères | lapin       | n x 1 à 8 octets |
 | `TIMESTAMP`,`DATE`,`TIME` | Dates et heures      | 1998-02-16  | 4 à 8 octets     |
 
-Pour tous les types de données, [voir la documentation PostgreSQL](http://docs.postgresql.fr/9.2/datatype.html)
+Pour tous les types de données, [voir la documentation SQLite3](https://www.sqlite.org/datatype3.html)
 
 **Exercice (15 minutes):** Associer à chaque attribut un type de données.
 
