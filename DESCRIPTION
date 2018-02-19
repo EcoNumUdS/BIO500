@@ -1,4 +1,4 @@
 Title: Diapo cours BIO109 (UdS)
 Version: 0.0.1
-Imports: slidify, slidifyLibraries, DiagrammeR
+Imports: slidify, slidifyLibraries, DiagrammeR, RSQLite
 Remotes: ramnathv/slidify, ramnathv/slidifyLibraries, rich-iannone/DiagrammeR
