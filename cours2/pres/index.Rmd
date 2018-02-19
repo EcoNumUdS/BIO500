@@ -818,11 +818,11 @@ L'étape suivante est de transcrire ce modèle conceptuel des données en modèl
 
 ---&twocolw w1:30% w2:70%
 
-# 0. Créer un fichier de base de données
+# Créer un fichier de base de données
 
 *** =left
 
-À l'aide de votre gestionnaire de fichier, créer un nouveau fichier qui s'intitulera `films.bd`
+À l'aide de votre gestionnaire de fichiers, créer un nouveau fichier qui s'intitulera `films.bd`
 
 *** =right
 
@@ -833,7 +833,7 @@ L'étape suivante est de transcrire ce modèle conceptuel des données en modèl
 
 ---&twocolw w1:40% w2:60%
 
-# Se connecter à la BD (SQLite3) via R
+# Se connecter au fichier la BD (SQLite3) via R
 
 *** =right
 
@@ -1005,7 +1005,7 @@ dbListTables(con)
 
 ## Exercice pour le travail de session (20 minutes):
 
-En vous inspirant des [exemples](http://www.sqlitetutorial.net/sqlite-create-table/) et de la syntaxe SQL expliquée précédemment, écrivez le script contenant les instructions SQL permettant la création de table la `personnes`.
+En vous inspirant des [exemples](http://www.sqlitetutorial.net/sqlite-create-table/) et de la syntaxe SQL expliquée précédemment, écrivez le script contenant les instructions SQL permettant la création de table `personnes`.
 
 - [Documentation SQL pour SQLite3](https://www.sqlite.org/lang.html)
 - [Type de données SQLite](https://www.sqlite.org/datatype3.html)
@@ -1053,6 +1053,7 @@ dbDisconnect(con)
 ## Travail
 
 Maintenant que vous en savez plus sur le format des données, vous devez écrire le script R pour créer votre base de données en spécifiant les tables, les champs et les clés liant les tables entre elles.
+
 
 ---
 
