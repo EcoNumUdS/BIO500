@@ -97,7 +97,7 @@ Au sein de ce cours, nous nous attarderons à la façon de structurer ses donné
 
 *** =right
 
-## Format long
+## <img src="assets/img/green.svg" width="10%"></img> Format long
 
 ```{r echo=FALSE}
 library("knitr")
@@ -114,7 +114,7 @@ kable(df,format="markdown")
 
 *** =left
 
-## Format large
+## <img src="assets/img/red.svg" width="10%"></img> Format large
 
 ```{r echo=FALSE}
 library(reshape2)
@@ -130,7 +130,7 @@ kable(df2,format="markdown")
 
 #  Le format des données: tableaux
 
-## Garder l'approche un tableau doit contenir un type d'information:
+## <img src="assets/img/green.svg" width="40px"></img> Un tableau doit contenir un type d'information
 
 *** =left
 
@@ -155,7 +155,7 @@ kable(melt(clim,id=c("ID_plot",'annees'),value.name="valeur"),format="markdown")
 
 #  Le format des données: colonnes
 
-## Ne pas agréger l'information dans une seule colonne
+## <img src="assets/img/green.svg" width="40px"></img> Ne pas agréger l'information dans une seule colonne
 
 *** =left
 
@@ -184,7 +184,7 @@ kable(df,format="markdown")
 
 #  Le format des données: colonnes
 
-## <span style="color:rgb(194, 0, 0);"> Important:</span> votre fichier de données brutes (destiné au stockage à long terme) ne doit pas contenir de champ calculé (c.a.d. une nouvelle colonne avec une moyenne, etc..)
+<span style="color:rgb(194, 0, 0);"> Important:</span> votre fichier de données brutes (destiné au stockage à long terme) ne doit pas contenir de champ calculé (c.a.d. une nouvelle colonne avec une moyenne, etc..)
 
 
 --- .transition
@@ -193,7 +193,7 @@ kable(df,format="markdown")
 
 ---
 
-# Les données biotiques et abiotiques
+#  Les types de données en informatique
 
 ## **En informatique**, on distingue plusieurs types de données:
 
@@ -206,9 +206,12 @@ kable(df,format="markdown")
 | `TIMESTAMP`,`DATE`,`TIME` | Dates et heures      | 1998-02-16  | 4 à 8 octets     |
 
 
-
 - Ce sont ces types qui seront utilisés pour entreposer nos données biotiques et abiotiques.
 - Le choix d'un type approprié permet de réduire la taille du fichier de données.
+
+--- .transition
+
+#  Les données temporelles
 
 ---
 
@@ -244,6 +247,10 @@ Une autre représentation de la date du jour peut-être basé sur le calendrier 
 
 - **Inconvénient:** Le jour julien doit toujours être accompagné de l'année (YYYY).
 - **Avantage:** simplifie les analyses temporelles intra-annuelles.
+
+--- .transition
+
+# Les données taxonomiques
 
 --- &twocol
 
@@ -283,11 +290,11 @@ kable(df,format="markdown")
 
 *** =right
 
->- **Option 1 et 2:** Doit être associé à des métadonnées. Risque de perte du fichier attaché.
+>- <img src="assets/img/red.svg" width="20px"></img> **Option 1 et 2:** Doit être associé à des métadonnées. Risque de perte du fichier attaché.
 
->- **Option 3:** Le genre et l'espèce peuvent changer à travers le temps.
+>- <img src="assets/img/red.svg" width="20px"></img> **Option 3:** Le genre et l'espèce peuvent changer à travers le temps.
 
->- **Option 4:** Le nom vernaculaire des espèces est le pire choix. Le nom vernaculaire est propre à un pays, à une région géographique, à une culture/dialecte.
+>- <img src="assets/img/red.svg" width="20px"></img> **Option 4:** Le nom vernaculaire des espèces est le pire choix. Le nom vernaculaire est propre à un pays, à une région géographique, à une culture/dialecte.
 
 
 --- &twocol
@@ -309,7 +316,7 @@ kable(df,format="markdown")
 *** =right
 
 
->- **Option 5:** Cette option couplée à l'option 3, est le meilleur choix.
+>- <img src="assets/img/green.svg" width="20px"></img> **Option 5:** Cette option couplée à l'option 3, est le meilleur choix.
 
 
 ---
@@ -326,6 +333,10 @@ kable(df,format="markdown")
 
 **Exemple:** [https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null)
 
+
+--- .transition
+
+# Les données spatiales
 
 ---
 
@@ -364,6 +375,10 @@ Ces deux identifiants sont généralement identiques et peuvent être trouvés �
 
 **Exemple:** [http://spatialreference.org/ref/epsg/2138/](http://spatialreference.org/ref/epsg/2138/)
 
+
+--- .transition
+
+# L'absence de données
 
 ---
 
@@ -411,7 +426,7 @@ Si l'on ne choisit pas le type de données approprié, cela aura diverses consé
 
 Pourquoi prendre soins de ces données ?
 
-Pour en savoir davantage:
+## Pour en savoir davantage:
 
 - [Broman KW, Kara W (2017) Data organization in spreadsheets. The American Statistician.](http://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375989)
 - [Hart EM, Barmby P, LeBauer D, Michonneau F, Mount S, Mulrooney P, et al. (2016) Ten Simple Rules for Digital Data Storage. PLoS Comput Biol](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005097)

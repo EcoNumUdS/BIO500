@@ -5,36 +5,45 @@
 
 ---
 
-# Les grandes étapes
+# Les grandes étapes avec SQLite3
 
-1. Spécifier la connexion avec le serveur
-2. Créer la base de données
-3. Créer les tables et spécifier les clés
-4. Ajouter de l'information dans les tables
-5. Faire des requêtes pour extraire l'information
+0. Créer un fichier de base de données
+1. Se connecter avec le fichier de base de données
+2. Créer les tables et spécifier les clés
+3. Ajouter de l'information dans les tables
+4. Faire des requêtes pour extraire l'information
 
----
 
-# Se connecter au SGBD (PostgreSQL)
+---&twocolw w1:30% w2:70%
 
-## Pour que le client communique avec la SGBD, les informations de connection au serveur sont indispensables:
+# 0. Créer un fichier de base de données
 
-1. `host`: L'adresse du serveur. `localhost` si la base de données est sur votre ordinateur.
-2. `port`: La base de données écoute sur un port spécifique du serveur.
-3. `user`: le nom d'utilisateur
-4. `password`: le mot de passe de l'utilisateur.
-5. `dbname`: le nom de la base de données
+*** =left
 
----&twocolw w1:50% w2:50%
-
-# Se connecter au SGBD (PostgreSQL) via R
+À l'aide de votre gestionnaire de fichier, créer un nouveau fichier qui s'intitulera `films.bd`
 
 *** =right
 
+<div style='text-align:center;'>
+  <img src="assets/img/gf.png" width="90%"></img>
+</div>
+
+
+---&twocolw w1:40% w2:60%
+
+# Se connecter à la BD (SQLite3) via R
+
+*** =right
+
+```{r, warnings=FALSE, message=FALSE, echo=FALSE}
+system("rm -f ./assets/data/films.db")
+```
+
 ```{r, warnings=FALSE, message=FALSE}
-library(RPostgreSQL)
-con <- dbConnect(PostgreSQL(), host="localhost",
-        port=5433, user= "postgres", password=NA)
+library(RSQLite)
+con <- dbConnect(SQLite(), dbname="./assets/data/films.db")
+## !ATTENTION!: Ceci est mon chemin d'accès vers le fichier!
+## Astuces: getwd() et setwd()
 ```
 
 ```{r, eval=FALSE}
@@ -43,53 +52,30 @@ dbSendQuery(con,"Instructions SQL à envoyer")
 
 *** =left
 
-- `con` est un objet contenant la connexion avec le serveur.
+- `con` est un objet contenant la connexion avec le serveur/fichier de base de données.
 - On utilisera la fonction `dbSendQuery()` pour envoyer les instructions SQL.
 - Le deuxième argument de la fonction `dbSendQuery()` est une chaine de caractères contenant les instructions SQL.
 
----&twocolw w1:45% w2:50%
-
-# Se connecter au SGBD (PostgreSQL) via pgAdmin3
-
-*** =right
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/pgadmin.png" width="90%"></img>
-</div>
-
-*** =left
-
-- On préfère parfois un interface graphique pour interagir avec la SGBD.
 
 ---&twocolw w1:50% w2:50%
 
 # Création de la base de données via R
 
-```{r, error=FALSE}
-dbSendQuery(con,"CREATE DATABASE bd_films;")
+```{r, error=FALSE, eval=FALSE}
+dbSendQuery(con,"CREATE DATABASE films;")
 ```
-
-La SGBD nous répond... mais elle n'a pas grand chose à ajouter.
 
 ## Important:
 
-1. En SQL, chaque instruction se termine par un point-virgule.
-2. Les instructions sont écrites en majuscules et les variables en minuscules.
-3. Toutes les instructions SQL sont énumérées et expliquées en Français à cette adresse: [http://docs.postgresql.fr/9.5/sql-commands.html](http://docs.postgresql.fr/9.5/sql-commands.html)
+1. `CREATE DATABASE` serait importante seulement avec d'autres SGBDs (approche serveur). Dans le cas de SQLite3, un fichier = une base de données.
+2. En SQL, chaque instruction se termine par un point-virgule.
+3. Les instructions sont écrites en majuscules et les variables en minuscules.
+4. Toutes les instructions SQL sont énumérées et expliquées en Français à cette adresse: [http://docs.postgresql.fr/9.5/sql-commands.html](http://docs.postgresql.fr/9.5/sql-commands.html)
 
----
-
-# Création de la base de données via R
-
-Puis, on se connecte à cette nouvelle base de données grâce à la fonction `dbConnect()`:
-
-```{r}
-dbConnect(con,dbname="bd_films")
-```
 
 ---&twocol
 
-# Création d'une table avec clé primaire
+# Création d'une première table avec clé primaire
 
 *** =left
 
@@ -196,17 +182,21 @@ dbSendQuery(con,films_sql)
 
 ## Exercice pour le travail de session (20 minutes):
 
-En vous inspirant des [exemples](http://docs.postgresqlfr.org/9.5/sql-createtable.html) et de la syntaxe SQL expliquée précédemment, écrivez le script contenant les instructions SQL permettant la création de table la `personnes`.
+En vous inspirant des [exemples](http://www.sqlitetutorial.net/sqlite-create-table/) et de la syntaxe SQL expliquée précédemment, écrivez le script contenant les instructions SQL permettant la création de table la `personnes`.
 
+- [Documentation SQL pour SQLite3](https://www.sqlite.org/lang.html)
 
 ---
 
 # Supprimer la base de données
 
-```{r}
+```{r, eval=FALSE}
 dbSendQuery(con,"DROP DATABASE bd_films;")
 dbDisconnect(con)
 ```
+
+- `DROP DATABASE` fonctionne seulement avec d'autres SGBDs (approche serveur).
+- Dans le cas de SQLite3, on supprime simplement le fichier `*.db`.
 
 ---
 

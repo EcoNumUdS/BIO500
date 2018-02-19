@@ -3,20 +3,6 @@
 
 # Les Systèmes de Gestion de Base de Données (SGBDs)
 
---- &twocol
-
-# Les SGBDs
-
-*** =left
-
-<div style='text-align:center;'>
-  <img src="assets/img/flow_db.png" height="450px"></img>
-</div>
-
-*** =right
-
-- Les base de données sont présentes sur un serveur.
-- Pour créer, interroger, gérer et maintenir des bases de données, on utilisera un **[Système de Gestion de Base de Données](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es) (souvent appelé SGBD)** installé sur le serveur.
 
 --- &twocol
 
@@ -32,8 +18,9 @@
 
 *** =right
 
+>- Pour créer, interroger, gérer et maintenir des bases de données, on utilisera un **[Système de Gestion de Base de Données](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es) (souvent appelé SGBD)**.
 >- Mais ces systèmes disposent tous d'un dénominateur commun: le `langage SQL`
->- Dans ce cours, nous utiliserons le système de gestion de données `PostgreSQL`.
+>- Dans ce cours, nous utiliserons le système de gestion de données `SQLite3` (**Approche fichier de base de données**).
 
 ---
 
@@ -70,7 +57,7 @@ Chacune de ces commandes est une instruction `SQL` envoyée au serveur pour mani
 3. Supprimer ou modifier des tables (`DROP TABLE`, `ALTER TABLE`).
 4. Supprimer la base de données (`DROP DATABASE`).
 
-Soyez attentifs, car le travail de cette semaine consiste à écrire un script qui permet la création de la base de données (les tables et leurs relations) pour entreposer les données que vous avez collectées lors de la séance 2.
+Soyez attentifs, car le travail de cette semaine consiste à écrire un script qui permet la création de la base de données (les tables et leurs relations) pour entreposer les données que vous aurez collectées pour le travail de session.
 
 --- .transition
 

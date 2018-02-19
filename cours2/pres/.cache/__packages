@@ -3,5 +3,4 @@ devtools
 slidify
 knitr
 reshape2
-DBI
-RPostgreSQL
+RSQLite

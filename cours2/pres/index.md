@@ -13,8 +13,6 @@ widgets     : [mathjax]
 url:
   lib   : ./libraries
 license     : by-nc-sa
-assets      :
-  css: "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
 ---
 # Séance 2
 
@@ -115,7 +113,7 @@ Au sein de ce cours, nous nous attarderons à la façon de structurer ses donné
 
 *** =right
 
-## Format long
+## <img src="assets/img/green.svg" width="10%"></img> Format long
 
 
 |ID    |esp  | annees| dhp_mm|
@@ -131,7 +129,7 @@ Au sein de ce cours, nous nous attarderons à la façon de structurer ses donné
 
 *** =left
 
-## Format large
+## <img src="assets/img/red.svg" width="10%"></img> Format large
 
 
 |ID    |esp  | 2010| 2011| 2014|
@@ -149,7 +147,7 @@ Au sein de ce cours, nous nous attarderons à la façon de structurer ses donné
 
 #  Le format des données: tableaux
 
-## Garder l'approche un tableau doit contenir un type d'information:
+## <img src="assets/img/green.svg" width="40px"></img> Un tableau doit contenir un type d'information
 
 *** =left
 
@@ -180,7 +178,7 @@ Au sein de ce cours, nous nous attarderons à la façon de structurer ses donné
 
 #  Le format des données: colonnes
 
-## Ne pas agréger l'information dans une seule colonne
+## <img src="assets/img/green.svg" width="40px"></img> Ne pas agréger l'information dans une seule colonne
 
 *** =left
 
@@ -211,7 +209,7 @@ Au sein de ce cours, nous nous attarderons à la façon de structurer ses donné
 
 #  Le format des données: colonnes
 
-## <span style="color:rgb(194, 0, 0);"> Important:</span> votre fichier de données brutes (destiné au stockage à long terme) ne doit pas contenir de champ calculé (c.a.d. une nouvelle colonne avec une moyenne, etc..)
+<span style="color:rgb(194, 0, 0);"> Important:</span> votre fichier de données brutes (destiné au stockage à long terme) ne doit pas contenir de champ calculé (c.a.d. une nouvelle colonne avec une moyenne, etc..)
 
 
 --- .transition
@@ -220,7 +218,7 @@ Au sein de ce cours, nous nous attarderons à la façon de structurer ses donné
 
 ---
 
-# Les données biotiques et abiotiques
+#  Les types de données en informatique
 
 ## **En informatique**, on distingue plusieurs types de données:
 
@@ -233,9 +231,12 @@ Au sein de ce cours, nous nous attarderons à la façon de structurer ses donné
 | `TIMESTAMP`,`DATE`,`TIME` | Dates et heures      | 1998-02-16  | 4 à 8 octets     |
 
 
-
 - Ce sont ces types qui seront utilisés pour entreposer nos données biotiques et abiotiques.
 - Le choix d'un type approprié permet de réduire la taille du fichier de données.
+
+--- .transition
+
+#  Les données temporelles
 
 ---
 
@@ -271,6 +272,10 @@ Une autre représentation de la date du jour peut-être basé sur le calendrier 
 
 - **Inconvénient:** Le jour julien doit toujours être accompagné de l'année (YYYY).
 - **Avantage:** simplifie les analyses temporelles intra-annuelles.
+
+--- .transition
+
+# Les données taxonomiques
 
 --- &twocol
 
@@ -317,11 +322,11 @@ Une autre représentation de la date du jour peut-être basé sur le calendrier 
 
 *** =right
 
->- **Option 1 et 2:** Doit être associé à des métadonnées. Risque de perte du fichier attaché.
+>- <img src="assets/img/red.svg" width="20px"></img> **Option 1 et 2:** Doit être associé à des métadonnées. Risque de perte du fichier attaché.
 
->- **Option 3:** Le genre et l'espèce peuvent changer à travers le temps.
+>- <img src="assets/img/red.svg" width="20px"></img> **Option 3:** Le genre et l'espèce peuvent changer à travers le temps.
 
->- **Option 4:** Le nom vernaculaire des espèces est le pire choix. Le nom vernaculaire est propre à un pays, à une région géographique, à une culture/dialecte.
+>- <img src="assets/img/red.svg" width="20px"></img> **Option 4:** Le nom vernaculaire des espèces est le pire choix. Le nom vernaculaire est propre à un pays, à une région géographique, à une culture/dialecte.
 
 
 --- &twocol
@@ -344,7 +349,7 @@ Une autre représentation de la date du jour peut-être basé sur le calendrier 
 *** =right
 
 
->- **Option 5:** Cette option couplée à l'option 3, est le meilleur choix.
+>- <img src="assets/img/green.svg" width="20px"></img> **Option 5:** Cette option couplée à l'option 3, est le meilleur choix.
 
 
 ---
@@ -361,6 +366,10 @@ Une autre représentation de la date du jour peut-être basé sur le calendrier 
 
 **Exemple:** [https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null)
 
+
+--- .transition
+
+# Les données spatiales
 
 ---
 
@@ -399,6 +408,10 @@ Ces deux identifiants sont généralement identiques et peuvent être trouvés �
 
 **Exemple:** [http://spatialreference.org/ref/epsg/2138/](http://spatialreference.org/ref/epsg/2138/)
 
+
+--- .transition
+
+# L'absence de données
 
 ---
 
@@ -446,7 +459,7 @@ Si l'on ne choisit pas le type de données approprié, cela aura diverses consé
 
 Pourquoi prendre soins de ces données ?
 
-Pour en savoir davantage:
+## Pour en savoir davantage:
 
 - [Broman KW, Kara W (2017) Data organization in spreadsheets. The American Statistician.](http://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375989)
 - [Hart EM, Barmby P, LeBauer D, Michonneau F, Mount S, Mulrooney P, et al. (2016) Ten Simple Rules for Digital Data Storage. PLoS Comput Biol](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005097)
@@ -478,21 +491,45 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 # Pourquoi bien entreposer ces données?
 
 <div style='text-align:center;'>
-<figure>
   <img src="assets/img/data_trends.jpg" height="500px"></img>
-</figure>
 </div>
 
 [Vines et al., 2013](https://www.nature.com/news/scientists-losing-data-at-a-rapid-rate-1.14416)
 
----
+--- &twocol
 
 # Les entrepôts existants
 
-1. Les fichiers textes comme les CSV, TSV (Format libre et ouvert)
-2. Les tableurs comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
-3. Les fichiers hierarchiques/structurés HDF, NetCDF (Format libre et ouvert)
-4. Les bases de données relationnelles
+*** =left
+
+1. Les `fichiers textes` comme les CSV, TSV (Format libre et ouvert)
+2. Les `tableurs` comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
+3. Les `fichiers hierarchiques/structurés` HDF, NetCDF (Format libre et ouvert)
+4. Les `bases de données relationnelles`
+
+*** =right
+
+## Exemple de fichier CSV
+
+<img src="assets/img/csv.png" width="80%"></img>
+
+
+--- &twocol
+
+# Les entrepôts existants
+
+*** =left
+
+1. Les `fichiers textes` comme les CSV, TSV (Format libre et ouvert)
+2. Les `tableurs` comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
+3. Les `fichiers hierarchiques/structurés` HDF, NetCDF (Format libre et ouvert)
+4. Les `bases de données relationnelles`
+
+*** =right
+
+## Structure NetCDF
+
+<img src="assets/img/netcdf.png" width="100%"></img>
 
 ---
 
@@ -522,7 +559,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 
 - **Maintenir l'intégrité entre les enregistrements de nos tableaux**. Une observation ne peut être faite sur un site qui n'existe pas.
 - **Normaliser et contrôler la qualité des données**. Chaque colonne est un type précis de données. Des contraintes peuvent être appliquées sur chaque colonne.
-- **Éviter les redondances dans le stockage de l'information** (obtenir une [forme normale](https://fr.wikipedia.org/wiki/Forme_normale_(bases_de_donn%C3%A9es_relationnelles)), voir la section [Format de donnée du cours 2](https://econumuds.github.io/BIO500/cours2/#14).
+- **Éviter les redondances dans le stockage de l'information** (obtenir une [forme normale](https://fr.wikipedia.org/wiki/Forme_normale_(bases_de_donn%C3%A9es_relationnelles)), voir la section [Format de donnée du cours 2](https://econumuds.github.io/BIO500/cours2/#10).
 
 ---
 
@@ -537,10 +574,27 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 - Déclencher des procédures de sauvegardes.
 - Suivre les modifications/ajouts à la BD (journal de transactions).
 
+--- &twocol
+
+# Deux approches avec les bases de données
+
+
+*** =right
+
+## Serveur de base de données
+
+<img src="assets/img/flow_db.png" height="450px"></img>
+
+*** =left
+
+## Fichier de base de données
+
+<img src="assets/img/db_flow2.png" height="450px"></img>
+
+
 --- &twocolw w1:40% w2:60%
 
-# L'approche client-serveur
-
+# L'approche: Serveur de base de données
 
 *** =left
 
@@ -551,69 +605,46 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 
 *** =right
 
-- Le **serveur** est un ordinateur contenant la base de données.
-- Si le serveur est votre ordinateur, on se connectera alors **localement** (environnement de développement).
-- Si le serveur est physiquement ailleurs (mais accessible via le réseau), on parlera de **serveur distant** (environnement de production).
-
+- Le **client** est un logiciel installé sur votre ordinateur.
+- On se sert de ce logiciel pour interagir avec le serveur de base de données présent localement ou à distance.
+- **Avantage:** On peut avoir plusieurs **clients** de connecté sur un même serveur (contexte multi-utilisateurs).
 
 --- &twocolw w1:40% w2:60%
 
-# L'approche client-serveur
-
+# L'approche: Fichier de base de données
 
 *** =left
 
 <div style='text-align:center;'>
-  <img src="assets/img/flow_db.png" height="450px"></img>
+  <img src="assets/img/db_flow2.png" height="450px"></img>
 </div>
 
 
 *** =right
 
-- Le **client** peut être un logiciel, tout comme un langage installé sur votre ordinateur.
-- On se sert de ce langage ou logiciel pour interagir avec le serveur de base de données présent localement ou à distance.
-- On peut donc avoir plusieurs **clients** sur un même ordinateur.
+- On se connecte au fichier a l'aide d'un **client** (logiciel)
+- **Avantage:** Portabilité
+- **Désavantage:** On ne peut pas se connecter à plusieurs utilisateurs en même temps.
 
---- &twocolw w1:40% w2:60%
-
-# L'approche client-serveur
-
-*** =left
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/pgadmin.png" width="90%"></img>
-</div>
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/psql.jpg" width="90%"></img>
-</div>
-
-*** =right
-
-- Il existe une grande diversité de clients, mais nous utiliserons essentiellement les trois suivants:
-  - **pgadmin3**: logiciel avec une interface graphique.
-  - **R**: language de programmation scientifique.
-
-<!-- - **psql**: un autre language utile (si le temps le permet). -->
-
-<!-- Question, qu'est qui distingue un logiciel d'un langage? -->
-
-**Note:** La plupart des langages de programmation disposent de librairies permettant de se connecter à une base de données sur un serveur local ou distant.
-
---- &twocolw w1:40% w2:60%
+<!-- ---
 
 # L'approche client-serveur
 
+## On pourrait envisager la situation suivante...
 
-*** =left
 
 <div style='text-align:center;'>
-  <img src="assets/img/flow_db.png" height="450px"></img>
+  <img src="assets/img/db_flow_multi.png" width="55%"></img>
 </div>
 
+L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant. -->
 
-*** =right
 
-**Le client** se connecte pour effectuer différentes opérations:
+---
+
+# Les opérations sur une base de données
+
+## Quelque soit l'approche, la philosophie reste identique:
 
 1. Créer une base de données.
 2. Créer des tables avec des relations.
@@ -623,54 +654,10 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 6. Mettre à jour des données ou des tables.
 7. Supprimer la base de données.
 
-
---- &twocolw w1:40% w2:60%
-
-# L'approche client-serveur
-
-
-*** =left
-
-<div style='text-align:center;'>
-  <img src="assets/img/flow_db.png" height="450px"></img>
-</div>
-
-
-*** =right
-
-**Le serveur** répond avec des données, des messages d'erreurs ou des status (e.g. Données insérées).
-
----
-
-# L'approche client-serveur avec multi-utilisateurs
-
-## On pourrait envisager la situation suivante...
-
-
-<div style='text-align:center;'>
-  <img src="assets/img/db_flow_multi.png" width="55%"></img>
-</div>
-
-L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant.
-
 --- .transition
 
 # Les Systèmes de Gestion de Base de Données (SGBDs)
 
---- &twocol
-
-# Les SGBDs
-
-*** =left
-
-<div style='text-align:center;'>
-  <img src="assets/img/flow_db.png" height="450px"></img>
-</div>
-
-*** =right
-
-- Les base de données sont présentes sur un serveur.
-- Pour créer, interroger, gérer et maintenir des bases de données, on utilisera un **[Système de Gestion de Base de Données](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es) (souvent appelé SGBD)** installé sur le serveur.
 
 --- &twocol
 
@@ -686,8 +673,9 @@ L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant
 
 *** =right
 
+>- Pour créer, interroger, gérer et maintenir des bases de données, on utilisera un **[Système de Gestion de Base de Données](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es) (souvent appelé SGBD)**.
 >- Mais ces systèmes disposent tous d'un dénominateur commun: le `langage SQL`
->- Dans ce cours, nous utiliserons le système de gestion de données `PostgreSQL`.
+>- Dans ce cours, nous utiliserons le système de gestion de données `SQLite3` (**Approche fichier de base de données**).
 
 ---
 
@@ -724,7 +712,7 @@ Chacune de ces commandes est une instruction `SQL` envoyée au serveur pour mani
 3. Supprimer ou modifier des tables (`DROP TABLE`, `ALTER TABLE`).
 4. Supprimer la base de données (`DROP DATABASE`).
 
-Soyez attentifs, car le travail de cette semaine consiste à écrire un script qui permet la création de la base de données (les tables et leurs relations) pour entreposer les données que vous avez collectées lors de la séance 2.
+Soyez attentifs, car le travail de cette semaine consiste à écrire un script qui permet la création de la base de données (les tables et leurs relations) pour entreposer les données que vous aurez collectées pour le travail de session.
 
 --- .transition
 
@@ -836,37 +824,44 @@ L'étape suivante est de transcrire ce modèle conceptuel des données en modèl
 
 ---
 
-# Les grandes étapes
+# Les grandes étapes avec SQLite3
 
-1. Spécifier la connexion avec le serveur
-2. Créer la base de données
-3. Créer les tables et spécifier les clés
-4. Ajouter de l'information dans les tables
-5. Faire des requêtes pour extraire l'information
+0. Créer un fichier de base de données
+1. Se connecter avec le fichier de base de données
+2. Créer les tables et spécifier les clés
+3. Ajouter de l'information dans les tables
+4. Faire des requêtes pour extraire l'information
 
----
 
-# Se connecter au SGBD (PostgreSQL)
+---&twocolw w1:30% w2:70%
 
-## Pour que le client communique avec la SGBD, les informations de connection au serveur sont indispensables:
+# 0. Créer un fichier de base de données
 
-1. `host`: L'adresse du serveur. `localhost` si la base de données est sur votre ordinateur.
-2. `port`: La base de données écoute sur un port spécifique du serveur.
-3. `user`: le nom d'utilisateur
-4. `password`: le mot de passe de l'utilisateur.
-5. `dbname`: le nom de la base de données
+*** =left
 
----&twocolw w1:50% w2:50%
+À l'aide de votre gestionnaire de fichier, créer un nouveau fichier qui s'intitulera `films.bd`
 
-# Se connecter au SGBD (PostgreSQL) via R
+*** =right
+
+<div style='text-align:center;'>
+  <img src="assets/img/gf.png" width="90%"></img>
+</div>
+
+
+---&twocolw w1:40% w2:60%
+
+# Se connecter à la BD (SQLite3) via R
 
 *** =right
 
 
+
+
 ```r
-library(RPostgreSQL)
-con <- dbConnect(PostgreSQL(), host="localhost",
-        port=5433, user= "postgres", password=NA)
+library(RSQLite)
+con <- dbConnect(SQLite(), dbname="./assets/data/films.db")
+## !ATTENTION!: Ceci est mon chemin d'accès vers le fichier!
+## Astuces: getwd() et setwd()
 ```
 
 
@@ -876,23 +871,10 @@ dbSendQuery(con,"Instructions SQL à envoyer")
 
 *** =left
 
-- `con` est un objet contenant la connexion avec le serveur.
+- `con` est un objet contenant la connexion avec le serveur/fichier de base de données.
 - On utilisera la fonction `dbSendQuery()` pour envoyer les instructions SQL.
 - Le deuxième argument de la fonction `dbSendQuery()` est une chaine de caractères contenant les instructions SQL.
 
----&twocolw w1:45% w2:50%
-
-# Se connecter au SGBD (PostgreSQL) via pgAdmin3
-
-*** =right
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/pgadmin.png" width="90%"></img>
-</div>
-
-*** =left
-
-- On préfère parfois un interface graphique pour interagir avec la SGBD.
 
 ---&twocolw w1:50% w2:50%
 
@@ -900,39 +882,20 @@ dbSendQuery(con,"Instructions SQL à envoyer")
 
 
 ```r
-dbSendQuery(con,"CREATE DATABASE bd_films;")
+dbSendQuery(con,"CREATE DATABASE films;")
 ```
-
-```
-## <PostgreSQLResult>
-```
-
-La SGBD nous répond... mais elle n'a pas grand chose à ajouter.
 
 ## Important:
 
-1. En SQL, chaque instruction se termine par un point-virgule.
-2. Les instructions sont écrites en majuscules et les variables en minuscules.
-3. Toutes les instructions SQL sont énumérées et expliquées en Français à cette adresse: [http://docs.postgresql.fr/9.5/sql-commands.html](http://docs.postgresql.fr/9.5/sql-commands.html)
+1. `CREATE DATABASE` serait importante seulement avec d'autres SGBDs (approche serveur). Dans le cas de SQLite3, un fichier = une base de données.
+2. En SQL, chaque instruction se termine par un point-virgule.
+3. Les instructions sont écrites en majuscules et les variables en minuscules.
+4. Toutes les instructions SQL sont énumérées et expliquées en Français à cette adresse: [http://docs.postgresql.fr/9.5/sql-commands.html](http://docs.postgresql.fr/9.5/sql-commands.html)
 
----
-
-# Création de la base de données via R
-
-Puis, on se connecte à cette nouvelle base de données grâce à la fonction `dbConnect()`:
-
-
-```r
-dbConnect(con,dbname="bd_films")
-```
-
-```
-## <PostgreSQLConnection>
-```
 
 ---&twocol
 
-# Création d'une table avec clé primaire
+# Création d'une première table avec clé primaire
 
 *** =left
 
@@ -1039,8 +1002,9 @@ dbSendQuery(con,films_sql)
 
 ## Exercice pour le travail de session (20 minutes):
 
-En vous inspirant des [exemples](http://docs.postgresqlfr.org/9.5/sql-createtable.html) et de la syntaxe SQL expliquée précédemment, écrivez le script contenant les instructions SQL permettant la création de table la `personnes`.
+En vous inspirant des [exemples](http://www.sqlitetutorial.net/sqlite-create-table/) et de la syntaxe SQL expliquée précédemment, écrivez le script contenant les instructions SQL permettant la création de table la `personnes`.
 
+- [Documentation SQL pour SQLite3](https://www.sqlite.org/lang.html)
 
 ---
 
@@ -1049,19 +1013,10 @@ En vous inspirant des [exemples](http://docs.postgresqlfr.org/9.5/sql-createtabl
 
 ```r
 dbSendQuery(con,"DROP DATABASE bd_films;")
-```
-
-```
-## <PostgreSQLResult>
-```
-
-```r
 dbDisconnect(con)
 ```
-
-```
-## [1] TRUE
-```
+- `DROP DATABASE` fonctionne seulement avec d'autres SGBDs (approche serveur).
+- Dans le cas de SQLite3, on supprime simplement le fichier `*.db`.
 
 ---
 

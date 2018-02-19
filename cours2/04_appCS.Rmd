@@ -1,8 +1,25 @@
 
+--- &twocol
+
+# Deux approches avec les bases de données
+
+
+*** =right
+
+## Serveur de base de données
+
+<img src="assets/img/flow_db.png" height="450px"></img>
+
+*** =left
+
+## Fichier de base de données
+
+<img src="assets/img/db_flow2.png" height="450px"></img>
+
+
 --- &twocolw w1:40% w2:60%
 
-# L'approche client-serveur
-
+# L'approche: Serveur de base de données
 
 *** =left
 
@@ -13,98 +30,30 @@
 
 *** =right
 
-- Le **serveur** est un ordinateur contenant la base de données.
-- Si le serveur est votre ordinateur, on se connectera alors **localement** (environnement de développement).
-- Si le serveur est physiquement ailleurs (mais accessible via le réseau), on parlera de **serveur distant** (environnement de production).
-
+- Le **client** est un logiciel installé sur votre ordinateur.
+- On se sert de ce logiciel pour interagir avec le serveur de base de données présent localement ou à distance.
+- **Avantage:** On peut avoir plusieurs **clients** de connecté sur un même serveur (contexte multi-utilisateurs).
 
 --- &twocolw w1:40% w2:60%
 
-# L'approche client-serveur
-
+# L'approche: Fichier de base de données
 
 *** =left
 
 <div style='text-align:center;'>
-  <img src="assets/img/flow_db.png" height="450px"></img>
+  <img src="assets/img/db_flow2.png" height="450px"></img>
 </div>
 
 
 *** =right
 
-- Le **client** peut être un logiciel, tout comme un langage installé sur votre ordinateur.
-- On se sert de ce langage ou logiciel pour interagir avec le serveur de base de données présent localement ou à distance.
-- On peut donc avoir plusieurs **clients** sur un même ordinateur.
+- On se connecte au fichier a l'aide d'un **client** (logiciel)
+- **Avantage:** Portabilité
+- **Désavantage:** On ne peut pas se connecter à plusieurs utilisateurs en même temps.
 
---- &twocolw w1:40% w2:60%
+<!-- ---
 
 # L'approche client-serveur
-
-*** =left
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/pgadmin.png" width="90%"></img>
-</div>
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/psql.jpg" width="90%"></img>
-</div>
-
-*** =right
-
-- Il existe une grande diversité de clients, mais nous utiliserons essentiellement les trois suivants:
-  - **pgadmin3**: logiciel avec une interface graphique.
-  - **R**: language de programmation scientifique.
-
-<!-- - **psql**: un autre language utile (si le temps le permet). -->
-
-<!-- Question, qu'est qui distingue un logiciel d'un langage? -->
-
-**Note:** La plupart des langages de programmation disposent de librairies permettant de se connecter à une base de données sur un serveur local ou distant.
-
---- &twocolw w1:40% w2:60%
-
-# L'approche client-serveur
-
-
-*** =left
-
-<div style='text-align:center;'>
-  <img src="assets/img/flow_db.png" height="450px"></img>
-</div>
-
-
-*** =right
-
-**Le client** se connecte pour effectuer différentes opérations:
-
-1. Créer une base de données.
-2. Créer des tables avec des relations.
-3. Insérer des données.
-4. Interroger les données par requête.
-5. Supprimer des données ou des tables.
-6. Mettre à jour des données ou des tables.
-7. Supprimer la base de données.
-
-
---- &twocolw w1:40% w2:60%
-
-# L'approche client-serveur
-
-
-*** =left
-
-<div style='text-align:center;'>
-  <img src="assets/img/flow_db.png" height="450px"></img>
-</div>
-
-
-*** =right
-
-**Le serveur** répond avec des données, des messages d'erreurs ou des status (e.g. Données insérées).
-
----
-
-# L'approche client-serveur avec multi-utilisateurs
 
 ## On pourrait envisager la situation suivante...
 
@@ -113,4 +62,19 @@
   <img src="assets/img/db_flow_multi.png" width="55%"></img>
 </div>
 
-L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant.
+L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant. -->
+
+
+---
+
+# Les opérations sur une base de données
+
+## Quelque soit l'approche, la philosophie reste identique:
+
+1. Créer une base de données.
+2. Créer des tables avec des relations.
+3. Insérer des données.
+4. Interroger les données par requête.
+5. Supprimer des données ou des tables.
+6. Mettre à jour des données ou des tables.
+7. Supprimer la base de données.

@@ -26,21 +26,45 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 # Pourquoi bien entreposer ces données?
 
 <div style='text-align:center;'>
-<figure>
   <img src="assets/img/data_trends.jpg" height="500px"></img>
-</figure>
 </div>
 
 [Vines et al., 2013](https://www.nature.com/news/scientists-losing-data-at-a-rapid-rate-1.14416)
 
----
+--- &twocol
 
 # Les entrepôts existants
 
-1. Les fichiers textes comme les CSV, TSV (Format libre et ouvert)
-2. Les tableurs comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
-3. Les fichiers hierarchiques/structurés HDF, NetCDF (Format libre et ouvert)
-4. Les bases de données relationnelles
+*** =left
+
+1. Les `fichiers textes` comme les CSV, TSV (Format libre et ouvert)
+2. Les `tableurs` comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
+3. Les `fichiers hierarchiques/structurés` HDF, NetCDF (Format libre et ouvert)
+4. Les `bases de données relationnelles`
+
+*** =right
+
+## Exemple de fichier CSV
+
+<img src="assets/img/csv.png" width="80%"></img>
+
+
+--- &twocol
+
+# Les entrepôts existants
+
+*** =left
+
+1. Les `fichiers textes` comme les CSV, TSV (Format libre et ouvert)
+2. Les `tableurs` comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
+3. Les `fichiers hierarchiques/structurés` HDF, NetCDF (Format libre et ouvert)
+4. Les `bases de données relationnelles`
+
+*** =right
+
+## Structure NetCDF
+
+<img src="assets/img/netcdf.png" width="100%"></img>
 
 ---
 
@@ -70,7 +94,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 
 - **Maintenir l'intégrité entre les enregistrements de nos tableaux**. Une observation ne peut être faite sur un site qui n'existe pas.
 - **Normaliser et contrôler la qualité des données**. Chaque colonne est un type précis de données. Des contraintes peuvent être appliquées sur chaque colonne.
-- **Éviter les redondances dans le stockage de l'information** (obtenir une [forme normale](https://fr.wikipedia.org/wiki/Forme_normale_(bases_de_donn%C3%A9es_relationnelles)), voir la section [Format de donnée du cours 2](https://econumuds.github.io/BIO500/cours2/#14).
+- **Éviter les redondances dans le stockage de l'information** (obtenir une [forme normale](https://fr.wikipedia.org/wiki/Forme_normale_(bases_de_donn%C3%A9es_relationnelles)), voir la section [Format de donnée du cours 2](https://econumuds.github.io/BIO500/cours2/#10).
 
 ---
 
