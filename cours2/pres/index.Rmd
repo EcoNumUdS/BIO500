@@ -557,86 +557,6 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 - Déclencher des procédures de sauvegardes.
 - Suivre les modifications/ajouts à la BD (journal de transactions).
 
---- &twocol
-
-# Deux approches avec les bases de données
-
-
-*** =right
-
-## Serveur de base de données
-
-<img src="assets/img/flow_db.png" height="450px"></img>
-
-*** =left
-
-## Fichier de base de données
-
-<img src="assets/img/db_flow2.png" height="450px"></img>
-
-
---- &twocolw w1:40% w2:60%
-
-# L'approche: Serveur de base de données
-
-*** =left
-
-<div style='text-align:center;'>
-  <img src="assets/img/flow_db.png" height="450px"></img>
-</div>
-
-
-*** =right
-
-- Le **client** est un logiciel installé sur votre ordinateur.
-- On se sert de ce logiciel pour interagir avec le serveur de base de données présent localement ou à distance.
-- **Avantage:** On peut avoir plusieurs **clients** de connecté sur un même serveur (contexte multi-utilisateurs).
-
---- &twocolw w1:40% w2:60%
-
-# L'approche: Fichier de base de données
-
-*** =left
-
-<div style='text-align:center;'>
-  <img src="assets/img/db_flow2.png" height="450px"></img>
-</div>
-
-
-*** =right
-
-- On se connecte au fichier a l'aide d'un **client** (logiciel)
-- **Avantage:** Portabilité
-- **Désavantage:** On ne peut pas se connecter à plusieurs utilisateurs en même temps.
-
-<!-- ---
-
-# L'approche client-serveur
-
-## On pourrait envisager la situation suivante...
-
-
-<div style='text-align:center;'>
-  <img src="assets/img/db_flow_multi.png" width="55%"></img>
-</div>
-
-L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant. -->
-
-
----
-
-# Les opérations sur une base de données
-
-## Quelque soit l'approche, la philosophie reste identique:
-
-1. Créer une base de données.
-2. Créer des tables avec des relations.
-3. Insérer des données.
-4. Interroger les données par requête.
-5. Supprimer des données ou des tables.
-6. Mettre à jour des données ou des tables.
-7. Supprimer la base de données.
-
 --- .transition
 
 # Les Systèmes de Gestion de Base de Données (SGBDs)
@@ -800,6 +720,86 @@ Pour tous les types de données, [voir la documentation SQLite3](https://www.sql
 Une façon de représenter l'information dans un modèle de type entités-relations où chaque entité (table) possède des attributs (colonnes).
 
 L'étape suivante est de transcrire ce modèle conceptuel des données en modèle logique de données (c.a.d compréhensible par l'ordinateur).
+
+--- &twocol
+
+# Deux approches avec les bases de données
+
+
+*** =right
+
+## Serveur de base de données
+
+<img src="assets/img/flow_db.png" height="450px"></img>
+
+*** =left
+
+## Fichier de base de données
+
+<img src="assets/img/db_flow2.png" height="450px"></img>
+
+
+--- &twocolw w1:40% w2:60%
+
+# L'approche: Serveur de base de données
+
+*** =left
+
+<div style='text-align:center;'>
+  <img src="assets/img/flow_db.png" height="450px"></img>
+</div>
+
+
+*** =right
+
+- Le **client** est un logiciel installé sur votre ordinateur.
+- On se sert de ce logiciel pour interagir avec le serveur de base de données présent localement ou à distance.
+- **Avantage:** On peut avoir plusieurs **clients** de connecté sur un même serveur (contexte multi-utilisateurs).
+
+--- &twocolw w1:40% w2:60%
+
+# L'approche: Fichier de base de données
+
+*** =left
+
+<div style='text-align:center;'>
+  <img src="assets/img/db_flow2.png" height="450px"></img>
+</div>
+
+
+*** =right
+
+- On se connecte au fichier a l'aide d'un **client** (logiciel)
+- **Avantage:** Portabilité
+- **Désavantage:** On ne peut pas se connecter à plusieurs utilisateurs en même temps.
+
+<!-- ---
+
+# L'approche client-serveur
+
+## On pourrait envisager la situation suivante...
+
+
+<div style='text-align:center;'>
+  <img src="assets/img/db_flow_multi.png" width="55%"></img>
+</div>
+
+L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant. -->
+
+
+---
+
+# Les opérations sur une base de données
+
+## Quelque soit l'approche, la philosophie reste identique:
+
+1. Créer une base de données.
+2. Créer des tables avec des relations.
+3. Insérer des données.
+4. Interroger les données par requête.
+5. Supprimer des données ou des tables.
+6. Mettre à jour des données ou des tables.
+7. Supprimer la base de données.
 
 --- .transition
 
@@ -1048,7 +1048,7 @@ dbDisconnect(con)
 
 ---
 
-# Lectures et travail pour la semaine prochiane
+# Lectures et travail pour la semaine prochaine
 
 ## Travail
 
