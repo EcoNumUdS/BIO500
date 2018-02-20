@@ -576,66 +576,6 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 
 --- .transition
 
-# Les Systèmes de Gestion de Base de Données (SGBDs)
-
-
---- &twocol
-
-# La diversité des SGBDs
-
-*** =left
-
-## Il en existe une multitude:
-
-<div style='text-align:center;'>
-  <img src="assets/img/sgbd.png" width="100%"></img>
-</div>
-
-*** =right
-
->- Pour créer, interroger, gérer et maintenir des bases de données, on utilisera un **[Système de Gestion de Base de Données](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es) (souvent appelé SGBD)**.
->- Mais ces systèmes disposent tous d'un dénominateur commun: le `langage SQL`
->- Dans ce cours, nous utiliserons le système de gestion de données `SQLite3` (**Approche fichier de base de données**).
-
----
-
-# Le langage SQL
-
-## Définition
-
-> Le SQL (Structured Query Language) est le langage des SGBDs. Il permet de communiquer avec une base de données.
-
----
-
-# Le langage SQL
-
-## Le `SQL` permet de:
-
-1. Créer une base de données (`CREATE DATABASE`).
-2. Créer des tables et établir des relations (`CREATE TABLE`).
-3. Insérer des données (`INSERT`).
-4. Interroger les données par requête (`SELECT`).
-5. Supprimer des données ou des tables (`DROP`, `DELETE`).
-6. Mettre à jour des données ou des tables (`UPDATE`, `ALTER`).
-7. Supprimer la base de données (`DROP DATABASE`).
-
-Chacune de ces commandes est une instruction `SQL` envoyée au serveur pour manipuler et interroger la base de données.
-
----
-
-# Le langage SQL
-
-## Pour cette séance, nous nous attarderons seulement à:
-
-1. Créer une base de données (`CREATE DATABASE`).
-2. Créer des tables et établir des relations (`CREATE TABLE`).
-3. Supprimer ou modifier des tables (`DROP TABLE`, `ALTER TABLE`).
-4. Supprimer la base de données (`DROP DATABASE`).
-
-Soyez attentifs, car le travail de cette semaine consiste à écrire un script qui permet la création de la base de données (les tables et leurs relations) pour entreposer les données que vous aurez collectées pour le travail de session.
-
---- .transition
-
 # Conceptualisation d'une base de données en 5 étapes
 
 ---
@@ -736,12 +676,72 @@ Pour tous les types de données, [voir la documentation SQLite3](https://www.sql
 
 Une façon de représenter l'information dans un modèle de type entités-relations où chaque entité (table) possède des attributs (colonnes).
 
-L'étape suivante est de transcrire ce modèle conceptuel des données en modèle logique de données (c.a.d compréhensible par l'ordinateur).
+L'étape suivante est de se connecter à la base de données afin de transcrire ce modèle conceptuel en modèle logique (c.a.d compréhensible par l'ordinateur).
+
+
+--- .transition
+
+# Les Systèmes de Gestion de Base de Données (SGBDs)
+
+--- &twocol
+
+# La diversité des SGBDs
+
+*** =left
+
+## Il en existe une multitude:
+
+<div style='text-align:center;'>
+  <img src="assets/img/sgbd.png" width="100%"></img>
+</div>
+
+*** =right
+
+>- Pour créer, interroger, gérer et maintenir des bases de données, on utilisera un **[Système de Gestion de Base de Données](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es) (souvent appelé SGBD)**.
+>- Mais ces systèmes disposent tous d'un dénominateur commun: le `langage SQL`
+>- Dans ce cours, nous utiliserons le système de gestion de données `SQLite3` (**Approche fichier de base de données**).
+
+---
+
+# Le langage SQL
+
+## Définition
+
+> Le SQL (Structured Query Language) est le langage des SGBDs. Il permet de communiquer avec une base de données.
+
+---
+
+# Le langage SQL
+
+## Le `SQL` permet de:
+
+1. Créer une base de données (`CREATE DATABASE`).
+2. Créer des tables et établir des relations (`CREATE TABLE`).
+3. Insérer des données (`INSERT`).
+4. Interroger les données par requête (`SELECT`).
+5. Supprimer des données ou des tables (`DROP`, `DELETE`).
+6. Mettre à jour des données ou des tables (`UPDATE`, `ALTER`).
+7. Supprimer la base de données (`DROP DATABASE`).
+
+Chacune de ces commandes est une instruction `SQL` envoyée au serveur pour manipuler et interroger la base de données.
+
+---
+
+# Le langage SQL
+
+## Pour cette séance, nous nous attarderons seulement à:
+
+1. Créer une base de données (`CREATE DATABASE`).
+2. Créer des tables et établir des relations (`CREATE TABLE`).
+3. Supprimer ou modifier des tables (`DROP TABLE`, `ALTER TABLE`).
+4. Supprimer la base de données (`DROP DATABASE`).
+
+Soyez attentifs, car le travail de cette semaine consiste à écrire un script qui permet la création de la base de données (les tables et leurs relations) pour entreposer les données que vous aurez collectées pour le travail de session.
+
 
 --- &twocol
 
 # Deux approches avec les bases de données
-
 
 *** =right
 
@@ -803,24 +803,9 @@ L'étape suivante est de transcrire ce modèle conceptuel des données en modèl
 
 L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant. -->
 
-
----
-
-# Les opérations sur une base de données
-
-## Quelque soit l'approche, la philosophie reste identique:
-
-1. Créer une base de données.
-2. Créer des tables avec des relations.
-3. Insérer des données.
-4. Interroger les données par requête.
-5. Supprimer des données ou des tables.
-6. Mettre à jour des données ou des tables.
-7. Supprimer la base de données.
-
 --- .transition
 
-# Transcrire ces étapes en SQL
+# Pratique: Du modèle conceptuelle vers le modèle logique
 
 ---
 
@@ -1042,7 +1027,7 @@ Il peut être parfois préférable supprimer la table et de la reconstruire plut
 
 ---
 
-# Supprimer la table de données et se déconnecter du fichier de base de données
+# Supprimer la table de données et se déconnecter
 
 
 ```r

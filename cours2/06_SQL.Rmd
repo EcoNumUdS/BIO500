@@ -1,7 +1,7 @@
 
 --- .transition
 
-# Transcrire ces étapes en SQL
+# Pratique: Du modèle conceptuelle vers le modèle logique
 
 ---
 
@@ -222,7 +222,7 @@ Il peut être parfois préférable supprimer la table et de la reconstruire plut
 
 ---
 
-# Supprimer la table de données et se déconnecter du fichier de base de données
+# Supprimer la table de données et se déconnecter
 
 ```{r, eval=FALSE}
 dbSendQuery(con,"DROP TABLE films;")

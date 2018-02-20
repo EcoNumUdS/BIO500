@@ -1155,98 +1155,6 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 <slide class="transition" id="slide-43" style="background:;">
   <!--  <a href="#slide-43"></a> -->
   <hgroup>
-    <h1>Les Systèmes de Gestion de Base de Données (SGBDs)</h1>
-  </hgroup>
-  <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-<slide class="" id="slide-44" style="background:;">
-  <hgroup>
-    <h1>La diversité des SGBDs</h1>
-  </hgroup>
-  <article>
-    
-    <div class='left' style='float:left;width:48%'>
-     <h2>Il en existe une multitude:</h2>
-
-<div style='text-align:center;'>
-  <img src="assets/img/sgbd.png" width="100%"></img>
-</div>
-
-    </div>
-    <div class='right' style='float:right;width:48%'>
-     <ul class = "build incremental">
-<li>Pour créer, interroger, gérer et maintenir des bases de données, on utilisera un <strong><a href="https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es">Système de Gestion de Base de Données</a> (souvent appelé SGBD)</strong>.</li>
-<li>Mais ces systèmes disposent tous d&#39;un dénominateur commun: le <code>langage SQL</code></li>
-<li>Dans ce cours, nous utiliserons le système de gestion de données <code>SQLite3</code> (<strong>Approche fichier de base de données</strong>).</li>
-</ul>
-
-    </div>
-  </article>
-</slide>
-<slide class="" id="slide-45" style="background:;">
-  <!--  <a href="#slide-45"></a> -->
-  <hgroup>
-    <h1>Le langage SQL</h1>
-  </hgroup>
-  <article data-timings="">
-    <h2>Définition</h2>
-
-<blockquote>
-<p>Le SQL (Structured Query Language) est le langage des SGBDs. Il permet de communiquer avec une base de données.</p>
-</blockquote>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-<slide class="" id="slide-46" style="background:;">
-  <!--  <a href="#slide-46"></a> -->
-  <hgroup>
-    <h1>Le langage SQL</h1>
-  </hgroup>
-  <article data-timings="">
-    <h2>Le <code>SQL</code> permet de:</h2>
-
-<ol>
-<li>Créer une base de données (<code>CREATE DATABASE</code>).</li>
-<li>Créer des tables et établir des relations (<code>CREATE TABLE</code>).</li>
-<li>Insérer des données (<code>INSERT</code>).</li>
-<li>Interroger les données par requête (<code>SELECT</code>).</li>
-<li>Supprimer des données ou des tables (<code>DROP</code>, <code>DELETE</code>).</li>
-<li>Mettre à jour des données ou des tables (<code>UPDATE</code>, <code>ALTER</code>).</li>
-<li>Supprimer la base de données (<code>DROP DATABASE</code>).</li>
-</ol>
-
-<p>Chacune de ces commandes est une instruction <code>SQL</code> envoyée au serveur pour manipuler et interroger la base de données.</p>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-<slide class="" id="slide-47" style="background:;">
-  <!--  <a href="#slide-47"></a> -->
-  <hgroup>
-    <h1>Le langage SQL</h1>
-  </hgroup>
-  <article data-timings="">
-    <h2>Pour cette séance, nous nous attarderons seulement à:</h2>
-
-<ol>
-<li>Créer une base de données (<code>CREATE DATABASE</code>).</li>
-<li>Créer des tables et établir des relations (<code>CREATE TABLE</code>).</li>
-<li>Supprimer ou modifier des tables (<code>DROP TABLE</code>, <code>ALTER TABLE</code>).</li>
-<li>Supprimer la base de données (<code>DROP DATABASE</code>).</li>
-</ol>
-
-<p>Soyez attentifs, car le travail de cette semaine consiste à écrire un script qui permet la création de la base de données (les tables et leurs relations) pour entreposer les données que vous aurez collectées pour le travail de session.</p>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-<slide class="transition" id="slide-48" style="background:;">
-  <!--  <a href="#slide-48"></a> -->
-  <hgroup>
     <h1>Conceptualisation d&#39;une base de données en 5 étapes</h1>
   </hgroup>
   <article data-timings="">
@@ -1254,8 +1162,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-49" style="background:;">
-  <!--  <a href="#slide-49"></a> -->
+<slide class="" id="slide-44" style="background:;">
+  <!--  <a href="#slide-44"></a> -->
   <hgroup>
     <h1>Étape 1. Faire une liste des variables</h1>
   </hgroup>
@@ -1270,8 +1178,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-50" style="background:;">
-  <!--  <a href="#slide-50"></a> -->
+<slide class="" id="slide-45" style="background:;">
+  <!--  <a href="#slide-45"></a> -->
   <hgroup>
     <h1>Étape 2. Regrouper les variables dans des tables</h1>
   </hgroup>
@@ -1292,8 +1200,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-51" style="background:;">
-  <!--  <a href="#slide-51"></a> -->
+<slide class="" id="slide-46" style="background:;">
+  <!--  <a href="#slide-46"></a> -->
   <hgroup>
     <h1>Étape 3. Établir le type d&#39;association entre les tables</h1>
   </hgroup>
@@ -1307,8 +1215,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-52" style="background:;">
-  <!--  <a href="#slide-52"></a> -->
+<slide class="" id="slide-47" style="background:;">
+  <!--  <a href="#slide-47"></a> -->
   <hgroup>
     <h1>Étape 3. Établir le type d&#39;association entre les tables</h1>
   </hgroup>
@@ -1354,8 +1262,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-53" style="background:;">
-  <!--  <a href="#slide-53"></a> -->
+<slide class="" id="slide-48" style="background:;">
+  <!--  <a href="#slide-48"></a> -->
   <hgroup>
     <h1>Étape 4. Établir les clés primaires et étrangères</h1>
   </hgroup>
@@ -1377,8 +1285,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-54" style="background:;">
-  <!--  <a href="#slide-54"></a> -->
+<slide class="" id="slide-49" style="background:;">
+  <!--  <a href="#slide-49"></a> -->
   <hgroup>
     <h1>Étape 4. Établir les clés primaires et étrangères</h1>
   </hgroup>
@@ -1393,8 +1301,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-55" style="background:;">
-  <!--  <a href="#slide-55"></a> -->
+<slide class="" id="slide-50" style="background:;">
+  <!--  <a href="#slide-50"></a> -->
   <hgroup>
     <h1>Étape 5. Assigner un type de données aux attributs</h1>
   </hgroup>
@@ -1448,8 +1356,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-56" style="background:;">
-  <!--  <a href="#slide-56"></a> -->
+<slide class="" id="slide-51" style="background:;">
+  <!--  <a href="#slide-51"></a> -->
   <hgroup>
     <h1>En résumé</h1>
   </hgroup>
@@ -1458,7 +1366,99 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 
 <p>Une façon de représenter l&#39;information dans un modèle de type entités-relations où chaque entité (table) possède des attributs (colonnes).</p>
 
-<p>L&#39;étape suivante est de transcrire ce modèle conceptuel des données en modèle logique de données (c.a.d compréhensible par l&#39;ordinateur).</p>
+<p>L&#39;étape suivante est de se connecter à la base de données afin de transcrire ce modèle conceptuel en modèle logique (c.a.d compréhensible par l&#39;ordinateur).</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-52" style="background:;">
+  <!--  <a href="#slide-52"></a> -->
+  <hgroup>
+    <h1>Les Systèmes de Gestion de Base de Données (SGBDs)</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-53" style="background:;">
+  <hgroup>
+    <h1>La diversité des SGBDs</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <h2>Il en existe une multitude:</h2>
+
+<div style='text-align:center;'>
+  <img src="assets/img/sgbd.png" width="100%"></img>
+</div>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <ul class = "build incremental">
+<li>Pour créer, interroger, gérer et maintenir des bases de données, on utilisera un <strong><a href="https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es">Système de Gestion de Base de Données</a> (souvent appelé SGBD)</strong>.</li>
+<li>Mais ces systèmes disposent tous d&#39;un dénominateur commun: le <code>langage SQL</code></li>
+<li>Dans ce cours, nous utiliserons le système de gestion de données <code>SQLite3</code> (<strong>Approche fichier de base de données</strong>).</li>
+</ul>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-54" style="background:;">
+  <!--  <a href="#slide-54"></a> -->
+  <hgroup>
+    <h1>Le langage SQL</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Définition</h2>
+
+<blockquote>
+<p>Le SQL (Structured Query Language) est le langage des SGBDs. Il permet de communiquer avec une base de données.</p>
+</blockquote>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-55" style="background:;">
+  <!--  <a href="#slide-55"></a> -->
+  <hgroup>
+    <h1>Le langage SQL</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Le <code>SQL</code> permet de:</h2>
+
+<ol>
+<li>Créer une base de données (<code>CREATE DATABASE</code>).</li>
+<li>Créer des tables et établir des relations (<code>CREATE TABLE</code>).</li>
+<li>Insérer des données (<code>INSERT</code>).</li>
+<li>Interroger les données par requête (<code>SELECT</code>).</li>
+<li>Supprimer des données ou des tables (<code>DROP</code>, <code>DELETE</code>).</li>
+<li>Mettre à jour des données ou des tables (<code>UPDATE</code>, <code>ALTER</code>).</li>
+<li>Supprimer la base de données (<code>DROP DATABASE</code>).</li>
+</ol>
+
+<p>Chacune de ces commandes est une instruction <code>SQL</code> envoyée au serveur pour manipuler et interroger la base de données.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-56" style="background:;">
+  <!--  <a href="#slide-56"></a> -->
+  <hgroup>
+    <h1>Le langage SQL</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Pour cette séance, nous nous attarderons seulement à:</h2>
+
+<ol>
+<li>Créer une base de données (<code>CREATE DATABASE</code>).</li>
+<li>Créer des tables et établir des relations (<code>CREATE TABLE</code>).</li>
+<li>Supprimer ou modifier des tables (<code>DROP TABLE</code>, <code>ALTER TABLE</code>).</li>
+<li>Supprimer la base de données (<code>DROP DATABASE</code>).</li>
+</ol>
+
+<p>Soyez attentifs, car le travail de cette semaine consiste à écrire un script qui permet la création de la base de données (les tables et leurs relations) pour entreposer les données que vous aurez collectées pour le travail de session.</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -1540,39 +1540,18 @@ L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant
     </div>
   </article>
 </slide>
-<slide class="" id="slide-60" style="background:;">
+<slide class="transition" id="slide-60" style="background:;">
   <!--  <a href="#slide-60"></a> -->
   <hgroup>
-    <h1>Les opérations sur une base de données</h1>
-  </hgroup>
-  <article data-timings="">
-    <h2>Quelque soit l&#39;approche, la philosophie reste identique:</h2>
-
-<ol>
-<li>Créer une base de données.</li>
-<li>Créer des tables avec des relations.</li>
-<li>Insérer des données.</li>
-<li>Interroger les données par requête.</li>
-<li>Supprimer des données ou des tables.</li>
-<li>Mettre à jour des données ou des tables.</li>
-<li>Supprimer la base de données.</li>
-</ol>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-<slide class="transition" id="slide-61" style="background:;">
-  <!--  <a href="#slide-61"></a> -->
-  <hgroup>
-    <h1>Transcrire ces étapes en SQL</h1>
+    <h1>Pratique: Du modèle conceptuelle vers le modèle logique</h1>
   </hgroup>
   <article data-timings="">
     
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-62" style="background:;">
-  <!--  <a href="#slide-62"></a> -->
+<slide class="" id="slide-61" style="background:;">
+  <!--  <a href="#slide-61"></a> -->
   <hgroup>
     <h1>Les grandes étapes avec SQLite3</h1>
   </hgroup>
@@ -1588,7 +1567,7 @@ L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-63" style="background:;">
+<slide class="" id="slide-62" style="background:;">
   <hgroup>
     <h1>Créer un fichier de base de données</h1>
   </hgroup>
@@ -1606,7 +1585,7 @@ L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant
     </div>
   </article>
 </slide>
-<slide class="" id="slide-64" style="background:;">
+<slide class="" id="slide-63" style="background:;">
   <hgroup>
     <h1>Se connecter au fichier la BD (SQLite3) via R</h1>
   </hgroup>
@@ -1633,7 +1612,7 @@ con &lt;- dbConnect(SQLite(), dbname=&quot;./assets/data/films.db&quot;)
     </div>
   </article>
 </slide>
-<slide class="" id="slide-65" style="background:;">
+<slide class="" id="slide-64" style="background:;">
   <hgroup>
     <h1>Création de la base de données via R</h1>
   </hgroup>
@@ -1658,7 +1637,7 @@ con &lt;- dbConnect(SQLite(), dbname=&quot;./assets/data/films.db&quot;)
     </div>
   </article>
 </slide>
-<slide class="" id="slide-66" style="background:;">
+<slide class="" id="slide-65" style="background:;">
   <hgroup>
     <h1>Création d&#39;une première table avec clé primaire</h1>
   </hgroup>
@@ -1690,7 +1669,7 @@ con &lt;- dbConnect(SQLite(), dbname=&quot;./assets/data/films.db&quot;)
     </div>
   </article>
 </slide>
-<slide class="" id="slide-67" style="background:;">
+<slide class="" id="slide-66" style="background:;">
   <hgroup>
     <h1>Création d&#39;une table avec clé étrangère</h1>
   </hgroup>
@@ -1721,7 +1700,7 @@ con &lt;- dbConnect(SQLite(), dbname=&quot;./assets/data/films.db&quot;)
     </div>
   </article>
 </slide>
-<slide class="" id="slide-68" style="background:;">
+<slide class="" id="slide-67" style="background:;">
   <hgroup>
     <h1>Création d&#39;une table avec clé étrangère</h1>
   </hgroup>
@@ -1754,8 +1733,8 @@ con &lt;- dbConnect(SQLite(), dbname=&quot;./assets/data/films.db&quot;)
     </div>
   </article>
 </slide>
-<slide class="" id="slide-69" style="background:;">
-  <!--  <a href="#slide-69"></a> -->
+<slide class="" id="slide-68" style="background:;">
+  <!--  <a href="#slide-68"></a> -->
   <hgroup>
     <h1>Ajout de contraintes à une table</h1>
   </hgroup>
@@ -1776,8 +1755,8 @@ con &lt;- dbConnect(SQLite(), dbname=&quot;./assets/data/films.db&quot;)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-70" style="background:;">
-  <!--  <a href="#slide-70"></a> -->
+<slide class="" id="slide-69" style="background:;">
+  <!--  <a href="#slide-69"></a> -->
   <hgroup>
     <h1>Création d&#39;une table avec R</h1>
   </hgroup>
@@ -1802,8 +1781,8 @@ dbListTables(con)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-71" style="background:;">
-  <!--  <a href="#slide-71"></a> -->
+<slide class="" id="slide-70" style="background:;">
+  <!--  <a href="#slide-70"></a> -->
   <hgroup>
     <h1>Création d&#39;une table</h1>
   </hgroup>
@@ -1820,8 +1799,8 @@ dbListTables(con)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-72" style="background:;">
-  <!--  <a href="#slide-72"></a> -->
+<slide class="" id="slide-71" style="background:;">
+  <!--  <a href="#slide-71"></a> -->
   <hgroup>
     <h1>Modifier la table existante</h1>
   </hgroup>
@@ -1835,10 +1814,10 @@ ALTER TABLE database_name.table_name ADD COLUMN column_def...;
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-73" style="background:;">
-  <!--  <a href="#slide-73"></a> -->
+<slide class="" id="slide-72" style="background:;">
+  <!--  <a href="#slide-72"></a> -->
   <hgroup>
-    <h1>Supprimer la table de données et se déconnecter du fichier de base de données</h1>
+    <h1>Supprimer la table de données et se déconnecter</h1>
   </hgroup>
   <article data-timings="">
     <pre><code class="r">dbSendQuery(con,&quot;DROP TABLE films;&quot;)
@@ -1853,8 +1832,8 @@ dbDisconnect(con)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-74" style="background:;">
-  <!--  <a href="#slide-74"></a> -->
+<slide class="" id="slide-73" style="background:;">
+  <!--  <a href="#slide-73"></a> -->
   <hgroup>
     <h1>Supprimer la base de données</h1>
   </hgroup>
@@ -1871,8 +1850,8 @@ dbDisconnect(con)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-75" style="background:;">
-  <!--  <a href="#slide-75"></a> -->
+<slide class="" id="slide-74" style="background:;">
+  <!--  <a href="#slide-74"></a> -->
   <hgroup>
     <h1>Lectures et travail pour la semaine prochaine</h1>
   </hgroup>
@@ -1884,8 +1863,8 @@ dbDisconnect(con)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-76" style="background:;">
-  <!--  <a href="#slide-76"></a> -->
+<slide class="" id="slide-75" style="background:;">
+  <!--  <a href="#slide-75"></a> -->
   <hgroup>
     <h1>Lectures et travail pour la semaine prochaine</h1>
   </hgroup>
@@ -2158,85 +2137,85 @@ dbDisconnect(con)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=43 title='Les Systèmes de Gestion de Base de Données (SGBDs)'>
+        data-slide=43 title='Conceptualisation d&#39;une base de données en 5 étapes'>
          43
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=44 title='La diversité des SGBDs'>
+        data-slide=44 title='Étape 1. Faire une liste des variables'>
          44
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=45 title='Le langage SQL'>
+        data-slide=45 title='Étape 2. Regrouper les variables dans des tables'>
          45
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=46 title='Le langage SQL'>
+        data-slide=46 title='Étape 3. Établir le type d&#39;association entre les tables'>
          46
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=47 title='Le langage SQL'>
+        data-slide=47 title='Étape 3. Établir le type d&#39;association entre les tables'>
          47
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=48 title='Conceptualisation d&#39;une base de données en 5 étapes'>
+        data-slide=48 title='Étape 4. Établir les clés primaires et étrangères'>
          48
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=49 title='Étape 1. Faire une liste des variables'>
+        data-slide=49 title='Étape 4. Établir les clés primaires et étrangères'>
          49
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=50 title='Étape 2. Regrouper les variables dans des tables'>
+        data-slide=50 title='Étape 5. Assigner un type de données aux attributs'>
          50
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=51 title='Étape 3. Établir le type d&#39;association entre les tables'>
+        data-slide=51 title='En résumé'>
          51
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=52 title='Étape 3. Établir le type d&#39;association entre les tables'>
+        data-slide=52 title='Les Systèmes de Gestion de Base de Données (SGBDs)'>
          52
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=53 title='Étape 4. Établir les clés primaires et étrangères'>
+        data-slide=53 title='La diversité des SGBDs'>
          53
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=54 title='Étape 4. Établir les clés primaires et étrangères'>
+        data-slide=54 title='Le langage SQL'>
          54
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=55 title='Étape 5. Assigner un type de données aux attributs'>
+        data-slide=55 title='Le langage SQL'>
          55
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=56 title='En résumé'>
+        data-slide=56 title='Le langage SQL'>
          56
       </a>
     </li>
@@ -2260,43 +2239,43 @@ dbDisconnect(con)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=60 title='Les opérations sur une base de données'>
+        data-slide=60 title='Pratique: Du modèle conceptuelle vers le modèle logique'>
          60
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=61 title='Transcrire ces étapes en SQL'>
+        data-slide=61 title='Les grandes étapes avec SQLite3'>
          61
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=62 title='Les grandes étapes avec SQLite3'>
+        data-slide=62 title='Créer un fichier de base de données'>
          62
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=63 title='Créer un fichier de base de données'>
+        data-slide=63 title='Se connecter au fichier la BD (SQLite3) via R'>
          63
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=64 title='Se connecter au fichier la BD (SQLite3) via R'>
+        data-slide=64 title='Création de la base de données via R'>
          64
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=65 title='Création de la base de données via R'>
+        data-slide=65 title='Création d&#39;une première table avec clé primaire'>
          65
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=66 title='Création d&#39;une première table avec clé primaire'>
+        data-slide=66 title='Création d&#39;une table avec clé étrangère'>
          66
       </a>
     </li>
@@ -2308,43 +2287,43 @@ dbDisconnect(con)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=68 title='Création d&#39;une table avec clé étrangère'>
+        data-slide=68 title='Ajout de contraintes à une table'>
          68
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=69 title='Ajout de contraintes à une table'>
+        data-slide=69 title='Création d&#39;une table avec R'>
          69
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=70 title='Création d&#39;une table avec R'>
+        data-slide=70 title='Création d&#39;une table'>
          70
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=71 title='Création d&#39;une table'>
+        data-slide=71 title='Modifier la table existante'>
          71
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=72 title='Modifier la table existante'>
+        data-slide=72 title='Supprimer la table de données et se déconnecter'>
          72
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=73 title='Supprimer la table de données et se déconnecter du fichier de base de données'>
+        data-slide=73 title='Supprimer la base de données'>
          73
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=74 title='Supprimer la base de données'>
+        data-slide=74 title='Lectures et travail pour la semaine prochaine'>
          74
       </a>
     </li>
@@ -2352,12 +2331,6 @@ dbDisconnect(con)
       <a href="#" target="_self" rel='tooltip' 
         data-slide=75 title='Lectures et travail pour la semaine prochaine'>
          75
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=76 title='Lectures et travail pour la semaine prochaine'>
-         76
       </a>
     </li>
   </ul>
