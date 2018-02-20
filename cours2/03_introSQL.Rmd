@@ -37,7 +37,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 
 *** =left
 
-1. Les `fichiers textes` comme les CSV, TSV (Format libre et ouvert)
+1. Les `fichiers texte` comme les CSV, TSV (Format libre et ouvert)
 2. Les `tableurs` comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
 3. Les `fichiers hierarchiques/structurés` HDF, NetCDF (Format libre et ouvert)
 4. Les `bases de données relationnelles`
@@ -55,7 +55,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 
 *** =left
 
-1. Les `fichiers textes` comme les CSV, TSV (Format libre et ouvert)
+1. Les `fichiers texte` comme les CSV, TSV (Format libre et ouvert)
 2. Les `tableurs` comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
 3. Les `fichiers hierarchiques/structurés` HDF, NetCDF (Format libre et ouvert)
 4. Les `bases de données relationnelles`
@@ -74,7 +74,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 <img src="assets/img/data_cube_4n.png" width="90%"></img>
 </div>
 
-- Il est difficile de stocker les données écologiques dans un tableau excel (n-2) lorsque les données écologiques ont (n-4).
+- Il est difficile de stocker les données écologiques dans un tableur (n-2) lorsque les données écologiques ont (n-4).
 - Conduit à une redondance dans l'information (par exemple. repeter les coordonnées de l'emplacement du site lorsqu'il est mesuré plusieurs fois).
 
 ---
@@ -103,8 +103,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 ## Autres avantages indéniables:
 
 - Obtenir un gain de temps et de performance.
-- Séparer les données brutes des données destinées aux analyses.
+- Séparer les données brutes des données destiné aux analyses.
 - Rendre flexible la préparation des données pour les analyses.
-- Pemettre le travail simultané de plusieurs utilisateurs grâce à l'approche client-serveur.
+- Pemettre le travail simultané de plusieurs utilisateurs grâce à l'approche client-serveur (approche serveur).
 - Déclencher des procédures de sauvegardes.
 - Suivre les modifications/ajouts à la BD (journal de transactions).
