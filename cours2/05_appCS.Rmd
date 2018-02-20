@@ -92,7 +92,7 @@ Soyez attentifs, car le travail de cette semaine consiste à écrire un script q
 
 - Le **client** est un logiciel installé sur votre ordinateur.
 - On se sert de ce logiciel pour interagir avec le serveur de base de données présent localement ou à distance.
-- **Avantage:** On peut avoir plusieurs **clients** de connecté sur un même serveur (contexte multi-utilisateurs).
+- **Avantage:** On peut avoir plusieurs **clients** connectés sur un même serveur (contexte multi-utilisateurs).
 
 --- &twocolw w1:40% w2:60%
 

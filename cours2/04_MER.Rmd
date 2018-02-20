@@ -7,8 +7,6 @@
 
 # Étape 1. Faire une liste des variables
 
-**Exercice (15-20 minutes):**
-
 1. Dresser la liste des informations collectées par les différents groupes.
 2. Regrouper les variables communes entre les équipes pour obtenir une ontologie conjointe.
 
@@ -16,12 +14,9 @@
 
 # Étape 2. Regrouper les variables dans des tables
 
-**Exercice (15-20 minutes):** Regrouper les variables dans des tables.
-
 1. Déterminer les tables/entités:
   - Qu'elles sont les unités d'échantillonnage? Autrement dit, sur quelles entités portent nos mesures?
 2. Remplir les tables avec les variables de l'étape 1.
-
 
 À ce stade de la conceptualisation, une table est une entité possédant des attributs. Chaque attribut est une colonne.
 
@@ -61,15 +56,13 @@
 </div>
 
 ## Important:
-  - Une clé primaire garantie le caractère unique d'un enregistrement (ligne d'une table).
+  - Une clé primaire garanti le caractère unique d'un enregistrement (ligne d'une table).
   - Une clé primaire ne peut donc jamais être `NULL`.
   - Une clé primaire peut être composite, une combinaison de colonnes.
 
 ---
 
 # Étape 4. Établir les clés primaires et étrangères
-
-**Exercice (5 minutes)**
 
 1. Déterminer quels sont les attributs/colonnes garantissant le caractère unique d'un enregistrement (ligne d'une table).
 2. Déterminer quelles sont les clés étrangères.
@@ -90,8 +83,6 @@ Chaque attribut d'une table doit correspondre à un type de données:
 | `TIMESTAMP`,`DATE`,`TIME` | Dates et heures      | 1998-02-16  | 4 à 8 octets     |
 
 Pour tous les types de données, [voir la documentation SQLite3](https://www.sqlite.org/datatype3.html)
-
-**Exercice (15 minutes):** Associer à chaque attribut un type de données.
 
 ---
 

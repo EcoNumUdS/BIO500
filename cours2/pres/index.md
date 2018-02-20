@@ -40,9 +40,9 @@ license     : by-nc-sa
 
 Trop souvent en écologie, les données sont représentées et entreposées dans un format proche des analyses que l'on veut réaliser.
 
-Par exemple, on utilise une matrice $site \times espèces$ pour analyser la structure des communautées.
+Par exemple, on utilise une matrice $sites \times espèces$ pour analyser la structure des communautées.
 
-La question ne devrait jamais conditionner notre facon de stocker l'information sur un système écologique.
+La question scientifique ne devrait jamais conditionner notre façon de stocker l'information sur un système écologique.
 
 *** =right
 
@@ -71,7 +71,7 @@ La question ne devrait jamais conditionner notre facon de stocker l'information 
 
 # La collecte de données en biologie
 
-## Le problème de multidimensionnalité
+## Le problème de multi-dimensionnalité
 
 <div style='text-align:center;'>
 <img src="assets/img/data_cube_3n.png" width="100%"></img>
@@ -82,7 +82,7 @@ La question ne devrait jamais conditionner notre facon de stocker l'information 
 
 # La collecte de données en biologie
 
-## Le problème de multidimensionnalité
+## Le problème de multi-dimensionnalité
 
 <div style='text-align:center;'>
 <img src="assets/img/data_cube_4n.png" width="100%"></img>
@@ -101,7 +101,7 @@ La question ne devrait jamais conditionner notre facon de stocker l'information 
 3. Temporelle
 4. Spatial
 
-Au sein de ce cours, nous nous attarderons à la façon de structurer ses données. Les spécificités propres à chacune de ces dimensions seront présentées. D'abord le format des données, puis les types de données.
+Au sein de ce cours, nous nous attarderons à la façon de structurer ces données. Les spécificités propres à chacune de ces dimensions seront présentées. D'abord le format des données, puis les types de données.
 
 --- .transition
 
@@ -124,8 +124,8 @@ Au sein de ce cours, nous nous attarderons à la façon de structurer ses donné
 |598   |piru |   2011|    380|
 |876   |abba |   2014|    160|
 
-- Nom de colonnes court, sans accent, sans espace et explicite.
-- Si possible, attachez les unités au nom de la colonne.
+- Noms de colonnes courts, sans accents, sans espaces et explicites.
+- Si possible, attacher les unités au nom de la colonne.
 
 *** =left
 
@@ -172,7 +172,7 @@ Au sein de ce cours, nous nous attarderons à la façon de structurer ses donné
 |B       |   2011|temp_max_deg |     26|
 |B       |   2014|temp_max_deg |     28|
 
-- Si l'on veut ajouter des données sur le climat, on ouvrira un nouveau tableau.
+- Si l'on veut ajouter des données sur le climat, on ajoutera un nouveau tableau.
 
 --- &twocol
 
@@ -226,12 +226,12 @@ Au sein de ce cours, nous nous attarderons à la façon de structurer ses donné
 |---------------------------|----------------------|-------------|------------------|
 | `BOLEAN`                  | Boléen               | vrai/faux   | 1 octet          |
 | `INTEGER`                 | Entiers              | -998, 123   | 1 à 4 octets     |
-| `DOUBLE`, `FLOAT`         | Nombres réels        | 9.98, -4.34 | 4 à 8 octets     |
+| `DOUBLE`, `FLOAT`, `REAL` | Nombres réels        | 9.98, -4.34 | 4 à 8 octets     |
 | `CHAR`,`VARCHAR`          | Chaine de caractères | lapin       | n x 1 à 8 octets |
 | `TIMESTAMP`,`DATE`,`TIME` | Dates et heures      | 1998-02-16  | 4 à 8 octets     |
 
 
-- Ce sont ces types qui seront utilisés pour entreposer nos données biotiques et abiotiques.
+- Ce sont ces types qui seront utilisés pour entreposer nos données.
 - Le choix d'un type approprié permet de réduire la taille du fichier de données.
 
 --- .transition
@@ -246,21 +246,21 @@ La plupart des languages/programmes disposent d'un type `TIMESTAMP`, `DATE` et `
 
 On utilisera préférablement la norme [ISO8601](https://fr.wikipedia.org/wiki/ISO_8601) pour représenter ces données.
 
-- `TIMESTAMP` (Heure et temps): On utilisera la notation `YYYY-MM-ddThh:mm:ss`. *ex. `1977-04-22T01:00:00-05:00`*
-- `DATE`: On utilisera la notation `YYYY-MM-dd`. *ex. 1997-04-22*
-- `TIME`: On utilisera la notation `HH:mm:ss` dans un systéme de 24 heures. *ex. 01:30:00.*
+  - `TIMESTAMP` (Heure et temps): `YYYY-MM-ddThh:mm:ss`. *ex. `1977-04-22T01:00:00-05:00`*
+  - `DATE`: `YYYY-MM-dd`. *ex. 1997-04-22*
+  - `TIME`: `HH:mm:ss` dans un systéme de 24 heures. *ex. 01:30:00.*
 
 ---
 
 # Les données temporelles
 
- Gardez à l'esprit que vos données pourraient être réutilisées à travers le Monde. Les dates ne sont pas représentées de la même manière que l'on soit en Amérique du Nord ou en Europe. **Il est donc important de normaliser la saisie de ce type d'information.**
+ Gardez à l'esprit que vos données pourraient être réutilisées à travers le monde. Les dates ne sont pas représentées de la même manière que l'on soit en Amérique du Nord ou en Europe. **Il est donc important de normaliser la saisie de ce type d'information.**
 
 --- &twocol
 
 # Les données temporelles
 
-Une autre représentation de la date du jour peut-être basé sur le calendrier Julien.
+Une autre représentation de la date est l'utilisation du calendrier Julien.
 
 *** =left
 
@@ -362,7 +362,7 @@ Une autre représentation de la date du jour peut-être basé sur le calendrier 
 2. VASCAN (Plantes vasculaires du Canada)
 3. NCBI
 
-**Avantage:** Chacune de ces institutions/infrastructures nous permettent de valider et retirer l'ensemble de la classification taxonomique d'une espèce à partir de son code. Même si l'identifiant change (nouvelle classification), nous serons en mesure de trouver le nouvel identifiant taxonomique à partir de l'ancien.
+**Avantage:** Chacune de ces institutions/infrastructures nous permet de valider et retirer l'ensemble de la classification taxonomique d'une espèce à partir de son code. Même si l'identifiant change (nouvelle classification), nous serons en mesure de trouver le nouvel identifiant taxonomique à partir de l'ancien.
 
 **Exemple:** [https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null)
 
@@ -421,10 +421,10 @@ Ces deux identifiants sont généralement identiques et peuvent être trouvés �
 
 - Laisser la cellule vide (`NULL`)
 - Mettre un `NA` (*Not Available*)
-- Mettre un 0
+- Mettre un `0`
 - Mettre `-9999` dans une colonne numérique
 
-## Selon vous, quelle est l'action la plus appropriée ?
+## Selon vous, quel est le choix le plus approprié ?
 
 ---
 
@@ -434,9 +434,9 @@ Ces deux identifiants sont généralement identiques et peuvent être trouvés �
 
 - Laisser la cellule vide: montre que l'information n'a pas été saisie (un oublie)
 
->- Mettre un `NA` (*Not Available*): Montre que l'information est réellement indisponible (car le NA est saisie par un humain).
+>- Mettre un `NA` (*Not Available*): Montre que l'information est réellement absente (car le NA est saisie par un humain).
 
->- <span style="text-decoration: line-through;"> Mettre un 0 </span>: **JAMAIS** (empêche la distinction entre un vrai d'un faux 0, influence la moyenne)
+>- <span style="text-decoration: line-through;"> Mettre un `0` </span>: **JAMAIS** (empêche la distinction entre un vrai d'un faux 0, influence la moyenne)
 
 >- Mettre `-9999` dans une colonne numérique: Ce choix peut être utilisé seulement pour les jeux de données très importants (centaine de Megas-octet), et doit être référencé dans les métadonnées.
 
@@ -461,7 +461,7 @@ Pourquoi prendre soins de ces données ?
 
 ## Pour en savoir davantage:
 
-- [Broman KW, Kara W (2017) Data organization in spreadsheets. The American Statistician.](http://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375989)
+- [Broman KW, Woo K (2017) Data organization in spreadsheets. The American Statistician.](http://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375989)
 - [Hart EM, Barmby P, LeBauer D, Michonneau F, Mount S, Mulrooney P, et al. (2016) Ten Simple Rules for Digital Data Storage. PLoS Comput Biol](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005097)
 
 --- .transition
@@ -488,7 +488,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 
 ---
 
-# Pourquoi bien entreposer ces données?
+# Pourquoi bien entreposer ses données?
 
 <div style='text-align:center;'>
   <img src="assets/img/data_trends.jpg" height="500px"></img>
@@ -502,7 +502,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 
 *** =left
 
-1. Les `fichiers textes` comme les CSV, TSV (Format libre et ouvert)
+1. Les `fichiers texte` comme les CSV, TSV (Format libre et ouvert)
 2. Les `tableurs` comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
 3. Les `fichiers hierarchiques/structurés` HDF, NetCDF (Format libre et ouvert)
 4. Les `bases de données relationnelles`
@@ -520,7 +520,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 
 *** =left
 
-1. Les `fichiers textes` comme les CSV, TSV (Format libre et ouvert)
+1. Les `fichiers texte` comme les CSV, TSV (Format libre et ouvert)
 2. Les `tableurs` comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
 3. Les `fichiers hierarchiques/structurés` HDF, NetCDF (Format libre et ouvert)
 4. Les `bases de données relationnelles`
@@ -539,8 +539,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 <img src="assets/img/data_cube_4n.png" width="90%"></img>
 </div>
 
-- Il est difficile de stocker les données écologiques dans un tableau excel (n-2) lorsque les données écologiques ont (n-4).
-- Conduit à une redondance dans l'information (par exemple. repeter les coordonnées de l'emplacement du site lorsqu'il est mesuré plusieurs fois).
+- Il est difficile de stocker les données écologiques dans un tableur (n-2) lorsque les données écologiques ont (n-4).
+- Conduit à une redondance dans l'information (par exemple. répéter les coordonnées de l'emplacement du site lorsqu'il est mesuré plusieurs fois).
 
 ---
 
@@ -570,10 +570,9 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 - Obtenir un gain de temps et de performance.
 - Séparer les données brutes des données destinées aux analyses.
 - Rendre flexible la préparation des données pour les analyses.
-- Pemettre le travail simultané de plusieurs utilisateurs grâce à l'approche client-serveur.
-- Déclencher des procédures de sauvegardes.
+- Pemettre le travail simultané de plusieurs utilisateurs grâce à l'approche client-serveur (approche serveur).
+- Déclencher des procédures de sauvegarde.
 - Suivre les modifications/ajouts à la BD (journal de transactions).
-
 --- .transition
 
 # Conceptualisation d'une base de données en 5 étapes
@@ -582,8 +581,6 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 
 # Étape 1. Faire une liste des variables
 
-**Exercice (15-20 minutes):**
-
 1. Dresser la liste des informations collectées par les différents groupes.
 2. Regrouper les variables communes entre les équipes pour obtenir une ontologie conjointe.
 
@@ -591,12 +588,9 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 
 # Étape 2. Regrouper les variables dans des tables
 
-**Exercice (15-20 minutes):** Regrouper les variables dans des tables.
-
 1. Déterminer les tables/entités:
   - Qu'elles sont les unités d'échantillonnage? Autrement dit, sur quelles entités portent nos mesures?
 2. Remplir les tables avec les variables de l'étape 1.
-
 
 À ce stade de la conceptualisation, une table est une entité possédant des attributs. Chaque attribut est une colonne.
 
@@ -636,15 +630,13 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 </div>
 
 ## Important:
-  - Une clé primaire garantie le caractère unique d'un enregistrement (ligne d'une table).
+  - Une clé primaire garanti le caractère unique d'un enregistrement (ligne d'une table).
   - Une clé primaire ne peut donc jamais être `NULL`.
   - Une clé primaire peut être composite, une combinaison de colonnes.
 
 ---
 
 # Étape 4. Établir les clés primaires et étrangères
-
-**Exercice (5 minutes)**
 
 1. Déterminer quels sont les attributs/colonnes garantissant le caractère unique d'un enregistrement (ligne d'une table).
 2. Déterminer quelles sont les clés étrangères.
@@ -665,8 +657,6 @@ Chaque attribut d'une table doit correspondre à un type de données:
 | `TIMESTAMP`,`DATE`,`TIME` | Dates et heures      | 1998-02-16  | 4 à 8 octets     |
 
 Pour tous les types de données, [voir la documentation SQLite3](https://www.sqlite.org/datatype3.html)
-
-**Exercice (15 minutes):** Associer à chaque attribut un type de données.
 
 ---
 
@@ -771,7 +761,7 @@ Soyez attentifs, car le travail de cette semaine consiste à écrire un script q
 
 - Le **client** est un logiciel installé sur votre ordinateur.
 - On se sert de ce logiciel pour interagir avec le serveur de base de données présent localement ou à distance.
-- **Avantage:** On peut avoir plusieurs **clients** de connecté sur un même serveur (contexte multi-utilisateurs).
+- **Avantage:** On peut avoir plusieurs **clients** connectés sur un même serveur (contexte multi-utilisateurs).
 
 --- &twocolw w1:40% w2:60%
 
@@ -978,6 +968,7 @@ CREATE TABLE films (
 );
 ```
 
+- Les contraintes `NOT NULL` sur la clé primaire ne sont pas obligées d'être définis. 
 
 ---
 
@@ -1027,16 +1018,14 @@ Il peut être parfois préférable supprimer la table et de la reconstruire plut
 
 ---
 
-# Supprimer la table de données et se déconnecter
+# Supprimer la table de données
 
 
 ```r
 dbSendQuery(con,"DROP TABLE films;")
-dbDisconnect(con)
 ```
 
 - `DROP TABLE` supprime l'ensemble de la table et ses données.
-- `dbDisconnect(con)` permet de fermer la connection avec le fichier de base de données (permet à un autre utilisateur de se connecter).
 
 ---
 
@@ -1050,6 +1039,8 @@ dbDisconnect(con)
 
 - `DROP DATABASE` fonctionne seulement avec d'autres SGBDs (approche serveur).
 - Dans le cas de SQLite3, on supprime simplement le fichier `*.db`.
+- `dbDisconnect(con)` permet de fermer la connection avec le fichier de base de données (permet à un autre utilisateur de se connecter).
+
 
 ---
 
