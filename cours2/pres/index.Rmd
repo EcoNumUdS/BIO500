@@ -40,9 +40,9 @@ license     : by-nc-sa
 
 Trop souvent en écologie, les données sont représentées et entreposées dans un format proche des analyses que l'on veut réaliser.
 
-Par exemple, on utilise une matrice $site \times espèces$ pour analyser la structure des communautées.
+Par exemple, on utilise une matrice $sites \times espèces$ pour analyser la structure des communautées.
 
-La question ne devrait jamais conditionner notre facon de stocker l'information sur un système écologique.
+La question scientifique ne devrait jamais conditionner notre façon de stocker l'information sur un système écologique.
 
 *** =right
 
@@ -101,7 +101,7 @@ La question ne devrait jamais conditionner notre facon de stocker l'information 
 3. Temporelle
 4. Spatial
 
-Au sein de ce cours, nous nous attarderons à la façon de structurer ses données. Les spécificités propres à chacune de ces dimensions seront présentées. D'abord le format des données, puis les types de données.
+Au sein de ce cours, nous nous attarderons à la façon de structurer ces données. Les spécificités propres à chacune de ces dimensions seront présentées. D'abord le format des données, puis les types de données.
 
 --- .transition
 
@@ -125,8 +125,8 @@ df <- data.frame(ID=ids,esp=esp,annees=annees,dhp_mm=dhp_mm)
 kable(df,format="markdown")
 ```
 
-- Nom de colonnes court, sans accent, sans espace et explicite.
-- Si possible, attachez les unités au nom de la colonne.
+- Noms de colonnes courts, sans accents, sans espaces et explicites.
+- Si possible, attacher les unités au nom de la colonne.
 
 *** =left
 
@@ -165,7 +165,7 @@ clim <- data.frame(ID_plot=c('A','B','B'),annees=c(2010,2011,2014),pp_tot_mm=c(8
 kable(melt(clim,id=c("ID_plot",'annees'),value.name="valeur"),format="markdown")
 ```
 
-- Si l'on veut ajouter des données sur le climat, on ouvrira un nouveau tableau.
+- Si l'on veut ajouter des données sur le climat, on ajoutera un nouveau tableau.
 
 --- &twocol
 
@@ -217,12 +217,12 @@ kable(df,format="markdown")
 |---------------------------|----------------------|-------------|------------------|
 | `BOLEAN`                  | Boléen               | vrai/faux   | 1 octet          |
 | `INTEGER`                 | Entiers              | -998, 123   | 1 à 4 octets     |
-| `DOUBLE`, `FLOAT`         | Nombres réels        | 9.98, -4.34 | 4 à 8 octets     |
+| `DOUBLE`, `FLOAT`, `REAL` | Nombres réels        | 9.98, -4.34 | 4 à 8 octets     |
 | `CHAR`,`VARCHAR`          | Chaine de caractères | lapin       | n x 1 à 8 octets |
 | `TIMESTAMP`,`DATE`,`TIME` | Dates et heures      | 1998-02-16  | 4 à 8 octets     |
 
 
-- Ce sont ces types qui seront utilisés pour entreposer nos données biotiques et abiotiques.
+- Ce sont ces types qui seront utilisés pour entreposer nos données.
 - Le choix d'un type approprié permet de réduire la taille du fichier de données.
 
 --- .transition
@@ -237,21 +237,21 @@ La plupart des languages/programmes disposent d'un type `TIMESTAMP`, `DATE` et `
 
 On utilisera préférablement la norme [ISO8601](https://fr.wikipedia.org/wiki/ISO_8601) pour représenter ces données.
 
-- `TIMESTAMP` (Heure et temps): On utilisera la notation `YYYY-MM-ddThh:mm:ss`. *ex. `1977-04-22T01:00:00-05:00`*
-- `DATE`: On utilisera la notation `YYYY-MM-dd`. *ex. 1997-04-22*
-- `TIME`: On utilisera la notation `HH:mm:ss` dans un systéme de 24 heures. *ex. 01:30:00.*
+  - `TIMESTAMP` (Heure et temps): `YYYY-MM-ddThh:mm:ss`. *ex. `1977-04-22T01:00:00-05:00`*
+  - `DATE`: `YYYY-MM-dd`. *ex. 1997-04-22*
+  - `TIME`: `HH:mm:ss` dans un systéme de 24 heures. *ex. 01:30:00.*
 
 ---
 
 # Les données temporelles
 
- Gardez à l'esprit que vos données pourraient être réutilisées à travers le Monde. Les dates ne sont pas représentées de la même manière que l'on soit en Amérique du Nord ou en Europe. **Il est donc important de normaliser la saisie de ce type d'information.**
+ Gardez à l'esprit que vos données pourraient être réutilisé à travers le Monde. Les dates ne sont pas représentées de la même manière que l'on soit en Amérique du Nord ou en Europe. **Il est donc important de normaliser la saisie de ce type d'information.**
 
 --- &twocol
 
 # Les données temporelles
 
-Une autre représentation de la date du jour peut-être basé sur le calendrier Julien.
+Une autre représentation de la date du jour peut-être basée sur le calendrier Julien.
 
 *** =left
 
@@ -404,10 +404,10 @@ Ces deux identifiants sont généralement identiques et peuvent être trouvés �
 
 - Laisser la cellule vide (`NULL`)
 - Mettre un `NA` (*Not Available*)
-- Mettre un 0
+- Mettre un `0`
 - Mettre `-9999` dans une colonne numérique
 
-## Selon vous, quelle est l'action la plus appropriée ?
+## Selon vous, quelle est le choix le plus approprié ?
 
 ---
 
@@ -419,7 +419,7 @@ Ces deux identifiants sont généralement identiques et peuvent être trouvés �
 
 >- Mettre un `NA` (*Not Available*): Montre que l'information est réellement indisponible (car le NA est saisie par un humain).
 
->- <span style="text-decoration: line-through;"> Mettre un 0 </span>: **JAMAIS** (empêche la distinction entre un vrai d'un faux 0, influence la moyenne)
+>- <span style="text-decoration: line-through;"> Mettre un `0` </span>: **JAMAIS** (empêche la distinction entre un vrai d'un faux 0, influence la moyenne)
 
 >- Mettre `-9999` dans une colonne numérique: Ce choix peut être utilisé seulement pour les jeux de données très importants (centaine de Megas-octet), et doit être référencé dans les métadonnées.
 
@@ -444,7 +444,7 @@ Pourquoi prendre soins de ces données ?
 
 ## Pour en savoir davantage:
 
-- [Broman KW, Kara W (2017) Data organization in spreadsheets. The American Statistician.](http://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375989)
+- [Broman KW, Woo K (2017) Data organization in spreadsheets. The American Statistician.](http://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375989)
 - [Hart EM, Barmby P, LeBauer D, Michonneau F, Mount S, Mulrooney P, et al. (2016) Ten Simple Rules for Digital Data Storage. PLoS Comput Biol](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005097)
 
 --- .transition
@@ -485,7 +485,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 
 *** =left
 
-1. Les `fichiers textes` comme les CSV, TSV (Format libre et ouvert)
+1. Les `fichiers texte` comme les CSV, TSV (Format libre et ouvert)
 2. Les `tableurs` comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
 3. Les `fichiers hierarchiques/structurés` HDF, NetCDF (Format libre et ouvert)
 4. Les `bases de données relationnelles`
@@ -503,7 +503,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 
 *** =left
 
-1. Les `fichiers textes` comme les CSV, TSV (Format libre et ouvert)
+1. Les `fichiers texte` comme les CSV, TSV (Format libre et ouvert)
 2. Les `tableurs` comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
 3. Les `fichiers hierarchiques/structurés` HDF, NetCDF (Format libre et ouvert)
 4. Les `bases de données relationnelles`
@@ -522,7 +522,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 <img src="assets/img/data_cube_4n.png" width="90%"></img>
 </div>
 
-- Il est difficile de stocker les données écologiques dans un tableau excel (n-2) lorsque les données écologiques ont (n-4).
+- Il est difficile de stocker les données écologiques dans un tableur (n-2) lorsque les données écologiques ont (n-4).
 - Conduit à une redondance dans l'information (par exemple. repeter les coordonnées de l'emplacement du site lorsqu'il est mesuré plusieurs fois).
 
 ---
@@ -551,9 +551,9 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 ## Autres avantages indéniables:
 
 - Obtenir un gain de temps et de performance.
-- Séparer les données brutes des données destinées aux analyses.
+- Séparer les données brutes des données destiné aux analyses.
 - Rendre flexible la préparation des données pour les analyses.
-- Pemettre le travail simultané de plusieurs utilisateurs grâce à l'approche client-serveur.
+- Pemettre le travail simultané de plusieurs utilisateurs grâce à l'approche client-serveur (approche serveur).
 - Déclencher des procédures de sauvegardes.
 - Suivre les modifications/ajouts à la BD (journal de transactions).
 
@@ -960,6 +960,7 @@ CREATE TABLE films (
 );
 ```
 
+- Les contraintes `NOT NULL` sur la clé primaire ne sont pas obligées d'être définis. 
 
 ---
 
@@ -1009,15 +1010,13 @@ Il peut être parfois préférable supprimer la table et de la reconstruire plut
 
 ---
 
-# Supprimer la table de données et se déconnecter
+# Supprimer la table de données
 
 ```{r, eval=FALSE}
 dbSendQuery(con,"DROP TABLE films;")
-dbDisconnect(con)
 ```
 
 - `DROP TABLE` supprime l'ensemble de la table et ses données.
-- `dbDisconnect(con)` permet de fermer la connection avec le fichier de base de données (permet à un autre utilisateur de se connecter).
 
 ---
 
@@ -1030,6 +1029,8 @@ dbDisconnect(con)
 
 - `DROP DATABASE` fonctionne seulement avec d'autres SGBDs (approche serveur).
 - Dans le cas de SQLite3, on supprime simplement le fichier `*.db`.
+- `dbDisconnect(con)` permet de fermer la connection avec le fichier de base de données (permet à un autre utilisateur de se connecter).
+
 
 ---
 

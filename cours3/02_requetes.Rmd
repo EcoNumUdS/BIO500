@@ -14,7 +14,7 @@
 
 ```{r}
 sql_requete <- "
-SELECT id_film, titre, annee_prod
+SELECT id_film, titre, annee
   FROM films LIMIT 10
 ;"
 
@@ -79,8 +79,8 @@ head(films)
 
 ```{r}
 sql_requete <- "
-SELECT titre, annee_prod, id_film
-  FROM films ORDER BY annee_prod DESC
+SELECT titre, annee, id_film
+  FROM films ORDER BY annee DESC
 ;"
 derniers_films <- dbGetQuery(con,sql_requete)
 head(derniers_films)
@@ -98,9 +98,9 @@ head(derniers_films)
 
 ```{r}
 sql_requete <- "
-SELECT id_film, titre, annee_prod
-  FROM films WHERE annee_prod IS NOT NULL
-  ORDER BY annee_prod DESC
+SELECT id_film, titre, annee
+  FROM films WHERE annee IS NOT NULL
+  ORDER BY annee DESC
 ;"
 annees_films <- dbGetQuery(con,sql_requete)
 head(annees_films)
@@ -119,11 +119,11 @@ head(annees_films)
 
 ```{r}
 sql_requete <- "
-SELECT id_film, titre, annee_prod
+SELECT id_film, titre, annee
   FROM films WHERE
-  (annee_prod >= 1930 AND annee_prod <= 1940)
-  OR (annee_prod >= 1950 AND annee_prod <= 1960)
-  ORDER BY annee_prod
+  (annee >= 1930 AND annee <= 1940)
+  OR (annee >= 1950 AND annee <= 1960)
+  ORDER BY annee
 ;"
 derniers_films <- dbGetQuery(con,sql_requete)
 head(derniers_films)
@@ -144,7 +144,7 @@ head(derniers_films)
 
 ```{r}
 sql_requete <- "
-SELECT id_film, titre, annee_prod
+SELECT id_film, titre, annee
   FROM films WHERE titre LIKE '%Voyage%'
 ;"
 derniers_films <- dbGetQuery(con,sql_requete)
@@ -173,8 +173,8 @@ Dans ta table `acteurs`, essayer de trouver votre acteur préféré avec `LIKE` 
 
 ```{r}
 sql_requete <- "
-SELECT avg(annee_prod) AS moyenne,
-  min(annee_prod), max(annee_prod)
+SELECT avg(annee) AS moyenne,
+  min(annee), max(annee)
   FROM films;"
 
 resume_films <- dbGetQuery(con,sql_requete)
@@ -196,9 +196,9 @@ head(resume_films)
 
 ```{r}
 sql_requete <- "
-SELECT count(titre) AS nb_films, annee_prod
+SELECT count(titre) AS nb_films, annee
   FROM films
-  GROUP BY annee_prod;"
+  GROUP BY annee;"
 
 resume_films <- dbGetQuery(con,sql_requete)
 head(resume_films)
@@ -229,7 +229,7 @@ Le `INNER JOIN` est un type de jointure, renvoyant seulement les films et les ac
 
 ```{r}
 sql_requete <- "
-SELECT titre, annee_prod, films.id_film, acteurs.id_film
+SELECT titre, annee, films.id_film, acteurs.id_film
   FROM films
   INNER JOIN acteurs ON films.id_film = acteurs.id_film
   ;"
@@ -255,7 +255,7 @@ On peut spécifier la jointure avec `USING` seulement si les deux clés possède
 
 ```{r}
 sql_requete <- "
-SELECT titre, annee_prod, nom, prenom
+SELECT titre, annee, nom, prenom
   FROM films
   INNER JOIN acteurs USING (id_film)
   ;"
@@ -296,13 +296,13 @@ En vous servant des types de jointures, on voudrait savoir s'il existe des films
 
 ```{r}
 sql_requete <- "
-SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
-  SELECT titre, annee_prod, count(nom) AS nb_acteurs
+SELECT annee, avg(nb_acteurs) AS moy_acteurs FROM (
+  SELECT titre, annee, count(nom) AS nb_acteurs
     FROM films
     INNER JOIN acteurs USING (id_film)
-    GROUP BY annee_prod, titre
+    GROUP BY annee, titre
 ) AS nb_acteurs_film
-GROUP BY annee_prod;"
+GROUP BY annee;"
 
 moy_acteurs <- dbGetQuery(con,sql_requete)
 head(moy_acteurs)
@@ -320,13 +320,13 @@ head(moy_acteurs)
 
 ```{r}
 sql_requete <- "
-SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
-  SELECT titre, annee_prod, count(nom) AS nb_acteurs
+SELECT annee, avg(nb_acteurs) AS moy_acteurs FROM (
+  SELECT titre, annee, count(nom) AS nb_acteurs
     FROM films
     INNER JOIN acteurs USING (id_film)
-    GROUP BY annee_prod, titre
+    GROUP BY annee, titre
 ) AS nb_acteurs_film
-GROUP BY annee_prod
+GROUP BY annee
 HAVING avg(nb_acteurs) > 10;"
 
 nb_acteurs <- dbGetQuery(con,sql_requete)

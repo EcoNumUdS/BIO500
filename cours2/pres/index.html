@@ -96,9 +96,9 @@
     <div class='left' style='float:left;width:48%'>
      <p>Trop souvent en écologie, les données sont représentées et entreposées dans un format proche des analyses que l&#39;on veut réaliser.</p>
 
-<p>Par exemple, on utilise une matrice \(site \times espèces\) pour analyser la structure des communautées.</p>
+<p>Par exemple, on utilise une matrice \(sites \times espèces\) pour analyser la structure des communautées.</p>
 
-<p>La question ne devrait jamais conditionner notre facon de stocker l&#39;information sur un système écologique.</p>
+<p>La question scientifique ne devrait jamais conditionner notre façon de stocker l&#39;information sur un système écologique.</p>
 
     </div>
     <div class='right' style='float:right;width:48%'>
@@ -175,7 +175,7 @@
 <li>Spatial</li>
 </ol>
 
-<p>Au sein de ce cours, nous nous attarderons à la façon de structurer ses données. Les spécificités propres à chacune de ces dimensions seront présentées. D&#39;abord le format des données, puis les types de données.</p>
+<p>Au sein de ce cours, nous nous attarderons à la façon de structurer ces données. Les spécificités propres à chacune de ces dimensions seront présentées. D&#39;abord le format des données, puis les types de données.</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -295,8 +295,8 @@
 </tbody></table>
 
 <ul>
-<li>Nom de colonnes court, sans accent, sans espace et explicite.</li>
-<li>Si possible, attachez les unités au nom de la colonne.</li>
+<li>Noms de colonnes courts, sans accents, sans espaces et explicites.</li>
+<li>Si possible, attacher les unités au nom de la colonne.</li>
 </ul>
 
     </div>
@@ -411,7 +411,7 @@
 </tbody></table>
 
 <ul>
-<li>Si l&#39;on veut ajouter des données sur le climat, on ouvrira un nouveau tableau.</li>
+<li>Si l&#39;on veut ajouter des données sur le climat, on ajoutera un nouveau tableau.</li>
 </ul>
 
     </div>
@@ -570,7 +570,7 @@
 <td>1 à 4 octets</td>
 </tr>
 <tr>
-<td><code>DOUBLE</code>, <code>FLOAT</code></td>
+<td><code>DOUBLE</code>, <code>FLOAT</code>, <code>REAL</code></td>
 <td>Nombres réels</td>
 <td>9.98, -4.34</td>
 <td>4 à 8 octets</td>
@@ -590,7 +590,7 @@
 </tbody></table>
 
 <ul>
-<li>Ce sont ces types qui seront utilisés pour entreposer nos données biotiques et abiotiques.</li>
+<li>Ce sont ces types qui seront utilisés pour entreposer nos données.</li>
 <li>Le choix d&#39;un type approprié permet de réduire la taille du fichier de données.</li>
 </ul>
 
@@ -618,9 +618,9 @@
 <p>On utilisera préférablement la norme <a href="https://fr.wikipedia.org/wiki/ISO_8601">ISO8601</a> pour représenter ces données.</p>
 
 <ul>
-<li><code>TIMESTAMP</code> (Heure et temps): On utilisera la notation <code>YYYY-MM-ddThh:mm:ss</code>. <em>ex. <code>1977-04-22T01:00:00-05:00</code></em></li>
-<li><code>DATE</code>: On utilisera la notation <code>YYYY-MM-dd</code>. <em>ex. 1997-04-22</em></li>
-<li><code>TIME</code>: On utilisera la notation <code>HH:mm:ss</code> dans un systéme de 24 heures. <em>ex. 01:30:00.</em></li>
+<li><code>TIMESTAMP</code> (Heure et temps): <code>YYYY-MM-ddThh:mm:ss</code>. <em>ex. <code>1977-04-22T01:00:00-05:00</code></em></li>
+<li><code>DATE</code>: <code>YYYY-MM-dd</code>. <em>ex. 1997-04-22</em></li>
+<li><code>TIME</code>: <code>HH:mm:ss</code> dans un systéme de 24 heures. <em>ex. 01:30:00.</em></li>
 </ul>
 
   </article>
@@ -632,7 +632,7 @@
     <h1>Les données temporelles</h1>
   </hgroup>
   <article data-timings="">
-    <p>Gardez à l&#39;esprit que vos données pourraient être réutilisées à travers le Monde. Les dates ne sont pas représentées de la même manière que l&#39;on soit en Amérique du Nord ou en Europe. <strong>Il est donc important de normaliser la saisie de ce type d&#39;information.</strong></p>
+    <p>Gardez à l&#39;esprit que vos données pourraient être réutilisé à travers le Monde. Les dates ne sont pas représentées de la même manière que l&#39;on soit en Amérique du Nord ou en Europe. <strong>Il est donc important de normaliser la saisie de ce type d&#39;information.</strong></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -642,7 +642,7 @@
     <h1>Les données temporelles</h1>
   </hgroup>
   <article>
-    <p>Une autre représentation de la date du jour peut-être basé sur le calendrier Julien.</p>
+    <p>Une autre représentation de la date du jour peut-être basée sur le calendrier Julien.</p>
 
     <div class='left' style='float:left;width:48%'>
      <div style='text-align:center;'>
@@ -923,11 +923,11 @@
 <ul>
 <li>Laisser la cellule vide (<code>NULL</code>)</li>
 <li>Mettre un <code>NA</code> (<em>Not Available</em>)</li>
-<li>Mettre un 0</li>
+<li>Mettre un <code>0</code></li>
 <li>Mettre <code>-9999</code> dans une colonne numérique</li>
 </ul>
 
-<h2>Selon vous, quelle est l&#39;action la plus appropriée ?</h2>
+<h2>Selon vous, quelle est le choix le plus approprié ?</h2>
 
   </article>
   <!-- Presenter Notes -->
@@ -946,7 +946,7 @@
 
 <ul class = "build incremental">
 <li><p>Mettre un <code>NA</code> (<em>Not Available</em>): Montre que l&#39;information est réellement indisponible (car le NA est saisie par un humain).</p></li>
-<li><p><span style="text-decoration: line-through;"> Mettre un 0 </span>: <strong>JAMAIS</strong> (empêche la distinction entre un vrai d&#39;un faux 0, influence la moyenne)</p></li>
+<li><p><span style="text-decoration: line-through;"> Mettre un <code>0</code> </span>: <strong>JAMAIS</strong> (empêche la distinction entre un vrai d&#39;un faux 0, influence la moyenne)</p></li>
 <li><p>Mettre <code>-9999</code> dans une colonne numérique: Ce choix peut être utilisé seulement pour les jeux de données très importants (centaine de Megas-octet), et doit être référencé dans les métadonnées.</p></li>
 </ul>
 
@@ -983,7 +983,7 @@
 <h2>Pour en savoir davantage:</h2>
 
 <ul>
-<li><a href="http://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375989">Broman KW, Kara W (2017) Data organization in spreadsheets. The American Statistician.</a></li>
+<li><a href="http://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375989">Broman KW, Woo K (2017) Data organization in spreadsheets. The American Statistician.</a></li>
 <li><a href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005097">Hart EM, Barmby P, LeBauer D, Michonneau F, Mount S, Mulrooney P, et al. (2016) Ten Simple Rules for Digital Data Storage. PLoS Comput Biol</a></li>
 </ul>
 
@@ -1043,7 +1043,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
     
     <div class='left' style='float:left;width:48%'>
      <ol>
-<li>Les <code>fichiers textes</code> comme les CSV, TSV (Format libre et ouvert)</li>
+<li>Les <code>fichiers texte</code> comme les CSV, TSV (Format libre et ouvert)</li>
 <li>Les <code>tableurs</code> comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)</li>
 <li>Les <code>fichiers hierarchiques/structurés</code> HDF, NetCDF (Format libre et ouvert)</li>
 <li>Les <code>bases de données relationnelles</code></li>
@@ -1066,7 +1066,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
     
     <div class='left' style='float:left;width:48%'>
      <ol>
-<li>Les <code>fichiers textes</code> comme les CSV, TSV (Format libre et ouvert)</li>
+<li>Les <code>fichiers texte</code> comme les CSV, TSV (Format libre et ouvert)</li>
 <li>Les <code>tableurs</code> comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)</li>
 <li>Les <code>fichiers hierarchiques/structurés</code> HDF, NetCDF (Format libre et ouvert)</li>
 <li>Les <code>bases de données relationnelles</code></li>
@@ -1092,7 +1092,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 </div>
 
 <ul>
-<li>Il est difficile de stocker les données écologiques dans un tableau excel (n-2) lorsque les données écologiques ont (n-4).</li>
+<li>Il est difficile de stocker les données écologiques dans un tableur (n-2) lorsque les données écologiques ont (n-4).</li>
 <li>Conduit à une redondance dans l&#39;information (par exemple. repeter les coordonnées de l&#39;emplacement du site lorsqu&#39;il est mesuré plusieurs fois).</li>
 </ul>
 
@@ -1142,9 +1142,9 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 
 <ul>
 <li>Obtenir un gain de temps et de performance.</li>
-<li>Séparer les données brutes des données destinées aux analyses.</li>
+<li>Séparer les données brutes des données destiné aux analyses.</li>
 <li>Rendre flexible la préparation des données pour les analyses.</li>
-<li>Pemettre le travail simultané de plusieurs utilisateurs grâce à l&#39;approche client-serveur.</li>
+<li>Pemettre le travail simultané de plusieurs utilisateurs grâce à l&#39;approche client-serveur (approche serveur).</li>
 <li>Déclencher des procédures de sauvegardes.</li>
 <li>Suivre les modifications/ajouts à la BD (journal de transactions).</li>
 </ul>
@@ -1752,6 +1752,10 @@ con &lt;- dbConnect(SQLite(), dbname=&quot;./assets/data/films.db&quot;)
 );
 </code></pre>
 
+<ul>
+<li>Les contraintes <code>NOT NULL</code> sur la clé primaire ne sont pas obligées d&#39;être définis. </li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -1817,16 +1821,14 @@ ALTER TABLE database_name.table_name ADD COLUMN column_def...;
 <slide class="" id="slide-72" style="background:;">
   <!--  <a href="#slide-72"></a> -->
   <hgroup>
-    <h1>Supprimer la table de données et se déconnecter</h1>
+    <h1>Supprimer la table de données</h1>
   </hgroup>
   <article data-timings="">
     <pre><code class="r">dbSendQuery(con,&quot;DROP TABLE films;&quot;)
-dbDisconnect(con)
 </code></pre>
 
 <ul>
 <li><code>DROP TABLE</code> supprime l&#39;ensemble de la table et ses données.</li>
-<li><code>dbDisconnect(con)</code> permet de fermer la connection avec le fichier de base de données (permet à un autre utilisateur de se connecter).</li>
 </ul>
 
   </article>
@@ -1845,6 +1847,7 @@ dbDisconnect(con)
 <ul>
 <li><code>DROP DATABASE</code> fonctionne seulement avec d&#39;autres SGBDs (approche serveur).</li>
 <li>Dans le cas de SQLite3, on supprime simplement le fichier <code>*.db</code>.</li>
+<li><code>dbDisconnect(con)</code> permet de fermer la connection avec le fichier de base de données (permet à un autre utilisateur de se connecter).</li>
 </ul>
 
   </article>
@@ -2311,7 +2314,7 @@ dbDisconnect(con)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=72 title='Supprimer la table de données et se déconnecter'>
+        data-slide=72 title='Supprimer la table de données'>
          72
       </a>
     </li>

@@ -9,10 +9,6 @@
 4. Ajouter de l'information dans les tables
 5. Faire des requêtes pour extraire l'information
 
-**Important:**
-
-Pour ceux dont la VM ne fonctionne pas, il possible de faire les exercices de ce cours sur Windows ou MacOSX.
-
 
 --- .transition
 
@@ -22,47 +18,27 @@ Pour ceux dont la VM ne fonctionne pas, il possible de faire les exercices de ce
 
 # Connexion au serveur
 
+```{r eval=TRUE, echo=FALSE}
+system("rm -rf ./assets/donnees/films.db")
 
-```{r echo=FALSE, include=FALSE}
-library(RPostgreSQL)
-
-con <- dbConnect(PostgreSQL(),
-        host="localhost",
-        port=5432,
-        user= "postgres")
-
-# On créé la base de données et on ferme la connexion
-dbSendQuery(con,"DROP DATABASE IF EXISTS bd_films;")
-dbSendQuery(con,"CREATE DATABASE bd_films;")
-dbDisconnect(con)
-
-# On se connecte à la nouvelle base de données
-con <- dbConnect(PostgreSQL(),
-        host="localhost",
-        port=5432,
-        user= "postgres",
-        dbname="bd_films")
 ```
 
-```{r eval=FALSE}
-library(RPostgreSQL)
 
-con <- dbConnect(PostgreSQL(),
-        host="localhost",
-        port=5432,
-        user= "postgres")
+```{r eval=TRUE, echo=TRUE, message=FALSE,results='hide'}
+library(RSQLite)
 
-# On créé la base de données et on ferme la connexion
-dbSendQuery(con,"DROP DATABASE IF EXISTS bd_films;")
-dbSendQuery(con,"CREATE DATABASE bd_films;")
-dbDisconnect(con)
+con <- dbConnect(SQLite(),dbname="./assets/donnees/films.db")
 
-# On se connecte à la nouvelle base de données
-con <- dbConnect(PostgreSQL(),
-        host="localhost",
-        port=5432,
-        user= "postgres",
-        dbname="bd_films")
+tbl_films <- "CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee   integer,
+    PRIMARY KEY (id_film)
+);"
+
+dbSendQuery(con,tbl_films)
+
+
 ```
 
 **Question:** Sur ce script, où sont les instructions SQL? Òu sont les commandes R?
@@ -71,11 +47,11 @@ con <- dbConnect(PostgreSQL(),
 
 # Création de la table `films`
 
-```{r}
+```{r, eval=FALSE}
 tbl_films <- "CREATE TABLE films (
     id_film     integer,
     titre       varchar(300),
-    annee_prod   integer,
+    annee   integer,
     PRIMARY KEY (id_film)
 );"
 
@@ -87,7 +63,7 @@ dbSendQuery(con,tbl_films)
 # Création de la table `acteurs`
 
 
-```{r}
+```{r  message=FALSE, results='hide'}
 tbl_acteurs <- "CREATE TABLE acteurs (
     id_acteur   integer,
     nom         varchar(100),
@@ -100,15 +76,7 @@ tbl_acteurs <- "CREATE TABLE acteurs (
 dbSendQuery(con,tbl_acteurs)
 ```
 
----
 
-# pgAdmin3
-
-`pgAdmin3` est un client avec une interface graphique permettant de visualiser si les opérations de création de tables ont bien été réalisées.
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/pgadmin_table.png" width="70%"></img>
-</div>
 
 
 --- .transition
@@ -144,14 +112,14 @@ Documentation: [http://docs.postgresql.fr/9.5/sql-copy.html](http://docs.postgre
 
 ---
 
-# RPostgreSQL - `dbWriteTable`
+# RSQLite - `dbWriteTable`
 
-La librairie RPostgreSQL peut nous aider plus facilement à accomplir cette tâche:
+La librairie RSQLite peut nous aider plus facilement à accomplir cette tâche:
 
 ```{r}
 # Lecture des fichiers CSV
-bd_films <- read.csv2(file='./assets/donnees/bd_beacon/bd_films.csv')
-bd_acteurs <- read.csv2(file='./assets/donnees/bd_beacon/bd_acteurs.csv')
+bd_films <- read.csv2(file='./assets/donnees/bd_beacon/bd_films.csv',stringsAsFactors=FALSE)
+bd_acteurs <- read.csv2(file='./assets/donnees/bd_beacon/bd_acteurs.csv',stringsAsFactors=FALSE)
 
 # Injection des enregistrements dans la BD
 dbWriteTable(con,append=TRUE,name="films",value=bd_films, row.names=FALSE)
@@ -162,14 +130,7 @@ dbWriteTable(con,append=TRUE,name="acteurs",value=bd_acteurs, row.names=FALSE)
 
 # Exercice 1 (10-15 minutes)
 
-Ce premier exercice est important pour la suite de la séance.  
+Ce premier exercice est important pour la suite de la séance.
 
 1. Recréer la base de données `bd_films` avec ses deux tables `films` et `acteurs`
 2. Insérer les données [bd_acteurs.csv](./assets/donnees/bd_beacon/bd_acteurs.csv) et [bd_films.csv](./assets/donnees/bd_beacon/bd_films.csv) dans les deux tables à l'aide de la commande R `dbWriteTable()`
-
-
----
-
-# pgAdmin3
-
-Il est également possible d'insérer des données à partir du logiciel `pgAdmin3`.

@@ -1,7 +1,7 @@
 ---
-title       : "Séance 4: L'organisation des données - 2"
+title       : "Séance 3: La gestion des données biologiques"
 subtitle    : "BIO 500 - Méthodes en écologie computationnelle"
-author      : "Dominique Gravel & Steve Vissault"
+author      : "Steve Vissault & Dominique Gravel"
 job         : "Laboratoire d'écologie intégrative"
 logo        : "logo.png"
 framework   : io2012       # {io2012, html5slides, shower, dzslides, ...}
@@ -18,13 +18,10 @@ assets      :
 
 ---
 
-# Séance 4
+# Séance 3
 
-- Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/cours4/) et en [PDF](./assets/pdf/S4-BIO500.pdf).
+- Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/cours3/) et en [PDF](./assets/pdf/S3-BIO500.pdf).
 - L'ensemble du matériel de cours est disponible sur la page du portail [moodle](https://www.usherbrooke.ca/moodle2-cours/course/view.php?id=12189).
-
-<!-- TODO 1: Mettre cours 2 en PDF -->
-<!-- TODO 2: Changer le lien moodle -->
 
 ---
 
@@ -35,10 +32,6 @@ assets      :
 3. Créer les tables et spécifier les clés
 4. Ajouter de l'information dans les tables
 5. Faire des requêtes pour extraire l'information
-
-**Important:**
-
-Pour ceux dont la VM ne fonctionne pas, il possible de faire les exercices de ce cours sur Windows ou MacOSX.
 
 
 --- .transition
@@ -54,24 +47,18 @@ Pour ceux dont la VM ne fonctionne pas, il possible de faire les exercices de ce
 
 
 ```r
-library(RPostgreSQL)
+library(RSQLite)
 
-con <- dbConnect(PostgreSQL(),
-        host="localhost",
-        port=5432,
-        user= "postgres")
+con <- dbConnect(SQLite(),dbname="./assets/donnees/films.db")
 
-# On créé la base de données et on ferme la connexion
-dbSendQuery(con,"DROP DATABASE IF EXISTS bd_films;")
-dbSendQuery(con,"CREATE DATABASE bd_films;")
-dbDisconnect(con)
+tbl_films <- "CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee   integer,
+    PRIMARY KEY (id_film)
+);"
 
-# On se connecte à la nouvelle base de données
-con <- dbConnect(PostgreSQL(),
-        host="localhost",
-        port=5432,
-        user= "postgres",
-        dbname="bd_films")
+dbSendQuery(con,tbl_films)
 ```
 
 **Question:** Sur ce script, où sont les instructions SQL? Òu sont les commandes R?
@@ -85,15 +72,11 @@ con <- dbConnect(PostgreSQL(),
 tbl_films <- "CREATE TABLE films (
     id_film     integer,
     titre       varchar(300),
-    annee_prod   integer,
+    annee   integer,
     PRIMARY KEY (id_film)
 );"
 
 dbSendQuery(con,tbl_films)
-```
-
-```
-## <PostgreSQLResult>
 ```
 
 ---
@@ -116,18 +99,10 @@ dbSendQuery(con,tbl_acteurs)
 ```
 
 ```
-## <PostgreSQLResult>
+## Warning: Closing open result set, pending rows
 ```
 
----
 
-# pgAdmin3
-
-`pgAdmin3` est un client avec une interface graphique permettant de visualiser si les opérations de création de tables ont bien été réalisées.
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/pgadmin_table.png" width="70%"></img>
-</div>
 
 
 --- .transition
@@ -163,47 +138,36 @@ Documentation: [http://docs.postgresql.fr/9.5/sql-copy.html](http://docs.postgre
 
 ---
 
-# RPostgreSQL - `dbWriteTable`
+# RSQLite - `dbWriteTable`
 
-La librairie RPostgreSQL peut nous aider plus facilement à accomplir cette tâche:
+La librairie RSQLite peut nous aider plus facilement à accomplir cette tâche:
 
 
 ```r
 # Lecture des fichiers CSV
-bd_films <- read.csv2(file='./assets/donnees/bd_beacon/bd_films.csv')
-bd_acteurs <- read.csv2(file='./assets/donnees/bd_beacon/bd_acteurs.csv')
+bd_films <- read.csv2(file='./assets/donnees/bd_beacon/bd_films.csv',stringsAsFactors=FALSE)
+bd_acteurs <- read.csv2(file='./assets/donnees/bd_beacon/bd_acteurs.csv',stringsAsFactors=FALSE)
 
 # Injection des enregistrements dans la BD
 dbWriteTable(con,append=TRUE,name="films",value=bd_films, row.names=FALSE)
 ```
 
 ```
-## [1] TRUE
+## Warning: Closing open result set, pending rows
 ```
 
 ```r
 dbWriteTable(con,append=TRUE,name="acteurs",value=bd_acteurs, row.names=FALSE)
 ```
 
-```
-## [1] TRUE
-```
-
 ---
 
 # Exercice 1 (10-15 minutes)
 
-Ce premier exercice est important pour la suite de la séance.  
+Ce premier exercice est important pour la suite de la séance.
 
 1. Recréer la base de données `bd_films` avec ses deux tables `films` et `acteurs`
 2. Insérer les données [bd_acteurs.csv](./assets/donnees/bd_beacon/bd_acteurs.csv) et [bd_films.csv](./assets/donnees/bd_beacon/bd_films.csv) dans les deux tables à l'aide de la commande R `dbWriteTable()`
-
-
----
-
-# pgAdmin3
-
-Il est également possible d'insérer des données à partir du logiciel `pgAdmin3`.
 
 ---.transition
 
@@ -221,7 +185,7 @@ Il est également possible d'insérer des données à partir du logiciel `pgAdmi
 
 ```r
 sql_requete <- "
-SELECT id_film, titre, annee_prod
+SELECT id_film, titre, annee
   FROM films LIMIT 10
 ;"
 
@@ -230,13 +194,13 @@ head(films)
 ```
 
 ```
-##   id_film                   titre annee_prod
-## 1       4        'Breaker' Morant       1980
-## 2       5             'burbs, The       1989
-## 3       6   'Crocodile' Dundee II       1988
-## 4       7 *batteries not included       1987
-## 5       3  ...And Justice for All       1979
-## 6       8                      10       1979
+##   id_film                  titre annee
+## 1       1                ¡Átame!  1990
+## 2       2         ¡Three Amigos!  1986
+## 3       3 ...And Justice for All  1979
+## 4       4       'Breaker' Morant  1980
+## 5       5            'burbs, The  1989
+## 6       6  'Crocodile' Dundee II  1988
 ```
 
 *** =right
@@ -264,13 +228,13 @@ head(films)
 ```
 
 ```
-##   id_film                   titre annee_prod
-## 1       4        'Breaker' Morant       1980
-## 2       5             'burbs, The       1989
-## 3       6   'Crocodile' Dundee II       1988
-## 4       7 *batteries not included       1987
-## 5       3  ...And Justice for All       1979
-## 6       8                      10       1979
+##   id_film                  titre annee
+## 1       1                ¡Átame!  1990
+## 2       2         ¡Three Amigos!  1986
+## 3       3 ...And Justice for All  1979
+## 4       4       'Breaker' Morant  1980
+## 5       5            'burbs, The  1989
+## 6       6  'Crocodile' Dundee II  1988
 ```
 
 *** =right
@@ -296,13 +260,13 @@ head(films)
 ```
 
 ```
-##            nom       prenom
-## 1        Smith Douglas (VI)
-## 2     Hilliard       Ernest
-## 3        Young  Vanessa (I)
-## 4    Carpenter     Jack (I)
-## 5        Maron          Rob
-## 6 Kallianiotes       Helena
+##           nom    prenom
+## 1 Fitz-Gerald     Lewis
+## 2        Gage     Kevin
+## 3    Carrasco    Carlos
+## 4     Vasquez David (I)
+## 5   Blackmore   Stephen
+## 6    Anderson  Adam (I)
 ```
 
 *** =right
@@ -319,21 +283,21 @@ head(films)
 
 ```r
 sql_requete <- "
-SELECT titre, annee_prod, id_film
-  FROM films ORDER BY annee_prod DESC
+SELECT titre, annee, id_film
+  FROM films ORDER BY annee DESC
 ;"
 derniers_films <- dbGetQuery(con,sql_requete)
 head(derniers_films)
 ```
 
 ```
-##              titre annee_prod id_film
-## 1  Wilson, Michael         NA    5496
-## 2     Khan, George         NA    2732
-## 3   Walker, Amanda         NA    5350
-## 4 Franklin, Cherie         NA    1823
-## 5     Thomas, Meda         NA    5030
-## 6    Cicco, Johnny         NA     984
+##                  titre annee id_film
+## 1               Breach  2007     708
+## 2 Bridge to Terabithia  2007     727
+## 3         Dead Silence  2007    1275
+## 4           Epic Movie  2007    1573
+## 5          Ghost Rider  2007    1946
+## 6      Hannibal Rising  2007    2155
 ```
 
 *** =right
@@ -349,22 +313,22 @@ head(derniers_films)
 
 ```r
 sql_requete <- "
-SELECT id_film, titre, annee_prod
-  FROM films WHERE annee_prod IS NOT NULL
-  ORDER BY annee_prod DESC
+SELECT id_film, titre, annee
+  FROM films WHERE annee IS NOT NULL
+  ORDER BY annee DESC
 ;"
 annees_films <- dbGetQuery(con,sql_requete)
 head(annees_films)
 ```
 
 ```
-##   id_film                titre annee_prod
-## 1    2354             Hot Fuzz       2007
-## 2    3663       Number 23, The       2007
-## 3    5473            Wild Hogs       2007
-## 4     727 Bridge to Terabithia       2007
-## 5    3487     Music and Lyrics       2007
-## 6    4159     Reno 911!: Miami       2007
+##   id_film                titre annee
+## 1     708               Breach  2007
+## 2     727 Bridge to Terabithia  2007
+## 3    1275         Dead Silence  2007
+## 4    1573           Epic Movie  2007
+## 5    1946          Ghost Rider  2007
+## 6    2155      Hannibal Rising  2007
 ```
 
 *** =right
@@ -381,24 +345,24 @@ head(annees_films)
 
 ```r
 sql_requete <- "
-SELECT id_film, titre, annee_prod
+SELECT id_film, titre, annee
   FROM films WHERE
-  (annee_prod >= 1930 AND annee_prod <= 1940)
-  OR (annee_prod >= 1950 AND annee_prod <= 1960)
-  ORDER BY annee_prod
+  (annee >= 1930 AND annee <= 1940)
+  OR (annee >= 1950 AND annee <= 1960)
+  ORDER BY annee
 ;"
 derniers_films <- dbGetQuery(con,sql_requete)
 head(derniers_films)
 ```
 
 ```
-##   id_film                          titre annee_prod
-## 1     157 All Quiet on the Western Front       1930
-## 2     239                Animal Crackers       1930
-## 3     603               Blaue Engel, Der       1930
-## 4    1820                   Frankenstein       1931
-## 5    3106                              M       1931
-## 6    3398                Monkey Business       1931
+##   id_film                          titre annee
+## 1     157 All Quiet on the Western Front  1930
+## 2     239                Animal Crackers  1930
+## 3     603               Blaue Engel, Der  1930
+## 4     997                    City Lights  1931
+## 5    1436                        Dracula  1931
+## 6    1820                   Frankenstein  1931
 ```
 
 *** =right
@@ -417,7 +381,7 @@ head(derniers_films)
 
 ```r
 sql_requete <- "
-SELECT id_film, titre, annee_prod
+SELECT id_film, titre, annee
   FROM films WHERE titre LIKE '%Voyage%'
 ;"
 derniers_films <- dbGetQuery(con,sql_requete)
@@ -425,11 +389,11 @@ head(derniers_films)
 ```
 
 ```
-##   id_film                         titre annee_prod
-## 1    1662              Fantastic Voyage       1966
-## 2    3654                  Now, Voyager       1942
-## 3    4770 Star Trek IV: The Voyage Home       1986
-## 4    5330       Voyage dans la lune, Le       1902
+##   id_film                         titre annee
+## 1    1662              Fantastic Voyage  1966
+## 2    3654                  Now, Voyager  1942
+## 3    4770 Star Trek IV: The Voyage Home  1986
+## 4    5330       Voyage dans la lune, Le  1902
 ```
 
 *** =right
@@ -455,8 +419,8 @@ Dans ta table `acteurs`, essayer de trouver votre acteur préféré avec `LIKE` 
 
 ```r
 sql_requete <- "
-SELECT avg(annee_prod) AS moyenne,
-  min(annee_prod), max(annee_prod)
+SELECT avg(annee) AS moyenne,
+  min(annee), max(annee)
   FROM films;"
 
 resume_films <- dbGetQuery(con,sql_requete)
@@ -464,8 +428,8 @@ head(resume_films)
 ```
 
 ```
-##    moyenne  min  max
-## 1 1989.853 1902 2007
+##    moyenne min(annee) max(annee)
+## 1 1989.853       1902       2007
 ```
 
 *** =right
@@ -484,22 +448,22 @@ head(resume_films)
 
 ```r
 sql_requete <- "
-SELECT count(titre) AS nb_films, annee_prod
+SELECT count(titre) AS nb_films, annee
   FROM films
-  GROUP BY annee_prod;"
+  GROUP BY annee;"
 
 resume_films <- dbGetQuery(con,sql_requete)
 head(resume_films)
 ```
 
 ```
-##   nb_films annee_prod
-## 1     1278         NA
-## 2       29       1975
-## 3        9       1947
-## 4       44       1981
-## 5       27       1972
-## 6       11       1956
+##   nb_films annee
+## 1     1278    NA
+## 2        1  1902
+## 3        1  1915
+## 4        1  1916
+## 5        1  1920
+## 6        1  1921
 ```
 
 *** =right
@@ -528,7 +492,7 @@ Le `INNER JOIN` est un type de jointure, renvoyant seulement les films et les ac
 
 ```r
 sql_requete <- "
-SELECT titre, annee_prod, films.id_film, acteurs.id_film
+SELECT titre, annee, films.id_film, acteurs.id_film
   FROM films
   INNER JOIN acteurs ON films.id_film = acteurs.id_film
   ;"
@@ -538,11 +502,11 @@ head(acteurs_films,4)
 ```
 
 ```
-##                     titre annee_prod id_film id_film
-## 1        'Breaker' Morant       1980       4       4
-## 2             'burbs, The       1989       5       5
-## 3   'Crocodile' Dundee II       1988       6       6
-## 4 *batteries not included       1987       7       7
+##                     titre annee id_film id_film
+## 1        'Breaker' Morant  1980       4       4
+## 2             'burbs, The  1989       5       5
+## 3   'Crocodile' Dundee II  1988       6       6
+## 4 *batteries not included  1987       7       7
 ```
 
 ---
@@ -563,7 +527,7 @@ On peut spécifier la jointure avec `USING` seulement si les deux clés possède
 
 ```r
 sql_requete <- "
-SELECT titre, annee_prod, nom, prenom
+SELECT titre, annee, nom, prenom
   FROM films
   INNER JOIN acteurs USING (id_film)
   ;"
@@ -573,11 +537,11 @@ head(acteurs_films,4)
 ```
 
 ```
-##                     titre annee_prod         nom    prenom
-## 1        'Breaker' Morant       1980 Fitz-Gerald     Lewis
-## 2             'burbs, The       1989        Gage     Kevin
-## 3   'Crocodile' Dundee II       1988    Carrasco    Carlos
-## 4 *batteries not included       1987     Vasquez David (I)
+##                     titre annee         nom    prenom
+## 1        'Breaker' Morant  1980 Fitz-Gerald     Lewis
+## 2             'burbs, The  1989        Gage     Kevin
+## 3   'Crocodile' Dundee II  1988    Carrasco    Carlos
+## 4 *batteries not included  1987     Vasquez David (I)
 ```
 
 ---
@@ -613,26 +577,26 @@ En vous servant des types de jointures, on voudrait savoir s'il existe des films
 
 ```r
 sql_requete <- "
-SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
-  SELECT titre, annee_prod, count(nom) AS nb_acteurs
+SELECT annee, avg(nb_acteurs) AS moy_acteurs FROM (
+  SELECT titre, annee, count(nom) AS nb_acteurs
     FROM films
     INNER JOIN acteurs USING (id_film)
-    GROUP BY annee_prod, titre
+    GROUP BY annee, titre
 ) AS nb_acteurs_film
-GROUP BY annee_prod;"
+GROUP BY annee;"
 
 moy_acteurs <- dbGetQuery(con,sql_requete)
 head(moy_acteurs)
 ```
 
 ```
-##   annee_prod moy_acteurs
-## 1       1902           9
-## 2       1915          55
-## 3       1916          59
-## 4       1920          11
-## 5       1921          59
-## 6       1922          17
+##   annee moy_acteurs
+## 1    NA     25.2723
+## 2  1902      9.0000
+## 3  1915     55.0000
+## 4  1916     59.0000
+## 5  1920     11.0000
+## 6  1921     59.0000
 ```
 
 ---&twocolw w1:55% w2:45%
@@ -648,13 +612,13 @@ head(moy_acteurs)
 
 ```r
 sql_requete <- "
-SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
-  SELECT titre, annee_prod, count(nom) AS nb_acteurs
+SELECT annee, avg(nb_acteurs) AS moy_acteurs FROM (
+  SELECT titre, annee, count(nom) AS nb_acteurs
     FROM films
     INNER JOIN acteurs USING (id_film)
-    GROUP BY annee_prod, titre
+    GROUP BY annee, titre
 ) AS nb_acteurs_film
-GROUP BY annee_prod
+GROUP BY annee
 HAVING avg(nb_acteurs) > 10;"
 
 nb_acteurs <- dbGetQuery(con,sql_requete)
@@ -662,13 +626,13 @@ head(nb_acteurs)
 ```
 
 ```
-##   annee_prod moy_acteurs
-## 1       1915          55
-## 2       1916          59
-## 3       1920          11
-## 4       1921          59
-## 5       1922          17
-## 6       1924          24
+##   annee moy_acteurs
+## 1    NA     25.2723
+## 2  1915     55.0000
+## 3  1916     59.0000
+## 4  1920     11.0000
+## 5  1921     59.0000
+## 6  1922     17.0000
 ```
 
 ---.transition
@@ -694,7 +658,6 @@ TO '/home/etudiant/Documents/films_A.csv' WITH DELIMITER ';' CSV HEADER;
 
 Afin de sauvegarder les requêtes obtenues dans R par `dbGetQuery()`, il est possible d'utiliser les fonctions d'écritures tels que `write.table()` ou encore `write.csv()`.
 
-Il existe une façon de faire des requêtes dans `pgAdmin3` et d'en sauvegarder les résultats grâce à l'outils `Query`.
 
 ---.transition
 
@@ -745,7 +708,7 @@ UPDATE films SET genre = 'Dramatique' WHERE genre = 'Drame';
 
 ---
 
-# Supprimer des enregistrements  
+# Supprimer des enregistrements
 
 On peut supprimer des enregistrements d'une table avec des critères spécifiques.
 
@@ -769,7 +732,7 @@ DELETE FROM films;
 
 # Travail de la semaine
 
-1. Créer la base de données 
+1. Créer la base de données
 
 2. Injecter les données
 
@@ -798,60 +761,8 @@ Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le scrip
 ## Débat sur le partage des données
 
 - Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
-- Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution. 
+- Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
 
 ---.transition
 
 # Découper les scripts avec R
-
----&twocol
-
-# Découper les étapes de son travail et les automatiser au moyen d'un seul script (un "pipeline")
-
-*** =left
-
-## Script 1 - Créer et interroger la BD
-
-
-```r
-# Création des tables
-dbSendQuery(con, "CREATE TABLE films (
-    id_film     integer,
-    titre       varchar(300),
-    annee_prod   integer,
-    PRIMARY KEY (id_film)
-);")
-
-# On lit le fichier à insérer
-bd_films <- read.csv2(file='./assets/donnees/
-                      bd_beacon/bd_films.csv')
-
-# On écrit dans la table
-dbWriteTable(con,append=TRUE,name="films",
-            value=bd_films, row.names=FALSE)
-
-# On fait une Requête
-annees <- dbGetQuery(con,"SELECT DISTINCT
-                  annee_prod FROM films;")
-```
-
-*** =right
-
-## Script 2 - Analyse des données
-
-
-```r
-# On appelle le script 1
-source('/chemin/vers/script1/scrip1.R')
-
-# Lister les objets R dans l'environnement
-ls()
-
-# On verra apparaitre l'objet 'annees'
-# que l'on pourra utiliser
-# pour la suite du maketravail
-```
-
----.transition
-
-# Discussion

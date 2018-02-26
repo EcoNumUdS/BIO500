@@ -1,7 +1,7 @@
 ---
-title       : "Séance 4: L'organisation des données - 2"
+title       : "Séance 3: La gestion des données biologiques"
 subtitle    : "BIO 500 - Méthodes en écologie computationnelle"
-author      : "Dominique Gravel & Steve Vissault"
+author      : "Steve Vissault & Dominique Gravel"
 job         : "Laboratoire d'écologie intégrative"
 logo        : "logo.png"
 framework   : io2012       # {io2012, html5slides, shower, dzslides, ...}
@@ -18,13 +18,10 @@ assets      :
 
 ---
 
-# Séance 4
+# Séance 3
 
-- Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/cours4/) et en [PDF](./assets/pdf/S4-BIO500.pdf).
+- Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/cours3/) et en [PDF](./assets/pdf/S3-BIO500.pdf).
 - L'ensemble du matériel de cours est disponible sur la page du portail [moodle](https://www.usherbrooke.ca/moodle2-cours/course/view.php?id=12189).
-
-<!-- TODO 1: Mettre cours 2 en PDF -->
-<!-- TODO 2: Changer le lien moodle -->
 
 ---
 
@@ -36,10 +33,6 @@ assets      :
 4. Ajouter de l'information dans les tables
 5. Faire des requêtes pour extraire l'information
 
-**Important:**
-
-Pour ceux dont la VM ne fonctionne pas, il possible de faire les exercices de ce cours sur Windows ou MacOSX.
-
 
 --- .transition
 
@@ -49,47 +42,27 @@ Pour ceux dont la VM ne fonctionne pas, il possible de faire les exercices de ce
 
 # Connexion au serveur
 
+```{r eval=TRUE, echo=FALSE}
+system("rm -rf ./assets/donnees/films.db")
 
-```{r echo=FALSE, include=FALSE}
-library(RPostgreSQL)
-
-con <- dbConnect(PostgreSQL(),
-        host="localhost",
-        port=5432,
-        user= "postgres")
-
-# On créé la base de données et on ferme la connexion
-dbSendQuery(con,"DROP DATABASE IF EXISTS bd_films;")
-dbSendQuery(con,"CREATE DATABASE bd_films;")
-dbDisconnect(con)
-
-# On se connecte à la nouvelle base de données
-con <- dbConnect(PostgreSQL(),
-        host="localhost",
-        port=5432,
-        user= "postgres",
-        dbname="bd_films")
 ```
 
-```{r eval=FALSE}
-library(RPostgreSQL)
 
-con <- dbConnect(PostgreSQL(),
-        host="localhost",
-        port=5432,
-        user= "postgres")
+```{r eval=TRUE, echo=TRUE, message=FALSE,results='hide'}
+library(RSQLite)
 
-# On créé la base de données et on ferme la connexion
-dbSendQuery(con,"DROP DATABASE IF EXISTS bd_films;")
-dbSendQuery(con,"CREATE DATABASE bd_films;")
-dbDisconnect(con)
+con <- dbConnect(SQLite(),dbname="./assets/donnees/films.db")
 
-# On se connecte à la nouvelle base de données
-con <- dbConnect(PostgreSQL(),
-        host="localhost",
-        port=5432,
-        user= "postgres",
-        dbname="bd_films")
+tbl_films <- "CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee   integer,
+    PRIMARY KEY (id_film)
+);"
+
+dbSendQuery(con,tbl_films)
+
+
 ```
 
 **Question:** Sur ce script, où sont les instructions SQL? Òu sont les commandes R?
@@ -98,11 +71,11 @@ con <- dbConnect(PostgreSQL(),
 
 # Création de la table `films`
 
-```{r}
+```{r, eval=FALSE}
 tbl_films <- "CREATE TABLE films (
     id_film     integer,
     titre       varchar(300),
-    annee_prod   integer,
+    annee   integer,
     PRIMARY KEY (id_film)
 );"
 
@@ -114,7 +87,7 @@ dbSendQuery(con,tbl_films)
 # Création de la table `acteurs`
 
 
-```{r}
+```{r  message=FALSE, results='hide'}
 tbl_acteurs <- "CREATE TABLE acteurs (
     id_acteur   integer,
     nom         varchar(100),
@@ -127,15 +100,7 @@ tbl_acteurs <- "CREATE TABLE acteurs (
 dbSendQuery(con,tbl_acteurs)
 ```
 
----
 
-# pgAdmin3
-
-`pgAdmin3` est un client avec une interface graphique permettant de visualiser si les opérations de création de tables ont bien été réalisées.
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/pgadmin_table.png" width="70%"></img>
-</div>
 
 
 --- .transition
@@ -171,14 +136,14 @@ Documentation: [http://docs.postgresql.fr/9.5/sql-copy.html](http://docs.postgre
 
 ---
 
-# RPostgreSQL - `dbWriteTable`
+# RSQLite - `dbWriteTable`
 
-La librairie RPostgreSQL peut nous aider plus facilement à accomplir cette tâche:
+La librairie RSQLite peut nous aider plus facilement à accomplir cette tâche:
 
 ```{r}
 # Lecture des fichiers CSV
-bd_films <- read.csv2(file='./assets/donnees/bd_beacon/bd_films.csv')
-bd_acteurs <- read.csv2(file='./assets/donnees/bd_beacon/bd_acteurs.csv')
+bd_films <- read.csv2(file='./assets/donnees/bd_beacon/bd_films.csv',stringsAsFactors=FALSE)
+bd_acteurs <- read.csv2(file='./assets/donnees/bd_beacon/bd_acteurs.csv',stringsAsFactors=FALSE)
 
 # Injection des enregistrements dans la BD
 dbWriteTable(con,append=TRUE,name="films",value=bd_films, row.names=FALSE)
@@ -189,17 +154,10 @@ dbWriteTable(con,append=TRUE,name="acteurs",value=bd_acteurs, row.names=FALSE)
 
 # Exercice 1 (10-15 minutes)
 
-Ce premier exercice est important pour la suite de la séance.  
+Ce premier exercice est important pour la suite de la séance.
 
 1. Recréer la base de données `bd_films` avec ses deux tables `films` et `acteurs`
 2. Insérer les données [bd_acteurs.csv](./assets/donnees/bd_beacon/bd_acteurs.csv) et [bd_films.csv](./assets/donnees/bd_beacon/bd_films.csv) dans les deux tables à l'aide de la commande R `dbWriteTable()`
-
-
----
-
-# pgAdmin3
-
-Il est également possible d'insérer des données à partir du logiciel `pgAdmin3`.
 
 ---.transition
 
@@ -216,7 +174,7 @@ Il est également possible d'insérer des données à partir du logiciel `pgAdmi
 
 ```{r}
 sql_requete <- "
-SELECT id_film, titre, annee_prod
+SELECT id_film, titre, annee
   FROM films LIMIT 10
 ;"
 
@@ -281,8 +239,8 @@ head(films)
 
 ```{r}
 sql_requete <- "
-SELECT titre, annee_prod, id_film
-  FROM films ORDER BY annee_prod DESC
+SELECT titre, annee, id_film
+  FROM films ORDER BY annee DESC
 ;"
 derniers_films <- dbGetQuery(con,sql_requete)
 head(derniers_films)
@@ -300,9 +258,9 @@ head(derniers_films)
 
 ```{r}
 sql_requete <- "
-SELECT id_film, titre, annee_prod
-  FROM films WHERE annee_prod IS NOT NULL
-  ORDER BY annee_prod DESC
+SELECT id_film, titre, annee
+  FROM films WHERE annee IS NOT NULL
+  ORDER BY annee DESC
 ;"
 annees_films <- dbGetQuery(con,sql_requete)
 head(annees_films)
@@ -321,11 +279,11 @@ head(annees_films)
 
 ```{r}
 sql_requete <- "
-SELECT id_film, titre, annee_prod
+SELECT id_film, titre, annee
   FROM films WHERE
-  (annee_prod >= 1930 AND annee_prod <= 1940)
-  OR (annee_prod >= 1950 AND annee_prod <= 1960)
-  ORDER BY annee_prod
+  (annee >= 1930 AND annee <= 1940)
+  OR (annee >= 1950 AND annee <= 1960)
+  ORDER BY annee
 ;"
 derniers_films <- dbGetQuery(con,sql_requete)
 head(derniers_films)
@@ -346,7 +304,7 @@ head(derniers_films)
 
 ```{r}
 sql_requete <- "
-SELECT id_film, titre, annee_prod
+SELECT id_film, titre, annee
   FROM films WHERE titre LIKE '%Voyage%'
 ;"
 derniers_films <- dbGetQuery(con,sql_requete)
@@ -375,8 +333,8 @@ Dans ta table `acteurs`, essayer de trouver votre acteur préféré avec `LIKE` 
 
 ```{r}
 sql_requete <- "
-SELECT avg(annee_prod) AS moyenne,
-  min(annee_prod), max(annee_prod)
+SELECT avg(annee) AS moyenne,
+  min(annee), max(annee)
   FROM films;"
 
 resume_films <- dbGetQuery(con,sql_requete)
@@ -398,9 +356,9 @@ head(resume_films)
 
 ```{r}
 sql_requete <- "
-SELECT count(titre) AS nb_films, annee_prod
+SELECT count(titre) AS nb_films, annee
   FROM films
-  GROUP BY annee_prod;"
+  GROUP BY annee;"
 
 resume_films <- dbGetQuery(con,sql_requete)
 head(resume_films)
@@ -431,7 +389,7 @@ Le `INNER JOIN` est un type de jointure, renvoyant seulement les films et les ac
 
 ```{r}
 sql_requete <- "
-SELECT titre, annee_prod, films.id_film, acteurs.id_film
+SELECT titre, annee, films.id_film, acteurs.id_film
   FROM films
   INNER JOIN acteurs ON films.id_film = acteurs.id_film
   ;"
@@ -457,7 +415,7 @@ On peut spécifier la jointure avec `USING` seulement si les deux clés possède
 
 ```{r}
 sql_requete <- "
-SELECT titre, annee_prod, nom, prenom
+SELECT titre, annee, nom, prenom
   FROM films
   INNER JOIN acteurs USING (id_film)
   ;"
@@ -498,13 +456,13 @@ En vous servant des types de jointures, on voudrait savoir s'il existe des films
 
 ```{r}
 sql_requete <- "
-SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
-  SELECT titre, annee_prod, count(nom) AS nb_acteurs
+SELECT annee, avg(nb_acteurs) AS moy_acteurs FROM (
+  SELECT titre, annee, count(nom) AS nb_acteurs
     FROM films
     INNER JOIN acteurs USING (id_film)
-    GROUP BY annee_prod, titre
+    GROUP BY annee, titre
 ) AS nb_acteurs_film
-GROUP BY annee_prod;"
+GROUP BY annee;"
 
 moy_acteurs <- dbGetQuery(con,sql_requete)
 head(moy_acteurs)
@@ -522,13 +480,13 @@ head(moy_acteurs)
 
 ```{r}
 sql_requete <- "
-SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
-  SELECT titre, annee_prod, count(nom) AS nb_acteurs
+SELECT annee, avg(nb_acteurs) AS moy_acteurs FROM (
+  SELECT titre, annee, count(nom) AS nb_acteurs
     FROM films
     INNER JOIN acteurs USING (id_film)
-    GROUP BY annee_prod, titre
+    GROUP BY annee, titre
 ) AS nb_acteurs_film
-GROUP BY annee_prod
+GROUP BY annee
 HAVING avg(nb_acteurs) > 10;"
 
 nb_acteurs <- dbGetQuery(con,sql_requete)
@@ -558,7 +516,6 @@ TO '/home/etudiant/Documents/films_A.csv' WITH DELIMITER ';' CSV HEADER;
 
 Afin de sauvegarder les requêtes obtenues dans R par `dbGetQuery()`, il est possible d'utiliser les fonctions d'écritures tels que `write.table()` ou encore `write.csv()`.
 
-Il existe une façon de faire des requêtes dans `pgAdmin3` et d'en sauvegarder les résultats grâce à l'outils `Query`.
 
 ---.transition
 
@@ -609,7 +566,7 @@ UPDATE films SET genre = 'Dramatique' WHERE genre = 'Drame';
 
 ---
 
-# Supprimer des enregistrements  
+# Supprimer des enregistrements
 
 On peut supprimer des enregistrements d'une table avec des critères spécifiques.
 
@@ -633,7 +590,7 @@ DELETE FROM films;
 
 # Travail de la semaine
 
-1. Créer la base de données 
+1. Créer la base de données
 
 2. Injecter les données
 
@@ -662,59 +619,8 @@ Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le scrip
 ## Débat sur le partage des données
 
 - Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
-- Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution. 
+- Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
 
 ---.transition
 
 # Découper les scripts avec R
-
----&twocol
-
-# Découper les étapes de son travail et les automatiser au moyen d'un seul script (un "pipeline")
-
-*** =left
-
-## Script 1 - Créer et interroger la BD
-
-```{r eval=FALSE}
-# Création des tables
-dbSendQuery(con, "CREATE TABLE films (
-    id_film     integer,
-    titre       varchar(300),
-    annee_prod   integer,
-    PRIMARY KEY (id_film)
-);")
-
-# On lit le fichier à insérer
-bd_films <- read.csv2(file='./assets/donnees/
-                      bd_beacon/bd_films.csv')
-
-# On écrit dans la table
-dbWriteTable(con,append=TRUE,name="films",
-            value=bd_films, row.names=FALSE)
-
-# On fait une Requête
-annees <- dbGetQuery(con,"SELECT DISTINCT
-                  annee_prod FROM films;")
-```
-
-*** =right
-
-## Script 2 - Analyse des données
-
-```{r eval=FALSE}
-# On appelle le script 1
-source('/chemin/vers/script1/scrip1.R')
-
-# Lister les objets R dans l'environnement
-ls()
-
-# On verra apparaitre l'objet 'annees'
-# que l'on pourra utiliser
-# pour la suite du maketravail
-
-```
-
----.transition
-
-# Discussion
