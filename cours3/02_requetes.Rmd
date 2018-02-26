@@ -266,16 +266,19 @@ head(acteurs_films,4)
 
 ---
 
-# Exercice 4 (10-15 minutes)
+# Exercice 6 (10-15 minutes)
 
 ## Combien il y a d'acteurs par film depuis les 10 dernières années?
 
-Toujours avec la même base de données,
-on voudrait savoir le nombre d'acteurs par film depuis les 10 dernières années.
+---
+
+# Exercice 7 (10-15 minutes)
+
+## Quel film possède le plus d'acteurs?
 
 ---
 
-# Exercice 5 (10-15 minutes)
+# Exercice 8 (10-15 minutes)
 
 ## Existe-t-il un film sans acteurs?
 
