@@ -23,7 +23,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 
 ---
 
-# Pourquoi bien entreposer ces données?
+# Pourquoi bien entreposer ses données?
 
 <div style='text-align:center;'>
   <img src="assets/img/data_trends.jpg" height="500px"></img>
@@ -75,7 +75,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 </div>
 
 - Il est difficile de stocker les données écologiques dans un tableur (n-2) lorsque les données écologiques ont (n-4).
-- Conduit à une redondance dans l'information (par exemple. repeter les coordonnées de l'emplacement du site lorsqu'il est mesuré plusieurs fois).
+- Conduit à une redondance dans l'information (par exemple. répéter les coordonnées de l'emplacement du site lorsqu'il est mesuré plusieurs fois).
 
 ---
 
@@ -103,8 +103,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 ## Autres avantages indéniables:
 
 - Obtenir un gain de temps et de performance.
-- Séparer les données brutes des données destiné aux analyses.
+- Séparer les données brutes des données destinées aux analyses.
 - Rendre flexible la préparation des données pour les analyses.
 - Pemettre le travail simultané de plusieurs utilisateurs grâce à l'approche client-serveur (approche serveur).
-- Déclencher des procédures de sauvegardes.
+- Déclencher des procédures de sauvegarde.
 - Suivre les modifications/ajouts à la BD (journal de transactions).

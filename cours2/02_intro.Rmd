@@ -55,7 +55,7 @@ La question scientifique ne devrait jamais conditionner notre façon de stocker 
 
 # La collecte de données en biologie
 
-## Le problème de multidimensionnalité
+## Le problème de multi-dimensionnalité
 
 <div style='text-align:center;'>
 <img src="assets/img/data_cube_3n.png" width="100%"></img>
@@ -66,7 +66,7 @@ La question scientifique ne devrait jamais conditionner notre façon de stocker 
 
 # La collecte de données en biologie
 
-## Le problème de multidimensionnalité
+## Le problème de multi-dimensionnalité
 
 <div style='text-align:center;'>
 <img src="assets/img/data_cube_4n.png" width="100%"></img>
@@ -229,13 +229,13 @@ On utilisera préférablement la norme [ISO8601](https://fr.wikipedia.org/wiki/I
 
 # Les données temporelles
 
- Gardez à l'esprit que vos données pourraient être réutilisé à travers le Monde. Les dates ne sont pas représentées de la même manière que l'on soit en Amérique du Nord ou en Europe. **Il est donc important de normaliser la saisie de ce type d'information.**
+ Gardez à l'esprit que vos données pourraient être réutilisées à travers le monde. Les dates ne sont pas représentées de la même manière que l'on soit en Amérique du Nord ou en Europe. **Il est donc important de normaliser la saisie de ce type d'information.**
 
 --- &twocol
 
 # Les données temporelles
 
-Une autre représentation de la date du jour peut-être basée sur le calendrier Julien.
+Une autre représentation de la date est l'utilisation du calendrier Julien.
 
 *** =left
 
@@ -329,7 +329,7 @@ kable(df,format="markdown")
 2. VASCAN (Plantes vasculaires du Canada)
 3. NCBI
 
-**Avantage:** Chacune de ces institutions/infrastructures nous permettent de valider et retirer l'ensemble de la classification taxonomique d'une espèce à partir de son code. Même si l'identifiant change (nouvelle classification), nous serons en mesure de trouver le nouvel identifiant taxonomique à partir de l'ancien.
+**Avantage:** Chacune de ces institutions/infrastructures nous permet de valider et retirer l'ensemble de la classification taxonomique d'une espèce à partir de son code. Même si l'identifiant change (nouvelle classification), nous serons en mesure de trouver le nouvel identifiant taxonomique à partir de l'ancien.
 
 **Exemple:** [https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null)
 
@@ -391,7 +391,7 @@ Ces deux identifiants sont généralement identiques et peuvent être trouvés �
 - Mettre un `0`
 - Mettre `-9999` dans une colonne numérique
 
-## Selon vous, quelle est le choix le plus approprié ?
+## Selon vous, quel est le choix le plus approprié ?
 
 ---
 
@@ -401,7 +401,7 @@ Ces deux identifiants sont généralement identiques et peuvent être trouvés �
 
 - Laisser la cellule vide: montre que l'information n'a pas été saisie (un oublie)
 
->- Mettre un `NA` (*Not Available*): Montre que l'information est réellement indisponible (car le NA est saisie par un humain).
+>- Mettre un `NA` (*Not Available*): Montre que l'information est réellement absente (car le NA est saisie par un humain).
 
 >- <span style="text-decoration: line-through;"> Mettre un `0` </span>: **JAMAIS** (empêche la distinction entre un vrai d'un faux 0, influence la moyenne)
 
