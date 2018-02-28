@@ -5,6 +5,28 @@
 
 ---&twocol
 
+# Structure du requête
+
+*** =left
+
+
+```sql
+SELECT colonnes/champs
+FROM table1
+JOIN table2 ON table1.foreignKey = table2.primaryKey
+WHERE criteres
+ORDER BY colonne1 ASC
+LIMIT 10;
+```
+
+*** =right
+
+- Les requêtes SQL sont une suite d'opérations séquentielles.
+- On ne peut pas filtrer (`WHERE`) avant que les opérations `SELECT`, `FROM` et `JOIN` soit complétées.
+
+
+---&twocol
+
 # Sélectionner des tables et des colonnes
 
 ## La connexion est ouverte et toujours accessible depuis l'objet `con`.
@@ -134,7 +156,7 @@ head(derniers_films)
 - Multi-critères avec `AND` et `OR`
 - Les parenthèses définissent les priorités d'opérations.
 - Opérateurs de comparaison: `>=`,`<=`, `=` (Valeurs numériques)
-- [Documentation sur les opérateurs de comparaisons](https://www.postgresql.org/docs/9.1/static/functions-comparison.html)
+- [Documentation sur les opérateurs de comparaisons](https://www.sqlite.org/lang_expr.html)
 
 ---&twocolw w1:55% w2:45%
 
@@ -242,7 +264,8 @@ head(acteurs_films,4)
 
 # Les type de jointures
 
-<div style='text-align:center;margin-top:10px;'>
+<div style='text-align:center;margin-top
+HAVING colonne2 == "match":10px;'>
   <img src="assets/img/sql_joins.png" width="80%"></img>
 </div>
 
