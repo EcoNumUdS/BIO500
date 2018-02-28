@@ -9,8 +9,6 @@
 
 Afin de sauvegarder les requêtes obtenues dans R par `dbGetQuery()`, il est possible d'utiliser les fonctions d'écritures tels que `write.table()` ou encore `write.csv()`.
 
-Il existe une façon de faire des requêtes dans `pgAdmin3` et d'en sauvegarder les résultats grâce à l'outils `Query`.
-
 ---.transition
 
 # Manipuler les enregistrements
