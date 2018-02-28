@@ -77,38 +77,9 @@ dbSendQuery(con,tbl_acteurs)
 ```
 
 
-
-
 --- .transition
 
 # Ajouter de l'information dans les tables
-
----
-
-# SQL - `INSERT`
-
-On veut maintenant insérer des données dans les tables `acteurs` et `films`.
-
-## L'instruction `INSERT` permet d'insérer une ligne à la fois:
-
-```sql
-INSERT INTO films(id_film,titre,annee_prod) VALUES (1,'la vie est belle',1997);
-INSERT INTO acteurs(id_acteur,prenom,nom,id_film) VALUES(1,'Nicoletta','Braschi',1);
-INSERT INTO acteurs(id_acteur,prenom,nom,id_film) VALUES(2,'Roberto','Benigni',1);
-```
-
----
-
-# SQL - `COPY ... FROM`
-
-L'instruction SQL `COPY ... FROM` permet d'insérer plusieurs lignes à la fois:
-
-```sql
-COPY films FROM '/Users/SteveVissault/Documents/Git/BIO500/cours4/pres/assets/donnees/bd_beacon/bd_films.csv'
-WITH FORMAT CSV HEADER DELIMITER ';';
-```
-
-Documentation: [http://docs.postgresql.fr/9.5/sql-copy.html](http://docs.postgresql.fr/9.5/sql-copy.html)
 
 ---
 
