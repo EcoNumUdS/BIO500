@@ -1,0 +1,1831 @@
+
+---.transition
+
+# Sauvegarder les requêtes
+
+---
+
+# Sauvegarder une requête
+
+Nous avons vu précédemment `COPY ... FROM chemin_vers_fichier` pour insérer des enregistrements dans les tables.
+
+Il existe aussi l'instruction `COPY ... TO chemin_vers_fichier` pour sauvegarder une requête.
+
+```sql
+COPY (SELECT * FROM films WHERE titre LIKE 'A%')
+TO '/home/etudiant/Documents/films_A.csv' WITH DELIMITER ';' CSV HEADER;
+```
+
+---
+
+# Sauvegarder une requête
+
+Afin de sauvegarder les requêtes obtenues dans R par `dbGetQuery()`, il est possible d'utiliser les fonctions d'écritures tels que `write.table()` ou encore `write.csv()`.
+
+Il existe une façon de faire des requêtes dans `pgAdmin3` et d'en sauvegarder les résultats grâce à l'outils `Query`.
+
+---.transition
+
+# Les requêtes stockées
+
+---
+
+# Les requêtes stockées: les vues
+
+Les vues permettent de stocker directement les requêtes à l'intérieur de la base de données afin d'interroger la vue ultérieurement.
+
+```sql
+CREATE VIEW moyenne_acteurs AS (
+  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+    SELECT titre, annee_prod, count(nom) AS nb_acteurs
+      FROM films
+      INNER JOIN acteurs USING (id_film)
+      GROUP BY annee_prod, titre
+  ) AS nb_acteurs_film
+  GROUP BY annee_prod
+  );
+```
+
+Il sera possible d'atteindre cette vue plus tard avec:
+
+```sql
+SELECT * FROM moyenne_acteurs;
+```
+
+---.transition
+
+# Manipuler les enregistrements
+
+---
+
+# Mettre à jour des enregistrements
+
+On peut mettre à jour des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+UPDATE films SET genre = 'Dramatique' WHERE genre = 'Drame';
+```
+
+**Note:** On peut pas faire de modifications d'enregistrements sur des vues, seulement sur les tables directement.
+
+[Documentation sur la commande UPDATE](http://docs.postgresqlfr.org/8.3/sql-update.html)
+
+
+---
+
+# Supprimer des enregistrements
+
+On peut supprimer des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+DELETE FROM films WHERE genre <> 'Comédie musicale';
+```
+
+Ou sans critères, pour supprimer tous les enregistrements.
+
+```sql
+DELETE FROM films;
+```
+
+[Documentation sur la commande DELETE](http://docs.postgresqlfr.org/8.3/sql-delete.html)
+
+---.transition
+
+# Travail de la semaine
+
+---
+
+# Travail de la semaine
+
+1. Créer la base de données
+
+2. Injecter les données
+
+3. Faire les requêtes suivantes :
+  - Nombre de liens par étudiant
+  - Décompte de liens par paire d'étudiants
+
+4. Enregistrer le résultat des requêtes
+
+---
+
+# Travail de la semaine
+
+5. En post-traitement sur R :
+  - Calculer le nombre d'étudiants, le nombre de liens et la connectance du réseau
+  - Calculer le nombre de liens moyens par étudiant et la variance
+
+6. Écrire un script qui réalise les étapes 1-3 d'un bloc
+
+Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l'une après l'autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.
+
+---
+
+# Lectures
+
+## Débat sur le partage des données
+
+- Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
+- Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
+
+---.transition
+
+# Découper les scripts avec R
+
+---&twocol
+
+# Découper les étapes de son travail et les automatiser au moyen d'un seul script (un "pipeline")
+
+*** =left
+
+## Script 1 - Créer et interroger la BD
+
+```{r eval=FALSE}
+# Création des tables
+dbSendQuery(con, "CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+);")
+
+# On lit le fichier à insérer
+---.transition
+
+# Sauvegarder les requêtes
+
+---
+
+# Sauvegarder une requête
+
+Nous avons vu précédemment `COPY ... FROM chemin_vers_fichier` pour insérer des enregistrements dans les tables.
+
+Il existe aussi l'instruction `COPY ... TO chemin_vers_fichier` pour sauvegarder une requête.
+
+```sql
+COPY (SELECT * FROM films WHERE titre LIKE 'A%')
+TO '/home/etudiant/Documents/films_A.csv' WITH DELIMITER ';' CSV HEADER;
+```
+
+---
+
+# Sauvegarder une requête
+
+Afin de sauvegarder les requêtes obtenues dans R par `dbGetQuery()`, il est possible d'utiliser les fonctions d'écritures tels que `write.table()` ou encore `write.csv()`.
+
+Il existe une façon de faire des requêtes dans `pgAdmin3` et d'en sauvegarder les résultats grâce à l'outils `Query`.
+
+---.transition
+
+# Les requêtes stockées
+
+---
+
+# Les requêtes stockées: les vues
+
+Les vues permettent de stocker directement les requêtes à l'intérieur de la base de données afin d'interroger la vue ultérieurement.
+
+```sql
+CREATE VIEW moyenne_acteurs AS (
+  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+    SELECT titre, annee_prod, count(nom) AS nb_acteurs
+      FROM films
+      INNER JOIN acteurs USING (id_film)
+      GROUP BY annee_prod, titre
+  ) AS nb_acteurs_film
+  GROUP BY annee_prod
+  );
+```
+
+Il sera possible d'atteindre cette vue plus tard avec:
+
+```sql
+SELECT * FROM moyenne_acteurs;
+```
+
+---.transition
+
+# Manipuler les enregistrements
+
+---
+
+# Mettre à jour des enregistrements
+
+On peut mettre à jour des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+UPDATE films SET genre = 'Dramatique' WHERE genre = 'Drame';
+```
+
+**Note:** On peut pas faire de modifications d'enregistrements sur des vues, seulement sur les tables directement.
+
+[Documentation sur la commande UPDATE](http://docs.postgresqlfr.org/8.3/sql-update.html)
+
+
+---
+
+# Supprimer des enregistrements
+
+On peut supprimer des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+DELETE FROM films WHERE genre <> 'Comédie musicale';
+```
+
+Ou sans critères, pour supprimer tous les enregistrements.
+
+```sql
+DELETE FROM films;
+```
+
+[Documentation sur la commande DELETE](http://docs.postgresqlfr.org/8.3/sql-delete.html)
+
+---.transition
+
+# Travail de la semaine
+
+---
+
+# Travail de la semaine
+
+1. Créer la base de données
+
+2. Injecter les données
+
+3. Faire les requêtes suivantes :
+  - Nombre de liens par étudiant
+  - Décompte de liens par paire d'étudiants
+
+4. Enregistrer le résultat des requêtes
+
+---
+
+# Travail de la semaine
+
+5. En post-traitement sur R :
+  - Calculer le nombre d'étudiants, le nombre de liens et la connectance du réseau
+  - Calculer le nombre de liens moyens par étudiant et la variance
+
+6. Écrire un script qui réalise les étapes 1-3 d'un bloc
+
+Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l'une après l'autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.
+
+---
+
+# Lectures
+
+## Débat sur le partage des données
+
+- Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
+- Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
+
+---.transition
+
+# Découper les scripts avec R
+
+---&twocol
+
+# Découper les étapes de son travail et les automatiser au moyen d'un seul script (un "pipeline")
+
+*** =left
+
+## Script 1 - Créer et interroger la BD
+
+```{r eval=FALSE}
+# Création des tables
+dbSendQuery(con, "CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+);")
+
+# On lit le fichier à insérer
+bd_films <- read.csv2(file='./assets/donnees/
+                      bd_beacon/bd_films.csv')
+
+# On écrit dans la table
+---.transition
+
+# Sauvegarder les requêtes
+
+---
+
+# Sauvegarder une requête
+
+Nous avons vu précédemment `COPY ... FROM chemin_vers_fichier` pour insérer des enregistrements dans les tables.
+
+Il existe aussi l'instruction `COPY ... TO chemin_vers_fichier` pour sauvegarder une requête.
+
+```sql
+COPY (SELECT * FROM films WHERE titre LIKE 'A%')
+TO '/home/etudiant/Documents/films_A.csv' WITH DELIMITER ';' CSV HEADER;
+```
+
+---
+
+# Sauvegarder une requête
+
+Afin de sauvegarder les requêtes obtenues dans R par `dbGetQuery()`, il est possible d'utiliser les fonctions d'écritures tels que `write.table()` ou encore `write.csv()`.
+
+Il existe une façon de faire des requêtes dans `pgAdmin3` et d'en sauvegarder les résultats grâce à l'outils `Query`.
+
+---.transition
+
+# Les requêtes stockées
+
+---
+
+# Les requêtes stockées: les vues
+
+Les vues permettent de stocker directement les requêtes à l'intérieur de la base de données afin d'interroger la vue ultérieurement.
+
+```sql
+CREATE VIEW moyenne_acteurs AS (
+  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+    SELECT titre, annee_prod, count(nom) AS nb_acteurs
+      FROM films
+      INNER JOIN acteurs USING (id_film)
+      GROUP BY annee_prod, titre
+  ) AS nb_acteurs_film
+  GROUP BY annee_prod
+  );
+```
+
+Il sera possible d'atteindre cette vue plus tard avec:
+
+```sql
+SELECT * FROM moyenne_acteurs;
+```
+
+---.transition
+
+# Manipuler les enregistrements
+
+---
+
+# Mettre à jour des enregistrements
+
+On peut mettre à jour des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+UPDATE films SET genre = 'Dramatique' WHERE genre = 'Drame';
+```
+
+**Note:** On peut pas faire de modifications d'enregistrements sur des vues, seulement sur les tables directement.
+
+[Documentation sur la commande UPDATE](http://docs.postgresqlfr.org/8.3/sql-update.html)
+
+
+---
+
+# Supprimer des enregistrements
+
+On peut supprimer des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+DELETE FROM films WHERE genre <> 'Comédie musicale';
+```
+
+Ou sans critères, pour supprimer tous les enregistrements.
+
+```sql
+DELETE FROM films;
+```
+
+[Documentation sur la commande DELETE](http://docs.postgresqlfr.org/8.3/sql-delete.html)
+
+---.transition
+
+# Travail de la semaine
+
+---
+
+# Travail de la semaine
+
+1. Créer la base de données
+
+2. Injecter les données
+
+3. Faire les requêtes suivantes :
+  - Nombre de liens par étudiant
+  - Décompte de liens par paire d'étudiants
+
+4. Enregistrer le résultat des requêtes
+
+---
+
+# Travail de la semaine
+
+5. En post-traitement sur R :
+  - Calculer le nombre d'étudiants, le nombre de liens et la connectance du réseau
+  - Calculer le nombre de liens moyens par étudiant et la variance
+
+6. Écrire un script qui réalise les étapes 1-3 d'un bloc
+
+Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l'une après l'autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.
+
+---
+
+# Lectures
+
+## Débat sur le partage des données
+
+- Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
+- Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
+
+---.transition
+
+# Découper les scripts avec R
+
+---&twocol
+
+# Découper les étapes de son travail et les automatiser au moyen d'un seul script (un "pipeline")
+
+*** =left
+
+## Script 1 - Créer et interroger la BD
+
+```{r eval=FALSE}
+# Création des tables
+dbSendQuery(con, "CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+---.transition
+
+# Sauvegarder les requêtes
+
+---
+
+# Sauvegarder une requête
+
+Nous avons vu précédemment `COPY ... FROM chemin_vers_fichier` pour insérer des enregistrements dans les tables.
+
+Il existe aussi l'instruction `COPY ... TO chemin_vers_fichier` pour sauvegarder une requête.
+
+```sql
+COPY (SELECT * FROM films WHERE titre LIKE 'A%')
+TO '/home/etudiant/Documents/films_A.csv' WITH DELIMITER ';' CSV HEADER;
+```
+
+---
+
+# Sauvegarder une requête
+
+Afin de sauvegarder les requêtes obtenues dans R par `dbGetQuery()`, il est possible d'utiliser les fonctions d'écritures tels que `write.table()` ou encore `write.csv()`.
+
+Il existe une façon de faire des requêtes dans `pgAdmin3` et d'en sauvegarder les résultats grâce à l'outils `Query`.
+
+---.transition
+
+# Les requêtes stockées
+
+---
+
+# Les requêtes stockées: les vues
+
+Les vues permettent de stocker directement les requêtes à l'intérieur de la base de données afin d'interroger la vue ultérieurement.
+
+```sql
+CREATE VIEW moyenne_acteurs AS (
+  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+    SELECT titre, annee_prod, count(nom) AS nb_acteurs
+      FROM films
+      INNER JOIN acteurs USING (id_film)
+      GROUP BY annee_prod, titre
+  ) AS nb_acteurs_film
+  GROUP BY annee_prod
+  );
+```
+
+Il sera possible d'atteindre cette vue plus tard avec:
+
+```sql
+SELECT * FROM moyenne_acteurs;
+```
+
+---.transition
+
+# Manipuler les enregistrements
+
+---
+
+# Mettre à jour des enregistrements
+
+On peut mettre à jour des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+UPDATE films SET genre = 'Dramatique' WHERE genre = 'Drame';
+```
+
+**Note:** On peut pas faire de modifications d'enregistrements sur des vues, seulement sur les tables directement.
+
+[Documentation sur la commande UPDATE](http://docs.postgresqlfr.org/8.3/sql-update.html)
+
+
+---
+
+# Supprimer des enregistrements
+
+On peut supprimer des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+DELETE FROM films WHERE genre <> 'Comédie musicale';
+```
+
+Ou sans critères, pour supprimer tous les enregistrements.
+
+```sql
+DELETE FROM films;
+```
+
+[Documentation sur la commande DELETE](http://docs.postgresqlfr.org/8.3/sql-delete.html)
+
+---.transition
+
+# Travail de la semaine
+
+---
+
+# Travail de la semaine
+
+1. Créer la base de données
+
+2. Injecter les données
+
+3. Faire les requêtes suivantes :
+  - Nombre de liens par étudiant
+  - Décompte de liens par paire d'étudiants
+
+4. Enregistrer le résultat des requêtes
+
+---
+
+# Travail de la semaine
+
+5. En post-traitement sur R :
+  - Calculer le nombre d'étudiants, le nombre de liens et la connectance du réseau
+  - Calculer le nombre de liens moyens par étudiant et la variance
+
+6. Écrire un script qui réalise les étapes 1-3 d'un bloc
+
+Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l'une après l'autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.
+
+---
+
+# Lectures
+
+## Débat sur le partage des données
+
+- Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
+- Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
+
+---.transition
+
+# Sauvegarder les requêtes
+
+---
+
+# Sauvegarder une requête
+
+Nous avons vu précédemment `COPY ... FROM chemin_vers_fichier` pour insérer des enregistrements dans les tables.
+
+Il existe aussi l'instruction `COPY ... TO chemin_vers_fichier` pour sauvegarder une requête.
+
+```sql
+COPY (SELECT * FROM films WHERE titre LIKE 'A%')
+TO '/home/etudiant/Documents/films_A.csv' WITH DELIMITER ';' CSV HEADER;
+```
+
+---
+
+# Sauvegarder une requête
+
+Afin de sauvegarder les requêtes obtenues dans R par `dbGetQuery()`, il est possible d'utiliser les fonctions d'écritures tels que `write.table()` ou encore `write.csv()`.
+
+Il existe une façon de faire des requêtes dans `pgAdmin3` et d'en sauvegarder les résultats grâce à l'outils `Query`.
+
+---.transition
+
+# Les requêtes stockées
+
+---
+
+# Les requêtes stockées: les vues
+
+Les vues permettent de stocker directement les requêtes à l'intérieur de la base de données afin d'interroger la vue ultérieurement.
+
+```sql
+CREATE VIEW moyenne_acteurs AS (
+  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+    SELECT titre, annee_prod, count(nom) AS nb_acteurs
+      FROM films
+      INNER JOIN acteurs USING (id_film)
+      GROUP BY annee_prod, titre
+  ) AS nb_acteurs_film
+  GROUP BY annee_prod
+  );
+```
+
+Il sera possible d'atteindre cette vue plus tard avec:
+
+```sql
+SELECT * FROM moyenne_acteurs;
+```
+
+---.transition
+
+# Manipuler les enregistrements
+
+---
+
+# Mettre à jour des enregistrements
+
+On peut mettre à jour des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+UPDATE films SET genre = 'Dramatique' WHERE genre = 'Drame';
+```
+
+**Note:** On peut pas faire de modifications d'enregistrements sur des vues, seulement sur les tables directement.
+
+[Documentation sur la commande UPDATE](http://docs.postgresqlfr.org/8.3/sql-update.html)
+
+
+---
+
+# Supprimer des enregistrements
+
+On peut supprimer des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+DELETE FROM films WHERE genre <> 'Comédie musicale';
+```
+
+Ou sans critères, pour supprimer tous les enregistrements.
+
+```sql
+DELETE FROM films;
+```
+
+[Documentation sur la commande DELETE](http://docs.postgresqlfr.org/8.3/sql-delete.html)
+
+---.transition
+
+# Travail de la semaine
+
+---
+
+# Travail de la semaine
+
+1. Créer la base de données
+
+2. Injecter les données
+
+3. Faire les requêtes suivantes :
+  - Nombre de liens par étudiant
+  - Décompte de liens par paire d'étudiants
+
+4. Enregistrer le résultat des requêtes
+
+---
+
+# Travail de la semaine
+
+5. En post-traitement sur R :
+  - Calculer le nombre d'étudiants, le nombre de liens et la connectance du réseau
+  - Calculer le nombre de liens moyens par étudiant et la variance
+
+6. Écrire un script qui réalise les étapes 1-3 d'un bloc
+
+Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l'une après l'autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.
+
+---
+
+# Lectures
+
+## Débat sur le partage des données
+
+- Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
+- Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
+
+---.transition
+
+# Découper les scripts avec R
+
+---&twocol
+
+# Découper les étapes de son travail et les automatiser au moyen d'un seul script (un "pipeline")
+
+*** =left
+
+## Script 1 - Créer et interroger la BD
+
+```{r eval=FALSE}
+# Création des tables
+dbSendQuery(con, "CREATE TABLE films (
+    id_film     integer,
+---.transition
+
+# Sauvegarder les requêtes
+
+---
+
+# Sauvegarder une requête
+
+Nous avons vu précédemment `COPY ... FROM chemin_vers_fichier` pour insérer des enregistrements dans les tables.
+
+Il existe aussi l'instruction `COPY ... TO chemin_vers_fichier` pour sauvegarder une requête.
+
+```sql
+COPY (SELECT * FROM films WHERE titre LIKE 'A%')
+TO '/home/etudiant/Documents/films_A.csv' WITH DELIMITER ';' CSV HEADER;
+```
+
+---
+
+# Sauvegarder une requête
+
+Afin de sauvegarder les requêtes obtenues dans R par `dbGetQuery()`, il est possible d'utiliser les fonctions d'écritures tels que `write.table()` ou encore `write.csv()`.
+
+Il existe une façon de faire des requêtes dans `pgAdmin3` et d'en sauvegarder les résultats grâce à l'outils `Query`.
+
+---.transition
+
+# Les requêtes stockées
+
+---
+
+# Les requêtes stockées: les vues
+
+Les vues permettent de stocker directement les requêtes à l'intérieur de la base de données afin d'interroger la vue ultérieurement.
+
+```sql
+CREATE VIEW moyenne_acteurs AS (
+  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+    SELECT titre, annee_prod, count(nom) AS nb_acteurs
+      FROM films
+      INNER JOIN acteurs USING (id_film)
+      GROUP BY annee_prod, titre
+  ) AS nb_acteurs_film
+  GROUP BY annee_prod
+  );
+```
+
+Il sera possible d'atteindre cette vue plus tard avec:
+
+```sql
+SELECT * FROM moyenne_acteurs;
+```
+
+---.transition
+
+# Manipuler les enregistrements
+
+---
+
+# Mettre à jour des enregistrements
+
+On peut mettre à jour des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+UPDATE films SET genre = 'Dramatique' WHERE genre = 'Drame';
+```
+
+**Note:** On peut pas faire de modifications d'enregistrements sur des vues, seulement sur les tables directement.
+
+[Documentation sur la commande UPDATE](http://docs.postgresqlfr.org/8.3/sql-update.html)
+
+
+---
+
+# Supprimer des enregistrements
+
+On peut supprimer des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+DELETE FROM films WHERE genre <> 'Comédie musicale';
+```
+
+Ou sans critères, pour supprimer tous les enregistrements.
+
+```sql
+DELETE FROM films;
+```
+
+[Documentation sur la commande DELETE](http://docs.postgresqlfr.org/8.3/sql-delete.html)
+
+---.transition
+
+# Travail de la semaine
+
+---
+
+# Travail de la semaine
+
+1. Créer la base de données
+
+2. Injecter les données
+
+3. Faire les requêtes suivantes :
+  - Nombre de liens par étudiant
+  - Décompte de liens par paire d'étudiants
+
+4. Enregistrer le résultat des requêtes
+
+---
+
+# Travail de la semaine
+
+5. En post-traitement sur R :
+  - Calculer le nombre d'étudiants, le nombre de liens et la connectance du réseau
+  - Calculer le nombre de liens moyens par étudiant et la variance
+
+6. Écrire un script qui réalise les étapes 1-3 d'un bloc
+
+Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l'une après l'autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.
+
+---
+
+# Lectures
+
+## Débat sur le partage des données
+
+- Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
+- Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
+
+---.transition
+
+# Découper les scripts avec R
+
+---&twocol
+
+# Découper les étapes de son travail et les automatiser au moyen d'un seul script (un "pipeline")
+
+*** =left
+
+## Script 1 - Créer et interroger la BD
+
+```{r eval=FALSE}
+# Création des tables
+dbSendQuery(con, "CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+);")
+
+# On lit le fichier à insérer
+bd_films <- read.csv2(file='./assets/donnees/
+                      bd_beacon/bd_films.csv')
+
+---.transition
+
+# Sauvegarder les requêtes
+
+---
+
+# Sauvegarder une requête
+
+Nous avons vu précédemment `COPY ... FROM chemin_vers_fichier` pour insérer des enregistrements dans les tables.
+
+Il existe aussi l'instruction `COPY ... TO chemin_vers_fichier` pour sauvegarder une requête.
+
+```sql
+COPY (SELECT * FROM films WHERE titre LIKE 'A%')
+TO '/home/etudiant/Documents/films_A.csv' WITH DELIMITER ';' CSV HEADER;
+```
+
+---
+
+# Sauvegarder une requête
+
+Afin de sauvegarder les requêtes obtenues dans R par `dbGetQuery()`, il est possible d'utiliser les fonctions d'écritures tels que `write.table()` ou encore `write.csv()`.
+
+Il existe une façon de faire des requêtes dans `pgAdmin3` et d'en sauvegarder les résultats grâce à l'outils `Query`.
+
+---.transition
+
+# Les requêtes stockées
+
+---
+
+# Les requêtes stockées: les vues
+
+Les vues permettent de stocker directement les requêtes à l'intérieur de la base de données afin d'interroger la vue ultérieurement.
+
+```sql
+CREATE VIEW moyenne_acteurs AS (
+  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+    SELECT titre, annee_prod, count(nom) AS nb_acteurs
+      FROM films
+      INNER JOIN acteurs USING (id_film)
+      GROUP BY annee_prod, titre
+  ) AS nb_acteurs_film
+  GROUP BY annee_prod
+  );
+```
+
+Il sera possible d'atteindre cette vue plus tard avec:
+
+```sql
+SELECT * FROM moyenne_acteurs;
+```
+
+---.transition
+
+# Manipuler les enregistrements
+
+---
+
+# Mettre à jour des enregistrements
+
+On peut mettre à jour des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+UPDATE films SET genre = 'Dramatique' WHERE genre = 'Drame';
+```
+
+**Note:** On peut pas faire de modifications d'enregistrements sur des vues, seulement sur les tables directement.
+
+[Documentation sur la commande UPDATE](http://docs.postgresqlfr.org/8.3/sql-update.html)
+
+
+---
+
+# Supprimer des enregistrements
+
+On peut supprimer des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+DELETE FROM films WHERE genre <> 'Comédie musicale';
+```
+
+Ou sans critères, pour supprimer tous les enregistrements.
+
+```sql
+DELETE FROM films;
+```
+
+[Documentation sur la commande DELETE](http://docs.postgresqlfr.org/8.3/sql-delete.html)
+
+---.transition
+
+# Travail de la semaine
+
+---
+
+# Travail de la semaine
+
+1. Créer la base de données
+
+2. Injecter les données
+
+3. Faire les requêtes suivantes :
+  - Nombre de liens par étudiant
+  - Décompte de liens par paire d'étudiants
+
+4. Enregistrer le résultat des requêtes
+
+---
+
+# Travail de la semaine
+
+5. En post-traitement sur R :
+  - Calculer le nombre d'étudiants, le nombre de liens et la connectance du réseau
+  - Calculer le nombre de liens moyens par étudiant et la variance
+
+6. Écrire un script qui réalise les étapes 1-3 d'un bloc
+
+Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l'une après l'autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.
+
+---
+
+# Lectures
+
+## Débat sur le partage des données
+
+- Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
+- Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
+
+---.transition
+
+# Découper les scripts avec R
+
+---&twocol
+
+# Découper les étapes de son travail et les automatiser au moyen d'un seul script (un "pipeline")
+
+*** =left
+
+## Script 1 - Créer et interroger la BD
+
+```{r eval=FALSE}
+---.transition
+
+# Sauvegarder les requêtes
+
+---
+
+# Sauvegarder une requête
+
+Nous avons vu précédemment `COPY ... FROM chemin_vers_fichier` pour insérer des enregistrements dans les tables.
+
+Il existe aussi l'instruction `COPY ... TO chemin_vers_fichier` pour sauvegarder une requête.
+
+```sql
+COPY (SELECT * FROM films WHERE titre LIKE 'A%')
+TO '/home/etudiant/Documents/films_A.csv' WITH DELIMITER ';' CSV HEADER;
+```
+
+---
+
+# Sauvegarder une requête
+
+Afin de sauvegarder les requêtes obtenues dans R par `dbGetQuery()`, il est possible d'utiliser les fonctions d'écritures tels que `write.table()` ou encore `write.csv()`.
+
+Il existe une façon de faire des requêtes dans `pgAdmin3` et d'en sauvegarder les résultats grâce à l'outils `Query`.
+
+---.transition
+
+# Les requêtes stockées
+
+---
+
+# Les requêtes stockées: les vues
+
+Les vues permettent de stocker directement les requêtes à l'intérieur de la base de données afin d'interroger la vue ultérieurement.
+
+```sql
+CREATE VIEW moyenne_acteurs AS (
+  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+    SELECT titre, annee_prod, count(nom) AS nb_acteurs
+      FROM films
+      INNER JOIN acteurs USING (id_film)
+      GROUP BY annee_prod, titre
+  ) AS nb_acteurs_film
+  GROUP BY annee_prod
+  );
+```
+
+Il sera possible d'atteindre cette vue plus tard avec:
+
+```sql
+SELECT * FROM moyenne_acteurs;
+```
+
+---.transition
+
+# Manipuler les enregistrements
+
+---
+
+# Mettre à jour des enregistrements
+
+On peut mettre à jour des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+UPDATE films SET genre = 'Dramatique' WHERE genre = 'Drame';
+```
+
+**Note:** On peut pas faire de modifications d'enregistrements sur des vues, seulement sur les tables directement.
+
+[Documentation sur la commande UPDATE](http://docs.postgresqlfr.org/8.3/sql-update.html)
+
+
+---
+
+# Supprimer des enregistrements
+
+On peut supprimer des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+DELETE FROM films WHERE genre <> 'Comédie musicale';
+```
+
+Ou sans critères, pour supprimer tous les enregistrements.
+
+```sql
+DELETE FROM films;
+```
+
+[Documentation sur la commande DELETE](http://docs.postgresqlfr.org/8.3/sql-delete.html)
+
+---.transition
+
+# Travail de la semaine
+
+---
+
+# Travail de la semaine
+
+1. Créer la base de données
+
+2. Injecter les données
+
+3. Faire les requêtes suivantes :
+  - Nombre de liens par étudiant
+  - Décompte de liens par paire d'étudiants
+
+4. Enregistrer le résultat des requêtes
+
+---
+
+# Travail de la semaine
+
+5. En post-traitement sur R :
+  - Calculer le nombre d'étudiants, le nombre de liens et la connectance du réseau
+  - Calculer le nombre de liens moyens par étudiant et la variance
+
+6. Écrire un script qui réalise les étapes 1-3 d'un bloc
+
+Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l'une après l'autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.
+
+---
+
+# Lectures
+
+## Débat sur le partage des données
+
+- Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
+- Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
+
+---.transition
+
+# Découper les scripts avec R
+
+---&twocol
+
+# Découper les étapes de son travail et les automatiser au moyen d'un seul script (un "pipeline")
+
+*** =left
+
+## Script 1 - Créer et interroger la BD
+
+```{r eval=FALSE}
+# Création des tables
+dbSendQuery(con, "CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+);")
+
+# On lit le fichier à insérer
+bd_films <- read.csv2(file='./asse
+---.transition
+
+# Sauvegarder les requêtes
+
+---
+
+# Sauvegarder une requête
+
+Nous avons vu précédemment `COPY ... FROM chemin_vers_fichier` pour insérer des enregistrements dans les tables.
+
+Il existe aussi l'instruction `COPY ... TO chemin_vers_fichier` pour sauvegarder une requête.
+
+```sql
+COPY (SELECT * FROM films WHERE titre LIKE 'A%')
+TO '/home/etudiant/Documents/films_A.csv' WITH DELIMITER ';' CSV HEADER;
+```
+
+---
+
+# Sauvegarder une requête
+
+Afin de sauvegarder les requêtes obtenues dans R par `dbGetQuery()`, il est possible d'utiliser les fonctions d'écritures tels que `write.table()` ou encore `write.csv()`.
+
+Il existe une façon de faire des requêtes dans `pgAdmin3` et d'en sauvegarder les résultats grâce à l'outils `Query`.
+
+---.transition
+
+# Les requêtes stockées
+
+---
+
+# Les requêtes stockées: les vues
+
+Les vues permettent de stocker directement les requêtes à l'intérieur de la base de données afin d'interroger la vue ultérieurement.
+
+```sql
+CREATE VIEW moyenne_acteurs AS (
+  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+    SELECT titre, annee_prod, count(nom) AS nb_acteurs
+      FROM films
+      INNER JOIN acteurs USING (id_film)
+      GROUP BY annee_prod, titre
+  ) AS nb_acteurs_film
+  GROUP BY annee_prod
+  );
+```
+
+Il sera possible d'atteindre cette vue plus tard avec:
+
+```sql
+SELECT * FROM moyenne_acteurs;
+```
+
+---.transition
+
+# Manipuler les enregistrements
+
+---
+
+# Mettre à jour des enregistrements
+
+On peut mettre à jour des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+UPDATE films SET genre = 'Dramatique' WHERE genre = 'Drame';
+```
+
+**Note:** On peut pas faire de modifications d'enregistrements sur des vues, seulement sur les tables directement.
+
+[Documentation sur la commande UPDATE](http://docs.postgresqlfr.org/8.3/sql-update.html)
+
+
+---
+
+# Supprimer des enregistrements
+
+On peut supprimer des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+DELETE FROM films WHERE genre <> 'Comédie musicale';
+```
+
+Ou sans critères, pour supprimer tous les enregistrements.
+
+```sql
+DELETE FROM films;
+```
+
+[Documentation sur la commande DELETE](http://docs.postgresqlfr.org/8.3/sql-delete.html)
+
+---.transition
+
+# Travail de la semaine
+
+---
+
+# Travail de la semaine
+
+1. Créer la base de données
+
+2. Injecter les données
+
+3. Faire les requêtes suivantes :
+  - Nombre de liens par étudiant
+  - Décompte de liens par paire d'étudiants
+
+4. Enregistrer le résultat des requêtes
+
+---
+
+# Travail de la semaine
+
+5. En post-traitement sur R :
+  - Calculer le nombre d'étudiants, le nombre de liens et la connectance du réseau
+  - Calculer le nombre de liens mo
+---.transition
+
+# Sauvegarder les requêtes
+
+---
+
+# Sauvegarder une requête
+
+Nous avons vu précédemment `COPY ... FROM chemin_vers_fichier` pour insérer des enregistrements dans les tables.
+
+Il existe aussi l'instruction `COPY ... TO chemin_vers_fichier` pour sauvegarder une requête.
+
+```sql
+COPY (SELECT * FROM films WHERE titre LIKE 'A%')
+TO '/home/etudiant/Documents/films_A.csv' WITH DELIMITER ';' CSV HEADER;
+```
+
+---
+
+# Sauvegarder une requête
+
+Afin de sauvegarder les requêtes obtenues dans R par `dbGetQuery()`, il est possible d'utiliser les fonctions d'écritures tels que `write.table()` ou encore `write.csv()`.
+
+Il existe une façon de faire des requêtes dans `pgAdmin3` et d'en sauvegarder les résultats grâce à l'outils `Query`.
+
+---.transition
+
+# Les requêtes stockées
+
+---
+
+# Les requêtes stockées: les vues
+
+Les vues permettent de stocker directement les requêtes à l'intérieur de la base de données afin d'interroger la vue ultérieurement.
+
+```sql
+CREATE VIEW moyenne_acteurs AS (
+  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+    SELECT titre, annee_prod, count(nom) AS nb_acteurs
+      FROM films
+      INNER JOIN acteurs USING (id_film)
+      GROUP BY annee_prod, titre
+  ) AS nb_acteurs_film
+  GROUP BY annee_prod
+  );
+```
+
+Il sera possible d'atteindre cette vue plus tard avec:
+
+```sql
+SELECT * FROM moyenne_acteurs;
+```
+
+---.transition
+
+# Manipuler les enregistrements
+
+---
+
+# Mettre à jour des enregistrements
+
+On peut mettre à jour des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+UPDATE films SET genre = 'Dramatique' WHERE genre = 'Drame';
+```
+
+**Note:** On peut pas faire de modifications d'enregistrements sur des vues, seulement sur les tables directement.
+
+[Documentation sur la commande UPDATE](http://docs.postgresqlfr.org/8.3/sql-update.html)
+
+
+---
+
+# Supprimer des enregistrements
+
+On peut supprimer des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+DELETE FROM films WHERE genre <> 'Comédie musicale';
+```
+
+Ou sans critères, pour supprimer tous les enregistrements.
+
+```sql
+DELETE FROM films;
+```
+
+[Documentation sur la commande DELETE](http://docs.postgresqlfr.org/8.3/sql-delete.html)
+
+---.transition
+
+# Travail de la semaine
+
+---
+
+# Travail de la semaine
+
+1. Créer la base de données
+
+2. Injecter les données
+
+3. Faire les requêtes suivantes :
+  - Nombre de liens par étudiant
+  - Décompte de liens par paire d'étudiants
+
+4. Enregistrer le résultat des requêtes
+
+---
+
+# Travail de la semaine
+
+5. En post-traitement sur R :
+  - Calculer le nombre d'étudiants, le nombre de liens et la connectance du réseau
+  - Calculer le nombre de liens moyens par étudiant et la variance
+
+6. Écrire un script qui réalise les étapes 1-3 d'un bloc
+
+Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l'une après l'autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.
+
+---
+
+# Lectures
+
+## Débat sur le partage des données
+
+- Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
+- Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
+
+---.transition
+
+# Découper les scripts avec R
+
+---&twocol
+
+# Découper les étapes de son travail et les automatiser au moyen d'un seul script (un "pipeline")
+
+*** =left
+
+## Script 1 - Créer et interroger la BD
+
+```{r eval=FALSE}
+# Création des tables
+dbSendQuery(con, "CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+);")
+
+# On lit le fichier à insérer
+bd_films <- read.csv2(file='./assets/donnees/
+                      bd_beacon/bd_films.csv')
+
+# On écrit dans la table
+dbWriteTable(con,append=TRUE,name="films",
+            value=bd_films, row.names=FALSE)
+
+# On fait une Requête
+annees <- dbGetQuery(con,"SELECT DISTINCT
+                  annee_prod FROM films;")
+```
+
+*** =right
+
+## Script 2 - Analyse des données
+
+```{r eval=FALSE}
+# On appelle le script 1
+source('/chemin/vers/script1/scrip1.R')
+
+# Lister les objets R dans l'environnement
+ls()
+
+# On verra apparaitre l'objet 'annees'
+# que l'on pourra utiliser
+# pour la suite du maketravail
+
+```
+
+---.transition
+
+# Discussionyens par étudiant et la variance
+
+6. Écrire un script qui réalise les étapes 1-3 d'un bloc
+
+Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l'une après l'autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.
+
+---
+
+# Lectures
+
+## Débat sur le partage des données
+
+- Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
+- Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
+
+---.transition
+
+# Découper les scripts avec R
+
+---&twocol
+
+# Découper les étapes de son travail et les automatiser au moyen d'un seul script (un "pipeline")
+
+*** =left
+
+## Script 1 - Créer et interroger la BD
+
+```{r eval=FALSE}
+# Création des tables
+dbSendQuery(con, "CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+);")
+
+# On lit le fichier à insérer
+bd_films <- read.csv2(file='./assets/donnees/
+                      bd_beacon/bd_films.csv')
+
+# On écrit dans la table
+dbWriteTable(con,append=TRUE,name="films",
+            value=bd_films, row.names=FALSE)
+
+# On fait une Requête
+annees <- dbGetQuery(con,"SELECT DISTINCT
+                  annee_prod FROM films;")
+```
+
+*** =right
+
+## Script 2 - Analyse des données
+
+```{r eval=FALSE}
+# On appelle le script 1
+source('/chemin/vers/script1/scrip1.R')
+
+# Lister les objets R dans l'environnement
+ls()
+
+# On verra apparaitre l'objet 'annees'
+# que l'on pourra utiliser
+# pour la suite du maketravail
+
+```
+
+---.transition
+
+# Discussionts/donnees/
+                      bd_beacon/bd_films.csv')
+
+# On écrit dans la table
+dbWriteTable(con,append=TRUE,name="films",
+            value=bd_films, row.names=FALSE)
+
+# On fait une Requête
+annees <- dbGetQuery(con,"SELECT DISTINCT
+                  annee_prod FROM films;")
+```
+
+*** =right
+
+## Script 2 - Analyse des données
+
+```{r eval=FALSE}
+# On appelle le script 1
+source('/chemin/vers/script1/scrip1.R')
+
+# Lister les objets R dans l'environnement
+ls()
+
+# On verra apparaitre l'objet 'annees'
+# que l'on pourra utiliser
+# pour la suite du maketravail
+
+```
+
+---.transition
+
+# Discussion
+# Création des tables
+dbSendQuery(con, "CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+);")
+
+# On lit le fichier à insérer
+bd_films <- read.csv2(file='./assets/donnees/
+                      bd_beacon/bd_films.csv')
+
+# On écrit dans la table
+dbWriteTable(con,append=TRUE,name="films",
+            value=bd_films, row.names=FALSE)
+
+# On fait une Requête
+annees <- dbGetQuery(con,"SELECT DISTINCT
+                  annee_prod FROM films;")
+```
+
+*** =right
+
+## Script 2 - Analyse des données
+
+```{r eval=FALSE}
+# On appelle le script 1
+source('/chemin/vers/script1/scrip1.R')
+
+# Lister les objets R dans l'environnement
+ls()
+
+# On verra apparaitre l'objet 'annees'
+# que l'on pourra utiliser
+# pour la suite du maketravail
+
+```
+
+---.transition
+
+# Discussion
+# On écrit dans la table
+dbWriteTable(con,append=TRUE,name="films",
+            value=bd_films, row.names=FALSE)
+
+# On fait une Requête
+annees <- dbGetQuery(con,"SELECT DISTINCT
+                  annee_prod FROM films;")
+```
+
+*** =right
+
+## Script 2 - Analyse des données
+
+```{r eval=FALSE}
+# On appelle le script 1
+source('/chemin/vers/script1/scrip1.R')
+
+# Lister les objets R dans l'environnement
+ls()
+
+# On verra apparaitre l'objet 'annees'
+# que l'on pourra utiliser
+# pour la suite du maketravail
+
+```
+
+---.transition
+
+# Discussion
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+);")
+
+# On lit le fichier à insérer
+bd_films <- read.csv2(file='./assets/donnees/
+                      bd_beacon/bd_films.csv')
+
+# On écrit dans la table
+dbWriteTable(con,append=TRUE,name="films",
+            value=bd_films, row.names=FALSE)
+
+# On fait une Requête
+annees <- dbGetQuery(con,"SELECT DISTINCT
+                  annee_prod FROM films;")
+```
+
+*** =right
+
+## Script 2 - Analyse des données
+
+```{r eval=FALSE}
+# On appelle le script 1
+source('/chemin/vers/script1/scrip1.R')
+
+# Lister les objets R dans l'environnement
+ls()
+
+# On verra apparaitre l'objet 'annees'
+# que l'on pourra utiliser
+# pour la suite du maketravail
+
+```
+
+---.transition
+
+# Discussion
+---.transition
+
+# Découper les scripts avec R
+
+---&twocol
+
+# Découper les étapes de son travail et les automatiser au moyen d'un seul script (un "pipeline")
+
+*** =left
+
+## Script 1 - Créer et interroger la BD
+
+```{r eval=FALSE}
+# Création des tables
+dbSendQuery(con, "CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+);")
+
+# On lit le fichier à insérer
+bd_films <- read.csv2(file='./assets/donnees/
+                      bd_beacon/bd_films.csv')
+
+# On écrit dans la table
+dbWriteTable(con,append=TRUE,name="films",
+            value=bd_films, row.names=FALSE)
+
+# On fait une Requête
+annees <- dbGetQuery(con,"SELECT DISTINCT
+                  annee_prod FROM films;")
+```
+
+*** =right
+
+## Script 2 - Analyse des données
+
+```{r eval=FALSE}
+# On appelle le script 1
+source('/chemin/vers/script1/scrip1.R')
+
+# Lister les objets R dans l'environnement
+ls()
+
+# On verra apparaitre l'objet 'annees'
+# que l'on pourra utiliser
+# pour la suite du maketravail
+
+```
+
+---.transition
+
+# Discussion
+);")
+
+# On lit le fichier à insérer
+bd_films <- read.csv2(file='./assets/donnees/
+                      bd_beacon/bd_films.csv')
+
+# On écrit dans la table
+dbWriteTable(con,append=TRUE,name="films",
+            value=bd_films, row.names=FALSE)
+
+# On fait une Requête
+annees <- dbGetQuery(con,"SELECT DISTINCT
+                  annee_prod FROM films;")
+```
+
+*** =right
+
+## Script 2 - Analyse des données
+
+```{r eval=FALSE}
+# On appelle le script 1
+source('/chemin/vers/script1/scrip1.R')
+
+# Lister les objets R dans l'environnement
+ls()
+
+# On verra apparaitre l'objet 'annees'
+# que l'on pourra utiliser
+# pour la suite du maketravail
+
+```
+
+---.transition
+
+# Discussion
+dbWriteTable(con,append=TRUE,name="films",
+            value=bd_films, row.names=FALSE)
+
+# On fait une Requête
+annees <- dbGetQuery(con,"SELECT DISTINCT
+                  annee_prod FROM films;")
+```
+
+*** =right
+
+## Script 2 - Analyse des données
+
+```{r eval=FALSE}
+# On appelle le script 1
+source('/chemin/vers/script1/scrip1.R')
+
+# Lister les objets R dans l'environnement
+ls()
+
+# On verra apparaitre l'objet 'annees'
+# que l'on pourra utiliser
+# pour la suite du maketravail
+
+```
+
+---.transition
+
+# Discussion
+bd_films <- read.csv2(file='./assets/donnees/
+                      bd_beacon/bd_films.csv')
+
+# On écrit dans la table
+dbWriteTable(con,append=TRUE,name="films",
+            value=bd_films, row.names=FALSE)
+
+# On fait une Requête
+annees <- dbGetQuery(con,"SELECT DISTINCT
+                  annee_prod FROM films;")
+```
+
+*** =right
+
+## Script 2 - Analyse des données
+
+```{r eval=FALSE}
+# On appelle le script 1
+source('/chemin/vers/script1/scrip1.R')
+
+# Lister les objets R dans l'environnement
+ls()
+
+# On verra apparaitre l'objet 'annees'
+# que l'on pourra utiliser
+# pour la suite du maketravail
+
+```
+
+---.transition
+
+# Discussion

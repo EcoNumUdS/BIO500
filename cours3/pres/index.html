@@ -503,7 +503,7 @@ head(derniers_films)
 <slide class="" id="slide-20" style="background:;">
   <!--  <a href="#slide-20"></a> -->
   <hgroup>
-    <h1>Exercice 4 (10 minutes)</h1>
+    <h1>Exercice 2 (10 minutes)</h1>
   </hgroup>
   <article data-timings="">
     <p>Dans ta table <code>acteurs</code>, essayer de trouver votre acteur préféré avec <code>LIKE</code> ou avec <code>= &#39;votre_acteur_pref&#39;</code></p>
@@ -581,7 +581,7 @@ head(resume_films)
 <slide class="" id="slide-23" style="background:;">
   <!--  <a href="#slide-23"></a> -->
   <hgroup>
-    <h1>Exercice 5 (10 minutes)</h1>
+    <h1>Exercice 3 (10 minutes)</h1>
   </hgroup>
   <article data-timings="">
     <p>À l&#39;aide de la base de données <code>bd_films</code>, dénombrer le nombre d&#39;acteurs par films</p>
@@ -678,9 +678,6 @@ head(acteurs_films,4)
   <article data-timings="">
     <h2>Combien il y a d&#39;acteurs par film depuis les 10 dernières années?</h2>
 
-<p>Toujours avec la même base de données,
-on voudrait savoir le nombre d&#39;acteurs par film depuis les 10 dernières années.</p>
-
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -690,6 +687,17 @@ on voudrait savoir le nombre d&#39;acteurs par film depuis les 10 dernières ann
     <h1>Exercice 5 (10-15 minutes)</h1>
   </hgroup>
   <article data-timings="">
+    <h2>Quel film possède le plus d&#39;acteurs?</h2>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-30" style="background:;">
+  <!--  <a href="#slide-30"></a> -->
+  <hgroup>
+    <h1>Exercice 6 (10-15 minutes)</h1>
+  </hgroup>
+  <article data-timings="">
     <h2>Existe-t-il un film sans acteurs?</h2>
 
 <p>En vous servant des types de jointures, on voudrait savoir s&#39;il existe des films sans acteurs.</p>
@@ -697,7 +705,7 @@ on voudrait savoir le nombre d&#39;acteurs par film depuis les 10 dernières ann
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-30" style="background:;">
+<slide class="" id="slide-31" style="background:;">
   <hgroup>
     <h1>Requêtes emboitées</h1>
   </hgroup>
@@ -736,7 +744,7 @@ head(moy_acteurs)
     </div>
   </article>
 </slide>
-<slide class="" id="slide-31" style="background:;">
+<slide class="" id="slide-32" style="background:;">
   <hgroup>
     <h1>Filtrer les requêtes à posteriori</h1>
   </hgroup>
@@ -775,8 +783,8 @@ head(nb_acteurs)
     </div>
   </article>
 </slide>
-<slide class="transition" id="slide-32" style="background:;">
-  <!--  <a href="#slide-32"></a> -->
+<slide class="transition" id="slide-33" style="background:;">
+  <!--  <a href="#slide-33"></a> -->
   <hgroup>
     <h1>Sauvegarder les requêtes</h1>
   </hgroup>
@@ -785,8 +793,8 @@ head(nb_acteurs)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-33" style="background:;">
-  <!--  <a href="#slide-33"></a> -->
+<slide class="" id="slide-34" style="background:;">
+  <!--  <a href="#slide-34"></a> -->
   <hgroup>
     <h1>Sauvegarder une requête</h1>
   </hgroup>
@@ -802,19 +810,21 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-34" style="background:;">
-  <!--  <a href="#slide-34"></a> -->
+<slide class="" id="slide-35" style="background:;">
+  <!--  <a href="#slide-35"></a> -->
   <hgroup>
     <h1>Sauvegarder une requête</h1>
   </hgroup>
   <article data-timings="">
     <p>Afin de sauvegarder les requêtes obtenues dans R par <code>dbGetQuery()</code>, il est possible d&#39;utiliser les fonctions d&#39;écritures tels que <code>write.table()</code> ou encore <code>write.csv()</code>.</p>
 
+<p>Il existe une façon de faire des requêtes dans <code>pgAdmin3</code> et d&#39;en sauvegarder les résultats grâce à l&#39;outils <code>Query</code>.</p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-35" style="background:;">
-  <!--  <a href="#slide-35"></a> -->
+<slide class="transition" id="slide-36" style="background:;">
+  <!--  <a href="#slide-36"></a> -->
   <hgroup>
     <h1>Les requêtes stockées</h1>
   </hgroup>
@@ -823,8 +833,8 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-36" style="background:;">
-  <!--  <a href="#slide-36"></a> -->
+<slide class="" id="slide-37" style="background:;">
+  <!--  <a href="#slide-37"></a> -->
   <hgroup>
     <h1>Les requêtes stockées: les vues</h1>
   </hgroup>
@@ -850,8 +860,8 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-37" style="background:;">
-  <!--  <a href="#slide-37"></a> -->
+<slide class="transition" id="slide-38" style="background:;">
+  <!--  <a href="#slide-38"></a> -->
   <hgroup>
     <h1>Manipuler les enregistrements</h1>
   </hgroup>
@@ -860,8 +870,8 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-38" style="background:;">
-  <!--  <a href="#slide-38"></a> -->
+<slide class="" id="slide-39" style="background:;">
+  <!--  <a href="#slide-39"></a> -->
   <hgroup>
     <h1>Mettre à jour des enregistrements</h1>
   </hgroup>
@@ -878,8 +888,8 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-39" style="background:;">
-  <!--  <a href="#slide-39"></a> -->
+<slide class="" id="slide-40" style="background:;">
+  <!--  <a href="#slide-40"></a> -->
   <hgroup>
     <h1>Supprimer des enregistrements</h1>
   </hgroup>
@@ -899,8 +909,8 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-40" style="background:;">
-  <!--  <a href="#slide-40"></a> -->
+<slide class="transition" id="slide-41" style="background:;">
+  <!--  <a href="#slide-41"></a> -->
   <hgroup>
     <h1>Travail de la semaine</h1>
   </hgroup>
@@ -909,8 +919,8 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-41" style="background:;">
-  <!--  <a href="#slide-41"></a> -->
+<slide class="" id="slide-42" style="background:;">
+  <!--  <a href="#slide-42"></a> -->
   <hgroup>
     <h1>Travail de la semaine</h1>
   </hgroup>
@@ -930,8 +940,8 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-42" style="background:;">
-  <!--  <a href="#slide-42"></a> -->
+<slide class="" id="slide-43" style="background:;">
+  <!--  <a href="#slide-43"></a> -->
   <hgroup>
     <h1>Travail de la semaine</h1>
   </hgroup>
@@ -951,8 +961,8 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-43" style="background:;">
-  <!--  <a href="#slide-43"></a> -->
+<slide class="" id="slide-44" style="background:;">
+  <!--  <a href="#slide-44"></a> -->
   <hgroup>
     <h1>Lectures</h1>
   </hgroup>
@@ -967,10 +977,2321 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-44" style="background:;">
-  <!--  <a href="#slide-44"></a> -->
+<slide class="transition" id="slide-45" style="background:;">
+  <!--  <a href="#slide-45"></a> -->
   <hgroup>
     <h1>Découper les scripts avec R</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-46" style="background:;">
+  <hgroup>
+    <h1>Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <h2>Script 1 - Créer et interroger la BD</h2>
+
+<pre><code class="r"># Création des tables
+dbSendQuery(con, &quot;CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+);&quot;)
+
+# On lit le fichier à insérer
+---.transition
+
+# Sauvegarder les requêtes
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-47" style="background:;">
+  <!--  <a href="#slide-47"></a> -->
+  <hgroup>
+    <h1>Sauvegarder une requête</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Nous avons vu précédemment <code>COPY ... FROM chemin_vers_fichier</code> pour insérer des enregistrements dans les tables.</p>
+
+<p>Il existe aussi l&#39;instruction <code>COPY ... TO chemin_vers_fichier</code> pour sauvegarder une requête.</p>
+
+<pre><code class="sql">COPY (SELECT * FROM films WHERE titre LIKE &#39;A%&#39;)
+TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV HEADER;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-48" style="background:;">
+  <!--  <a href="#slide-48"></a> -->
+  <hgroup>
+    <h1>Sauvegarder une requête</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Afin de sauvegarder les requêtes obtenues dans R par <code>dbGetQuery()</code>, il est possible d&#39;utiliser les fonctions d&#39;écritures tels que <code>write.table()</code> ou encore <code>write.csv()</code>.</p>
+
+<p>Il existe une façon de faire des requêtes dans <code>pgAdmin3</code> et d&#39;en sauvegarder les résultats grâce à l&#39;outils <code>Query</code>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-49" style="background:;">
+  <!--  <a href="#slide-49"></a> -->
+  <hgroup>
+    <h1>Les requêtes stockées</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-50" style="background:;">
+  <!--  <a href="#slide-50"></a> -->
+  <hgroup>
+    <h1>Les requêtes stockées: les vues</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Les vues permettent de stocker directement les requêtes à l&#39;intérieur de la base de données afin d&#39;interroger la vue ultérieurement.</p>
+
+<pre><code class="sql">CREATE VIEW moyenne_acteurs AS (
+  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+    SELECT titre, annee_prod, count(nom) AS nb_acteurs
+      FROM films
+      INNER JOIN acteurs USING (id_film)
+      GROUP BY annee_prod, titre
+  ) AS nb_acteurs_film
+  GROUP BY annee_prod
+  );
+</code></pre>
+
+<p>Il sera possible d&#39;atteindre cette vue plus tard avec:</p>
+
+<pre><code class="sql">SELECT * FROM moyenne_acteurs;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-51" style="background:;">
+  <!--  <a href="#slide-51"></a> -->
+  <hgroup>
+    <h1>Manipuler les enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-52" style="background:;">
+  <!--  <a href="#slide-52"></a> -->
+  <hgroup>
+    <h1>Mettre à jour des enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On peut mettre à jour des enregistrements d&#39;une table avec des critères spécifiques.</p>
+
+<pre><code class="sql">UPDATE films SET genre = &#39;Dramatique&#39; WHERE genre = &#39;Drame&#39;;
+</code></pre>
+
+<p><strong>Note:</strong> On peut pas faire de modifications d&#39;enregistrements sur des vues, seulement sur les tables directement.</p>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-update.html">Documentation sur la commande UPDATE</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-53" style="background:;">
+  <!--  <a href="#slide-53"></a> -->
+  <hgroup>
+    <h1>Supprimer des enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On peut supprimer des enregistrements d&#39;une table avec des critères spécifiques.</p>
+
+<pre><code class="sql">DELETE FROM films WHERE genre &lt;&gt; &#39;Comédie musicale&#39;;
+</code></pre>
+
+<p>Ou sans critères, pour supprimer tous les enregistrements.</p>
+
+<pre><code class="sql">DELETE FROM films;
+</code></pre>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-delete.html">Documentation sur la commande DELETE</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-54" style="background:;">
+  <!--  <a href="#slide-54"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-55" style="background:;">
+  <!--  <a href="#slide-55"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>Créer la base de données</p></li>
+<li><p>Injecter les données</p></li>
+<li><p>Faire les requêtes suivantes :</p>
+
+<ul>
+<li>Nombre de liens par étudiant</li>
+<li>Décompte de liens par paire d&#39;étudiants</li>
+</ul></li>
+<li><p>Enregistrer le résultat des requêtes</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-56" style="background:;">
+  <!--  <a href="#slide-56"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>En post-traitement sur R :</p>
+
+<ul>
+<li>Calculer le nombre d&#39;étudiants, le nombre de liens et la connectance du réseau</li>
+<li>Calculer le nombre de liens moyens par étudiant et la variance</li>
+</ul></li>
+<li><p>Écrire un script qui réalise les étapes 1-3 d&#39;un bloc</p></li>
+</ol>
+
+<p>Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l&#39;une après l&#39;autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-57" style="background:;">
+  <!--  <a href="#slide-57"></a> -->
+  <hgroup>
+    <h1>Lectures</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Débat sur le partage des données</h2>
+
+<ul>
+<li>Poisot et al. 2014. Moving toward a sustainable ecological science: don&#39;t let data go to waste ! Ideas in Ecology and Evolution 6: 11-19</li>
+<li>Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-58" style="background:;">
+  <!--  <a href="#slide-58"></a> -->
+  <hgroup>
+    <h1>Découper les scripts avec R</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-59" style="background:;">
+  <hgroup>
+    <h1>Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <h2>Script 1 - Créer et interroger la BD</h2>
+
+<pre><code class="r"># Création des tables
+dbSendQuery(con, &quot;CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+);&quot;)
+
+# On lit le fichier à insérer
+bd_films &lt;- read.csv2(file=&#39;./assets/donnees/
+                      bd_beacon/bd_films.csv&#39;)
+
+# On écrit dans la table
+---.transition
+
+# Sauvegarder les requêtes
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-60" style="background:;">
+  <!--  <a href="#slide-60"></a> -->
+  <hgroup>
+    <h1>Sauvegarder une requête</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Nous avons vu précédemment <code>COPY ... FROM chemin_vers_fichier</code> pour insérer des enregistrements dans les tables.</p>
+
+<p>Il existe aussi l&#39;instruction <code>COPY ... TO chemin_vers_fichier</code> pour sauvegarder une requête.</p>
+
+<pre><code class="sql">COPY (SELECT * FROM films WHERE titre LIKE &#39;A%&#39;)
+TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV HEADER;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-61" style="background:;">
+  <!--  <a href="#slide-61"></a> -->
+  <hgroup>
+    <h1>Sauvegarder une requête</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Afin de sauvegarder les requêtes obtenues dans R par <code>dbGetQuery()</code>, il est possible d&#39;utiliser les fonctions d&#39;écritures tels que <code>write.table()</code> ou encore <code>write.csv()</code>.</p>
+
+<p>Il existe une façon de faire des requêtes dans <code>pgAdmin3</code> et d&#39;en sauvegarder les résultats grâce à l&#39;outils <code>Query</code>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-62" style="background:;">
+  <!--  <a href="#slide-62"></a> -->
+  <hgroup>
+    <h1>Les requêtes stockées</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-63" style="background:;">
+  <!--  <a href="#slide-63"></a> -->
+  <hgroup>
+    <h1>Les requêtes stockées: les vues</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Les vues permettent de stocker directement les requêtes à l&#39;intérieur de la base de données afin d&#39;interroger la vue ultérieurement.</p>
+
+<pre><code class="sql">CREATE VIEW moyenne_acteurs AS (
+  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+    SELECT titre, annee_prod, count(nom) AS nb_acteurs
+      FROM films
+      INNER JOIN acteurs USING (id_film)
+      GROUP BY annee_prod, titre
+  ) AS nb_acteurs_film
+  GROUP BY annee_prod
+  );
+</code></pre>
+
+<p>Il sera possible d&#39;atteindre cette vue plus tard avec:</p>
+
+<pre><code class="sql">SELECT * FROM moyenne_acteurs;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-64" style="background:;">
+  <!--  <a href="#slide-64"></a> -->
+  <hgroup>
+    <h1>Manipuler les enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-65" style="background:;">
+  <!--  <a href="#slide-65"></a> -->
+  <hgroup>
+    <h1>Mettre à jour des enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On peut mettre à jour des enregistrements d&#39;une table avec des critères spécifiques.</p>
+
+<pre><code class="sql">UPDATE films SET genre = &#39;Dramatique&#39; WHERE genre = &#39;Drame&#39;;
+</code></pre>
+
+<p><strong>Note:</strong> On peut pas faire de modifications d&#39;enregistrements sur des vues, seulement sur les tables directement.</p>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-update.html">Documentation sur la commande UPDATE</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-66" style="background:;">
+  <!--  <a href="#slide-66"></a> -->
+  <hgroup>
+    <h1>Supprimer des enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On peut supprimer des enregistrements d&#39;une table avec des critères spécifiques.</p>
+
+<pre><code class="sql">DELETE FROM films WHERE genre &lt;&gt; &#39;Comédie musicale&#39;;
+</code></pre>
+
+<p>Ou sans critères, pour supprimer tous les enregistrements.</p>
+
+<pre><code class="sql">DELETE FROM films;
+</code></pre>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-delete.html">Documentation sur la commande DELETE</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-67" style="background:;">
+  <!--  <a href="#slide-67"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-68" style="background:;">
+  <!--  <a href="#slide-68"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>Créer la base de données</p></li>
+<li><p>Injecter les données</p></li>
+<li><p>Faire les requêtes suivantes :</p>
+
+<ul>
+<li>Nombre de liens par étudiant</li>
+<li>Décompte de liens par paire d&#39;étudiants</li>
+</ul></li>
+<li><p>Enregistrer le résultat des requêtes</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-69" style="background:;">
+  <!--  <a href="#slide-69"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>En post-traitement sur R :</p>
+
+<ul>
+<li>Calculer le nombre d&#39;étudiants, le nombre de liens et la connectance du réseau</li>
+<li>Calculer le nombre de liens moyens par étudiant et la variance</li>
+</ul></li>
+<li><p>Écrire un script qui réalise les étapes 1-3 d&#39;un bloc</p></li>
+</ol>
+
+<p>Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l&#39;une après l&#39;autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-70" style="background:;">
+  <!--  <a href="#slide-70"></a> -->
+  <hgroup>
+    <h1>Lectures</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Débat sur le partage des données</h2>
+
+<ul>
+<li>Poisot et al. 2014. Moving toward a sustainable ecological science: don&#39;t let data go to waste ! Ideas in Ecology and Evolution 6: 11-19</li>
+<li>Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-71" style="background:;">
+  <!--  <a href="#slide-71"></a> -->
+  <hgroup>
+    <h1>Découper les scripts avec R</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-72" style="background:;">
+  <hgroup>
+    <h1>Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <h2>Script 1 - Créer et interroger la BD</h2>
+
+<pre><code class="r"># Création des tables
+dbSendQuery(con, &quot;CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+---.transition
+
+# Sauvegarder les requêtes
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-73" style="background:;">
+  <!--  <a href="#slide-73"></a> -->
+  <hgroup>
+    <h1>Sauvegarder une requête</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Nous avons vu précédemment <code>COPY ... FROM chemin_vers_fichier</code> pour insérer des enregistrements dans les tables.</p>
+
+<p>Il existe aussi l&#39;instruction <code>COPY ... TO chemin_vers_fichier</code> pour sauvegarder une requête.</p>
+
+<pre><code class="sql">COPY (SELECT * FROM films WHERE titre LIKE &#39;A%&#39;)
+TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV HEADER;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-74" style="background:;">
+  <!--  <a href="#slide-74"></a> -->
+  <hgroup>
+    <h1>Sauvegarder une requête</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Afin de sauvegarder les requêtes obtenues dans R par <code>dbGetQuery()</code>, il est possible d&#39;utiliser les fonctions d&#39;écritures tels que <code>write.table()</code> ou encore <code>write.csv()</code>.</p>
+
+<p>Il existe une façon de faire des requêtes dans <code>pgAdmin3</code> et d&#39;en sauvegarder les résultats grâce à l&#39;outils <code>Query</code>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-75" style="background:;">
+  <!--  <a href="#slide-75"></a> -->
+  <hgroup>
+    <h1>Les requêtes stockées</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-76" style="background:;">
+  <!--  <a href="#slide-76"></a> -->
+  <hgroup>
+    <h1>Les requêtes stockées: les vues</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Les vues permettent de stocker directement les requêtes à l&#39;intérieur de la base de données afin d&#39;interroger la vue ultérieurement.</p>
+
+<pre><code class="sql">CREATE VIEW moyenne_acteurs AS (
+  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+    SELECT titre, annee_prod, count(nom) AS nb_acteurs
+      FROM films
+      INNER JOIN acteurs USING (id_film)
+      GROUP BY annee_prod, titre
+  ) AS nb_acteurs_film
+  GROUP BY annee_prod
+  );
+</code></pre>
+
+<p>Il sera possible d&#39;atteindre cette vue plus tard avec:</p>
+
+<pre><code class="sql">SELECT * FROM moyenne_acteurs;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-77" style="background:;">
+  <!--  <a href="#slide-77"></a> -->
+  <hgroup>
+    <h1>Manipuler les enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-78" style="background:;">
+  <!--  <a href="#slide-78"></a> -->
+  <hgroup>
+    <h1>Mettre à jour des enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On peut mettre à jour des enregistrements d&#39;une table avec des critères spécifiques.</p>
+
+<pre><code class="sql">UPDATE films SET genre = &#39;Dramatique&#39; WHERE genre = &#39;Drame&#39;;
+</code></pre>
+
+<p><strong>Note:</strong> On peut pas faire de modifications d&#39;enregistrements sur des vues, seulement sur les tables directement.</p>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-update.html">Documentation sur la commande UPDATE</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-79" style="background:;">
+  <!--  <a href="#slide-79"></a> -->
+  <hgroup>
+    <h1>Supprimer des enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On peut supprimer des enregistrements d&#39;une table avec des critères spécifiques.</p>
+
+<pre><code class="sql">DELETE FROM films WHERE genre &lt;&gt; &#39;Comédie musicale&#39;;
+</code></pre>
+
+<p>Ou sans critères, pour supprimer tous les enregistrements.</p>
+
+<pre><code class="sql">DELETE FROM films;
+</code></pre>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-delete.html">Documentation sur la commande DELETE</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-80" style="background:;">
+  <!--  <a href="#slide-80"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-81" style="background:;">
+  <!--  <a href="#slide-81"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>Créer la base de données</p></li>
+<li><p>Injecter les données</p></li>
+<li><p>Faire les requêtes suivantes :</p>
+
+<ul>
+<li>Nombre de liens par étudiant</li>
+<li>Décompte de liens par paire d&#39;étudiants</li>
+</ul></li>
+<li><p>Enregistrer le résultat des requêtes</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-82" style="background:;">
+  <!--  <a href="#slide-82"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>En post-traitement sur R :</p>
+
+<ul>
+<li>Calculer le nombre d&#39;étudiants, le nombre de liens et la connectance du réseau</li>
+<li>Calculer le nombre de liens moyens par étudiant et la variance</li>
+</ul></li>
+<li><p>Écrire un script qui réalise les étapes 1-3 d&#39;un bloc</p></li>
+</ol>
+
+<p>Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l&#39;une après l&#39;autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-83" style="background:;">
+  <!--  <a href="#slide-83"></a> -->
+  <hgroup>
+    <h1>Lectures</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Débat sur le partage des données</h2>
+
+<ul>
+<li>Poisot et al. 2014. Moving toward a sustainable ecological science: don&#39;t let data go to waste ! Ideas in Ecology and Evolution 6: 11-19</li>
+<li>Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-84" style="background:;">
+  <!--  <a href="#slide-84"></a> -->
+  <hgroup>
+    <h1>Sauvegarder les requêtes</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-85" style="background:;">
+  <!--  <a href="#slide-85"></a> -->
+  <hgroup>
+    <h1>Sauvegarder une requête</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Nous avons vu précédemment <code>COPY ... FROM chemin_vers_fichier</code> pour insérer des enregistrements dans les tables.</p>
+
+<p>Il existe aussi l&#39;instruction <code>COPY ... TO chemin_vers_fichier</code> pour sauvegarder une requête.</p>
+
+<pre><code class="sql">COPY (SELECT * FROM films WHERE titre LIKE &#39;A%&#39;)
+TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV HEADER;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-86" style="background:;">
+  <!--  <a href="#slide-86"></a> -->
+  <hgroup>
+    <h1>Sauvegarder une requête</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Afin de sauvegarder les requêtes obtenues dans R par <code>dbGetQuery()</code>, il est possible d&#39;utiliser les fonctions d&#39;écritures tels que <code>write.table()</code> ou encore <code>write.csv()</code>.</p>
+
+<p>Il existe une façon de faire des requêtes dans <code>pgAdmin3</code> et d&#39;en sauvegarder les résultats grâce à l&#39;outils <code>Query</code>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-87" style="background:;">
+  <!--  <a href="#slide-87"></a> -->
+  <hgroup>
+    <h1>Les requêtes stockées</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-88" style="background:;">
+  <!--  <a href="#slide-88"></a> -->
+  <hgroup>
+    <h1>Les requêtes stockées: les vues</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Les vues permettent de stocker directement les requêtes à l&#39;intérieur de la base de données afin d&#39;interroger la vue ultérieurement.</p>
+
+<pre><code class="sql">CREATE VIEW moyenne_acteurs AS (
+  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+    SELECT titre, annee_prod, count(nom) AS nb_acteurs
+      FROM films
+      INNER JOIN acteurs USING (id_film)
+      GROUP BY annee_prod, titre
+  ) AS nb_acteurs_film
+  GROUP BY annee_prod
+  );
+</code></pre>
+
+<p>Il sera possible d&#39;atteindre cette vue plus tard avec:</p>
+
+<pre><code class="sql">SELECT * FROM moyenne_acteurs;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-89" style="background:;">
+  <!--  <a href="#slide-89"></a> -->
+  <hgroup>
+    <h1>Manipuler les enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-90" style="background:;">
+  <!--  <a href="#slide-90"></a> -->
+  <hgroup>
+    <h1>Mettre à jour des enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On peut mettre à jour des enregistrements d&#39;une table avec des critères spécifiques.</p>
+
+<pre><code class="sql">UPDATE films SET genre = &#39;Dramatique&#39; WHERE genre = &#39;Drame&#39;;
+</code></pre>
+
+<p><strong>Note:</strong> On peut pas faire de modifications d&#39;enregistrements sur des vues, seulement sur les tables directement.</p>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-update.html">Documentation sur la commande UPDATE</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-91" style="background:;">
+  <!--  <a href="#slide-91"></a> -->
+  <hgroup>
+    <h1>Supprimer des enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On peut supprimer des enregistrements d&#39;une table avec des critères spécifiques.</p>
+
+<pre><code class="sql">DELETE FROM films WHERE genre &lt;&gt; &#39;Comédie musicale&#39;;
+</code></pre>
+
+<p>Ou sans critères, pour supprimer tous les enregistrements.</p>
+
+<pre><code class="sql">DELETE FROM films;
+</code></pre>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-delete.html">Documentation sur la commande DELETE</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-92" style="background:;">
+  <!--  <a href="#slide-92"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-93" style="background:;">
+  <!--  <a href="#slide-93"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>Créer la base de données</p></li>
+<li><p>Injecter les données</p></li>
+<li><p>Faire les requêtes suivantes :</p>
+
+<ul>
+<li>Nombre de liens par étudiant</li>
+<li>Décompte de liens par paire d&#39;étudiants</li>
+</ul></li>
+<li><p>Enregistrer le résultat des requêtes</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-94" style="background:;">
+  <!--  <a href="#slide-94"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>En post-traitement sur R :</p>
+
+<ul>
+<li>Calculer le nombre d&#39;étudiants, le nombre de liens et la connectance du réseau</li>
+<li>Calculer le nombre de liens moyens par étudiant et la variance</li>
+</ul></li>
+<li><p>Écrire un script qui réalise les étapes 1-3 d&#39;un bloc</p></li>
+</ol>
+
+<p>Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l&#39;une après l&#39;autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-95" style="background:;">
+  <!--  <a href="#slide-95"></a> -->
+  <hgroup>
+    <h1>Lectures</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Débat sur le partage des données</h2>
+
+<ul>
+<li>Poisot et al. 2014. Moving toward a sustainable ecological science: don&#39;t let data go to waste ! Ideas in Ecology and Evolution 6: 11-19</li>
+<li>Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-96" style="background:;">
+  <!--  <a href="#slide-96"></a> -->
+  <hgroup>
+    <h1>Découper les scripts avec R</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-97" style="background:;">
+  <hgroup>
+    <h1>Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <h2>Script 1 - Créer et interroger la BD</h2>
+
+<pre><code class="r"># Création des tables
+dbSendQuery(con, &quot;CREATE TABLE films (
+    id_film     integer,
+---.transition
+
+# Sauvegarder les requêtes
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-98" style="background:;">
+  <!--  <a href="#slide-98"></a> -->
+  <hgroup>
+    <h1>Sauvegarder une requête</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Nous avons vu précédemment <code>COPY ... FROM chemin_vers_fichier</code> pour insérer des enregistrements dans les tables.</p>
+
+<p>Il existe aussi l&#39;instruction <code>COPY ... TO chemin_vers_fichier</code> pour sauvegarder une requête.</p>
+
+<pre><code class="sql">COPY (SELECT * FROM films WHERE titre LIKE &#39;A%&#39;)
+TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV HEADER;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-99" style="background:;">
+  <!--  <a href="#slide-99"></a> -->
+  <hgroup>
+    <h1>Sauvegarder une requête</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Afin de sauvegarder les requêtes obtenues dans R par <code>dbGetQuery()</code>, il est possible d&#39;utiliser les fonctions d&#39;écritures tels que <code>write.table()</code> ou encore <code>write.csv()</code>.</p>
+
+<p>Il existe une façon de faire des requêtes dans <code>pgAdmin3</code> et d&#39;en sauvegarder les résultats grâce à l&#39;outils <code>Query</code>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-100" style="background:;">
+  <!--  <a href="#slide-100"></a> -->
+  <hgroup>
+    <h1>Les requêtes stockées</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-101" style="background:;">
+  <!--  <a href="#slide-101"></a> -->
+  <hgroup>
+    <h1>Les requêtes stockées: les vues</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Les vues permettent de stocker directement les requêtes à l&#39;intérieur de la base de données afin d&#39;interroger la vue ultérieurement.</p>
+
+<pre><code class="sql">CREATE VIEW moyenne_acteurs AS (
+  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+    SELECT titre, annee_prod, count(nom) AS nb_acteurs
+      FROM films
+      INNER JOIN acteurs USING (id_film)
+      GROUP BY annee_prod, titre
+  ) AS nb_acteurs_film
+  GROUP BY annee_prod
+  );
+</code></pre>
+
+<p>Il sera possible d&#39;atteindre cette vue plus tard avec:</p>
+
+<pre><code class="sql">SELECT * FROM moyenne_acteurs;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-102" style="background:;">
+  <!--  <a href="#slide-102"></a> -->
+  <hgroup>
+    <h1>Manipuler les enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-103" style="background:;">
+  <!--  <a href="#slide-103"></a> -->
+  <hgroup>
+    <h1>Mettre à jour des enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On peut mettre à jour des enregistrements d&#39;une table avec des critères spécifiques.</p>
+
+<pre><code class="sql">UPDATE films SET genre = &#39;Dramatique&#39; WHERE genre = &#39;Drame&#39;;
+</code></pre>
+
+<p><strong>Note:</strong> On peut pas faire de modifications d&#39;enregistrements sur des vues, seulement sur les tables directement.</p>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-update.html">Documentation sur la commande UPDATE</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-104" style="background:;">
+  <!--  <a href="#slide-104"></a> -->
+  <hgroup>
+    <h1>Supprimer des enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On peut supprimer des enregistrements d&#39;une table avec des critères spécifiques.</p>
+
+<pre><code class="sql">DELETE FROM films WHERE genre &lt;&gt; &#39;Comédie musicale&#39;;
+</code></pre>
+
+<p>Ou sans critères, pour supprimer tous les enregistrements.</p>
+
+<pre><code class="sql">DELETE FROM films;
+</code></pre>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-delete.html">Documentation sur la commande DELETE</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-105" style="background:;">
+  <!--  <a href="#slide-105"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-106" style="background:;">
+  <!--  <a href="#slide-106"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>Créer la base de données</p></li>
+<li><p>Injecter les données</p></li>
+<li><p>Faire les requêtes suivantes :</p>
+
+<ul>
+<li>Nombre de liens par étudiant</li>
+<li>Décompte de liens par paire d&#39;étudiants</li>
+</ul></li>
+<li><p>Enregistrer le résultat des requêtes</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-107" style="background:;">
+  <!--  <a href="#slide-107"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>En post-traitement sur R :</p>
+
+<ul>
+<li>Calculer le nombre d&#39;étudiants, le nombre de liens et la connectance du réseau</li>
+<li>Calculer le nombre de liens moyens par étudiant et la variance</li>
+</ul></li>
+<li><p>Écrire un script qui réalise les étapes 1-3 d&#39;un bloc</p></li>
+</ol>
+
+<p>Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l&#39;une après l&#39;autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-108" style="background:;">
+  <!--  <a href="#slide-108"></a> -->
+  <hgroup>
+    <h1>Lectures</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Débat sur le partage des données</h2>
+
+<ul>
+<li>Poisot et al. 2014. Moving toward a sustainable ecological science: don&#39;t let data go to waste ! Ideas in Ecology and Evolution 6: 11-19</li>
+<li>Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-109" style="background:;">
+  <!--  <a href="#slide-109"></a> -->
+  <hgroup>
+    <h1>Découper les scripts avec R</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-110" style="background:;">
+  <hgroup>
+    <h1>Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <h2>Script 1 - Créer et interroger la BD</h2>
+
+<pre><code class="r"># Création des tables
+dbSendQuery(con, &quot;CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+);&quot;)
+
+# On lit le fichier à insérer
+bd_films &lt;- read.csv2(file=&#39;./assets/donnees/
+                      bd_beacon/bd_films.csv&#39;)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     
+    </div>
+  </article>
+</slide>
+<slide class="transition" id="slide-111" style="background:;">
+  <!--  <a href="#slide-111"></a> -->
+  <hgroup>
+    <h1>Sauvegarder les requêtes</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-112" style="background:;">
+  <!--  <a href="#slide-112"></a> -->
+  <hgroup>
+    <h1>Sauvegarder une requête</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Nous avons vu précédemment <code>COPY ... FROM chemin_vers_fichier</code> pour insérer des enregistrements dans les tables.</p>
+
+<p>Il existe aussi l&#39;instruction <code>COPY ... TO chemin_vers_fichier</code> pour sauvegarder une requête.</p>
+
+<pre><code class="sql">COPY (SELECT * FROM films WHERE titre LIKE &#39;A%&#39;)
+TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV HEADER;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-113" style="background:;">
+  <!--  <a href="#slide-113"></a> -->
+  <hgroup>
+    <h1>Sauvegarder une requête</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Afin de sauvegarder les requêtes obtenues dans R par <code>dbGetQuery()</code>, il est possible d&#39;utiliser les fonctions d&#39;écritures tels que <code>write.table()</code> ou encore <code>write.csv()</code>.</p>
+
+<p>Il existe une façon de faire des requêtes dans <code>pgAdmin3</code> et d&#39;en sauvegarder les résultats grâce à l&#39;outils <code>Query</code>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-114" style="background:;">
+  <!--  <a href="#slide-114"></a> -->
+  <hgroup>
+    <h1>Les requêtes stockées</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-115" style="background:;">
+  <!--  <a href="#slide-115"></a> -->
+  <hgroup>
+    <h1>Les requêtes stockées: les vues</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Les vues permettent de stocker directement les requêtes à l&#39;intérieur de la base de données afin d&#39;interroger la vue ultérieurement.</p>
+
+<pre><code class="sql">CREATE VIEW moyenne_acteurs AS (
+  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+    SELECT titre, annee_prod, count(nom) AS nb_acteurs
+      FROM films
+      INNER JOIN acteurs USING (id_film)
+      GROUP BY annee_prod, titre
+  ) AS nb_acteurs_film
+  GROUP BY annee_prod
+  );
+</code></pre>
+
+<p>Il sera possible d&#39;atteindre cette vue plus tard avec:</p>
+
+<pre><code class="sql">SELECT * FROM moyenne_acteurs;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-116" style="background:;">
+  <!--  <a href="#slide-116"></a> -->
+  <hgroup>
+    <h1>Manipuler les enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-117" style="background:;">
+  <!--  <a href="#slide-117"></a> -->
+  <hgroup>
+    <h1>Mettre à jour des enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On peut mettre à jour des enregistrements d&#39;une table avec des critères spécifiques.</p>
+
+<pre><code class="sql">UPDATE films SET genre = &#39;Dramatique&#39; WHERE genre = &#39;Drame&#39;;
+</code></pre>
+
+<p><strong>Note:</strong> On peut pas faire de modifications d&#39;enregistrements sur des vues, seulement sur les tables directement.</p>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-update.html">Documentation sur la commande UPDATE</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-118" style="background:;">
+  <!--  <a href="#slide-118"></a> -->
+  <hgroup>
+    <h1>Supprimer des enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On peut supprimer des enregistrements d&#39;une table avec des critères spécifiques.</p>
+
+<pre><code class="sql">DELETE FROM films WHERE genre &lt;&gt; &#39;Comédie musicale&#39;;
+</code></pre>
+
+<p>Ou sans critères, pour supprimer tous les enregistrements.</p>
+
+<pre><code class="sql">DELETE FROM films;
+</code></pre>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-delete.html">Documentation sur la commande DELETE</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-119" style="background:;">
+  <!--  <a href="#slide-119"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-120" style="background:;">
+  <!--  <a href="#slide-120"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>Créer la base de données</p></li>
+<li><p>Injecter les données</p></li>
+<li><p>Faire les requêtes suivantes :</p>
+
+<ul>
+<li>Nombre de liens par étudiant</li>
+<li>Décompte de liens par paire d&#39;étudiants</li>
+</ul></li>
+<li><p>Enregistrer le résultat des requêtes</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-121" style="background:;">
+  <!--  <a href="#slide-121"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>En post-traitement sur R :</p>
+
+<ul>
+<li>Calculer le nombre d&#39;étudiants, le nombre de liens et la connectance du réseau</li>
+<li>Calculer le nombre de liens moyens par étudiant et la variance</li>
+</ul></li>
+<li><p>Écrire un script qui réalise les étapes 1-3 d&#39;un bloc</p></li>
+</ol>
+
+<p>Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l&#39;une après l&#39;autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-122" style="background:;">
+  <!--  <a href="#slide-122"></a> -->
+  <hgroup>
+    <h1>Lectures</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Débat sur le partage des données</h2>
+
+<ul>
+<li>Poisot et al. 2014. Moving toward a sustainable ecological science: don&#39;t let data go to waste ! Ideas in Ecology and Evolution 6: 11-19</li>
+<li>Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-123" style="background:;">
+  <!--  <a href="#slide-123"></a> -->
+  <hgroup>
+    <h1>Découper les scripts avec R</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-124" style="background:;">
+  <hgroup>
+    <h1>Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <h2>Script 1 - Créer et interroger la BD</h2>
+
+<pre><code class="r">---.transition
+
+# Sauvegarder les requêtes
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-125" style="background:;">
+  <!--  <a href="#slide-125"></a> -->
+  <hgroup>
+    <h1>Sauvegarder une requête</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Nous avons vu précédemment <code>COPY ... FROM chemin_vers_fichier</code> pour insérer des enregistrements dans les tables.</p>
+
+<p>Il existe aussi l&#39;instruction <code>COPY ... TO chemin_vers_fichier</code> pour sauvegarder une requête.</p>
+
+<pre><code class="sql">COPY (SELECT * FROM films WHERE titre LIKE &#39;A%&#39;)
+TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV HEADER;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-126" style="background:;">
+  <!--  <a href="#slide-126"></a> -->
+  <hgroup>
+    <h1>Sauvegarder une requête</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Afin de sauvegarder les requêtes obtenues dans R par <code>dbGetQuery()</code>, il est possible d&#39;utiliser les fonctions d&#39;écritures tels que <code>write.table()</code> ou encore <code>write.csv()</code>.</p>
+
+<p>Il existe une façon de faire des requêtes dans <code>pgAdmin3</code> et d&#39;en sauvegarder les résultats grâce à l&#39;outils <code>Query</code>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-127" style="background:;">
+  <!--  <a href="#slide-127"></a> -->
+  <hgroup>
+    <h1>Les requêtes stockées</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-128" style="background:;">
+  <!--  <a href="#slide-128"></a> -->
+  <hgroup>
+    <h1>Les requêtes stockées: les vues</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Les vues permettent de stocker directement les requêtes à l&#39;intérieur de la base de données afin d&#39;interroger la vue ultérieurement.</p>
+
+<pre><code class="sql">CREATE VIEW moyenne_acteurs AS (
+  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+    SELECT titre, annee_prod, count(nom) AS nb_acteurs
+      FROM films
+      INNER JOIN acteurs USING (id_film)
+      GROUP BY annee_prod, titre
+  ) AS nb_acteurs_film
+  GROUP BY annee_prod
+  );
+</code></pre>
+
+<p>Il sera possible d&#39;atteindre cette vue plus tard avec:</p>
+
+<pre><code class="sql">SELECT * FROM moyenne_acteurs;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-129" style="background:;">
+  <!--  <a href="#slide-129"></a> -->
+  <hgroup>
+    <h1>Manipuler les enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-130" style="background:;">
+  <!--  <a href="#slide-130"></a> -->
+  <hgroup>
+    <h1>Mettre à jour des enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On peut mettre à jour des enregistrements d&#39;une table avec des critères spécifiques.</p>
+
+<pre><code class="sql">UPDATE films SET genre = &#39;Dramatique&#39; WHERE genre = &#39;Drame&#39;;
+</code></pre>
+
+<p><strong>Note:</strong> On peut pas faire de modifications d&#39;enregistrements sur des vues, seulement sur les tables directement.</p>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-update.html">Documentation sur la commande UPDATE</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-131" style="background:;">
+  <!--  <a href="#slide-131"></a> -->
+  <hgroup>
+    <h1>Supprimer des enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On peut supprimer des enregistrements d&#39;une table avec des critères spécifiques.</p>
+
+<pre><code class="sql">DELETE FROM films WHERE genre &lt;&gt; &#39;Comédie musicale&#39;;
+</code></pre>
+
+<p>Ou sans critères, pour supprimer tous les enregistrements.</p>
+
+<pre><code class="sql">DELETE FROM films;
+</code></pre>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-delete.html">Documentation sur la commande DELETE</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-132" style="background:;">
+  <!--  <a href="#slide-132"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-133" style="background:;">
+  <!--  <a href="#slide-133"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>Créer la base de données</p></li>
+<li><p>Injecter les données</p></li>
+<li><p>Faire les requêtes suivantes :</p>
+
+<ul>
+<li>Nombre de liens par étudiant</li>
+<li>Décompte de liens par paire d&#39;étudiants</li>
+</ul></li>
+<li><p>Enregistrer le résultat des requêtes</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-134" style="background:;">
+  <!--  <a href="#slide-134"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>En post-traitement sur R :</p>
+
+<ul>
+<li>Calculer le nombre d&#39;étudiants, le nombre de liens et la connectance du réseau</li>
+<li>Calculer le nombre de liens moyens par étudiant et la variance</li>
+</ul></li>
+<li><p>Écrire un script qui réalise les étapes 1-3 d&#39;un bloc</p></li>
+</ol>
+
+<p>Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l&#39;une après l&#39;autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-135" style="background:;">
+  <!--  <a href="#slide-135"></a> -->
+  <hgroup>
+    <h1>Lectures</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Débat sur le partage des données</h2>
+
+<ul>
+<li>Poisot et al. 2014. Moving toward a sustainable ecological science: don&#39;t let data go to waste ! Ideas in Ecology and Evolution 6: 11-19</li>
+<li>Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-136" style="background:;">
+  <!--  <a href="#slide-136"></a> -->
+  <hgroup>
+    <h1>Découper les scripts avec R</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-137" style="background:;">
+  <hgroup>
+    <h1>Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <h2>Script 1 - Créer et interroger la BD</h2>
+
+<pre><code class="r"># Création des tables
+dbSendQuery(con, &quot;CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+);&quot;)
+
+# On lit le fichier à insérer
+bd_films &lt;- read.csv2(file=&#39;./asse
+---.transition
+
+# Sauvegarder les requêtes
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-138" style="background:;">
+  <!--  <a href="#slide-138"></a> -->
+  <hgroup>
+    <h1>Sauvegarder une requête</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Nous avons vu précédemment <code>COPY ... FROM chemin_vers_fichier</code> pour insérer des enregistrements dans les tables.</p>
+
+<p>Il existe aussi l&#39;instruction <code>COPY ... TO chemin_vers_fichier</code> pour sauvegarder une requête.</p>
+
+<pre><code class="sql">COPY (SELECT * FROM films WHERE titre LIKE &#39;A%&#39;)
+TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV HEADER;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-139" style="background:;">
+  <!--  <a href="#slide-139"></a> -->
+  <hgroup>
+    <h1>Sauvegarder une requête</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Afin de sauvegarder les requêtes obtenues dans R par <code>dbGetQuery()</code>, il est possible d&#39;utiliser les fonctions d&#39;écritures tels que <code>write.table()</code> ou encore <code>write.csv()</code>.</p>
+
+<p>Il existe une façon de faire des requêtes dans <code>pgAdmin3</code> et d&#39;en sauvegarder les résultats grâce à l&#39;outils <code>Query</code>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-140" style="background:;">
+  <!--  <a href="#slide-140"></a> -->
+  <hgroup>
+    <h1>Les requêtes stockées</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-141" style="background:;">
+  <!--  <a href="#slide-141"></a> -->
+  <hgroup>
+    <h1>Les requêtes stockées: les vues</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Les vues permettent de stocker directement les requêtes à l&#39;intérieur de la base de données afin d&#39;interroger la vue ultérieurement.</p>
+
+<pre><code class="sql">CREATE VIEW moyenne_acteurs AS (
+  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+    SELECT titre, annee_prod, count(nom) AS nb_acteurs
+      FROM films
+      INNER JOIN acteurs USING (id_film)
+      GROUP BY annee_prod, titre
+  ) AS nb_acteurs_film
+  GROUP BY annee_prod
+  );
+</code></pre>
+
+<p>Il sera possible d&#39;atteindre cette vue plus tard avec:</p>
+
+<pre><code class="sql">SELECT * FROM moyenne_acteurs;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-142" style="background:;">
+  <!--  <a href="#slide-142"></a> -->
+  <hgroup>
+    <h1>Manipuler les enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-143" style="background:;">
+  <!--  <a href="#slide-143"></a> -->
+  <hgroup>
+    <h1>Mettre à jour des enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On peut mettre à jour des enregistrements d&#39;une table avec des critères spécifiques.</p>
+
+<pre><code class="sql">UPDATE films SET genre = &#39;Dramatique&#39; WHERE genre = &#39;Drame&#39;;
+</code></pre>
+
+<p><strong>Note:</strong> On peut pas faire de modifications d&#39;enregistrements sur des vues, seulement sur les tables directement.</p>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-update.html">Documentation sur la commande UPDATE</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-144" style="background:;">
+  <!--  <a href="#slide-144"></a> -->
+  <hgroup>
+    <h1>Supprimer des enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On peut supprimer des enregistrements d&#39;une table avec des critères spécifiques.</p>
+
+<pre><code class="sql">DELETE FROM films WHERE genre &lt;&gt; &#39;Comédie musicale&#39;;
+</code></pre>
+
+<p>Ou sans critères, pour supprimer tous les enregistrements.</p>
+
+<pre><code class="sql">DELETE FROM films;
+</code></pre>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-delete.html">Documentation sur la commande DELETE</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-145" style="background:;">
+  <!--  <a href="#slide-145"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-146" style="background:;">
+  <!--  <a href="#slide-146"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>Créer la base de données</p></li>
+<li><p>Injecter les données</p></li>
+<li><p>Faire les requêtes suivantes :</p>
+
+<ul>
+<li>Nombre de liens par étudiant</li>
+<li>Décompte de liens par paire d&#39;étudiants</li>
+</ul></li>
+<li><p>Enregistrer le résultat des requêtes</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-147" style="background:;">
+  <!--  <a href="#slide-147"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>En post-traitement sur R :
+
+<ul>
+<li>Calculer le nombre d&#39;étudiants, le nombre de liens et la connectance du réseau</li>
+<li>Calculer le nombre de liens mo
+---.transition</li>
+</ul></li>
+</ol>
+
+<h1>Sauvegarder les requêtes</h1>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-148" style="background:;">
+  <!--  <a href="#slide-148"></a> -->
+  <hgroup>
+    <h1>Sauvegarder une requête</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Nous avons vu précédemment <code>COPY ... FROM chemin_vers_fichier</code> pour insérer des enregistrements dans les tables.</p>
+
+<p>Il existe aussi l&#39;instruction <code>COPY ... TO chemin_vers_fichier</code> pour sauvegarder une requête.</p>
+
+<pre><code class="sql">COPY (SELECT * FROM films WHERE titre LIKE &#39;A%&#39;)
+TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV HEADER;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-149" style="background:;">
+  <!--  <a href="#slide-149"></a> -->
+  <hgroup>
+    <h1>Sauvegarder une requête</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Afin de sauvegarder les requêtes obtenues dans R par <code>dbGetQuery()</code>, il est possible d&#39;utiliser les fonctions d&#39;écritures tels que <code>write.table()</code> ou encore <code>write.csv()</code>.</p>
+
+<p>Il existe une façon de faire des requêtes dans <code>pgAdmin3</code> et d&#39;en sauvegarder les résultats grâce à l&#39;outils <code>Query</code>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-150" style="background:;">
+  <!--  <a href="#slide-150"></a> -->
+  <hgroup>
+    <h1>Les requêtes stockées</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-151" style="background:;">
+  <!--  <a href="#slide-151"></a> -->
+  <hgroup>
+    <h1>Les requêtes stockées: les vues</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Les vues permettent de stocker directement les requêtes à l&#39;intérieur de la base de données afin d&#39;interroger la vue ultérieurement.</p>
+
+<pre><code class="sql">CREATE VIEW moyenne_acteurs AS (
+  SELECT annee_prod, avg(nb_acteurs) AS moy_acteurs FROM (
+    SELECT titre, annee_prod, count(nom) AS nb_acteurs
+      FROM films
+      INNER JOIN acteurs USING (id_film)
+      GROUP BY annee_prod, titre
+  ) AS nb_acteurs_film
+  GROUP BY annee_prod
+  );
+</code></pre>
+
+<p>Il sera possible d&#39;atteindre cette vue plus tard avec:</p>
+
+<pre><code class="sql">SELECT * FROM moyenne_acteurs;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-152" style="background:;">
+  <!--  <a href="#slide-152"></a> -->
+  <hgroup>
+    <h1>Manipuler les enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-153" style="background:;">
+  <!--  <a href="#slide-153"></a> -->
+  <hgroup>
+    <h1>Mettre à jour des enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On peut mettre à jour des enregistrements d&#39;une table avec des critères spécifiques.</p>
+
+<pre><code class="sql">UPDATE films SET genre = &#39;Dramatique&#39; WHERE genre = &#39;Drame&#39;;
+</code></pre>
+
+<p><strong>Note:</strong> On peut pas faire de modifications d&#39;enregistrements sur des vues, seulement sur les tables directement.</p>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-update.html">Documentation sur la commande UPDATE</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-154" style="background:;">
+  <!--  <a href="#slide-154"></a> -->
+  <hgroup>
+    <h1>Supprimer des enregistrements</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>On peut supprimer des enregistrements d&#39;une table avec des critères spécifiques.</p>
+
+<pre><code class="sql">DELETE FROM films WHERE genre &lt;&gt; &#39;Comédie musicale&#39;;
+</code></pre>
+
+<p>Ou sans critères, pour supprimer tous les enregistrements.</p>
+
+<pre><code class="sql">DELETE FROM films;
+</code></pre>
+
+<p><a href="http://docs.postgresqlfr.org/8.3/sql-delete.html">Documentation sur la commande DELETE</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-155" style="background:;">
+  <!--  <a href="#slide-155"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-156" style="background:;">
+  <!--  <a href="#slide-156"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>Créer la base de données</p></li>
+<li><p>Injecter les données</p></li>
+<li><p>Faire les requêtes suivantes :</p>
+
+<ul>
+<li>Nombre de liens par étudiant</li>
+<li>Décompte de liens par paire d&#39;étudiants</li>
+</ul></li>
+<li><p>Enregistrer le résultat des requêtes</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-157" style="background:;">
+  <!--  <a href="#slide-157"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>En post-traitement sur R :</p>
+
+<ul>
+<li>Calculer le nombre d&#39;étudiants, le nombre de liens et la connectance du réseau</li>
+<li>Calculer le nombre de liens moyens par étudiant et la variance</li>
+</ul></li>
+<li><p>Écrire un script qui réalise les étapes 1-3 d&#39;un bloc</p></li>
+</ol>
+
+<p>Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l&#39;une après l&#39;autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-158" style="background:;">
+  <!--  <a href="#slide-158"></a> -->
+  <hgroup>
+    <h1>Lectures</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Débat sur le partage des données</h2>
+
+<ul>
+<li>Poisot et al. 2014. Moving toward a sustainable ecological science: don&#39;t let data go to waste ! Ideas in Ecology and Evolution 6: 11-19</li>
+<li>Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-159" style="background:;">
+  <!--  <a href="#slide-159"></a> -->
+  <hgroup>
+    <h1>Découper les scripts avec R</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-160" style="background:;">
+  <hgroup>
+    <h1>Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <h2>Script 1 - Créer et interroger la BD</h2>
+
+<pre><code class="r"># Création des tables
+dbSendQuery(con, &quot;CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+);&quot;)
+
+# On lit le fichier à insérer
+bd_films &lt;- read.csv2(file=&#39;./assets/donnees/
+                      bd_beacon/bd_films.csv&#39;)
+
+# On écrit dans la table
+dbWriteTable(con,append=TRUE,name=&quot;films&quot;,
+            value=bd_films, row.names=FALSE)
+
+# On fait une Requête
+annees &lt;- dbGetQuery(con,&quot;SELECT DISTINCT
+                  annee_prod FROM films;&quot;)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <h2>Script 2 - Analyse des données</h2>
+
+<pre><code class="r"># On appelle le script 1
+source(&#39;/chemin/vers/script1/scrip1.R&#39;)
+
+# Lister les objets R dans l&#39;environnement
+ls()
+
+# On verra apparaitre l&#39;objet &#39;annees&#39;
+# que l&#39;on pourra utiliser
+# pour la suite du maketravail
+</code></pre>
+
+    </div>
+  </article>
+</slide>
+<slide class="transition" id="slide-161" style="background:;">
+  <!--  <a href="#slide-161"></a> -->
+  <hgroup>
+    <h1>Discussionyens par étudiant et la variance</h1>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Écrire un script qui réalise les étapes 1-3 d&#39;un bloc</li>
+</ol>
+
+<p>Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l&#39;une après l&#39;autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-162" style="background:;">
+  <!--  <a href="#slide-162"></a> -->
+  <hgroup>
+    <h1>Lectures</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Débat sur le partage des données</h2>
+
+<ul>
+<li>Poisot et al. 2014. Moving toward a sustainable ecological science: don&#39;t let data go to waste ! Ideas in Ecology and Evolution 6: 11-19</li>
+<li>Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-163" style="background:;">
+  <!--  <a href="#slide-163"></a> -->
+  <hgroup>
+    <h1>Découper les scripts avec R</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-164" style="background:;">
+  <hgroup>
+    <h1>Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <h2>Script 1 - Créer et interroger la BD</h2>
+
+<pre><code class="r"># Création des tables
+dbSendQuery(con, &quot;CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+);&quot;)
+
+# On lit le fichier à insérer
+bd_films &lt;- read.csv2(file=&#39;./assets/donnees/
+                      bd_beacon/bd_films.csv&#39;)
+
+# On écrit dans la table
+dbWriteTable(con,append=TRUE,name=&quot;films&quot;,
+            value=bd_films, row.names=FALSE)
+
+# On fait une Requête
+annees &lt;- dbGetQuery(con,&quot;SELECT DISTINCT
+                  annee_prod FROM films;&quot;)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <h2>Script 2 - Analyse des données</h2>
+
+<pre><code class="r"># On appelle le script 1
+source(&#39;/chemin/vers/script1/scrip1.R&#39;)
+
+# Lister les objets R dans l&#39;environnement
+ls()
+
+# On verra apparaitre l&#39;objet &#39;annees&#39;
+# que l&#39;on pourra utiliser
+# pour la suite du maketravail
+</code></pre>
+
+    </div>
+  </article>
+</slide>
+<slide class="transition" id="slide-165" style="background:;">
+  <!--  <a href="#slide-165"></a> -->
+  <hgroup>
+    <h1>Discussionts/donnees/</h1>
+  </hgroup>
+  <article data-timings="">
+    <pre><code>                  bd_beacon/bd_films.csv&#39;)
+</code></pre>
+
+<h1>On écrit dans la table</h1>
+
+<p>dbWriteTable(con,append=TRUE,name=&quot;films&quot;,
+            value=bd_films, row.names=FALSE)</p>
+
+<h1>On fait une Requête</h1>
+
+<p>annees &lt;- dbGetQuery(con,&quot;SELECT DISTINCT
+                  annee_prod FROM films;&quot;)</p>
+
+<pre><code></code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-166" style="background:;">
+  <!--  <a href="#slide-166"></a> -->
+  <hgroup>
+    <h1>Discussion</h1>
+  </hgroup>
+  <article data-timings="">
+    <h1>Création des tables</h1>
+
+<p>dbSendQuery(con, &quot;CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+);&quot;)</p>
+
+<h1>On lit le fichier à insérer</h1>
+
+<p>bd_films &lt;- read.csv2(file=&#39;./assets/donnees/
+                      bd_beacon/bd_films.csv&#39;)</p>
+
+<h1>On écrit dans la table</h1>
+
+<p>dbWriteTable(con,append=TRUE,name=&quot;films&quot;,
+            value=bd_films, row.names=FALSE)</p>
+
+<h1>On fait une Requête</h1>
+
+<p>annees &lt;- dbGetQuery(con,&quot;SELECT DISTINCT
+                  annee_prod FROM films;&quot;)</p>
+
+<pre><code></code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-167" style="background:;">
+  <!--  <a href="#slide-167"></a> -->
+  <hgroup>
+    <h1>Discussion</h1>
+  </hgroup>
+  <article data-timings="">
+    <h1>On écrit dans la table</h1>
+
+<p>dbWriteTable(con,append=TRUE,name=&quot;films&quot;,
+            value=bd_films, row.names=FALSE)</p>
+
+<h1>On fait une Requête</h1>
+
+<p>annees &lt;- dbGetQuery(con,&quot;SELECT DISTINCT
+                  annee_prod FROM films;&quot;)</p>
+
+<pre><code></code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-168" style="background:;">
+  <!--  <a href="#slide-168"></a> -->
+  <hgroup>
+    <h1>Discussion</h1>
+  </hgroup>
+  <article data-timings="">
+    <pre><code>titre       varchar(300),
+annee_prod   integer,
+PRIMARY KEY (id_film)
+</code></pre>
+
+<p>);&quot;)</p>
+
+<h1>On lit le fichier à insérer</h1>
+
+<p>bd_films &lt;- read.csv2(file=&#39;./assets/donnees/
+                      bd_beacon/bd_films.csv&#39;)</p>
+
+<h1>On écrit dans la table</h1>
+
+<p>dbWriteTable(con,append=TRUE,name=&quot;films&quot;,
+            value=bd_films, row.names=FALSE)</p>
+
+<h1>On fait une Requête</h1>
+
+<p>annees &lt;- dbGetQuery(con,&quot;SELECT DISTINCT
+                  annee_prod FROM films;&quot;)</p>
+
+<pre><code></code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-169" style="background:;">
+  <!--  <a href="#slide-169"></a> -->
+  <hgroup>
+    <h1>Discussion</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>---.transition</p>
+
+<h1>Découper les scripts avec R</h1>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-170" style="background:;">
+  <hgroup>
+    <h1>Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <h2>Script 1 - Créer et interroger la BD</h2>
+
+<pre><code class="r"># Création des tables
+dbSendQuery(con, &quot;CREATE TABLE films (
+    id_film     integer,
+    titre       varchar(300),
+    annee_prod   integer,
+    PRIMARY KEY (id_film)
+);&quot;)
+
+# On lit le fichier à insérer
+bd_films &lt;- read.csv2(file=&#39;./assets/donnees/
+                      bd_beacon/bd_films.csv&#39;)
+
+# On écrit dans la table
+dbWriteTable(con,append=TRUE,name=&quot;films&quot;,
+            value=bd_films, row.names=FALSE)
+
+# On fait une Requête
+annees &lt;- dbGetQuery(con,&quot;SELECT DISTINCT
+                  annee_prod FROM films;&quot;)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <h2>Script 2 - Analyse des données</h2>
+
+<pre><code class="r"># On appelle le script 1
+source(&#39;/chemin/vers/script1/scrip1.R&#39;)
+
+# Lister les objets R dans l&#39;environnement
+ls()
+
+# On verra apparaitre l&#39;objet &#39;annees&#39;
+# que l&#39;on pourra utiliser
+# pour la suite du maketravail
+</code></pre>
+
+    </div>
+  </article>
+</slide>
+<slide class="transition" id="slide-171" style="background:;">
+  <!--  <a href="#slide-171"></a> -->
+  <hgroup>
+    <h1>Discussion</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>);&quot;)</p>
+
+<h1>On lit le fichier à insérer</h1>
+
+<p>bd_films &lt;- read.csv2(file=&#39;./assets/donnees/
+                      bd_beacon/bd_films.csv&#39;)</p>
+
+<h1>On écrit dans la table</h1>
+
+<p>dbWriteTable(con,append=TRUE,name=&quot;films&quot;,
+            value=bd_films, row.names=FALSE)</p>
+
+<h1>On fait une Requête</h1>
+
+<p>annees &lt;- dbGetQuery(con,&quot;SELECT DISTINCT
+                  annee_prod FROM films;&quot;)</p>
+
+<pre><code></code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-172" style="background:;">
+  <!--  <a href="#slide-172"></a> -->
+  <hgroup>
+    <h1>Discussion</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>dbWriteTable(con,append=TRUE,name=&quot;films&quot;,
+            value=bd_films, row.names=FALSE)</p>
+
+<h1>On fait une Requête</h1>
+
+<p>annees &lt;- dbGetQuery(con,&quot;SELECT DISTINCT
+                  annee_prod FROM films;&quot;)</p>
+
+<pre><code></code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-173" style="background:;">
+  <!--  <a href="#slide-173"></a> -->
+  <hgroup>
+    <h1>Discussion</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>bd_films &lt;- read.csv2(file=&#39;./assets/donnees/
+                      bd_beacon/bd_films.csv&#39;)</p>
+
+<h1>On écrit dans la table</h1>
+
+<p>dbWriteTable(con,append=TRUE,name=&quot;films&quot;,
+            value=bd_films, row.names=FALSE)</p>
+
+<h1>On fait une Requête</h1>
+
+<p>annees &lt;- dbGetQuery(con,&quot;SELECT DISTINCT
+                  annee_prod FROM films;&quot;)</p>
+
+<pre><code></code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-174" style="background:;">
+  <!--  <a href="#slide-174"></a> -->
+  <hgroup>
+    <h1>Discussion</h1>
   </hgroup>
   <article data-timings="">
     
@@ -1097,7 +3418,7 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=20 title='Exercice 4 (10 minutes)'>
+        data-slide=20 title='Exercice 2 (10 minutes)'>
          20
       </a>
     </li>
@@ -1115,7 +3436,7 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=23 title='Exercice 5 (10 minutes)'>
+        data-slide=23 title='Exercice 3 (10 minutes)'>
          23
       </a>
     </li>
@@ -1157,25 +3478,25 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=30 title='Requêtes emboitées'>
+        data-slide=30 title='Exercice 6 (10-15 minutes)'>
          30
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=31 title='Filtrer les requêtes à posteriori'>
+        data-slide=31 title='Requêtes emboitées'>
          31
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=32 title='Sauvegarder les requêtes'>
+        data-slide=32 title='Filtrer les requêtes à posteriori'>
          32
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=33 title='Sauvegarder une requête'>
+        data-slide=33 title='Sauvegarder les requêtes'>
          33
       </a>
     </li>
@@ -1187,37 +3508,37 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=35 title='Les requêtes stockées'>
+        data-slide=35 title='Sauvegarder une requête'>
          35
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=36 title='Les requêtes stockées: les vues'>
+        data-slide=36 title='Les requêtes stockées'>
          36
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=37 title='Manipuler les enregistrements'>
+        data-slide=37 title='Les requêtes stockées: les vues'>
          37
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=38 title='Mettre à jour des enregistrements'>
+        data-slide=38 title='Manipuler les enregistrements'>
          38
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=39 title='Supprimer des enregistrements'>
+        data-slide=39 title='Mettre à jour des enregistrements'>
          39
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=40 title='Travail de la semaine'>
+        data-slide=40 title='Supprimer des enregistrements'>
          40
       </a>
     </li>
@@ -1235,14 +3556,794 @@ TO &#39;/home/etudiant/Documents/films_A.csv&#39; WITH DELIMITER &#39;;&#39; CSV
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=43 title='Lectures'>
+        data-slide=43 title='Travail de la semaine'>
          43
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=44 title='Découper les scripts avec R'>
+        data-slide=44 title='Lectures'>
          44
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=45 title='Découper les scripts avec R'>
+         45
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=46 title='Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)'>
+         46
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=47 title='Sauvegarder une requête'>
+         47
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=48 title='Sauvegarder une requête'>
+         48
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=49 title='Les requêtes stockées'>
+         49
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=50 title='Les requêtes stockées: les vues'>
+         50
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=51 title='Manipuler les enregistrements'>
+         51
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=52 title='Mettre à jour des enregistrements'>
+         52
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=53 title='Supprimer des enregistrements'>
+         53
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=54 title='Travail de la semaine'>
+         54
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=55 title='Travail de la semaine'>
+         55
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=56 title='Travail de la semaine'>
+         56
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=57 title='Lectures'>
+         57
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=58 title='Découper les scripts avec R'>
+         58
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=59 title='Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)'>
+         59
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=60 title='Sauvegarder une requête'>
+         60
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=61 title='Sauvegarder une requête'>
+         61
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=62 title='Les requêtes stockées'>
+         62
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=63 title='Les requêtes stockées: les vues'>
+         63
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=64 title='Manipuler les enregistrements'>
+         64
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=65 title='Mettre à jour des enregistrements'>
+         65
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=66 title='Supprimer des enregistrements'>
+         66
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=67 title='Travail de la semaine'>
+         67
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=68 title='Travail de la semaine'>
+         68
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=69 title='Travail de la semaine'>
+         69
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=70 title='Lectures'>
+         70
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=71 title='Découper les scripts avec R'>
+         71
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=72 title='Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)'>
+         72
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=73 title='Sauvegarder une requête'>
+         73
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=74 title='Sauvegarder une requête'>
+         74
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=75 title='Les requêtes stockées'>
+         75
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=76 title='Les requêtes stockées: les vues'>
+         76
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=77 title='Manipuler les enregistrements'>
+         77
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=78 title='Mettre à jour des enregistrements'>
+         78
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=79 title='Supprimer des enregistrements'>
+         79
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=80 title='Travail de la semaine'>
+         80
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=81 title='Travail de la semaine'>
+         81
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=82 title='Travail de la semaine'>
+         82
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=83 title='Lectures'>
+         83
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=84 title='Sauvegarder les requêtes'>
+         84
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=85 title='Sauvegarder une requête'>
+         85
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=86 title='Sauvegarder une requête'>
+         86
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=87 title='Les requêtes stockées'>
+         87
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=88 title='Les requêtes stockées: les vues'>
+         88
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=89 title='Manipuler les enregistrements'>
+         89
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=90 title='Mettre à jour des enregistrements'>
+         90
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=91 title='Supprimer des enregistrements'>
+         91
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=92 title='Travail de la semaine'>
+         92
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=93 title='Travail de la semaine'>
+         93
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=94 title='Travail de la semaine'>
+         94
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=95 title='Lectures'>
+         95
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=96 title='Découper les scripts avec R'>
+         96
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=97 title='Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)'>
+         97
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=98 title='Sauvegarder une requête'>
+         98
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=99 title='Sauvegarder une requête'>
+         99
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=100 title='Les requêtes stockées'>
+         100
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=101 title='Les requêtes stockées: les vues'>
+         101
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=102 title='Manipuler les enregistrements'>
+         102
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=103 title='Mettre à jour des enregistrements'>
+         103
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=104 title='Supprimer des enregistrements'>
+         104
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=105 title='Travail de la semaine'>
+         105
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=106 title='Travail de la semaine'>
+         106
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=107 title='Travail de la semaine'>
+         107
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=108 title='Lectures'>
+         108
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=109 title='Découper les scripts avec R'>
+         109
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=110 title='Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)'>
+         110
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=111 title='Sauvegarder les requêtes'>
+         111
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=112 title='Sauvegarder une requête'>
+         112
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=113 title='Sauvegarder une requête'>
+         113
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=114 title='Les requêtes stockées'>
+         114
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=115 title='Les requêtes stockées: les vues'>
+         115
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=116 title='Manipuler les enregistrements'>
+         116
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=117 title='Mettre à jour des enregistrements'>
+         117
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=118 title='Supprimer des enregistrements'>
+         118
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=119 title='Travail de la semaine'>
+         119
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=120 title='Travail de la semaine'>
+         120
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=121 title='Travail de la semaine'>
+         121
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=122 title='Lectures'>
+         122
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=123 title='Découper les scripts avec R'>
+         123
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=124 title='Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)'>
+         124
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=125 title='Sauvegarder une requête'>
+         125
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=126 title='Sauvegarder une requête'>
+         126
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=127 title='Les requêtes stockées'>
+         127
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=128 title='Les requêtes stockées: les vues'>
+         128
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=129 title='Manipuler les enregistrements'>
+         129
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=130 title='Mettre à jour des enregistrements'>
+         130
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=131 title='Supprimer des enregistrements'>
+         131
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=132 title='Travail de la semaine'>
+         132
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=133 title='Travail de la semaine'>
+         133
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=134 title='Travail de la semaine'>
+         134
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=135 title='Lectures'>
+         135
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=136 title='Découper les scripts avec R'>
+         136
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=137 title='Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)'>
+         137
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=138 title='Sauvegarder une requête'>
+         138
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=139 title='Sauvegarder une requête'>
+         139
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=140 title='Les requêtes stockées'>
+         140
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=141 title='Les requêtes stockées: les vues'>
+         141
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=142 title='Manipuler les enregistrements'>
+         142
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=143 title='Mettre à jour des enregistrements'>
+         143
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=144 title='Supprimer des enregistrements'>
+         144
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=145 title='Travail de la semaine'>
+         145
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=146 title='Travail de la semaine'>
+         146
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=147 title='Travail de la semaine'>
+         147
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=148 title='Sauvegarder une requête'>
+         148
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=149 title='Sauvegarder une requête'>
+         149
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=150 title='Les requêtes stockées'>
+         150
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=151 title='Les requêtes stockées: les vues'>
+         151
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=152 title='Manipuler les enregistrements'>
+         152
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=153 title='Mettre à jour des enregistrements'>
+         153
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=154 title='Supprimer des enregistrements'>
+         154
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=155 title='Travail de la semaine'>
+         155
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=156 title='Travail de la semaine'>
+         156
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=157 title='Travail de la semaine'>
+         157
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=158 title='Lectures'>
+         158
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=159 title='Découper les scripts avec R'>
+         159
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=160 title='Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)'>
+         160
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=161 title='Discussionyens par étudiant et la variance'>
+         161
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=162 title='Lectures'>
+         162
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=163 title='Découper les scripts avec R'>
+         163
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=164 title='Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)'>
+         164
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=165 title='Discussionts/donnees/'>
+         165
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=166 title='Discussion'>
+         166
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=167 title='Discussion'>
+         167
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=168 title='Discussion'>
+         168
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=169 title='Discussion'>
+         169
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=170 title='Découper les étapes de son travail et les automatiser au moyen d&#39;un seul script (un &quot;pipeline&quot;)'>
+         170
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=171 title='Discussion'>
+         171
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=172 title='Discussion'>
+         172
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=173 title='Discussion'>
+         173
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=174 title='Discussion'>
+         174
       </a>
     </li>
   </ul>

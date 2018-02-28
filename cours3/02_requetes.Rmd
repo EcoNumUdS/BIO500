@@ -160,7 +160,7 @@ head(derniers_films)
 
 ---
 
-# Exercice 4 (10 minutes)
+# Exercice 2 (10 minutes)
 
 Dans ta table `acteurs`, essayer de trouver votre acteur préféré avec `LIKE` ou avec `= 'votre_acteur_pref'`
 
@@ -211,7 +211,7 @@ head(resume_films)
 
 ---
 
-# Exercice 5 (10 minutes)
+# Exercice 3 (10 minutes)
 
 À l'aide de la base de données `bd_films`, dénombrer le nombre d'acteurs par films
 
@@ -266,19 +266,19 @@ head(acteurs_films,4)
 
 ---
 
-# Exercice 6 (10-15 minutes)
+# Exercice 4 (10-15 minutes)
 
 ## Combien il y a d'acteurs par film depuis les 10 dernières années?
 
 ---
 
-# Exercice 7 (10-15 minutes)
+# Exercice 5 (10-15 minutes)
 
 ## Quel film possède le plus d'acteurs?
 
 ---
 
-# Exercice 8 (10-15 minutes)
+# Exercice 6 (10-15 minutes)
 
 ## Existe-t-il un film sans acteurs?
 
