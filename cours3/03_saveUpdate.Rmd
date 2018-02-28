@@ -62,7 +62,7 @@ DELETE FROM films;
   - Nombre de liens par étudiant
   - Décompte de liens par paire d'étudiants
 
-4. Enregistrer le résultat des requêtes
+4. Enregistrer le résultat des requêtes dans un fichier csv (voir la diapo 34 de ce cours)
 
 ---
 
