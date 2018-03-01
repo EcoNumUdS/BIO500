@@ -540,24 +540,15 @@ head(acteurs_films,4)
 
 ---
 
-# Exercice 4 (10-15 minutes)
-
-## Combien il y a d'acteurs par film depuis les 10 dernières années?
-
----
-
-# Exercice 5 (10-15 minutes)
+# Exercice 4 (5 minutes)
 
 ## Quel film possède le plus d'acteurs?
 
 ---
 
-# Exercice 6 (10-15 minutes)
+# Exercice 5 (10 minutes)
 
-## Existe-t-il un film sans acteurs?
-
-En vous servant des types de jointures, on voudrait savoir s'il existe des films sans acteurs.
-
+## Combien il y a d'acteurs par film entre 1960 et 1980?
 
 ---&twocolw w1:55% w2:45%
 

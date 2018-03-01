@@ -23,7 +23,7 @@ aside.gdbar img {
     height: 85px;
     position: relative;
     padding-left: 100px;
-    right: 0;
+    right: 0; google chrome
     margin: none;
 }
 
@@ -79,7 +79,7 @@ slide:not(.segue) a:link {
 
 slide:not(.segue) a:visited {
     text-decoration: none;
-    color: darkred;
+    color: darkred; google chrome
     font-weight: bold;
 }
 
