@@ -29,16 +29,7 @@ Notre ami robot, [Travis](https://travis-ci.org) est en charge de la mise en lig
 - [Présentation HTML](https://econumuds.github.io/BIO500/cours3)
 - [Présentation PDF](./cours3/pres/assets/pdf/S3-BIO500.pdf)
 
-
-## Séance 4: Interagir avec les données
-
-- Injections de données
-- Requêtes
-- Outils sur R pour le post-traitement
-- Discussion
-- Devoir : script pour injecter les données et requêtes de base
-
-## Séance 5: Outils pour la reproductibilité
+## Séance 4: Outils pour la reproductibilité
 
 - Git
 - Makefile
@@ -46,14 +37,14 @@ Notre ami robot, [Travis](https://travis-ci.org) est en charge de la mise en lig
 - Devoir : créer dépôt GIT et fichier makefile
 - MAKE sur la DB et les requêtes
 
-## Séance 6: Figures 1: utilisation de R
+## Séance 5: Figures 1: utilisation de R
 
 - Principes directeurs
 - Commandes de base
 - Discussion
 - Devoir : questions de recherche, figure de base
 
-## Séance 7: Figures 2
+## Séance 6: Figures 2
 
 - Packages R
 - Tableaux
@@ -61,7 +52,7 @@ Notre ami robot, [Travis](https://travis-ci.org) est en charge de la mise en lig
 - Discussion : Tableau et représentation du réseau
 - MAKE
 
-## Séance 8: LaTeX 1
+## Séance 7: LaTeX 1
 
 - Discussion :
 - Devoir : créer le document de base
@@ -72,16 +63,6 @@ Notre ami robot, [Travis](https://travis-ci.org) est en charge de la mise en lig
 - Discussion :
 - Devoir : travail complet
 
-
-## Séance 4: Interagir avec les données
-
-- [Présentation HTML](https://econumuds.github.io/BIO500/cours5)
-- [Présentation PDF](./cours5/pres/assets/pdf/S5-BIO500.pdf)
-
-## Séance 5: Communiquer ses résultats avec LaTeX
-
-- [Présentation HTML](https://econumuds.github.io/BIO500/cours6)
-- [Présentation PDF](./cours6/pres/assets/pdf/S6-BIO500.pdf)
 
 # Utiliser `slidify`
 
