@@ -321,7 +321,7 @@ Il éxiste plusieurs d'entreprise offrant des services gratuits pour héberger v
 - [Bitbucket](https://bitbucket.org/): Gratuit avec dépot privé illimité.
 - [Github](https://github.com/): Gratuit avec nombre de dépôt privé limité.
 
-Nous travaillerons avec GitHub, la plateforme la plus populaire, une vitrine pour dévoiler vos compétences de programmeurs.
+Nous travaillerons avec GitHub, la plateforme la plus populaire, une vitrine pour dévoiler vos compétences de programmeur.
 
 ---
 
@@ -329,17 +329,43 @@ Nous travaillerons avec GitHub, la plateforme la plus populaire, une vitrine pou
 
 1. Rendez-vous à l'adresse: https://github.com/
 2. Ouvrez un compte / Inscrivez-vous
-3. Créer un nouveau dépot sur le serveur intitulé: `monTravail_BIO500`
+3. Créez un nouveau dépot sur GitHub intitulé: `monTravail_BIO500`
 
 ---
 
-# Envoyer votre dépot local sur le serveur Github
+# Cloner votre dépot distant sur le serveur Github
 
 ```bash
-
+git remote add origin https://adresseVersVotreDepot.git
+git remote -v
 ```
 
-Votre dépot local vient de se transformer en dépôt distant. Cependant, rien n'a encore été envoyé sur le serveur.
+Votre dépot local vient de se transformer en dépôt distant. Cependant, rien n'a encore été envoyé sur le serveur encore.
+
+---
+
+# Envoyer votre depot local sur le serveur Github
+
+On va maintenant envoyé les fichiers et l'historique de modifications de ces derniers sur le serveur
+
+```bash
+git push origin master
+# Le serveur va vous demander de vous authentifier avec vos accès GitHub
+```
+
+`origin` est le serveur distant (toujours par défault)
+`master` est la branche sur laquelle vous placez vos fichiers
+
+---
+
+# Récupérer des modifications apporté par un collègue
+
+Imaginez maintenant que l'un de vos collègues apporte des modifications à votre code ou travail et qu'il publie ses modifications (s'il dispose des droits) sur votre dépôt.
+
+```bash
+git pull origin master
+# Le serveur va vous demander de vous authentifier avec vos accès GitHub
+```
 
 ---
 

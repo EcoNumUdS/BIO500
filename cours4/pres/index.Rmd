@@ -86,9 +86,11 @@ Ses difficultées techniques:
 
 # Git: Un système de controle de version pour programmeur
 
----
+--- &twocol
 
 # Qu'est ce que Git?
+
+*** =left
 
 C'est un système qui permet de suivre l'ajout et les modifications pour un ensemble de fichier. **C'est le cahier de lab du programmeur.**
 
@@ -96,6 +98,13 @@ C'est un système qui permet de suivre l'ajout et les modifications pour un ense
 - Soutenu par une large communautée (12 millions d'utilisateurs dans le monde)
 - Par défault, Git est installé sur les systèmes d'exploitation Linux et Mac.
 - Il peut être installé sur Windows: [https://git-scm.com/download/win](https://git-scm.com/download/win)
+
+*** =right
+
+
+<div style='text-align:center;'>
+<img src="./assets/img/git.png" width="100%"></img>
+</div>
 
 ---
 
@@ -310,6 +319,62 @@ Permet de se déplacer vers le `commit` le plus récent.
 ---
 
 # Exercice 3 - Se déplacer à travers l'historique
+
+En reprenant votre dépot de travail `git` (Exercice 2), parcourez votre historique (`git log`) et remontez à votre premier commentaire (`commit`).
+
+--- .transition
+
+# Les serveurs Git distants
+
+---
+
+# Les serveurs Git distants
+
+Jusqu'à présent nous avons travailler localement sur votre ordinateur. Il est cependant possible de synchroniser votre travail sur un serveur Git (dépots distants). Ce procédé présente deux avantages indéniables:
+
+1. Sauvegarder votre travail (Back-up)
+2. Permettre à un collègue de travailler avec vous sur votre dêpot.
+
+---
+
+# Les serveurs Git distants
+
+Il éxiste plusieurs d'entreprise offrant des services gratuits pour héberger votre dépôt:
+
+- [Gitlab](https://about.gitlab.com/): Serveur hébergeable dans votre infrastructure.
+- [Bitbucket](https://bitbucket.org/): Gratuit avec dépot privé illimité.
+- [Github](https://github.com/): Gratuit avec nombre de dépôt privé limité.
+
+Nous travaillerons avec GitHub, la plateforme la plus populaire, une vitrine pour dévoiler vos compétences de programmeur.
+
+---
+
+# Exercice 4: Ouvrez un compte sur Github
+
+1. Rendez-vous à l'adresse: https://github.com/
+2. Ouvrez un compte / Inscrivez-vous
+3. Créer un nouveau dépot sur le serveur intitulé: `monTravail_BIO500`
+
+---
+
+# Envoyer votre dépot local sur le serveur Github
+
+```bash
+
+```
+
+Votre dépot local vient de se transformer en dépôt distant. Cependant, rien n'a encore été envoyé sur le serveur.
+
+---
+
+# Cloner un dépôt distant
+
+Il est possible à tout moment de récupérer un dépôt distant pour le téléverser sur son ordinateur.
+
+```bash
+cd Documents
+git clone https://github.com/EcoNumUdS/BIO500.git
+```
 
 ---.transition
 
