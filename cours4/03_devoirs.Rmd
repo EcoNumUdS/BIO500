@@ -9,7 +9,7 @@
 
 - Identifiez clairement vos questions de recherche
 - Planifiez les requêtes à réaliser pour traiter les données
-- Inclure les requêtes dans le makefile
+- Incluez les requêtes dans le makefile
 
 ---
 
