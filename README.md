@@ -31,11 +31,8 @@ Notre ami robot, [Travis](https://travis-ci.org) est en charge de la mise en lig
 
 ## Séance 4: Outils pour la reproductibilité
 
-- Git
-- Makefile
-- Discussion
-- Devoir : créer dépôt GIT et fichier makefile
-- MAKE sur la DB et les requêtes
+- [Présentation HTML](https://econumuds.github.io/BIO500/cours4)
+- [Présentation PDF](./cours3/pres/assets/pdf/S4-BIO500.pdf)
 
 ## Séance 5: Figures 1: utilisation de R
 
