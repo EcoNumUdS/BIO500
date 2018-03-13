@@ -246,7 +246,7 @@ Date:   Wed Feb 28 20:33:20 2018 -0500
 *** =left
 
 ```bash
-git checkout numeroDeCommit
+git checkout 4abdb33e2f6b598aac4d5
 ```
 
 Permet de se déplacer vers un `commit` précis.

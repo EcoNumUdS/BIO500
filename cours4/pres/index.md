@@ -128,7 +128,7 @@ Le dossier `.git` permet de garder une trace de l'ensemble des opérations que v
 
 # Git en 3 étapes
 
-On modifie le ou les fichiers, on ajoute la modification au SCV, on met un commentaire sur la modification apportée.
+On modifie le ou les fichiers, on ajoute la modification à Git puis on met un commentaire sur la modification apportée.
 
 1. Modification d'un ou plusieurs fichiers sources
 2. `git add monFichier1.txt monFichier2.txt` - Ajout des fichiers modifiés
@@ -233,7 +233,7 @@ commit 61601ff86e712d0a77ebd24c5277fe55fab9de6e
 Author: Steve Vissault <s.vissault@yahoo.fr>
 Date:   Wed Feb 28 20:33:20 2018 -0500
 
-    Modifications au cours3 (retrait slides), ajout reponses ex
+    Modifications au cours3 (retrait slides), ajout reponses
 ```
 
 --- &twocol
@@ -270,7 +270,7 @@ Date:   Wed Feb 28 20:33:20 2018 -0500
 *** =left
 
 ```bash
-git checkout numeroDeCommit
+git checkout 4abdb33e2f6b598aac4d5
 ```
 
 Permet de se déplacer vers un `commit` précis.
@@ -345,13 +345,13 @@ Nous utiliserons le makefile pour assurer la reproductibilité de la démarche e
 
 ---
 
-# <target>
+# `target`
 
 La cible est habituellement le nom d'un fichier généré par la commande.
 
 ---
 
-# <dependencies...>
+# `dependencies...`
 
 Une dépendance (also appelée "prerequesite") est un fichier qui est utilisé pour créer la target.
 
@@ -361,7 +361,7 @@ Il est néanmoins possible d'avoir une commande qui ne requiert pas de dépendan
 
 ---
 
-# <commands>
+# `commands`
 
 La commande est l'action à réaliser. Dans notre cas, nous utiliserons une commande pour exécuter un script R comme :
 
