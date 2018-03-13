@@ -131,6 +131,8 @@ On modifie le ou les fichiers, on ajoute la modification à Git puis on met un c
 
 On répète ces étapes à plusieurs reprises au cours de l'écriture d'un document et/ou de l'avancé d'un projet.
 
+**Qu'est ce qu'un bon commentaire?**
+
 ---
 
 # Git status
