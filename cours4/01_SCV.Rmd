@@ -1,0 +1,276 @@
+
+--- .transition
+
+# Les outils pour la reproductibilité
+
+---
+
+# Les étapes du travail d'un biologiste
+
+<div style='text-align:center;'>
+<img src="./assets/img/flow_full_repro.png" width="100%"></img>
+</div>
+
+
+--- .transition
+
+# Git: Un système de controle de version
+
+---&twocol
+
+# Une situation courante
+
+*** =left
+
+## Une situation qui vous est familière:
+
+```bash
+MonTravailSession/
+  |___ data/
+        |___ data_01122018.csv
+        |___ data_011022018.csv
+  |___ rapportVeg_jean_v1_01012018.docx
+  |___ rapportVeg_juliette_v1_01012018.docx
+  |___ rapportVeg_rémi_v1_04012018.docx
+  |___ rapportVeg_rémi_v2_10012018.docx
+  |___ rapportFinal_20012018.docx
+```
+
+*** =right
+
+## le travail d'équipe
+
+Ses difficultées
+
+- Multi-utilisateurs
+- Garder une trace de l'historique de modifications **d'un ensemble de fichiers**.
+- Revenir aux versions précédentes
+- comparer des versions d'un fichier.
+
+---
+
+# Système de controle éxistants
+
+- Mettre une screenshot de Dropbox, et de Word pour tracker les versions.
+
+---
+
+# Qu'est ce que Git?
+
+C'est un système qui permet de suivre l'ajout et les modifications pour un ensemble de fichier. C'est le cahier de lab du programmeur.
+
+- Logiciel libre
+- Soutenu par une large communauté (12 millions d'utilisateurs dans le monde)
+- Par défault, Git est installé par défault sur les machines Linux et MacOSX
+- Il peut être installé sur Windows: [https://git-scm.com/download/win](https://git-scm.com/download/win)
+
+---
+
+# Qu'est ce que Git?
+
+Il présente l'avantage d'être extrement versatile mais le désavantage de fonctionner seulement avec les fichiers plein texte.
+
+**Question**: Qu'est ce qu'un fichier plein texte?
+
+<!-- TODO: Qu'est ce qu'un fichier plein texte? Est-ce que je peux faire du contrôle de version avec un document word -->
+
+---
+
+# Initialisation d'un dépôt Git
+
+Git suit les modifications à l'intérieur d'un dossier que l'on appelle dépôt (`repository`). Pour initialiser le suivi d'un répertoire (initialiser un dépôt), il vous suffit d'utiliser la commande `git init`.
+
+```bash
+mkdir ~/Documents/travail_BIO500 # Créer un répertoire de travail dans le répertoire Documents.
+cd  ~/Documents/travail_BIO500 # Se déplacer vers ce répertoire
+git init # Initialiser le suivi de version de ce dossier.
+ls -la # Lister le contenu du répertoire de travail.
+```
+
+Le dossier `.git` permet de garder une trace de l'ensemble des opérations que vous allez faire dans ce répertoire.
+
+---
+
+# Exercice: Initialiser votre répertoire de travail avec git
+
+**À l'aide de votre terminal:**
+
+1. Créer un dossier (`mkdir`)
+2. Créer un fichier (`touch`)
+3. Initialiser votre dépot `git` (`git init`)
+4. Vérifier que le dossier caché (`.git`) se trouve dans votre nouveau répertoire
+
+---
+
+# Git en 3 étapes
+
+On modifie le ou les fichiers, on ajoute la modification à Git puis on met un commentaire sur la modification apportée.
+
+1. Modification d'un ou plusieurs fichiers sources
+2. `git add monFichier1.txt monFichier2.txt` - Ajout des fichiers modifiés
+3. `git commit -m "mon commentaire"` - Commentaire sur la modification apportée
+
+On répète ces étapes à plusieurs reprises au cours de l'écriture d'un document et/ou de l'avancé d'un projet.
+
+---
+
+# Git status
+
+Votre meilleur ami, `git status`, permet de prendre connaissance de l'état de notre dépôt Git.
+
+```bash
+Sur la branche master
+
+Validation initiale
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui
+  sera validé)
+
+
+        monFichier1.txt
+
+aucune modification ajoutée à la validation mais des
+fichiers non suivis sont présents (utilisez "git add" pour
+les suivre).
+```
+
+
+---
+
+# Exercice: Effectuer votre premier `commit`
+
+## Première partie
+
+1. Déplacer vous dans votre répertoire de travail
+2. Ajouter un fichier intituler `travail_BIO500.txt` et remplisser le de faux texte
+3. Effectuer un `git status`
+
+## Deuxième partie
+
+4. Ajouter ce fichier à votre dépot git (`git add`)
+5. Effectuer un `git status`
+6. Décrire la modification que vous venez d'apporter (`git commit`)
+
+À chaque `git status`, prenez le temps de regarder la sortie (message)
+
+---
+
+# Exercice: Effectuer votre premier `commit`
+
+## Troisième partie
+
+7. Modifier le fichier `travail_BIO500.txt`
+8. Ajouter la modification à votre dépot git (`git add`)
+9. Effectuer un `git status`
+
+À chaque `git status`, prenez le temps de regarder la sortie (message)
+
+## Quatrième partie
+
+7. Modifier à nouveau le fichier `travail_BIO500.txt`
+8. Effectuer un `git diff`
+
+
+
+--- &twocol
+
+# Quelques notions de base
+
+*** =left
+
+<div style='text-align:center;'>
+<img src="./assets/img/git_1.png" width="100%"></img>
+</div>
+
+*** =right
+
+- Une branche (`master` par défault): c'est un série de commentaires (`commit`)
+- Le dernier commentaire (`commit`) est ce que l'on appelle la tête de la brance (`HEAD`), elle contient la version la plus à jour des fichiers.
+- À chaque commentaires d'édition (`commit`) est attaché une version des fichiers.
+
+---
+
+# Le journal de Git
+
+```bash
+cd Documents/Git/BIO500 # Ceci est mon chemin d'accès
+git log
+```
+
+```bash
+commit 38d4a2700980b9c765f4abdb33e2f6b598aac4d5
+Author: Steve Vissault <s.vissault@yahoo.fr>
+Date:   Wed Feb 28 20:38:05 2018 -0500
+
+    Modifs sur plan de match
+
+commit 61601ff86e712d0a77ebd24c5277fe55fab9de6e
+Author: Steve Vissault <s.vissault@yahoo.fr>
+Date:   Wed Feb 28 20:33:20 2018 -0500
+
+    Modifications au cours3 (retrait slides), ajout reponses
+```
+
+--- &twocol
+
+# Le journal de Git
+
+*** =left
+
+```bash
+commit 38d4a2700980b9c765f4abdb33e2f6b598aac4d5
+Author: Steve Vissault <s.vissault@yahoo.fr>
+Date:   Wed Feb 28 20:38:05 2018 -0500
+
+    Modifs sur plan de match
+
+commit 61601ff86e712d0a77ebd24c5277fe55fab9de6e
+Author: Steve Vissault <s.vissault@yahoo.fr>
+Date:   Wed Feb 28 20:33:20 2018 -0500
+
+    Modifications au cours3 (retrait slides)
+```
+
+*** =right
+
+<div style='text-align:center;'>
+<img src="./assets/img/git_3.png" width="100%"></img>
+</div>
+
+
+--- &twocol
+
+# Se déplacer sur la branche `master`
+
+*** =left
+
+```bash
+git checkout numeroDeCommit
+```
+
+Permet de se déplacer vers un `commit` précis.
+
+*** =right
+
+<div style='text-align:center;'>
+<img src="./assets/img/git_3.png" width="100%"></img>
+</div>
+
+--- &twocol
+
+# Se déplacer sur la branche `master`
+
+*** =left
+
+```bash
+git checkout master
+```
+
+Permet de se déplacer vers un `commit` le plus récent.
+
+*** =right
+
+<div style='text-align:center;'>
+<img src="./assets/img/git_3.png" width="100%"></img>
+</div>
