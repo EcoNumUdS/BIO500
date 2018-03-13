@@ -88,17 +88,7 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-4" style="background:;">
-  <!--  <a href="#slide-4"></a> -->
-  <hgroup>
-    <h1>Git: Un système de controle de version</h1>
-  </hgroup>
-  <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-<slide class="" id="slide-5" style="background:;">
+<slide class="" id="slide-4" style="background:;">
   <hgroup>
     <h1>Une situation courante</h1>
   </hgroup>
@@ -122,7 +112,7 @@
     <div class='right' style='float:right;width:48%'>
      <h2>le travail d&#39;équipe</h2>
 
-<p>Ses difficultées</p>
+<p>Ses difficultées techniques:</p>
 
 <ul>
 <li>Multi-utilisateurs</li>
@@ -134,39 +124,62 @@
     </div>
   </article>
 </slide>
-<slide class="" id="slide-6" style="background:;">
-  <!--  <a href="#slide-6"></a> -->
+<slide class="" id="slide-5" style="background:;">
+  <!--  <a href="#slide-5"></a> -->
   <hgroup>
-    <h1>Système de controle éxistants</h1>
+    <h1>Système de contrôle éxistants</h1>
   </hgroup>
   <article data-timings="">
-    <ul>
-<li>Mettre une screenshot de Dropbox, et de Word pour tracker les versions.</li>
-</ul>
+    <h2>Un exemple avec Dropbox</h2>
+
+<p><img src="./assets/img/dropbox.png" alt=""></p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-7" style="background:;">
+<slide class="" id="slide-6" style="background:;">
+  <!--  <a href="#slide-6"></a> -->
+  <hgroup>
+    <h1>Système de contrôle éxistants</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Un exemple MS Word</h2>
+
+<p><img src="./assets/img/word.gif" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-7" style="background:;">
   <!--  <a href="#slide-7"></a> -->
+  <hgroup>
+    <h1>Git: Un système de controle de version pour programmeur</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-8" style="background:;">
+  <!--  <a href="#slide-8"></a> -->
   <hgroup>
     <h1>Qu&#39;est ce que Git?</h1>
   </hgroup>
   <article data-timings="">
-    <p>C&#39;est un système qui permet de suivre l&#39;ajout et les modifications pour un ensemble de fichier. C&#39;est le cahier de lab du programmeur.</p>
+    <p>C&#39;est un système qui permet de suivre l&#39;ajout et les modifications pour un ensemble de fichier. <strong>C&#39;est le cahier de lab du programmeur.</strong></p>
 
 <ul>
 <li>Logiciel libre</li>
-<li>Soutenu par une large communauté (12 millions d&#39;utilisateurs dans le monde)</li>
-<li>Par défault, Git est installé par défault sur les machines Linux et MacOSX</li>
+<li>Soutenu par une large communautée (12 millions d&#39;utilisateurs dans le monde)</li>
+<li>Par défault, Git est installé sur les systèmes d&#39;exploitation Linux et Mac.</li>
 <li>Il peut être installé sur Windows: <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></li>
 </ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-8" style="background:;">
-  <!--  <a href="#slide-8"></a> -->
+<slide class="" id="slide-9" style="background:;">
+  <!--  <a href="#slide-9"></a> -->
   <hgroup>
     <h1>Qu&#39;est ce que Git?</h1>
   </hgroup>
@@ -180,8 +193,8 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-9" style="background:;">
-  <!--  <a href="#slide-9"></a> -->
+<slide class="" id="slide-10" style="background:;">
+  <!--  <a href="#slide-10"></a> -->
   <hgroup>
     <h1>Initialisation d&#39;un dépôt Git</h1>
   </hgroup>
@@ -191,7 +204,7 @@
 <pre><code class="bash">mkdir ~/Documents/travail_BIO500 # Créer un répertoire de travail dans le répertoire Documents.
 cd  ~/Documents/travail_BIO500 # Se déplacer vers ce répertoire
 git init # Initialiser le suivi de version de ce dossier.
-ls -la # Lister le contenu du répertoire de travail.
+ls -a # Lister tous le contenu du répertoire de travail.
 </code></pre>
 
 <p>Le dossier <code>.git</code> permet de garder une trace de l&#39;ensemble des opérations que vous allez faire dans ce répertoire.</p>
@@ -199,10 +212,10 @@ ls -la # Lister le contenu du répertoire de travail.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-10" style="background:;">
-  <!--  <a href="#slide-10"></a> -->
+<slide class="" id="slide-11" style="background:;">
+  <!--  <a href="#slide-11"></a> -->
   <hgroup>
-    <h1>Exercice: Initialiser votre répertoire de travail avec git</h1>
+    <h1>Exercice 1 - Initialiser le répertoire de travail avec git</h1>
   </hgroup>
   <article data-timings="">
     <p><strong>À l&#39;aide de votre terminal:</strong></p>
@@ -217,13 +230,15 @@ ls -la # Lister le contenu du répertoire de travail.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-11" style="background:;">
-  <!--  <a href="#slide-11"></a> -->
+<slide class="" id="slide-12" style="background:;">
+  <!--  <a href="#slide-12"></a> -->
   <hgroup>
     <h1>Git en 3 étapes</h1>
   </hgroup>
   <article data-timings="">
     <p>On modifie le ou les fichiers, on ajoute la modification à Git puis on met un commentaire sur la modification apportée.</p>
+
+<p><strong>En 3 étapes:</strong></p>
 
 <ol>
 <li>Modification d&#39;un ou plusieurs fichiers sources</li>
@@ -236,8 +251,8 @@ ls -la # Lister le contenu du répertoire de travail.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-12" style="background:;">
-  <!--  <a href="#slide-12"></a> -->
+<slide class="" id="slide-13" style="background:;">
+  <!--  <a href="#slide-13"></a> -->
   <hgroup>
     <h1>Git status</h1>
   </hgroup>
@@ -263,10 +278,10 @@ les suivre).
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-13" style="background:;">
-  <!--  <a href="#slide-13"></a> -->
+<slide class="" id="slide-14" style="background:;">
+  <!--  <a href="#slide-14"></a> -->
   <hgroup>
-    <h1>Exercice: Effectuer votre premier <code>commit</code></h1>
+    <h1>Exercice 2 - Effectuer votre premier <code>commit</code></h1>
   </hgroup>
   <article data-timings="">
     <h2>Première partie</h2>
@@ -290,8 +305,8 @@ les suivre).
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-14" style="background:;">
-  <!--  <a href="#slide-14"></a> -->
+<slide class="" id="slide-15" style="background:;">
+  <!--  <a href="#slide-15"></a> -->
   <hgroup>
     <h1>Exercice: Effectuer votre premier <code>commit</code></h1>
   </hgroup>
@@ -304,19 +319,19 @@ les suivre).
 <li>Effectuer un <code>git status</code></li>
 </ol>
 
-<p>À chaque <code>git status</code>, prenez le temps de regarder la sortie (message)</p>
+<p>À chaque <code>git status</code>, prenez le temps de regarder la sortie (message).</p>
 
 <h2>Quatrième partie</h2>
 
 <ol>
 <li>Modifier à nouveau le fichier <code>travail_BIO500.txt</code></li>
-<li>Effectuer un <code>git diff</code></li>
+<li>Effectuer un <code>git diff</code> ou <code>git diff NomDuFichier</code></li>
 </ol>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-15" style="background:;">
+<slide class="" id="slide-16" style="background:;">
   <hgroup>
     <h1>Quelques notions de base</h1>
   </hgroup>
@@ -332,14 +347,14 @@ les suivre).
      <ul>
 <li>Une branche (<code>master</code> par défault): c&#39;est un série de commentaires (<code>commit</code>)</li>
 <li>Le dernier commentaire (<code>commit</code>) est ce que l&#39;on appelle la tête de la brance (<code>HEAD</code>), elle contient la version la plus à jour des fichiers.</li>
-<li>À chaque commentaires d&#39;édition (<code>commit</code>) est attaché une version des fichiers.</li>
+<li>À chaque commentaire d&#39;édition (<code>commit</code>) est attaché une version des fichiers.</li>
 </ul>
 
     </div>
   </article>
 </slide>
-<slide class="" id="slide-16" style="background:;">
-  <!--  <a href="#slide-16"></a> -->
+<slide class="" id="slide-17" style="background:;">
+  <!--  <a href="#slide-17"></a> -->
   <hgroup>
     <h1>Le journal de Git</h1>
   </hgroup>
@@ -364,7 +379,7 @@ Date:   Wed Feb 28 20:33:20 2018 -0500
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-17" style="background:;">
+<slide class="" id="slide-18" style="background:;">
   <hgroup>
     <h1>Le journal de Git</h1>
   </hgroup>
@@ -393,7 +408,7 @@ Date:   Wed Feb 28 20:33:20 2018 -0500
     </div>
   </article>
 </slide>
-<slide class="" id="slide-18" style="background:;">
+<slide class="" id="slide-19" style="background:;">
   <hgroup>
     <h1>Se déplacer sur la branche <code>master</code></h1>
   </hgroup>
@@ -414,7 +429,7 @@ Date:   Wed Feb 28 20:33:20 2018 -0500
     </div>
   </article>
 </slide>
-<slide class="" id="slide-19" style="background:;">
+<slide class="" id="slide-20" style="background:;">
   <hgroup>
     <h1>Se déplacer sur la branche <code>master</code></h1>
   </hgroup>
@@ -424,7 +439,7 @@ Date:   Wed Feb 28 20:33:20 2018 -0500
      <pre><code class="bash">git checkout master
 </code></pre>
 
-<p>Permet de se déplacer vers un <code>commit</code> le plus récent.</p>
+<p>Permet de se déplacer vers le <code>commit</code> le plus récent.</p>
 
     </div>
     <div class='right' style='float:right;width:48%'>
@@ -435,8 +450,18 @@ Date:   Wed Feb 28 20:33:20 2018 -0500
     </div>
   </article>
 </slide>
-<slide class="transition" id="slide-20" style="background:;">
-  <!--  <a href="#slide-20"></a> -->
+<slide class="" id="slide-21" style="background:;">
+  <!--  <a href="#slide-21"></a> -->
+  <hgroup>
+    <h1>Exercice 3 - Se déplacer à travers l&#39;historique</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-22" style="background:;">
+  <!--  <a href="#slide-22"></a> -->
   <hgroup>
     <h1>Le makefile</h1>
   </hgroup>
@@ -445,8 +470,8 @@ Date:   Wed Feb 28 20:33:20 2018 -0500
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-21" style="background:;">
-  <!--  <a href="#slide-21"></a> -->
+<slide class="" id="slide-23" style="background:;">
+  <!--  <a href="#slide-23"></a> -->
   <hgroup>
     <h1>Les étapes du travail d&#39;un biologiste</h1>
   </hgroup>
@@ -458,8 +483,8 @@ Date:   Wed Feb 28 20:33:20 2018 -0500
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-22" style="background:;">
-  <!--  <a href="#slide-22"></a> -->
+<slide class="" id="slide-24" style="background:;">
+  <!--  <a href="#slide-24"></a> -->
   <hgroup>
     <h1>Qu&#39;est-ce que le makefile ?</h1>
   </hgroup>
@@ -469,8 +494,8 @@ Date:   Wed Feb 28 20:33:20 2018 -0500
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-23" style="background:;">
-  <!--  <a href="#slide-23"></a> -->
+<slide class="" id="slide-25" style="background:;">
+  <!--  <a href="#slide-25"></a> -->
   <hgroup>
     <h1>À quoi il sert ?</h1>
   </hgroup>
@@ -482,8 +507,8 @@ Date:   Wed Feb 28 20:33:20 2018 -0500
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-24" style="background:;">
-  <!--  <a href="#slide-24"></a> -->
+<slide class="" id="slide-26" style="background:;">
+  <!--  <a href="#slide-26"></a> -->
   <hgroup>
     <h1>Objectifs de la leçon</h1>
   </hgroup>
@@ -498,8 +523,8 @@ Date:   Wed Feb 28 20:33:20 2018 -0500
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-25" style="background:;">
-  <!--  <a href="#slide-25"></a> -->
+<slide class="" id="slide-27" style="background:;">
+  <!--  <a href="#slide-27"></a> -->
   <hgroup>
     <h1>Anatomie du makefile</h1>
   </hgroup>
@@ -511,8 +536,8 @@ Date:   Wed Feb 28 20:33:20 2018 -0500
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-26" style="background:;">
-  <!--  <a href="#slide-26"></a> -->
+<slide class="" id="slide-28" style="background:;">
+  <!--  <a href="#slide-28"></a> -->
   <hgroup>
     <h1><code>target</code></h1>
   </hgroup>
@@ -522,8 +547,8 @@ Date:   Wed Feb 28 20:33:20 2018 -0500
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-27" style="background:;">
-  <!--  <a href="#slide-27"></a> -->
+<slide class="" id="slide-29" style="background:;">
+  <!--  <a href="#slide-29"></a> -->
   <hgroup>
     <h1><code>dependencies...</code></h1>
   </hgroup>
@@ -532,13 +557,13 @@ Date:   Wed Feb 28 20:33:20 2018 -0500
 
 <p>La <em>target</em> peut contenir plusieurs dépendances.</p>
 
-<p>Il est néanmoins possible d&#39;avoir un fichier cible qui ne requiert pas de dépendance.</p>
+<p>Il est néanmoins possible d&#39;avoir un fichier cible qui ne requiert pas de dépendances.</p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-28" style="background:;">
-  <!--  <a href="#slide-28"></a> -->
+<slide class="" id="slide-30" style="background:;">
+  <!--  <a href="#slide-30"></a> -->
   <hgroup>
     <h1><code>commands</code></h1>
   </hgroup>
@@ -548,7 +573,7 @@ Date:   Wed Feb 28 20:33:20 2018 -0500
 <pre><code class="bash">Rscript script.R
 </code></pre>
 
-<p>Nous verrons plus tard dans la session le langage de mise en forme LaTeX. Dans ce cas, la commande serit:</p>
+<p>Nous verrons plus tard dans la session le langage de mise en forme LaTeX. Dans ce cas, la commande serait:</p>
 
 <pre><code class="bash">pdflatex manuscrit.tex
 </code></pre>
@@ -556,8 +581,8 @@ Date:   Wed Feb 28 20:33:20 2018 -0500
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-29" style="background:;">
-  <!--  <a href="#slide-29"></a> -->
+<slide class="" id="slide-31" style="background:;">
+  <!--  <a href="#slide-31"></a> -->
   <hgroup>
     <h1>Un exemple</h1>
   </hgroup>
@@ -582,23 +607,23 @@ data.txt :
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-30" style="background:;">
-  <!--  <a href="#slide-30"></a> -->
+<slide class="" id="slide-32" style="background:;">
+  <!--  <a href="#slide-32"></a> -->
   <hgroup>
     <h1>Étape par étape</h1>
   </hgroup>
   <article data-timings="">
     <p><code>Rscript</code> est un programme permettant d&#39;exécuter du code R sans passer par la console R. On peut utiliser le terminal pour appeler le programme <code>Rscript</code> et lui donner comme argument un script R: <code>Rscript script1.R</code></p>
 
-<p>Les commandes sont espacées par une <em>tabulation</em> ou 8 espaces. Assurer vous que votre tabulation corresponds bien à 8 espaces.</p>
+<p>Les commandes sont espacées par une <em>tabulation</em> ou 8 espaces. Assurez vous que votre tabulation corresponds bien à 8 espaces.</p>
 
 <p>Ensemble, la cible, les dépendances et les actions constituent une règle. Cet exemple a donc 3 règles.</p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-31" style="background:;">
-  <!--  <a href="#slide-31"></a> -->
+<slide class="" id="slide-33" style="background:;">
+  <!--  <a href="#slide-33"></a> -->
   <hgroup>
     <h1>Comment créer un premier makefile</h1>
   </hgroup>
@@ -613,8 +638,8 @@ data.txt :
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-32" style="background:;">
-  <!--  <a href="#slide-32"></a> -->
+<slide class="" id="slide-34" style="background:;">
+  <!--  <a href="#slide-34"></a> -->
   <hgroup>
     <h1>Script 1</h1>
   </hgroup>
@@ -628,8 +653,8 @@ data.txt :
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-33" style="background:;">
-  <!--  <a href="#slide-33"></a> -->
+<slide class="" id="slide-35" style="background:;">
+  <!--  <a href="#slide-35"></a> -->
   <hgroup>
     <h1>Script 2</h1>
   </hgroup>
@@ -642,8 +667,8 @@ save(model, file = &quot;~/Bureau/exemple/model.Rdata&quot;)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-34" style="background:;">
-  <!--  <a href="#slide-34"></a> -->
+<slide class="" id="slide-36" style="background:;">
+  <!--  <a href="#slide-36"></a> -->
   <hgroup>
     <h1>Script 3</h1>
   </hgroup>
@@ -660,8 +685,8 @@ dev.off()
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-35" style="background:;">
-  <!--  <a href="#slide-35"></a> -->
+<slide class="" id="slide-37" style="background:;">
+  <!--  <a href="#slide-37"></a> -->
   <hgroup>
     <h1>Exécuter un makefile</h1>
   </hgroup>
@@ -674,8 +699,8 @@ dev.off()
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-36" style="background:;">
-  <!--  <a href="#slide-36"></a> -->
+<slide class="" id="slide-38" style="background:;">
+  <!--  <a href="#slide-38"></a> -->
   <hgroup>
     <h1>Les dépendances</h1>
   </hgroup>
@@ -689,8 +714,8 @@ dev.off()
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-37" style="background:;">
-  <!--  <a href="#slide-37"></a> -->
+<slide class="" id="slide-39" style="background:;">
+  <!--  <a href="#slide-39"></a> -->
   <hgroup>
     <h1>Le makefile comme outil de reproductiblité</h1>
   </hgroup>
@@ -702,8 +727,8 @@ dev.off()
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-38" style="background:;">
-  <!--  <a href="#slide-38"></a> -->
+<slide class="" id="slide-40" style="background:;">
+  <!--  <a href="#slide-40"></a> -->
   <hgroup>
     <h1>Exercice</h1>
   </hgroup>
@@ -715,8 +740,8 @@ dev.off()
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-39" style="background:;">
-  <!--  <a href="#slide-39"></a> -->
+<slide class="" id="slide-41" style="background:;">
+  <!--  <a href="#slide-41"></a> -->
   <hgroup>
     <h1>Les messages de make</h1>
   </hgroup>
@@ -734,8 +759,8 @@ dev.off()
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-40" style="background:;">
-  <!--  <a href="#slide-40"></a> -->
+<slide class="" id="slide-42" style="background:;">
+  <!--  <a href="#slide-42"></a> -->
   <hgroup>
     <h1>Les messages de make</h1>
   </hgroup>
@@ -753,8 +778,8 @@ dev.off()
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-41" style="background:;">
-  <!--  <a href="#slide-41"></a> -->
+<slide class="" id="slide-43" style="background:;">
+  <!--  <a href="#slide-43"></a> -->
   <hgroup>
     <h1>Les messages de make</h1>
   </hgroup>
@@ -771,8 +796,8 @@ dev.off()
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-42" style="background:;">
-  <!--  <a href="#slide-42"></a> -->
+<slide class="" id="slide-44" style="background:;">
+  <!--  <a href="#slide-44"></a> -->
   <hgroup>
     <h1>Nettoyage du dépôt en fin de script</h1>
   </hgroup>
@@ -790,8 +815,8 @@ dev.off()
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-43" style="background:;">
-  <!--  <a href="#slide-43"></a> -->
+<slide class="" id="slide-45" style="background:;">
+  <!--  <a href="#slide-45"></a> -->
   <hgroup>
     <h1>Dépendances</h1>
   </hgroup>
@@ -803,8 +828,8 @@ dev.off()
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-44" style="background:;">
-  <!--  <a href="#slide-44"></a> -->
+<slide class="" id="slide-46" style="background:;">
+  <!--  <a href="#slide-46"></a> -->
   <hgroup>
     <h1>Autres ressources disponibles en ligne :</h1>
   </hgroup>
@@ -820,8 +845,8 @@ dev.off()
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-45" style="background:;">
-  <!--  <a href="#slide-45"></a> -->
+<slide class="transition" id="slide-47" style="background:;">
+  <!--  <a href="#slide-47"></a> -->
   <hgroup>
     <h1>Travail pour la semaine</h1>
   </hgroup>
@@ -830,8 +855,8 @@ dev.off()
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-46" style="background:;">
-  <!--  <a href="#slide-46"></a> -->
+<slide class="" id="slide-48" style="background:;">
+  <!--  <a href="#slide-48"></a> -->
   <hgroup>
     <h1>Consignes</h1>
   </hgroup>
@@ -845,8 +870,8 @@ dev.off()
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-47" style="background:;">
-  <!--  <a href="#slide-47"></a> -->
+<slide class="" id="slide-49" style="background:;">
+  <!--  <a href="#slide-49"></a> -->
   <hgroup>
     <h1>Lectures</h1>
   </hgroup>
@@ -885,25 +910,25 @@ Research. PLoS Computational Biology. 9: e1003285</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Git: Un système de controle de version'>
+        data-slide=4 title='Une situation courante'>
          4
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='Une situation courante'>
+        data-slide=5 title='Système de contrôle éxistants'>
          5
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='Système de controle éxistants'>
+        data-slide=6 title='Système de contrôle éxistants'>
          6
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=7 title='Qu&#39;est ce que Git?'>
+        data-slide=7 title='Git: Un système de controle de version pour programmeur'>
          7
       </a>
     </li>
@@ -915,49 +940,49 @@ Research. PLoS Computational Biology. 9: e1003285</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=9 title='Initialisation d&#39;un dépôt Git'>
+        data-slide=9 title='Qu&#39;est ce que Git?'>
          9
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=10 title='Exercice: Initialiser votre répertoire de travail avec git'>
+        data-slide=10 title='Initialisation d&#39;un dépôt Git'>
          10
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='Git en 3 étapes'>
+        data-slide=11 title='Exercice 1 - Initialiser le répertoire de travail avec git'>
          11
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title='Git status'>
+        data-slide=12 title='Git en 3 étapes'>
          12
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=13 title='Exercice: Effectuer votre premier <code>commit</code>'>
+        data-slide=13 title='Git status'>
          13
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=14 title='Exercice: Effectuer votre premier <code>commit</code>'>
+        data-slide=14 title='Exercice 2 - Effectuer votre premier <code>commit</code>'>
          14
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=15 title='Quelques notions de base'>
+        data-slide=15 title='Exercice: Effectuer votre premier <code>commit</code>'>
          15
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=16 title='Le journal de Git'>
+        data-slide=16 title='Quelques notions de base'>
          16
       </a>
     </li>
@@ -969,7 +994,7 @@ Research. PLoS Computational Biology. 9: e1003285</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=18 title='Se déplacer sur la branche <code>master</code>'>
+        data-slide=18 title='Le journal de Git'>
          18
       </a>
     </li>
@@ -981,127 +1006,127 @@ Research. PLoS Computational Biology. 9: e1003285</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=20 title='Le makefile'>
+        data-slide=20 title='Se déplacer sur la branche <code>master</code>'>
          20
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=21 title='Les étapes du travail d&#39;un biologiste'>
+        data-slide=21 title='Exercice 3 - Se déplacer à travers l&#39;historique'>
          21
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=22 title='Qu&#39;est-ce que le makefile ?'>
+        data-slide=22 title='Le makefile'>
          22
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=23 title='À quoi il sert ?'>
+        data-slide=23 title='Les étapes du travail d&#39;un biologiste'>
          23
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=24 title='Objectifs de la leçon'>
+        data-slide=24 title='Qu&#39;est-ce que le makefile ?'>
          24
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=25 title='Anatomie du makefile'>
+        data-slide=25 title='À quoi il sert ?'>
          25
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=26 title='<code>target</code>'>
+        data-slide=26 title='Objectifs de la leçon'>
          26
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=27 title='<code>dependencies...</code>'>
+        data-slide=27 title='Anatomie du makefile'>
          27
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=28 title='<code>commands</code>'>
+        data-slide=28 title='<code>target</code>'>
          28
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=29 title='Un exemple'>
+        data-slide=29 title='<code>dependencies...</code>'>
          29
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=30 title='Étape par étape'>
+        data-slide=30 title='<code>commands</code>'>
          30
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=31 title='Comment créer un premier makefile'>
+        data-slide=31 title='Un exemple'>
          31
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=32 title='Script 1'>
+        data-slide=32 title='Étape par étape'>
          32
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=33 title='Script 2'>
+        data-slide=33 title='Comment créer un premier makefile'>
          33
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=34 title='Script 3'>
+        data-slide=34 title='Script 1'>
          34
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=35 title='Exécuter un makefile'>
+        data-slide=35 title='Script 2'>
          35
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=36 title='Les dépendances'>
+        data-slide=36 title='Script 3'>
          36
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=37 title='Le makefile comme outil de reproductiblité'>
+        data-slide=37 title='Exécuter un makefile'>
          37
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=38 title='Exercice'>
+        data-slide=38 title='Les dépendances'>
          38
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=39 title='Les messages de make'>
+        data-slide=39 title='Le makefile comme outil de reproductiblité'>
          39
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=40 title='Les messages de make'>
+        data-slide=40 title='Exercice'>
          40
       </a>
     </li>
@@ -1113,38 +1138,50 @@ Research. PLoS Computational Biology. 9: e1003285</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=42 title='Nettoyage du dépôt en fin de script'>
+        data-slide=42 title='Les messages de make'>
          42
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=43 title='Dépendances'>
+        data-slide=43 title='Les messages de make'>
          43
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=44 title='Autres ressources disponibles en ligne :'>
+        data-slide=44 title='Nettoyage du dépôt en fin de script'>
          44
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=45 title='Travail pour la semaine'>
+        data-slide=45 title='Dépendances'>
          45
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=46 title='Consignes'>
+        data-slide=46 title='Autres ressources disponibles en ligne :'>
          46
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=47 title='Lectures'>
+        data-slide=47 title='Travail pour la semaine'>
          47
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=48 title='Consignes'>
+         48
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=49 title='Lectures'>
+         49
       </a>
     </li>
   </ul>

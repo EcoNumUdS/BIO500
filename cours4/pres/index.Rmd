@@ -35,11 +35,6 @@ assets      :
 <img src="./assets/img/flow_full_repro.png" width="100%"></img>
 </div>
 
-
---- .transition
-
-# Git: Un système de controle de version
-
 ---&twocol
 
 # Une situation courante
@@ -64,7 +59,7 @@ MonTravailSession/
 
 ## le travail d'équipe
 
-Ses difficultées
+Ses difficultées techniques:
 
 - Multi-utilisateurs
 - Garder une trace de l'historique de modifications **d'un ensemble de fichiers**.
@@ -73,19 +68,33 @@ Ses difficultées
 
 ---
 
-# Système de controle éxistants
+# Système de contrôle éxistants
 
-- Mettre une screenshot de Dropbox, et de Word pour tracker les versions.
+## Un exemple avec Dropbox
+
+![](./assets/img/dropbox.png)
+
+---
+
+# Système de contrôle éxistants
+
+## Un exemple MS Word
+
+![](./assets/img/word.gif)
+
+--- .transition
+
+# Git: Un système de controle de version pour programmeur
 
 ---
 
 # Qu'est ce que Git?
 
-C'est un système qui permet de suivre l'ajout et les modifications pour un ensemble de fichier. C'est le cahier de lab du programmeur.
+C'est un système qui permet de suivre l'ajout et les modifications pour un ensemble de fichier. **C'est le cahier de lab du programmeur.**
 
 - Logiciel libre
-- Soutenu par une large communauté (12 millions d'utilisateurs dans le monde)
-- Par défault, Git est installé par défault sur les machines Linux et MacOSX
+- Soutenu par une large communautée (12 millions d'utilisateurs dans le monde)
+- Par défault, Git est installé sur les systèmes d'exploitation Linux et Mac.
 - Il peut être installé sur Windows: [https://git-scm.com/download/win](https://git-scm.com/download/win)
 
 ---
@@ -108,14 +117,14 @@ Git suit les modifications à l'intérieur d'un dossier que l'on appelle dépôt
 mkdir ~/Documents/travail_BIO500 # Créer un répertoire de travail dans le répertoire Documents.
 cd  ~/Documents/travail_BIO500 # Se déplacer vers ce répertoire
 git init # Initialiser le suivi de version de ce dossier.
-ls -la # Lister le contenu du répertoire de travail.
+ls -a # Lister tous le contenu du répertoire de travail.
 ```
 
 Le dossier `.git` permet de garder une trace de l'ensemble des opérations que vous allez faire dans ce répertoire.
 
 ---
 
-# Exercice: Initialiser votre répertoire de travail avec git
+# Exercice 1 - Initialiser le répertoire de travail avec git
 
 **À l'aide de votre terminal:**
 
@@ -129,6 +138,8 @@ Le dossier `.git` permet de garder une trace de l'ensemble des opérations que v
 # Git en 3 étapes
 
 On modifie le ou les fichiers, on ajoute la modification à Git puis on met un commentaire sur la modification apportée.
+
+**En 3 étapes:**
 
 1. Modification d'un ou plusieurs fichiers sources
 2. `git add monFichier1.txt monFichier2.txt` - Ajout des fichiers modifiés
@@ -159,10 +170,9 @@ fichiers non suivis sont présents (utilisez "git add" pour
 les suivre).
 ```
 
-
 ---
 
-# Exercice: Effectuer votre premier `commit`
+# Exercice 2 - Effectuer votre premier `commit`
 
 ## Première partie
 
@@ -188,14 +198,12 @@ les suivre).
 8. Ajouter la modification à votre dépot git (`git add`)
 9. Effectuer un `git status`
 
-À chaque `git status`, prenez le temps de regarder la sortie (message)
+À chaque `git status`, prenez le temps de regarder la sortie (message).
 
 ## Quatrième partie
 
-7. Modifier à nouveau le fichier `travail_BIO500.txt`
-8. Effectuer un `git diff`
-
-
+10. Modifier à nouveau le fichier `travail_BIO500.txt`
+11. Effectuer un `git diff` ou `git diff NomDuFichier`
 
 --- &twocol
 
@@ -211,7 +219,7 @@ les suivre).
 
 - Une branche (`master` par défault): c'est un série de commentaires (`commit`)
 - Le dernier commentaire (`commit`) est ce que l'on appelle la tête de la brance (`HEAD`), elle contient la version la plus à jour des fichiers.
-- À chaque commentaires d'édition (`commit`) est attaché une version des fichiers.
+- À chaque commentaire d'édition (`commit`) est attaché une version des fichiers.
 
 ---
 
@@ -291,13 +299,17 @@ Permet de se déplacer vers un `commit` précis.
 git checkout master
 ```
 
-Permet de se déplacer vers un `commit` le plus récent.
+Permet de se déplacer vers le `commit` le plus récent.
 
 *** =right
 
 <div style='text-align:center;'>
 <img src="./assets/img/git_3.png" width="100%"></img>
 </div>
+
+---
+
+# Exercice 3 - Se déplacer à travers l'historique
 
 ---.transition
 
@@ -357,7 +369,7 @@ Une dépendance (également appelée _"prerequesite"_) est un fichier qui est ut
 
 La _target_ peut contenir plusieurs dépendances.
 
-Il est néanmoins possible d'avoir un fichier cible qui ne requiert pas de dépendance.
+Il est néanmoins possible d'avoir un fichier cible qui ne requiert pas de dépendances.
 
 ---
 
@@ -369,7 +381,7 @@ La commande est l'action à réaliser. Dans notre cas, nous utiliserons une comm
 Rscript script.R
 ```
 
-Nous verrons plus tard dans la session le langage de mise en forme LaTeX. Dans ce cas, la commande serit:
+Nous verrons plus tard dans la session le langage de mise en forme LaTeX. Dans ce cas, la commande serait:
 
 ```bash
 pdflatex manuscrit.tex
@@ -403,7 +415,7 @@ Ce fichier s'appelle makefile (sans extension) et il est exécuté en inscrivant
 
 `Rscript` est un programme permettant d'exécuter du code R sans passer par la console R. On peut utiliser le terminal pour appeler le programme `Rscript` et lui donner comme argument un script R: `Rscript script1.R`
 
-Les commandes sont espacées par une *tabulation* ou 8 espaces. Assurer vous que votre tabulation corresponds bien à 8 espaces.
+Les commandes sont espacées par une *tabulation* ou 8 espaces. Assurez vous que votre tabulation corresponds bien à 8 espaces.
 
 Ensemble, la cible, les dépendances et les actions constituent une règle. Cet exemple a donc 3 règles.
 

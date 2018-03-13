@@ -11,11 +11,6 @@
 <img src="./assets/img/flow_full_repro.png" width="100%"></img>
 </div>
 
-
---- .transition
-
-# Git: Un système de controle de version
-
 ---&twocol
 
 # Une situation courante
@@ -40,7 +35,7 @@ MonTravailSession/
 
 ## le travail d'équipe
 
-Ses difficultées
+Ses difficultées techniques:
 
 - Multi-utilisateurs
 - Garder une trace de l'historique de modifications **d'un ensemble de fichiers**.
@@ -49,20 +44,43 @@ Ses difficultées
 
 ---
 
-# Système de controle éxistants
+# Système de contrôle éxistants
 
-- Mettre une screenshot de Dropbox, et de Word pour tracker les versions.
+## Un exemple avec Dropbox
+
+![](./assets/img/dropbox.png)
 
 ---
 
+# Système de contrôle éxistants
+
+## Un exemple MS Word
+
+![](./assets/img/word.gif)
+
+--- .transition
+
+# Git: Un système de controle de version pour programmeur
+
+--- &twocol
+
 # Qu'est ce que Git?
 
-C'est un système qui permet de suivre l'ajout et les modifications pour un ensemble de fichier. C'est le cahier de lab du programmeur.
+*** =left
+
+C'est un système qui permet de suivre l'ajout et les modifications pour un ensemble de fichier. **C'est le cahier de lab du programmeur.**
 
 - Logiciel libre
-- Soutenu par une large communauté (12 millions d'utilisateurs dans le monde)
-- Par défault, Git est installé par défault sur les machines Linux et MacOSX
+- Soutenu par une large communautée (12 millions d'utilisateurs dans le monde)
+- Par défault, Git est installé sur les systèmes d'exploitation Linux et Mac.
 - Il peut être installé sur Windows: [https://git-scm.com/download/win](https://git-scm.com/download/win)
+
+*** =right
+
+
+<div style='text-align:center;'>
+<img src="./assets/img/git.png" width="100%"></img>
+</div>
 
 ---
 
@@ -84,14 +102,14 @@ Git suit les modifications à l'intérieur d'un dossier que l'on appelle dépôt
 mkdir ~/Documents/travail_BIO500 # Créer un répertoire de travail dans le répertoire Documents.
 cd  ~/Documents/travail_BIO500 # Se déplacer vers ce répertoire
 git init # Initialiser le suivi de version de ce dossier.
-ls -la # Lister le contenu du répertoire de travail.
+ls -a # Lister tous le contenu du répertoire de travail.
 ```
 
 Le dossier `.git` permet de garder une trace de l'ensemble des opérations que vous allez faire dans ce répertoire.
 
 ---
 
-# Exercice: Initialiser votre répertoire de travail avec git
+# Exercice 1 - Initialiser le répertoire de travail avec git
 
 **À l'aide de votre terminal:**
 
@@ -105,6 +123,8 @@ Le dossier `.git` permet de garder une trace de l'ensemble des opérations que v
 # Git en 3 étapes
 
 On modifie le ou les fichiers, on ajoute la modification à Git puis on met un commentaire sur la modification apportée.
+
+**En 3 étapes:**
 
 1. Modification d'un ou plusieurs fichiers sources
 2. `git add monFichier1.txt monFichier2.txt` - Ajout des fichiers modifiés
@@ -135,10 +155,9 @@ fichiers non suivis sont présents (utilisez "git add" pour
 les suivre).
 ```
 
-
 ---
 
-# Exercice: Effectuer votre premier `commit`
+# Exercice 2 - Effectuer votre premier `commit`
 
 ## Première partie
 
@@ -164,14 +183,12 @@ les suivre).
 8. Ajouter la modification à votre dépot git (`git add`)
 9. Effectuer un `git status`
 
-À chaque `git status`, prenez le temps de regarder la sortie (message)
+À chaque `git status`, prenez le temps de regarder la sortie (message).
 
 ## Quatrième partie
 
-7. Modifier à nouveau le fichier `travail_BIO500.txt`
-8. Effectuer un `git diff`
-
-
+10. Modifier à nouveau le fichier `travail_BIO500.txt`
+11. Effectuer un `git diff` ou `git diff NomDuFichier`
 
 --- &twocol
 
@@ -187,7 +204,7 @@ les suivre).
 
 - Une branche (`master` par défault): c'est un série de commentaires (`commit`)
 - Le dernier commentaire (`commit`) est ce que l'on appelle la tête de la brance (`HEAD`), elle contient la version la plus à jour des fichiers.
-- À chaque commentaires d'édition (`commit`) est attaché une version des fichiers.
+- À chaque commentaire d'édition (`commit`) est attaché une version des fichiers.
 
 ---
 
@@ -267,10 +284,70 @@ Permet de se déplacer vers un `commit` précis.
 git checkout master
 ```
 
-Permet de se déplacer vers un `commit` le plus récent.
+Permet de se déplacer vers le `commit` le plus récent.
 
 *** =right
 
 <div style='text-align:center;'>
 <img src="./assets/img/git_3.png" width="100%"></img>
 </div>
+
+---
+
+# Exercice 3 - Se déplacer à travers l'historique
+
+En reprenant votre dépot de travail `git` (Exercice 2), parcourez votre historique (`git log`) et remontez à votre premier commentaire (`commit`).
+
+--- .transition
+
+# Les serveurs Git distants
+
+---
+
+# Les serveurs Git distants
+
+Jusqu'à présent nous avons travailler localement sur votre ordinateur. Il est cependant possible de synchroniser votre travail sur un serveur Git (dépots distants). Ce procédé présente deux avantages indéniables:
+
+1. Sauvegarder votre travail (Back-up)
+2. Permettre à un collègue de travailler avec vous sur votre dêpot.
+
+---
+
+# Les serveurs Git distants
+
+Il éxiste plusieurs d'entreprise offrant des services gratuits pour héberger votre dépôt:
+
+- [Gitlab](https://about.gitlab.com/): Serveur hébergeable dans votre infrastructure.
+- [Bitbucket](https://bitbucket.org/): Gratuit avec dépot privé illimité.
+- [Github](https://github.com/): Gratuit avec nombre de dépôt privé limité.
+
+Nous travaillerons avec GitHub, la plateforme la plus populaire, une vitrine pour dévoiler vos compétences de programmeurs.
+
+---
+
+# Exercice 4: Ouvrez un compte sur Github
+
+1. Rendez-vous à l'adresse: https://github.com/
+2. Ouvrez un compte / Inscrivez-vous
+3. Créer un nouveau dépot sur le serveur intitulé: `monTravail_BIO500`
+
+---
+
+# Envoyer votre dépot local sur le serveur Github
+
+```bash
+
+```
+
+Votre dépot local vient de se transformer en dépôt distant. Cependant, rien n'a encore été envoyé sur le serveur.
+
+---
+
+# Cloner un dépôt distant
+
+Il est possible à tout moment de récupérer un dépôt distant pour le téléverser sur son ordinateur.
+
+```bash
+cd Documents
+git clone https://github.com/EcoNumUdS/BIO500.git
+```
