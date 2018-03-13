@@ -426,6 +426,7 @@ Ensemble, la cible, les dépendances et les actions constituent une règle. Cet 
   Y <- rnorm(25, mean = X*2 + 10, sd = 25)
   write.table(cbind(X,Y), file = "data.txt")
 ```
+
 ---
 
 #  Script 2

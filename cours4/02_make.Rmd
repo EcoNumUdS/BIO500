@@ -57,7 +57,7 @@ Une dépendance (également appelée _"prerequesite"_) est un fichier qui est ut
 
 La _target_ peut contenir plusieurs dépendances.
 
-Il est néanmoins possible d'avoir un fichier cible qui ne requiert pas de dépendance.
+Il est néanmoins possible d'avoir un fichier cible qui ne requiert pas de dépendances.
 
 ---
 
@@ -69,7 +69,7 @@ La commande est l'action à réaliser. Dans notre cas, nous utiliserons une comm
 Rscript script.R
 ```
 
-Nous verrons plus tard dans la session le langage de mise en forme LaTeX. Dans ce cas, la commande serit:
+Nous verrons plus tard dans la session le langage de mise en forme LaTeX. Dans ce cas, la commande serait:
 
 ```bash
 pdflatex manuscrit.tex
@@ -103,7 +103,7 @@ Ce fichier s'appelle makefile (sans extension) et il est exécuté en inscrivant
 
 `Rscript` est un programme permettant d'exécuter du code R sans passer par la console R. On peut utiliser le terminal pour appeler le programme `Rscript` et lui donner comme argument un script R: `Rscript script1.R`
 
-Les commandes sont espacées par une *tabulation* ou 8 espaces. Assurer vous que votre tabulation corresponds bien à 8 espaces.
+Les commandes sont espacées par une *tabulation* ou 8 espaces. Assurez vous que votre tabulation corresponds bien à 8 espaces.
 
 Ensemble, la cible, les dépendances et les actions constituent une règle. Cet exemple a donc 3 règles.
 
