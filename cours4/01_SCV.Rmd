@@ -332,7 +332,7 @@ Nous travaillerons avec GitHub, la plateforme la plus populaire, une vitrine pou
 
 ---
 
-# Cloner votre dépot distant sur le serveur Github
+# Envoyer votre dépôt local sur le serveur Github
 
 ```bash
 git remote add origin https://adresseVersVotreDepot.git
@@ -343,9 +343,9 @@ Votre dépot local vient de se transformer en dépôt distant. Cependant, rien n
 
 ---
 
-# Envoyer votre depot local sur le serveur Github
+# Envoyer votre dépôt local sur le serveur Github
 
-On va maintenant envoyé les fichiers et l'historique de modifications de ces derniers sur le serveur
+On va maintenant envoyé les fichiers et l'historique de modifications de ces derniers sur le serveur.
 
 ```bash
 git push origin master
