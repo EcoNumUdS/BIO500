@@ -225,7 +225,7 @@ make: Nothing to be done for 'script2.R'
 
 *up to date* signifie que le makefile a une règle dont la cible est le nom du fichier et qu'il est à jour
 
-*Nothing to be done* indique que le fichier existe, mais que 
+*Nothing to be done* indique que le fichier existe, mais que
 
 - il n'y a pas de règle pour ce fichier
 - il y a une règle, mais aucune action à réaliser
