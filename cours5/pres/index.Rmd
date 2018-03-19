@@ -25,6 +25,272 @@ assets      :
 - Vous trouverez du matériel supplémentaire dans le [cours](http://kevincazelles.fr/talks/assets/QCBSGraphsR/Rgraphics.html#4) de [Kevin Cazelles](http://kevincazelles.fr/) et [Nicolas Casajus](http://www.cen.ulaval.ca/membre.aspx?id=3945098&membre=ncasajus) lors d'un atelier de communication visuelle du CSBQ.
 - Certaines diapositives sont également extraites de la présentation de [David Taylor](http://dtdata.io/prm/intro_dataviz_csbq.pdf)
 
+---.transition
+
+# Le makefile
+
+---
+
+# Les étapes du travail d'un biologiste
+
+<div style='text-align:center;'>
+<img src="assets/img/flow_full_repro.png"  width="90%"></img>
+</div>
+
+---
+
+# Qu'est-ce que le makefile ?
+
+**Définition**: le makefile est un fichier qui contient un ensemble de directives qui sont exécutées par l'ordinateur. Les instructions et leurs dépendances sont spécifiées dans le makefile.
+
+---
+
+# À quoi il sert ?
+
+Le makefile est un logiciel permettant d'exécuter une série d'instructions, lorsqu'elles sont nécessaires. Les dépendances sont vérifiées et seulement les instructions qui requièrent une mise à jour sont exécutées.
+
+Nous utiliserons le makefile pour assurer la reproductibilité de la démarche entreprise dans le cours. L'ensemble des instructions nécessaires à la production du rapport, de la création de la base de données à la compilation du document écrit, seront contenues dans le makefile.
+
+---
+
+# Objectifs de la leçon
+
+- Reconnaitre les parties importantes d'un makefile, les règles, les cibles, les dépendances et les actions
+- Écrire un makefile simple
+- Exécuter un makefile à partir du terminal
+- Préparer le makefile pour le projet de session
+
+---
+
+# Anatomie du makefile
+
+```bash
+<target>: <dependencies...>
+  <commands>
+```
+
+---
+
+# `target`
+
+La cible est habituellement le nom d'un fichier généré par la commande.
+
+---
+
+# `dependencies...`
+
+Une dépendance (également appelée _"prerequesite"_) est un fichier qui est utilisé pour créer un autre fichier appelée cible (`"target"`).
+
+La _target_ peut contenir plusieurs dépendances.
+
+Il est néanmoins possible d'avoir un fichier cible qui ne requiert pas de dépendances.
+
+---
+
+# `commands`
+
+La commande est l'action à réaliser. Dans notre cas, nous utiliserons une commande pour exécuter un script R comme :
+
+```bash
+Rscript script.R
+```
+
+Nous verrons plus tard dans la session le langage de mise en forme LaTeX. Dans ce cas, la commande serait:
+
+```bash
+pdflatex manuscrit.tex
+```
+
+---
+
+# Un exemple
+
+```bash
+
+# Première étape, on génère des données
+data.txt :
+  Rscript script1.R
+
+# Seconde étape, on fait un modèle statistique à partir
+# de ces données
+model.Rdata: data.txt
+  Rscript script2.R
+
+# Troisième étape, on produit une figure à partir du modèle
+# et des données
+figure.pdf: model.Rdata data.txt
+  Rscript script3.R
+
+```
+
+Ce fichier s'appelle makefile (sans extension) et il est exécuté en inscrivant simplement la commande `make nomDeLaCible`.
+
+---
+
+# Étape par étape
+
+`Rscript` est un programme permettant d'exécuter du code R sans passer par la console R. On peut utiliser le terminal pour appeler le programme `Rscript` et lui donner comme argument un script R: `Rscript script1.R`
+
+Les commandes sont espacées par une *tabulation* ou 8 espaces. Assurez vous que votre tabulation corresponds bien à 8 espaces.
+
+Ensemble, la cible, les dépendances et les actions constituent une règle. Cet exemple a donc 3 règles.
+
+---
+
+# Comment créer un premier makefile
+
+- Ouvrez un nouveau document au moyen de atom
+- Copiez les commandes de l'exemple
+- Sauvergardez le fichier, avec pour nom makefile
+- Assurez vous de trouver les 3 scripts dans le dépôt git
+
+---
+
+# Script 1
+
+```{r eval=FALSE}
+  set.seed(1)
+  X <- runif(25, 0, 100)
+  Y <- rnorm(25, mean = X*2 + 10, sd = 25)
+  write.table(cbind(X,Y), file = "data.txt")
+```
+
+---
+
+#  Script 2
+
+```{r eval=FALSE}
+data <- read.table("data.txt", header = T)
+model <- lm(data$Y ~ data$X)
+save(model, file = "model.Rdata")
+```
+
+---
+
+#  Script 3
+
+```{r eval=FALSE}
+data <- read.table("data.txt", header = T)
+load("model.Rdata")
+
+pdf("resultat.pdf", 7 5)
+plot(data$X, data$Y, xlab = "X", ylab = "Y")
+abline(model)
+dev.off()
+```
+
+---
+
+#  Exécuter un makefile
+
+Il n'est pas nécessaire de nommer le makefile *makefile*. On peut toujours spécifier un autre nom et l'exécuter ainsi :
+
+```{bash eval = FALSE}
+make -f MonMakefile
+```
+
+---
+
+# Les dépendances
+
+- Exécutez le makefile une première fois.
+- Ensuite, modifiez une valeur dans le fichier data.txt.
+- Exécutez le makefile à nouveau pour voir ce qui se produit.
+
+---
+
+# Le makefile comme outil de reproductiblité
+
+La rédaction du makefile nous force à spécifier les différentes étapes de notre démarche, à identifier les entrées et les sorties de différentes instructions à l'ordinateur. De cette façon, le makefile permet de documenter rigoureusement la démarche réalisée.
+
+Il s'agit aussi d'un aide-mémoire qui permet de se rappeler des étapes.
+
+---
+
+# Exercice
+
+Conceptualisez les différentes étapes de la démarche du travail de session jusqu'à présent.
+
+Identifiez les entrées, les sorties et les actions.
+
+---
+
+# Les messages de make
+
+Il est possible de forcer make à réaliser certaines actions. Par exemple, si on exécute à nouveau make
+
+```bash
+make
+```
+
+On obtient le message :
+
+```bash
+make : 'data.txt' is up to date
+```
+
+---
+
+# Les messages de make
+
+On peut forcer une étape, par exemple le calcul du modèle, ainsi :
+
+```bash
+make model.Rdata
+```
+
+Dans ce cas-ci, on obtient le message :
+
+```bash
+make: Nothing to be done for 'script2.R'
+```
+
+---
+
+# Les messages de make
+
+*up to date* signifie que le makefile a une règle dont la cible est le nom du fichier et qu'il est à jour
+
+*Nothing to be done* indique que le fichier existe, mais que 
+
+- il n'y a pas de règle pour ce fichier
+- il y a une règle, mais aucune action à réaliser
+
+---
+
+# Nettoyage du dépôt en fin de script
+
+Il arrive que certains scripts génèrent des fichiers temporaires qui ne doivent pas être conservés inutilement.
+
+Dans l'exemple précédent, on pourrait vouloir éliminer le modèle, qui n'est finalement utilisé que pour réaliser la figure. On peut ainsi inscrire à la fin du makefile :
+
+```bash
+clean :
+  rm -f model.Rdata
+```
+
+`rm -f model.Rdata` va éliminer à la toute fin l'objet R contenant le modèle intitulé `model.Rdata`. Notez ici qu'il n'y a pas de dépendance, ce qui indique que cette opération sera systématiquement exécutée.
+
+---
+
+# Dépendances
+
+L'ordre de présentation des dépendances est arbitraire. Elles ne seront pas nécessairement vérifiées dans l'ordre présenté.
+
+Un truc est de schématiser les dépendances (des noeuds) et les actions (des flèches)
+
+---
+
+# Autres ressources disponibles en ligne :
+
+https://swcarpentry.github.io/make-novice/02-makefiles/
+
+https://gist.github.com/isaacs/62a2d1825d04437c6f08
+
+http://gl.developpez.com/tutoriel/outil/makefile/
+
+http://icps.u-strasbg.fr/people/loechner/public_html/enseignement/GL/make.pdf
+
 --- .transition
 
 # Qu'est-ce qui fait une bonne figure ?
@@ -567,420 +833,15 @@ text(x = 875, y = 25, paste("R2=",r2), cex = 1.5)
 
 --- .transition
 
-# Créer d'autres types de figure
-
---- &twocol
-
-# Diagramme de dispersion (Scatter plot)
-
-*** =left
-
-```{r, eval = FALSE}
-arbres  <- read.csv2("donnees/arbres.csv")
-densite <- table(arbres[,c(3,5)])
-elevation <- as.numeric(row.names(densite))
-plot(elevation, densite[,1], pch = 19,
-  xlab = "Elevation", ylab = "Densité")
-points(elevation, densite[,3])
-```
-
-*** =right
-
-```{r, echo=FALSE,out.height = '500px', dpi=300, fig.align="center"}
-arbres  <- read.csv2("donnees/arbres.csv")
-densite <- table(arbres[,c(3,5)])
-elevation <- as.numeric(row.names(densite))
-plot(elevation, densite[,1], pch = 19,
-  xlab = "Elevation", ylab = "Densité")
-points(elevation, densite[,3])
-```
-
---- &twocol
-
-# Diagrammes à bâtons (Bar plot)
-
-*** =left
-```{r, eval = FALSE}
-arbres  <- read.csv2("donnees/arbres.csv")
-n_tot <- table(arbres$esp)
-barplot(n_tot)
-```
-
-*** =right
-```{r, echo=FALSE,out.height = '500px', dpi=300, fig.align="center"}
-arbres  <- read.csv2("donnees/arbres.csv")
-n_tot <- table(arbres$esp)
-barplot(n_tot)
-```
-
---- &twocol
-
-# Histogrammes
-
-*** =left
-
-```{r, eval = FALSE}
-hist(densite[,3])
-```
-
-*** =right
-```{r, echo=FALSE,out.height = '500px', dpi=300, fig.align="center"}
-hist(densite[,3])
-```
-
---- &twocol
-
-# Représentation 3-D
-
-*** =left
-
-```{r, eval = FALSE}
-x <- 10*(1:nrow(volcano))
-y <- 10*(1:ncol(volcano))
-
-image(x, y, volcano,
-  col = terrain.colors(100), axes = FALSE)
-
-axis(1, at = seq(100, 800, by = 100))
-axis(2, at = seq(100, 600, by = 100))
-box()
-
-title(main = "Maunga Whau Volcano", font.main = 4)
-```
-
-*** =right
-
-```{r, echo=FALSE,out.height = '500px', dpi=300, fig.align="center"}
-x <- 10*(1:nrow(volcano))
-y <- 10*(1:ncol(volcano))
-
-image(x, y, volcano,
-  col = terrain.colors(100), axes = FALSE)
-
-axis(1, at = seq(100, 800, by = 100))
-axis(2, at = seq(100, 600, by = 100))
-box()
-
-title(main = "Maunga Whau Volcano", font.main = 4)
-```
-
---- &twocol
-
-# Lignes de contour
-
-*** =left
-```{r, eval = FALSE}
-x <- 10*(1:nrow(volcano))
-y <- 10*(1:ncol(volcano))
-
-image(x, y, volcano,
-  col = terrain.colors(100), axes = FALSE)
-
-axis(1, at = seq(100, 800, by = 100))
-axis(2, at = seq(100, 600, by = 100))
-box()
-
-title(main = "Maunga Whau Volcano", font.main = 4)
-
-contour(x, y, volcano,
-  levels = seq(90, 200, by = 5),
-  add = TRUE, col = "black")
-```
-
-*** =right
-
-```{r, echo=FALSE,out.height = '500px', dpi=300, fig.align="center"}
-x <- 10*(1:nrow(volcano))
-y <- 10*(1:ncol(volcano))
-
-image(x, y, volcano,
-  col = terrain.colors(100), axes = FALSE)
-
-axis(1, at = seq(100, 800, by = 100))
-axis(2, at = seq(100, 600, by = 100))
-box()
-
-title(main = "Maunga Whau Volcano", font.main = 4)
-
-contour(x, y, volcano,
-  levels = seq(90, 200, by = 5),
-  add = TRUE, col = "black")
-```
-
----
-
-# Enregistrer une figure
-
-
-```{r, eval=FALSE}
-dev.copy2pdf(file = "test.pdf")
-dev.copy2png(file = "test.png")
-dev.copy2eps(file = "test.eps")
-```
-
---- .transition
-
-# Exercice: faire une représentation visuelle de la distribution de degrés
-
---- .transition
-
-# La visualisation de réseau avec igraph
-
----
-
-# Installation
-
-```{r}
-install.packages("igraph")
-library(igraph)
-```
-
----
-
-# Transformer une matrice d'adjacence en objet `igraph`
-
-```{r}
-library(igraph)
-C <- 0.1
-S <- 15
-L <- matrix(0, nr = S, nc = S)
-L[runif(S*S) < C] = 1
-sum(L)
-g <- graph.adjacency(L)
-```
-
---- &twocol
-
-# Utiliser la fonction `plot` pour faire une représentation d'un réseau
-
-*** =left
-```{r, eval = FALSE}
-plot(g)
-```
-
-*** =right
-```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
-plot(g)
-```
-
---- &twocol
-
-# Version moins moche dans les paramètres par défaut
-
-*** =left
-```{r, eval = FALSE}
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
-    vertex.frame.color = NA)
-```
-
-*** =right
-```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
-plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA)
-```
-
-
---- .transition
-
-# Exercice : Compiler la matrice d'adjacence et faire une première représentation du réseau avec `igraph`
-
---- &twocol
-
-# Changer la couleur des noeuds
-
-*** =left
-```{r, eval = FALSE}
-# Calculer le degré
-deg <- apply(L, 2, sum) + apply(L, 1, sum)
-
-# Le rang pour chaque noeud
-rk <- rank(deg)
-
-# Faire un code de couleur
-col.vec <- heat.colors(S)
-
-# Attribuer aux noeuds la couleur
-V(g)$color = col.vec[rk]
-
-# Refaire la figure
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
-    vertex.frame.color = NA)
-```
-
-*** =right
-```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
-# Calculer le degré
-deg <- apply(L, 2, sum) + apply(L, 1, sum)
-
-# Le rang pour chaque noeud
-rk <- rank(deg)
-
-# Faire un code de couleur
-col.vec <- heat.colors(S)
-
-# Attribuer aux noeuds la couleur
-V(g)$color = col.vec[rk]
-
-# Refaire la figure
-plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA)
-```
-
---- &twocol
-
-# Changer la taille des noeuds
-
-*** =left
-```{r, eval = FALSE}
-# Faire un code de ctaille
-col.vec <- seq(10, 25, length.out = S)
-
-# Attribuer aux noeuds la couleur
-V(g)$size = col.vec[rk]
-
-# Refaire la figure
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
-    vertex.frame.color = NA)
-```
-
-*** =right
-```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
-# Faire un code de ctaille
-col.vec <- seq(10, 25, length.out = S)
-
-# Attribuer aux noeuds la couleur
-V(g)$size = col.vec[rk]
-
-# Refaire la figure
-plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA)
-```
-
---- &twocol
-
-# Changer la disposition des noeuds
-
-*** =left
-```{r, eval = FALSE}
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
-    vertex.frame.color = NA, layout = layout.reingold.tilford(g))
-```
-
-*** =right
-```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
-plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA, layout = layout.circle(g))
-```
-
---- &twocol
-
-# Changer la disposition des noeuds
-
-*** =left
-```{r, eval = FALSE}
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
-    vertex.frame.color = NA, layout = layout.circle(g))
-```
-
-*** =right
-```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
-plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA, layout = layout.circle(g))
-```
-
---- &twocol
-
-# Changer la disposition des noeuds
-
-*** =left
-```{r, eval = FALSE}
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
-    vertex.frame.color = NA, layout = layout.kamada.kawai(g))
-```
-
-*** =right
-```{r, echo=FALSE,out.width = '100%', dpi=300, fig.align="center"}
-plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA, layout = layout.kamada.kawai(g))
-```
-
----
-
-# Calcul de propriétés
-
-## La modularité
-
-```{r}
-wtc = walktrap.community(g)
-modularity(wtc)
-```
-
----
-
-# Calcul de propriétés
-
-## La distance entre les noeuds
-
-```{r}
-distances(g)
-```
-
----
-
-# Calcul de propriétés
-
-## La centralité des noeuds
-
-```{r}
-eigen_centrality(g)$vector
-```
-
---- .transition
-
-# Exporter des tableaux
-
----
-
-# Exporter des tableaux
-
-Exporter des tableaux depuis R vers son document de travail peut être difficile.
-
-## La procédure habituelle serait:
-
-1. Enregistrer le `data.frame` dans un fichier avec la fonction `write.table()` ou `write.csv()`
-2. Éditer et faire la mise en page dans MS Excel ou MS Word.
-
-Le package `knitr` permet de faciliter cette procédure en exportant le `data.frame` directement dans son document de travail LaTeX.
-
----
-
-# Exporter des tableaux
-
-Prenons le jeu de données `iris` directement disponible sous R.
-
-```{r}
-data(iris)
-class(iris)
-head(iris)
-```
-
----
-
-# Exporter des tableaux
-
-Je souhaite maintenant exporter ce `data.frame` en LateX (un format que nous verrons lors de la prochaine séance):
-
-```{r}
-library(knitr)
-iris_tex <- kable(iris,format="latex")
-writeLines(iris_tex, con = "./donnees/iris.tex", sep = "\n", useBytes = FALSE)
-```
-
---- .transition
-
-# Travail # 2
+# Poursuite du travail de session
 
 ---
 
 # Consignes
 
-- Identifier clairement vos questions de recherche
-- Illustrer le réseau de collaborations
-- Compléter votre analyse au moyen de 3 figures et 1 tableau
+- Identifiez clairement vos questions de recherche
+- Illustrez le réseau de collaborations
+- Complétez votre analyse au moyen de 3 figures et 1 tableau
 
 ---
 
@@ -995,9 +856,6 @@ writeLines(iris_tex, con = "./donnees/iris.tex", sep = "\n", useBytes = FALSE)
 
 # Lectures
 
-Sandve et al. 2013. Ten Simple Rules for Reproducible Computational
-Research. PLoS Computational Biology. 9: e1003285
+Mills et al. 2015. Archiving Primary Data: Solutions for Long-Term Studies. Trends in Ecology and Evolution.
 
-Silberzahn et Uhlman. 2015. Many hands make tight work. Nature 526 : 189-191.
-
-Barba. 2016. The hard road to reproducibility. Science 354: 142.
+Poisot et al. 2013. Moving toward a sustainable ecological science : don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19.
