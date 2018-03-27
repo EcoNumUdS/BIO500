@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Séance 6: La visualisation des données</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Séance 6: La visualisation des données">
+  <meta name="author" content="Dominique Gravel &amp; Steve Vissault">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="./libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="./libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="./libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="./libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/default.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+<link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="./libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="./libraries/frameworks/io2012/js/slides" 
+    src="./libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/logo.png">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>Séance 6: La visualisation des données</h1>
+    <h2>BIO 500 - Méthodes en écologie computationnelle</h2>
+    <p>Dominique Gravel &amp; Steve Vissault<br/>Laboratoire d'écologie intégrative</p>
+  </hgroup>
+  <article></article>
+  <footer class = 'license'>
+    <a href='http://creativecommons.org/licenses/by-nc-sa/3.0/'>
+    <img width = '80px' src = 'http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png'>
+    </a>
+  </footer>
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <!--  <a href="#slide-1"></a> -->
+  <hgroup>
+    <h1>Séance 6</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Ces diapositives sont disponibles en <a href="https://econumuds.github.io/BIO500/cours5/">version web</a> et en <a href="./assets/pdf/S6-BIO500.pdf">PDF</a>.</li>
+<li>L&#39;ensemble du matériel de cours est disponible sur la page du portail <a href="https://www.usherbrooke.ca/moodle2-cours/course/view.php?id=12189">moodle</a>.</li>
+<li>Vous trouverez du matériel supplémentaire dans le <a href="http://kevincazelles.fr/talks/assets/QCBSGraphsR/Rgraphics.html#4">cours</a> de <a href="http://kevincazelles.fr/">Kevin Cazelles</a> et <a href="http://www.cen.ulaval.ca/membre.aspx?id=3945098&amp;membre=ncasajus">Nicolas Casajus</a> lors d&#39;un atelier de communication visuelle du CSBQ.</li>
+<li>Certaines diapositives sont également extraites de la présentation de <a href="http://dtdata.io/prm/intro_dataviz_csbq.pdf">David Taylor</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-2" style="background:;">
+  <!--  <a href="#slide-2"></a> -->
+  <hgroup>
+    <h1>Faire une figure étape par étape avec R</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-3" style="background:;">
+  <!--  <a href="#slide-3"></a> -->
+  <hgroup>
+    <h1>Préparer les données adéquatement</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Habituellement un <code>data.frame</code> ou <code>une matrice</code></li>
+<li>Une observation par ligne (format long)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h1>Ouvrir une fenêtre graphique</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">dev.new(width = 10, height = 7)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h1>Fixer certains paramètres</h1>
+  </hgroup>
+  <article>
+    <pre><code class="r"># Fixer la largeur et la hauteur des marges
+par(mar = c(5,6,2,1))
+
+# Fixer le nombre de figures en colonnes et rangées
+par(mfrow = c(1,1))
+</code></pre>
+
+    <div class='left' style='float:left;width:48%'>
+     
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h1>Démarrer une figure avec <code>plot()</code></h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">arbres &lt;- read.csv2(&quot;donnees/arbres.csv&quot;)
+densite &lt;- table(arbres[,c(3,5)])
+elevation &lt;- as.numeric(row.names(densite))
+plot(elevation, densite[,1], axes = FALSE,
+      xlab = &quot;Élévation&quot;, ylab = &quot;Densité&quot;)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="100%" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h1>Échelles logarithmiques</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">plot(elevation, densite[,1], axes = FALSE,
+      xlab = &quot;Élévation&quot;, ylab = &quot;Densité&quot;,
+      log = &quot;xy&quot;)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="100%" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h1>Ajuster les tailles de caractères</h1>
+  </hgroup>
+  <article>
+    <h2>Arguments <code>cex</code>, <code>cex.lab</code> et <code>cex.axis</code></h2>
+
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">plot(elevation, densite[,1], axes = FALSE,
+      xlab = &quot;Élévation&quot;, ylab = &quot;Densité&quot;,
+      cex.lab = 1.5, cex.axis = 1.25, cex = 1.5)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" width="100%" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h1>Modifier les axes</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">axis(1, seq(0,1000,100))
+axis(2)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" width="100%" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h1>Ajouter un titre</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:55%'>
+     <pre><code class="r">title(main = &quot;Densité au long du gradient d&#39;élévation&quot;)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:45%'>
+     <p><img src="assets/fig/unnamed-chunk-14-1.png" title="plot of chunk unnamed-chunk-14" alt="plot of chunk unnamed-chunk-14" width="100%" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h1>Superposer des points d&#39;une autre série de données</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">points(elevation, densite[,3], pch = 19, cex = 1.5)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-16-1.png" title="plot of chunk unnamed-chunk-16" alt="plot of chunk unnamed-chunk-16" width="100%" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h1>Superposer des lignes</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">lines(elevation, densite[,1],lty = 1, lwd = 1.5)
+lines(elevation, densite[,3], lty  = 3, lwd = 1.5)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-18-1.png" title="plot of chunk unnamed-chunk-18" alt="plot of chunk unnamed-chunk-18" width="100%" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h1>Ajouter une ligne de tendance</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:40%'>
+     <pre><code class="r">model = lm(densite[,3]~elevation)
+summary(model)
+abline(model, col = &quot;darkred&quot;)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:60%'>
+     <pre><code>## 
+## Call:
+## lm(formula = densite[, 3] ~ elevation)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -59.796 -26.743  -3.565  24.050  92.175 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 148.10588   11.23433  13.183   &lt;2e-16 ***
+## elevation    -0.16650    0.01976  -8.428    5e-11 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 40.32 on 48 degrees of freedom
+## Multiple R-squared:  0.5968, Adjusted R-squared:  0.5884 
+## F-statistic: 71.04 on 1 and 48 DF,  p-value: 4.999e-11
+</code></pre>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h1>Ajouter une ligne de tendance</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">model = lm(densite[,3]~elevation)
+abline(model, col = &quot;darkred&quot;)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-22-1.png" title="plot of chunk unnamed-chunk-22" alt="plot of chunk unnamed-chunk-22" width="100%" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h1>Ajouter une légende</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">legend(&quot;top&quot;, bty = &quot;n&quot;, pch = c(19,1), lty = 1,
+    legend = c(&quot;Érable à sucre&quot;, &quot;Sapin baumier&quot;),
+    cex = 1.5)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-24-1.png" title="plot of chunk unnamed-chunk-24" alt="plot of chunk unnamed-chunk-24" width="100%" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h1>Ajouter du texte</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">r2 &lt;- round(summary(model)$r.squared, 2)
+text(x = 850, y = 25, paste(&quot;R2=&quot;,r2),
+    cex = 21.5)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-26-1.png" title="plot of chunk unnamed-chunk-26" alt="plot of chunk unnamed-chunk-26" width="100%" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-17" style="background:;">
+  <!--  <a href="#slide-17"></a> -->
+  <hgroup>
+    <h1>Pour plus d&#39;information</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><code>?plot</code></li>
+<li><code>?par</code></li>
+<li><code>?axis</code></li>
+<li><code>?mtext</code></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-18" style="background:;">
+  <!--  <a href="#slide-18"></a> -->
+  <hgroup>
+    <h1>Créer d&#39;autres types de figure</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h1>Diagramme de dispersion (Scatter plot)</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">arbres  &lt;- read.csv2(&quot;donnees/arbres.csv&quot;)
+densite &lt;- table(arbres[,c(3,5)])
+elevation &lt;- as.numeric(row.names(densite))
+plot(elevation, densite[,1], pch = 19,
+  xlab = &quot;Elevation&quot;, ylab = &quot;Densité&quot;)
+points(elevation, densite[,3])
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-28-1.png" title="plot of chunk unnamed-chunk-28" alt="plot of chunk unnamed-chunk-28" height="500px" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h1>Diagrammes à bâtons (Bar plot)</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">arbres  &lt;- read.csv2(&quot;donnees/arbres.csv&quot;)
+n_tot &lt;- table(arbres$esp)
+barplot(n_tot)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-30-1.png" title="plot of chunk unnamed-chunk-30" alt="plot of chunk unnamed-chunk-30" height="500px" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h1>Histogrammes</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">hist(densite[,3])
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-32-1.png" title="plot of chunk unnamed-chunk-32" alt="plot of chunk unnamed-chunk-32" height="500px" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-22" style="background:;">
+  <hgroup>
+    <h1>Représentation 3-D</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">x &lt;- 10*(1:nrow(volcano))
+y &lt;- 10*(1:ncol(volcano))
+
+image(x, y, volcano,
+  col = terrain.colors(100), axes = FALSE)
+
+axis(1, at = seq(100, 800, by = 100))
+axis(2, at = seq(100, 600, by = 100))
+box()
+
+title(main = &quot;Maunga Whau Volcano&quot;, font.main = 4)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-34-1.png" title="plot of chunk unnamed-chunk-34" alt="plot of chunk unnamed-chunk-34" height="500px" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-23" style="background:;">
+  <hgroup>
+    <h1>Lignes de contour</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">x &lt;- 10*(1:nrow(volcano))
+y &lt;- 10*(1:ncol(volcano))
+
+image(x, y, volcano,
+  col = terrain.colors(100), axes = FALSE)
+
+axis(1, at = seq(100, 800, by = 100))
+axis(2, at = seq(100, 600, by = 100))
+box()
+
+title(main = &quot;Maunga Whau Volcano&quot;, font.main = 4)
+
+contour(x, y, volcano,
+  levels = seq(90, 200, by = 5),
+  add = TRUE, col = &quot;black&quot;)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-36-1.png" title="plot of chunk unnamed-chunk-36" alt="plot of chunk unnamed-chunk-36" height="500px" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-24" style="background:;">
+  <!--  <a href="#slide-24"></a> -->
+  <hgroup>
+    <h1>Enregistrer une figure</h1>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">dev.copy2pdf(file = &quot;test.pdf&quot;)
+dev.copy2png(file = &quot;test.png&quot;)
+dev.copy2eps(file = &quot;test.eps&quot;)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-25" style="background:;">
+  <!--  <a href="#slide-25"></a> -->
+  <hgroup>
+    <h1>Exercice: faire une représentation visuelle de la distribution de degrés</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-26" style="background:;">
+  <!--  <a href="#slide-26"></a> -->
+  <hgroup>
+    <h1>La visualisation de réseau avec igraph</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-27" style="background:;">
+  <!--  <a href="#slide-27"></a> -->
+  <hgroup>
+    <h1>Installation</h1>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">install.packages(&quot;igraph&quot;)
+</code></pre>
+
+<pre><code>## Installing package into &#39;/home/grad3002/R/x86_64-pc-linux-gnu-library/3.4&#39;
+## (as &#39;lib&#39; is unspecified)
+</code></pre>
+
+<pre><code>## Error in contrib.url(repos, type): trying to use CRAN without setting a mirror
+</code></pre>
+
+<pre><code class="r">library(igraph)
+</code></pre>
+
+<pre><code>## Loading required package: methods
+</code></pre>
+
+<pre><code>## 
+## Attaching package: &#39;igraph&#39;
+</code></pre>
+
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     decompose, spectrum
+</code></pre>
+
+<pre><code>## The following object is masked from &#39;package:base&#39;:
+## 
+##     union
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-28" style="background:;">
+  <!--  <a href="#slide-28"></a> -->
+  <hgroup>
+    <h1>Transformer une matrice d&#39;adjacence en objet <code>igraph</code></h1>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">library(igraph)
+C &lt;- 0.1
+S &lt;- 15
+L &lt;- matrix(0, nr = S, nc = S)
+L[runif(S*S) &lt; C] = 1
+sum(L)
+</code></pre>
+
+<pre><code>## [1] 31
+</code></pre>
+
+<pre><code class="r">g &lt;- graph.adjacency(L)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-29" style="background:;">
+  <hgroup>
+    <h1>Utiliser la fonction <code>plot</code> pour faire une représentation d&#39;un réseau</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">plot(g)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-41-1.png" title="plot of chunk unnamed-chunk-41" alt="plot of chunk unnamed-chunk-41" width="100%" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-30" style="background:;">
+  <hgroup>
+    <h1>Version plus esthétique sans les paramètres par défaut</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+    vertex.frame.color = NA)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-43-1.png" title="plot of chunk unnamed-chunk-43" alt="plot of chunk unnamed-chunk-43" width="100%" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="transition" id="slide-31" style="background:;">
+  <!--  <a href="#slide-31"></a> -->
+  <hgroup>
+    <h1>Exercice : Compiler la matrice d&#39;adjacence et faire une première représentation du réseau avec <code>igraph</code></h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-32" style="background:;">
+  <hgroup>
+    <h1>Changer la couleur des noeuds</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r"># Calculer le degré
+deg &lt;- apply(L, 2, sum) + apply(L, 1, sum)
+
+# Le rang pour chaque noeud
+rk &lt;- rank(deg)
+
+# Faire un code de couleur
+col.vec &lt;- heat.colors(S)
+
+# Attribuer aux noeuds la couleur
+V(g)$color = col.vec[rk]
+
+# Refaire la figure
+plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+    vertex.frame.color = NA)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-45-1.png" title="plot of chunk unnamed-chunk-45" alt="plot of chunk unnamed-chunk-45" width="100%" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-33" style="background:;">
+  <hgroup>
+    <h1>Changer la taille des noeuds</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r"># Faire un code de ctaille
+col.vec &lt;- seq(10, 25, length.out = S)
+
+# Attribuer aux noeuds la couleur
+V(g)$size = col.vec[rk]
+
+# Refaire la figure
+plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+    vertex.frame.color = NA)
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-47-1.png" title="plot of chunk unnamed-chunk-47" alt="plot of chunk unnamed-chunk-47" width="100%" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-34" style="background:;">
+  <hgroup>
+    <h1>Changer la disposition des noeuds</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+    vertex.frame.color = NA, layout = layout.reingold.tilford(g))
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-49-1.png" title="plot of chunk unnamed-chunk-49" alt="plot of chunk unnamed-chunk-49" width="100%" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-35" style="background:;">
+  <hgroup>
+    <h1>Changer la disposition des noeuds</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+    vertex.frame.color = NA, 
+    layout = layout.circle(g))
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-51-1.png" title="plot of chunk unnamed-chunk-51" alt="plot of chunk unnamed-chunk-51" width="100%" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-36" style="background:;">
+  <hgroup>
+    <h1>Changer la disposition des noeuds</h1>
+  </hgroup>
+  <article>
+    
+    <div class='left' style='float:left;width:48%'>
+     <pre><code class="r">plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+    vertex.frame.color = NA, 
+    layout = layout.kamada.kawai(g))
+</code></pre>
+
+    </div>
+    <div class='right' style='float:right;width:48%'>
+     <p><img src="assets/fig/unnamed-chunk-53-1.png" title="plot of chunk unnamed-chunk-53" alt="plot of chunk unnamed-chunk-53" width="100%" style="display: block; margin: auto;" /></p>
+
+    </div>
+  </article>
+</slide>
+<slide class="" id="slide-37" style="background:;">
+  <!--  <a href="#slide-37"></a> -->
+  <hgroup>
+    <h1>Calcul de propriétés</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>La modularité</h2>
+
+<pre><code class="r">wtc = walktrap.community(g)
+modularity(wtc)
+</code></pre>
+
+<pre><code>## [1] 0.2273673
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-38" style="background:;">
+  <!--  <a href="#slide-38"></a> -->
+  <hgroup>
+    <h1>Calcul de propriétés</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>La distance entre les noeuds</h2>
+
+<pre><code class="r">distances(g)
+</code></pre>
+
+<pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13]
+##  [1,]    0    1    2    1    2    2    3    1    2     1     1     1     2
+##  [2,]    1    0    1    2    2    1    2    2    2     2     2     1     2
+##  [3,]    2    1    0    1    3    2    3    3    2     3     3     2     1
+##  [4,]    1    2    1    0    3    2    3    2    1     2     2     2     2
+##  [5,]    2    2    3    3    0    2    1    3    2     3     3     1     2
+##  [6,]    2    1    2    2    2    0    1    1    1     3     1     2     2
+##  [7,]    3    2    3    3    1    1    0    2    2     4     2     2     3
+##  [8,]    1    2    3    2    3    1    2    0    2     2     2     2     2
+##  [9,]    2    2    2    1    2    1    2    2    0     3     2     1     1
+## [10,]    1    2    3    2    3    3    4    2    3     0     2     2     3
+## [11,]    1    2    3    2    3    1    2    2    2     2     0     2     3
+## [12,]    1    1    2    2    1    2    2    2    1     2     2     0     1
+## [13,]    2    2    1    2    2    2    3    2    1     3     3     1     0
+## [14,]    2    1    2    1    2    2    3    3    2     3     1     1     2
+## [15,]    2    3    2    1    3    2    3    1    1     3     3     2     1
+##       [,14] [,15]
+##  [1,]     2     2
+##  [2,]     1     3
+##  [3,]     2     2
+##  [4,]     1     1
+##  [5,]     2     3
+##  [6,]     2     2
+##  [7,]     3     3
+##  [8,]     3     1
+##  [9,]     2     1
+## [10,]     3     3
+## [11,]     1     3
+## [12,]     1     2
+## [13,]     2     1
+## [14,]     0     2
+## [15,]     2     0
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-39" style="background:;">
+  <!--  <a href="#slide-39"></a> -->
+  <hgroup>
+    <h1>Calcul de propriétés</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>La centralité des noeuds</h2>
+
+<pre><code class="r">eigen_centrality(g)$vector
+</code></pre>
+
+<pre><code>##  [1] 1.0000000 0.7772556 0.4572805 0.7370654 0.3007099 0.5804008 0.1931037
+##  [8] 0.4665644 0.7268287 0.2191594 0.4845523 0.8782924 0.5721994 0.6305578
+## [15] 0.5484809
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-40" style="background:;">
+  <!--  <a href="#slide-40"></a> -->
+  <hgroup>
+    <h1>Exporter des tableaux</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-41" style="background:;">
+  <!--  <a href="#slide-41"></a> -->
+  <hgroup>
+    <h1>Exporter des tableaux</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Exporter des tableaux depuis R vers son document de travail peut être difficile.</p>
+
+<h2>La procédure habituelle serait:</h2>
+
+<ol>
+<li>Enregistrer le <code>data.frame</code> dans un fichier avec la fonction <code>write.table()</code> ou <code>write.csv()</code></li>
+<li>Éditer et faire la mise en page dans MS Excel ou MS Word.</li>
+</ol>
+
+<p>Le package <code>knitr</code> permet de faciliter cette procédure en exportant le <code>data.frame</code> directement dans son document de travail LaTeX.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-42" style="background:;">
+  <!--  <a href="#slide-42"></a> -->
+  <hgroup>
+    <h1>Exporter des tableaux</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Prenons le jeu de données <code>iris</code> directement disponible sous R.</p>
+
+<pre><code class="r">data(iris)
+class(iris)
+</code></pre>
+
+<pre><code>## [1] &quot;data.frame&quot;
+</code></pre>
+
+<pre><code class="r">head(iris)
+</code></pre>
+
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-43" style="background:;">
+  <!--  <a href="#slide-43"></a> -->
+  <hgroup>
+    <h1>Exporter des tableaux</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Je souhaite maintenant exporter ce <code>data.frame</code> en LateX (un format que nous verrons lors de la prochaine séance):</p>
+
+<pre><code class="r">library(knitr)
+iris_tex &lt;- kable(iris,format=&quot;latex&quot;)
+writeLines(iris_tex, con = &quot;./donnees/iris.tex&quot;, sep = &quot;\n&quot;, useBytes = FALSE)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-44" style="background:;">
+  <!--  <a href="#slide-44"></a> -->
+  <hgroup>
+    <h1>Travail de la semaine</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-45" style="background:;">
+  <!--  <a href="#slide-45"></a> -->
+  <hgroup>
+    <h1>Consignes</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Identifier clairement vos questions de recherche</li>
+<li>Illustrer le réseau de collaborations</li>
+<li>Compléter votre analyse au moyen de 3 figures et 1 tableau</li>
+<li>Mettre à jour le makefile</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-46" style="background:;">
+  <!--  <a href="#slide-46"></a> -->
+  <hgroup>
+    <h1>Évaluation</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Clareté des questions et adéquation des figures et du tableau</li>
+<li>Efficacité de la présentation</li>
+<li>Respect de normes graphiques</li>
+<li>Originalité</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="transition" id="slide-47" style="background:;">
+  <!--  <a href="#slide-47"></a> -->
+  <hgroup>
+    <h1>Essai</h1>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-48" style="background:;">
+  <!--  <a href="#slide-48"></a> -->
+  <hgroup>
+    <h1>Objectifs</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>L&#39;objectif d&#39;un essai est de présenter une perspective sur un enjeu scientifique, appuyé par une argumentation logique et une lecture critique de la littérature. L&#39;objectif spécifique de ce travail est de formuler et défendre une opinion sur les enjeux de reproductibilité en écologie. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-49" style="background:;">
+  <!--  <a href="#slide-49"></a> -->
+  <hgroup>
+    <h1>Mise en situation</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Vous êtes invités à préparer un article pour le journal Québec Science, où on vous a demandé de rédiger l&#39;éditorial du mois sur cet enjeu.  Vous devez défendre par quels moyens vous pourriez améliorer la reproductibilité de la science si vous étiez en charge d&#39;un laboratoire dans une institution universitaire. Vous êtes invités à faire une lecture critique de la situation actuelle et à proposer des mesures qui permettront de répondre aux enjeux identifiés.   </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-50" style="background:;">
+  <!--  <a href="#slide-50"></a> -->
+  <hgroup>
+    <h1>Attentes</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Québec Science est un journal destiné à un grand public, alors je vous invite à personnaliser votre argumentation et à rendre original sa présentation. Vous pouvez utiliser des tableaux, des figures ou encore des encadrés pour étayer vos propos. Essayez de faire plus que de rapporter les arguments présentés en classe, n&#39;hésitez pas à personnaliser votre essai. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-51" style="background:;">
+  <!--  <a href="#slide-51"></a> -->
+  <hgroup>
+    <h1>Consignes</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Le texte doit faire au maximum 1500 mots et doit être accompagné d&#39;un résumé court, provocateur de 100 mots. Le document peut être supporté par une figure et/ou un tableau.</li>
+<li>Le texte peut être structuré en sections afin de permettre au lecteur de suivre le développement de l&#39;argumentaire. </li>
+<li>La section finale doit résumer les points principaux.</li>
+<li>Utiliser LaTeX pour la mise en forme du document.</li>
+<li>L&#39;argumentaire doit être supporté de littérature scientifique appropriée. Vous pouvez certes utiliser les articles discutés en classe, mais essayez d&#39;aller puis au-delà de ces références pour alimenter vos arguments. </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-52" style="background:;">
+  <!--  <a href="#slide-52"></a> -->
+  <hgroup>
+    <h1>Évaluation</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Respect des consignes</li>
+<li>Titre et résumé </li>
+<li>Formulation de la proposition </li>
+<li>Qualité de l&#39;argumentation 
+
+<ul>
+<li>Identification des problèmes</li>
+<li>Proposition de solutions</li>
+</ul></li>
+<li>Originalité </li>
+<li>Mise en page</li>
+<li>Bibliographie</li>
+<li>Qualité de la langue</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-53" style="background:;">
+  <!--   <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Séance 6'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Faire une figure étape par étape avec R'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Préparer les données adéquatement'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Ouvrir une fenêtre graphique'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Fixer certains paramètres'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Démarrer une figure avec <code>plot()</code>'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Échelles logarithmiques'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Ajuster les tailles de caractères'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Modifier les axes'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Ajouter un titre'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Superposer des points d&#39;une autre série de données'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Superposer des lignes'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Ajouter une ligne de tendance'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Ajouter une ligne de tendance'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Ajouter une légende'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Ajouter du texte'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Pour plus d&#39;information'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Créer d&#39;autres types de figure'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Diagramme de dispersion (Scatter plot)'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Diagrammes à bâtons (Bar plot)'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='Histogrammes'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Représentation 3-D'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Lignes de contour'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Enregistrer une figure'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Exercice: faire une représentation visuelle de la distribution de degrés'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='La visualisation de réseau avec igraph'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='Installation'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='Transformer une matrice d&#39;adjacence en objet <code>igraph</code>'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Utiliser la fonction <code>plot</code> pour faire une représentation d&#39;un réseau'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='Version plus esthétique sans les paramètres par défaut'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='Exercice : Compiler la matrice d&#39;adjacence et faire une première représentation du réseau avec <code>igraph</code>'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='Changer la couleur des noeuds'>
+         32
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title='Changer la taille des noeuds'>
+         33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title='Changer la disposition des noeuds'>
+         34
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title='Changer la disposition des noeuds'>
+         35
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title='Changer la disposition des noeuds'>
+         36
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title='Calcul de propriétés'>
+         37
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=38 title='Calcul de propriétés'>
+         38
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=39 title='Calcul de propriétés'>
+         39
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=40 title='Exporter des tableaux'>
+         40
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=41 title='Exporter des tableaux'>
+         41
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=42 title='Exporter des tableaux'>
+         42
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=43 title='Exporter des tableaux'>
+         43
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=44 title='Travail de la semaine'>
+         44
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=45 title='Consignes'>
+         45
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=46 title='Évaluation'>
+         46
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=47 title='Essai'>
+         47
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=48 title='Objectifs'>
+         48
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=49 title='Mise en situation'>
+         49
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=50 title='Attentes'>
+         50
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=51 title='Consignes'>
+         51
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=52 title='Évaluation'>
+         52
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=53 title='NA'>
+         53
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="./libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="./libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
