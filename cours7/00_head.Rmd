@@ -1,5 +1,5 @@
 ---
-title       : "Séance 6: Documents dynamiques avec LaTeX"
+title       : "Séance 7-8: Documents dynamiques avec LaTeX"
 subtitle    : "BIO 500 - Méthodes en écologie computationnelle"
 author      : "Dominique Gravel & Steve Vissault"
 job         : "Laboratoire d'écologie intégrative"

@@ -1,5 +1,5 @@
 ---
-title       : "Séance 6: Documents dynamiques avec LaTeX"
+title       : "Séance 7-8: Documents dynamiques avec LaTeX"
 subtitle    : "BIO 500 - Méthodes en écologie computationnelle"
 author      : "Dominique Gravel & Steve Vissault"
 job         : "Laboratoire d'écologie intégrative"
@@ -49,7 +49,7 @@ assets      :
 # Qu'est ce que $\LaTeX$?
 
 - Language introduit en 1983 par l'informaticien Leslie Lamport.
-- C'est un language à balise.
+- C'est un language à balises.
 - Concu spécifiquement pour l'écriture de rapports scientifiques.
 - L'utilisation de $\LaTeX$ est une norme chez les mathématiciens et les physiciens.
 
@@ -168,7 +168,7 @@ Je peux écrire du texte ici.
 
 - $\LaTeX$ est un language gratuit et OpenSource.
 - Stable et doté d'une riche communauté d'utilisateurs.
-- Stack Overflow entièrement dédié à $\LaTeX$: [https://tex.stackexchange.com/](https://tex.stackexchange.com/)
+- Stack Overflow est entièrement dédié à $\LaTeX$: [https://tex.stackexchange.com/](https://tex.stackexchange.com/)
 - Compilateur en ligne: [https://fr.sharelatex.com/](https://fr.sharelatex.com/)
 - Ajustement automatique du contenant au contenu
 - Comme R, $\LaTeX$ dispose de plusieurs libraries (packages) pour satisfaire nos besoins.
@@ -184,10 +184,10 @@ Je peux écrire du texte ici.
 
 ---
 
-# Faire du $\LaTeX$ avec Sublime Text2
+# Faire du $\LaTeX$ avec Atom
 
 1. Créer un dossier sur le bureau qui va contenir le document $\LaTeX$
-2. Ouvrir Sublime Text2
+2. Ouvrir Atom
 3. Sélectionner le dossier nouvellement créé: ```Fichier > Ouvrir```
 4. Créer un nouveau document: ```Fichier > Nouveau```
 5. Enregistrer le document avec l'extension `.tex`: ```Fichier > Enregistrer sous```
@@ -226,7 +226,7 @@ Et voilà, l'extension `.tex` détermine que le fichier est un document $\LaTeX$
 
 ## Exercice 1 (10 minutes):
 
-Recopier dans Sublime Text 2 ce code `.tex`.
+Recopier dans Atom ce code `.tex`.
 
 **Note:** `\usepackage{lipsum}` est un package permettant de générer du faux texte (latin de mise en forme).
 
@@ -302,7 +302,7 @@ Transcript written on doc.log.
 - On définit les métadonnées avec `\title`, `\author`, `\date`.
 - Les métadonnées doivent être placées avant l'environnement `\begin{document}`.
 - Les `\\` dans la balise `\author` permettent une mise à la ligne.
-- Enfin, la balise `\today` remplie la date du jour pour nous.
+- Enfin, la balise `\today` spécifie la date du jour pour nous.
 
 Note : pour une date en français, il faut utiliser le package `\usepackage[french]{babel}`
 
@@ -397,8 +397,8 @@ On écrit notre résumé entre dans l'environnement `abstract`.
 *** =right
 
 - Nous n'avons pas besoin d'utiliser de `\begin` ou `\end`.
-- Une section est numérotée par défault.
-- Pour éviter cette numérotation vous pouvez ajouter une `*` avant les accolades.
+- Une section est numérotée par défaut.
+- Pour éviter cette numérotation vous pouvez ajouter un `*` avant les accolades.
 
 ---&twocolw w1:50% w2:45%
 
@@ -436,7 +436,7 @@ La simple déclaration de la balise `\tableofcontents` permet la création d'une
 
 # Exercice 4
 
-Ajouter des sections au document, et construir la table des matières.
+Ajouter des sections au document et construire la table des matières.
 Prendre le temps de lire la sortie affichée par le compilateur `pdflatex`.
 
 ---
@@ -485,9 +485,7 @@ Lors du dernier exercice, la table des matières n'était pas insérée dans le 
 Voici un texte
 \textit{en italique},
 \textbf{en gras},
-\textsc{avec des petites capitales},
-\textsf{avec des caractères sans empattement},
-\texttt{avec des caractères à chasse fixe},
+\textsc{avec de petites majuscules},
 avec des mots avec {\small{un corps plus petit}}
 ou {\large{plus grand}}.
 
@@ -999,7 +997,7 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
 
 # Les entrées `bibtex`
 
-Les références que l'on va citer sont entreposer dans un fichier `.bib`.
+Les références que l'on va citer sont entreposées dans un fichier `.bib`.
 
 Le fichier doit contenir des entrées `bibtex` qui ressemblent à:
 
@@ -1016,7 +1014,9 @@ Le fichier doit contenir des entrées `bibtex` qui ressemblent à:
 }
 ```
 
-## Exercice 6
+---
+
+# Exercice 6
 
 **Étape 1.** Ouvrez un nouveau fichier et enregistrer ce fichier `mabiblio.bib` au même emplacement que votre fichier `.tex`
 
@@ -1032,8 +1032,9 @@ Des logiciels de bibliographie telle que EndNote, Zotero et Mendeley pemettent d
 
 Si vous voulez en savoir davantage: [http://steveviss.github.io/Talk_bib/#1](http://steveviss.github.io/Talk_bib/#1)
 
+---
 
-## Exercice 6 (suite)
+# Exercice 6 (suite)
 
 **Étape 2.** En vous servant de Google Scholar, remplissez votre fichier `mabiblio.bib` avec 2 entrées bibtex.
 
@@ -1154,7 +1155,7 @@ Et voilà, nous avons un document final.
 
 ---.transition
 
-# Travail 3
+# Travail final
 
 ---
 
@@ -1185,7 +1186,7 @@ Le rapport doit contenir :
 
 Nous vous demandons de remettre les scripts permettant de générer l'ensemble du document, incluant la création de la base de données, les requêtes, les figures et tableaux, ainsi que le document LaTeX.
 
-À terme, selon les principes de science reproductible, nous devrions pouvoir exécuter l'ensemble de votre analyse sur un autre ordinateur, sans avoir à changer le code.
+À terme, selon les principes de science reproductible, nous devrions pouvoir exécuter l'ensemble de votre analyse sur un autre ordinateur, sans avoir à changer le code, sìmplement en exécutant la commande `make`.
 
 ---
 

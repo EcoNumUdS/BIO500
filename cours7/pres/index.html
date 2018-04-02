@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Séance 6: Documents dynamiques avec LaTeX</title>
+  <title>Séance 7-8: Documents dynamiques avec LaTeX</title>
   <meta charset="utf-8">
-  <meta name="description" content="Séance 6: Documents dynamiques avec LaTeX">
+  <meta name="description" content="Séance 7-8: Documents dynamiques avec LaTeX">
   <meta name="author" content="Dominique Gravel &amp; Steve Vissault">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -37,7 +37,7 @@
     <img src="assets/img/logo.png">
   </aside>
   <hgroup class="auto-fadein">
-    <h1>Séance 6: Documents dynamiques avec LaTeX</h1>
+    <h1>Séance 7-8: Documents dynamiques avec LaTeX</h1>
     <h2>BIO 500 - Méthodes en écologie computationnelle</h2>
     <p>Dominique Gravel &amp; Steve Vissault<br/>Laboratoire d'écologie intégrative</p>
   </hgroup>
@@ -109,7 +109,7 @@
   <article data-timings="">
     <ul>
 <li>Language introduit en 1983 par l&#39;informaticien Leslie Lamport.</li>
-<li>C&#39;est un language à balise.</li>
+<li>C&#39;est un language à balises.</li>
 <li>Concu spécifiquement pour l&#39;écriture de rapports scientifiques.</li>
 <li>L&#39;utilisation de \(\LaTeX\) est une norme chez les mathématiciens et les physiciens.</li>
 </ul>
@@ -262,7 +262,7 @@ Je peux écrire du texte ici.
     <ul>
 <li>\(\LaTeX\) est un language gratuit et OpenSource.</li>
 <li>Stable et doté d&#39;une riche communauté d&#39;utilisateurs.</li>
-<li>Stack Overflow entièrement dédié à \(\LaTeX\): <a href="https://tex.stackexchange.com/">https://tex.stackexchange.com/</a></li>
+<li>Stack Overflow est entièrement dédié à \(\LaTeX\): <a href="https://tex.stackexchange.com/">https://tex.stackexchange.com/</a></li>
 <li>Compilateur en ligne: <a href="https://fr.sharelatex.com/">https://fr.sharelatex.com/</a></li>
 <li>Ajustement automatique du contenant au contenu</li>
 <li>Comme R, \(\LaTeX\) dispose de plusieurs libraries (packages) pour satisfaire nos besoins.</li>
@@ -290,12 +290,12 @@ Je peux écrire du texte ici.
 <slide class="" id="slide-13" style="background:;">
   <!--  <a href="#slide-13"></a> -->
   <hgroup>
-    <h1>Faire du \(\LaTeX\) avec Sublime Text2</h1>
+    <h1>Faire du \(\LaTeX\) avec Atom</h1>
   </hgroup>
   <article data-timings="">
     <ol>
 <li>Créer un dossier sur le bureau qui va contenir le document \(\LaTeX\)</li>
-<li>Ouvrir Sublime Text2</li>
+<li>Ouvrir Atom</li>
 <li>Sélectionner le dossier nouvellement créé: <code>Fichier &gt; Ouvrir</code></li>
 <li>Créer un nouveau document: <code>Fichier &gt; Nouveau</code></li>
 <li>Enregistrer le document avec l&#39;extension <code>.tex</code>: <code>Fichier &gt; Enregistrer sous</code></li>
@@ -343,7 +343,7 @@ Je peux écrire du texte ici.
     <div class='right' style='float:right;width:35%'>
      <h2>Exercice 1 (10 minutes):</h2>
 
-<p>Recopier dans Sublime Text 2 ce code <code>.tex</code>.</p>
+<p>Recopier dans Atom ce code <code>.tex</code>.</p>
 
 <p><strong>Note:</strong> <code>\usepackage{lipsum}</code> est un package permettant de générer du faux texte (latin de mise en forme).</p>
 
@@ -436,7 +436,7 @@ Transcript written on doc.log.
 <li>On définit les métadonnées avec <code>\title</code>, <code>\author</code>, <code>\date</code>.</li>
 <li>Les métadonnées doivent être placées avant l&#39;environnement <code>\begin{document}</code>.</li>
 <li>Les <code>\\</code> dans la balise <code>\author</code> permettent une mise à la ligne.</li>
-<li>Enfin, la balise <code>\today</code> remplie la date du jour pour nous.</li>
+<li>Enfin, la balise <code>\today</code> spécifie la date du jour pour nous.</li>
 </ul>
 
 <p>Note : pour une date en français, il faut utiliser le package <code>\usepackage[french]{babel}</code></p>
@@ -546,8 +546,8 @@ Transcript written on doc.log.
     <div class='right' style='float:right;width:45%'>
      <ul>
 <li>Nous n&#39;avons pas besoin d&#39;utiliser de <code>\begin</code> ou <code>\end</code>.</li>
-<li>Une section est numérotée par défault.</li>
-<li>Pour éviter cette numérotation vous pouvez ajouter une <code>*</code> avant les accolades.</li>
+<li>Une section est numérotée par défaut.</li>
+<li>Pour éviter cette numérotation vous pouvez ajouter un <code>*</code> avant les accolades.</li>
 </ul>
 
     </div>
@@ -594,7 +594,7 @@ Transcript written on doc.log.
     <h1>Exercice 4</h1>
   </hgroup>
   <article data-timings="">
-    <p>Ajouter des sections au document, et construir la table des matières.
+    <p>Ajouter des sections au document et construire la table des matières.
 Prendre le temps de lire la sortie affichée par le compilateur <code>pdflatex</code>.</p>
 
   </article>
@@ -660,9 +660,7 @@ Prendre le temps de lire la sortie affichée par le compilateur <code>pdflatex</
 Voici un texte
 \textit{en italique},
 \textbf{en gras},
-\textsc{avec des petites capitales},
-\textsf{avec des caractères sans empattement},
-\texttt{avec des caractères à chasse fixe},
+\textsc{avec de petites majuscules},
 avec des mots avec {\small{un corps plus petit}}
 ou {\large{plus grand}}.
 
@@ -1270,7 +1268,7 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
     <h1>Les entrées <code>bibtex</code></h1>
   </hgroup>
   <article data-timings="">
-    <p>Les références que l&#39;on va citer sont entreposer dans un fichier <code>.bib</code>.</p>
+    <p>Les références que l&#39;on va citer sont entreposées dans un fichier <code>.bib</code>.</p>
 
 <p>Le fichier doit contenir des entrées <code>bibtex</code> qui ressemblent à:</p>
 
@@ -1286,15 +1284,22 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
 }
 </code></pre>
 
-<h2>Exercice 6</h2>
-
-<p><strong>Étape 1.</strong> Ouvrez un nouveau fichier et enregistrer ce fichier <code>mabiblio.bib</code> au même emplacement que votre fichier <code>.tex</code></p>
-
   </article>
   <!-- Presenter Notes -->
 </slide>
 <slide class="" id="slide-53" style="background:;">
   <!--  <a href="#slide-53"></a> -->
+  <hgroup>
+    <h1>Exercice 6</h1>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Étape 1.</strong> Ouvrez un nouveau fichier et enregistrer ce fichier <code>mabiblio.bib</code> au même emplacement que votre fichier <code>.tex</code></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-54" style="background:;">
+  <!--  <a href="#slide-54"></a> -->
   <hgroup>
     <h1>Les entrées <code>bibtex</code></h1>
   </hgroup>
@@ -1309,14 +1314,21 @@ $I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
 
 <p>Si vous voulez en savoir davantage: <a href="http://steveviss.github.io/Talk_bib/#1">http://steveviss.github.io/Talk_bib/#1</a></p>
 
-<h2>Exercice 6 (suite)</h2>
-
-<p><strong>Étape 2.</strong> En vous servant de Google Scholar, remplissez votre fichier <code>mabiblio.bib</code> avec 2 entrées bibtex.</p>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-55" style="background:;">
+  <!--  <a href="#slide-55"></a> -->
+  <hgroup>
+    <h1>Exercice 6 (suite)</h1>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Étape 2.</strong> En vous servant de Google Scholar, remplissez votre fichier <code>mabiblio.bib</code> avec 2 entrées bibtex.</p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-54" style="background:;">
+<slide class="" id="slide-56" style="background:;">
   <hgroup>
     <h1>Déclarer le fichier <code>bibtex</code></h1>
   </hgroup>
@@ -1357,8 +1369,8 @@ article \cite{gravel2006a}.
     </div>
   </article>
 </slide>
-<slide class="" id="slide-55" style="background:;">
-  <!--  <a href="#slide-55"></a> -->
+<slide class="" id="slide-57" style="background:;">
+  <!--  <a href="#slide-57"></a> -->
   <hgroup>
     <h1>Exercice 6 (suite)</h1>
   </hgroup>
@@ -1386,8 +1398,8 @@ article \cite{gravel2006a}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-56" style="background:;">
-  <!--  <a href="#slide-56"></a> -->
+<slide class="" id="slide-58" style="background:;">
+  <!--  <a href="#slide-58"></a> -->
   <hgroup>
     <h1>Compiler le document \(\LaTeX\) avec bibliographie</h1>
   </hgroup>
@@ -1416,8 +1428,8 @@ article \cite{gravel2006a}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-57" style="background:;">
-  <!--  <a href="#slide-57"></a> -->
+<slide class="" id="slide-59" style="background:;">
+  <!--  <a href="#slide-59"></a> -->
   <hgroup>
     <h1>Exercice 6 (suite)</h1>
   </hgroup>
@@ -1444,18 +1456,18 @@ article \cite{gravel2006a}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-58" style="background:;">
-  <!--  <a href="#slide-58"></a> -->
+<slide class="transition" id="slide-60" style="background:;">
+  <!--  <a href="#slide-60"></a> -->
   <hgroup>
-    <h1>Travail 3</h1>
+    <h1>Travail final</h1>
   </hgroup>
   <article data-timings="">
     
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-59" style="background:;">
-  <!--  <a href="#slide-59"></a> -->
+<slide class="" id="slide-61" style="background:;">
+  <!--  <a href="#slide-61"></a> -->
   <hgroup>
     <h1>Objectif</h1>
   </hgroup>
@@ -1465,8 +1477,8 @@ article \cite{gravel2006a}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-60" style="background:;">
-  <!--  <a href="#slide-60"></a> -->
+<slide class="" id="slide-62" style="background:;">
+  <!--  <a href="#slide-62"></a> -->
   <hgroup>
     <h1>Consignes</h1>
   </hgroup>
@@ -1489,21 +1501,21 @@ article \cite{gravel2006a}.
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-61" style="background:;">
-  <!--  <a href="#slide-61"></a> -->
+<slide class="" id="slide-63" style="background:;">
+  <!--  <a href="#slide-63"></a> -->
   <hgroup>
     <h1>Consignes</h1>
   </hgroup>
   <article data-timings="">
     <p>Nous vous demandons de remettre les scripts permettant de générer l&#39;ensemble du document, incluant la création de la base de données, les requêtes, les figures et tableaux, ainsi que le document LaTeX.</p>
 
-<p>À terme, selon les principes de science reproductible, nous devrions pouvoir exécuter l&#39;ensemble de votre analyse sur un autre ordinateur, sans avoir à changer le code.</p>
+<p>À terme, selon les principes de science reproductible, nous devrions pouvoir exécuter l&#39;ensemble de votre analyse sur un autre ordinateur, sans avoir à changer le code, sìmplement en exécutant la commande <code>make</code>.</p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-62" style="background:;">
-  <!--  <a href="#slide-62"></a> -->
+<slide class="" id="slide-64" style="background:;">
+  <!--  <a href="#slide-64"></a> -->
   <hgroup>
     <h1>Évaluation</h1>
   </hgroup>
@@ -1595,7 +1607,7 @@ article \cite{gravel2006a}.
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=13 title='Faire du \(\LaTeX\) avec Sublime Text2'>
+        data-slide=13 title='Faire du \(\LaTeX\) avec Atom'>
          13
       </a>
     </li>
@@ -1835,13 +1847,13 @@ article \cite{gravel2006a}.
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=53 title='Les entrées <code>bibtex</code>'>
+        data-slide=53 title='Exercice 6'>
          53
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=54 title='Déclarer le fichier <code>bibtex</code>'>
+        data-slide=54 title='Les entrées <code>bibtex</code>'>
          54
       </a>
     </li>
@@ -1853,7 +1865,7 @@ article \cite{gravel2006a}.
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=56 title='Compiler le document \(\LaTeX\) avec bibliographie'>
+        data-slide=56 title='Déclarer le fichier <code>bibtex</code>'>
          56
       </a>
     </li>
@@ -1865,32 +1877,44 @@ article \cite{gravel2006a}.
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=58 title='Travail 3'>
+        data-slide=58 title='Compiler le document \(\LaTeX\) avec bibliographie'>
          58
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=59 title='Objectif'>
+        data-slide=59 title='Exercice 6 (suite)'>
          59
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=60 title='Consignes'>
+        data-slide=60 title='Travail final'>
          60
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=61 title='Consignes'>
+        data-slide=61 title='Objectif'>
          61
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=62 title='Évaluation'>
+        data-slide=62 title='Consignes'>
          62
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=63 title='Consignes'>
+         63
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=64 title='Évaluation'>
+         64
       </a>
     </li>
   </ul>
