@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: ms_probaweb.aux
+The style file: bes.bst
+Database file #1: library.bib
+You've used 104 entries,
+            2805 wiz_defined-function locations,
+            1728 strings with 35049 characters,
+and the built_in function-call counts, 74487 in all, are:
+= -- 5840
+> -- 4318
+< -- 44
++ -- 1662
+- -- 1538
+* -- 6456
+:= -- 11909
+add.period$ -- 208
+call.type$ -- 104
+change.case$ -- 1023
+chr.to.int$ -- 105
+cite$ -- 104
+duplicate$ -- 4800
+empty$ -- 4849
+format.name$ -- 1824
+if$ -- 14264
+int.to.chr$ -- 4
+int.to.str$ -- 1
+missing$ -- 1138
+newline$ -- 316
+num.names$ -- 422
+pop$ -- 2070
+preamble$ -- 1
+purify$ -- 926
+quote$ -- 0
+skip$ -- 1728
+stack$ -- 0
+substring$ -- 3480
+swap$ -- 2813
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 915
+warning$ -- 0
+while$ -- 480
+width$ -- 0
+write$ -- 1141
