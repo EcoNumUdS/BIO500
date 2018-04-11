@@ -1,5 +1,5 @@
 ---
-title: "Exporter un tableau de résultats dans un rapport LateX"
+title: "Exporter un tableau de résultats dans un rapport LaTeX"
 author: Steve Vissault
 date: 11 avril 2018
 output:
@@ -13,15 +13,15 @@ output:
 
 # Exporter un tableau de résultats dans un rapport LaTeX
 
-Il est parfois icontournable en science de présenter des résultats sous forme de tableaux.
-À travers cette page, je vais vous montrer comment exporter votre tableau en format LaTeX
-pour après l'insérer dans votre rapport. La procédure est assez simple: il s'agit d'écrire
-le tableau LateX dans un fichier, puis après d'inclure ce tableau dans votre document LateX
-en utilisant la balise LateX: `\ìnput{montableau.tex}`
+Il est parfois incontournable en science de présenter des résultats sous forme de tableaux. À
+travers cette page, je vais vous montrer comment exporter votre tableau en format LaTeX pour après
+l'insérer dans votre rapport. La procédure est assez simple: il s'agit d'écrire le tableau LaTeX
+dans un fichier, puis après d'inclure ce tableau dans votre document LaTeX en utilisant la balise
+LaTeX: `montableau.tex`
 
 Pour l'illustration, je vais utiliser un tableau de données déjà présent dans R: iris.
 Je vais ensuite me servir du package R `kable` pour transformer l'objet `iris`, qui une fois chargé
-sera un objet de classe `data.frame`, en un tableau LateX.
+sera un objet de classe `data.frame`, en un tableau LaTeX.
 
 ```{r}
 data(iris) # Chargement du tableau de données
@@ -44,21 +44,22 @@ print(stats_desc)
 ```
 
 Je veux maintenant inclure ce tableau de statistiques descriptives `stats_desc` dans mon rapport. Je
-dois d'abord convertir l'objet `stats_desc` en une série d'instructions LateX. Pour ce faire, je
-vais utiliser la fonction `xtable` présent le package `xtable`. Il éxiste cependant une multitude de
-packages en R dédié à cette tâche.
-Certains vous permettent de formatter plus facilement votre tableau. Je vous invite à jeter un coup d'oeil [à ce billet sur le forum StackOverflow](https://stackoverflow.com/questions/5465314/tools-for-making-latex-tables-in-r?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa).
+dois d'abord convertir l'objet `stats_desc` en une série d'instructions LaTeX. Pour ce faire, je
+vais utiliser la fonction `xtable` présent le package `xtable`. Il existe cependant une multitude de
+packages en R dédié à cette tâche. Certains vous permettent de formatter plus facilement votre
+tableau. Je vous invite à jeter un coup d'oeil [à ce billet sur le forum
+StackOverflow](https://stackoverflow.com/questions/5465314/tools-for-making-latex-tables-in-r?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa).
 
 ```{r}
 if(!require(xtable)){install.packages("xtable")} # Charge le paquet xtable, s'il n'est pas installé, alors R l'installera.
 stats_desc_tex <- xtable(stats_desc,format="latex",caption = 'Statistiques descriptives de la longeur du sépale chez \textit{Iris sp.}', caption.placement="top",)
-# On ajoute une légende avec l'argument caption que l'on place au dessus du tableau.
+# On ajoute une légende avec l'argument caption que l'on place au-dessus du tableau.
 print(stats_desc_tex) # Je visualise le contenu de l'objet
 ```
 
 Je vais maintenant écrire le contenu de l'objet `stats_desc_tex` dans un fichier. Nous ne pouvons
 pas utiliser les fonctions d'exportation habituelles tels que `write.table` ou encore `write.csv`
-car le le contenu de cette objet n'est pas un `data.frame` mais un tableau LateX. Il nous faut donc
+car le le contenu de cette objet n'est pas un `data.frame` mais un tableau LaTeX. Il nous faut donc
 utiliser un fonction d'écriture qui écrit sans transformation le contenu de l'objet dans un fichier.
 On utilise la fonction `print` du packages `xtable` pour réaliser cette étape.
 
@@ -67,13 +68,13 @@ print(stats_desc_tex,file="stats_iris.tex") # Le fichier stats_iris.tex sera éc
 ```
 
 Un nouveau fichier intitulé `stats_iris.tex` vient d'être écrit sur votre disque à l'endroit ou l'espace de travail de R était définit (pensez `getwd()`).
-On peut maintenant utiliser ce fichier pour notre rapport LateX.
+On peut maintenant utiliser ce fichier pour notre rapport LaTeX.
 
-On ouvre notre document LateX et on ajoute tout simplement la balise LateX suivante à l'emplacement où l'on désire voir apparaitre notre tableau.
+On ouvre notre document LaTeX et on ajoute tout simplement la balise LaTeX suivante à l'emplacement où l'on désire voir apparaitre notre tableau.
 
 ```LaTeX
 \input{stats_iris.tex}
 ```
 
-La balise `input` va tout simplement copier-coller/inclure le code LateX contenu dans votre fichier `stats_iris.tex` dans votre document LateX.
+La balise `input` va tout simplement copier-coller/inclure le code LaTeX contenu dans votre fichier `stats_iris.tex` dans votre document LaTeX.
 Il ne vous reste plus qu'à compiler votre rapport telle que vu dans les cours précédents.
