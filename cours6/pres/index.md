@@ -390,16 +390,13 @@ dev.copy2eps(file = "test.eps")
 
 ```r
 install.packages("igraph")
+library(igraph)
 ```
 
-```
-## Installing package into '/home/grad3002/R/x86_64-pc-linux-gnu-library/3.4'
-## (as 'lib' is unspecified)
-```
+---
 
-```
-## Error in contrib.url(repos, type): trying to use CRAN without setting a mirror
-```
+# Transformer une matrice d'adjacence en objet `igraph`
+
 
 ```r
 library(igraph)
@@ -426,13 +423,7 @@ library(igraph)
 ##     union
 ```
 
----
-
-# Transformer une matrice d'adjacence en objet `igraph`
-
-
 ```r
-library(igraph)
 C <- 0.1
 S <- 15
 L <- matrix(0, nr = S, nc = S)
@@ -441,7 +432,7 @@ sum(L)
 ```
 
 ```
-## [1] 31
+## [1] 21
 ```
 
 ```r
@@ -468,7 +459,7 @@ plot(g)
 *** =left
 
 ```r
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+plot(g, vertex.label=NA, edge.arrow.mode = 0,
     vertex.frame.color = NA)
 ```
 
@@ -500,7 +491,7 @@ col.vec <- heat.colors(S)
 V(g)$color = col.vec[rk]
 
 # Refaire la figure
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+plot(g, vertex.label=NA, edge.arrow.mode = 0,
     vertex.frame.color = NA)
 ```
 
@@ -521,7 +512,7 @@ col.vec <- seq(10, 25, length.out = S)
 V(g)$size = col.vec[rk]
 
 # Refaire la figure
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+plot(g, vertex.label=NA, edge.arrow.mode = 0,
     vertex.frame.color = NA)
 ```
 
@@ -535,7 +526,7 @@ plot(g, vertex.label=NA, edge.arrow.mode = 0,
 *** =left
 
 ```r
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+plot(g, vertex.label=NA, edge.arrow.mode = 0,
     vertex.frame.color = NA, layout = layout.reingold.tilford(g))
 ```
 
@@ -549,8 +540,8 @@ plot(g, vertex.label=NA, edge.arrow.mode = 0,
 *** =left
 
 ```r
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
-    vertex.frame.color = NA, 
+plot(g, vertex.label=NA, edge.arrow.mode = 0,
+    vertex.frame.color = NA,
     layout = layout.circle(g))
 ```
 
@@ -564,8 +555,8 @@ plot(g, vertex.label=NA, edge.arrow.mode = 0,
 *** =left
 
 ```r
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
-    vertex.frame.color = NA, 
+plot(g, vertex.label=NA, edge.arrow.mode = 0,
+    vertex.frame.color = NA,
     layout = layout.kamada.kawai(g))
 ```
 
@@ -585,7 +576,7 @@ modularity(wtc)
 ```
 
 ```
-## [1] 0.2273673
+## [1] 0.3526077
 ```
 
 ---
@@ -601,37 +592,37 @@ distances(g)
 
 ```
 ##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13]
-##  [1,]    0    1    2    1    2    2    3    1    2     1     1     1     2
-##  [2,]    1    0    1    2    2    1    2    2    2     2     2     1     2
-##  [3,]    2    1    0    1    3    2    3    3    2     3     3     2     1
-##  [4,]    1    2    1    0    3    2    3    2    1     2     2     2     2
-##  [5,]    2    2    3    3    0    2    1    3    2     3     3     1     2
-##  [6,]    2    1    2    2    2    0    1    1    1     3     1     2     2
-##  [7,]    3    2    3    3    1    1    0    2    2     4     2     2     3
-##  [8,]    1    2    3    2    3    1    2    0    2     2     2     2     2
-##  [9,]    2    2    2    1    2    1    2    2    0     3     2     1     1
-## [10,]    1    2    3    2    3    3    4    2    3     0     2     2     3
-## [11,]    1    2    3    2    3    1    2    2    2     2     0     2     3
-## [12,]    1    1    2    2    1    2    2    2    1     2     2     0     1
-## [13,]    2    2    1    2    2    2    3    2    1     3     3     1     0
-## [14,]    2    1    2    1    2    2    3    3    2     3     1     1     2
-## [15,]    2    3    2    1    3    2    3    1    1     3     3     2     1
+##  [1,]    0    4    3  Inf    3    2    2    1    2     3     1     2     3
+##  [2,]    4    0    2  Inf    5    2    4    3    3     5     5     4     5
+##  [3,]    3    2    0  Inf    4    2    3    2    1     4     4     3     4
+##  [4,]  Inf  Inf  Inf    0  Inf  Inf  Inf  Inf  Inf   Inf   Inf   Inf   Inf
+##  [5,]    3    5    4  Inf    0    3    2    2    3     2     4     1     3
+##  [6,]    2    2    2  Inf    3    0    2    1    1     3     3     2     3
+##  [7,]    2    4    3  Inf    2    2    0    1    2     2     3     1     1
+##  [8,]    1    3    2  Inf    2    1    1    0    1     2     2     1     2
+##  [9,]    2    3    1  Inf    3    1    2    1    0     3     3     2     3
+## [10,]    3    5    4  Inf    2    3    2    2    3     0     4     1     3
+## [11,]    1    5    4  Inf    4    3    3    2    3     4     0     3     4
+## [12,]    2    4    3  Inf    1    2    1    1    2     1     3     0     2
+## [13,]    3    5    4  Inf    3    3    1    2    3     3     4     2     0
+## [14,]    4    2    2  Inf    5    2    4    3    3     5     5     4     5
+## [15,]    3    1    1  Inf    4    1    3    2    2     4     4     3     4
 ##       [,14] [,15]
-##  [1,]     2     2
-##  [2,]     1     3
-##  [3,]     2     2
-##  [4,]     1     1
-##  [5,]     2     3
-##  [6,]     2     2
-##  [7,]     3     3
-##  [8,]     3     1
-##  [9,]     2     1
-## [10,]     3     3
-## [11,]     1     3
-## [12,]     1     2
-## [13,]     2     1
-## [14,]     0     2
-## [15,]     2     0
+##  [1,]     4     3
+##  [2,]     2     1
+##  [3,]     2     1
+##  [4,]   Inf   Inf
+##  [5,]     5     4
+##  [6,]     2     1
+##  [7,]     4     3
+##  [8,]     3     2
+##  [9,]     3     2
+## [10,]     5     4
+## [11,]     5     4
+## [12,]     4     3
+## [13,]     5     4
+## [14,]     0     1
+## [15,]     1     0
 ```
 
 ---
@@ -646,9 +637,9 @@ eigen_centrality(g)$vector
 ```
 
 ```
-##  [1] 1.0000000 0.7772556 0.4572805 0.7370654 0.3007099 0.5804008 0.1931037
-##  [8] 0.4665644 0.7268287 0.2191594 0.4845523 0.8782924 0.5721994 0.6305578
-## [15] 0.5484809
+##  [1] 0.42850019 0.07270495 0.28881369 0.00000000 0.15052980 0.48578124
+##  [7] 0.66139629 1.00000000 0.49148529 0.15052980 0.11867584 0.54351457
+## [13] 0.18317789 0.10055402 0.26251414
 ```
 
 --- .transition
@@ -733,7 +724,8 @@ writeLines(iris_tex, con = "./donnees/iris.tex", sep = "\n", useBytes = FALSE)
 - Respect de normes graphiques
 - Originalité
 
------- .transition
+---
+--- .transition
 
 # Essai
 

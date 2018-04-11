@@ -533,16 +533,19 @@ dev.copy2eps(file = &quot;test.eps&quot;)
   </hgroup>
   <article data-timings="">
     <pre><code class="r">install.packages(&quot;igraph&quot;)
+library(igraph)
 </code></pre>
 
-<pre><code>## Installing package into &#39;/home/grad3002/R/x86_64-pc-linux-gnu-library/3.4&#39;
-## (as &#39;lib&#39; is unspecified)
-</code></pre>
-
-<pre><code>## Error in contrib.url(repos, type): trying to use CRAN without setting a mirror
-</code></pre>
-
-<pre><code class="r">library(igraph)
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-28" style="background:;">
+  <!--  <a href="#slide-28"></a> -->
+  <hgroup>
+    <h1>Transformer une matrice d&#39;adjacence en objet <code>igraph</code></h1>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">library(igraph)
 </code></pre>
 
 <pre><code>## Loading required package: methods
@@ -562,24 +565,14 @@ dev.copy2eps(file = &quot;test.eps&quot;)
 ##     union
 </code></pre>
 
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-<slide class="" id="slide-28" style="background:;">
-  <!--  <a href="#slide-28"></a> -->
-  <hgroup>
-    <h1>Transformer une matrice d&#39;adjacence en objet <code>igraph</code></h1>
-  </hgroup>
-  <article data-timings="">
-    <pre><code class="r">library(igraph)
-C &lt;- 0.1
+<pre><code class="r">C &lt;- 0.1
 S &lt;- 15
 L &lt;- matrix(0, nr = S, nc = S)
 L[runif(S*S) &lt; C] = 1
 sum(L)
 </code></pre>
 
-<pre><code>## [1] 31
+<pre><code>## [1] 21
 </code></pre>
 
 <pre><code class="r">g &lt;- graph.adjacency(L)
@@ -612,7 +605,7 @@ sum(L)
   <article>
     
     <div class='left' style='float:left;width:48%'>
-     <pre><code class="r">plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+     <pre><code class="r">plot(g, vertex.label=NA, edge.arrow.mode = 0,
     vertex.frame.color = NA)
 </code></pre>
 
@@ -653,7 +646,7 @@ col.vec &lt;- heat.colors(S)
 V(g)$color = col.vec[rk]
 
 # Refaire la figure
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+plot(g, vertex.label=NA, edge.arrow.mode = 0,
     vertex.frame.color = NA)
 </code></pre>
 
@@ -678,7 +671,7 @@ col.vec &lt;- seq(10, 25, length.out = S)
 V(g)$size = col.vec[rk]
 
 # Refaire la figure
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+plot(g, vertex.label=NA, edge.arrow.mode = 0,
     vertex.frame.color = NA)
 </code></pre>
 
@@ -696,7 +689,7 @@ plot(g, vertex.label=NA, edge.arrow.mode = 0,
   <article>
     
     <div class='left' style='float:left;width:48%'>
-     <pre><code class="r">plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+     <pre><code class="r">plot(g, vertex.label=NA, edge.arrow.mode = 0,
     vertex.frame.color = NA, layout = layout.reingold.tilford(g))
 </code></pre>
 
@@ -714,8 +707,8 @@ plot(g, vertex.label=NA, edge.arrow.mode = 0,
   <article>
     
     <div class='left' style='float:left;width:48%'>
-     <pre><code class="r">plot(g, vertex.label=NA, edge.arrow.mode = 0, 
-    vertex.frame.color = NA, 
+     <pre><code class="r">plot(g, vertex.label=NA, edge.arrow.mode = 0,
+    vertex.frame.color = NA,
     layout = layout.circle(g))
 </code></pre>
 
@@ -733,8 +726,8 @@ plot(g, vertex.label=NA, edge.arrow.mode = 0,
   <article>
     
     <div class='left' style='float:left;width:48%'>
-     <pre><code class="r">plot(g, vertex.label=NA, edge.arrow.mode = 0, 
-    vertex.frame.color = NA, 
+     <pre><code class="r">plot(g, vertex.label=NA, edge.arrow.mode = 0,
+    vertex.frame.color = NA,
     layout = layout.kamada.kawai(g))
 </code></pre>
 
@@ -757,7 +750,7 @@ plot(g, vertex.label=NA, edge.arrow.mode = 0,
 modularity(wtc)
 </code></pre>
 
-<pre><code>## [1] 0.2273673
+<pre><code>## [1] 0.3526077
 </code></pre>
 
   </article>
@@ -775,37 +768,37 @@ modularity(wtc)
 </code></pre>
 
 <pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13]
-##  [1,]    0    1    2    1    2    2    3    1    2     1     1     1     2
-##  [2,]    1    0    1    2    2    1    2    2    2     2     2     1     2
-##  [3,]    2    1    0    1    3    2    3    3    2     3     3     2     1
-##  [4,]    1    2    1    0    3    2    3    2    1     2     2     2     2
-##  [5,]    2    2    3    3    0    2    1    3    2     3     3     1     2
-##  [6,]    2    1    2    2    2    0    1    1    1     3     1     2     2
-##  [7,]    3    2    3    3    1    1    0    2    2     4     2     2     3
-##  [8,]    1    2    3    2    3    1    2    0    2     2     2     2     2
-##  [9,]    2    2    2    1    2    1    2    2    0     3     2     1     1
-## [10,]    1    2    3    2    3    3    4    2    3     0     2     2     3
-## [11,]    1    2    3    2    3    1    2    2    2     2     0     2     3
-## [12,]    1    1    2    2    1    2    2    2    1     2     2     0     1
-## [13,]    2    2    1    2    2    2    3    2    1     3     3     1     0
-## [14,]    2    1    2    1    2    2    3    3    2     3     1     1     2
-## [15,]    2    3    2    1    3    2    3    1    1     3     3     2     1
+##  [1,]    0    4    3  Inf    3    2    2    1    2     3     1     2     3
+##  [2,]    4    0    2  Inf    5    2    4    3    3     5     5     4     5
+##  [3,]    3    2    0  Inf    4    2    3    2    1     4     4     3     4
+##  [4,]  Inf  Inf  Inf    0  Inf  Inf  Inf  Inf  Inf   Inf   Inf   Inf   Inf
+##  [5,]    3    5    4  Inf    0    3    2    2    3     2     4     1     3
+##  [6,]    2    2    2  Inf    3    0    2    1    1     3     3     2     3
+##  [7,]    2    4    3  Inf    2    2    0    1    2     2     3     1     1
+##  [8,]    1    3    2  Inf    2    1    1    0    1     2     2     1     2
+##  [9,]    2    3    1  Inf    3    1    2    1    0     3     3     2     3
+## [10,]    3    5    4  Inf    2    3    2    2    3     0     4     1     3
+## [11,]    1    5    4  Inf    4    3    3    2    3     4     0     3     4
+## [12,]    2    4    3  Inf    1    2    1    1    2     1     3     0     2
+## [13,]    3    5    4  Inf    3    3    1    2    3     3     4     2     0
+## [14,]    4    2    2  Inf    5    2    4    3    3     5     5     4     5
+## [15,]    3    1    1  Inf    4    1    3    2    2     4     4     3     4
 ##       [,14] [,15]
-##  [1,]     2     2
-##  [2,]     1     3
-##  [3,]     2     2
-##  [4,]     1     1
-##  [5,]     2     3
-##  [6,]     2     2
-##  [7,]     3     3
-##  [8,]     3     1
-##  [9,]     2     1
-## [10,]     3     3
-## [11,]     1     3
-## [12,]     1     2
-## [13,]     2     1
-## [14,]     0     2
-## [15,]     2     0
+##  [1,]     4     3
+##  [2,]     2     1
+##  [3,]     2     1
+##  [4,]   Inf   Inf
+##  [5,]     5     4
+##  [6,]     2     1
+##  [7,]     4     3
+##  [8,]     3     2
+##  [9,]     3     2
+## [10,]     5     4
+## [11,]     5     4
+## [12,]     4     3
+## [13,]     5     4
+## [14,]     0     1
+## [15,]     1     0
 </code></pre>
 
   </article>
@@ -822,9 +815,9 @@ modularity(wtc)
 <pre><code class="r">eigen_centrality(g)$vector
 </code></pre>
 
-<pre><code>##  [1] 1.0000000 0.7772556 0.4572805 0.7370654 0.3007099 0.5804008 0.1931037
-##  [8] 0.4665644 0.7268287 0.2191594 0.4845523 0.8782924 0.5721994 0.6305578
-## [15] 0.5484809
+<pre><code>##  [1] 0.42850019 0.07270495 0.28881369 0.00000000 0.15052980 0.48578124
+##  [7] 0.66139629 1.00000000 0.49148529 0.15052980 0.11867584 0.54351457
+## [13] 0.18317789 0.10055402 0.26251414
 </code></pre>
 
   </article>
@@ -948,13 +941,12 @@ writeLines(iris_tex, con = &quot;./donnees/iris.tex&quot;, sep = &quot;\n&quot;,
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-47" style="background:;">
-  <!--  <a href="#slide-47"></a> -->
-  <hgroup>
-    <h1>Essai</h1>
-  </hgroup>
-  <article data-timings="">
-    
+<slide class="" id="slide-47" style="background:;">
+  <!--   <article data-timings="">
+    <p>--- .transition</p>
+
+<h1>Essai</h1>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -1321,7 +1313,7 @@ writeLines(iris_tex, con = &quot;./donnees/iris.tex&quot;, sep = &quot;\n&quot;,
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=47 title='Essai'>
+        data-slide=47 title='NA'>
          47
       </a>
     </li>
