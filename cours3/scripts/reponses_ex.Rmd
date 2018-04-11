@@ -7,7 +7,7 @@ output:
     highlight: tango
     toc: true
     toc_float: true
-    df_print: paged
+    df_print: page
 ---
 
 # Exercice 1
