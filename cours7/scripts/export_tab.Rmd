@@ -4,14 +4,11 @@ author: Steve Vissault
 date: 11 avril 2018
 output:
   html_document:
+    theme: united
     highlight: tango
-    toc: true
-    toc_float: true
     df_print: paged
 ---
 
-
-# Exporter un tableau de résultats dans un rapport LaTeX
 
 Il est parfois incontournable en science de présenter des résultats sous forme de tableaux. À
 travers cette page, je vais vous montrer comment exporter votre tableau en format LaTeX pour après
@@ -46,7 +43,7 @@ print(stats_desc)
 Je veux maintenant inclure ce tableau de statistiques descriptives `stats_desc` dans mon rapport. Je
 dois d'abord convertir l'objet `stats_desc` en une série d'instructions LaTeX. Pour ce faire, je
 vais utiliser la fonction `xtable` présent le package `xtable`. Il existe cependant une multitude de
-packages en R dédié à cette tâche. Certains vous permettent de formatter plus facilement votre
+packages en R dédiés à cette tâche. Certains vous permettent de formatter plus facilement votre
 tableau. Je vous invite à jeter un coup d'oeil [à ce billet sur le forum
 StackOverflow](https://stackoverflow.com/questions/5465314/tools-for-making-latex-tables-in-r?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa).
 
