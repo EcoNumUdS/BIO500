@@ -153,8 +153,8 @@ $(document).ready(function () {
 </div>
 
 
-<p>Il est parfois incontournable en science de présenter des résultats sous forme de tableaux. À travers cette page, je vais vous montrer comment exporter votre tableau en format LaTeX pour après l’insérer dans votre rapport. La procédure est assez simple: il s’agit d’écrire le tableau LaTeX dans un fichier, puis après d’inclure ce tableau dans votre document LaTeX en utilisant la balise LaTeX: <code>montableau.tex</code></p>
-<p>Pour l’illustration, je vais utiliser un tableau de données déjà présent dans R: iris. Je vais ensuite me servir du package R <code>kable</code> pour transformer l’objet <code>iris</code>, qui une fois chargé sera un objet de classe <code>data.frame</code>, en un tableau LaTeX.</p>
+<p>Il est parfois incontournable en science de présenter des résultats sous forme de tableaux. À travers cette page, je vais vous montrer comment exporter votre tableau en format LaTeX pour après l’insérer dans votre rapport. La procédure est assez simple: il s’agit de préparer son tableau dans R, écrire le tableau LaTeX dans un fichier, puis après d’inclure ce tableau dans votre document LaTeX en utilisant la balise LaTeX: <code>montableau.tex</code></p>
+<p>Pour l’illustration, je vais utiliser un tableau de données déjà présent dans R: iris. Je vais ensuite me servir du package R <code>xtable</code> pour transformer l’objet <code>iris</code>, qui une fois chargé sera un objet de classe <code>data.frame</code>, en un tableau LaTeX.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(iris) <span class="co"># Chargement du tableau de données</span>
 <span class="kw">str</span>(iris) <span class="co"># Après importation d'un jeu de données, on vérifie toujours la structure</span></code></pre></div>
 <pre><code>## 'data.frame':    150 obs. of  5 variables:
@@ -178,11 +178,11 @@ stats_desc &lt;-<span class="st"> </span><span class="kw">data.frame</span>(Esp�
 <p>Je veux maintenant inclure ce tableau de statistiques descriptives <code>stats_desc</code> dans mon rapport. Je dois d’abord convertir l’objet <code>stats_desc</code> en une série d’instructions LaTeX. Pour ce faire, je vais utiliser la fonction <code>xtable</code> présent le package <code>xtable</code>. Il existe cependant une multitude de packages en R dédiés à cette tâche. Certains vous permettent de formatter plus facilement votre tableau. Je vous invite à jeter un coup d’oeil <a href="https://stackoverflow.com/questions/5465314/tools-for-making-latex-tables-in-r?utm_medium=organic&amp;utm_source=google_rich_qa&amp;utm_campaign=google_rich_qa">à ce billet sur le forum StackOverflow</a>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">if(!<span class="kw">require</span>(xtable)){<span class="kw">install.packages</span>(<span class="st">&quot;xtable&quot;</span>)} <span class="co"># Charge le paquet xtable, s'il n'est pas installé, alors R l'installera.</span></code></pre></div>
 <pre><code>## Loading required package: xtable</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">stats_desc_tex &lt;-<span class="st"> </span><span class="kw">xtable</span>(stats_desc,<span class="dt">format=</span><span class="st">&quot;latex&quot;</span>,<span class="dt">caption =</span> <span class="st">'Statistiques descriptives de la longeur du sépale chez </span><span class="ch">\t</span><span class="st">extit{Iris sp.}'</span>, <span class="dt">caption.placement=</span><span class="st">&quot;top&quot;</span>,)
-<span class="co"># On ajoute une légende avec l'argument caption que l'on place au-dessus du tableau.</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">stats_desc_tex &lt;-<span class="st"> </span><span class="kw">xtable</span>(stats_desc,<span class="dt">format=</span><span class="st">&quot;latex&quot;</span>,<span class="dt">caption =</span> <span class="st">'Statistiques descriptives de la longeur du sépale chez Iris sp.}'</span>)
+<span class="co"># On ajoute une légende avec l'argument caption.</span>
 <span class="kw">print</span>(stats_desc_tex) <span class="co"># Je visualise le contenu de l'objet</span></code></pre></div>
 <pre><code>## % latex table generated in R 3.4.4 by xtable 1.8-2 package
-## % Wed Apr 11 11:49:32 2018
+## % Wed Apr 11 12:00:56 2018
 ## \begin{table}[ht]
 ## \centering
 ## \begin{tabular}{rlrrr}
@@ -194,7 +194,7 @@ stats_desc &lt;-<span class="st"> </span><span class="kw">data.frame</span>(Esp�
 ##   virginica &amp; virginica &amp; 6.59 &amp; 0.64 &amp;  50 \\ 
 ##    \hline
 ## \end{tabular}
-## \caption{Statistiques descriptives de la longeur du sépale chez  extit{Iris sp.}} 
+## \caption{Statistiques descriptives de la longeur du sépale chez Iris sp.}} 
 ## \end{table}</code></pre>
 <p>Je vais maintenant écrire le contenu de l’objet <code>stats_desc_tex</code> dans un fichier. Nous ne pouvons pas utiliser les fonctions d’exportation habituelles tels que <code>write.table</code> ou encore <code>write.csv</code> car le le contenu de cette objet n’est pas un <code>data.frame</code> mais un tableau LaTeX. Il nous faut donc utiliser un fonction d’écriture qui écrit sans transformation le contenu de l’objet dans un fichier. On utilise la fonction <code>print</code> du packages <code>xtable</code> pour réaliser cette étape.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(stats_desc_tex,<span class="dt">file=</span><span class="st">&quot;stats_iris.tex&quot;</span>) <span class="co"># Le fichier stats_iris.tex sera écrit à l'emplacement ou l'espace de travail de R se trouve. Pensez à utiliser getwd()</span></code></pre></div>

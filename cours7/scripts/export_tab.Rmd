@@ -12,12 +12,12 @@ output:
 
 Il est parfois incontournable en science de présenter des résultats sous forme de tableaux. À
 travers cette page, je vais vous montrer comment exporter votre tableau en format LaTeX pour après
-l'insérer dans votre rapport. La procédure est assez simple: il s'agit d'écrire le tableau LaTeX
+l'insérer dans votre rapport. La procédure est assez simple: il s'agit de préparer son tableau dans R, écrire le tableau LaTeX
 dans un fichier, puis après d'inclure ce tableau dans votre document LaTeX en utilisant la balise
 LaTeX: `montableau.tex`
 
 Pour l'illustration, je vais utiliser un tableau de données déjà présent dans R: iris.
-Je vais ensuite me servir du package R `kable` pour transformer l'objet `iris`, qui une fois chargé
+Je vais ensuite me servir du package R `xtable` pour transformer l'objet `iris`, qui une fois chargé
 sera un objet de classe `data.frame`, en un tableau LaTeX.
 
 ```{r}
@@ -49,8 +49,8 @@ StackOverflow](https://stackoverflow.com/questions/5465314/tools-for-making-late
 
 ```{r}
 if(!require(xtable)){install.packages("xtable")} # Charge le paquet xtable, s'il n'est pas installé, alors R l'installera.
-stats_desc_tex <- xtable(stats_desc,format="latex",caption = 'Statistiques descriptives de la longeur du sépale chez \textit{Iris sp.}', caption.placement="top",)
-# On ajoute une légende avec l'argument caption que l'on place au-dessus du tableau.
+stats_desc_tex <- xtable(stats_desc,format="latex",caption = 'Statistiques descriptives de la longeur du sépale chez Iris sp.}')
+# On ajoute une légende avec l'argument caption.
 print(stats_desc_tex) # Je visualise le contenu de l'objet
 ```
 
