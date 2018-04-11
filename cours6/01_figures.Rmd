@@ -447,7 +447,7 @@ dev.copy2eps(file = "test.eps")
 
 # Installation
 
-```{r}
+```{r eval=FALSE}
 install.packages("igraph")
 library(igraph)
 ```
@@ -486,7 +486,7 @@ plot(g)
 
 *** =left
 ```{r, eval = FALSE}
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+plot(g, vertex.label=NA, edge.arrow.mode = 0,
     vertex.frame.color = NA)
 ```
 
@@ -519,7 +519,7 @@ col.vec <- heat.colors(S)
 V(g)$color = col.vec[rk]
 
 # Refaire la figure
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+plot(g, vertex.label=NA, edge.arrow.mode = 0,
     vertex.frame.color = NA)
 ```
 
@@ -554,7 +554,7 @@ col.vec <- seq(10, 25, length.out = S)
 V(g)$size = col.vec[rk]
 
 # Refaire la figure
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+plot(g, vertex.label=NA, edge.arrow.mode = 0,
     vertex.frame.color = NA)
 ```
 
@@ -576,7 +576,7 @@ plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA)
 
 *** =left
 ```{r, eval = FALSE}
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
+plot(g, vertex.label=NA, edge.arrow.mode = 0,
     vertex.frame.color = NA, layout = layout.reingold.tilford(g))
 ```
 
@@ -591,8 +591,8 @@ plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA, layout = 
 
 *** =left
 ```{r, eval = FALSE}
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
-    vertex.frame.color = NA, 
+plot(g, vertex.label=NA, edge.arrow.mode = 0,
+    vertex.frame.color = NA,
     layout = layout.circle(g))
 ```
 
@@ -607,8 +607,8 @@ plot(g, vertex.label=NA, edge.arrow.mode = 0, vertex.frame.color = NA, layout = 
 
 *** =left
 ```{r, eval = FALSE}
-plot(g, vertex.label=NA, edge.arrow.mode = 0, 
-    vertex.frame.color = NA, 
+plot(g, vertex.label=NA, edge.arrow.mode = 0,
+    vertex.frame.color = NA,
     layout = layout.kamada.kawai(g))
 ```
 
