@@ -40,9 +40,10 @@ license     : by-nc-sa
 
 Trop souvent en écologie, les données sont représentées et entreposées dans un format proche des analyses que l'on veut réaliser.
 
-Par exemple, on utilise une matrice $sites \times espèces$ pour analyser la structure des communautées.
+Par exemple, on utilise souvent une matrice $sites \times espèces$ pour analyser la structure des communautées.
 
-La question scientifique ne devrait jamais conditionner notre façon de stocker l'information sur un système écologique.
+La question scientifique ne devrait jamais conditionner notre façon de stocker l'information sur un système écologique (données brutes).
+
 
 *** =right
 
@@ -88,15 +89,13 @@ La question scientifique ne devrait jamais conditionner notre façon de stocker 
 <img src="assets/img/data_cube_4n.png" width="100%"></img>
 </div>
 
-**Note:** Pour la prise de données de facteurs environnementaux (abiotiques), on retrouverait une forme de type 3n.
-
 ---
 
 # La collecte de données en biologie
 
 ## **En biologie**, on classifie les données selon 4 dimensions/classes d'information:
 
-1. Biotique/abiotique
+1. Environnementale
 2. Taxonomique
 3. Temporelle
 4. Spatial
@@ -126,7 +125,7 @@ kable(df,format="markdown")
 ```
 
 - Noms de colonnes courts, sans accents, sans espaces et explicites.
-- Si possible, attacher les unités au nom de la colonne.
+- Attacher les unités au nom de la colonne (si absence de métadonnées).
 
 *** =left
 
@@ -237,32 +236,12 @@ La plupart des languages/programmes disposent d'un type `TIMESTAMP`, `DATE` et `
 
 On utilisera préférablement la norme [ISO8601](https://fr.wikipedia.org/wiki/ISO_8601) pour représenter ces données.
 
-  - `TIMESTAMP` (Heure et temps): `YYYY-MM-ddThh:mm:ss`. *ex. `1977-04-22T01:00:00-05:00`*
+  - `TIMESTAMP` (Heure et temps): `YYYY-MM-ddThh:mm:ss`. *ex. `1977-04-22T01:00:00-05:00` ou `1977-04-22T06:00:00Z`*
   - `DATE`: `YYYY-MM-dd`. *ex. 1997-04-22*
   - `TIME`: `HH:mm:ss` dans un systéme de 24 heures. *ex. 01:30:00.*
 
----
+Gardez à l'esprit que vos données pourraient être réutilisées à travers le monde. 
 
-# Les données temporelles
-
- Gardez à l'esprit que vos données pourraient être réutilisées à travers le monde. Les dates ne sont pas représentées de la même manière que l'on soit en Amérique du Nord ou en Europe. **Il est donc important de normaliser la saisie de ce type d'information.**
-
---- &twocol
-
-# Les données temporelles
-
-Une autre représentation de la date est l'utilisation du calendrier Julien.
-
-*** =left
-
-<div style='text-align:center;'>
-<img src="assets/img/jul.jpg" width="105%"></img>
-</div>
-
-*** =right
-
-- **Inconvénient:** Le jour julien doit toujours être accompagné de l'année (YYYY).
-- **Avantage:** simplifie les analyses temporelles intra-annuelles.
 
 --- .transition
 
@@ -339,15 +318,17 @@ kable(df,format="markdown")
 
 # Les données taxonomiques
 
-## On privilégie généralement l'utilisation de code espèce standardisée:
+## On privilégie généralement l'utilisation de code d'espèce standardisée:
 
-1. ITIS
-2. VASCAN (Plantes vasculaires du Canada)
-3. NCBI
+1. [ITIS](https://www.itis.gov/)
+2. [VASCAN](http://data.canadensys.net/vascan/search?lang=fr) (Plantes vasculaires du Canada)
+3. [NCBI](https://www.ncbi.nlm.nih.gov/) 
+4. [BOLD](http://www.boldsystems.org/index.php/TaxBrowser_Home) (Projet code barre)
 
-**Avantage:** Chacune de ces institutions/infrastructures nous permet de valider et retirer l'ensemble de la classification taxonomique d'une espèce à partir de son code. Même si l'identifiant change (nouvelle classification), nous serons en mesure de trouver le nouvel identifiant taxonomique à partir de l'ancien.
+**Avantage:** Chacune de ces institutions/infrastructures nous permet de valider et retirer l'ensemble de la classification taxonomique d'une espèce à partir de son code. 
+Même si l'identifiant change (nouvelle classification), nous serons en mesure de trouver le nouvel identifiant taxonomique à partir de l'ancien.
 
-**Exemple:** [https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null)
+**Exemple:** [TSN - 28731](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null)
 
 
 --- .transition
@@ -382,12 +363,11 @@ kable(df,format="markdown")
 
 # Les données spatiales
 
-## Deux bases de données connues permettent de fournir des identifiants uniques:
+## Une base de données connue permet de fournir des identifiants uniques:
 
-1. `EPSG`: *European Petroleum Survey Group.*
-2. `SRID`: *Spatial reference system*.
+- `SRID`: *Spatial reference system*.
 
-Ces deux identifiants sont généralement identiques et peuvent être trouvés à cette adresse: [http://spatialreference.org/](http://spatialreference.org/)
+Cet identifiant est unique et peut être trouvés à cette adresse: [http://spatialreference.org/](http://spatialreference.org/)
 
 **Exemple:** [http://spatialreference.org/ref/epsg/2138/](http://spatialreference.org/ref/epsg/2138/)
 
@@ -438,10 +418,6 @@ Si l'on ne choisit pas le type de données approprié, cela aura diverses consé
 
 ---
 
-# Finalement...
-
-Pourquoi prendre soins de ces données ?
-
 ## Pour en savoir davantage:
 
 - [Broman KW, Woo K (2017) Data organization in spreadsheets. The American Statistician.](http://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375989)
@@ -450,16 +426,6 @@ Pourquoi prendre soins de ces données ?
 --- .transition
 
 # Entreposer et archiver ses données écologiques
-
-
-<!-- TRANSTION vers SQL
-
-# La collecte de données
-
-En biologie, la collecte de données se résume à un hypercube.
-
-Comme nous le verrons plus tard cette multidimensionnalité complique notre tâche, car il est difficile de la représenter dans un tableau excel (n-2). -->
-
 
 ---
 
@@ -485,7 +451,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 
 *** =left
 
-1. Les `fichiers texte` comme les CSV, TSV (Format libre et ouvert)
+1. Les `fichiers textes` comme les CSV, TSV (Format libre et ouvert)
 2. Les `tableurs` comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
 3. Les `fichiers hierarchiques/structurés` HDF, NetCDF (Format libre et ouvert)
 4. Les `bases de données relationnelles`
@@ -544,19 +510,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 - **Normaliser et contrôler la qualité des données**. Chaque colonne est un type précis de données. Des contraintes peuvent être appliquées sur chaque colonne.
 - **Éviter les redondances dans le stockage de l'information** (obtenir une [forme normale](https://fr.wikipedia.org/wiki/Forme_normale_(bases_de_donn%C3%A9es_relationnelles)), voir la section [Format de donnée du cours 2](https://econumuds.github.io/BIO500/cours2/#10).
 
----
 
-# Avantages des bases de données
-
-## Autres avantages indéniables:
-
-- Obtenir un gain de temps et de performance.
-- Séparer les données brutes des données destinées aux analyses.
-- Rendre flexible la préparation des données pour les analyses.
-- Pemettre le travail simultané de plusieurs utilisateurs grâce à l'approche client-serveur (approche serveur).
-- Déclencher des procédures de sauvegarde.
-- Suivre les modifications/ajouts à la BD (journal de transactions).
---- .transition
+---.transition
 
 # Conceptualisation d'une base de données en 5 étapes
 
@@ -565,7 +520,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
 # Étape 1. Faire une liste des variables
 
 1. Dresser la liste des informations collectées par les différents groupes.
-2. Regrouper les variables communes entre les équipes pour obtenir une ontologie conjointe.
+2. Regrouper les variables communes entre les équipes pour obtenir un format de données conjoint.
 
 ---
 
@@ -784,27 +739,10 @@ L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant
 
 # Les grandes étapes avec SQLite3
 
-0. Créer un fichier de base de données
-1. Se connecter avec le fichier de base de données
+1. Créer et se connecter au fichier de base de données
 2. Créer les tables et spécifier les clés
 3. Ajouter de l'information dans les tables
 4. Faire des requêtes pour extraire l'information
-
-
----&twocolw w1:30% w2:70%
-
-# Créer un fichier de base de données
-
-*** =left
-
-À l'aide de votre gestionnaire de fichiers, créer un nouveau fichier qui s'intitulera `films.bd`
-
-*** =right
-
-<div style='text-align:center;'>
-  <img src="assets/img/gf.png" width="90%"></img>
-</div>
-
 
 ---&twocolw w1:40% w2:60%
 
@@ -824,7 +762,7 @@ con <- dbConnect(SQLite(), dbname="./assets/data/films.db")
 ```
 
 ```{r, eval=FALSE}
-dbSendQuery(con,"Instructions SQL à envoyer")
+dbSendQuery(con,"Instructions SQL à envoyer;")
 ```
 
 *** =left
@@ -832,22 +770,6 @@ dbSendQuery(con,"Instructions SQL à envoyer")
 - `con` est un objet contenant la connexion avec le serveur/fichier de base de données.
 - On utilisera la fonction `dbSendQuery()` pour envoyer les instructions SQL.
 - Le deuxième argument de la fonction `dbSendQuery()` est une chaine de caractères contenant les instructions SQL.
-
-
----&twocolw w1:50% w2:50%
-
-# Création de la base de données via R
-
-```{r, error=FALSE, eval=FALSE}
-dbSendQuery(con,"CREATE DATABASE films;")
-```
-
-## Important:
-
-1. `CREATE DATABASE` serait importante seulement avec d'autres SGBDs (approche serveur). Dans le cas de SQLite3, un fichier = une base de données.
-2. En SQL, chaque instruction se termine par un point-virgule.
-3. Les instructions sont écrites en majuscules et les variables en minuscules.
-4. Toutes les instructions SQL sont énumérées et expliquées en Français à cette adresse: [http://docs.postgresql.fr/9.5/sql-commands.html](http://docs.postgresql.fr/9.5/sql-commands.html)
 
 
 ---&twocol

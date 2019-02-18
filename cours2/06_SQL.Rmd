@@ -7,27 +7,10 @@
 
 # Les grandes étapes avec SQLite3
 
-0. Créer un fichier de base de données
-1. Se connecter avec le fichier de base de données
+1. Créer et se connecter au fichier de base de données
 2. Créer les tables et spécifier les clés
 3. Ajouter de l'information dans les tables
 4. Faire des requêtes pour extraire l'information
-
-
----&twocolw w1:30% w2:70%
-
-# Créer un fichier de base de données
-
-*** =left
-
-À l'aide de votre gestionnaire de fichiers, créer un nouveau fichier qui s'intitulera `films.bd`
-
-*** =right
-
-<div style='text-align:center;'>
-  <img src="assets/img/gf.png" width="90%"></img>
-</div>
-
 
 ---&twocolw w1:40% w2:60%
 
@@ -47,7 +30,7 @@ con <- dbConnect(SQLite(), dbname="./assets/data/films.db")
 ```
 
 ```{r, eval=FALSE}
-dbSendQuery(con,"Instructions SQL à envoyer")
+dbSendQuery(con,"Instructions SQL à envoyer;")
 ```
 
 *** =left
@@ -55,22 +38,6 @@ dbSendQuery(con,"Instructions SQL à envoyer")
 - `con` est un objet contenant la connexion avec le serveur/fichier de base de données.
 - On utilisera la fonction `dbSendQuery()` pour envoyer les instructions SQL.
 - Le deuxième argument de la fonction `dbSendQuery()` est une chaine de caractères contenant les instructions SQL.
-
-
----&twocolw w1:50% w2:50%
-
-# Création de la base de données via R
-
-```{r, error=FALSE, eval=FALSE}
-dbSendQuery(con,"CREATE DATABASE films;")
-```
-
-## Important:
-
-1. `CREATE DATABASE` serait importante seulement avec d'autres SGBDs (approche serveur). Dans le cas de SQLite3, un fichier = une base de données.
-2. En SQL, chaque instruction se termine par un point-virgule.
-3. Les instructions sont écrites en majuscules et les variables en minuscules.
-4. Toutes les instructions SQL sont énumérées et expliquées en Français à cette adresse: [http://docs.postgresql.fr/9.5/sql-commands.html](http://docs.postgresql.fr/9.5/sql-commands.html)
 
 
 ---&twocol

@@ -96,9 +96,9 @@
     <div class='left' style='float:left;width:48%'>
      <p>Trop souvent en écologie, les données sont représentées et entreposées dans un format proche des analyses que l&#39;on veut réaliser.</p>
 
-<p>Par exemple, on utilise une matrice \(sites \times espèces\) pour analyser la structure des communautées.</p>
+<p>Par exemple, on utilise souvent une matrice \(sites \times espèces\) pour analyser la structure des communautées.</p>
 
-<p>La question scientifique ne devrait jamais conditionner notre façon de stocker l&#39;information sur un système écologique.</p>
+<p>La question scientifique ne devrait jamais conditionner notre façon de stocker l&#39;information sur un système écologique (données brutes).</p>
 
     </div>
     <div class='right' style='float:right;width:48%'>
@@ -155,8 +155,6 @@
 <img src="assets/img/data_cube_4n.png" width="100%"></img>
 </div>
 
-<p><strong>Note:</strong> Pour la prise de données de facteurs environnementaux (abiotiques), on retrouverait une forme de type 3n.</p>
-
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -169,7 +167,7 @@
     <h2><strong>En biologie</strong>, on classifie les données selon 4 dimensions/classes d&#39;information:</h2>
 
 <ol>
-<li>Biotique/abiotique</li>
+<li>Environnementale</li>
 <li>Taxonomique</li>
 <li>Temporelle</li>
 <li>Spatial</li>
@@ -296,7 +294,7 @@
 
 <ul>
 <li>Noms de colonnes courts, sans accents, sans espaces et explicites.</li>
-<li>Si possible, attacher les unités au nom de la colonne.</li>
+<li>Attacher les unités au nom de la colonne (si absence de métadonnées).</li>
 </ul>
 
     </div>
@@ -618,49 +616,18 @@
 <p>On utilisera préférablement la norme <a href="https://fr.wikipedia.org/wiki/ISO_8601">ISO8601</a> pour représenter ces données.</p>
 
 <ul>
-<li><code>TIMESTAMP</code> (Heure et temps): <code>YYYY-MM-ddThh:mm:ss</code>. <em>ex. <code>1977-04-22T01:00:00-05:00</code></em></li>
+<li><code>TIMESTAMP</code> (Heure et temps): <code>YYYY-MM-ddThh:mm:ss</code>. <em>ex. <code>1977-04-22T01:00:00-05:00</code> ou <code>1977-04-22T06:00:00Z</code></em></li>
 <li><code>DATE</code>: <code>YYYY-MM-dd</code>. <em>ex. 1997-04-22</em></li>
 <li><code>TIME</code>: <code>HH:mm:ss</code> dans un systéme de 24 heures. <em>ex. 01:30:00.</em></li>
 </ul>
 
+<p>Gardez à l&#39;esprit que vos données pourraient être réutilisées à travers le monde. </p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-18" style="background:;">
+<slide class="transition" id="slide-18" style="background:;">
   <!--  <a href="#slide-18"></a> -->
-  <hgroup>
-    <h1>Les données temporelles</h1>
-  </hgroup>
-  <article data-timings="">
-    <p>Gardez à l&#39;esprit que vos données pourraient être réutilisées à travers le monde. Les dates ne sont pas représentées de la même manière que l&#39;on soit en Amérique du Nord ou en Europe. <strong>Il est donc important de normaliser la saisie de ce type d&#39;information.</strong></p>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-<slide class="" id="slide-19" style="background:;">
-  <hgroup>
-    <h1>Les données temporelles</h1>
-  </hgroup>
-  <article>
-    <p>Une autre représentation de la date est l&#39;utilisation du calendrier Julien.</p>
-
-    <div class='left' style='float:left;width:48%'>
-     <div style='text-align:center;'>
-<img src="assets/img/jul.jpg" width="105%"></img>
-</div>
-
-    </div>
-    <div class='right' style='float:right;width:48%'>
-     <ul>
-<li><strong>Inconvénient:</strong> Le jour julien doit toujours être accompagné de l&#39;année (YYYY).</li>
-<li><strong>Avantage:</strong> simplifie les analyses temporelles intra-annuelles.</li>
-</ul>
-
-    </div>
-  </article>
-</slide>
-<slide class="transition" id="slide-20" style="background:;">
-  <!--  <a href="#slide-20"></a> -->
   <hgroup>
     <h1>Les données taxonomiques</h1>
   </hgroup>
@@ -669,7 +636,7 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-21" style="background:;">
+<slide class="" id="slide-19" style="background:;">
   <hgroup>
     <h1>Les données taxonomiques</h1>
   </hgroup>
@@ -716,7 +683,7 @@
     </div>
   </article>
 </slide>
-<slide class="" id="slide-22" style="background:;">
+<slide class="" id="slide-20" style="background:;">
   <hgroup>
     <h1>Les données taxonomiques</h1>
   </hgroup>
@@ -763,7 +730,7 @@
     </div>
   </article>
 </slide>
-<slide class="" id="slide-23" style="background:;">
+<slide class="" id="slide-21" style="background:;">
   <hgroup>
     <h1>Les données taxonomiques</h1>
   </hgroup>
@@ -808,29 +775,31 @@
     </div>
   </article>
 </slide>
-<slide class="" id="slide-24" style="background:;">
-  <!--  <a href="#slide-24"></a> -->
+<slide class="" id="slide-22" style="background:;">
+  <!--  <a href="#slide-22"></a> -->
   <hgroup>
     <h1>Les données taxonomiques</h1>
   </hgroup>
   <article data-timings="">
-    <h2>On privilégie généralement l&#39;utilisation de code espèce standardisée:</h2>
+    <h2>On privilégie généralement l&#39;utilisation de code d&#39;espèce standardisée:</h2>
 
 <ol>
-<li>ITIS</li>
-<li>VASCAN (Plantes vasculaires du Canada)</li>
-<li>NCBI</li>
+<li><a href="https://www.itis.gov/">ITIS</a></li>
+<li><a href="http://data.canadensys.net/vascan/search?lang=fr">VASCAN</a> (Plantes vasculaires du Canada)</li>
+<li><a href="https://www.ncbi.nlm.nih.gov/">NCBI</a> </li>
+<li><a href="http://www.boldsystems.org/index.php/TaxBrowser_Home">BOLD</a> (Projet code barre)</li>
 </ol>
 
-<p><strong>Avantage:</strong> Chacune de ces institutions/infrastructures nous permet de valider et retirer l&#39;ensemble de la classification taxonomique d&#39;une espèce à partir de son code. Même si l&#39;identifiant change (nouvelle classification), nous serons en mesure de trouver le nouvel identifiant taxonomique à partir de l&#39;ancien.</p>
+<p><strong>Avantage:</strong> Chacune de ces institutions/infrastructures nous permet de valider et retirer l&#39;ensemble de la classification taxonomique d&#39;une espèce à partir de son code. 
+Même si l&#39;identifiant change (nouvelle classification), nous serons en mesure de trouver le nouvel identifiant taxonomique à partir de l&#39;ancien.</p>
 
-<p><strong>Exemple:</strong> <a href="https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&amp;search_value=28731#null">https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&amp;search_value=28731#null</a></p>
+<p><strong>Exemple:</strong> <a href="https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&amp;search_value=28731#null">TSN - 28731</a></p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-25" style="background:;">
-  <!--  <a href="#slide-25"></a> -->
+<slide class="transition" id="slide-23" style="background:;">
+  <!--  <a href="#slide-23"></a> -->
   <hgroup>
     <h1>Les données spatiales</h1>
   </hgroup>
@@ -839,8 +808,8 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-26" style="background:;">
-  <!--  <a href="#slide-26"></a> -->
+<slide class="" id="slide-24" style="background:;">
+  <!--  <a href="#slide-24"></a> -->
   <hgroup>
     <h1>Les données spatiales</h1>
   </hgroup>
@@ -862,8 +831,8 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-27" style="background:;">
-  <!--  <a href="#slide-27"></a> -->
+<slide class="" id="slide-25" style="background:;">
+  <!--  <a href="#slide-25"></a> -->
   <hgroup>
     <h1>Les données spatiales</h1>
   </hgroup>
@@ -882,28 +851,27 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-28" style="background:;">
-  <!--  <a href="#slide-28"></a> -->
+<slide class="" id="slide-26" style="background:;">
+  <!--  <a href="#slide-26"></a> -->
   <hgroup>
     <h1>Les données spatiales</h1>
   </hgroup>
   <article data-timings="">
-    <h2>Deux bases de données connues permettent de fournir des identifiants uniques:</h2>
+    <h2>Une base de données connue permet de fournir des identifiants uniques:</h2>
 
-<ol>
-<li><code>EPSG</code>: <em>European Petroleum Survey Group.</em></li>
+<ul>
 <li><code>SRID</code>: <em>Spatial reference system</em>.</li>
-</ol>
+</ul>
 
-<p>Ces deux identifiants sont généralement identiques et peuvent être trouvés à cette adresse: <a href="http://spatialreference.org/">http://spatialreference.org/</a></p>
+<p>Cet identifiant est unique et peut être trouvés à cette adresse: <a href="http://spatialreference.org/">http://spatialreference.org/</a></p>
 
 <p><strong>Exemple:</strong> <a href="http://spatialreference.org/ref/epsg/2138/">http://spatialreference.org/ref/epsg/2138/</a></p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-29" style="background:;">
-  <!--  <a href="#slide-29"></a> -->
+<slide class="transition" id="slide-27" style="background:;">
+  <!--  <a href="#slide-27"></a> -->
   <hgroup>
     <h1>L&#39;absence de données</h1>
   </hgroup>
@@ -912,8 +880,8 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-30" style="background:;">
-  <!--  <a href="#slide-30"></a> -->
+<slide class="" id="slide-28" style="background:;">
+  <!--  <a href="#slide-28"></a> -->
   <hgroup>
     <h1>L&#39;absence de données</h1>
   </hgroup>
@@ -932,8 +900,8 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-31" style="background:;">
-  <!--  <a href="#slide-31"></a> -->
+<slide class="" id="slide-29" style="background:;">
+  <!--  <a href="#slide-29"></a> -->
   <hgroup>
     <h1>Le format des données</h1>
   </hgroup>
@@ -953,8 +921,8 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-32" style="background:;">
-  <!--  <a href="#slide-32"></a> -->
+<slide class="" id="slide-30" style="background:;">
+  <!--  <a href="#slide-30"></a> -->
   <hgroup>
     <h1>Choisir le bon type et format de données</h1>
   </hgroup>
@@ -972,17 +940,13 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-33" style="background:;">
-  <!--  <a href="#slide-33"></a> -->
+<slide class="" id="slide-31" style="background:;">
+  <!--  <a href="#slide-31"></a> -->
   <hgroup>
-    <h1>Finalement...</h1>
+    <h2>Pour en savoir davantage:</h2>
   </hgroup>
   <article data-timings="">
-    <p>Pourquoi prendre soins de ces données ?</p>
-
-<h2>Pour en savoir davantage:</h2>
-
-<ul>
+    <ul>
 <li><a href="http://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375989">Broman KW, Woo K (2017) Data organization in spreadsheets. The American Statistician.</a></li>
 <li><a href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005097">Hart EM, Barmby P, LeBauer D, Michonneau F, Mount S, Mulrooney P, et al. (2016) Ten Simple Rules for Digital Data Storage. PLoS Comput Biol</a></li>
 </ul>
@@ -990,25 +954,18 @@
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-34" style="background:;">
-  <!--  <a href="#slide-34"></a> -->
+<slide class="transition" id="slide-32" style="background:;">
+  <!--  <a href="#slide-32"></a> -->
   <hgroup>
     <h1>Entreposer et archiver ses données écologiques</h1>
   </hgroup>
   <article data-timings="">
-    <!-- TRANSTION vers SQL
-
-# La collecte de données
-
-En biologie, la collecte de données se résume à un hypercube.
-
-Comme nous le verrons plus tard cette multidimensionnalité complique notre tâche, car il est difficile de la représenter dans un tableau excel (n-2). -->
-
+    
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-35" style="background:;">
-  <!--  <a href="#slide-35"></a> -->
+<slide class="" id="slide-33" style="background:;">
+  <!--  <a href="#slide-33"></a> -->
   <hgroup>
     <h1>Où sommes-nous?</h1>
   </hgroup>
@@ -1020,8 +977,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-36" style="background:;">
-  <!--  <a href="#slide-36"></a> -->
+<slide class="" id="slide-34" style="background:;">
+  <!--  <a href="#slide-34"></a> -->
   <hgroup>
     <h1>Pourquoi bien entreposer ses données?</h1>
   </hgroup>
@@ -1035,7 +992,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-37" style="background:;">
+<slide class="" id="slide-35" style="background:;">
   <hgroup>
     <h1>Les entrepôts existants</h1>
   </hgroup>
@@ -1043,7 +1000,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
     
     <div class='left' style='float:left;width:48%'>
      <ol>
-<li>Les <code>fichiers texte</code> comme les CSV, TSV (Format libre et ouvert)</li>
+<li>Les <code>fichiers textes</code> comme les CSV, TSV (Format libre et ouvert)</li>
 <li>Les <code>tableurs</code> comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)</li>
 <li>Les <code>fichiers hierarchiques/structurés</code> HDF, NetCDF (Format libre et ouvert)</li>
 <li>Les <code>bases de données relationnelles</code></li>
@@ -1058,7 +1015,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
     </div>
   </article>
 </slide>
-<slide class="" id="slide-38" style="background:;">
+<slide class="" id="slide-36" style="background:;">
   <hgroup>
     <h1>Les entrepôts existants</h1>
   </hgroup>
@@ -1081,8 +1038,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
     </div>
   </article>
 </slide>
-<slide class="" id="slide-39" style="background:;">
-  <!--  <a href="#slide-39"></a> -->
+<slide class="" id="slide-37" style="background:;">
+  <!--  <a href="#slide-37"></a> -->
   <hgroup>
     <h1>Le Tesseract de la biologie</h1>
   </hgroup>
@@ -1099,8 +1056,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-40" style="background:;">
-  <!--  <a href="#slide-40"></a> -->
+<slide class="" id="slide-38" style="background:;">
+  <!--  <a href="#slide-38"></a> -->
   <hgroup>
     <h1>Les bases de données (BDs) à la rescousse</h1>
   </hgroup>
@@ -1117,8 +1074,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-41" style="background:;">
-  <!--  <a href="#slide-41"></a> -->
+<slide class="" id="slide-39" style="background:;">
+  <!--  <a href="#slide-39"></a> -->
   <hgroup>
     <h1>Avantages des bases de données</h1>
   </hgroup>
@@ -1132,45 +1089,32 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-42" style="background:;">
-  <!--  <a href="#slide-42"></a> -->
+<slide class="transition" id="slide-40" style="background:;">
+  <!--  <a href="#slide-40"></a> -->
   <hgroup>
-    <h1>Avantages des bases de données</h1>
+    <h1>Conceptualisation d&#39;une base de données en 5 étapes</h1>
   </hgroup>
   <article data-timings="">
-    <h2>Autres avantages indéniables:</h2>
-
-<ul>
-<li>Obtenir un gain de temps et de performance.</li>
-<li>Séparer les données brutes des données destinées aux analyses.</li>
-<li>Rendre flexible la préparation des données pour les analyses.</li>
-<li>Pemettre le travail simultané de plusieurs utilisateurs grâce à l&#39;approche client-serveur (approche serveur).</li>
-<li>Déclencher des procédures de sauvegarde.</li>
-<li>Suivre les modifications/ajouts à la BD (journal de transactions).
---- .transition</li>
-</ul>
-
-<h1>Conceptualisation d&#39;une base de données en 5 étapes</h1>
-
+    
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-43" style="background:;">
-  <!--  <a href="#slide-43"></a> -->
+<slide class="" id="slide-41" style="background:;">
+  <!--  <a href="#slide-41"></a> -->
   <hgroup>
     <h1>Étape 1. Faire une liste des variables</h1>
   </hgroup>
   <article data-timings="">
     <ol>
 <li>Dresser la liste des informations collectées par les différents groupes.</li>
-<li>Regrouper les variables communes entre les équipes pour obtenir une ontologie conjointe.</li>
+<li>Regrouper les variables communes entre les équipes pour obtenir un format de données conjoint.</li>
 </ol>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-44" style="background:;">
-  <!--  <a href="#slide-44"></a> -->
+<slide class="" id="slide-42" style="background:;">
+  <!--  <a href="#slide-42"></a> -->
   <hgroup>
     <h1>Étape 2. Regrouper les variables dans des tables</h1>
   </hgroup>
@@ -1189,8 +1133,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-45" style="background:;">
-  <!--  <a href="#slide-45"></a> -->
+<slide class="" id="slide-43" style="background:;">
+  <!--  <a href="#slide-43"></a> -->
   <hgroup>
     <h1>Étape 3. Établir le type d&#39;association entre les tables</h1>
   </hgroup>
@@ -1204,8 +1148,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-46" style="background:;">
-  <!--  <a href="#slide-46"></a> -->
+<slide class="" id="slide-44" style="background:;">
+  <!--  <a href="#slide-44"></a> -->
   <hgroup>
     <h1>Étape 3. Établir le type d&#39;association entre les tables</h1>
   </hgroup>
@@ -1251,8 +1195,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-47" style="background:;">
-  <!--  <a href="#slide-47"></a> -->
+<slide class="" id="slide-45" style="background:;">
+  <!--  <a href="#slide-45"></a> -->
   <hgroup>
     <h1>Étape 4. Établir les clés primaires et étrangères</h1>
   </hgroup>
@@ -1274,8 +1218,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-48" style="background:;">
-  <!--  <a href="#slide-48"></a> -->
+<slide class="" id="slide-46" style="background:;">
+  <!--  <a href="#slide-46"></a> -->
   <hgroup>
     <h1>Étape 4. Établir les clés primaires et étrangères</h1>
   </hgroup>
@@ -1288,8 +1232,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-49" style="background:;">
-  <!--  <a href="#slide-49"></a> -->
+<slide class="" id="slide-47" style="background:;">
+  <!--  <a href="#slide-47"></a> -->
   <hgroup>
     <h1>Étape 5. Assigner un type de données aux attributs</h1>
   </hgroup>
@@ -1341,8 +1285,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-50" style="background:;">
-  <!--  <a href="#slide-50"></a> -->
+<slide class="" id="slide-48" style="background:;">
+  <!--  <a href="#slide-48"></a> -->
   <hgroup>
     <h1>En résumé</h1>
   </hgroup>
@@ -1356,8 +1300,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="transition" id="slide-51" style="background:;">
-  <!--  <a href="#slide-51"></a> -->
+<slide class="transition" id="slide-49" style="background:;">
+  <!--  <a href="#slide-49"></a> -->
   <hgroup>
     <h1>Les Systèmes de Gestion de Base de Données (SGBDs)</h1>
   </hgroup>
@@ -1366,7 +1310,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-52" style="background:;">
+<slide class="" id="slide-50" style="background:;">
   <hgroup>
     <h1>La diversité des SGBDs</h1>
   </hgroup>
@@ -1390,8 +1334,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
     </div>
   </article>
 </slide>
-<slide class="" id="slide-53" style="background:;">
-  <!--  <a href="#slide-53"></a> -->
+<slide class="" id="slide-51" style="background:;">
+  <!--  <a href="#slide-51"></a> -->
   <hgroup>
     <h1>Le langage SQL</h1>
   </hgroup>
@@ -1405,8 +1349,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-54" style="background:;">
-  <!--  <a href="#slide-54"></a> -->
+<slide class="" id="slide-52" style="background:;">
+  <!--  <a href="#slide-52"></a> -->
   <hgroup>
     <h1>Le langage SQL</h1>
   </hgroup>
@@ -1428,8 +1372,8 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-55" style="background:;">
-  <!--  <a href="#slide-55"></a> -->
+<slide class="" id="slide-53" style="background:;">
+  <!--  <a href="#slide-53"></a> -->
   <hgroup>
     <h1>Le langage SQL</h1>
   </hgroup>
@@ -1448,7 +1392,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-56" style="background:;">
+<slide class="" id="slide-54" style="background:;">
   <hgroup>
     <h1>Deux approches avec les bases de données</h1>
   </hgroup>
@@ -1468,7 +1412,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
     </div>
   </article>
 </slide>
-<slide class="" id="slide-57" style="background:;">
+<slide class="" id="slide-55" style="background:;">
   <hgroup>
     <h1>L&#39;approche: Serveur de base de données</h1>
   </hgroup>
@@ -1490,7 +1434,7 @@ Comme nous le verrons plus tard cette multidimensionnalité complique notre tâc
     </div>
   </article>
 </slide>
-<slide class="" id="slide-58" style="background:;">
+<slide class="" id="slide-56" style="background:;">
   <hgroup>
     <h1>L&#39;approche: Fichier de base de données</h1>
   </hgroup>
@@ -1525,8 +1469,8 @@ L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant
     </div>
   </article>
 </slide>
-<slide class="transition" id="slide-59" style="background:;">
-  <!--  <a href="#slide-59"></a> -->
+<slide class="transition" id="slide-57" style="background:;">
+  <!--  <a href="#slide-57"></a> -->
   <hgroup>
     <h1>Pratique: Du modèle conceptuelle vers le modèle logique</h1>
   </hgroup>
@@ -1535,15 +1479,14 @@ L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-60" style="background:;">
-  <!--  <a href="#slide-60"></a> -->
+<slide class="" id="slide-58" style="background:;">
+  <!--  <a href="#slide-58"></a> -->
   <hgroup>
     <h1>Les grandes étapes avec SQLite3</h1>
   </hgroup>
   <article data-timings="">
     <ol>
-<li>Créer un fichier de base de données</li>
-<li>Se connecter avec le fichier de base de données</li>
+<li>Créer et se connecter au fichier de base de données</li>
 <li>Créer les tables et spécifier les clés</li>
 <li>Ajouter de l&#39;information dans les tables</li>
 <li>Faire des requêtes pour extraire l&#39;information</li>
@@ -1552,25 +1495,7 @@ L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-61" style="background:;">
-  <hgroup>
-    <h1>Créer un fichier de base de données</h1>
-  </hgroup>
-  <article>
-    
-    <div class='left' style='float:left;width:30%'>
-     <p>À l&#39;aide de votre gestionnaire de fichiers, créer un nouveau fichier qui s&#39;intitulera <code>films.bd</code></p>
-
-    </div>
-    <div class='right' style='float:right;width:70%'>
-     <div style='text-align:center;'>
-  <img src="assets/img/gf.png" width="90%"></img>
-</div>
-
-    </div>
-  </article>
-</slide>
-<slide class="" id="slide-62" style="background:;">
+<slide class="" id="slide-59" style="background:;">
   <hgroup>
     <h1>Se connecter au fichier la BD (SQLite3) via R</h1>
   </hgroup>
@@ -1591,38 +1516,13 @@ con &lt;- dbConnect(SQLite(), dbname=&quot;./assets/data/films.db&quot;)
 ## Astuces: getwd() et setwd()
 </code></pre>
 
-<pre><code class="r">dbSendQuery(con,&quot;Instructions SQL à envoyer&quot;)
+<pre><code class="r">dbSendQuery(con,&quot;Instructions SQL à envoyer;&quot;)
 </code></pre>
 
     </div>
   </article>
 </slide>
-<slide class="" id="slide-63" style="background:;">
-  <hgroup>
-    <h1>Création de la base de données via R</h1>
-  </hgroup>
-  <article>
-    <pre><code class="r">dbSendQuery(con,&quot;CREATE DATABASE films;&quot;)
-</code></pre>
-
-<h2>Important:</h2>
-
-<ol>
-<li><code>CREATE DATABASE</code> serait importante seulement avec d&#39;autres SGBDs (approche serveur). Dans le cas de SQLite3, un fichier = une base de données.</li>
-<li>En SQL, chaque instruction se termine par un point-virgule.</li>
-<li>Les instructions sont écrites en majuscules et les variables en minuscules.</li>
-<li>Toutes les instructions SQL sont énumérées et expliquées en Français à cette adresse: <a href="http://docs.postgresql.fr/9.5/sql-commands.html">http://docs.postgresql.fr/9.5/sql-commands.html</a></li>
-</ol>
-
-    <div class='left' style='float:left;width:50%'>
-     
-    </div>
-    <div class='right' style='float:right;width:50%'>
-     
-    </div>
-  </article>
-</slide>
-<slide class="" id="slide-64" style="background:;">
+<slide class="" id="slide-60" style="background:;">
   <hgroup>
     <h1>Création d&#39;une première table avec clé primaire</h1>
   </hgroup>
@@ -1654,7 +1554,7 @@ con &lt;- dbConnect(SQLite(), dbname=&quot;./assets/data/films.db&quot;)
     </div>
   </article>
 </slide>
-<slide class="" id="slide-65" style="background:;">
+<slide class="" id="slide-61" style="background:;">
   <hgroup>
     <h1>Création d&#39;une table avec clé étrangère</h1>
   </hgroup>
@@ -1685,7 +1585,7 @@ con &lt;- dbConnect(SQLite(), dbname=&quot;./assets/data/films.db&quot;)
     </div>
   </article>
 </slide>
-<slide class="" id="slide-66" style="background:;">
+<slide class="" id="slide-62" style="background:;">
   <hgroup>
     <h1>Création d&#39;une table avec clé étrangère</h1>
   </hgroup>
@@ -1718,8 +1618,8 @@ con &lt;- dbConnect(SQLite(), dbname=&quot;./assets/data/films.db&quot;)
     </div>
   </article>
 </slide>
-<slide class="" id="slide-67" style="background:;">
-  <!--  <a href="#slide-67"></a> -->
+<slide class="" id="slide-63" style="background:;">
+  <!--  <a href="#slide-63"></a> -->
   <hgroup>
     <h1>Ajout de contraintes à une table</h1>
   </hgroup>
@@ -1744,8 +1644,8 @@ con &lt;- dbConnect(SQLite(), dbname=&quot;./assets/data/films.db&quot;)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-68" style="background:;">
-  <!--  <a href="#slide-68"></a> -->
+<slide class="" id="slide-64" style="background:;">
+  <!--  <a href="#slide-64"></a> -->
   <hgroup>
     <h1>Création d&#39;une table avec R</h1>
   </hgroup>
@@ -1770,8 +1670,8 @@ dbListTables(con)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-69" style="background:;">
-  <!--  <a href="#slide-69"></a> -->
+<slide class="" id="slide-65" style="background:;">
+  <!--  <a href="#slide-65"></a> -->
   <hgroup>
     <h1>Création d&#39;une table</h1>
   </hgroup>
@@ -1788,8 +1688,8 @@ dbListTables(con)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-70" style="background:;">
-  <!--  <a href="#slide-70"></a> -->
+<slide class="" id="slide-66" style="background:;">
+  <!--  <a href="#slide-66"></a> -->
   <hgroup>
     <h1>Modifier la table existante</h1>
   </hgroup>
@@ -1803,8 +1703,8 @@ ALTER TABLE database_name.table_name ADD COLUMN column_def...;
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-71" style="background:;">
-  <!--  <a href="#slide-71"></a> -->
+<slide class="" id="slide-67" style="background:;">
+  <!--  <a href="#slide-67"></a> -->
   <hgroup>
     <h1>Supprimer la table de données</h1>
   </hgroup>
@@ -1819,8 +1719,8 @@ ALTER TABLE database_name.table_name ADD COLUMN column_def...;
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-72" style="background:;">
-  <!--  <a href="#slide-72"></a> -->
+<slide class="" id="slide-68" style="background:;">
+  <!--  <a href="#slide-68"></a> -->
   <hgroup>
     <h1>Supprimer la base de données</h1>
   </hgroup>
@@ -1838,8 +1738,8 @@ dbDisconnect(con)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-73" style="background:;">
-  <!--  <a href="#slide-73"></a> -->
+<slide class="" id="slide-69" style="background:;">
+  <!--  <a href="#slide-69"></a> -->
   <hgroup>
     <h1>Lectures et travail pour la semaine prochaine</h1>
   </hgroup>
@@ -1851,8 +1751,8 @@ dbDisconnect(con)
   </article>
   <!-- Presenter Notes -->
 </slide>
-<slide class="" id="slide-74" style="background:;">
-  <!--  <a href="#slide-74"></a> -->
+<slide class="" id="slide-70" style="background:;">
+  <!--  <a href="#slide-70"></a> -->
   <hgroup>
     <h1>Lectures et travail pour la semaine prochaine</h1>
   </hgroup>
@@ -1975,13 +1875,13 @@ dbDisconnect(con)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=18 title='Les données temporelles'>
+        data-slide=18 title='Les données taxonomiques'>
          18
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=19 title='Les données temporelles'>
+        data-slide=19 title='Les données taxonomiques'>
          19
       </a>
     </li>
@@ -2005,13 +1905,13 @@ dbDisconnect(con)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=23 title='Les données taxonomiques'>
+        data-slide=23 title='Les données spatiales'>
          23
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=24 title='Les données taxonomiques'>
+        data-slide=24 title='Les données spatiales'>
          24
       </a>
     </li>
@@ -2029,157 +1929,157 @@ dbDisconnect(con)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=27 title='Les données spatiales'>
+        data-slide=27 title='L&#39;absence de données'>
          27
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=28 title='Les données spatiales'>
+        data-slide=28 title='L&#39;absence de données'>
          28
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=29 title='L&#39;absence de données'>
+        data-slide=29 title='Le format des données'>
          29
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=30 title='L&#39;absence de données'>
+        data-slide=30 title='Choisir le bon type et format de données'>
          30
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=31 title='Le format des données'>
+        data-slide=31 title='Pour en savoir davantage:'>
          31
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=32 title='Choisir le bon type et format de données'>
+        data-slide=32 title='Entreposer et archiver ses données écologiques'>
          32
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=33 title='Finalement...'>
+        data-slide=33 title='Où sommes-nous?'>
          33
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=34 title='Entreposer et archiver ses données écologiques'>
+        data-slide=34 title='Pourquoi bien entreposer ses données?'>
          34
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=35 title='Où sommes-nous?'>
+        data-slide=35 title='Les entrepôts existants'>
          35
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=36 title='Pourquoi bien entreposer ses données?'>
+        data-slide=36 title='Les entrepôts existants'>
          36
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=37 title='Les entrepôts existants'>
+        data-slide=37 title='Le Tesseract de la biologie'>
          37
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=38 title='Les entrepôts existants'>
+        data-slide=38 title='Les bases de données (BDs) à la rescousse'>
          38
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=39 title='Le Tesseract de la biologie'>
+        data-slide=39 title='Avantages des bases de données'>
          39
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=40 title='Les bases de données (BDs) à la rescousse'>
+        data-slide=40 title='Conceptualisation d&#39;une base de données en 5 étapes'>
          40
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=41 title='Avantages des bases de données'>
+        data-slide=41 title='Étape 1. Faire une liste des variables'>
          41
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=42 title='Avantages des bases de données'>
+        data-slide=42 title='Étape 2. Regrouper les variables dans des tables'>
          42
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=43 title='Étape 1. Faire une liste des variables'>
+        data-slide=43 title='Étape 3. Établir le type d&#39;association entre les tables'>
          43
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=44 title='Étape 2. Regrouper les variables dans des tables'>
+        data-slide=44 title='Étape 3. Établir le type d&#39;association entre les tables'>
          44
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=45 title='Étape 3. Établir le type d&#39;association entre les tables'>
+        data-slide=45 title='Étape 4. Établir les clés primaires et étrangères'>
          45
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=46 title='Étape 3. Établir le type d&#39;association entre les tables'>
+        data-slide=46 title='Étape 4. Établir les clés primaires et étrangères'>
          46
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=47 title='Étape 4. Établir les clés primaires et étrangères'>
+        data-slide=47 title='Étape 5. Assigner un type de données aux attributs'>
          47
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=48 title='Étape 4. Établir les clés primaires et étrangères'>
+        data-slide=48 title='En résumé'>
          48
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=49 title='Étape 5. Assigner un type de données aux attributs'>
+        data-slide=49 title='Les Systèmes de Gestion de Base de Données (SGBDs)'>
          49
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=50 title='En résumé'>
+        data-slide=50 title='La diversité des SGBDs'>
          50
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=51 title='Les Systèmes de Gestion de Base de Données (SGBDs)'>
+        data-slide=51 title='Le langage SQL'>
          51
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=52 title='La diversité des SGBDs'>
+        data-slide=52 title='Le langage SQL'>
          52
       </a>
     </li>
@@ -2191,128 +2091,104 @@ dbDisconnect(con)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=54 title='Le langage SQL'>
+        data-slide=54 title='Deux approches avec les bases de données'>
          54
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=55 title='Le langage SQL'>
+        data-slide=55 title='L&#39;approche: Serveur de base de données'>
          55
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=56 title='Deux approches avec les bases de données'>
+        data-slide=56 title='L&#39;approche: Fichier de base de données'>
          56
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=57 title='L&#39;approche: Serveur de base de données'>
+        data-slide=57 title='Pratique: Du modèle conceptuelle vers le modèle logique'>
          57
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=58 title='L&#39;approche: Fichier de base de données'>
+        data-slide=58 title='Les grandes étapes avec SQLite3'>
          58
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=59 title='Pratique: Du modèle conceptuelle vers le modèle logique'>
+        data-slide=59 title='Se connecter au fichier la BD (SQLite3) via R'>
          59
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=60 title='Les grandes étapes avec SQLite3'>
+        data-slide=60 title='Création d&#39;une première table avec clé primaire'>
          60
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=61 title='Créer un fichier de base de données'>
+        data-slide=61 title='Création d&#39;une table avec clé étrangère'>
          61
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=62 title='Se connecter au fichier la BD (SQLite3) via R'>
+        data-slide=62 title='Création d&#39;une table avec clé étrangère'>
          62
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=63 title='Création de la base de données via R'>
+        data-slide=63 title='Ajout de contraintes à une table'>
          63
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=64 title='Création d&#39;une première table avec clé primaire'>
+        data-slide=64 title='Création d&#39;une table avec R'>
          64
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=65 title='Création d&#39;une table avec clé étrangère'>
+        data-slide=65 title='Création d&#39;une table'>
          65
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=66 title='Création d&#39;une table avec clé étrangère'>
+        data-slide=66 title='Modifier la table existante'>
          66
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=67 title='Ajout de contraintes à une table'>
+        data-slide=67 title='Supprimer la table de données'>
          67
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=68 title='Création d&#39;une table avec R'>
+        data-slide=68 title='Supprimer la base de données'>
          68
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=69 title='Création d&#39;une table'>
+        data-slide=69 title='Lectures et travail pour la semaine prochaine'>
          69
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=70 title='Modifier la table existante'>
+        data-slide=70 title='Lectures et travail pour la semaine prochaine'>
          70
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=71 title='Supprimer la table de données'>
-         71
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=72 title='Supprimer la base de données'>
-         72
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=73 title='Lectures et travail pour la semaine prochaine'>
-         73
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=74 title='Lectures et travail pour la semaine prochaine'>
-         74
       </a>
     </li>
   </ul>

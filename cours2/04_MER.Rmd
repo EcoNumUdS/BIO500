@@ -1,5 +1,6 @@
 
---- .transition
+
+---.transition
 
 # Conceptualisation d'une base de données en 5 étapes
 
@@ -8,7 +9,7 @@
 # Étape 1. Faire une liste des variables
 
 1. Dresser la liste des informations collectées par les différents groupes.
-2. Regrouper les variables communes entre les équipes pour obtenir une ontologie conjointe.
+2. Regrouper les variables communes entre les équipes pour obtenir un format de données conjoint.
 
 ---
 
