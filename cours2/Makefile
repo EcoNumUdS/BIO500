@@ -1,7 +1,7 @@
 inpu := $(wildcard *.Rmd)
 inpr := $(wildcard scripts/*.R)
 html = ./pres/index.html
-pdf = ./pres/assets/pdf/S1-BIO109.pdf
+pdf = ./pres/assets/pdf/S2-BIO109.pdf
 deckpath = ~/Documents/Git/decktape
 
 all: $(html)
