@@ -686,7 +686,7 @@ DELETE FROM films;
   - Nombre de liens par étudiant
   - Décompte de liens par paire d'étudiants
 
-4. Enregistrer le résultat des requêtes dans un fichier csv (voir la diapo 34 de ce cours)
+4. Enregistrer le résultat des requêtes dans un fichier csv
 
 ---
 
@@ -698,7 +698,8 @@ DELETE FROM films;
 
 6. Écrire un script qui réalise les étapes 1-3 d'un bloc
 
-Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l'une après l'autre. Assurez vous que le script fonctionne sur la machine virtuelle et entre des utilisateurs différents.
+Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l'une après l'autre. 
+Assurez vous que le script fonctionne sur l'ordinateur du laboratoire et également entre des utilisateurs différents.
 
 ---
 
