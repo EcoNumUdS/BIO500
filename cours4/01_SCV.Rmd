@@ -85,7 +85,7 @@ C'est un système qui permet de suivre l'ajout et les modifications pour un ense
 
 # Qu'est ce que Git?
 
-Il présente l'avantage d'être extrement versatile mais le désavantage de fonctionner seulement avec les fichiers plein texte.
+Il présente l'avantage d'être extrêmement versatile mais le désavantage de fonctionner seulement avec les fichiers plein texte.
 
 **Question**: Qu'est ce qu'un fichier plein texte?
 
