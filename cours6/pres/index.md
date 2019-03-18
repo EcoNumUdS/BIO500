@@ -27,6 +27,233 @@ assets      :
 
 --- .transition
 
+# Qu'est-ce qui fait une bonne figure ?
+
+---
+
+# Trop d'information
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/Pacala.png" width="70%"></img>
+</div>
+
+---
+
+# Non respect des normes graphiques
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/Desjardins.png" width="70%"></img>
+</div>
+
+---
+
+# Abus de symboles et de couleurs
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/Boulangeat.png" width="100%"></img>
+</div>
+
+
+---.transition
+
+# L'art graphique
+
+---
+
+# L'importance des graphiques
+
+<!-- La représentation visuelle de nos données est un **outil de persuasion** permettant d'illustrer nos résultats auprès du public et de nos pairs. Cet outil permet également de mieux comprendre les relations à l'intérieur de nos données par la visualisation. -->
+
+## La représentation visuelle des données permet de:
+
+- Synthétiser l'information.
+- Communiquer plus efficacement qu'un tableau.
+- Explorer nos données par la visualisation.
+- Présenter nos résultats et convaincre.
+
+---
+
+# Explorer nos données par la visualisation
+
+## Voici un exemple illustrant l'importance de visualiser ses données:
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/table_visu.png" width="100%"></img>
+</div>
+
+---
+
+# Explorer nos données par la visualisation
+
+## Voici un exemple illustrant l'importance de visualiser ses données:
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/plot_visu.png" height="450px"></img>
+</div>
+
+--- &twocol
+
+# Communiquer par les graphiques
+
+*** =left
+
+- Les graphiques sont généralement **plus efficaces à communiquer** un message/un résultat qu'un tableau.
+
+- **Problème:** La représentation graphique peut parfois nous conduire à une **fausse interprétation**. L'idée est de transmettre une idée sans biaiser le lecteur.
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/fox.jpg" width="100%"></img>
+</div>
+
+<!-- - Problème: ratio 8/3 -->
+
+--- &twocol
+
+# Communiquer par les graphiques
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/deformation.png" width="100%"></img>
+</div>
+
+
+<!-- - Problème: ratio 8/3 -->
+
+
+---
+
+# Communiquer par les graphiques
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/Weisgerber_1.png" width="70%"></img>
+</div>
+
+---
+
+# Communiquer par les graphiques
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/Weisgerber2.png" width="70%"></img>
+</div>
+
+
+---.transition
+
+# Règles et composantes graphiques
+
+--- &twocol
+
+# Les composantes graphiques
+
+*** =left
+
+- Les axes et échelles.
+- Le titre de la figure.
+- La légende
+- Le [type de représentation des données](http://www.datavizcatalogue.com/).
+
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/viz.png" width="100%"></img>
+</div>
+
+--- &twocol
+
+# Les règles graphiques
+
+*** =left
+
+- Une figure doit renvoyer un seul message/résultat.
+- Chaque élément d'une figure doit **aider à comprendre** ce message.
+- **Choisir le bon type de représentation** permet de mettre en valeur plus facilement ce qui doit être illustré.
+- **Attention aux normes graphiques**: Choix des couleurs, taille des caractères, épaisseur de la ligne, disposition des marges, cadrage etc.
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/viz.png" width="100%"></img>
+</div>
+
+---
+
+# Quelques conseils
+
+- Ne pas **JAMAIS** utiliser de diagramme en pointe de tarte
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/pies_vs_bars.png" width="80%"></img>
+</div>
+
+--- &twocol
+
+# Quelques conseils
+
+*** =left
+
+- Éviter les figures 3D.
+- Limiter le nombre de dimensions (3 ou 4 dimensions max).
+- La multi-dimensionnalité peut être gérée en:
+  - Modifiant la forme et la la taille des points
+  - Ajoutant des couleurs
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/Pacala.png" height="350px"></img>
+</div>
+
+
+--- &twocol
+
+# Quelques conseils
+
+- Limiter le ratio encre/données afin de faciliter la lecture.
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/data2ink.jpg" width="100%"></img>
+</div>
+
+
+--- .transition
+
+# Types de figures
+
+---
+
+# Diagramme de dispersion (Scatter plot)
+
+<img src="assets/fig/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" height="550px" style="display: block; margin: auto;" />
+
+---
+
+# Diagrammes à bâtons (Bar plot)
+
+<img src="assets/fig/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" height="550px" style="display: block; margin: auto;" />
+
+---
+
+# Histogrammes
+
+<img src="assets/fig/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" height="550px" style="display: block; margin: auto;" />
+
+--- &twocol
+
+# Représentation 3-D
+
+<img src="assets/fig/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" height="550px" style="display: block; margin: auto;" />
+
+---
+
+# Lignes de contour
+
+<img src="assets/fig/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" height="550px" style="display: block; margin: auto;" />
+---
+
+--- .transition
+
 # Faire une figure étape par étape avec R
 
 ---
@@ -80,7 +307,7 @@ plot(elevation, densite[,1], axes = FALSE,
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="100%" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-11-1.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" width="100%" style="display: block; margin: auto;" />
 
 --- &twocol
 
@@ -95,7 +322,7 @@ plot(elevation, densite[,1], axes = FALSE,
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="100%" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-13-1.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" width="100%" style="display: block; margin: auto;" />
 
 --- &twocol
 
@@ -112,7 +339,7 @@ plot(elevation, densite[,1], axes = FALSE,
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" width="100%" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-15-1.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" width="100%" style="display: block; margin: auto;" />
 
 --- &twocol
 
@@ -126,7 +353,7 @@ axis(2)
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" width="100%" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-17-1.png" title="plot of chunk unnamed-chunk-17" alt="plot of chunk unnamed-chunk-17" width="100%" style="display: block; margin: auto;" />
 
 --- &twocolw w1:55% w2:45%
 
@@ -139,7 +366,7 @@ title(main = "Densité au long du gradient d'élévation")
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-14-1.png" title="plot of chunk unnamed-chunk-14" alt="plot of chunk unnamed-chunk-14" width="100%" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-19-1.png" title="plot of chunk unnamed-chunk-19" alt="plot of chunk unnamed-chunk-19" width="100%" style="display: block; margin: auto;" />
 
 --- &twocol
 
@@ -152,7 +379,7 @@ points(elevation, densite[,3], pch = 19, cex = 1.5)
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-16-1.png" title="plot of chunk unnamed-chunk-16" alt="plot of chunk unnamed-chunk-16" width="100%" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-21-1.png" title="plot of chunk unnamed-chunk-21" alt="plot of chunk unnamed-chunk-21" width="100%" style="display: block; margin: auto;" />
 
 --- &twocol
 
@@ -166,7 +393,7 @@ lines(elevation, densite[,3], lty  = 3, lwd = 1.5)
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-18-1.png" title="plot of chunk unnamed-chunk-18" alt="plot of chunk unnamed-chunk-18" width="100%" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-23-1.png" title="plot of chunk unnamed-chunk-23" alt="plot of chunk unnamed-chunk-23" width="100%" style="display: block; margin: auto;" />
 
 --- &twocolw w1:40% w2:60%
 
@@ -215,7 +442,7 @@ abline(model, col = "darkred")
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-22-1.png" title="plot of chunk unnamed-chunk-22" alt="plot of chunk unnamed-chunk-22" width="100%" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-27-1.png" title="plot of chunk unnamed-chunk-27" alt="plot of chunk unnamed-chunk-27" width="100%" style="display: block; margin: auto;" />
 
 
 --- &twocol
@@ -231,7 +458,7 @@ legend("top", bty = "n", pch = c(19,1), lty = 1,
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-24-1.png" title="plot of chunk unnamed-chunk-24" alt="plot of chunk unnamed-chunk-24" width="100%" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-29-1.png" title="plot of chunk unnamed-chunk-29" alt="plot of chunk unnamed-chunk-29" width="100%" style="display: block; margin: auto;" />
 
 --- &twocol
 
@@ -246,7 +473,7 @@ text(x = 850, y = 25, paste("R2=",r2),
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-26-1.png" title="plot of chunk unnamed-chunk-26" alt="plot of chunk unnamed-chunk-26" width="100%" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-31-1.png" title="plot of chunk unnamed-chunk-31" alt="plot of chunk unnamed-chunk-31" width="100%" style="display: block; margin: auto;" />
 
 ---
 
@@ -279,7 +506,7 @@ points(elevation, densite[,3])
 
 *** =right
 
-<img src="assets/fig/unnamed-chunk-28-1.png" title="plot of chunk unnamed-chunk-28" alt="plot of chunk unnamed-chunk-28" height="500px" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-33-1.png" title="plot of chunk unnamed-chunk-33" alt="plot of chunk unnamed-chunk-33" height="500px" style="display: block; margin: auto;" />
 
 --- &twocol
 
@@ -294,7 +521,7 @@ barplot(n_tot)
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-30-1.png" title="plot of chunk unnamed-chunk-30" alt="plot of chunk unnamed-chunk-30" height="500px" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-35-1.png" title="plot of chunk unnamed-chunk-35" alt="plot of chunk unnamed-chunk-35" height="500px" style="display: block; margin: auto;" />
 
 --- &twocol
 
@@ -308,7 +535,7 @@ hist(densite[,3])
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-32-1.png" title="plot of chunk unnamed-chunk-32" alt="plot of chunk unnamed-chunk-32" height="500px" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-37-1.png" title="plot of chunk unnamed-chunk-37" alt="plot of chunk unnamed-chunk-37" height="500px" style="display: block; margin: auto;" />
 
 --- &twocol
 
@@ -333,7 +560,7 @@ title(main = "Maunga Whau Volcano", font.main = 4)
 
 *** =right
 
-<img src="assets/fig/unnamed-chunk-34-1.png" title="plot of chunk unnamed-chunk-34" alt="plot of chunk unnamed-chunk-34" height="500px" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-39-1.png" title="plot of chunk unnamed-chunk-39" alt="plot of chunk unnamed-chunk-39" height="500px" style="display: block; margin: auto;" />
 
 --- &twocol
 
@@ -361,7 +588,7 @@ contour(x, y, volcano,
 
 *** =right
 
-<img src="assets/fig/unnamed-chunk-36-1.png" title="plot of chunk unnamed-chunk-36" alt="plot of chunk unnamed-chunk-36" height="500px" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-41-1.png" title="plot of chunk unnamed-chunk-41" alt="plot of chunk unnamed-chunk-41" height="500px" style="display: block; margin: auto;" />
 
 ---
 
@@ -432,7 +659,7 @@ sum(L)
 ```
 
 ```
-## [1] 21
+## [1] 25
 ```
 
 ```r
@@ -450,7 +677,7 @@ plot(g)
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-41-1.png" title="plot of chunk unnamed-chunk-41" alt="plot of chunk unnamed-chunk-41" width="100%" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-46-1.png" title="plot of chunk unnamed-chunk-46" alt="plot of chunk unnamed-chunk-46" width="100%" style="display: block; margin: auto;" />
 
 --- &twocol
 
@@ -464,7 +691,7 @@ plot(g, vertex.label=NA, edge.arrow.mode = 0,
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-43-1.png" title="plot of chunk unnamed-chunk-43" alt="plot of chunk unnamed-chunk-43" width="100%" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-48-1.png" title="plot of chunk unnamed-chunk-48" alt="plot of chunk unnamed-chunk-48" width="100%" style="display: block; margin: auto;" />
 
 
 --- .transition
@@ -496,7 +723,7 @@ plot(g, vertex.label=NA, edge.arrow.mode = 0,
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-45-1.png" title="plot of chunk unnamed-chunk-45" alt="plot of chunk unnamed-chunk-45" width="100%" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-50-1.png" title="plot of chunk unnamed-chunk-50" alt="plot of chunk unnamed-chunk-50" width="100%" style="display: block; margin: auto;" />
 
 --- &twocol
 
@@ -517,7 +744,7 @@ plot(g, vertex.label=NA, edge.arrow.mode = 0,
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-47-1.png" title="plot of chunk unnamed-chunk-47" alt="plot of chunk unnamed-chunk-47" width="100%" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-52-1.png" title="plot of chunk unnamed-chunk-52" alt="plot of chunk unnamed-chunk-52" width="100%" style="display: block; margin: auto;" />
 
 --- &twocol
 
@@ -531,7 +758,7 @@ plot(g, vertex.label=NA, edge.arrow.mode = 0,
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-49-1.png" title="plot of chunk unnamed-chunk-49" alt="plot of chunk unnamed-chunk-49" width="100%" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-54-1.png" title="plot of chunk unnamed-chunk-54" alt="plot of chunk unnamed-chunk-54" width="100%" style="display: block; margin: auto;" />
 
 --- &twocol
 
@@ -546,7 +773,7 @@ plot(g, vertex.label=NA, edge.arrow.mode = 0,
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-51-1.png" title="plot of chunk unnamed-chunk-51" alt="plot of chunk unnamed-chunk-51" width="100%" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-56-1.png" title="plot of chunk unnamed-chunk-56" alt="plot of chunk unnamed-chunk-56" width="100%" style="display: block; margin: auto;" />
 
 --- &twocol
 
@@ -561,7 +788,7 @@ plot(g, vertex.label=NA, edge.arrow.mode = 0,
 ```
 
 *** =right
-<img src="assets/fig/unnamed-chunk-53-1.png" title="plot of chunk unnamed-chunk-53" alt="plot of chunk unnamed-chunk-53" width="100%" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-58-1.png" title="plot of chunk unnamed-chunk-58" alt="plot of chunk unnamed-chunk-58" width="100%" style="display: block; margin: auto;" />
 
 ---
 
@@ -576,7 +803,7 @@ modularity(wtc)
 ```
 
 ```
-## [1] 0.3526077
+## [1] 0.2968
 ```
 
 ---
@@ -592,37 +819,37 @@ distances(g)
 
 ```
 ##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13]
-##  [1,]    0    4    3  Inf    3    2    2    1    2     3     1     2     3
-##  [2,]    4    0    2  Inf    5    2    4    3    3     5     5     4     5
-##  [3,]    3    2    0  Inf    4    2    3    2    1     4     4     3     4
-##  [4,]  Inf  Inf  Inf    0  Inf  Inf  Inf  Inf  Inf   Inf   Inf   Inf   Inf
-##  [5,]    3    5    4  Inf    0    3    2    2    3     2     4     1     3
-##  [6,]    2    2    2  Inf    3    0    2    1    1     3     3     2     3
-##  [7,]    2    4    3  Inf    2    2    0    1    2     2     3     1     1
-##  [8,]    1    3    2  Inf    2    1    1    0    1     2     2     1     2
-##  [9,]    2    3    1  Inf    3    1    2    1    0     3     3     2     3
-## [10,]    3    5    4  Inf    2    3    2    2    3     0     4     1     3
-## [11,]    1    5    4  Inf    4    3    3    2    3     4     0     3     4
-## [12,]    2    4    3  Inf    1    2    1    1    2     1     3     0     2
-## [13,]    3    5    4  Inf    3    3    1    2    3     3     4     2     0
-## [14,]    4    2    2  Inf    5    2    4    3    3     5     5     4     5
-## [15,]    3    1    1  Inf    4    1    3    2    2     4     4     3     4
+##  [1,]    0    2    2    3    2    1    2    2    1     4     2     2     3
+##  [2,]    2    0    3    2    3    2    2    1    1     3     2     3     1
+##  [3,]    2    3    0    3    1    1    3    2    2     4     1     2     2
+##  [4,]    3    2    3    0    3    2    4    1    3     1     2     3     3
+##  [5,]    2    3    1    3    0    1    3    2    2     4     1     2     2
+##  [6,]    1    2    1    2    1    0    3    1    2     3     1     1     2
+##  [7,]    2    2    3    4    3    3    0    3    1     5     2     4     3
+##  [8,]    2    1    2    1    2    1    3    0    2     2     1     2     2
+##  [9,]    1    1    2    3    2    2    1    2    0     4     1     3     2
+## [10,]    4    3    4    1    4    3    5    2    4     0     3     4     4
+## [11,]    2    2    1    2    1    1    2    1    1     3     0     2     1
+## [12,]    2    3    2    3    2    1    4    2    3     4     2     0     3
+## [13,]    3    1    2    3    2    2    3    2    2     4     1     3     0
+## [14,]    1    3    2    3    2    1    3    2    2     4     2     2     3
+## [15,]    3    1    3    2    3    2    3    1    2     3     2     3     2
 ##       [,14] [,15]
-##  [1,]     4     3
-##  [2,]     2     1
-##  [3,]     2     1
-##  [4,]   Inf   Inf
-##  [5,]     5     4
-##  [6,]     2     1
-##  [7,]     4     3
-##  [8,]     3     2
-##  [9,]     3     2
-## [10,]     5     4
-## [11,]     5     4
-## [12,]     4     3
-## [13,]     5     4
-## [14,]     0     1
-## [15,]     1     0
+##  [1,]     1     3
+##  [2,]     3     1
+##  [3,]     2     3
+##  [4,]     3     2
+##  [5,]     2     3
+##  [6,]     1     2
+##  [7,]     3     3
+##  [8,]     2     1
+##  [9,]     2     2
+## [10,]     4     3
+## [11,]     2     2
+## [12,]     2     3
+## [13,]     3     2
+## [14,]     0     3
+## [15,]     3     0
 ```
 
 ---
@@ -637,9 +864,9 @@ eigen_centrality(g)$vector
 ```
 
 ```
-##  [1] 0.42850019 0.07270495 0.28881369 0.00000000 0.15052980 0.48578124
-##  [7] 0.66139629 1.00000000 0.49148529 0.15052980 0.11867584 0.54351457
-## [13] 0.18317789 0.10055402 0.26251414
+##  [1] 0.60667589 0.42901059 0.61074413 0.17397036 0.61074413 1.00000000
+##  [7] 0.12159891 0.67393745 0.50059504 0.04225892 0.90355043 0.32084473
+## [13] 0.32369072 0.39027562 0.26791572
 ```
 
 --- .transition

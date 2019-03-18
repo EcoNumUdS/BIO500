@@ -27,6 +27,263 @@ assets      :
 
 --- .transition
 
+# Qu'est-ce qui fait une bonne figure ?
+
+---
+
+# Trop d'information
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/Pacala.png" width="70%"></img>
+</div>
+
+---
+
+# Non respect des normes graphiques
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/Desjardins.png" width="70%"></img>
+</div>
+
+---
+
+# Abus de symboles et de couleurs
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/Boulangeat.png" width="100%"></img>
+</div>
+
+
+---.transition
+
+# L'art graphique
+
+---
+
+# L'importance des graphiques
+
+<!-- La représentation visuelle de nos données est un **outil de persuasion** permettant d'illustrer nos résultats auprès du public et de nos pairs. Cet outil permet également de mieux comprendre les relations à l'intérieur de nos données par la visualisation. -->
+
+## La représentation visuelle des données permet de:
+
+- Synthétiser l'information.
+- Communiquer plus efficacement qu'un tableau.
+- Explorer nos données par la visualisation.
+- Présenter nos résultats et convaincre.
+
+---
+
+# Explorer nos données par la visualisation
+
+## Voici un exemple illustrant l'importance de visualiser ses données:
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/table_visu.png" width="100%"></img>
+</div>
+
+---
+
+# Explorer nos données par la visualisation
+
+## Voici un exemple illustrant l'importance de visualiser ses données:
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/plot_visu.png" height="450px"></img>
+</div>
+
+--- &twocol
+
+# Communiquer par les graphiques
+
+*** =left
+
+- Les graphiques sont généralement **plus efficaces à communiquer** un message/un résultat qu'un tableau.
+
+- **Problème:** La représentation graphique peut parfois nous conduire à une **fausse interprétation**. L'idée est de transmettre une idée sans biaiser le lecteur.
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/fox.jpg" width="100%"></img>
+</div>
+
+<!-- - Problème: ratio 8/3 -->
+
+--- &twocol
+
+# Communiquer par les graphiques
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/deformation.png" width="100%"></img>
+</div>
+
+
+<!-- - Problème: ratio 8/3 -->
+
+
+---
+
+# Communiquer par les graphiques
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/Weisgerber_1.png" width="70%"></img>
+</div>
+
+---
+
+# Communiquer par les graphiques
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/Weisgerber2.png" width="70%"></img>
+</div>
+
+
+---.transition
+
+# Règles et composantes graphiques
+
+--- &twocol
+
+# Les composantes graphiques
+
+*** =left
+
+- Les axes et échelles.
+- Le titre de la figure.
+- La légende
+- Le [type de représentation des données](http://www.datavizcatalogue.com/).
+
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/viz.png" width="100%"></img>
+</div>
+
+--- &twocol
+
+# Les règles graphiques
+
+*** =left
+
+- Une figure doit renvoyer un seul message/résultat.
+- Chaque élément d'une figure doit **aider à comprendre** ce message.
+- **Choisir le bon type de représentation** permet de mettre en valeur plus facilement ce qui doit être illustré.
+- **Attention aux normes graphiques**: Choix des couleurs, taille des caractères, épaisseur de la ligne, disposition des marges, cadrage etc.
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/viz.png" width="100%"></img>
+</div>
+
+---
+
+# Quelques conseils
+
+- Ne pas **JAMAIS** utiliser de diagramme en pointe de tarte
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/pies_vs_bars.png" width="80%"></img>
+</div>
+
+--- &twocol
+
+# Quelques conseils
+
+*** =left
+
+- Éviter les figures 3D.
+- Limiter le nombre de dimensions (3 ou 4 dimensions max).
+- La multi-dimensionnalité peut être gérée en:
+  - Modifiant la forme et la la taille des points
+  - Ajoutant des couleurs
+
+*** =right
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/Pacala.png" height="350px"></img>
+</div>
+
+
+--- &twocol
+
+# Quelques conseils
+
+- Limiter le ratio encre/données afin de faciliter la lecture.
+
+<div style='text-align:center;margin-top:10px;'>
+  <img src="assets/img/data2ink.jpg" width="100%"></img>
+</div>
+
+
+--- .transition
+
+# Types de figures
+
+---
+
+# Diagramme de dispersion (Scatter plot)
+
+```{r, echo=FALSE,out.height = '550px', dpi=300, fig.align="center"}
+arbres  <- read.csv2("donnees/arbres.csv")
+densite <- table(arbres[,c(3,5)])
+elevation <- as.numeric(row.names(densite))
+plot(elevation, densite[,1], pch = 19, xlab = "Elevation", ylab = "Densité")
+points(elevation, densite[,3])
+```
+
+---
+
+# Diagrammes à bâtons (Bar plot)
+
+```{r, echo=FALSE,out.height = '550px', dpi=300, fig.align="center"}
+arbres  <- read.csv2("donnees/arbres.csv")
+n_tot <- table(arbres$esp)
+barplot(n_tot)
+```
+
+---
+
+# Histogrammes
+
+```{r, echo=FALSE,out.height = '550px', dpi=300, fig.align="center"}
+hist(densite[,3])
+```
+
+--- &twocol
+
+# Représentation 3-D
+
+```{r, echo=FALSE,out.height = '550px', dpi=300, fig.align="center"}
+x <- 10*(1:nrow(volcano))
+y <- 10*(1:ncol(volcano))
+image(x, y, volcano, col = terrain.colors(100), axes = FALSE)
+axis(1, at = seq(100, 800, by = 100))
+axis(2, at = seq(100, 600, by = 100))
+box()
+title(main = "Maunga Whau Volcano", font.main = 4)
+```
+
+---
+
+# Lignes de contour
+
+```{r, echo=FALSE,out.height = '550px', dpi=300, fig.align="center"}
+x <- 10*(1:nrow(volcano))
+y <- 10*(1:ncol(volcano))
+image(x, y, volcano, col = terrain.colors(100), axes = FALSE)
+axis(1, at = seq(100, 800, by = 100))
+axis(2, at = seq(100, 600, by = 100))
+box()
+title(main = "Maunga Whau Volcano", font.main = 4)
+contour(x, y, volcano, levels = seq(90, 200, by = 5),
+add = TRUE, col = "black")
+```
+---
+
+--- .transition
+
 # Faire une figure étape par étape avec R
 
 ---

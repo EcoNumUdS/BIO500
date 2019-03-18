@@ -1,5 +1,5 @@
 ---
-title       : "Séance 5: La visualisation des données"
+title       : "Séance 5: Le makefile"
 subtitle    : "BIO 500 - Méthodes en écologie computationnelle"
 author      : "Dominique Gravel & Steve Vissault"
 job         : "Laboratoire d'écologie intégrative"

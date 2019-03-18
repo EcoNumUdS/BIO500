@@ -264,3 +264,10 @@ https://gist.github.com/isaacs/62a2d1825d04437c6f08
 http://gl.developpez.com/tutoriel/outil/makefile/
 
 http://icps.u-strasbg.fr/people/loechner/public_html/enseignement/GL/make.pdf
+
+---
+
+# Lectures
+
+Milcu, A. et al. 2018. Genotypic variability enhances the reproducibility of an ecological study. Nature Ecology and Evolution 2 : 279-287.
+

@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1513702387 "syllabus.tex" "/home/grad3002/Dropbox/Documents/Teaching/BIO500/depot/plan_cours/syllabus.pdf" "syllabus" 1513702387
-  "/etc/texmf/web2c/texmf.cnf" 1484686552 1101 af7716885e081ab43982cab7b4672c1a ""
-  "/home/grad3002/Dropbox/Documents/Teaching/BIO500/depot/plan_cours/syllabus.aux" 1513702387 896 6244dfd63c228099c279f8d6f0057f20 ""
+["pdflatex"] 1550075749 "syllabus.tex" "/home/grad3002/Dropbox/Documents/Teaching/BIO500/depot/plan_cours/syllabus.pdf" "syllabus" 1550075750
+  "/etc/texmf/web2c/texmf.cnf" 1540476421 1101 af7716885e081ab43982cab7b4672c1a ""
+  "/home/grad3002/Dropbox/Documents/Teaching/BIO500/depot/plan_cours/syllabus.aux" 1550075750 896 6244dfd63c228099c279f8d6f0057f20 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -64,15 +64,15 @@
   "/usr/share/texlive/texmf-dist/tex/latex/url/url.sty" 1388531844 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1503343927 31343 93828589fb0cea665e553ee5a17ad2d4 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1503343927 31343 93828589fb0cea665e553ee5a17ad2d4 ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1503576532 1863403 f3ff9a4253bcb5fb9a9baaf0c572cb01 ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1503576541 3856480 4e1c7a3043900b82d734f1612df324b7 ""
-  "syllabus.aux" 1513702387 896 6244dfd63c228099c279f8d6f0057f20 ""
-  "syllabus.out" 1513702387 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1540476430 1863403 f3ff9a4253bcb5fb9a9baaf0c572cb01 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1540476445 3855300 036cfe53a4d3fc5d51b0d4196c75fbcc ""
+  "syllabus.aux" 1550075750 896 6244dfd63c228099c279f8d6f0057f20 ""
+  "syllabus.out" 1550075750 0 d41d8cd98f00b204e9800998ecf8427e ""
   "syllabus.tex" 1513702386 4763 6069f8c1335028c56335ad8aedc23604 ""
   (generated)
-  "syllabus.aux"
-  "/home/grad3002/Dropbox/Documents/Teaching/BIO500/depot/plan_cours/syllabus.log"
   "syllabus.pdf"
+  "/home/grad3002/Dropbox/Documents/Teaching/BIO500/depot/plan_cours/syllabus.log"
   "syllabus.out"
   "/home/grad3002/Dropbox/Documents/Teaching/BIO500/depot/plan_cours/syllabus.pdf"
   "syllabus.log"
+  "syllabus.aux"
