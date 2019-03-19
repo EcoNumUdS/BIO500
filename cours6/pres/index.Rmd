@@ -101,13 +101,6 @@ assets      :
 
 - **Problème:** La représentation graphique peut parfois nous conduire à une **fausse interprétation**. L'idée est de transmettre une idée sans biaiser le lecteur.
 
-*** =right
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/fox.jpg" width="100%"></img>
-</div>
-
-<!-- - Problème: ratio 8/3 -->
 
 --- &twocol
 
