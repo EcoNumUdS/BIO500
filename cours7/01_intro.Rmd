@@ -1089,10 +1089,10 @@ La compilation d'un document avec bibliographie requière l'utilisation du compi
   pdflatex monfichier.tex
   ```
 
-2. Scanner le fichier `.tex` à la recherche des balises `\cite{}`
+2. Scanner les fichiers à la recherche des balises `\cite{}`
 
   ```bash
-  bibtex monfichier.tex
+  bibtex monfichier
   ```
 
 3. Compiler le document final en se servant des `.aux` (étape 1) et `.bbl` (étape 2)

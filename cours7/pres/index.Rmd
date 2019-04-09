@@ -18,7 +18,7 @@ assets      :
 
 ---
 
-# Séance 6
+# Séance 7 & 8
 
 - Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/cours6/) et en [PDF](./assets/pdf/S6-BIO500.pdf).
 - L'ensemble du matériel de cours est disponible sur la page du portail [moodle](https://www.usherbrooke.ca/moodle2-cours/course/view.php?id=12189).
@@ -1113,10 +1113,10 @@ La compilation d'un document avec bibliographie requière l'utilisation du compi
   pdflatex monfichier.tex
   ```
 
-2. Scanner le fichier `.tex` à la recherche des balises `\cite{}`
+2. Scanner les fichiers à la recherche des balises `\cite{}`
 
   ```bash
-  bibtex monfichier.tex
+  bibtex monfichier
   ```
 
 3. Compiler le document final en se servant des `.aux` (étape 1) et `.bbl` (étape 2)
@@ -1192,6 +1192,7 @@ Nous vous demandons de remettre les scripts permettant de générer l'ensemble d
 
 # Évaluation
 
-- Respect des consignes (tous les éléments sont inclus - 60%)
-- Reproductibilité (30%)
+- Respect des consignes (tous les éléments listés précédemment sont inclus - 40%)
+- Reproductibilité (50%)
+  - Quelques pistes: Organisation et clareté du code et des données, présence du Makefile etc...
 - Originalité (10%)
