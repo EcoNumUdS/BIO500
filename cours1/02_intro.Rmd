@@ -3,17 +3,20 @@
 - Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/cours1/) et en [PDF](./assets/pdf/S1-BIO500.pdf).
 - L'ensemble du matériel de cours est disponible sur la page du portail [moodle](https://www.usherbrooke.ca/moodle2-cours/course/view.php?id=12188).
 
---- .transition
+---
+class: inverse, center, middle
 
 # Introduction
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
 ---
 
 # Le Bacon number
 
-<div style='text-align:center;'>
-<img src="assets/img/bacon.jpg" height="500px"></img>
-</div>
+.center[
+  <img src="assets/img/bacon.jpg" height="500px"></img>
+]
 
 ---
 # Le Bacon number
@@ -67,40 +70,40 @@ Kochen a proposé dans les années 50 que "*it is practically certain that any t
 ---
 # Le modèle de petits mondes
 
-<div style='text-align:center;'>
-<img src="assets/img/small_world.png" height="500px"></img>
-</div>
+.center[
+  <img src="assets/img/small_world.png" height="500px"></img>
+]
 
 ---
 # Les propriétés de petit monde en écologie
 
-<div style='text-align:center;'>
-<img src="assets/img/williams2002.png" height="500px"></img>
-</div>
-
----
-
-# Les propriétés de petit monde en écologie
-
-<div style='text-align:center;'>
-<img src="assets/img/foodweb.png" height="500px"></img>
-</div>
+.center[
+  <img src="assets/img/williams2002.png" height="500px"></img>
+]
 
 ---
 
 # Les propriétés de petit monde en écologie
 
-<div style='text-align:center;'>
-<img src="assets/img/cod.png" height="500px"></img>
-</div>
+.center[
+  <img src="assets/img/foodweb.png" height="500px"></img>
+]
 
 ---
 
 # Les propriétés de petit monde en écologie
 
-<div style='text-align:center;'>
-<img src="assets/img/pollinisateur.png" height="500px"></img>
-</div>
+.center[
+  <img src="assets/img/cod.png" height="500px"></img>
+]
+
+---
+
+# Les propriétés de petit monde en écologie
+
+.center[
+  <img src="assets/img/pollinisateur.png" height="500px"></img>
+]
 
 <!-- ---
 
@@ -116,18 +119,21 @@ TODO: MISSING FILE bacteries.png
 
 # Les propriétés de petit monde en écologie
 
-<div style='text-align:center;'>
-<img src="assets/img/csbq.png" height="500px"></img>
-</div>
+.center[
+  <img src="assets/img/csbq.png" height="500px"></img>
+]
 
 ---
 # Le projet de session
 
 Est-ce que le réseau de collaborations entre les étudiants du bacc en écologie a les mêmes propriétés que les réseaux écologiques ?
 
----.transition
+---
+class: inverse, center, middle
 
 # La science reproductible
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
 ---
 
@@ -145,17 +151,17 @@ Est-ce que le réseau de collaborations entre les étudiants du bacc en écologi
 
 # Les étapes du travail d'un biologiste
 
-<div style='text-align:center;'>
-<img src="assets/img/flow_biometrie.png"  width="90%"></img>
-</div>
+.center[
+  <img src="assets/img/flow_biometrie.png"  width="90%"></img>
+]
 
 ---
 
 # Les étapes du travail d'un biologiste
 
-<div style='text-align:center;'>
+.center[
 <img src="assets/img/flow_bio500.png" width="90%"></img>
-</div>
+]
 
 ## Certaines étapes intermédiaires sont souvent oubliées.
 
@@ -167,9 +173,12 @@ Est-ce que le réseau de collaborations entre les étudiants du bacc en écologi
 Identification des étapes d'une étude scientifique susceptibles d'influer sur la reproductibilité.
 
 
---- .transition
+---
+class: inverse, center, middle
 
 # Présentation du cours BIO500
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
 ---
 
@@ -245,33 +254,32 @@ Nous progresserons dans l'exécution du travail de session. Le travail sera divi
 
 # Évaluation
 
-L'évaluation porte sur la réalisation d'un travail de session (75%), réalisé en équipe de 4 personnes. Le travail sera divisé en 3 étapes réparties au cours de la session. L'évaluation finale (25%) portera sur la rédaction d'un essai de 1500 mots sur les enjeux de reproductibilité en science expérimentale.  
+L'évaluation porte sur la réalisation d'un travail de session (75%), réalisé en équipe de 4 personnes. Le travail sera divisé en 3 étapes réparties au cours de la session. L'évaluation finale (25%) portera sur la rédaction d'un essai de 1500 mots sur les enjeux de reproductibilité en science expérimentale.
 
---- .transition
+---
+class: inverse, center, middle
 
 # Survol de Linux / Ubuntu
 
---- &twocol
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
+---
 # Un nouveau monde s'ouvre à vous...
 
-*** =left
+.pull-left[
+  Il existe une [grande diversité de distributions](https://fr.wikipedia.org/wiki/Liste_des_distributions_Linux) Linux (Systèmes d'exploitation). L'ensemble de ces distributions sont gratuites et libres (OpenSource) !
 
-Il existe une [grande diversité de distributions](https://fr.wikipedia.org/wiki/Liste_des_distributions_Linux) Linux (Systèmes d'exploitation). L'ensemble de ces distributions sont gratuites et libres (OpenSource) !
+  ## Alors, pourquoi Ubuntu?
 
+  - Une importante communauté d'utilisateurs (estimé à 25 millions)
+  - Aussi facile d'utilisation que Microsoft Windows
+]
 
-## Alors, pourquoi Ubuntu?
-
-- Une importante communauté d'utilisateurs (estimé à 25 millions)
-- Aussi facile d'utilisation que Microsoft Windows
-
-
-*** =right
-
-<div style='text-align:center;'>
-<img src="assets/img/linux_distros.png" width="90%"></img>
-</div>
-
+.pull-right[
+  .center[
+  <img src="assets/img/linux_distros.png" width="90%"></img>
+  ]
+]
 ---
 
 # Sur la machine virtuelle Ubuntu...
@@ -285,95 +293,93 @@ Il existe une [grande diversité de distributions](https://fr.wikipedia.org/wiki
 - SublimeText
 - Le terminal (crt+alt+t)
 
----&twocol
+---
 
 # L'environnement UNITY
 
-*** =left
+.pull-left[
+  - Le lanceur
+  - Naviguer dans les fichers : `<ctrl> <n>`
+  - Chercher un programme
+  - Changer les paramètres
+]
 
-- Le lanceur
-- Naviguer dans les fichers : `<ctrl> <n>`
-- Chercher un programme
-- Changer les paramètres
-
-*** =right
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/unity.png" width="100%"></img>
-</div>
-
----&twocol
-
-# L'environnement UNITY
-
-*** =left
-
-## Le terminal
-
-- Lancer le terminal `<ctrl> <alt> <t>`
-- Changer de répertoire avec `cd`
-- Liste des fichiers dans le dossier actuel avec `ls`
-- Installer des programmes `sudo apt install unity-tweak-tool`
-
-*** =right
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/terminal.png" width="90%"></img>
-</div>
-
----&twocol
-
-# L'environnement UNITY
-
-*** =left
-
-## Lire un PDF
-
-- Le programme par défaut est `Visionneur`
-- D'autres programmes sont disponibles, notamment pour éditer des PDFs. J'utilise `xournal`.
-
-*** =right
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/miraldo.png" width="90%"></img>
-</div>
-
----&twocol
-
-# L'environnement UNITY
-
-*** =left
-
-## Naviguer sur le web
-
-- `FireFox` est le navigateur par défaut, vous pouvez aussi utiliser `Chrome`
-
-*** =right
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/firefox.png" width="90%"></img>
-</div>
-
----&twocol
-
-# Démarrer des programmes
-
-*** =left
-
-## SublimeText2
-
-- Ouvrir un script
-- Nouveau script
-- Changer le surligneur de syntaxe
-
-*** =right
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/sublimetext.png" width="90%"></img>
-</div>
+.pull-right[
+  .center[
+    <img src="assets/img/unity.png" width="100%"></img>
+  ]
+]
 
 ---
 
+# L'environnement UNITY
+
+.pull-left[
+  ## Le terminal
+
+  - Lancer le terminal: <br> `<ctrl> <alt> <t>`
+  - Changer de répertoire avec `cd`
+  - Liste des fichiers dans le dossier actuel avec `ls`
+  - Installer des programmes: <br> `sudo apt install unity-tweak-tool`
+]
+
+.pull-right[
+  .center[
+    <img src="assets/img/terminal.png" width="90%"></img>
+  ]
+]
+
+---
+# L'environnement UNITY
+
+.pull-left[
+  ## Lire un PDF
+
+  - Le programme par défaut est `Visionneur`
+  - D'autres programmes sont disponibles, notamment pour éditer des PDFs. J'utilise `xournal`.
+]
+
+.pull-right[
+  .center[
+    <img src="assets/img/miraldo.png" width="90%"></img>
+  ]
+]
+
+---
+
+# L'environnement UNITY
+
+.pull-left[
+  ## Naviguer sur le web
+
+  - `FireFox` est le navigateur par défaut, vous pouvez aussi utiliser `Chrome`
+]
+
+.pull-right[
+  .center[
+    <img src="assets/img/firefox.png" width="90%"></img>
+  ]
+]
+
+---
+
+# Démarrer des programmes
+
+.pull-left[
+  ## SublimeText2
+
+  - Ouvrir un script
+  - Nouveau script
+  - Changer le surligneur de syntaxe
+]
+
+.pull-right[
+  .center[
+    <img src="assets/img/sublimetext.png" width="90%"></img>
+  ]
+]
+
+---
 # Démarrer des programmes
 
 ## Lancer R à partir de SublimeText
@@ -383,25 +389,28 @@ Il existe une [grande diversité de distributions](https://fr.wikipedia.org/wiki
 
 **ASTUCE:** les fenêtres sur Linux peuvent être alignées sur la gauche, la droite ou le centre automatiquement au moyen de la commande `<ctr> <alt> <flèche>`
 
----&twocol
+---
 
 # Démarrer des programmes
 
-*** =left
+.pull-left[
+  ## R directement dans le terminal
 
-## R directement dans le terminal
+  Il faut ouvrir un terminal avec `<ctrl> <alt> <t>` et ensuite taper `R`
+]
 
-Il faut ouvrir un terminal avec `<ctrl> <alt> <t>` et ensuite taper R
+.pull-right[
+  .center[
+    <img src="assets/img/terminalR.png" width="90%"></img>
+  ]
+]
 
-*** =right
-
-<div style='text-align:center;margin-top:10px;'>
-  <img src="assets/img/terminalR.png" width="90%"></img>
-</div>
-
---- .transition
+---
+class: inverse, center, middle
 
 # Projet de session
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
 ---
 
@@ -413,7 +422,6 @@ Est-ce que le réseau de collaboration entre les étudiants est différent des r
 
 # Rappel du problème
 
-Est-ce que l'on parvient à expliquer une collaboration à partir de caractéristiques des noeuds ?
 
 ---
 
@@ -425,20 +433,22 @@ En équipe de 4, on vous demande de commencer à planifier une campagne de colle
 
 # Deuxième étape
 
-Préparez un formulaire de saisie de données avec Excel et commencez à le remplir avec les données entre les membres de votre équipe. 
+Préparez un formulaire de saisie de données avec Excel et commencez à le remplir avec les données entre les membres de votre équipe.
 
 ---
 
 # Troisième étape
 
-Retour en classe : partage de l'information et harmonisation des formulaires. 
+Retour en classe : partage de l'information et harmonisation des formulaires.
 
----.transition
+---
+class: inverse, center, middle
 
 # Lectures et travail pour la semaine prochaine
 
----
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
+---
 # Lectures et travail
 
 ## Travail
@@ -454,32 +464,29 @@ Retour en classe : partage de l'information et harmonisation des formulaires.
 - Munafo, M.R. et al. 2017. A manifesto for reproducible science. Nature Human Behaviour 1: 0021
 - Open Science Collaboration. 2015. Estimating the reproducibility of psychological science. Science 349 : 943.
 
---- .transition
+---
+class: inverse, center, middle
 
 # Diapos hors cours
 
---- .transition
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
+---
 # L'utilisation d'une machine virtuelle (VM)
 
---- &twocolw w1:50% w2:50%
+.pull-left[
+  [VirtualBox](https://www.virtualbox.org/) est une application qui `émule` une machine/ordinateur virtuelle à l'intérieur de votre ordinateur.
 
-# Définition
+  Une machine virtuelle est donc un environnement confiné sur lequel on peut installer un autre système d'exploitation qui utilise les ressources matérielles de l'hôte (votre ordinateur).
 
-*** =left
+  Nous utiliserons [VirtualBox](https://www.virtualbox.org/) pour exécuter une machine Linux (distribution Ubuntu 16.04), sur votre PC Windows ou votre Mac créé spécifiquement pour ce cours.
+]
 
-[VirtualBox](https://www.virtualbox.org/) est une application qui `émule` une machine/ordinateur virtuelle à l'intérieur de votre ordinateur.
-
-Une machine virtuelle est donc un environnement confiné sur lequel on peut installer un autre système d'exploitation qui utilise les ressources matérielles de l'hôte (votre ordinateur).
-
-Nous utiliserons [VirtualBox](https://www.virtualbox.org/) pour exécuter une machine Linux (distribution Ubuntu 16.04), sur votre PC Windows ou votre Mac créé spécifiquement pour ce cours.
-
-*** =right
-
-<div style='text-align:center;'>
-<img src="assets/img/mv.png" width="90%"></img>
-</div>
-
+.pull-right[
+  .center[
+    <img src="assets/img/mv.png" width="90%"></img>
+  ]
+]
 
 ---
 
@@ -491,219 +498,216 @@ Nous utiliserons [VirtualBox](https://www.virtualbox.org/) pour exécuter une ma
 - Un système d'exploitation de type `UNIX` est nécessaire pour exécuter certaines tâches de ce cours
 
 
---- &twocolw w1:40% w2:60%
+---
 
-# Procédure d'importation et de lancement de la VM
-
-*** =left
+# Procédure d'importation et lancement de la VM
 
 - Étape 1: Installer [VirtualBox](https://www.virtualbox.org/)
-
---
 
 - Étape 2: Téléchargez [l'image de la machine virtuelle](https://ielab-o.dbio.usherbrooke.ca/index.php/s/W8XIQcC1Dc9tUYD) créée pour le cours
 
 
---- &twocolw w1:40% w2:60%
+---
 
 # Procédure d'importation de la VM
 
-*** =left
+.pull-left[
+  - Étape 3: Ouvrir **VirtualBox**
+  - Étape 4: Dans le menu **Machine**, sélectionnez **Ajouter**
+]
 
-- Étape 3: Ouvrir **VirtualBox**
-- Étape 4: Dans le menu **Machine**, sélectionnez **Ajouter**
+.pull-right[
+  .center[
+    <img src="assets/img/mv_1.png" width="95%"></img>
+  ]
+]
 
-*** =right
-
-<div style='text-align:center;'>
-<img src="assets/img/mv_1.png" width="95%"></img>
-</div>
-
---- &twocolw w1:40% w2:60%
+---
 
 # Procédure d'importation de la VM
 
-*** =left
+.pull-left[
+  - Étape 5: **Sélectionner le fichier de l'image de la machine virtuelle** créé pour le cours (téléchargé à l'étape 2)
+]
 
-- Étape 5: **Sélectionner le fichier de l'image de la machine virtuelle** créé pour le cours (téléchargé à l'étape 2)
+.pull-right[
+  .center[
+    <img src="assets/img/mv_2.png" width="95%"></img>
+  ]
+]
 
-*** =right
-
-<div style='text-align:center;'>
-<img src="assets/img/mv_2.png" width="95%"></img>
-</div>
-
---- &twocolw w1:40% w2:60%
+---
 
 # Procédure de lancement de la VM
 
-*** =left
-
-- Étape 6: Clique droit sur la machine virtuelle `VM-BIO500`, puis `Démarrer` et enfin sur `Démarrage normal`.
-- Étape 7: Et voilà ! La machine virtuelle est en train de démarrer.
+.pull-left[
+  - Étape 6: Clique droit sur la machine virtuelle `VM-BIO500`, puis `Démarrer` et enfin sur `Démarrage normal`.
+  - Étape 7: Et voilà ! La machine virtuelle est en train de démarrer.
 
 **Veuillez prendre note que le mot de passe utilisateur est: `etudiant`**
+]
 
-*** =right
+.pull-right[
+  .center[
+    <img src="assets/img/mv_3.png" width="95%"></img>
+  ]
+]
 
-<div style='text-align:center;'>
-<img src="assets/img/mv_3.png" width="95%"></img>
-</div>
-
-
---- .transition
+---
+class: inverse, center, middle
 
 # Présentation sur les réseaux écologiques
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
 ---
 
 # Définition
 
-<div style='text-align:center;'>
-<img src="assets/img/def.png" width="90%"></img>
-</div>
+.center[
+  <img src="assets/img/def.png" width="90%"></img>
+]
 
 ---
 
 # Types de réseaux
-
 ## Internet
 
-<div style='text-align:center;'>
-<img src="assets/img/internet.png" width="60%"></img>
-</div>
+.center[
+  <img src="assets/img/internet.png" width="60%"></img>
+]
 
 ---
 
 # Types de réseaux
 ## Sociaux
 
-<div style='text-align:center;'>
-<img src="assets/img/sociaux.png" width="50%"></img>
-</div>
+.center[
+  <img src="assets/img/sociaux.png" width="50%"></img>
+]
 
 ---
 
 # Types de réseaux
 ## Trophiques
 
-<div style='text-align:center;'>
-<img src="assets/img/foodweb.png" width="65%"></img>
-</div>
+.center[
+  <img src="assets/img/foodweb.png" width="65%"></img>
+]
 
 ---
 
 # Types de réseaux
 ## Plante-pollinisateur
 
-<div style='text-align:center;'>
-<img src="assets/img/pollinisateur.png" height="500px;"></img>
-</div>
+.center[
+  <img src="assets/img/pollinisateur.png" height="500px;"></img>
+]
 
 ---
 
 # Types de réseaux
 ## Plante-vecteur de dispersion
 
-<div style='text-align:center;'>
-<img src="assets/img/dispersion.png" height="500px;"></img>
-</div>
+.center[
+  <img src="assets/img/dispersion.png" height="500px;"></img>
+]
 
 ---
 
 # Types de réseaux
 ## Plante-herbivore
 
-<div style='text-align:center;'>
-<img src="assets/img/herbivore.png" height="500px"></img>
-</div>
+.center[
+  <img src="assets/img/herbivore.png" height="500px"></img>
+]
 
 ---
 
 # Types de réseaux
 ## Plante-fongi
 
-<div style='text-align:center;'>
-<img src="assets/img/fongi.png" width="90%"></img>
-</div>
+.center[
+  <img src="assets/img/fongi.png" width="90%"></img>
+]
 
 ---
 
 # Types de réseaux
 ## Hôte-parasite
 
-<div style='text-align:center;'>
-<img src="assets/img/parasite.png" height="500px"></img>
-</div>
+.center[
+  <img src="assets/img/parasite.png" height="500px"></img>
+]
 
 ---
 
 # Glossaire
 ## S, L, C
 
-<div style='text-align:center;'>
-<img src="assets/img/foodweb.png" height="500px;"></img>
-</div>
+.center[
+  <img src="assets/img/foodweb.png" height="500px;"></img>
+]
 
 ---
 
 # Glossaire
 ## Rang trophique
 
-<div style='text-align:center;'>
-<img src="assets/img/rang.png" height="500px"></img>
-</div>
+.center[
+  <img src="assets/img/rang.png" height="500px"></img>
+]
 
 ---
 
 # Glossaire
 ## Distribution de degrés
 
-<div style='text-align:center;'>
-<img src="assets/img/degres.png" height="500px"></img>
-</div>
+.center[
+  <img src="assets/img/degres.png" height="500px"></img>
+]
 
 ---
 
 # Glossaire
 ## Centralité
 
-<div style='text-align:center;'>
-<img src="assets/img/centralite.png" height="500px"></img>
-</div>
+.center[
+  <img src="assets/img/centralite.png" height="500px"></img>
+]
 
 ---
 
 # Glossaire
 ## Nestedness
 
-<div style='text-align:center;'>
-<img src="assets/img/nestedness.png" height="500px"></img>
-</div>
+.center[
+  <img src="assets/img/nestedness.png" height="500px"></img>
+]
 
 ---
 
 # Glossaire
 ## Modularité
 
-<div style='text-align:center;'>
-<img src="assets/img/modularite.png" height="500px"></img>
-</div>
+.center[
+  <img src="assets/img/modularite.png" height="500px"></img>
+]
 
 ---
 
 # Glossaire
 ## Motifs
 
-<div style='text-align:center;'>
-<img src="assets/img/motifs.png" width="90%"></img>
-</div>
+.center[
+  <img src="assets/img/motifs.png" width="90%"></img>
+]
 
 ---
 
 # Glossaire
 ## Robustesse
 
-<div style='text-align:center;'>
-<img src="assets/img/robustesse.png" height="500px"></img>
-</div>
+.center[
+  <img src="assets/img/robustesse.png" height="500px"></img>
+]

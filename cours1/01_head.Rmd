@@ -1,18 +1,44 @@
 ---
-title       : "Séance 1: Introduction"
-subtitle    : "BIO 500 - Méthodes en écologie computationnelle"
-author      : "Dominique Gravel"
-job         : "Laboratoire d'écologie intégrative"
-logo        : "logo.png"
-framework   : io2012       # {io2012, html5slides, shower, dzslides, ...}
-highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      #
-mode        : selfcontained
-knit        : slidify::knit2slides
-widgets     : [mathjax]
-url:
-  lib   : ./libraries
-license     : by-nc-sa
-assets      :
-  css: "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"
+title: "Séance 1: Introduction"
+author: "Dominique Gravel"
+date: "Hiver 2020"
+output:
+  xaringan::moon_reader:
+    css: [default, ../assets/bio500.css, "hygge"]
+    lib_dir: assets
+    seal: false
+    nature:
+      highlightStyle: monokai
+      highlightLines: true
+      countIncrementalSlides: false
+      beforeInit: "../assets/macros.js"
+---
+
+class: title-slide, middle
+
+<style type="text/css">
+  .title-slide {
+    background-image: url('../assets/img/bg.jpg');
+    background-color: #23373B;
+    background-size: contain;
+    border: 0px;
+    background-position: 600px 0;
+    line-height: 1;
+  }
+</style>
+
+# Séance 1
+
+<hr width="65%" align="left" size="0.3" color="orange"></hr>
+
+## Introduction: Méthodes en écologie computationnelle
+
+<hr width="65%" align="left" size="0.3" color="orange" style="margin-bottom:40px;" alt="@Martin Sanchez"></hr>
+
+.instructors[
+  **BIO500** - Dominique Gravel
+]
+
+<img src="../assets/img/logo.png" width="8%" style="margin-top:20px;"></img>
+
 ---
