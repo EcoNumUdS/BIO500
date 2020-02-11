@@ -200,7 +200,7 @@ class: inverse, center, middle
 - Ne pas **JAMAIS** utiliser de diagramme en pointe de tarte
 
 .center[
-  <img src="assets/img/pies_vs_bars.png" width="40%"></img>
+  <img src="assets/img/pies_vs_bars.png" width="100%"></img>
 ]
 
 ---
