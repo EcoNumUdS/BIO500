@@ -2,7 +2,7 @@
 (2 crédits)
 
 - **Professeur:** Dominique Gravel
-- **Assistant:** [Steve Vissault](https://github.com/SteveViss)
+- **Assistant:** [Willian Vieira](https://github.com/willvieira)
 
 # Mise en ligne des cours
 
@@ -10,63 +10,77 @@ Notre ami robot, [Travis](https://travis-ci.org) est en charge de la mise en lig
 
 [![Build Status](https://travis-ci.org/EcoNumUdS/BIO500.svg?branch=master)](https://travis-ci.org/EcoNumUdS/BIO500)
 
-## Séance 1: Introduction
+## Bloc 1: Planification de la collecte et organisation des données
 
-- [Présentation HTML](https://econumuds.github.io/BIO500/cours1)
+- [Présentation HTML](https://econumuds.github.io/BIO500/bloc1)
 - [Présentation PDF](./cours1/pres/assets/pdf/S1-BIO500.pdf)
 
-## Séance 2: La gestion des données en biologie
+- Types de données
+- Formulaires de saisie
+- Bases de données relationnelles (SQL)
+- Requêtes
 
-**Partie 1. Concevoir et créer sa base de données relationnelle.**
+## Bloc 2: Outils pour une science reproductible et transparente
 
-- [Présentation HTML](https://econumuds.github.io/BIO500/cours2)
+- [Présentation HTML](https://econumuds.github.io/BIO500/bloc2)
 - [Présentation PDF](./cours2/pres/assets/pdf/S2-BIO500.pdf)
 
-## Séance 3: La gestion des données en biologie
+- UNIX
+- le makefile
+- Système de contrôle de version git
 
-**Partie 2. Insérer et manipuler les données collectées**
+## Bloc 3: Visualisation des données
 
 - [Présentation HTML](https://econumuds.github.io/BIO500/cours3)
 - [Présentation PDF](./cours3/pres/assets/pdf/S3-BIO500.pdf)
 
-## Séance 4: Outils pour la reproductibilité
+- Les types de graphiques
+- Fonctions graphiques de base sur R
+- Paramètres graphiques
+- Packages R spécialisés
 
-- [Présentation HTML](https://econumuds.github.io/BIO500/cours4)
+## Bloc 4: Communication scientifique au moyen de LaTeX
+
+- [Présentation HTML](https://econumuds.github.io/BIO500/bloc4)
 - [Présentation PDF](./cours3/pres/assets/pdf/S4-BIO500.pdf)
 
-## Séance 5: Figures 1: utilisation de R
+- Rédaction de rapports et d'articles scientifiques
+- Mise en page
+- Insertion de figures et tableaux
+- Gestion des références
+- Utilisation de Beamer pour les présentations
 
-- Principes directeurs
-- Commandes de base
-- Discussion
-- Devoir : questions de recherche, figure de base
+## Compiler les présentations localement
 
-## Séance 6: Figures 2
+Avant la première compilation, il est recommandé d'installer les dépendances necessaires:
 
-- Packages R
-- Tableaux
-- Inkscape
-- Discussion : Tableau et représentation du réseau
-- MAKE
+```bash
+make install
+```
 
-## Séance 7: LaTeX 1
+Pour générer tous les présentations, il suffit juste de taper:
 
-- Discussion :
-- Devoir : créer le document de base
-- MAKE
+```bash
+make
+```
 
-## Séance 8: LaTeX 2
+Ce commande là va nous compiler les fichiers `html` que ne sont pas à jours avec leur respecives fichers `.Rmd`.
 
-- Discussion :
-- Devoir : travail complet
+Pour compiler une seule présentation, il faut spécifier le nom du bloc du cours envisagé:
 
+```bash
+# compiler première bloc du cours
+make -C bloc1
+```
 
-# Utiliser `slidify`
+### Workflow
 
-### Organisation
+Pour chaque bloc de présentation, `make` va vérifier s'il y a des fichers `.Rmd`
+avec des editions plus recentes que la présentation compilé (`index.html`).
+Si oui, il va fusionner tous les `.Rmd` en un seul ficher `index.Rmd`, pour finalement compiler la présentation
+`html` avec le package `rmarkdown`. Vous pouvez enfin accéder à la présentation
+avec le fichier `index.html`.
 
-Un fichier `.Rmd` par section du cours. Le makefile s'occupe de générer le
-diaporama dans le dossier `pres` qu'on ouvre avec un navigateur Internet.
 
 ### Utilisation du diaporama
 
