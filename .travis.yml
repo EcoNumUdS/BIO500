@@ -20,9 +20,9 @@ r_github_packages:
   - yihui/xaringan
 
 
-before_script: chmod +x ./_build.sh
-
-script: ./_build.sh
+script:
+  - make
+  - make deploy
 
 
 deploy:
