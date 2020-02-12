@@ -42,3 +42,10 @@ vignettes/*.pdf
 # Tex file
 *.log
 *.aux
+
+# compiled files (travis will do the job)
+index.Rmd
+index.html
+remark-css*
+header-attrs*
+index_files
