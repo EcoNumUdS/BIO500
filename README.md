@@ -6,14 +6,14 @@
 
 # Mise en ligne des cours
 
-Notre ami robot, [Travis](https://travis-ci.org) est en charge de la mise en ligne des cours sur internet.
-
 [![Build Status](https://travis-ci.org/EcoNumUdS/BIO500.svg?branch=master)](https://travis-ci.org/EcoNumUdS/BIO500)
+ Notre ami robot, [Travis](https://travis-ci.org) est en charge de la mise en ligne des cours sur internet.
+
+
 
 ## Bloc 1: Planification de la collecte et organisation des données
 
-- [Présentation HTML](https://econumuds.github.io/BIO500/bloc1)
-- [Présentation PDF](./cours1/pres/assets/pdf/S1-BIO500.pdf)
+[![](https://img.shields.io/badge/html-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc1)
 
 - Types de données
 - Formulaires de saisie
@@ -22,8 +22,7 @@ Notre ami robot, [Travis](https://travis-ci.org) est en charge de la mise en lig
 
 ## Bloc 2: Outils pour une science reproductible et transparente
 
-- [Présentation HTML](https://econumuds.github.io/BIO500/bloc2)
-- [Présentation PDF](./cours2/pres/assets/pdf/S2-BIO500.pdf)
+[![](https://img.shields.io/badge/html-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc2)
 
 - UNIX
 - le makefile
@@ -31,8 +30,7 @@ Notre ami robot, [Travis](https://travis-ci.org) est en charge de la mise en lig
 
 ## Bloc 3: Visualisation des données
 
-- [Présentation HTML](https://econumuds.github.io/BIO500/cours3)
-- [Présentation PDF](./cours3/pres/assets/pdf/S3-BIO500.pdf)
+[![](https://img.shields.io/badge/html-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc3)
 
 - Les types de graphiques
 - Fonctions graphiques de base sur R
@@ -41,8 +39,7 @@ Notre ami robot, [Travis](https://travis-ci.org) est en charge de la mise en lig
 
 ## Bloc 4: Communication scientifique au moyen de LaTeX
 
-- [Présentation HTML](https://econumuds.github.io/BIO500/bloc4)
-- [Présentation PDF](./cours3/pres/assets/pdf/S4-BIO500.pdf)
+[![](https://img.shields.io/badge/html-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc4)
 
 - Rédaction de rapports et d'articles scientifiques
 - Mise en page
@@ -97,7 +94,7 @@ avec le fichier `index.html`.
   - `T` pour avoir une barre avec le numéro des diapositive.
 
 
-# Exporter en format pdf
+## Exporter en format pdf
 
 - Utiliser l'exportation pdf du navigateur,
 - Utiliser [Decktape](https://github.com/astefanutti/decktape).
