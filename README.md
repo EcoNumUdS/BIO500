@@ -13,7 +13,7 @@
 
 ## Bloc 1: Planification de la collecte et organisation des données
 
-[![](https://img.shields.io/badge/html-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc1)
+[![](https://img.shields.io/badge/html-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc1/)
 
 - Types de données
 - Formulaires de saisie
@@ -22,7 +22,7 @@
 
 ## Bloc 2: Outils pour une science reproductible et transparente
 
-[![](https://img.shields.io/badge/html-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc2)
+[![](https://img.shields.io/badge/html-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc2/)
 
 - UNIX
 - le makefile
@@ -30,7 +30,7 @@
 
 ## Bloc 3: Visualisation des données
 
-[![](https://img.shields.io/badge/html-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc3)
+[![](https://img.shields.io/badge/html-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc3/)
 
 - Les types de graphiques
 - Fonctions graphiques de base sur R
@@ -39,7 +39,7 @@
 
 ## Bloc 4: Communication scientifique au moyen de LaTeX
 
-[![](https://img.shields.io/badge/html-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc4)
+[![](https://img.shields.io/badge/html-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc4/)
 
 - Rédaction de rapports et d'articles scientifiques
 - Mise en page
