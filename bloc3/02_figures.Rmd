@@ -352,7 +352,7 @@ plot(elevation, densite[,1], axes = FALSE,
 
 # Échelles logarithmiques
 
-```{r, ,out.width = '55%', dpi=300, fig.align="center", warning=FALSE, message=FALSE}
+```{r, out.width = '55%', dpi=300, fig.align="center", warning=FALSE, message=FALSE}
 plot(elevation, densite[,1], axes = FALSE,
       xlab = "Élévation", ylab = "Densité",
       log = "xy")

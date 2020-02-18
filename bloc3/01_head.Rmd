@@ -14,7 +14,7 @@ output:
       beforeInit: "../assets/macros.js"
 ---
 
-```{r setup, echo = F}
+```{r, echo = F}
 knitr::opts_chunk$set(
   warning = FALSE,
   message = FALSE,

@@ -37,6 +37,12 @@ class: title-slide, middle
 - L'ensemble du matériel de cours est disponible sur la page du portail [moodle](https://www.usherbrooke.ca/moodle2-cours/course/view.php?id=12189).
 
 ---
+
+# Retour sur la semaine précédente
+
+Quels sont les champs à documenter ?
+
+---
 class: inverse, center, middle
 
 # Les données en biologie
@@ -249,6 +255,7 @@ class: inverse, center, middle
 
 - Ce sont ces types qui seront utilisés pour entreposer nos données.
 - Le choix d'un type approprié permet de réduire la taille du fichier de données.
+- Il est *TRES IMPORTANT* de bien définir les types et de les utiliser rigoureusement.
 
 ---
 
@@ -352,21 +359,6 @@ Même si l'identifiant change (nouvelle classification), nous serons en mesure d
 
 **Exemple:** [TSN - 28731](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null)
 
-
----
-
-# Les données spatiales
-
-## Il existe plus de [65 familles de projections géographiques](https://en.wikipedia.org/wiki/List_of_map_projections) pour représenter des coordonnées sur la planète, en voici 3 des plus connues:
-
-.center[
-  <img src="assets/img/proj.png" height="200px"></img>
-]
-
-- Il est important de choisir un bon système de projection pour minimiser la déformation spatiale (surtout à nos latitudes)
-
->- À nos latitudes, on privilégiera l'utilisation d'une projection conique. Les ministères du Québec conseillent généralement l'utilisation d'une [projection conique conforme de Lambert](https://fr.wikipedia.org/wiki/Projection_conique_conforme_de_Lambert).
-
 ---
 
 # Les données spatiales
@@ -381,14 +373,15 @@ Même si l'identifiant change (nouvelle classification), nous serons en mesure d
 
 # Les données spatiales
 
-## Une base de données connue permet de fournir des identifiants uniques:
+## Il existe plus de [65 familles de projections géographiques](https://en.wikipedia.org/wiki/List_of_map_projections) pour représenter des coordonnées sur la planète, en voici 3 des plus connues:
 
-- `SRID`: *Spatial reference system*.
+.center[
+  <img src="assets/img/proj.png" height="200px"></img>
+]
 
-Cet identifiant est unique et peut être trouvés à cette adresse: [http://spatialreference.org/](http://spatialreference.org/)
+- Il est important de choisir un bon système de projection pour minimiser la déformation spatiale (surtout à nos latitudes)
 
-**Exemple:** [http://spatialreference.org/ref/epsg/2138/](http://spatialreference.org/ref/epsg/2138/)
-
+- À nos latitudes, on privilégiera l'utilisation d'une projection conique. Les ministères du Québec conseillent généralement l'utilisation d'une [projection conique conforme de Lambert](https://fr.wikipedia.org/wiki/Projection_conique_conforme_de_Lambert).
 
 ---
 
@@ -411,7 +404,7 @@ Cet identifiant est unique et peut être trouvés à cette adresse: [http://spat
 
 - Laisser la cellule vide: montre que l'information n'a pas été saisie (un oublie)
 
->- Mettre un `NA` (*Not Available*): Montre que l'information est réellement absente (car le NA est saisie par un humain).
+>- Mettre un `NA` (*Not Available*): Montre que l'information est réellement absente (car le NA est saisi par un humain).
 
 >- <span style="text-decoration: line-through;"> Mettre un `0` </span>: **JAMAIS** (empêche la distinction entre un vrai d'un faux 0, influence la moyenne)
 
@@ -438,9 +431,15 @@ Si l'on ne choisit pas le type de données approprié, cela aura diverses consé
 - [Hart EM, Barmby P, LeBauer D, Michonneau F, Mount S, Mulrooney P, et al. (2016) Ten Simple Rules for Digital Data Storage. PLoS Comput Biol](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005097)
 
 ---
+
+# Retour sur le travail de session
+
+Définissez les types de données pour les différents champs
+
+---
 class: inverse, center, middle
 
-# Entreposer et archiver ses données écologiques
+# Entreposer et archiver les données écologiques
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
@@ -497,7 +496,7 @@ class: inverse, center, middle
 ]
 ---
 
-# Le Tesseract de la biologie
+# Les données multi-dimensionnelles
 
 .center[
   <img src="assets/img/data_cube_4n.png" width="90%"></img>
@@ -534,18 +533,22 @@ class: inverse, center, middle
 
 ---
 
+---
+
 # Étape 1. Faire une liste des variables
+
 
 1. Dresser la liste des informations collectées par les différents groupes.
 2. Regrouper les variables communes entre les équipes pour obtenir un format de données conjoint.
+
 
 ---
 
 # Étape 2. Regrouper les variables dans des tables
 
 1. Déterminer les tables/entités:
-  - Qu'elles sont les unités d'échantillonnage? Autrement dit, sur quelles entités portent nos mesures?
-2. Remplir les tables avec les variables de l'étape 1.
+  - Qu'elles sont les unités d'échantillonnage? Autrement dit, sur quelles entités portent les mesures?
+2. Remplir les tables avec les variables identifiées.
 
 À ce stade de la conceptualisation, une table est une entité possédant des attributs. Chaque attribut est une colonne.
 
@@ -562,26 +565,6 @@ class: inverse, center, middle
 ]
 
 ---
-# Étape 3.
-
-## Établir le type d'association entre les tables
-
-### Il existe plusieurs types d'association:
-
-.font70[
-
-| Table 1   | Table 2   | Relation                                       | exemple                        |
-|:----------|:----------|:-----------------------------------------------|:-------------------------------|
-| 1         | 1         | *one-to-one*                                   | personne ←→ permis de conduire |
-| 0..1      | 1         | optionnel dans la table 1, *one-to-one*        | permis de conduire ←→ personne |
-| 0..n ou n | 0..n or n | optionnel dans les deux tables, *many-to-many* | personne ←→ livre              |
-| 1..n ou n | 1         | *many-to-one*                                  | personne ←→ lieu de naissance  |
-
-**Exercice (5 minutes)**: Quel(s) type(s) d'association retrouve-t-on entre nos tables?
-
-]
-
----
 
 
 # Étape 4. Établir les clés primaires et étrangères
@@ -592,7 +575,7 @@ class: inverse, center, middle
   <img src="assets/img/keys_1.svg" width="45%"></img>
 ]
 
-## Important:
+  - Définition : la donnée qui permet d'identifier de manière unique un enregistrement dans une table.
   - Une clé primaire garanti le caractère unique d'un enregistrement (ligne d'une table).
   - Une clé primaire ne peut donc jamais être `NULL`.
   - Une clé primaire peut être composite, une combinaison de colonnes.
@@ -607,7 +590,7 @@ class: inverse, center, middle
 
 ---
 
-# Étape 5. Assigner un type de données aux attributs
+# Étape 5. Assigner un type de données
 
 Chaque attribut d'une table doit correspondre à un type de données:
 
@@ -765,13 +748,13 @@ L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant
 ---
 class: inverse, center, middle
 
-# Pratique: Du modèle conceptuelle <br> vers le modèle logique
+# Pratique: Du modèle conceptuel <br> vers le modèle informatique
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
 ---
 
-# Les grandes étapes avec SQLite3
+# Les grandes étapes avec SQLite
 
 1. Créer et se connecter au fichier de base de données
 2. Créer les tables et spécifier les clés
@@ -788,7 +771,7 @@ system("rm -f ./assets/data/films.db")
 
 ```{r, warnings=FALSE, message=FALSE}
 library(RSQLite)
-con <- dbConnect(SQLite(), dbname="./assets/data/films.db")
+con <- dbConnect(SQLite(), dbname="./assets/data/reseau.db")
 ## !ATTENTION!: Ceci est mon chemin d'accès vers le fichier!
 ## Astuces: getwd() et setwd()
 ```
@@ -801,30 +784,30 @@ dbSendQuery(con,"Instructions SQL à envoyer;")
 - On utilisera la fonction `dbSendQuery()` pour envoyer les instructions SQL.
 - Le deuxième argument de la fonction `dbSendQuery()` est une chaine de caractères contenant les instructions SQL.
 
-
 ---
 
 # Création d'une première table avec clé primaire
 
 .pull-left[
-  Voici un exemple d'instruction SQL pour créer la table `films`.
+  Voici un exemple d'instruction SQL pour créer la table `articles`.
 
-  ```sql
-  CREATE TABLE films (
-      code        VARCHAR(5),
-      titre       VARCHAR(40),
-      did         INTEGER,
-      date_prod   DATE,
-      genre       VARCHAR(10),
-      duree       INTEGER,
-      PRIMARY KEY(code,titre)
-  );
-  ```
+.font90[
+```sql
+CREATE TABLE auteurs (
+    nom         VARCHAR(40),
+    prenom      VARCHAR(40),
+    naissance   DATE,
+    institution VARCHAR(40),
+    PRIMARY KEY (nom, prenom),
+    FOREIGN KEY (nom1, prenom1)
+);
+```
+]
 ]
 
 .pull-right[
-- `films` est le nom de la table
-- Chaque attribut de la table (`code`,`titre` etc) dispose d'un type de données (`char(5)`, `varchar(40)` etc) [Type de données SQLite](https://www.sqlite.org/datatype3.html)
+- `auteurs` est le nom de la table 
+- Chaque attribut de la table (`nom`,`prenom` etc) dispose d'un type de données (`varchar(40)`,`DATE`,  etc) [Type de données SQLite](https://www.sqlite.org/datatype3.html)
 - La dernière ligne correspond aux contraintes de la table telle que la clé primaire.
 - **Question:** Cette clé primaire est composite ou simple?
 ]
@@ -834,78 +817,48 @@ dbSendQuery(con,"Instructions SQL à envoyer;")
 # Création d'une table avec clé étrangère
 
 .pull-left[
-  Si l'on veut créer une table `acteurs` et référencer cette table à la table `films`.
+  Maintenant il faut créer une table `collaborations` et référencer cette table à la table `auteurs` ainsi qu'à la table `articles`.
 
 .font90[
 ```sql
-CREATE TABLE acteurs (
-    nom         VARCHAR(40),
-    prenom      VARCHAR(40),
-    naissance   DATE,
-    code        CHAR(5),
-    titre       VARCHAR(40),
-    PRIMARY KEY (nom,prenom),
-    FOREIGN KEY (code, titre) REFERENCES
-    films (code, titre) ON DELETE CASCADE
+CREATE TABLE collaborations (
+    nom1        VARCHAR(40),
+    prenom1     VARCHAR(40),    
+    nom2        VARCHAR(40),
+    prenom2     VARCHAR(40),
+    code        VARCHAR5),  
+    PRIMARY KEY (nom1, prenom1),
+    FOREIGN KEY (code) 
 );
 ```
 ]
 ]
 
 .pull-right[
-- On déclare `prenom` et `nom` comme étant la clé primaire de la table `acteurs`.
-- On référence les attributs `code` et `titre` comme étant la clé étrangère.
-]
-
----
-
-# Création d'une table avec clé étrangère
-
-.pull-left[
-  Si l'on veut créer une table `acteurs` et référencer cette table à la table `films`.
-
-.font90[
-```sql
-CREATE TABLE acteurs (
-    nom         VARCHAR(40),
-    prenom      VARCHAR(40),
-    naissance   DATE,
-    code        CHAR(5),
-    titre       VARCHAR(40),
-    PRIMARY KEY (nom,prenom),
-    FOREIGN KEY (code, titre) REFERENCES
-    films (code, titre) ON DELETE CASCADE
-);
-```
-]
-]
-
-.pull-right[
-## Important:
-
-- On ne peut plus insérer d'acteurs jouant dans un film qui n'est pas référencé dans la table `films`. C'est ce que l'on appelle l'intégrité référentielle.
-- Lorsque l'on supprime un enregistrement dans `films`, les acteurs référencés à ce film vont être automatiquement supprimés grâce à l'instruction `CASCADE`.
+- On déclare `prenom1` et `nom1` comme étant la clé primaire de la table `collaborations`.
+- On référence l'attribut `code` comme étant la clé étrangère.
 ]
 
 ---
 
 # Ajout de contraintes à une table
 
-SQL présente également l'avantage de pouvoir mettre des contraintes sur les champs:
+La dernière table pour les `articles`.
 
 ```sql
-CREATE TABLE films (
+CREATE TABLE auteurs (
     code        VARCHAR(5) NOT NULL,
-    titre       VARCHAR(40) NOT NULL,
-    did         INTEGER,
-    date_prod   DATE,
-    genre       VARCHAR(10) DEFAULT "COMEDIE",
-    duree       INTEGER CHECK( duree > 0 ),
+    titre       VARCHAR(150) NOT NULL,
+    journal     VARCHAR(50),
+    date        DATE,
+    date        DATE,
+    citations   INTEGER CHECK(duree >= 0),
     PRIMARY KEY(code,titre)
 );
 ```
 
-- Les contraintes `NOT NULL` sur la clé primaire ne sont pas obligées d'être définis.
+- On peut rajouter des contraintes sur la saisie, comme CHECK qui assure que ce sont des entiers positifs
+- Note : les contraintes `NOT NULL` sur la clé primaire ne sont pas obligées d'être définis.
 
 ---
 
@@ -915,32 +868,19 @@ CREATE TABLE films (
 
 ```{r, eval=FALSE}
 
-films_sql <- "
-CREATE TABLE films (
-    code        VARCHAR(5),
-    titre       VARCHAR(40),
-    did         INTEGER,
-    date_prod   DATE,
-    genre       VARCHAR(10),
-    duree       INTEGER,
-    PRIMARY KEY(code,titre)
+auteurs_sql <- "
+CREATE TABLE auteurs (
+    nom         VARCHAR(40),
+    prenom      VARCHAR(40),
+    naissance   DATE,
+    institution VARCHAR(40)
+    PRIMARY KEY (nom,prenom)
+    collaborations (nom1,prenom1)
 );"
 
-dbSendQuery(con,films_sql)
+dbSendQuery(con,auteurs_sql)
 dbListTables(con)
 ```
-
----
-
-# Création d'une table
-
-## Exercice pour le travail de session (20 minutes):
-
-En vous inspirant des [exemples](http://www.sqlitetutorial.net/sqlite-create-table/) et de la syntaxe SQL expliquée précédemment, écrivez le script contenant les instructions SQL permettant la création de table `personnes`.
-
-- [Documentation SQL pour SQLite3](https://www.sqlite.org/lang.html)
-- [Type de données SQLite](https://www.sqlite.org/datatype3.html)
-
 
 ---
 
@@ -958,7 +898,7 @@ Il peut être parfois préférable supprimer la table et de la reconstruire plut
 # Supprimer la table de données
 
 ```{r, eval=FALSE}
-dbSendQuery(con,"DROP TABLE films;")
+dbSendQuery(con,"DROP TABLE auteurs;")
 ```
 
 - `DROP TABLE` supprime l'ensemble de la table et ses données.
@@ -968,7 +908,7 @@ dbSendQuery(con,"DROP TABLE films;")
 # Supprimer la base de données
 
 ```{r, eval=FALSE}
-dbSendQuery(con,"DROP DATABASE films;")
+dbSendQuery(con,"DROP DATABASE reseau;")
 dbDisconnect(con)
 ```
 
@@ -976,15 +916,15 @@ dbDisconnect(con)
 - Dans le cas de SQLite3, on supprime simplement le fichier `*.db`.
 - `dbDisconnect(con)` permet de fermer la connection avec le fichier de base de données (permet à un autre utilisateur de se connecter).
 
-
 ---
 
 # Lectures et travail pour la semaine prochaine
 
 ## Travail
 
-Maintenant que vous en savez plus sur le format des données, vous devez écrire le script R pour créer votre base de données en spécifiant les tables, les champs et les clés liant les tables entre elles.
+- Maintenant que vous en savez plus sur le format des données, vous devez écrire le script R pour créer votre base de données en spécifiant les tables, les champs et les clés liant les tables entre elles.
 
+- Commencez à récolter les données
 
 ---
 
