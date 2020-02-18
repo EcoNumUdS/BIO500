@@ -13,3 +13,12 @@ output:
       countIncrementalSlides: false
       beforeInit: "../assets/macros.js"
 ---
+
+```{r child = '02_intro.Rmd'}
+```
+
+```{r child = '03_donnees1.Rmd'}
+```
+
+```{r child = '04_donnees2.Rmd'}
+```

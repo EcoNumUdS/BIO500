@@ -13,3 +13,6 @@ output:
       countIncrementalSlides: false
       beforeInit: "../assets/macros.js"
 ---
+
+```{r child = '02_latex.Rmd'}
+```
