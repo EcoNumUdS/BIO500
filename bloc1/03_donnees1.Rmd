@@ -484,7 +484,7 @@ class: inverse, center, middle
 # Les entrepôts existants
 
 .pull-left[
-  1. Les `fichiers texte` comme les CSV, TSV (Format libre et ouvert)
+  1. Les `fichiers textes` comme les CSV, TSV (Format libre et ouvert)
   2. Les `tableurs` comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
   3. Les `fichiers hierarchiques/structurés` HDF, NetCDF (Format libre et ouvert)
   4. Les `bases de données relationnelles`
@@ -795,12 +795,12 @@ dbSendQuery(con,"Instructions SQL à envoyer;")
 .font90[
 ```sql
 CREATE TABLE auteurs (
-    nom         VARCHAR(40),
-    prenom      VARCHAR(40),
-    naissance   DATE,
-    institution VARCHAR(40),
-    PRIMARY KEY (nom, prenom),
-    FOREIGN KEY (nom1, prenom1)
+    auteur      VARCHAR(50),
+    statut      VARCHAR(40),
+    institution VARCHAR(200),
+    city        VARCHAR(40),
+    country     VARCHAR(40),
+    PRIMARY KEY (author)
 );
 ```
 ]
@@ -808,7 +808,7 @@ CREATE TABLE auteurs (
 
 .pull-right[
 - `auteurs` est le nom de la table
-- Chaque attribut de la table (`nom`,`prenom` etc) dispose d'un type de données (`varchar(40)`,`DATE`,  etc) [Type de données SQLite](https://www.sqlite.org/datatype3.html)
+- Chaque attribut de la table (`author`,`status` etc) dispose d'un type de données (`varchar(40)`,`DATE`,  etc) [Type de données SQLite](https://www.sqlite.org/datatype3.html)
 - La dernière ligne correspond aux contraintes de la table telle que la clé primaire.
 - **Question:** Cette clé primaire est composite ou simple?
 ]
@@ -819,25 +819,25 @@ CREATE TABLE auteurs (
 
 .pull-left[
   Maintenant il faut créer une table `collaborations` et référencer cette table à la table `auteurs` ainsi qu'à la table `articles`.
-
-.font90[
-```sql
-CREATE TABLE collaborations (
-    nom1        VARCHAR(40),
-    prenom1     VARCHAR(40),
-    nom2        VARCHAR(40),
-    prenom2     VARCHAR(40),
-    code        VARCHAR5),
-    PRIMARY KEY (nom1, prenom1),
-    FOREIGN KEY (code)
-);
-```
-]
 ]
 
 .pull-right[
 - On déclare `prenom1` et `nom1` comme étant la clé primaire de la table `collaborations`.
 - On référence l'attribut `code` comme étant la clé étrangère.
+]
+
+.font90[
+```sql
+CREATE TABLE collaborations (
+    auteur1     VARCHAR(40),
+    auteur2     VARCHAR(40),
+    articleID   VARCHAR(20),
+    PRIMARY KEY (author1, author2, articleID),
+    FOREIGN KEY (author1) REFERENCES auteurs(author),
+    FOREIGN KEY (author2) REFERENCES auteurs(author),
+    FOREIGN KEY (articleID) REFERENCES articles(articleID)
+);
+```
 ]
 
 ---
@@ -847,14 +847,13 @@ CREATE TABLE collaborations (
 La dernière table pour les `articles`.
 
 ```sql
-CREATE TABLE auteurs (
-    code        VARCHAR(5) NOT NULL,
-    titre       VARCHAR(150) NOT NULL,
-    journal     VARCHAR(50),
-    date        DATE,
-    date        DATE,
-    citations   INTEGER CHECK(duree >= 0),
-    PRIMARY KEY(code,titre)
+CREATE TABLE articles (
+  articleID   VARCHAR(20) NOT NULL,
+  titre       VARCHAR(200) NOT NULL,
+  journal     VARCHAR(80),
+  annee       DATE,
+  citations   INTEGER CHECK(annee >= 0),
+  PRIMARY KEY (articleID)
 );
 ```
 
@@ -869,17 +868,17 @@ CREATE TABLE auteurs (
 
 ```{r, eval=FALSE}
 
-auteurs_sql <- "
+auteurs_sql <- '
 CREATE TABLE auteurs (
-    nom         VARCHAR(40),
-    prenom      VARCHAR(40),
-    naissance   DATE,
-    institution VARCHAR(40)
-    PRIMARY KEY (nom,prenom)
-    collaborations (nom1,prenom1)
-);"
+  auteur      VARCHAR(50),
+  statut      VARCHAR(40),
+  institution VARCHAR(200),
+  city        VARCHAR(40),
+  country     VARCHAR(40),
+  PRIMARY KEY (author)
+);'
 
-dbSendQuery(con,auteurs_sql)
+dbSendQuery(con, auteurs_sql)
 dbListTables(con)
 ```
 
