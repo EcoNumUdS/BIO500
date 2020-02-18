@@ -484,7 +484,7 @@ class: inverse, center, middle
 # Les entrepôts existants
 
 .pull-left[
-  1. Les `fichiers texte` comme les CSV, TSV (Format libre et ouvert)
+  1. Les `fichiers textes` comme les CSV, TSV (Format libre et ouvert)
   2. Les `tableurs` comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
   3. Les `fichiers hierarchiques/structurés` HDF, NetCDF (Format libre et ouvert)
   4. Les `bases de données relationnelles`
@@ -819,6 +819,12 @@ CREATE TABLE auteurs (
 
 .pull-left[
   Maintenant il faut créer une table `collaborations` et référencer cette table à la table `auteurs` ainsi qu'à la table `articles`.
+]
+
+.pull-right[
+- On déclare `prenom1` et `nom1` comme étant la clé primaire de la table `collaborations`.
+- On référence l'attribut `code` comme étant la clé étrangère.
+]
 
 .font90[
 ```sql
@@ -832,12 +838,6 @@ CREATE TABLE collaborations (
     FOREIGN KEY (articleID) REFERENCES articles(articleID)
 );
 ```
-]
-]
-
-.pull-right[
-- On déclare `author1`, `author2` et `articleID` comme étant la clé primaire de la table `collaborations`.
-- On référence chacun de ces trois attributs comme étant la clé étrangère
 ]
 
 ---
