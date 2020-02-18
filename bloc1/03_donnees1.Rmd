@@ -1,3 +1,4 @@
+
 ---
 class: inverse
 
@@ -806,7 +807,7 @@ CREATE TABLE auteurs (
 ]
 
 .pull-right[
-- `auteurs` est le nom de la table 
+- `auteurs` est le nom de la table
 - Chaque attribut de la table (`nom`,`prenom` etc) dispose d'un type de données (`varchar(40)`,`DATE`,  etc) [Type de données SQLite](https://www.sqlite.org/datatype3.html)
 - La dernière ligne correspond aux contraintes de la table telle que la clé primaire.
 - **Question:** Cette clé primaire est composite ou simple?
@@ -823,12 +824,12 @@ CREATE TABLE auteurs (
 ```sql
 CREATE TABLE collaborations (
     nom1        VARCHAR(40),
-    prenom1     VARCHAR(40),    
+    prenom1     VARCHAR(40),
     nom2        VARCHAR(40),
     prenom2     VARCHAR(40),
-    code        VARCHAR5),  
+    code        VARCHAR5),
     PRIMARY KEY (nom1, prenom1),
-    FOREIGN KEY (code) 
+    FOREIGN KEY (code)
 );
 ```
 ]
