@@ -795,8 +795,8 @@ dbSendQuery(con,"Instructions SQL à envoyer;")
 .font90[
 ```sql
 CREATE TABLE auteurs (
-    author      VARCHAR(50),
-    status      VARCHAR(40),
+    auteur      VARCHAR(50),
+    statut      VARCHAR(40),
     institution VARCHAR(200),
     city        VARCHAR(40),
     country     VARCHAR(40),
@@ -829,8 +829,8 @@ CREATE TABLE auteurs (
 .font90[
 ```sql
 CREATE TABLE collaborations (
-    author1     VARCHAR(40),
-    author2     VARCHAR(40),
+    auteur1     VARCHAR(40),
+    auteur2     VARCHAR(40),
     articleID   VARCHAR(20),
     PRIMARY KEY (author1, author2, articleID),
     FOREIGN KEY (author1) REFERENCES auteurs(author),
@@ -870,8 +870,8 @@ CREATE TABLE articles (
 
 auteurs_sql <- '
 CREATE TABLE auteurs (
-  author      VARCHAR(50),
-  status      VARCHAR(40),
+  auteur      VARCHAR(50),
+  statut      VARCHAR(40),
   institution VARCHAR(200),
   city        VARCHAR(40),
   country     VARCHAR(40),
