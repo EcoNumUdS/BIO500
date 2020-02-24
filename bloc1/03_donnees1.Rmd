@@ -801,7 +801,7 @@ CREATE TABLE auteurs (
     institution VARCHAR(200),
     ville       VARCHAR(40),
     pays        VARCHAR(40),
-    PRIMARY KEY (author)
+    PRIMARY KEY (auteur)
 );
 ```
 ]
@@ -809,7 +809,7 @@ CREATE TABLE auteurs (
 
 .pull-right[
 - `auteurs` est le nom de la table
-- Chaque attribut de la table (`author`,`status` etc) dispose d'un type de données (`varchar(40)`,`DATE`,  etc) [Type de données SQLite](https://www.sqlite.org/datatype3.html)
+- Chaque attribut de la table (`auteur`,`statut` etc) dispose d'un type de données (`varchar(40)`,`DATE`,  etc) [Type de données SQLite](https://www.sqlite.org/datatype3.html)
 - La dernière ligne correspond aux contraintes de la table telle que la clé primaire.
 - **Question:** Cette clé primaire est composite ou simple?
 ]
@@ -823,8 +823,8 @@ CREATE TABLE auteurs (
 ]
 
 .pull-right[
-- On déclare `prenom1` et `nom1` comme étant la clé primaire de la table `collaborations`.
-- On référence l'attribut `code` comme étant la clé étrangère.
+- On déclare `auteur1`, `auteur2` et `articleID` comme étant la clé primaire de la table `collaborations`.
+- On référence ces trois attributs comme étant la clé étrangère.
 ]
 
 .font90[
@@ -834,8 +834,8 @@ CREATE TABLE collaborations (
     auteur2     VARCHAR(40),
     articleID   VARCHAR(20),
     PRIMARY KEY (auteur1, auteur2, articleID),
-    FOREIGN KEY (auteur1) REFERENCES auteurs(author),
-    FOREIGN KEY (auteur2) REFERENCES auteurs(author),
+    FOREIGN KEY (auteur1) REFERENCES auteurs(auteur),
+    FOREIGN KEY (auteur2) REFERENCES auteurs(auteur),
     FOREIGN KEY (articleID) REFERENCES articles(articleID)
 );
 ```
@@ -876,7 +876,7 @@ CREATE TABLE auteurs (
   institution VARCHAR(200),
   ville       VARCHAR(40),
   pays        VARCHAR(40),
-  PRIMARY KEY (author)
+  PRIMARY KEY (auteur)
 );'
 
 dbSendQuery(con, auteurs_sql)
