@@ -771,6 +771,7 @@ system("rm -f ./assets/data/films.db")
 ```
 
 ```{r, warnings=FALSE, message=FALSE}
+# install.packages('RSQLite')
 library(RSQLite)
 con <- dbConnect(SQLite(), dbname="./assets/data/reseau.db")
 ## !ATTENTION!: Ceci est mon chemin d'accès vers le fichier!
@@ -790,7 +791,7 @@ dbSendQuery(con,"Instructions SQL à envoyer;")
 # Création d'une première table avec clé primaire
 
 .pull-left[
-  Voici un exemple d'instruction SQL pour créer la table `articles`.
+  Voici un exemple d'instruction SQL pour créer la table `auteurs`.
 
 .font90[
 ```sql
@@ -798,8 +799,8 @@ CREATE TABLE auteurs (
     auteur      VARCHAR(50),
     statut      VARCHAR(40),
     institution VARCHAR(200),
-    city        VARCHAR(40),
-    country     VARCHAR(40),
+    ville       VARCHAR(40),
+    pays        VARCHAR(40),
     PRIMARY KEY (author)
 );
 ```
@@ -832,9 +833,9 @@ CREATE TABLE collaborations (
     auteur1     VARCHAR(40),
     auteur2     VARCHAR(40),
     articleID   VARCHAR(20),
-    PRIMARY KEY (author1, author2, articleID),
-    FOREIGN KEY (author1) REFERENCES auteurs(author),
-    FOREIGN KEY (author2) REFERENCES auteurs(author),
+    PRIMARY KEY (auteur1, auteur2, articleID),
+    FOREIGN KEY (auteur1) REFERENCES auteurs(author),
+    FOREIGN KEY (auteur2) REFERENCES auteurs(author),
     FOREIGN KEY (articleID) REFERENCES articles(articleID)
 );
 ```
@@ -873,8 +874,8 @@ CREATE TABLE auteurs (
   auteur      VARCHAR(50),
   statut      VARCHAR(40),
   institution VARCHAR(200),
-  city        VARCHAR(40),
-  country     VARCHAR(40),
+  ville       VARCHAR(40),
+  pays        VARCHAR(40),
   PRIMARY KEY (author)
 );'
 
