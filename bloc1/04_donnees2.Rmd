@@ -32,14 +32,6 @@ class: title-slide, middle
 
 ---
 
-# Séance 3
-
-- Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/cours2/) et en [PDF](./assets/pdf/S2-BIO500.pdf).
-- L'ensemble du matériel de cours est disponible sur la page du portail [moodle](https://www.usherbrooke.ca/moodle2-cours/course/view.php?id=12189).
-
-
----
-
 # Les grandes étapes
 
 1. Spécifier la connexion avec le serveur
@@ -171,12 +163,12 @@ dbWriteTable(con, append = TRUE, name = "collaborations", value = bd_collab, row
 
 ---
 
-# Exercice 1 (10-15 minutes)
+# Exercice 1
 
 Ce premier exercice est important pour la suite de la séance.
 
-1. Recréer la base de données `bd_films` avec ses deux tables `films` et `acteurs`
-2. Insérer les données [bd_acteurs.csv](./assets/data/bd_beacon/bd_acteurs.csv) et [bd_films.csv](./assets/data/bd_beacon/bd_films.csv) dans les deux tables à l'aide de la commande R `dbWriteTable()`
+1. Recréer la base de données `reseau` avec ses trois tables `auteurs`, `articles` et `collaborations`
+2. Insérer les données [auteurs.csv](./assets/data/db_reseau/auteurs.csv),[collaborations.csv](./assets/data/db_reseau/collaborations.csv) et [articles.csv](./assets/data/bd_beacon/bd_films.csv) dans les deux tables à l'aide de la commande R `dbWriteTable()`
 
 
 ---
@@ -216,7 +208,7 @@ LIMIT 10;
 .pull-left[
 ```{r, eval = FALSE}
 sql_requete <- "
-SELECT articleID, titre, annee
+SELECT articleID, journal, annee
   FROM articles LIMIT 10
 ;"
 
@@ -234,7 +226,7 @@ head(articles)
 
 ```{r, echo = FALSE}
 sql_requete <- "
-SELECT articleID, titre, annee
+SELECT articleID, journal, annee
   FROM articles LIMIT 10
 ;"
 
@@ -248,7 +240,7 @@ head(articles)
 .font80[
 .pull-left[
 ```{r, eval = FALSE}
-sql_requete <- "SELECT * FROM articles LIMIT 10;"
+sql_requete <- "SELECT * FROM collaborations LIMIT 10;"
 
 articles <- dbGetQuery(con, sql_requete)
 head(articles)
@@ -258,12 +250,12 @@ head(articles)
 .pull-right[
 .font90[
 - `*` permet de ne pas spécifier une colonne en particulier.
-- Cette requête retournera toutes les colonnes de la table `films`
+- Cette requête retournera toutes les colonnes de la table `collaborations`
 - Note: L'instruction `LIMIT` est utilisée dans les prochaines diapos afin de permettre le rendu des requêtes sur une diapo.
 ]]
 
 ```{r, echo = FALSE}
-sql_requete <- "SELECT * FROM articles LIMIT 10;"
+sql_requete <- "SELECT * FROM collaborations LIMIT 10;"
 
 articles <- dbGetQuery(con, sql_requete)
 head(articles)
@@ -276,8 +268,8 @@ head(articles)
 .font80[
 .pull-left[
 ```{r}
-sql_requete <- "SELECT DISTINCT auteur
-FROM auteurs LIMIT 10;"
+sql_requete <- "SELECT DISTINCT auteur1
+FROM collaborations LIMIT 10;"
 
 auteurs <- dbGetQuery(con, sql_requete)
 head(auteurs)
@@ -296,8 +288,8 @@ head(auteurs)
 .pull-left[
 ```{r, eval = FALSE}
 sql_requete <- "
-SELECT titre, annee, articleID
-  FROM articles ORDER BY annee DESC
+SELECT annee, citations, articleID
+  FROM articles ORDER BY citations DESC
 ;"
 derniers_articles <- dbGetQuery(con, sql_requete)
 head(derniers_articles)
@@ -310,8 +302,8 @@ head(derniers_articles)
 
 ```{r, echo = FALSE}
 sql_requete <- "
-SELECT titre, annee, articleID
-  FROM articles ORDER BY annee DESC
+SELECT annee, citations, articleID
+  FROM articles ORDER BY citations DESC
 ;"
 derniers_articles <- dbGetQuery(con, sql_requete)
 head(derniers_articles)
@@ -336,7 +328,7 @@ head(auteurs)
 .pull-right[
 .font90[
 - `WHERE`, spécifie les critères de la requête.
-- `statut IS NULL` permet d'obtenir seulement les auteurs n'ayant pas de statuts.
+- `statut IS NULL` permet d'obtenir seulement les auteurs n'ayant pas de statut.
 ]]
 
 ---
@@ -347,7 +339,7 @@ head(auteurs)
 .pull-left[
 ```{r}
 sql_requete <- "
-SELECT articleID, titre, annee
+SELECT articleID, annee
   FROM articles WHERE
   (annee >= 2018 AND annee < 2020)
   OR (annee >= 2012 AND annee <= 2014)
@@ -373,7 +365,7 @@ head(articles)
 .pull-left[
 ```{r}
 sql_requete <- "
-SELECT articleID, titre, annee
+SELECT articleID, titre
   FROM articles WHERE titre LIKE '%interactions%'
 ;"
 articles <- dbGetQuery(con, sql_requete)
@@ -390,10 +382,9 @@ head(articles)
 
 ---
 
-# Exercice 2 (10 minutes)
+# Exercice 2
 
-Dans ta table `auteur`, essayer de trouver les auteurs dont l'institution est `Universite de Sherbrooke`.
-
+Dans ta table `auteurs`, essayez de trouver les auteurs dont l'institution est `Universite de Sherbrooke`.
 
 ---
 
@@ -403,8 +394,8 @@ Dans ta table `auteur`, essayer de trouver les auteurs dont l'institution est `U
 .pull-left[
 ```{r}
 sql_requete <- "
-SELECT avg(annee) AS moyenne,
-  min(annee), max(annee)
+SELECT avg(citations) AS moyenne,
+  min(citations), max(citations)
   FROM articles;"
 
 resume_articles <- dbGetQuery(con, sql_requete)
@@ -429,7 +420,7 @@ head(resume_articles)
 .pull-left[
 ```{r}
 sql_requete <- "
-SELECT count(articleID) AS nb_articles, annee
+SELECT avg(citations) AS moyenne, count(articleID) AS nb_articles, annee
   FROM articles
   GROUP BY annee;"
 
@@ -445,11 +436,11 @@ head(resume_articles)
 
 ---
 
-# Exercice 3 (10 minutes)
+# Exercice 3
 
-À l'aide de la base de données `reseau`, dénombrer le nombre d'auteur par article
+À l'aide de la base de données `reseau`, dénombrer le nombre de collaborations par auteur.
 
-Quels sont les 10 auteurs les plus prolifiques?
+Quel est l'auteur qui a le plus de collaborations ? 
 
 ---
 class: inverse, center, middle
@@ -462,20 +453,18 @@ class: inverse, center, middle
 
 # Jointures entre tables
 
-Le `INNER JOIN` est un type de jointure, renvoyant seulement les films et les acteurs ayant un identifiant `id_film` commun.
+Le `INNER JOIN` est un type de jointure, renvoyant seulement les auteurs et les articles ayant un identifiant `id_film` commun.
 
 ```{r}
 sql_requete <- "
-SELECT titre, annee, films.id_film, acteurs.id_film
-  FROM films
-  INNER JOIN acteurs ON films.id_film = acteurs.id_film
+SELECT annee, auteur1, auteur2, journal, articles.articleID
+  FROM articles
+  INNER JOIN collaborations ON articles.articleID = collaborations.articleID
   ;"
 
-acteurs_films <- dbGetQuery(con,sql_requete)
-head(acteurs_films,4)
+auteurs_articles <- dbGetQuery(con,sql_requete)
+head(auteurs_articles,4)
 ```
-
-
 ---
 
 # Les type de jointures
@@ -492,26 +481,20 @@ On peut spécifier la jointure avec `USING` seulement si les deux clés possède
 
 ```{r}
 sql_requete <- "
-SELECT titre, annee, nom, prenom
-  FROM films
-  INNER JOIN acteurs USING (id_film)
+SELECT annee, auteur1, auteur2, journal, articles.articleID
+  FROM articles
+  INNER JOIN collaborations USING (articleID)
   ;"
 
-acteurs_films <- dbGetQuery(con,sql_requete)
-head(acteurs_films,4)
+auteurs_articles <- dbGetQuery(con,sql_requete)
+head(auteurs_articles,4)
 ```
 
 ---
 
-# Exercice 4 (5 minutes)
+# Exercice 4
 
-## Quel film possède le plus d'acteurs?
-
----
-
-# Exercice 5 (10 minutes)
-
-## Combien il y a d'acteurs par film entre 1960 et 1980?
+## Quel article a le plus d'auteurs ?
 
 ---
 
@@ -521,23 +504,27 @@ head(acteurs_films,4)
 .pull-left[
 ```{r}
 sql_requete <- "
-SELECT annee, avg(nb_acteurs) AS moy_acteurs FROM (
-  SELECT titre, annee, count(nom) AS nb_acteurs
-    FROM films
-    INNER JOIN acteurs USING (id_film)
-    GROUP BY annee, titre
-) AS nb_acteurs_film
-GROUP BY annee;"
+SELECT auteur1, avg(citations) AS moy_citations FROM (
+  SELECT auteur1, articleID, citations 
+    FROM articles
+    INNER JOIN collaborations USING (articleID)
+) GROUP BY auteur1;"
 
-moy_acteurs <- dbGetQuery(con,sql_requete)
-head(moy_acteurs)
+moy_auteurs <- dbGetQuery(con,sql_requete)
+head(moy_auteurs)
 ```
 ]]
 
 .pull-right[
-- On s'interroge sur le nombre moyen d'acteurs par années.
+- On s'interroge sur le nombre moyen de citations par auteur.
 - Pour ce faire, on peut bâtir une requête à partir d'une autre requête.
 ]
+
+---
+
+# Exercice 5
+
+## Est-ce que le nombre de citations est proportionnel au nombre de collaborateurs par article ?
 
 ---
 
@@ -547,17 +534,15 @@ head(moy_acteurs)
 .pull-left[
 ```{r}
 sql_requete <- "
-SELECT annee, avg(nb_acteurs) AS moy_acteurs FROM (
-  SELECT titre, annee, count(nom) AS nb_acteurs
-    FROM films
-    INNER JOIN acteurs USING (id_film)
-    GROUP BY annee, titre
-) AS nb_acteurs_film
-GROUP BY annee
-HAVING avg(nb_acteurs) > 10;"
+SELECT auteur1, avg(citations) AS moy_citations FROM (
+  SELECT auteur1, articleID, citations 
+    FROM articles
+    INNER JOIN collaborations USING (articleID)
+) GROUP BY auteur1
+HAVING moy_citations > 10;"
 
-nb_acteurs <- dbGetQuery(con,sql_requete)
-head(nb_acteurs)
+moy_auteurs <- dbGetQuery(con,sql_requete)
+head(moy_auteurs)
 ```
 ]]
 
@@ -596,7 +581,7 @@ On peut mettre à jour des enregistrements d'une table avec des critères spéci
 UPDATE auteurs SET institution = 'UdeS' WHERE genre = 'Universite de Sherbrooke';
 ```
 
-**Note:** On peut pas faire de modifications d'enregistrements sur des vues, seulement sur les tables directement.
+**Note:** On ne peut pas faire de modifications d'enregistrements sur des requêtes, seulement sur les tables directement.
 
 [Documentation sur la commande UPDATE](http://docs.postgresqlfr.org/8.3/sql-update.html)
 
@@ -630,6 +615,8 @@ class: inverse, center, middle
 
 # Travail de la semaine
 
+0. Uniformiser les tables des différentes équipes (en script)
+
 1. Créer la base de données
 
 2. Injecter les données
@@ -648,9 +635,8 @@ class: inverse, center, middle
   - Calculer le nombre d'étudiants, le nombre de liens et la connectance du réseau
   - Calculer le nombre de liens moyens par étudiant et la variance
 
-6. Écrire un script qui réalise les étapes 1-3 d'un bloc
+6. Écrire un script qui réalise les étapes 0-3 d'un bloc
 
-Vous devez remettre les 5 scripts pour chacune de ces étapes ainsi que le script final qui les exécute l'une après l'autre.
 Assurez vous que le script fonctionne sur l'ordinateur du laboratoire et également entre des utilisateurs différents.
 
 ---
@@ -660,7 +646,7 @@ Assurez vous que le script fonctionne sur l'ordinateur du laboratoire et égalem
 ## Débat sur le partage des données
 
 - Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
-- Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
+- Mills et al. 2015. Archiving Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
 
 ---
 class: inverse, center, middle
