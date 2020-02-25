@@ -657,3 +657,7 @@ class: inverse, center, middle
 # Discussion
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
+```{r remove db file, eval=TRUE, echo=FALSE}
+system("rm -rf ./assets/data/reseau.db")
+```
