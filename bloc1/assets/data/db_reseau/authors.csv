@@ -1,143 +1,202 @@
-"","author","status","institution","city","country"
-"1","Eva Delmas","Student","Universite de Montreal","Montreal","Canada"
-"2","Mathilde Besson","Student","Universite de Montreal","Montreal","Canada"
-"3","Marie-Hélène Brice","Student","Universite de Montreal","Montreal","Canada"
-"4","Laura A. Burkle",NA,"Montana State University","Bozeman","USA"
-"5","Giulio V. Dalla Riva",NA,"University of British Columbia","Vancouver","Canada"
-"6","Marie-Josée Fortin","Professor","University of Toronto","Toronto","Canada"
-"7","Dominique Gravel","Professor","Universite de Sherbrooke","Sherbrooke","Canada"
-"8","Paulo R. Guimarães Jr.","Professor","Universidade de Sao Paulo","Sao Paulo","Brazil"
-"9","David H. Hembry",NA,"University of Arizona","Tucson","USA"
-"10","Erica A. Newman",NA,"University of Arizona","Tucson","USA"
-"11","Jens M. Olesen",NA,"Aarhus University","Aarhus","Denmark"
-"12","Mathias M. Pires","Professor","Universidade Estadual de Campinas","Campinas","Brazil"
-"13","Justin D. Yeakel",NA,"University of California Merced","Merced","USA"
-"14","Timothée Poisot","Professor","Universite de Montreal","Montreal","Canada"
-"15","Benjamin Baiser",NA,"University of Florida","Gainesville","USA"
-"16","Jennifer A. Dunne",NA,"Santa Fe Institute","Santa Fe","USA"
-"17","Jens-Peter Kopelke",NA,"Senckenberg Research Institute","Frankfurt","Germany"
-"18","Neo D. Martinez",NA,"University of Arizona","Tucson","USA"
-"19","Tommi Nyman",NA,"University of Eastern Finland","Joensuu","Finland"
-"20","Daniel B. Stouffer","Professor","University of Canterbury","Christchurch","New Zealand"
-"21","Jason M. Tylianakis",NA,"University of Canterbury","Christchurch","New Zealand"
-"22","Spencer A. Wood",NA,"University of Washington","Seattle","USA"
-"23","Tomas Roslin","Professor","Swedish University of Agricultural Sciences","Uppsala","Sweden"
-"24","Laura Melissa Guzman","ECR","University of British Columbia","Vancouver","Canada"
-"25","Rachel M. Germain",NA,"University of British Columbia","Vancouver","Canada"
-"26","Coreen Forbes",NA,"University of British Columbia","Vancouver","Canada"
-"27","Samantha Straus",NA,"University of British Columbia","Vancouver","Canada"
-"28","Mary I. O'Connor",NA,"University of British Columbia","Vancouver","Canada"
-"29","Diane S. Srivastava",NA,"University of British Columbia","Vancouver","Canada"
-"30","Patrick L. Thompson",NA,"University of British Columbia","Vancouver","Canada"
-"31","Bernhard Eitzinger","ECR","University of Helsinki","Helsinki","Finland"
-"32","Nerea Abrego",NA,"University of Helsinki","Helsinki","Finland"
-"33","Tea Huotari",NA,"University of Helsinki","Helsinki","Finland"
-"34","Eero J Vesterinen",NA,"University of Helsinki","Helsinki","Finland"
-"35","Shaopeng Wang",NA,"Peking University","Bejing","China"
-"36","Ulrich Brose",NA,"Centre for Integrative Biodiversity Research","Halle_Jena_Leipzig","Germany"
-"37","Azenor Bideault","Student","Universite de Sherbrooke","Sherbrooke","Canada"
-"38","Michel Loreau","Professor","Theoretical and Experimental Ecology Station","Moulis","France"
-"39","Chunchao Zhu","Student","Sun Yat_sen University","Guangzhou","China"
-"40","Fangliang He","Professor"," East China Normal University","Shanghai","China"
-"41","Raphaël Aussenac","Student","Universite du quebec","Rouyn_Noranda","Canada"
-"42","Yves Bergeron","Professor","Universite du quebec","Rouyn_Noranda","Canada"
-"43","Igor Drobyshev","Professor","Universite du quebec","Rouyn_Noranda","Canada"
-"44","Anna Norberg",NA,"University of Helsinki","Helsinki","Finland"
-"45","Guillaume F. Blanchet","ECR","Universite de Sherbrooke","Sherbrooke","Canada"
-"46","Frederick R. Adler",NA,"University of Utah","Salt Lake City","USA"
-"47","Barbara J. Anderson",NA,"Manaaki Whenua Landcare Research","Dunedin","New Zealand"
-"48","Jani Anttila",NA,"University of Helsinki","Helsinki","Finland"
-"49","Miguel B. Araújo","Professor","Universidade de Evora","Evora","Portugal"
-"50","Tad Dallas","ECR","University of Helsinki","Helsinki","Finland"
-"51","David Dunson",NA,"Duke University","Durham","USA"
-"52","Jane Elith",NA,"University of Melbourne","Parkville","Australia"
-"53","Scott D. Foster",NA,"Commonwealth Scientific and Industrial Research Organisation","Hobart","Australia"
-"54","Richard Fox",NA,"Butterfly Conservation","Wareham","UK"
-"55","Janet Franklin",NA,"University of California","Riverside","USA"
-"56","William Godsoe","Professor","Lincoln University","Lincoln","New Zealand"
-"57","Antoine Guisan","Professor","University of Lausanne","Lausanne","Switzerland"
-"58","Bob O'Hara","Professor","Norwegian University of Science and Technology","Trondheim","Norway"
-"59","Nicole A. Hill",NA,"University of Tasmania","Hobart","Australia"
-"60","Robert D. Holt","Professor","University of Florida","Gainesville","USA"
-"61","Francis K.C. Hui",NA,"The Australian National University","Acton","Australia"
-"62","Magne Husby",NA,"Nord University","Rostad","Norway"
-"63","John Atle Kålås",NA,"Norwegian Institute for Nature Research","Trondheim","Norway"
-"64","Aleksi Lehikoinen",NA,"University of Helsinki","Helsinki","Finland"
-"65","Miska Luoto",NA,"University of Helsinki","Helsinki","Finland"
-"66","Heidi K. Mod",NA,"University of Lausanne","Lausanne","Switzerland"
-"67","Graeme Newell",NA,"Arthur Rylah Institute for Environmental Research","Victoria","Australia"
-"68","Ian Renner",NA,"The University of Newcastle","New South Wales","Australia"
-"69","Janne Soininen",NA,"University of Helsinki","Helsinki","Finland"
-"70","Wilfried Thuiller","Professor","University Grenoble Alpes","Grenoble","France"
-"71","Jarno Vanhatalo",NA,"University of Helsinki","Helsinki","Finland"
-"72","David Warton",NA,"University of New South Wales","New South Wales","Australia"
-"73","Matt White",NA,"Arthur Rylah Institute for Environmental Research","Victoria","Australia"
-"74","Niklaus E. Zimmermann","Professor","Swiss Federal Research Institute WSL","Birmensdorf","Switzerland"
-"75","Otso Ovaskainen","Professor","University of Helsinki","Helsinki","Finland"
-"76","Anne Bruneau","Professor","Universite de Montreal","Montreal","Canada"
-"77","Andrew Gonzalez","Professor","McGill University","Montreal","Canada"
-"78","Pedro Peres-Neto","Professor","Concordia University","Montreal","Canada"
-"79","Alyssa R. Cirtwill",NA,"University of Canterbury","Christchurch","New Zealand"
-"80","Ashkaan K. Fahimipour",NA,"University of Oregon","Eugene","USA"
-"81","Luis J. Gilarranz",NA,"Swiss Federal Institute of Aquatic Science and Technology","Dubendorf","Switzerland"
-"82","Joshua A. Grochow",NA,"University of Colorado Boulder","Dubendorf","Switzerland"
-"83","Daijiang Li",NA,"University of Florida","Gainesville","USA"
-"84","Alicia McGrew",NA,"University of Florida","Gainesville","USA"
-"85","Tamara N. Romanuk",NA,"Dalhousie University","Nova Scotia","Canada"
-"86","Lauren B. Trotta",NA,"University of Florida","Gainesville","USA"
-"87","Fernanda S. Valdovinos",NA,"University of Michigan","Ann Arbor","USA"
-"88","Richard J. Williams",NA,"Vibrant Data Inc","San Francisco","USA"
-"89","Pierre-Marc Brousseau",NA,"Universite du Quebec a Montreal","Montreal","Canada"
-"90","I. Tanya Handa",NA,"Universite du Quebec a Montreal","Montreal","Canada"
-"91","Laura J. Raymond-Léonard",NA,"Universite du Quebec a Montreal","Montreal","Canada"
-"92","Marcus A.M. de Aguiar","Professor","Universidade Estadual de Campinas","Campinas","Brazil"
-"93","Carl Boettiger","Professor","University of California","Berkeley","USA"
-"94","James L. O’Donnell",NA,"University of Washington","Seattle","USA"
-"95","Bright B. Kumordzi",NA,"Universite Laval","Quebec","Canada"
-"96","Isabelle Aubin","Professor","Natural Resources Canada","Sault Ste Marie","Canada"
-"97","Françoise Cardou","Student","Universit� de Sherbrooke","Sherbrooke","Canada"
-"98","Bill Shipley","Professor","Universit� de Sherbrooke","Sherbrooke","Canada"
-"99","Cyrille Violle","Professor","Universite de Montpellie","Montpellier","France"
-"100","Jill Johnstone",NA,"University of Saskatchewan","Saskatoon","Canada"
-"101","Madhur Anand",NA,"University of Guelph","Guelph","Canada"
-"102","André Arsenault",NA,"Memorial University of Newfoundland","Corner Brook","Canada"
-"103","F. Wayne Bell",NA,"Natural Resources Canada","Sault Ste Marie","Canada"
-"104","Isabelle Boulangeat","Professor","Universite Grenoble Alpes","Grenoble","France"
-"105","Maxime Brousseau",NA,"Universite Laval","Quebec","Canada"
-"106","Louis De Grandpré",NA,"Natural Resources Canada","Sault Ste Marie","Canada"
-"107","Sylvain Delagrange",NA,"Universite du Quebec en Outaouais","Ripon","Canada"
-"108","Nicole J. Fenton",NA,"Universite du Quebec en Abitibi_Temiscamingue","Rouyn_Noranda","Canada"
-"109","S. Ellen Macdonald",NA,"University of Alberta","Edmonton","Canada"
-"110","Benoit Hamel",NA,"Natural Resources Canada","Sault Ste Marie","Canada"
-"111","Morgane Higelin",NA,"Universite du Quebec en Abitibi_Temiscamingue","Rouyn_Noranda","Canada"
-"112","François Hébert",NA,"Ministere des Forets, de la Faune et des Parcs","Quebec","Canada"
-"113","Nathalie Isabel",NA,"Natural Resources Canada","Sault Ste Marie","Canada"
-"114","Azim Mallik",NA,"akehead University","Thunder Bay","Canada"
-"115","Anne C.S. McIntosh",NA,"University of Alberta","Edmonton","Canada"
-"116","Jennie R. McLaren",NA,"University of Texas at El Paso","El Paso","USA"
-"117","Christian Messier",NA,"Universite du Quebec a Montreal","Montreal","Canada"
-"118","Dave Morris",NA,"Ontario Ministry of Natural Resources and Forestry","Thunder Bay,","Canada"
-"119","Nelson Thiffault",NA,"Universite Laval","Quebec","Canada"
-"120","Jean-Pierre Tremblay",NA,"Universite Laval","Quebec","Canada"
-"121","Alison D. Munson",NA,"Universite Laval","Quebec","Canada"
-"122","Camille Albouy",NA,"IFREMER","Nantes","France"
-"123","Philippe Archambault",NA,"Universite Laval","Quebec","Canada"
-"124","Ward Appeltans",NA,"UNESCO","Ostend","Belgium"
-"125","David Beauchesne","Student","Universite du Quebec a Rimouski","Rimouski","Canada"
-"126","Kevin Cazelles","ECR","University of Guelph","Guelph","Canada"
-"127","Nuria Galiana","ECR","Centre for Biodiversity Theory","Moulis","France"
-"128","Shawn J. Leroux",NA,"Memorial University","St. John�s","Canada"
-"129","Loïc Pellissier",NA,"ETH Zurich","Zurich","Switzerland"
-"130","Anna Eklöf",NA,"Linkoping University","Linkoping","Sweden"
-"131","Kate Wootton","Student","Swedish University of Agricultural Sciences","Uppsala","Sweden"
-"132","João Braga",NA,"University Grenoble Alpes","Grenoble","France"
-"133","Laura J. Pollock","Professor","McGill University","Montreal","Canada"
-"134","Ceres Barros",NA,"University Grenoble Alpes","Grenoble","France"
-"135","Núria Galiana","ECR","Centre for Biodiversity Theory","Moulis","France"
-"136","José M. Montoya","Professor","Centre for Biodiversity Theory","Moulis","France"
-"137","Luigi Maiorano",NA,"Universita di Roma","Roma","Italy"
-"138","Alessandro Montemaggiori",NA,"Universita di Roma","Roma","Italy"
-"139","Gentile Francesco Ficetola",NA,"Universita di Roma","Roma","Italy"
-"140","Stéphane Dray",NA,"Universite Claude Bernard Lyon 1","Lyon","France"
-"141","David García-Callejas",NA,"Estacion Biologica de Donana","Sevilla","Spain"
-"142","Roberto Molowny-Horas",NA,"CREAF","Cerdanyola del Valles","Spain"
+auteur,statut,institution,ville,pays
+Pierre-Marc Brousseau,NA,Universite du Quebec a Montreal,Montreal,Canada
+Dominique Gravel,Professor,Universite de Sherbrooke,Sherbrooke,Canada
+I. Tanya Handa,NA,Universite du Quebec a Montreal,Montreal,Canada
+Idaline Laigle,NA,Universite de Sherbrooke,Sherbrooke,Canada
+Isabelle Aubin,Professor,Natural Resources Canada,Sault Ste Marie,Canada
+Christoph Digel,NA,University of Gottingen,Gottingen,Germany
+Ulrich Brose,NA,Centre for Integrative Biodiversity Research,Leipzig,Germany
+Isabelle Boulangeat,Professor,Universite Grenoble Alpes,Grenoble,France
+Jake J. Grossman,NA,University of Minnesota,Minnesota,USA
+Margot Vanhellemont,NA,Ghent University,Melle-Gontrode,Belgium
+Nadia Barsoum,NA,Forest Research,Farnham,UK
+Jürgen Bauhus,NA,University of Freiburg,Freiburg,Germany
+Helge Bruelheide,NA,German Centre for Integrative Biodiversity Research,Leipzig,Germany
+Bastien Castagneyrol,NA,INRA,Bordeaux,France
+Jeannine Cavender-Bares,NA,University of Minnesota,Minnesota,USA
+Nico Eisenhauer,NA,German Centre for Integrative Biodiversity Research,Leipzig,Germany
+Olga Ferlian,NA,German Centre for Integrative Biodiversity Research,Leipzig,Germany
+Andy Hector,NA,University of Oxford,Oxford,UK
+Hervé Jactel,NA,INRA,Bordeaux,France
+Holger Kreft,NA,University of Goettingen,Gottingen,Germany
+Simone Mereu,NA,University of Sassari,Sassari,Italy
+Christian Messier,NA,Universite du Quebec a Montreal,Montreal,Canada
+Bart Muys,NA,University of Leuven,Leuven,Belgium
+Charles Nock,NA,University of Freiburg,Freiburg,Germany
+Alain Paquette,NA,Universite du Quebec a Montreal,Montreal,Canada
+John Parker,NA,Smithsonian Environmental Research Center,Edgewater,USA
+Michael P. Perring,NA,Ghent University,Melle-Gontrode,Belgium
+Quentin Ponette,NA,University of Louvain,Louvain-la-Neuve,Belgium
+Peter B. Reich,NA,University of Minnesota,Minnesota,USA
+Andreas Schuldt,NA,Martin Luther University Halle-Wittenberg,Halle,Germany
+Michael Staab,NA,University of Freiburg,Freiburg,Germany
+Martin Weih,NA,Swedish University of Agricultural Sciences,Uppsala,Sweden
+Delphine Clara Zemp,NA,University of Gottingen,Gottingen,Germany
+Michael Scherer-Lorenzen,NA,University of Freiburg,Freiburg,Germany
+Kris Verheyen,NA,Ghent University,Melle-Gontrode,Belgium
+Eva Delmas,Student,Universite de Montreal,Montreal,Canada
+Mathilde Besson,Student,Universite de Montreal,Montreal,Canada
+Marie-Hélène Brice,Student,Universite de Montreal,Montreal,Canada
+Laura A. Burkle,NA,Montana State University,Bozeman,USA
+Giulio V. Dalla Riva,NA,University of British Columbia,Vancouver,Canada
+Marie-Josée Fortin,Professor,University of Toronto,Toronto,Canada
+Paulo R. Guimarães Jr,Professor,Universidade de Sao Paulo,Sao Paulo,Brazil
+David H. Hembry,NA,University of Arizona,Tucson,USA
+Erica A. Newman,NA,University of Arizona,Tucson,USA
+Jens M. Olesen,NA,Aarhus University,Aarhus,Denmark
+Mathias M. Pires,Professor,Universidade Estadual de Campinas,Campinas,Brazil
+Justin D. Yeakel,NA,University of California Merced,Merced,USA
+Timothée Poisot,Professor,Universite de Montreal,Montreal,Canada
+Pierre Legagneux,NA,Universite du Quebec a Rimouski,Rimouski,Canada
+Nicolas Casajus,NA,Universite du Quebec a Rimouski,Rimouski,Canada
+Kevin Cazelles,ECR,University of Guelph,Guelph,Canada
+Clément Chevallier,NA,Universite du Quebec a Rimouski,Rimouski,Canada
+Marion Chevrinais,NA,Universite du Quebec a Rimouski,Rimouski,Canada
+Lorelei Guéry,NA,Universite du Quebec a Rimouski,Rimouski,Canada
+Claire Jacquet,NA,Universite de Sherbrooke,Sherbrooke,Canada
+Mikael Jaffré,NA,Universite du Quebec a Rimouski,Rimouski,Canada
+Marie-José Naud,NA,Universite du Quebec a Rimouski,Rimouski,Canada
+Fanny Noisette,NA,Universite du Quebec a Rimouski,Rimouski,Canada
+Pascale Ropars,NA,Universite du Quebec a Rimouski,Rimouski,Canada
+Steve Vissault,NA,Universite de Sherbrooke,Sherbrooke,Canada
+Philippe Archambault,NA,Universite Laval,Quebec,Canada
+Joel Bêty,NA,Universite du Quebec a Rimouski,Rimouski,Canada
+Dominique Berteaux,NA,Universite du Quebec a Rimouski,Rimouski,Canada
+William Godsoe,Professor,Lincoln University,Lincoln,New Zealand
+Jill Jankowski,NA,_University of British Columbia,Vancouver,Canada
+Robert D. Holt,Professor,University of Florida,Gainesville,USA
+Nuria Galiana,ECR,Centre for Biodiversity Theory,Moulis,France
+Miguel Lurgi,NA, Theoretical and Experimental Ecology Station,Moulis,France
+Bernat Claramunt-López,NA,Universitat Aut�noma de Barcelona,Barcelona,Spain
+Shawn J. Leroux,NA,Memorial University,St. John�s,Canada
+José M. Montoya,Professor,Centre for Biodiversity Theory,Moulis,France
+Sébastien Renaut,NA,Universite de Montreal,Montreal,Canada
+Amber E Budden,NA,University of New Mexico,New Mexico,Mexico
+Pedro Peres-Neto,Professor,Concordia University,Montreal,Canada
+Hedvig K. Nenzén,NA,Universite de Sherbrooke,Sherbrooke,Canada
+Véronique Martel,NA,Canadian Forest Service,Quebec,Canada
+Bernat Bramon Mora,NA,University of Canterbury,Christchurch,New Zealand
+Luis J. Gilarranz,NA,Swiss Federal Institute of Aquatic Science and Technology,Dubendorf,Switzerland
+Daniel B. Stouffer,Professor,University of Canterbury,Christchurch,New Zealand
+Laura J. Raymond-Léonard,NA,Universite du Quebec a Montreal,Montreal,Canada
+Aitor Ameztegui,Professor,Universite du Quebec a Montreal,Montreal,Canada
+Kevin A. Solarik,Student,Universite du Quebec a Montreal,Montreal,Canada
+John R Parkins,NA,University of Alberta,Edmonton,Canada
+Daniel Houle,Researcher,Ouranos,Montreal,Canada
+Jens-Christian Svenning,Professor,Aarhus University,Aarhus,Denmark
+Tanguy Daufresne,NA,INRA,Montpellier,France
+Mathieu Leblond,NA,Universite du Quebec a Rimouski,Rimouski,Canada
+Benjamin Baiser,NA,University of Florida,Gainesville,USA
+Jennifer A. Dunne,NA,Santa Fe Institute,Santa Fe,USA
+Jens-Peter Kopelke,NA,Senckenberg Research Institute,Frankfurt,Germany
+Neo D. Martinez,NA,University of Arizona,Tucson,USA
+Tommi Nyman,NA,University of Eastern Finland,Joensuu,Finland
+Jason M. Tylianakis,NA,University of Canterbury,Christchurch,New Zealand
+Spencer A. Wood,NA,University of Washington,Seattle,USA
+Tomas Roslin,Professor,Swedish University of Agricultural Sciences,Uppsala,Sweden
+Laura Melissa Guzman,ECR,University of British Columbia,Vancouver,Canada
+Rachel M. Germain,NA,University of British Columbia,Vancouver,Canada
+Coreen Forbes,NA,University of British Columbia,Vancouver,Canada
+Samantha Straus,NA,University of British Columbia,Vancouver,Canada
+Mary I. O'Connor,NA,University of British Columbia,Vancouver,Canada
+Diane S. Srivastava,NA,University of British Columbia,Vancouver,Canada
+Patrick L. Thompson,NA,University of British Columbia,Vancouver,Canada
+Rock Ouimet,NA,"Ministere des Forets, de la Faune et des Parcs",Quebec,Canada
+Yves Bergeron,Professor,Universite du quebec,Rouyn_Noranda,Canada
+Bernhard Eitzinger,ECR,University of Helsinki,Helsinki,Finland
+Nerea Abrego,NA,University of Helsinki,Helsinki,Finland
+Tea Huotari,NA,University of Helsinki,Helsinki,Finland
+Eero J Vesterinen,NA,University of Helsinki,Helsinki,Finland
+Chantal Hutchison,NA,McGill University,Montreal,Canada
+Frédéric Guichard,NA,McGill University,Montreal,Canada
+Catherine Potvin,NA,McGill University,Montreal,Canada
+Shaopeng Wang,NA,Peking University,Bejing,China
+Azenor Bideault,Student,Universite de Sherbrooke,Sherbrooke,Canada
+Michel Loreau,Professor,Theoretical and Experimental Ecology Station,Moulis,France
+Chunchao Zhu,Student,Sun Yat_sen University,Guangzhou,China
+Fangliang He,Professor, East China Normal University,Shanghai,China
+Raphaël Aussenac,Student,Universite du quebec,Rouyn_Noranda,Canada
+Igor Drobyshev,Professor,Universite du quebec,Rouyn_Noranda,Canada
+Anna Norberg,NA,University of Helsinki,Helsinki,Finland
+Guillaume F. Blanchet,ECR,Universite de Sherbrooke,Sherbrooke,Canada
+Frederick R. Adler,NA,University of Utah,Salt Lake City,USA
+Barbara J. Anderson,NA,Manaaki Whenua Landcare Research,Dunedin,New Zealand
+Jani Anttila,NA,University of Helsinki,Helsinki,Finland
+Miguel B. Araújo,Professor,Universidade de Evora,Evora,Portugal
+Tad Dallas,ECR,University of Helsinki,Helsinki,Finland
+David Dunson,NA,Duke University,Durham,USA
+Jane Elith,NA,University of Melbourne,Parkville,Australia
+Scott D. Foster,NA,Commonwealth Scientific and Industrial Research Organisation,Hobart,Australia
+Richard Fox,NA,Butterfly Conservation,Wareham,UK
+Janet Franklin,NA,University of California,Riverside,USA
+Antoine Guisan,Professor,University of Lausanne,Lausanne,Switzerland
+Bob O'Hara,Professor,Norwegian University of Science and Technology,Trondheim,Norway
+Nicole A. Hill,NA,University of Tasmania,Hobart,Australia
+Francis K.C. Hui,NA,The Australian National University,Acton,Australia
+Magne Husby,NA,Nord University,Rostad,Norway
+John Atle Kålås,NA,Norwegian Institute for Nature Research,Trondheim,Norway
+Aleksi Lehikoinen,NA,University of Helsinki,Helsinki,Finland
+Miska Luoto,NA,University of Helsinki,Helsinki,Finland
+Heidi K. Mod,NA,University of Lausanne,Lausanne,Switzerland
+Graeme Newell,NA,Arthur Rylah Institute for Environmental Research,Victoria,Australia
+Ian Renner,NA,The University of Newcastle,New South Wales,Australia
+Janne Soininen,NA,University of Helsinki,Helsinki,Finland
+Wilfried Thuiller,Professor,University Grenoble Alpes,Grenoble,France
+Jarno Vanhatalo,NA,University of Helsinki,Helsinki,Finland
+David Warton,NA,University of New South Wales,New South Wales,Australia
+Matt White,NA,Arthur Rylah Institute for Environmental Research,Victoria,Australia
+Niklaus E. Zimmermann,Professor,Swiss Federal Research Institute WSL,Birmensdorf,Switzerland
+Otso Ovaskainen,Professor,University of Helsinki,Helsinki,Finland
+Anne Bruneau,Professor,Universite de Montreal,Montreal,Canada
+Andrew Gonzalez,Professor,McGill University,Montreal,Canada
+Alyssa R. Cirtwill,NA,University of Canterbury,Christchurch,New Zealand
+Ashkaan K. Fahimipour,NA,University of Oregon,Eugene,USA
+Joshua A. Grochow,NA,University of Colorado Boulder,Dubendorf,Switzerland
+Daijiang Li,NA,University of Florida,Gainesville,USA
+Alicia McGrew,NA,University of Florida,Gainesville,USA
+Tamara N. Romanuk,NA,Dalhousie University,Nova Scotia,Canada
+Lauren B. Trotta,NA,University of Florida,Gainesville,USA
+Fernanda S. Valdovinos,NA,University of Michigan,Ann Arbor,USA
+Richard J. Williams,NA,Vibrant Data Inc,San Francisco,USA
+Marcus A.M. de Aguiar,Professor,Universidade Estadual de Campinas,Campinas,Brazil
+Carl Boettiger,Professor,University of California,Berkeley,USA
+James L. O’Donnell,NA,University of Washington,Seattle,USA
+Bright B. Kumordzi,NA,Universite Laval,Quebec,Canada
+Françoise Cardou,Student,Universit� de Sherbrooke,Sherbrooke,Canada
+Bill Shipley,Professor,Universit� de Sherbrooke,Sherbrooke,Canada
+Cyrille Violle,Professor,Universite de Montpellie,Montpellier,France
+Jill Johnstone,NA,University of Saskatchewan,Saskatoon,Canada
+Madhur Anand,NA,University of Guelph,Guelph,Canada
+André Arsenault,NA,Memorial University of Newfoundland,Corner Brook,Canada
+F. Wayne Bell,NA,Natural Resources Canada,Sault Ste Marie,Canada
+Maxime Brousseau,NA,Universite Laval,Quebec,Canada
+Louis De Grandpré,NA,Natural Resources Canada,Sault Ste Marie,Canada
+Sylvain Delagrange,NA,Universite du Quebec en Outaouais,Ripon,Canada
+Nicole J. Fenton,NA,Universite du Quebec en Abitibi_Temiscamingue,Rouyn_Noranda,Canada
+S. Ellen Macdonald,NA,University of Alberta,Edmonton,Canada
+Benoit Hamel,NA,Natural Resources Canada,Sault Ste Marie,Canada
+Morgane Higelin,NA,Universite du Quebec en Abitibi_Temiscamingue,Rouyn_Noranda,Canada
+François Hébert,NA,"Ministere des Forets, de la Faune et des Parcs",Quebec,Canada
+Nathalie Isabel,NA,Natural Resources Canada,Sault Ste Marie,Canada
+Azim Mallik,NA,akehead University,Thunder Bay,Canada
+Anne C.S. McIntosh,NA,University of Alberta,Edmonton,Canada
+Jennie R. McLaren,NA,University of Texas at El Paso,El Paso,USA
+Dave Morris,NA,Ontario Ministry of Natural Resources and Forestry,"Thunder Bay,",Canada
+Nelson Thiffault,NA,Universite Laval,Quebec,Canada
+Jean-Pierre Tremblay,NA,Universite Laval,Quebec,Canada
+Alison D. Munson,NA,Universite Laval,Quebec,Canada
+Camille Albouy,NA,IFREMER,Nantes,France
+Ward Appeltans,NA,UNESCO,Ostend,Belgium
+David Beauchesne,Student,Universite du Quebec a Rimouski,Rimouski,Canada
+Loïc Pellissier,NA,ETH Zurich,Zurich,Switzerland
+Anna Eklöf,NA,Linkoping University,Linkoping,Sweden
+Kate Wootton,Student,Swedish University of Agricultural Sciences,Uppsala,Sweden
+João Braga,NA,University Grenoble Alpes,Grenoble,France
+Laura J. Pollock,Professor,McGill University,Montreal,Canada
+Ceres Barros,NA,University Grenoble Alpes,Grenoble,France
+Luigi Maiorano,NA,Universita di Roma,Roma,Italy
+Alessandro Montemaggiori,NA,Universita di Roma,Roma,Italy
+Gentile Francesco Ficetola,NA,Universita di Roma,Roma,Italy
+Stéphane Dray,NA,Universite Claude Bernard Lyon 1,Lyon,France
+David García-Callejas,NA,Estacion Biologica de Donana,Sevilla,Spain
+Roberto Molowny-Horas,NA,CREAF,Cerdanyola del Valles,Spain

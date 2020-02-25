@@ -8,7 +8,6 @@
 ###############################
 ## Steps
 # - load bib file with publications
-# - filter year == 2019
 # - Create a list of articleID and fullName of authors
 # - Create a data frame with information for each articleID
 # - Create a data frame with information for each author
@@ -18,10 +17,11 @@
 
 library(bibtex)
 
-
 ## load bib file with publications
 
-  refs <- read.bib(file = "/Users/wvieira/GitHub/jekyll_ieLab/_bibliography/labo.bib")
+  tmp <- tempfile()
+  download.file(url = 'https://raw.githubusercontent.com/TheoreticalEcosystemEcology/jekyll_ieLab/master/_bibliography/labo.bib', destfile = tmp, quiet = TRUE)
+  refs <- read.bib(file = tmp)
 
 ##
 
@@ -29,7 +29,7 @@ library(bibtex)
 
 ## filter to publications  from 2019
 
-  refs <- refs[refs$year == 2019]
+  refs <- refs[refs$year %in% c(2018, 2019)]
 
 ##
 
@@ -78,13 +78,13 @@ library(bibtex)
     lnAuthor <- length(unlist(article[['authors']]))
     df <- df[-(((0: (lnAuthor - 1)) * (lnAuthor + 1)) + 1), ]
 
-    df$id <- rep(article[['id']], nrow(df))
-    names(df)[1:2] <- c('author1', 'author2')
+    df$articleID <- rep(article[['articleID']], nrow(df))
+    names(df)[1:2] <- c('auteur1', 'auteur2')
 
     collab <- rbind(collab, df)
   }
 
-  write.csv(collab, file = 'collaboration.csv')
+  write.csv(collab, file = 'collaboration.csv', row.names = FALSE)
 
 ##
 
@@ -93,10 +93,20 @@ library(bibtex)
 ## Create a data frame with information for each articleID
 
   # load Dom's google scholar profile (used here for citation)
-  refsDom <- readRDS('refsDom.RDS')
+  scholarRefs <- 'scholarRefs.RDS'
+  if(!file.exists(scholarRefs)) {
+    refsScholar <- scholar::get_publications('SA5E8jsAAAAJ')
+    saveRDS(refsScholar, file = scholarRefs)
+  }else {
+    refsScholar <- readRDS(scholarRefs)
+  }
+
+  # remove repeated references from Scholar (manual work here using `agrep()`)
+  refsScholar <- refsScholar[-c(160, 144, 145), ]
+
 
   # get journal, title, citation and year for each articleID
-  articleInfo <- function(ref) {
+  articleInfo <- function(ref, refs, refsScholar) {
 
     id <- ref[['articleID']]
 
@@ -106,44 +116,28 @@ library(bibtex)
 
     # get citation from database
     # scraped from google scholar using scholar R package
-    matchingTitle <- grep(title, refsDom$title)
-    if(length(matchingTitle) == 0) {
+    matchingTitle <- agrep(title, refsScholar$title, max.distance = 0.01, ignore.case = TRUE)
+    if(length(matchingTitle) > 1) {
+      stop('Matching more than one title')
+    }else if(length(matchingTitle) == 0) {
+      cat('Did not match for ', id, '\n')
       cites <- NA
     }else {
-      cites <- refsDom[grep(title, refsDom$title), 'cites']
+      cites <- refsScholar[matchingTitle, 'cites']
     }
 
     return( setNames(c(id, journal, title, year, cites), c('articleID', 'journal', 'titre', 'annee', 'citations')) )
   }
 
-  articleID <- lapply(paperList, articleInfo)
-
-  # get articles in which the tittle did not merge with refsDom
-  toFixCitation <- articleID[is.na(unlist(lapply(articleID, function(x) x[['citations']])))]
-
-  # First fix is with the characer `-`
-  fixDone <- numeric(length(toFixCitation))
-  for(article in names(toFixCitation)) {
-    pos <- grep(sub('-', ' ', toFixCitation[[article]][['title']]), sub('‐', ' ', as.character(refsDom$title)))
-
-    if(length(pos) > 0) {
-      articleID[[article]][['citations']] <- refsDom$cites[pos]
-      fixDone[which(article == names(toFixCitation))] <- 1
-    }
-  }
-
-  # update articles to fix
-  toFixCitation <- toFixCitation[fixDone == 0]
-
-  ## TODO last 3 papers another time...
+  articleID <- lapply(paperList, articleInfo, refs = refs, refsScholar = refsScholar)
 
   # convert to DF
   articleDF <- data.frame(matrix(unlist(articleID), ncol = length(articleID[[1]]), byrow = T), stringsAsFactors = FALSE)
   names(articleDF) <- c('articleID', 'journal', 'titre', 'annee', 'citations')
-  articleDF$year <- as.numeric(articleDF$year)
-  articleDF$cites <- as.numeric(articleDF$cites)
+  articleDF$annee <- as.numeric(articleDF$annee)
+  articleDF$citations <- as.numeric(articleDF$citations)
 
-  write.csv(articleDF, file = 'articles.csv')
+  write.csv(articleDF, file = 'articles.csv', row.names = FALSE)
 
 ##
 
@@ -152,11 +146,23 @@ library(bibtex)
 ## Create a data frame with information for each author
 
   authors <- unique(unlist(lapply(paperList,  function(x) unlist(x$authors))))
+  authorDF <- data.frame(auteur = authors, statut = NA, institution = NA, ville = NA, pays = NA)
 
-  authorDF <- data.frame(author = authors, status = NA, institution = NA)
-  write.csv(authorDF, file = 'authors1.csv')
+  write.csv(authorDF, file = 'authors.csv', row.names = FALSE)
 
-  authors <- read.csv('authors.csv')
+  # Update author tables if new authors are added
+  a2 <- read.csv('a.csv', stringsAsFactors = FALSE)
+  for(i in 1:nrow(a2)) {
+    pos <- which(a2$author[i] == authorDF$auteur)
+
+    if(length(pos) > 1) {
+      stop('Found more than one author')
+    }else if(length(pos) == 0) {
+      print(paste('Did not found author', a2$author[i]))
+    }else {
+      authorDF[pos, 2:5] <- a2[i, 3:6]
+    }
+  }
 
 ##
 
@@ -170,12 +176,12 @@ library(bibtex)
   # create author table
   authorTB <- '
 CREATE TABLE auteurs (
-  author      VARCHAR(50),
-  status      VARCHAR(40),
-  institution VARCHAR(200),
-  city        VARCHAR(40),
-  country     VARCHAR(40),
-  PRIMARY KEY (author)
+    auteur      VARCHAR(50),
+    statut      VARCHAR(40),
+    institution VARCHAR(200),
+    ville       VARCHAR(40),
+    pays        VARCHAR(40),
+    PRIMARY KEY (auteur)
 );'
 
   # create article table
@@ -192,12 +198,12 @@ CREATE TABLE articles (
   # create collaboration table
   collabTD <- '
 CREATE TABLE collaborations (
-    author1     VARCHAR(40),
-    author2     VARCHAR(40),
+    auteur1     VARCHAR(40),
+    auteur2     VARCHAR(40),
     articleID   VARCHAR(20),
-    PRIMARY KEY (author1, author2, articleID),
-    FOREIGN KEY (author1) REFERENCES auteurs(author),
-    FOREIGN KEY (author2) REFERENCES auteurs(author),
+    PRIMARY KEY (auteur1, auteur2, articleID),
+    FOREIGN KEY (auteur1) REFERENCES auteurs(author),
+    FOREIGN KEY (auteur2) REFERENCES auteurs(author),
     FOREIGN KEY (articleID) REFERENCES articles(articleID)
 );'
 
@@ -207,13 +213,13 @@ CREATE TABLE collaborations (
   dbSendQuery(con, collabTD)
 
 
-  authors <- read.csv('authors.csv')[, -1]
+  authors <- read.csv('authors.csv')
   dbWriteTable(con, append = TRUE, name = "auteurs", value = authors, row.names = FALSE)
 
-  articles <- read.csv('articles.csv')[, -1]
+  articles <- read.csv('articles.csv')
   dbWriteTable(con, append = TRUE, name = "articles", value = articles, row.names = FALSE)
 
-  collaboration <- read.csv('collaboration.csv')[, -1]
+  collaboration <- read.csv('collaboration.csv')
   dbWriteTable(con, append = TRUE, name = "collaborations", value = collaboration, row.names = FALSE)
 
   dbGetQuery(con, 'select * FROM collaborations;')
