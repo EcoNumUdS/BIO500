@@ -163,7 +163,7 @@ dbWriteTable(con, append = TRUE, name = "collaborations", value = bd_collab, row
 
 ---
 
-# Exercice 1 (10-15 minutes)
+# Exercice 1
 
 Ce premier exercice est important pour la suite de la séance.
 
@@ -208,7 +208,7 @@ LIMIT 10;
 .pull-left[
 ```{r, eval = FALSE}
 sql_requete <- "
-SELECT articleID, titre, annee
+SELECT articleID, journal, annee
   FROM articles LIMIT 10
 ;"
 
@@ -226,7 +226,7 @@ head(articles)
 
 ```{r, echo = FALSE}
 sql_requete <- "
-SELECT articleID, titre, annee
+SELECT articleID, journal, annee
   FROM articles LIMIT 10
 ;"
 
@@ -240,7 +240,7 @@ head(articles)
 .font80[
 .pull-left[
 ```{r, eval = FALSE}
-sql_requete <- "SELECT * FROM articles LIMIT 10;"
+sql_requete <- "SELECT * FROM collaborations LIMIT 10;"
 
 articles <- dbGetQuery(con, sql_requete)
 head(articles)
@@ -250,12 +250,12 @@ head(articles)
 .pull-right[
 .font90[
 - `*` permet de ne pas spécifier une colonne en particulier.
-- Cette requête retournera toutes les colonnes de la table `articles`
+- Cette requête retournera toutes les colonnes de la table `collaborations`
 - Note: L'instruction `LIMIT` est utilisée dans les prochaines diapos afin de permettre le rendu des requêtes sur une diapo.
 ]]
 
 ```{r, echo = FALSE}
-sql_requete <- "SELECT * FROM articles LIMIT 10;"
+sql_requete <- "SELECT * FROM collaborations LIMIT 10;"
 
 articles <- dbGetQuery(con, sql_requete)
 head(articles)
@@ -268,8 +268,8 @@ head(articles)
 .font80[
 .pull-left[
 ```{r}
-sql_requete <- "SELECT DISTINCT auteur
-FROM auteurs LIMIT 10;"
+sql_requete <- "SELECT DISTINCT auteur1
+FROM collaborations LIMIT 10;"
 
 auteurs <- dbGetQuery(con, sql_requete)
 head(auteurs)
@@ -288,7 +288,7 @@ head(auteurs)
 .pull-left[
 ```{r, eval = FALSE}
 sql_requete <- "
-SELECT titre, annee, citations, articleID
+SELECT annee, citations, articleID
   FROM articles ORDER BY citations DESC
 ;"
 derniers_articles <- dbGetQuery(con, sql_requete)
@@ -302,8 +302,8 @@ head(derniers_articles)
 
 ```{r, echo = FALSE}
 sql_requete <- "
-SELECT titre, annee, articleID
-  FROM articles ORDER BY annee DESC
+SELECT annee, citations, articleID
+  FROM articles ORDER BY citations DESC
 ;"
 derniers_articles <- dbGetQuery(con, sql_requete)
 head(derniers_articles)
@@ -339,7 +339,7 @@ head(auteurs)
 .pull-left[
 ```{r}
 sql_requete <- "
-SELECT articleID, titre, annee
+SELECT articleID, annee
   FROM articles WHERE
   (annee >= 2018 AND annee < 2020)
   OR (annee >= 2012 AND annee <= 2014)
@@ -365,7 +365,7 @@ head(articles)
 .pull-left[
 ```{r}
 sql_requete <- "
-SELECT articleID, titre, annee
+SELECT articleID, titre
   FROM articles WHERE titre LIKE '%interactions%'
 ;"
 articles <- dbGetQuery(con, sql_requete)
@@ -385,7 +385,6 @@ head(articles)
 # Exercice 2
 
 Dans ta table `auteurs`, essayez de trouver les auteurs dont l'institution est `Universite de Sherbrooke`.
-
 
 ---
 
@@ -421,7 +420,7 @@ head(resume_articles)
 .pull-left[
 ```{r}
 sql_requete <- "
-SELECT count(articleID) AS nb_articles, annee
+SELECT avg(citations) AS moyenne, count(articleID) AS nb_articles, annee
   FROM articles
   GROUP BY annee;"
 
@@ -458,16 +457,14 @@ Le `INNER JOIN` est un type de jointure, renvoyant seulement les auteurs et les 
 
 ```{r}
 sql_requete <- "
-SELECT titre, journal, articles.articlesID, auteurs.articleID
+SELECT annee, auteur1, auteur2, journal, articles.articleID
   FROM articles
-  INNER JOIN auteurs ON articles.articlesID = auteurs.articleID
+  INNER JOIN collaborations ON articles.articleID = collaborations.articleID
   ;"
 
-acteurs_films <- dbGetQuery(con,sql_requete)
-head(acteurs_films,4)
+auteurs_articles <- dbGetQuery(con,sql_requete)
+head(auteurs_articles,4)
 ```
-
-
 ---
 
 # Les type de jointures
@@ -484,13 +481,13 @@ On peut spécifier la jointure avec `USING` seulement si les deux clés possède
 
 ```{r}
 sql_requete <- "
-SELECT titre, journal, articles.articlesID, auteurs.articleID
+SELECT annee, auteur1, auteur2, journal, articles.articleID
   FROM articles
-  INNER JOIN auteurs USING (articleID)
+  INNER JOIN collaborations USING (articleID)
   ;"
 
-acteurs_films <- dbGetQuery(con,sql_requete)
-head(acteurs_films,4)
+auteurs_articles <- dbGetQuery(con,sql_requete)
+head(auteurs_articles,4)
 ```
 
 ---
@@ -498,12 +495,6 @@ head(acteurs_films,4)
 # Exercice 4
 
 ## Quel article a le plus d'auteurs ?
-
----
-
-# Exercice 5
-
-## Quel auteur a publié le plus d'articles ?
 
 ---
 
@@ -516,8 +507,8 @@ sql_requete <- "
 SELECT auteur1, avg(citations) AS moy_citations FROM (
   SELECT auteur1, articleID, citations 
     FROM articles
-    INNER JOIN auteurs USING (articleID)
-);"
+    INNER JOIN collaborations USING (articleID)
+) GROUP BY auteur1;"
 
 moy_auteurs <- dbGetQuery(con,sql_requete)
 head(moy_auteurs)
@@ -531,6 +522,12 @@ head(moy_auteurs)
 
 ---
 
+# Exercice 5
+
+## Est-ce que le nombre de citations est proportionnel au nombre de collaborateurs par article ?
+
+---
+
 # Filtrer les requêtes à posteriori
 
 .font70[
@@ -540,9 +537,9 @@ sql_requete <- "
 SELECT auteur1, avg(citations) AS moy_citations FROM (
   SELECT auteur1, articleID, citations 
     FROM articles
-    INNER JOIN auteurs USING (articleID)
-)
-HAVING moy_citations > 3;"
+    INNER JOIN collaborations USING (articleID)
+) GROUP BY auteur1
+HAVING moy_citations > 10;"
 
 moy_auteurs <- dbGetQuery(con,sql_requete)
 head(moy_auteurs)
@@ -649,7 +646,7 @@ Assurez vous que le script fonctionne sur l'ordinateur du laboratoire et égalem
 ## Débat sur le partage des données
 
 - Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
-- Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
+- Mills et al. 2015. Archiving Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
 
 ---
 class: inverse, center, middle
