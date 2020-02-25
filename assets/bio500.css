@@ -132,6 +132,14 @@ body {
   padding: 4px;
 }
 
+.hljs-monokai .hljs {
+    display: block;
+    overflow-x: auto;
+    padding: .5em;
+    background: #121312;
+    color: #fff;
+}
+
 .code10 .remark-code {
   font-size: 10%;
 }

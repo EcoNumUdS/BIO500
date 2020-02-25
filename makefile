@@ -23,7 +23,7 @@ deploy:
 	Rscript -e "rmarkdown::render('README.md', output_file = 'index.html', output_dir = 'slides')"
 
 install:
-	Rscript -e 'if (!require(rmarkdown)) install.packages("rmarkdown"); if (!require(knitr)) install.packages("knitr"); if (!require(RSQLite)) install.packages("RSQLite"); if (!require(RPostgreSQL)) install.packages("RPostgreSQL"); if (!require(ggplot2)) install.packages("ggplot2"); if (!require(reshape2)) install.packages("reshape2"); if (!require(igraph)) install.packages("igraph");'
+	Rscript -e 'if (!require(rmarkdown)) install.packages("rmarkdown"); if (!require(knitr)) install.packages("knitr"); if (!require(xaringan)) install.packages("xaringan"); if (!require(RSQLite)) install.packages("RSQLite"); if (!require(RPostgreSQL)) install.packages("RPostgreSQL"); if (!require(ggplot2)) install.packages("ggplot2"); if (!require(reshape2)) install.packages("reshape2"); if (!require(igraph)) install.packages("igraph");'
 
 clean:
 	rm $(HTML) $(RMD)
