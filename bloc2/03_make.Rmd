@@ -288,11 +288,4 @@ class: inverse, center, middle
 
 # Lectures
 
-Sandve et al. 2013. Ten Simple Rules for Reproducible Computational
-Research. PLoS Computational Biology. 9: e1003285
-
-Silberzahn et Uhlman. 2015. Many hands make tight work. Nature 526 : 189-191.
-
-Barba. 2016. The hard road to reproducibility. Science 354: 142.
-
 Milcu, A. et al. 2018. Genotypic variability enhances the reproducibility of an ecological study. Nature Ecology and Evolution 2 : 279-287.

@@ -557,3 +557,14 @@ git clone https://github.com/EcoNumUdS/BIO500.git
 - `git pull`
 - `git clone`
 ]
+
+---
+
+# Lectures
+
+Sandve et al. 2013. Ten Simple Rules for Reproducible Computational
+Research. PLoS Computational Biology. 9: e1003285
+
+Silberzahn et Uhlman. 2015. Many hands make tight work. Nature 526 : 189-191.
+
+Barba. 2016. The hard road to reproducibility. Science 354: 142.
