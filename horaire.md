@@ -43,18 +43,18 @@
 ### Cours 3
 
 #### Heure 1
-- Présentation :  Retour sur la semaine précédente
-- Exercice :      Partage des données
-- Présentation :  Injection de données
-- Exercice :      Recréer la bd et insérer données
-- Exercice :      Injecter les données d'une autre équipe
+- Présentation          :  Retour sur la semaine précédente
+- Exercice              :  Partage des données
+- Présentation          :  Injection de données
+- Exercice              :  Recréer la bd et insérer données
+- Exercice              :  Injecter les données d'une autre équipe
 
 #### Heure 2
-- Présentation :    Requêtes
-- Exercices :       Requêtes
+- Présentation          :  Requêtes
+- Exercices             :  Requêtes
 
 #### Heure 3
-- Présentation :  Sauvegarder les requêtes et manipuler les enregistrements
+- Présentation          :  Sauvegarder les requêtes et manipuler les enregistrements
 - Discussion :    Enjeux de reproductibilité en science
 
 

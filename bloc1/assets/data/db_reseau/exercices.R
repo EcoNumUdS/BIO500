@@ -62,7 +62,21 @@ head(auteurs)
 sql_requete <- "
 SELECT auteur1, count(auteur2) AS nb_collaborations
   FROM collaborations
-  GROUP BY auteur1;"
+  GROUP BY auteur1
+  ORDER BY nb_collaborations DESC;"
+
+resume_auteurs <- dbGetQuery(con, sql_requete)
+head(resume_auteurs)
+
+# VERSION 2 EN EXCLUANT LES ENREGISTREMENTS MULTIPLES
+sql_requete <- "
+SELECT auteur1, count(auteur2) AS nb_collaborations FROM (
+	SELECT DISTINCT auteur1, auteur2
+	  FROM collaborations
+	)
+	GROUP BY auteur1
+	ORDER BY nb_collaborations DESC
+;"
 
 resume_auteurs <- dbGetQuery(con, sql_requete)
 head(resume_auteurs)
