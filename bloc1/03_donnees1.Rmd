@@ -935,3 +935,9 @@ dbDisconnect(con)
 
 - Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
 - Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
+
+
+```{r,echo=FALSE}
+# delete db file
+system('rm ./assets/data/reseau.db')
+```
