@@ -531,3 +531,29 @@ Il est possible à tout moment de récupérer un dépôt distant pour le télév
 cd Documents
 git clone https://github.com/EcoNumUdS/BIO500.git
 ```
+
+---
+# En résumé
+
+.pull-left[
+1.Racontez l'histoire de votre projet
+- `git add`
+- `git commit`
+- `git status`
+
+2.Voyager dans le temps
+- `git log`
+- `git checkout`
+
+3.Expérimentez avec les changements
+- `git branch`
+- `git merge`
+
+]
+.pull-right[
+4.Backup votre travail & 5. Collaborer sur des projets
+- `git remote`
+- `git push`
+- `git pull`
+- `git clone`
+]
