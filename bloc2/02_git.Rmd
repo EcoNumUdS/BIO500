@@ -494,13 +494,13 @@ git remote add origin https://adresseVersVotreDepot.git
 git remote -v
 ```
 
-Votre dépot local vient de se transformer en dépôt distant. Cependant, rien n'a encore été envoyé sur le serveur encore.
+Votre dépot local vient de se transformer en dépôt distant. Cependant, rien n'a encore été envoyé sur le serveur.
 
 ---
 
 # Envoyer votre dépôt local sur le serveur Github
 
-On va maintenant envoyé les fichiers et l'historique de modifications de ces derniers sur le serveur.
+On va maintenant envoyer les fichiers et l'historique de modifications de ces derniers sur le serveur.
 
 ```bash
 git push origin master
@@ -551,7 +551,7 @@ git clone https://github.com/EcoNumUdS/BIO500.git
 
 ]
 .pull-right[
-4.Backup votre travail & 5. Collaborer sur des projets
+4.Backup de votre travail & 5. Collaborer sur des projets
 - `git remote`
 - `git push`
 - `git pull`
