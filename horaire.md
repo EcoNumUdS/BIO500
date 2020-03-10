@@ -8,7 +8,7 @@
 
 [![](https://img.shields.io/badge/html-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc1/)
 
-### Cours 1
+### Cours 1 : Introduction
 
 #### Heure 1
 - Présentation 	(60min): 	Introduction générale
@@ -22,7 +22,7 @@
 - Présentation 	(10min): 	Présentation du projet de session
 - Exercice 		(40min): 	Discussion sur le protocole d'acquisition de données
 
-### Cours 2
+### Cours 2 : Conceptualisation d'une base de données
 
 #### Heure 1
 - Exercice 		(10min): 	Retour sur les données 
@@ -40,7 +40,7 @@
 - Présentation 	(20min): 	Du modèle conceptuel vers le modèle informatique 
 - Discussion 	(20min): 	Le problème de reproductibilité en science
 
-### Cours 3
+### Cours 3  : Interagir avec un serveur de données
 
 #### Heure 1
 - Présentation          :  Retour sur la semaine précédente
@@ -56,5 +56,30 @@
 #### Heure 3
 - Présentation          :  Sauvegarder les requêtes et manipuler les enregistrements
 - Discussion :    Enjeux de reproductibilité en science
+
+### Cours 4  : Outils de reproductibilité, git
+
+#### Heure 1
+- Présentation :        Requêtes jointes et emboîtées
+- Exercice  
+- Présentation          Édition de la base de données
+
+#### Heure 2
+- Présentation :        Système de contrôle de version 
+- Exercices :           Utiliser git
+
+#### Heure 3 
+- Discussion :          Données ouvertes en science 
+
+
+
+### Cours 5  : makefile et visualisation
+
+### Cours 6  : visualisation
+
+
+### Cours 7  : LaTeX
+
+
 
 
