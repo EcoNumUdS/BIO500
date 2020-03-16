@@ -979,7 +979,11 @@ L'objectif d'un essai est de présenter une perspective sur un enjeu scientifiqu
 
 # Mise en situation
 
-Vous êtes invités à préparer un article pour le journal Québec Science, où on vous a demandé de rédiger l'éditorial du mois sur cet enjeu.  Vous devez défendre par quels moyens vous pourriez améliorer la reproductibilité de la science si vous étiez en charge d'un laboratoire dans une institution universitaire. Vous êtes invités à faire une lecture critique de la situation actuelle et à proposer des mesures qui permettront de répondre aux enjeux identifiés.
+Le journal Québec Science vous invite à rédiger l'éditorial du mois sur le récent enjeu de fraude qui a été publié dans Science. Vous devez défendre par quels moyens vous pourriez améliorer la reproductibilité de la science si vous étiez en charge d'un laboratoire dans une institution universitaire. Vous êtes invités à faire une lecture critique de la situation actuelle et à proposer des mesures qui permettront de répondre aux enjeux identifiés.
+
+.center[
+  <img src="assets/img/spiders.png" width="50%"></img>
+]
 
 ---
 
@@ -991,7 +995,7 @@ Québec Science est un journal destiné à un grand public, alors je vous invite
 
 # Consignes
 
-- Le texte doit faire au maximum 1500 mots et doit être accompagné d'un résumé court, provocateur de 100 mots. Le document peut être supporté par une figure et/ou un tableau.
+- Le texte doit faire au maximum 1200 mots et doit être accompagné d'un résumé court, provocateur de 100 mots. Le document peut être supporté par une figure et/ou un tableau.
 - Le texte peut être structuré en sections afin de permettre au lecteur de suivre le développement de l'argumentaire.
 - La section finale doit résumer les points principaux.
 - Utiliser LaTeX pour la mise en forme du document.

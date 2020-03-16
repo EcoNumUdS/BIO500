@@ -94,7 +94,7 @@ head(resume_articles)
 
 
 # EXERCICE : Est-ce que le nombre de citations est proportionnel au nombre d'auteurs' par article ?
-sql_requete <- "
+lsql_requete <- "
 SELECT articleID, citations, count(auteur1) AS nb_auteurs FROM (
 	SELECT DISTINCT articleID, auteur1, citations
 	  FROM collaborations
