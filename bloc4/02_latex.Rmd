@@ -11,7 +11,7 @@ class: title-slide, middle
   }
 </style>
 
-# Séance 7 & 8
+# Bloc 4
 
 <hr width="65%" align="left" size="0.3" color="orange"></hr>
 
@@ -27,7 +27,7 @@ class: title-slide, middle
 
 ---
 
-# Séance 7 & 8
+# Bloc 4
 
 - Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/bloc4/).
 - L'ensemble du matériel de cours est disponible sur la page du portail [moodle](https://www.usherbrooke.ca/moodle2-cours/course/view.php?id=12189).
@@ -170,6 +170,8 @@ Je peux écrire du texte ici.
 
 \section{Introduction}
 ```
+Toute la mise en forme est changée en modifiant seulement quelques instructions !
+
 ]]
 
 .pull-right[
@@ -186,7 +188,8 @@ Je peux écrire du texte ici.
 - $\LaTeX$ est un language gratuit et OpenSource.
 - Stable et doté d'une riche communauté d'utilisateurs.
 - Stack Overflow est entièrement dédié à $\LaTeX$: [https://tex.stackexchange.com/](https://tex.stackexchange.com/)
-- Compilateur en ligne: [https://fr.sharelatex.com/](https://fr.sharelatex.com/)
+- Permet donc d'avoir facilement une réponse à vos problèmes
+- Compilateur en ligne: [https://overleaf.com/](https://overleaf.com/)
 - Ajustement automatique du contenant au contenu
 - Comme R, $\LaTeX$ dispose de plusieurs libraries (packages) pour satisfaire nos besoins.
 
@@ -201,7 +204,22 @@ Je peux écrire du texte ici.
 
 ---
 
-# Faire du $\LaTeX$ avec Atom
+# Faire du $\LaTeX$ avec Overleaf
+
+1. Accéder au site web et s'inscrire
+2. Appuyer sur le bouton vert "Nouveau projet"
+3. Nommer le nouveau projet
+4. Pour compiler, il suffit d'appuyer sur "Recompiler"
+5. Il est possible d'importer des fichiers (figures, bibliographie) à partir du menu de droite
+6. Pour télécharger le matériel sur son ordinateur, il faut aller dans le menu des projets, sélectionner le projet et choisir l'action de télécharger (à droite)
+
+L'écran est divisé en trois sections. À gauche se trouvent les fichiers nécessaires à la production du document. Au centre se trouve le code source (un onglet permet d'accéder au format RTF) et à droite le résultat compilé du code LaTeX. 
+
+---
+
+# Faire du $\LaTeX$ avec Atom 
+
+(pour ceux qui souhaitent installer LaTeX sur leur ordinateur personnel)
 
 1. Créer un dossier sur le bureau qui va contenir le document $\LaTeX$
 2. Ouvrir Atom
@@ -246,7 +264,7 @@ class: inverse, center, middle
 
 ## Exercice 1 (10 minutes):
 
-Recopier dans Atom ce code `.tex`.
+Recopier dans ce code `.tex`.
 
 **Note:** `\usepackage{lipsum}` est un package permettant de générer du faux texte (latin de mise en forme).
 ]
@@ -1234,21 +1252,42 @@ Le rapport doit contenir :
 - Une courte introduction spécifiant les questions
 - Une courte description de la méthode et des résultats
 - Une discussion, enrichie de citations provenant de la littérature scientifique
+- L'ensemble du texte doit faire 1000-1500 mots max
 - Une bibliographie
 
 ---
 
 # Consignes
 
-Nous vous demandons de remettre les scripts permettant de générer l'ensemble du document, incluant la création de la base de données, les requêtes, les figures et tableaux, ainsi que le document LaTeX.
+Nous vous demandons de remettre les scripts permettant de générer l'ensemble du document, incluant : 
 
-À terme, selon les principes de science reproductible, nous devrions pouvoir exécuter l'ensemble de votre analyse sur un autre ordinateur, sans avoir à changer le code, sìmplement en exécutant la commande `make`.
+- La création de la base de données
+- La correction des données originales
+- L'injection des données
+- Les requêtes
+- La production des figures et tableaux
+- Le document LaTeX (en format tex) incluant des citations
+- Le fichier de bibliographie
 
 ---
 
 # Évaluation
 
-- Respect des consignes (tous les éléments listés précédemment sont inclus - 40%)
-- Reproductibilité (50%)
-  - Quelques pistes: Organisation et clareté du code et des données, présence du Makefile etc...
+À terme, selon les principes de science reproductible, nous devrions pouvoir exécuter l'ensemble de votre analyse sur un autre ordinateur, sans avoir à changer le code. 
+
+Habituellement nous devrions utiliser la commande `make` pour tout exécuter automatiquement, mais cette étape sera annulée compte tenu de la formule à distance qui nous empêche d'utiliser les ordinateurs du laboratoire informatique. 
+
+Néanmoins, l'ensemble de ce matériel doit se trouver sur un dépôt git auquel vous nous donnerez accès. Dans ce dépôt se trouveront les fichiers de données originales en csv, les scripts, le document tex ainsi que la bibliographie.
+
+---
+
+# Évaluation
+
+- Respect des consignes (tous les éléments listés précédemment sont inclus et fonctionnels - 60%)
+- Reproductibilité (30%)
+  - Organisation du code en scripts séparés et lisibles
+  - Commentaires et respect des bonnes pratiques 
+  -  Utilisation de Git
 - Originalité (10%)
+
+Le contenu du rapport n'est pas d'une grande importance, il est prétexte à faire toutes les étapes du travail. Ne vous attardez pas à la rédaction, l'objectif est seulement de décrire rapidement votre démarche et d'utiliser LaTeX pour la préparation d'un rapport. 
