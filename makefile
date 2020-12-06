@@ -12,13 +12,13 @@ $(BLOCS):
 
 deploy:
 	mkdir slides
-	mv ./assets ./slides
+	cp ./assets ./slides
 	for dir in $(BLOCS) ; do \
 			mkdir -p ./slides/$$dir ; \
-			mv ./$$dir/index.html ./slides/$$dir ; \
-			mv ./$$dir/index.pdf ./slides/$$dir ; \
-			mv ./$$dir/assets ./slides/$$dir ; \
-			if [ -d "./$$dir/index_files" ]; then mv ./$$dir/index_files ./slides/$$dir; fi ; \
+			cp ./$$dir/index.html ./slides/$$dir ; \
+			cp ./$$dir/index.pdf ./slides/$$dir ; \
+			cp ./$$dir/assets ./slides/$$dir ; \
+			if [ -d "./$$dir/index_files" ]; then cp ./$$dir/index_files ./slides/$$dir; fi ; \
 	done
 	Rscript -e "rmarkdown::render('README.md', output_file = 'index.html', output_dir = 'slides')"
 
