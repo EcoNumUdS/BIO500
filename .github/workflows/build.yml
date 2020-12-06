@@ -7,7 +7,7 @@ name: Build html
 
 jobs:
   Build_deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@master
       - uses: r-lib/actions/setup-pandoc@v1
@@ -33,3 +33,11 @@ jobs:
           BRANCH: gh-pages
           FOLDER: slides
           SINGLE_COMMIT: true
+
+      - name: Trigger next workflow
+        if: success()
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.REPO_GHA_PAT }}
+          repository: ${{ github.repository }}
+          event-type: trigger-build_pdf
