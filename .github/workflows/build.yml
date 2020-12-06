@@ -1,0 +1,35 @@
+on:
+  push:
+    branches:
+      - master
+
+name: Build html
+
+jobs:
+  Build_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: r-lib/actions/setup-pandoc@v1
+        with:
+          pandoc-version: '2.7.3'
+      - uses: r-lib/actions/setup-r@v1
+        with:
+            r-version: '3.6.0'
+
+      - name: Install dependencies
+        run: make install
+
+      - name: build html
+        run: make
+        
+      - name: prepare deployment
+        run: make deploy
+      
+      - name: Deploy gh_pages
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: slides
+          SINGLE_COMMIT: true
