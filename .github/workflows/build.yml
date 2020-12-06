@@ -3,7 +3,7 @@ on:
     branches:
       - master
 
-name: Build
+name: Build html
 
 jobs:
   Build_deploy:
@@ -23,12 +23,6 @@ jobs:
       - name: build html
         run: make
         
-      - name: build pdf
-        run: |
-          if(!require(pagedown)) install.packages('pagedown')
-          for(bloc in dir(pattern = 'bloc')) pagedown::chrome_print(input = paste0(bloc, '/index.html'), output = paste0(bloc, '/slides.pdf'))
-        shell: Rscript {0}
-
       - name: prepare deployment
         run: make deploy
       
