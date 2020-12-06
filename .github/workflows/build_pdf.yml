@@ -1,0 +1,25 @@
+on:
+  repository_dispatch:
+    types: [trigger-build_pdf]
+
+name: Build pdf
+
+jobs:
+  Build_deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@master
+        with:
+          ref: gh-pages
+
+      - name: Convert html to pdf
+        run: docker run --rm -t -v `pwd`:/slides astefanutti/decktape --slides 2,3,4,5,6 https://econumuds.github.io/BIO500/bloc1/ bloc1/bloc1.pdf
+
+      - name: Deploy gh_pages
+        run: |
+          git config --global user.name 'willvieira'
+          git config --global user.email 'willian.vieira@usherbrooke.ca'
+          git add .
+          git commit -m "deploy pdf :rocket:"
+          git push origin gh-pages
+
