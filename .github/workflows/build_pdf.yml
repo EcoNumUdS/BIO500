@@ -1,10 +1,6 @@
 on:
-  push:
-    branches:
-      - master
-# on:
-#   repository_dispatch:
-#     types: [trigger-build_pdf]
+  repository_dispatch:
+    types: [trigger-build_pdf]
 
 name: Build pdf
 
@@ -18,9 +14,11 @@ jobs:
 
       - name: Convert html to pdf
         run: |
-          chmod ugo+rwx bloc1
-          ls -l
-          docker run --rm -t -v `pwd`:/slides astefanutti/decktape --slides 2,3,4,5,6 https://econumuds.github.io/BIO500/bloc1/ bloc1/bloc1.pdf
+          for VARIABLE in `ls -d bloc*`
+          do
+            chmod ugo+rwx $VARIABLE
+            docker run --rm -t -v `pwd`:/slides astefanutti/decktape https://econumuds.github.io/BIO500/$VARIABLE/ $VARIABLE/$VARIABLE.pdf
+          done
 
       - name: Deploy gh_pages
         run: |
