@@ -18,8 +18,8 @@ jobs:
 
       - name: Convert html to pdf
         run: |
+          chmod ugo+rwx bloc1
           ls -l
-          ls bloc1 -l
           docker run --rm -t -v `pwd`:/slides astefanutti/decktape --slides 2,3,4,5,6 https://econumuds.github.io/BIO500/bloc1/ bloc1/bloc1.pdf
 
       - name: Deploy gh_pages
