@@ -1,19 +1,16 @@
 # Méthodes en écologie computationnelle
+
+[![Build html](https://github.com/EcoNumUdS/BIO500/workflows/Build%20html/badge.svg)](https://github.com/EcoNumUdS/BIO500/actions) [![Build pdf](https://github.com/EcoNumUdS/BIO500/workflows/Build%20pdf/badge.svg)](https://github.com/EcoNumUdS/BIO500/actions)
+
 (2 crédits)
 
 - **Professeur:** Dominique Gravel
 - **Assistant:** [Willian Vieira](https://github.com/willvieira)
 
-# Mise en ligne des cours
-
-[![Build Status](https://travis-ci.org/EcoNumUdS/BIO500.svg?branch=master)](https://travis-ci.org/EcoNumUdS/BIO500)
- Notre ami robot, [Travis](https://travis-ci.org) est en charge de la mise en ligne des cours sur internet.
-
-
 
 ## Bloc 1: Planification de la collecte et organisation des données
 
-[![](https://img.shields.io/badge/html-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc1/)
+[![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc1/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc1/bloc1.pdf)
 
 - Types de données
 - Formulaires de saisie
@@ -22,7 +19,7 @@
 
 ## Bloc 2: Outils pour une science reproductible et transparente
 
-[![](https://img.shields.io/badge/html-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc2/)
+[![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc2/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc2/bloc2.pdf)
 
 - UNIX
 - le makefile
@@ -30,7 +27,7 @@
 
 ## Bloc 3: Visualisation des données
 
-[![](https://img.shields.io/badge/html-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc3/)
+[![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc3/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc3/bloc3.pdf)
 
 - Les types de graphiques
 - Fonctions graphiques de base sur R
@@ -39,7 +36,7 @@
 
 ## Bloc 4: Communication scientifique au moyen de LaTeX
 
-[![](https://img.shields.io/badge/html-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc4/)
+[![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc4/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc4/bloc4.pdf)
 
 - Rédaction de rapports et d'articles scientifiques
 - Mise en page
@@ -79,22 +76,6 @@ Si oui, il va fusionner tous les `.Rmd` en un seul ficher `index.Rmd`, pour fina
 avec le fichier `index.html`.
 
 
-### Utilisation du diaporama
+## Mise en ligne des cours
 
-### Taille écran:
-
-  - `F` pour basculwer en plein écran,
-  - zoom du navigateur pour ajuster la taille de la présentation (typiquement `cmd +/-`),
-  - `W` pour basculer en mode "large".
-
-### Naviguer entre diapo
-
-  - `G` pour entrer le numéro d'une slide,
-  - `O` pour naviguer facilement dans la présentation,
-  - `T` pour avoir une barre avec le numéro des diapositive.
-
-
-## Exporter en format pdf
-
-- Utiliser l'exportation pdf du navigateur,
-- Utiliser [Decktape](https://github.com/astefanutti/decktape).
+Notre ami robot, [GitHub Actions](https://github.com/features/actions) est en charge de la mise en ligne des cours sur internet. Il y a deux [workflows](https://github.com/EcoNumUdS/BIO500/tree/master/.github/workflows) capables d'automatiser la compilation et déploiement des présentation a chaque push. Le première (`build.yml`) compile les les fichers `.Rmd` en html, et télécharge les présentations html sur la branche `gh-pages`. Le deuxième utilise [`Decktape`](https://github.com/astefanutti/decktape) pour pour exporter les html en format pdf, et aussi le télécharger sur la branche `gh-pages`.
