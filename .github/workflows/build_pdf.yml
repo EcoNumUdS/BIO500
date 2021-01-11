@@ -12,11 +12,16 @@ jobs:
         with:
           ref: gh-pages
 
+      - name: Sleep for 5 minutes (time to wait for html)
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '300s'
+
       - name: Convert html to pdf
         run: |
           for VARIABLE in `ls -d bloc*`
           do
-            chmod ugo+rwx $VARIABLE
+            sudo chmod ugo+rwx $VARIABLE
             docker run --rm -t -v `pwd`:/slides astefanutti/decktape https://econumuds.github.io/BIO500/$VARIABLE/ $VARIABLE/$VARIABLE.pdf
           done
 
