@@ -21,9 +21,9 @@
 
 [![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc2/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc2/bloc2.pdf)
 
-- UNIX
-- le makefile
 - Système de contrôle de version git
+- Le makefile et ses variantes
+- Le cahier de laboratoire RMarkdown
 
 ## Bloc 3: Visualisation des données
 
