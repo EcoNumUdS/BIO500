@@ -41,18 +41,18 @@ class: inverse, center, middle
 
 ---
 
-# L'importance des réseaux '
+# L'importance des réseaux
 
 .center[
-  <img src="assets/img/r0.jpg" height="500px"></img>
+  <img src="assets/img/r0.png" height="500px"></img>
 ]
 
 ---
 
-# L'importance des réseaux '
+# L'importance des réseaux
 
 .center[
-  <img src="assets/img/covid.jpg" height="500px"></img>
+  <img src="assets/img/covid.png" height="500px"></img>
 ]
 
 ---
@@ -302,6 +302,8 @@ Nous progresserons dans l'exécution du travail de session. Le travail sera divi
 
 L'évaluation porte sur la réalisation d'un travail de session (75%), réalisé en équipe de 4 personnes. Le travail sera divisé en 3 étapes réparties au cours de la session. L'évaluation finale (25%) portera sur la rédaction d'un essai de 1500 mots sur les enjeux de reproductibilité en science expérimentale.
 
+<!---
+
 ---
 class: inverse, center, middle
 
@@ -309,8 +311,6 @@ class: inverse, center, middle
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
-
-<!---
 ---
 # Un nouveau monde s'ouvre à vous...
 
