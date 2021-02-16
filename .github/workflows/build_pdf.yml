@@ -29,6 +29,7 @@ jobs:
         run: |
           git config --global user.name 'willvieira'
           git config --global user.email 'willian.vieira@usherbrooke.ca'
+          git pull
           git add .
           git commit -m "deploy pdf :rocket:"
           git push origin gh-pages
