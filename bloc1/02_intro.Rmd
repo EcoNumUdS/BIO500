@@ -30,7 +30,7 @@ class: title-slide, middle
 # Séance 1
 
 - Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/bloc1/).
-- L'ensemble du matériel de cours est disponible sur la page du portail [moodle](https://www.usherbrooke.ca/moodle2-cours/course/view.php?id=12188).
+- L'ensemble du matériel de cours est disponible sur la page du cours [github](https://github.com/EcoNumUdS/BIO500).
 
 ---
 class: inverse, center, middle
@@ -38,6 +38,22 @@ class: inverse, center, middle
 # Introduction
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
+---
+
+# L'importance des réseaux '
+
+.center[
+  <img src="assets/img/r0.jpg" height="500px"></img>
+]
+
+---
+
+# L'importance des réseaux '
+
+.center[
+  <img src="assets/img/covid.jpg" height="500px"></img>
+]
 
 ---
 
@@ -222,6 +238,7 @@ Au terme de ce cours, l'étudiant sera en mesure de réaliser l'ensemble de la  
 - Planifier une base de données et la préparation de formulaires pour leur acquisition ;
 - Programmer et interroger une base de données relationnelle ;
 - Compiler et exécuter un script au moyen de makefile ;
+- Maintenir un cahier de laboratoire au moyen de RMarkdown ;
 - Représenter visuellement les données au moyen de R ;
 - Préparer un rapport d'étude au moyen de LaTeX ;
 - Utiliser un système de contrôle de version pour le suivi des modifications sur du code ;
@@ -244,9 +261,9 @@ Au terme de ce cours, l'étudiant sera en mesure de réaliser l'ensemble de la  
 
 ## Bloc 2: Outils pour une science reproductible et transparente
 
-- UNIX
-- le makefile
 - Système de contrôle de version git
+- Le makefile et ses alternatives sur R
+- Le cahier de laboratoire RMarkdown
 
 ---
 
@@ -275,7 +292,7 @@ Au terme de ce cours, l'étudiant sera en mesure de réaliser l'ensemble de la  
 
 # Approche
 
-Les cours vont comprendre une période de présentation entrecoupée d'exercices, suivie d'une discussion générale sur des références clés.
+Les cours vont comprendre une période de présentation entrecoupée d'exercices, suivie d'une discussion générale sur des enjeux de reproductibilité.
 
 Nous progresserons dans l'exécution du travail de session. Le travail sera divisé en étapes et l'évaluation portera sur son intégration.
 
@@ -292,6 +309,8 @@ class: inverse, center, middle
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
+
+<!---
 ---
 # Un nouveau monde s'ouvre à vous...
 
@@ -433,6 +452,7 @@ class: inverse, center, middle
     <img src="assets/img/terminalR.png" width="90%"></img>
   ]
 ]
+-->
 
 ---
 class: inverse, center, middle
@@ -445,12 +465,7 @@ class: inverse, center, middle
 
 # Rappel du problème
 
-Est-ce que le réseau de collaboration entre les étudiants est différent des réseaux écologiques ?
-
----
-
-# Rappel du problème
-
+Est-ce que le réseau de collaboration entre les étudiants est affecté par l'enseignement à distance et les règles de distanciation ?
 
 ---
 
