@@ -16,6 +16,8 @@ class: title-slide, middle
   }
 </style>
 
+<div class="lab-logo"></div>
+
 # Séance 3
 
 <hr width="65%" align="left" size="0.3" color="orange"></hr>
@@ -27,8 +29,6 @@ class: title-slide, middle
 .instructors[
   **BIO500** - Dominique Gravel
 ]
-
-<img src="../assets/img/logo.png" width="8%" style="margin-top:20px;"></img>
 
 ---
 
