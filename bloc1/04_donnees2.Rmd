@@ -180,7 +180,7 @@ class: inverse, center, middle
 
 ---
 
-# Structure du requête
+# Structure d'une requête
 
 .font70[
 .pull-left[
@@ -196,7 +196,7 @@ LIMIT 10;
 
 .pull-right[
 - Les requêtes SQL sont une suite d'opérations séquentielles.
-- On ne peut pas filtrer (`WHERE`) avant que les opérations `SELECT`, `FROM` et `JOIN` soit complétées.
+- On ne peut pas filtrer (`WHERE`) avant que les opérations `SELECT`, `FROM` et `JOIN` soient complétées.
 ]
 
 ---
@@ -456,7 +456,7 @@ class: inverse, center, middle
 
 # Jointures entre tables
 
-Le `INNER JOIN` est un type de jointure, renvoyant seulement les auteurs et les articles ayant un identifiant `id_film` commun.
+Le `INNER JOIN` est un type de jointure, renvoyant seulement les auteurs et les articles ayant un identifiant `articleID` commun.
 
 ```{r}
 sql_requete <- "
@@ -640,7 +640,7 @@ class: inverse, center, middle
 
 6. Écrire un script qui réalise les étapes 0-3 d'un bloc
 
-Assurez vous que le script fonctionne sur l'ordinateur du laboratoire et également entre des utilisateurs différents.
+Assurez vous que le script fonctionne sur l'ordinateur du laboratoire et également entre des les différents ordinateurs des membres de votre équipe.
 
 ---
 
