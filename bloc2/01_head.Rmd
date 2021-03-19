@@ -19,3 +19,6 @@ output:
 
 ```{r child = '03_make.Rmd'}
 ```
+
+```{r child = '04_Rmarkdown.Rmd'}
+```
