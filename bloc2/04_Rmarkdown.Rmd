@@ -347,3 +347,23 @@ str(knitr::opts_chunk$get())
 - RMarkdown gallery [https://rmarkdown.rstudio.com/gallery.html](https://rmarkdown.rstudio.com/gallery.html)
 - ResearchDown [https://insileco.github.io/ResearchDown/](https://insileco.github.io/ResearchDown/)
 
+---
+class: inverse, center, middle
+
+# Travail pour la semaine
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
+---
+
+# Consignes
+
+- Identifiez clairement vos questions de recherche
+- Planifiez les requêtes à réaliser pour traiter les données
+- Incluez les requêtes dans le makefile
+
+---
+
+# Lectures
+
+Milcu, A. et al. 2018. Genotypic variability enhances the reproducibility of an ecological study. Nature Ecology and Evolution 2 : 279-287.
