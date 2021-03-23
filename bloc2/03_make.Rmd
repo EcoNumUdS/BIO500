@@ -282,10 +282,17 @@ class: inverse, center, middle
 
 - Identifiez clairement vos questions de recherche
 - Planifiez les requêtes à réaliser pour traiter les données
-- Incluez les requêtes dans le makefile
 
 ---
 
 # Lectures
 
-Milcu, A. et al. 2018. Genotypic variability enhances the reproducibility of an ecological study. Nature Ecology and Evolution 2 : 279-287.
+Est-ce que la science ouverte peut prévenir la fraude ?
+
+.center[
+  <img src="assets/img/spider.png" width="30%"></img>
+]
+
+[Lien vers l'article dans Science](https://www.sciencemag.org/news/2020/01/spider-biologist-denies-suspicions-widespread-data-fraud-his-animal-personality)
+
+[Et un lien vers un blog qui explique comment la triche a été réalisée](https://laskowskilab.faculty.ucdavis.edu/2020/01/29/retractions/)
