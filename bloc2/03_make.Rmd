@@ -268,7 +268,6 @@ http://gl.developpez.com/tutoriel/outil/makefile/
 
 http://icps.u-strasbg.fr/people/loechner/public_html/enseignement/GL/make.pdf
 
-
 ---
 class: inverse, center, middle
 
@@ -296,3 +295,5 @@ Est-ce que la science ouverte peut prévenir la fraude ?
 [Lien vers l'article dans Science](https://www.sciencemag.org/news/2020/01/spider-biologist-denies-suspicions-widespread-data-fraud-his-animal-personality)
 
 [Et un lien vers un blog qui explique comment la triche a été réalisée](https://laskowskilab.faculty.ucdavis.edu/2020/01/29/retractions/)
+
+---
