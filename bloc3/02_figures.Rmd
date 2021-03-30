@@ -13,7 +13,7 @@ class: title-slide, middle
 
 <div class="lab-logo"></div>
 
-# Séance 5
+# Bloc 3
 
 <hr width="65%" align="left" size="0.3" color="orange"></hr>
 
@@ -27,14 +27,12 @@ class: title-slide, middle
 
 ---
 
-# Séance 5
+# Bloc 3
 
 - Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/bloc3/).
-- L'ensemble du matériel de cours est disponible sur la page du portail [moodle](https://www.usherbrooke.ca/moodle2-cours/course/view.php?id=12188).
 
 - Vous trouverez du matériel supplémentaire dans le [cours](http://kevincazelles.fr/talks/assets/QCBSGraphsR/Rgraphics.html#4) de [Kevin Cazelles](http://kevincazelles.fr/) et [Nicolas Casajus](http://www.cen.ulaval.ca/membre.aspx?id=3945098&membre=ncasajus) lors d'un atelier de communication visuelle du CSBQ.
 - Certaines diapositives sont également extraites de la présentation de [David Taylor](http://dtdata.io/prm/intro_dataviz_csbq.pdf)
-
 
 ---
 class: inverse, center, middle
@@ -71,7 +69,7 @@ class: inverse, center, middle
 ---
 class: inverse, center, middle
 
-# L'art graphique
+# La première étape : bien identifier le message à communiquer
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
@@ -112,12 +110,9 @@ class: inverse, center, middle
 
 # Communiquer par les graphiques
 
-.pull-left[
-
 - Les graphiques sont généralement **plus efficaces à communiquer** un message/un résultat qu'un tableau.
 
 - **Problème:** La représentation graphique peut parfois nous conduire à une **fausse interprétation**. L'idée est de transmettre une idée sans biaiser le lecteur.
-]
 
 ---
 
@@ -300,10 +295,11 @@ contour(x, y, volcano, levels = seq(90, 200, by = 5),
 add = TRUE, col = "black")
 ```
 
+
 ---
 class: inverse, center, middle
 
-# Faire une figure étape par étape avec R
+# Deuxième étape : dessiner sa figure à la main
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
@@ -686,20 +682,21 @@ dev.copy2pdf(file = "test.pdf")
 dev.copy2png(file = "test.png")
 dev.copy2eps(file = "test.eps")
 ```
-
----
-
-# Exercice
-
-<br>
-## faire une représentation visuelle de la distribution de degrés
-
 ---
 class: inverse, center, middle
 
 # La visualisation de réseau avec igraph
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
+---
+
+# Une référence sur les réseaux écologiques à lire
+
+**Analysing ecological networks of species interactions**
+Delmas, E., M. Besson, M.-H. Brice, L. A. Burkle, G. V. Dalla Riva, M.-J. Fortin, D. Gravel, P. R. Guimarães Jr, D. H. Hembry, E. A. Newman, J. M. Olesen, M. M. Pires, J. D. Yeakel, and T. Poisot. 
+2019, Biological Reviews
+
 
 ---
 
@@ -958,11 +955,10 @@ class: inverse, center, middle
 - Identifier clairement vos questions de recherche
 - Illustrer le réseau de collaborations
 - Compléter votre analyse au moyen de 3 figures et 1 tableau
-- Mettre à jour le makefile
 
 ---
 
-# Évaluation
+# Attentes pour le travail de session
 
 - Clareté des questions et adéquation des figures et du tableau
 - Efficacité de la présentation
@@ -970,6 +966,20 @@ class: inverse, center, middle
 - Originalité
 
 ---
+
+# Lectures pour la semaine prochaine
+
+[Desjardins-Proulx et al. 2013. The case for open preprints in biology. PLoS Biology 11(5): e1001563.] (https://doi.org/10.1371/journal.pbio.1001563)
+
+[FRQNT. Des études trop rapides en temps de COVID ?] (http://www.scientifique-en-chef.gouv.qc.ca/impacts/ddr-des-etudes-trop-rapides-en-temps-de-covid/)
+
+---
+class: inverse, center, middle
+
+# Essai sur la reproductibilité
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
 
 # Objectifs
 
@@ -979,13 +989,7 @@ L'objectif d'un essai est de présenter une perspective sur un enjeu scientifiqu
 
 # Mise en situation
 
-Le journal Québec Science vous invite à rédiger l'éditorial du mois sur le récent enjeu de fraude qui a été publié dans Science. Vous devez défendre par quels moyens vous pourriez améliorer la reproductibilité de la science si vous étiez en charge d'un laboratoire dans une institution universitaire. Vous êtes invités à faire une lecture critique de la situation actuelle et à proposer des mesures qui permettront de répondre aux enjeux identifiés.
-
-.center[
-  <img src="assets/img/spider.png" width="30%"></img>
-]
-
-[Lien vers l'article dans Science](https://www.sciencemag.org/news/2020/01/spider-biologist-denies-suspicions-widespread-data-fraud-his-animal-personality)
+Le journal Québec Science vous invite à rédiger l'éditorial du mois sur la science ouverte. Vous devez défendre par quels moyens vous pourriez améliorer la reproductibilité de la science si vous étiez en charge d'un laboratoire dans une institution universitaire. Vous êtes invités à faire une lecture critique de la situation actuelle et à proposer des mesures qui permettront de répondre aux enjeux identifiés.
 
 ---
 
@@ -998,10 +1002,10 @@ Québec Science est un journal destiné à un grand public, alors je vous invite
 # Consignes
 
 - Le texte doit faire au maximum 1200 mots et doit être accompagné d'un résumé court, provocateur de 100 mots. Le document peut être supporté par une figure et/ou un tableau.
+- L'argumentaire doit être supporté de littérature scientifique appropriée. Vous pouvez utiliser les références discutées en classe, celles disponible sur le dépôt git et vous devez également trouver de nouvelles références pour appuyer vos propos.
 - Le texte peut être structuré en sections afin de permettre au lecteur de suivre le développement de l'argumentaire.
 - La section finale doit résumer les points principaux.
 - Utiliser LaTeX pour la mise en forme du document.
-- L'argumentaire doit être supporté de littérature scientifique appropriée. Vous pouvez certes utiliser les articles discutés en classe, mais essayez d'aller puis au-delà de ces références pour alimenter vos arguments.
 
 ---
 
