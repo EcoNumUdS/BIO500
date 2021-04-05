@@ -30,7 +30,6 @@ class: title-slide, middle
 # Bloc 4
 
 - Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/bloc4/).
-- L'ensemble du matériel de cours est disponible sur la page du portail [moodle](https://www.usherbrooke.ca/moodle2-cours/course/view.php?id=12189).
 
 
 ---
@@ -281,7 +280,6 @@ class: inverse, center, middle
 # La compilation
 
 Afin d'obtenir le rendu PDF de notre document, nous devons compiler ce dernier à l'aide du compilateur `pdflatex`.
-
 
 - **Étape 1.** Ouvrir le terminal (touches Ctrl+Alt+t).
 
