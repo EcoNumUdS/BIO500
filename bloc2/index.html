@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>BIO500</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Dominique Gravel" />
+    <link href="assets/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="assets/remark-css-0.0.1/hygge.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/bio500.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+class: title-slide, middle
+
+&lt;style type="text/css"&gt;
+  .title-slide {
+    background-image: url('../assets/img/bg.jpg');
+    background-color: #23373B;
+    background-size: contain;
+    border: 0px;
+    background-position: 600px 0;
+    line-height: 1;
+  }
+&lt;/style&gt;
+
+&lt;div class="lab-logo"&gt;&lt;/div&gt;
+
+# Séance 4
+
+&lt;hr width="65%" align="left" size="0.3" color="orange"&gt;&lt;/hr&gt;
+
+## Les outils pour la reproductibilité
+
+&lt;hr width="65%" align="left" size="0.3" color="orange" style="margin-bottom:40px;" alt="@Martin Sanchez"&gt;&lt;/hr&gt;
+
+.instructors[
+  **BIO500** - Dominique Gravel
+]
+
+---
+
+# Les étapes du travail d'un biologiste
+
+.center[
+  &lt;img src="./assets/img/flow_full_repro.png" width="100%"&gt;&lt;/img&gt;
+]
+
+---
+
+# Une situation courante
+
+.pull-left[
+## Une situation qui vous est familière:
+
+.font90[
+```bash
+MonTravailSession/
+  |___ data/
+        |___ data_01122018.csv
+        |___ data_011022018.csv
+  |___ rapportVeg_jean_v1_01012018.docx
+  |___ rapportVeg_juliette_v1_01012018.docx
+  |___ rapportVeg_rémi_v1_04012018.docx
+  |___ rapportVeg_rémi_v2_10012018.docx
+  |___ rapportFinal_20012018.docx
+```
+]]
+
+.pull-right[
+
+## le travail d'équipe
+
+Ses difficultées techniques:
+
+- Multi-utilisateurs
+- Garder une trace de l'historique de modifications **d'un ensemble de fichiers**
+- Revenir aux versions précédentes
+- Comparer des versions d'un fichier
+]
+
+---
+
+# Systèmes de contrôle éxistants
+
+## Un exemple avec Dropbox
+
+.center[
+![](./assets/img/dropbox.png)
+]
+
+---
+
+# Systèmes de contrôle éxistants
+
+## Un exemple MS Word
+
+.center[
+![](./assets/img/word.gif)
+]
+
+---
+class: inverse, center, middle
+
+# Git: Un système de controle de version pour programmeur
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Qu'est ce que Git?
+
+.pull-left[
+
+C'est un système qui permet de suivre l'**ajout** et les **modifications** pour un ensemble de fichier.
+
+**C'est le cahier de lab du programmeur.**
+
+- Logiciel libre soutenu par une large communauté (12 millions d'utilisateurs dans le monde)
+- Par défault, Git est installé sur les systèmes d'exploitation Linux et Mac.
+- Il peut être installé sur Windows: [https://git-scm.com/download/win](https://git-scm.com/download/win)
+]
+
+.pull-right[
+  .center[
+    &lt;img src="./assets/img/git.png" width="70%"&gt;&lt;/img&gt;
+    &lt;img src="./assets/img/LinusTorvalds.jpg" width="50%"&gt;&lt;/img&gt;
+
+    Linus Torvalds
+  ]
+]
+
+---
+
+# Qu'est ce que Git?
+
+Il présente l'avantage d'être extrêmement versatile.
+
+Selon [Alice Bartlett](https://twitter.com/alicebartlett?lang=en), Git vous permet de:
+
+1. Racontez l'histoire de votre projet
+2. Voyager dans le temps
+3. Expérimentez avec les changements
+4. Backup votre travail
+5. Collaborer sur des projets
+
+--
+
+Mais le désavantage de fonctionner seulement avec les fichiers plein texte...
+
+**Question**: Qu'est ce qu'un fichier plein texte?
+
+&lt;!-- TODO: Qu'est ce qu'un fichier plein texte? Est-ce que je peux faire du contrôle de version avec un document word --&gt;
+
+---
+class: inverse, center, middle
+
+# 0. Créer un projet
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Initialisation d'un dépôt Git
+
+Git suit les modifications à l'intérieur d'un dossier que l'on appelle dépôt (`repository`).
+
+Pour initialiser le suivi d'un répertoire (initialiser un dépôt), il vous suffit d'utiliser la commande `git init`.
+
+.font90[
+```bash
+mkdir ~/Documents/travail_BIO500 # Créer un répertoire de travail dans le répertoire Documents.
+cd  ~/Documents/travail_BIO500 # Se déplacer vers ce répertoire
+git init # Initialiser le suivi de version de ce dossier.
+ls -a # Lister tous le contenu du répertoire de travail.
+```
+]
+
+Le dossier `.git` permet de garder une trace de l'ensemble des opérations que vous allez faire dans ce répertoire.
+
+---
+
+# Exercice 1 - Initialiser le répertoire avec git
+
+**À l'aide de votre terminal:**
+
+1. Créer un dossier (`mkdir`)
+2. Créer un fichier (`touch`)
+3. Initialiser votre dépot `git` (`git init`)
+4. Vérifier que le dossier caché (`.git`) se trouve dans votre nouveau répertoire
+
+---
+class: inverse, center, middle
+
+# 1. Racontez l'histoire de votre projet
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+# 1. Racontez l'histoire de votre projet
+
+.pull-left[
+## Une situation familière:
+
+.font90[
+```bash
+MonTravailSession/
+  |___ data/
+        |___ data_01122018.csv
+        |___ data_011022018.csv
+  |___ rapportVeg_jean_v1_01012018.docx
+  |___ rapportVeg_juliette_v1_01012018.docx
+  |___ rapportVeg_rémi_v1_04012018.docx
+  |___ rapportVeg_rémi_v2_10012018.docx
+  |___ rapportVeg_rémi_v3_12012018.docx
+  |___ rapportVeg_rémi_v4_02022018.docx
+  |___ rapportFinal_03022018.docx
+  |___ rapportFinalVRAIMENT_04022018.docx
+```
+]]
+
+.pull-right[
+
+## Vous à la fin de ce cours:
+```bash
+MonTravailSession/
+  |___ .git/
+  |___ data/
+        |___ data_01122018.csv
+        |___ data_011022018.csv
+  |___ rapportVeg.tex
+```
+]
+
+---
+
+# Git en 3 étapes
+
+On modifie le ou les fichiers, on ajoute la modification à Git puis on met un commentaire sur la modification apportée.
+
+**En 3 étapes:**
+
+1. Modification d'un ou plusieurs fichiers sources (e.g. Ajout d'un paragraphe)
+2. `git add monFichier1.txt monFichier2.txt`
+3. `git commit -m "mon commentaire"`
+
+On répète ces étapes à plusieurs reprises au cours de l'écriture d'un document et/ou de l'avancement d'un projet.
+
+--
+
+**Question**: Qu'est ce qu'un bon commentaire?
+
+&lt;img src="./assets/img/badCommitm.png" width="100%"&gt;&lt;/img&gt;
+
+---
+
+# Git status
+
+Votre meilleur ami, `git status`, permet de prendre connaissance de l'état de votre dépôt Git.
+
+```bash
+Sur la branche master
+
+Validation initiale
+
+Fichiers non suivis:
+  (utilisez "git add &lt;fichier&gt;..." pour inclure dans ce qui
+  sera validé)
+
+
+        monFichier1.txt
+
+aucune modification ajoutée à la validation mais des
+fichiers non suivis sont présents (utilisez "git add" pour
+les suivre).
+```
+
+---
+
+# Exercice 2 - Effectuer votre premier `commit`
+
+## Première partie
+
+1. Déplacer vous dans votre répertoire de travail
+2. Ajouter un fichier intituler `travail_BIO500.txt` et remplisser le de faux texte
+3. Effectuer un `git status`
+
+## Deuxième partie
+
+4. Ajouter ce fichier à votre dépot git (`git add`)
+5. Effectuer un `git status`
+6. Décrire la modification que vous venez d'apporter (`git commit`)
+
+À chaque `git status`, prenez le temps de regarder la sortie (message)
+
+---
+
+# Exercice 2: Effectuer votre premier `commit`
+
+## Troisième partie
+
+7. Modifier le fichier `travail_BIO500.txt`
+8. Ajouter la modification à votre dépot git (`git add`)
+9. Effectuer un `git status`
+
+À chaque `git status`, prenez le temps de regarder la sortie (message).
+
+## Quatrième partie
+
+10. Modifier à nouveau le fichier `travail_BIO500.txt`
+11. Effectuer un `git diff` ou `git diff NomDuFichier`
+
+---
+class: inverse, center, middle
+
+# 2. Voyager dans le temps
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Quelques notions de base
+
+.pull-left[
+  .center[
+    &lt;img src="./assets/img/git_1.png" width="100%"&gt;&lt;/img&gt;
+  ]
+]
+
+.pull-right[
+
+- Une branche (`master` par défault): c'est un série de commentaires (`commit`)
+- Le dernier commentaire (`commit`) est ce que l'on appelle la tête de la branche (`HEAD`), elle contient la version la plus à jour des fichiers.
+- À chaque commentaire d'édition (`commit`) est attachée une version des fichiers.
+]
+
+---
+
+# Le journal de Git
+
+```bash
+cd Documents/Git/BIO500 # Ceci est mon chemin d'accès
+git log
+```
+
+```bash
+commit 38d4a2700980b9c765f4abdb33e2f6b598aac4d5
+Author: Steve Vissault &lt;s.vissault@yahoo.fr&gt;
+Date:   Wed Feb 28 20:38:05 2018 -0500
+
+    Modifs sur plan de match
+
+commit 61601ff86e712d0a77ebd24c5277fe55fab9de6e
+Author: Steve Vissault &lt;s.vissault@yahoo.fr&gt;
+Date:   Wed Feb 28 20:33:20 2018 -0500
+
+    Modifications au cours3 (retrait slides), ajout reponses
+```
+
+---
+
+# Le journal de Git
+
+.pull-left[
+
+.font80[
+```bash
+commit 38d4a2700980b9c765f4abdb33e2f6b598aac4d5
+Author: Steve Vissault &lt;s.vissault@yahoo.fr&gt;
+Date:   Wed Feb 28 20:38:05 2018 -0500
+
+    Modifs sur plan de match
+
+commit 61601ff86e712d0a77ebd24c5277fe55fab9de6e
+Author: Steve Vissault &lt;s.vissault@yahoo.fr&gt;
+Date:   Wed Feb 28 20:33:20 2018 -0500
+
+    Modifications au cours3 (retrait slides)
+```
+]]
+
+.pull-right[
+  .center[
+    &lt;img src="./assets/img/git_3.png" width="100%"&gt;&lt;/img&gt;
+  ]
+]
+
+
+---
+
+# Se déplacer sur la branche `master`
+
+.pull-left[
+
+```bash
+git checkout 4abdb33e2f6b598aac4d5
+```
+
+Permet de se déplacer vers un `commit` précis.
+]
+
+.pull-right[
+  .center[
+    &lt;img src="./assets/img/git_3.png" width="100%"&gt;&lt;/img&gt;
+  ]
+]
+
+---
+
+# Se déplacer sur la branche `master`
+
+.pull-left[
+
+```bash
+git checkout master
+```
+]
+
+Permet de se déplacer vers le `commit` le plus récent.
+
+.pull-right[
+  .center[
+    &lt;img src="./assets/img/git_3.png" width="100%"&gt;&lt;/img&gt;
+  ]
+]
+
+---
+
+# Exercice 3 - Se déplacer à travers l'historique
+
+En reprenant votre dépot de travail `git` (Exercice 2), parcourez votre historique (`git log`) et remontez à votre premier commentaire (`commit`).
+
+
+---
+class: inverse, center, middle
+
+# 3. Expérimentez avec les changements
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+# Créer une nouvelle branche
+
+Pour créer une nouvelle branche on utilise deux étapes:
+
+```bash
+# Créer la branche
+git branch &lt;NomDeLaBranche&gt;
+```
+```bash
+# Se déplacer vers la nouvelle branche
+git checkout &lt;NomDeLaBranche&gt;
+```
+
+Une fois qu'on a fait tous nous motifications (`git commit`), et qu'on désire ajouter ces changements dans la branche master:
+
+```bash
+# Se déplacer vers la branche master
+git checkout master
+# fusionner les deux branches
+git merge &lt;NomDeLaBranche&gt;
+```
+
+
+---
+class: inverse, center, middle
+
+# 4. Backup votre travail &lt;br&gt;&amp;&lt;br&gt; 5. Collaborer sur des projets
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Les serveurs Git distants
+
+Jusqu'à présent nous avons travaillé localement sur votre ordinateur. Il est cependant possible de synchroniser votre travail sur un serveur Git (dépots distants). Ce procédé présente deux avantages indéniables:
+
+1. Sauvegarder votre travail (Back-up)
+2. Permettre à un collègue de travailler avec vous sur votre dêpot.
+
+---
+
+# Les serveurs Git distants
+
+Il existe plusieurs entreprises offrant des services gratuits pour héberger votre dépôt:
+
+- [Gitlab](https://about.gitlab.com/): Serveur hébergeable dans votre infrastructure.
+- [Bitbucket](https://bitbucket.org/): Gratuit avec dépot privé illimité.
+- [Github](https://github.com/): Gratuit avec nombre de dépôt privé limité.
+
+Nous travaillerons avec GitHub, la plateforme la plus populaire, une vitrine pour dévoiler vos compétences de programmeur.
+
+---
+
+# Exercice 4: Ouvrez un compte sur Github
+
+1. Rendez-vous à l'adresse: https://github.com/
+2. Ouvrez un compte / Inscrivez-vous
+3. Créez un nouveau dépot sur GitHub intitulé: `monTravail_BIO500`
+
+---
+
+# Envoyer votre dépôt local sur le serveur Github
+
+```bash
+git remote add origin https://adresseVersVotreDepot.git
+git remote -v
+```
+
+Votre dépot local vient de se transformer en dépôt distant. Cependant, rien n'a encore été envoyé sur le serveur.
+
+---
+
+# Envoyer votre dépôt local sur le serveur Github
+
+On va maintenant envoyer les fichiers et l'historique de modifications de ces derniers sur le serveur.
+
+```bash
+git push origin master
+# Le serveur va vous demander de vous authentifier avec vos accès GitHub
+```
+
+`origin` est le serveur distant (toujours par défault)
+`master` est la branche sur laquelle vous placez vos fichiers
+
+---
+
+# Récupérer des modif. apporté par un collègue
+
+Imaginez maintenant que l'un de vos collègues apporte des modifications à votre code ou travail et qu'il publie ses modifications (s'il dispose des droits) sur votre dépôt.
+
+```bash
+git pull origin master
+# Le serveur va vous demander de vous authentifier avec vos accès GitHub
+```
+
+---
+
+# Cloner un dépôt distant
+
+Il est possible à tout moment de récupérer un dépôt distant pour le téléverser sur son ordinateur.
+
+```bash
+cd Documents
+git clone https://github.com/EcoNumUdS/BIO500.git
+```
+
+---
+# En résumé
+
+.pull-left[
+1.Racontez l'histoire de votre projet
+- `git add`
+- `git commit`
+- `git status`
+
+2.Voyager dans le temps
+- `git log`
+- `git checkout`
+
+3.Expérimentez avec les changements
+- `git branch`
+- `git merge`
+
+]
+.pull-right[
+4.Backup de votre travail &amp; 5. Collaborer sur des projets
+- `git remote`
+- `git push`
+- `git pull`
+- `git clone`
+]
+
+---
+
+# Lectures
+
+Sandve et al. 2013. Ten Simple Rules for Reproducible Computational
+Research. PLoS Computational Biology. 9: e1003285
+
+Silberzahn et Uhlman. 2015. Many hands make tight work. Nature 526 : 189-191.
+
+Barba. 2016. The hard road to reproducibility. Science 354: 142.
+
+
+
+---
+class: inverse, center, middle
+
+# Le makefile
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Les étapes du travail d'un biologiste
+
+.center[
+  &lt;img src="assets/img/flow_full_repro.png"  width="90%"&gt;&lt;/img&gt;
+]
+
+---
+
+# Qu'est-ce que le makefile ?
+
+**Définition**: le makefile est un fichier qui contient un ensemble de directives qui sont exécutées par l'ordinateur. Les instructions et leurs dépendances sont spécifiées dans le makefile.
+
+---
+
+# À quoi il sert ?
+
+Le makefile est un logiciel permettant d'exécuter une série d'instructions, lorsqu'elles sont nécessaires. Les dépendances sont vérifiées et seulement les instructions qui requièrent une mise à jour sont exécutées.
+
+Nous utiliserons le makefile pour assurer la reproductibilité de la démarche entreprise dans le cours. L'ensemble des instructions nécessaires à la production du rapport, de la création de la base de données à la compilation du document écrit, seront contenues dans le makefile.
+
+---
+
+# Objectifs de la leçon
+
+- Reconnaitre les parties importantes d'un makefile, les règles, les cibles, les dépendances et les actions
+- Écrire un makefile simple
+- Exécuter un makefile à partir du terminal
+- Préparer le makefile pour le projet de session
+
+---
+
+# Anatomie du makefile
+
+```bash
+&lt;target&gt;: &lt;dependencies...&gt;
+  &lt;commands&gt;
+```
+
+---
+
+# `target`
+
+La cible est habituellement le nom d'un fichier généré par la commande.
+
+---
+
+# `dependencies...`
+
+Une dépendance (également appelée _"prerequesite"_) est un fichier qui est utilisé pour créer un autre fichier appelée cible (`"target"`).
+
+La _target_ peut contenir plusieurs dépendances.
+
+Il est néanmoins possible d'avoir un fichier cible qui ne requiert pas de dépendances.
+
+---
+
+# `commands`
+
+La commande est l'action à réaliser. Dans notre cas, nous utiliserons une commande pour exécuter un script R comme :
+
+```bash
+Rscript script.R
+```
+
+Nous verrons plus tard dans la session le langage de mise en forme LaTeX. Dans ce cas, la commande serait:
+
+```bash
+pdflatex manuscrit.tex
+```
+
+---
+
+# Un exemple
+
+```bash
+
+# Première étape, on génère des données
+data.txt :
+  Rscript script1.R
+
+# Seconde étape, on fait un modèle statistique à partir
+# de ces données
+model.Rdata: data.txt
+  Rscript script2.R
+
+# Troisième étape, on produit une figure à partir du modèle
+# et des données
+figure.pdf: model.Rdata data.txt
+  Rscript script3.R
+
+```
+
+Ce fichier s'appelle makefile (sans extension) et il est exécuté en inscrivant simplement la commande `make nomDeLaCible`.
+
+---
+
+# Étape par étape
+
+`Rscript` est un programme permettant d'exécuter du code R sans passer par la console R. On peut utiliser le terminal pour appeler le programme `Rscript` et lui donner comme argument un script R: `Rscript script1.R`
+
+Les commandes sont espacées par une *tabulation* ou 8 espaces. Assurez vous que votre tabulation corresponds bien à 8 espaces.
+
+Ensemble, la cible, les dépendances et les actions constituent une règle. Cet exemple a donc 3 règles.
+
+---
+
+# Comment créer un premier makefile
+
+- Ouvrez un nouveau document au moyen de atom
+- Copiez les commandes de l'exemple
+- Sauvergardez le fichier, avec pour nom makefile
+- Assurez vous de trouver les 3 scripts dans le dépôt git
+
+---
+
+# Script 1
+
+
+```r
+  set.seed(1)
+  X &lt;- runif(25, 0, 100)
+  Y &lt;- rnorm(25, mean = X*2 + 10, sd = 25)
+  write.table(cbind(X,Y), file = "data.txt")
+```
+
+---
+
+#  Script 2
+
+
+```r
+data &lt;- read.table("data.txt", header = T)
+model &lt;- lm(data$Y ~ data$X)
+save(model, file = "model.Rdata")
+```
+
+---
+
+#  Script 3
+
+
+```r
+data &lt;- read.table("data.txt", header = T)
+load("model.Rdata")
+
+pdf("resultat.pdf", 7 5)
+plot(data$X, data$Y, xlab = "X", ylab = "Y")
+abline(model)
+dev.off()
+```
+
+---
+
+#  Exécuter un makefile
+
+Il n'est pas nécessaire de nommer le makefile *makefile*. On peut toujours spécifier un autre nom et l'exécuter ainsi :
+
+
+```bash
+make -f MonMakefile
+```
+
+---
+
+# Les dépendances
+
+- Exécutez le makefile une première fois.
+- Ensuite, modifiez une valeur dans le fichier data.txt.
+- Exécutez le makefile à nouveau pour voir ce qui se produit.
+
+---
+
+# Le makefile comme outil de reproductiblité
+
+La rédaction du makefile nous force à spécifier les différentes étapes de notre démarche, à identifier les entrées et les sorties de différentes instructions à l'ordinateur. De cette façon, le makefile permet de documenter rigoureusement la démarche réalisée.
+
+Il s'agit aussi d'un aide-mémoire qui permet de se rappeler des étapes.
+
+---
+
+# Exercice
+
+Conceptualisez les différentes étapes de la démarche du travail de session jusqu'à présent.
+
+Identifiez les entrées, les sorties et les actions.
+
+---
+
+# Les messages de make
+
+Il est possible de forcer make à réaliser certaines actions. Par exemple, si on exécute à nouveau make
+
+```bash
+make
+```
+
+On obtient le message :
+
+```bash
+make : 'data.txt' is up to date
+```
+
+---
+
+# Les messages de make
+
+On peut forcer une étape, par exemple le calcul du modèle, ainsi :
+
+```bash
+make model.Rdata
+```
+
+Dans ce cas-ci, on obtient le message :
+
+```bash
+make: Nothing to be done for 'script2.R'
+```
+
+---
+
+# Les messages de make
+
+*up to date* signifie que le makefile a une règle dont la cible est le nom du fichier et qu'il est à jour
+
+*Nothing to be done* indique que le fichier existe, mais que
+
+- il n'y a pas de règle pour ce fichier
+- il y a une règle, mais aucune action à réaliser
+
+---
+
+# Nettoyage du dépôt en fin de script
+
+Il arrive que certains scripts génèrent des fichiers temporaires qui ne doivent pas être conservés inutilement.
+
+Dans l'exemple précédent, on pourrait vouloir éliminer le modèle, qui n'est finalement utilisé que pour réaliser la figure. On peut ainsi inscrire à la fin du makefile :
+
+```bash
+clean :
+  rm -f model.Rdata
+```
+
+`rm -f model.Rdata` va éliminer à la toute fin l'objet R contenant le modèle intitulé `model.Rdata`. Notez ici qu'il n'y a pas de dépendance, ce qui indique que cette opération sera systématiquement exécutée.
+
+---
+
+# Dépendances
+
+L'ordre de présentation des dépendances est arbitraire. Elles ne seront pas nécessairement vérifiées dans l'ordre présenté.
+
+Un truc est de schématiser les dépendances (des noeuds) et les actions (des flèches)
+
+---
+
+# Autres ressources disponibles en ligne :
+
+https://swcarpentry.github.io/make-novice/02-makefiles/
+
+https://gist.github.com/isaacs/62a2d1825d04437c6f08
+
+http://gl.developpez.com/tutoriel/outil/makefile/
+
+http://icps.u-strasbg.fr/people/loechner/public_html/enseignement/GL/make.pdf
+
+---
+class: inverse, center, middle
+
+# Travail pour la semaine
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Consignes
+
+- Identifiez clairement vos questions de recherche
+- Planifiez les requêtes à réaliser pour traiter les données
+
+---
+
+# Lectures
+
+Est-ce que la science ouverte peut prévenir la fraude ?
+
+.center[
+  &lt;img src="assets/img/spider.png" width="30%"&gt;&lt;/img&gt;
+]
+
+[Lien vers l'article dans Science](https://www.sciencemag.org/news/2020/01/spider-biologist-denies-suspicions-widespread-data-fraud-his-animal-personality)
+
+[Et un lien vers un blog qui explique comment la triche a été réalisée](https://laskowskilab.faculty.ucdavis.edu/2020/01/29/retractions/)
+
+---
+
+
+
+---
+class: inverse, center, middle
+
+# Le cahier de laboratoire RMarkdown
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# C'est quoi le RMarkdown
+
+.center[
+![:scale 70%](assets/img/Rmarkdown.png)
+]
+
+- Un outil pour intégrer du texte, du code et des résultats
+- Un format de fichier (`.Rmd`) pour créer des documents dynamiques avec R
+- Un paquet R
+
+---
+# Pourquoi RMarkdown?
+
+- Documentation (dynamique) des analyses
+- Facilite la partage/communication des résultats
+- Utilisable sur les système de controle de version (Git)
+- Reproductible!
+
+---
+# L'anatomie du RMarkdown
+
+&lt;br&gt;
+.center[
+![:scale 90%](assets/img/Rmarkdown_anatomie.png)
+]
+
+---
+# L'anatomie du RMarkdown
+
+.center[
+![](assets/img/Rmarkdown_example.png)
+]
+
+---
+# L'anatomie du RMarkdown
+
+.center[
+![](assets/img/Rmarkdown_example2.png)
+]
+
+&lt;span style="color:rgb(101, 136, 71);"&gt;Metadata&lt;/span&gt; + &lt;span style="color:rgb(255, 199, 65);"&gt;Texte&lt;/span&gt; + &lt;span style="color:rgb(100, 164, 213);"&gt;Code chunk&lt;/span&gt; = RMarkdown
+
+---
+# Exercice
+
+1. Ouvrir Rstudio
+2. Installer le paquet RMarkdown si necessaire (`install.packages('Rmarkdown')`)
+3. Creer nouveau document RMarkdown (bouton vert en haut à gauche)
+4. Identifier le YAML, texte, et code chunk du document `.Rmd`
+5. Compiler le document en html (bouton 🧶 `knit`)
+
+---
+# Le YAML (metadata)
+
+- les métadonnées et les options du document sont définies ici
+- La syntaxe est `cle: value`
+- Commence et se termine entre trois tirets `---`
+- Toujours au début du document
+
+```r
+---
+title: "Mon titre"
+author: "Willian Vieira"
+date: "10/03/2021"
+output: html_document
+    toc: true
+---
+```
+
+Les options d'output dépendent de la sortie.
+
+Voir `?html_document`, `?pdf_document`, `?word_document`
+
+
+---
+# Markdown (contenu)
+
+Plein texte avec une syntaxe minimaliste pour la mise en forme du texte
+
+.font90[
+.pull-left[
+```md
+# Titre 1
+## Titre 2
+### Titre 3
+
+Ce mot est en *italique* et celui-ci
+en **gras**.
+Ici nous avons du `code`.
+```
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+]
+
+
+.pull-right[
+
+# Titre 1
+## Titre 2
+### Titre 3
+
+Ce mot est en *italique* et celui-ci
+en **gras**.
+Ici nous avons du `code`.
+]
+]
+
+---
+# Markdown - listes
+
+.font90[
+.pull-left[
+```md
+Lorem ipsum dolor sit amet,
+consectetur
+adipiscing elit.
+- Cras convallis purus.
+- Nunc faucibus.
+- Maecenas ipsum dolor.
+
+Nulla vehicula metus vel tortor
+venenatis luctus.
+Etiam tempus sit amet ligula
+nec pretium. Aenean ultrices
+massa sed pulvinar pulvinar.
+1. Duis aliquam commodo volutpat.
+1. Mauris ultrices.
+1. Aliquam eu erat.
+```
+]
+
+.pull-right[
+Lorem ipsum dolor sit amet,
+consectetur
+adipiscing elit.
+- Cras convallis purus.
+- Nunc faucibus.
+- Maecenas ipsum dolor.
+
+Nulla vehicula metus vel tortor
+venenatis luctus.
+Etiam tempus sit amet ligula
+nec pretium. Aenean ultrices
+massa sed pulvinar pulvinar.
+1. Duis aliquam commodo volutpat.
+1. Mauris ultrices.
+1. Aliquam eu erat.
+]
+]
+
+---
+# Markdown - images
+
+```md
+![Chema d'un projet de recherche](assets/img/flow_full_repro.png)
+```
+
+![Chema d'un projet de recherche](assets/img/flow_full_repro.png)
+
+---
+# Markdown - liens
+
+```md
+Voici le [lien](https://github.com/EcoNumUdS/BIO500) pour le GitHub du cours BIO500.
+```
+
+Voici le [lien](https://github.com/EcoNumUdS/BIO500) pour le GitHub du cours BIO500.
+
+
+---
+# Markdown - tables
+
+.font90[
+.pull-left[
+```md
+| Time          | Session | Topic    |
+|:--------------|:-------:|---------:|
+| _left_        | _center_| _right_  |
+| 01:00 - 01:50 | 1       | Anatomy  |
+| 01:50 - 02:00 |         | *Break*  |
+| 02:00 - 02:45 | 2       | Tables   |
+| 02:45 - 03:00 |         | *Break*  |
+```
+]
+
+.pull-right[
+
+| Time          | Session | Topic    |
+|:--------------|:-------:|---------:|
+| _left_        | _center_| _right_  |
+| 01:00 - 01:50 | 1       | Anatomy  |
+| 01:50 - 02:00 |         | *Break*  |
+| 02:00 - 02:45 | 2       | Tables   |
+| 02:45 - 03:00 |         | *Break*  |
+
+]]
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+- Le `:` spécifie l'alignement
+- Possibilité d'utiliser des packages R spécialisés pour imprimer des tableaux automatiquement à partir de R
+
+
+
+---
+# Code chunk (script R)
+
+### Code Rmarkdown:
+
+.font80[
+````md
+Le code R doit être à l'intérieur d'un bloc de code (*code chunk*). Par example:
+
+```{r}
+data(iris)
+iris_setosa &lt;- subset(iris, Species == 'setosa')
+head(iris_setosa)
+```
+````
+]
+
+### Sortir Rmarkdown:
+
+.font80[
+Le code R doit être à l'intérieur d'un bloc de code (*code chunk*). Par example:
+
+
+```r
+data(iris)
+iris_setosa &lt;- subset(iris, Species == 'setosa')
+head(iris_setosa)
+```
+
+```
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa
+```
+]
+
+---
+# Code chunk (script R)
+
+.pull-left[
+### Code Rmarkdown:
+
+.font80[
+````md
+```{r}
+data(iris)
+plot(iris$Sepal.Length, iris$Sepal.Width)
+```
+````
+]]
+
+.pull-right[
+### Sortir Rmarkdown:
+
+.font80[
+
+```r
+data(iris)
+plot(iris$Sepal.Length, iris$Sepal.Width)
+```
+
+![](index_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
+]]
+
+---
+# Code R en ligne
+
+### Code Rmarkdown:
+
+
+```r
+le jeu de données *iris* comprend `r length(unique(iris$Species))` espèces
+avec un total de `r nrow(iris)` fleurs mesurées.
+```
+
+### Sortir Rmarkdown:
+
+le jeu de données *iris* comprend 3 espèces avec un total de 150 fleurs mesurées.
+
+---
+# Configuration des code chunk
+
+.font80[
+Nomer le bloc de code (utile pour débogage)
+````md
+```{r plot_iris}
+plot(iris$Sepal.Length, iris$Sepal.Width)
+```
+````
+`echo=FALSE`:  afficher les résultat, mais pas le code
+````md
+```{r plot_iris, echo=FALSE}
+plot(iris$Sepal.Length, iris$Sepal.Width)
+```
+````
+`eval=FALSE`:  afficher le code, mais le code n'est pas évalué
+````md
+```{r plot_iris, eval=FALSE}
+plot(iris$Sepal.Length, iris$Sepal.Width)
+```
+````
+`include=FALSE`: évaluer le code, mais rien n'est affiché
+````md
+```{r plot_iris, include=FALSE}
+plot(iris$Sepal.Length, iris$Sepal.Width)
+```
+````
+]
+
+---
+# Configuration des code chunk
+
+Ajuster la taille de la figure
+
+````md
+```{r plot_iris, fig.height = 3, fig.width = 5, fig.align = "center"}
+plot(iris$Sepal.Length, iris$Sepal.Width)
+```
+````
+
+&lt;img src="index_files/figure-html/plot_iris-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+# Configuration des code chunk
+
+.font70[
+
+```r
+str(knitr::opts_chunk$get())
+```
+
+```
+## List of 53
+##  $ eval         : logi TRUE
+##  $ echo         : logi TRUE
+##  $ results      : chr "markup"
+##  $ tidy         : logi FALSE
+##  $ tidy.opts    : NULL
+##  $ collapse     : logi FALSE
+##  $ prompt       : logi FALSE
+##  $ comment      : chr "##"
+##  $ highlight    : logi TRUE
+##  $ strip.white  : logi TRUE
+##  $ size         : chr "normalsize"
+##  $ background   : chr "#F7F7F7"
+##  $ cache        : logi FALSE
+##  $ cache.path   : chr "01_head_cache/html/"
+##  $ cache.vars   : NULL
+##  $ cache.lazy   : logi TRUE
+##  $ dependson    : NULL
+##  $ autodep      : logi FALSE
+##  $ cache.rebuild: logi FALSE
+##  $ fig.keep     : chr "high"
+##  $ fig.show     : chr "asis"
+##  $ fig.align    : chr "default"
+##  $ fig.path     : chr "index_files/figure-html/"
+##  $ dev          : chr "png"
+##  $ dev.args     : NULL
+##  $ dpi          : num 72
+##  $ fig.ext      : NULL
+##  $ fig.width    : num 7
+##  $ fig.height   : num 7
+##  $ fig.env      : chr "figure"
+##  $ fig.cap      : NULL
+##  $ fig.scap     : NULL
+##  $ fig.lp       : chr "fig:"
+##  $ fig.subcap   : NULL
+##  $ fig.pos      : chr ""
+##  $ out.width    : NULL
+##  $ out.height   : NULL
+##  $ out.extra    : NULL
+##  $ fig.retina   : num 1
+##  $ external     : logi TRUE
+##  $ sanitize     : logi FALSE
+##  $ interval     : num 1
+##  $ aniopts      : chr "controls,loop"
+##  $ warning      : logi TRUE
+##  $ error        : logi FALSE
+##  $ message      : logi TRUE
+##  $ render       : NULL
+##  $ ref.label    : NULL
+##  $ child        : NULL
+##  $ engine       : chr "R"
+##  $ split        : logi FALSE
+##  $ include      : logi TRUE
+##  $ purl         : logi TRUE
+```
+]
+
+
+---
+# L'univers RMarkdown
+
+![](https://ulyngs.github.io/rmarkdown-workshop-2019/slides/figures/rmarkdown_universe.jpg)
+
+.font60[*Source: Ulrik Lyngs*]
+
+---
+# Autres ressources disponibles en ligne :
+
+- R Markdown: The Definitive Guide [https://bookdown.org/yihui/rmarkdown/](https://bookdown.org/yihui/rmarkdown/)
+- RMarkdown gallery [https://rmarkdown.rstudio.com/gallery.html](https://rmarkdown.rstudio.com/gallery.html)
+- ResearchDown [https://insileco.github.io/ResearchDown/](https://insileco.github.io/ResearchDown/)
+
+---
+class: inverse, center, middle
+
+# Travail pour la semaine
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Consignes
+
+- Identifiez clairement vos questions de recherche
+- Planifiez les requêtes à réaliser pour traiter les données
+
+---
+
+# Lectures
+
+Est-ce que la science ouverte peut prévenir la fraude ?
+
+.center[
+  &lt;img src="assets/img/spider.png" width="30%"&gt;&lt;/img&gt;
+]
+
+[Lien vers l'article dans Science](https://www.sciencemag.org/news/2020/01/spider-biologist-denies-suspicions-widespread-data-fraud-his-animal-personality)
+
+[Et un lien vers un blog qui explique comment la triche a été réalisée](https://laskowskilab.faculty.ucdavis.edu/2020/01/29/retractions/)
+
+---
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="../assets/macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "monokai",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

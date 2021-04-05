@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>BIO500</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Dominique Gravel" />
+    <link href="assets/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="assets/remark-css-0.0.1/hygge.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/bio500.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+class: title-slide, middle
+
+&lt;style type="text/css"&gt;
+  .title-slide {
+    background-image: url('../assets/img/bg.jpg');
+    background-color: #23373B;
+    background-size: contain;
+    border: 0px;
+    background-position: 600px 0;
+    line-height: 1;
+  }
+&lt;/style&gt;
+
+&lt;div class="lab-logo"&gt;&lt;/div&gt;
+
+# Bloc 4
+
+&lt;hr width="65%" align="left" size="0.3" color="orange"&gt;&lt;/hr&gt;
+
+## Documents dynamiques &lt;br&gt; avec `\(LaTeX\)`
+
+&lt;hr width="65%" align="left" size="0.3" color="orange" style="margin-bottom:40px;" alt="@Martin Sanchez"&gt;&lt;/hr&gt;
+
+.instructors[
+  **BIO500** - Dominique Gravel
+]
+
+---
+
+# Bloc 4
+
+- Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/bloc4/).
+
+
+---
+class: inverse, center, middle
+
+# Introduction
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Où sommes-nous?
+
+.center[
+  &lt;img src="assets/img/flow_full.png" width="100%"&gt;&lt;/img&gt;
+]
+
+
+---
+
+# Pourquoi `\(\LaTeX\)`?
+
+&lt;br&gt;
+.center[
+  &lt;img src="assets/img/latex_comp.gif" width="60%"&gt;&lt;/img&gt;
+]
+
+---
+
+# Qu'est ce que `\(\LaTeX\)`?
+
+- Language introduit en 1983 par l'informaticien Leslie Lamport.
+- C'est un language à balises.
+- Concu spécifiquement pour l'écriture de rapports scientifiques.
+- L'utilisation de `\(\LaTeX\)` est une norme chez les mathématiciens et les physiciens.
+
+---
+
+# Avantages de `\(\LaTeX\)`?
+
+1. Qualité de la mise en page
+  - Mise en page automatique
+  - Table des matières
+  - Gestion des références
+2. Performance pour l'intégration de matériel (e.g. figures, tableaux)
+3. Stabilité
+4. Inter-opérabilité
+5. Reproductibilité (tout est scripté)
+
+---
+
+# La structure d'un document `\(\LaTeX\)`
+
+.pull-left[
+```tex
+\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\title{Un document minimalist}
+\author{Dominique Gravel}
+
+\begin{document}
+
+Je peux écrire du texte ici.
+
+\end{document}
+```
+]
+
+.pull-right[
+
+1. `\documentclass` détermine la classe du document.
+2. `\usepackage`: Comme R, `\(\LaTeX\)` permet l'utilisation de librairies. `inputec` et `fontec` sont des librairies permettant de gérer *l'encoding* du document (caractères avec accent etc.). Les `[]` déterminent les options.
+4. On ouvre l'environnement `Document` avec `\begin`
+]
+
+---
+
+# Séparer le contenu du contenant
+
+- La mise en page est gérée par des balises et environnements.
+- Les balises et environnements déclarent le contenant (la forme)
+- Le texte se place entre les balises (le contenu)
+- Si l'on change tout simplement de balises `\(\LaTeX\)`, on obtient une nouvelle mise en forme.
+
+---
+
+# Un exemple d'efficacité
+
+.pull-left[
+.font70[
+```tex
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{color,dcolumn,graphicx,hyperref}
+\usepackage{wrapfig}
+
+\begin{document}
+
+\title{How likely is speciation in neutral ecology ?}
+
+\author{Philippe Desjardins-Proulx, Dominique Gravel}
+
+\maketitle
+
+\section{Introduction}
+```
+]]
+
+.pull-right[
+  .center[
+    &lt;img src="assets/img/ex2_pg1.png" height="500px" style="border-style:solid;border-width:1px;"&gt;&lt;/img&gt;
+  ]
+]
+
+---
+
+# Un exemple d'efficacité
+
+.pull-left[
+.font70[
+```tex
+\documentclass[letterpaper,twocolumn,showkeys]{revtex4-1}
+\usepackage[utf8]{inputenc}
+\usepackage{color,dcolumn,graphicx,hyperref}
+\usepackage{wrapfig}
+
+\begin{document}
+
+\title{How likely is speciation in neutral ecology ?}
+
+\author{Philippe Desjardins-Proulx, Dominique Gravel}
+
+\maketitle
+
+\section{Introduction}
+```
+Toute la mise en forme est changée en modifiant seulement quelques instructions !
+
+]]
+
+.pull-right[
+
+.center[
+&lt;img src="assets/img/ex1_pg1.png" height="500px" style="border-style:solid;border-width:1px;"&gt;&lt;/img&gt;
+]
+]
+
+---
+
+# Autres avantages
+
+- `\(\LaTeX\)` est un language gratuit et OpenSource.
+- Stable et doté d'une riche communauté d'utilisateurs.
+- Stack Overflow est entièrement dédié à `\(\LaTeX\)`: [https://tex.stackexchange.com/](https://tex.stackexchange.com/)
+- Permet donc d'avoir facilement une réponse à vos problèmes
+- Compilateur en ligne: [https://overleaf.com/](https://overleaf.com/)
+- Ajustement automatique du contenant au contenu
+- Comme R, `\(\LaTeX\)` dispose de plusieurs libraries (packages) pour satisfaire nos besoins.
+
+---
+
+# Désavantages
+
+- La courbe d'apprentissage peut être plus rude.
+- La compilation requière plusieurs étapes
+- Les erreurs de compilation sont souvent difficiles à comprendre.
+- Son principal point faible réside dans l'absence d'un système de révision multi-utilisateurs.
+
+---
+
+# Faire du `\(\LaTeX\)` avec Overleaf
+
+1. Accéder au site web et s'inscrire
+2. Appuyer sur le bouton vert "Nouveau projet"
+3. Nommer le nouveau projet
+4. Pour compiler, il suffit d'appuyer sur "Recompiler"
+5. Il est possible d'importer des fichiers (figures, bibliographie) à partir du menu de droite
+6. Pour télécharger le matériel sur son ordinateur, il faut aller dans le menu des projets, sélectionner le projet et choisir l'action de télécharger (à droite)
+
+L'écran est divisé en trois sections. À gauche se trouvent les fichiers nécessaires à la production du document. Au centre se trouve le code source (un onglet permet d'accéder au format RTF) et à droite le résultat compilé du code LaTeX. 
+
+---
+
+# Faire du `\(\LaTeX\)` avec Atom 
+
+(pour ceux qui souhaitent installer LaTeX sur leur ordinateur personnel)
+
+1. Créer un dossier sur le bureau qui va contenir le document `\(\LaTeX\)`
+2. Ouvrir Atom
+3. Sélectionner le dossier nouvellement créé: `Fichier &gt; Ouvrir`
+4. Créer un nouveau document: `Fichier &gt; Nouveau`
+5. Enregistrer le document avec l'extension `.tex`: `Fichier &gt; Enregistrer sous`
+
+Et voilà, l'extension `.tex` détermine que le fichier est un document `\(\LaTeX\)`.
+
+---
+class: inverse, center, middle
+
+# Mon premier document `\(\LaTeX\)`
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Mon premier document `\(\LaTeX\)`
+
+.pull-left[
+
+```tex
+\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+
+\begin{document}
+
+\section{Mon premier article en latin}
+
+% Ceci est un commentaire
+\lipsum[2-4]
+
+\end{document}
+```
+]
+
+.pull-right[
+
+## Exercice 1 (10 minutes):
+
+Recopier dans ce code `.tex`.
+
+**Note:** `\usepackage{lipsum}` est un package permettant de générer du faux texte (latin de mise en forme).
+]
+
+---
+class: inverse, center, middle
+
+# La compilation d'un document `\(\LaTeX\)` sans bibliographie
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# La compilation
+
+Afin d'obtenir le rendu PDF de notre document, nous devons compiler ce dernier à l'aide du compilateur `pdflatex`.
+
+- **Étape 1.** Ouvrir le terminal (touches Ctrl+Alt+t).
+
+- **Étape 2.** À l'aide de la commande `cd` (*Change Directory*), se déplacer dans le terminal vers le dossier qui vient d'être créé:
+
+```bash
+cd ~/Bureau
+```
+```bash
+cd /home/etudiant/Bureau
+```
+
+---
+
+# La compilation
+
+.pull-left[
+
+- **Étape 3.** Compiler le document avec la commande:
+.font80[
+```bash
+pdflatex mon_document.tex
+```
+]
+- **Étape 4.** Une fois la compilation terminée, les deux dernières lignes de la sortie devraient être:
+.font80[
+```bash
+Output written on doc.pdf (1 page, 31402 bytes).
+Transcript written on doc.log.
+```
+]]
+
+.pull-right[
+
+.center[
+&lt;img src="assets/img/doc.png" height="500px" style="border-style:solid;border-width:1px;"&gt;&lt;/img&gt;
+]
+]
+
+---
+
+# Définir les métadonnées
+
+.pull-left[
+.font80[
+```tex
+\title{Comment structurer un document \LaTeX{}}
+\author{Prof. Dominique Gravel\\
+   Chaire de recherche en Écologie Intégrative,\\
+   Faculté des Sciences,\\
+   Département de Biologie,\\
+   Université de Sherbrooke,\\
+   \texttt{dominique.gravel@usherbrooke.ca}}
+\date{\today}
+```
+]]
+
+.pull-right[
+
+- On définit les métadonnées avec `\title`, `\author`, `\date`.
+- Les métadonnées doivent être placées avant l'environnement `\begin{document}`.
+- Les `\\` dans la balise `\author` permettent une mise à la ligne.
+- Enfin, la balise `\today` spécifie la date du jour pour nous.
+]
+
+Note : pour une date en français, il faut utiliser le package `\usepackage[french]{babel}`
+
+---
+
+# Créer la page titre à partir des métadonnées
+
+.pull-left[
+
+La page titre est générée grâce à la balise `\maketitle` dans l'environnement document.
+
+
+```tex
+[...]
+
+\begin{document}
+
+\maketitle
+
+[...]
+
+\end{document}
+```
+]
+
+.pull-right[
+
+.center[
+&lt;img src="assets/img/doc2.png" height="500px" style="border-style:solid;border-width:1px;"&gt;&lt;/img&gt;
+]
+]
+
+---
+
+# Exercice 3
+
+Ajouter les métadonnées puis compiler le document avec la page titre.
+
+---
+
+# Insérer un résumé
+
+.pull-left[
+
+On écrit notre résumé entre dans l'environnement `abstract`.
+
+```tex
+[...]
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\lipsum[1]
+\end{abstract}
+
+\section{Mon premier article en latin}
+\lipsum[2-4]
+
+\end{document}
+```
+]
+
+.pull-right[
+
+.center[
+&lt;img src="assets/img/doc3.png" height="500px" style="border-style:solid;border-width:1px;"&gt;&lt;/img&gt;
+]
+]
+
+---
+
+# Ajouter des sections
+
+.pull-left[
+.font80[
+```tex
+[...]
+
+\begin{document}
+
+\section{Ma première section}
+
+\section{Ma seconde section}
+
+\subsection{Une sous-section de la seconde section}
+
+\subsubsection{Une sous-section de sous-section}
+
+\section*{Une troisième section sans numéro}
+
+\end{document}
+```
+]]
+
+.pull-right[
+
+- Nous n'avons pas besoin d'utiliser de `\begin` ou `\end`.
+- Une section est numérotée par défaut.
+- Pour éviter cette numérotation vous pouvez ajouter un `*` avant les accolades.
+]
+
+---
+
+# Insérer la table des matières
+
+.pull-left[
+.font80[
+```tex
+[...]
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Ma première section}
+
+\section{Ma seconde section}
+
+\subsection{Une sous-section de la seconde section}
+
+\subsubsection{Une sous-section de sous-section}
+
+\section*{Une troisième section sans numéro}
+
+\end{document}
+```
+]]
+
+.pull-right[
+
+La simple déclaration de la balise `\tableofcontents` permet la création d'une table des matières.
+]
+
+---
+
+# Exercice 4
+
+Ajouter des sections au document et construire la table des matières.
+Prendre le temps de lire la sortie affichée par le compilateur `pdflatex`.
+
+---
+
+# Le fichier auxiliaire (`.aux`)
+
+Lors du dernier exercice, la table des matières n'était pas insérée dans le document.
+
+1. La première compilation scanne le document à la recherche de références internes telles que les sections.
+
+  #### Écriture d'un fichier `mon_document.aux`:
+
+  ```bash
+  \relax
+  \@writefile{toc}{\contentsline {section}{\numberline {1}Mon premier article en latin}{1}}
+  ```
+
+2. La deuxième compilation assemble l'ensemble du document à partir du fichier `mon_document.aux` de la première compilation.
+
+## Il faut deux compilations successives pour obtenir la table des matières dans le document pdf.
+
+
+---
+
+# Le fichier auxiliaire (`.aux`)
+
+.center[
+  &lt;img src="assets/img/flow_comp1.png" height="400px"&gt;&lt;/img&gt;
+]
+
+
+---
+class: inverse, center, middle
+
+# Mise en forme du document
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Emphase sur le texte
+
+.pull-left[
+.font80[
+```tex
+[...]
+\begin{document}
+
+Voici un texte
+\textit{en italique},
+\textbf{en gras},
+\textsc{avec de petites majuscules},
+avec des mots avec {\small{un corps plus petit}}
+ou {\large{plus grand}}.
+
+\end{document}
+```
+]]
+
+.pull-right[
+  .center[
+    &lt;img src="assets/img/doc4.png" width="100%" style="border-style:solid;border-width:1px;"&gt;&lt;/img&gt;
+  ]
+.font90[
+[Documentation complémentaire en FR](https://fr.wikibooks.org/wiki/LaTeX/Mise_en_forme_du_texte)
+]]
+
+---
+
+# Votre meilleur professeur
+
+.center[
+&lt;img src="assets/img/latexsheet.png" height="500px" style="border-style:solid;border-width:1px;"&gt;&lt;/img&gt;
+]
+
+---
+
+# Taille de la police de caractères
+.font60[
+**Corps très petit**
+]
+```tex
+\footnotesize texte très petit \normalsize, ou bien
+\begin{footnotesize} texte très petit \end{footnotesize}
+```
+.font70[
+**Corps petit**
+]
+```tex
+\small texte petit \normalsize, ou bien
+\begin{small} texte petit \end{small}
+```
+.font80[
+**Corps grand**
+]
+```tex
+\large texte grand \normalsize, ou bien
+\begin{large} texte grand \end{large}
+```
+.font90[
+**Corps très grand**
+]
+```tex
+\Large texte très grand \normalsize, ou bien
+\begin{Large} texte très grand \end{Large}.
+```
+
+---
+
+# Alignement des paragraphes
+
+Par défault, les paragraphes sont justifiés.
+
+.left[
+**Alignement gauche**
+]
+```tex
+\raggedleft texte à gauche
+\begin{flushleft} texte très petit \end{flushleft}
+```
+.right[
+**Alignement à droite**
+]
+```tex
+\raggedright texte à droite
+\begin{flushright} texte à droite \end{flushright}
+```
+.center[
+**Alignement au centre**
+]
+```tex
+\centering texte au centre
+\begin{center} texte au centre \end{center}
+```
+
+---
+
+# Indentation des paragraphes
+
+.pull-left[
+
+Par défault, la première ligne des paragraphes est indentée.
+
+```tex
+[...]
+\setlength{\parindent}{10mm}
+
+\begin{document}
+
+\lipsum[1]
+\noindent\lipsum[2]
+\lipsum[3]
+
+\end{document}
+```
+
+`\noindent`: permet de retirer l'indentation pour un paragraphe spécifique.
+`\setlength{\parindent}{10mm}`: permet de spécifier l'indentation pour l'ensemble du document.
+]
+
+.pull-right[
+
+.center[
+&lt;img src="assets/img/doc5.png" height="500px" style="border-style:solid;border-width:1px;"&gt;&lt;/img&gt;
+]
+]
+
+---
+
+# Indentation des paragraphes
+
+## `\(\LaTeX\)` couvre un grand nombre d'unités:
+
+- `pt`: 1/72.27 pouces, utilisé dans la plupart des éditeurs de texte.
+- `mm`: Millimètres
+- `cm`: Centimètres
+- `em`: Grossièrement la hauteur d'un 'M' (relatif à la police de caractères)
+- `ex`: Grossièrement la hauteur d'un 'x' (relatif à la police de caractères)
+
+---
+
+# Interlignes
+
+Pour spécifier si le document doit être en double ou simple interlignes, il suffit d'ajouter le package `setspace` et d'y rattacher l'option désirée.
+
+```tex
+\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[singlespacing]{setspace}
+OU
+\usepackage[onehalfspacing]{setspace}
+OU
+\usepackage[doublespacing]{setspace}
+
+```
+
+**Attention:** Les packages doivent toujours se retrouver dans le préambule, c.a.d avant le `\begin{document}`
+
+---
+
+# Séparateur entre paragraphes
+
+Par défault, il n'y a pas d'espace entre les paragraphes.
+
+.pull-left[
+
+```tex
+[...]
+\setlength{\parskip}{2em}
+
+\begin{document}
+
+\lipsum[1]
+\noindent\lipsum[2]
+\lipsum[3]
+
+\end{document}
+```
+]
+
+.pull-right[
+
+- `\setlength{\parskip}{2em}`: permet de mettre de déterminer l'espace désiré entre les paragraphes.
+
+- Attention, comme `\setlength{\parindent}{10mm}`, cette configuration doit être placée dans le préambule pour être appliquée sur l'ensemble du document.
+]
+
+---
+
+# Double colonnes et double page
+
+Il est possible de basculer un document d'une colonne à deux colonnes en une ligne de commande grâce aux options de la classe de document (`\documentclass`).
+
+```tex
+\documentclass[11pt,twocolumn,doublepage]{article}
+
+\begin{document}
+
+\lipsum[1]
+\noindent\lipsum[2]
+\lipsum[3]
+
+\end{document}
+```
+
+`\usepackage{multicol}` permet encore d'aller plus loin en offrant davantage de fonctionnalités.
+Pour le constater, vous pouvez vous rendre sur [https://fr.sharelatex.com/learn/Multiple_columns](https://fr.sharelatex.com/learn/Multiple_columns)
+
+---
+
+# Saut de page et saut de section
+
+.pull-left[
+
+```tex
+\documentclass[11pt,twocolumn]{article}
+
+\begin{document}
+
+\section{Introduction}
+
+\lipsum[1]
+\clearsection
+
+\section{Matériels et méthodes}
+
+\lipsum[2]
+\clearpage
+
+\lipsum[3]
+
+\end{document}
+```
+]
+
+.pull-right[
+
+- `\clearpage`: le texte écrit après cette commande est renvoyé sur une nouvelle page.
+- `\cleardoublepage`: le texte écrit après cette commande est renvoyé sur une nouvelle page (recto).
+- `\clearsection`: même comportement que `\clearpage` mais pour une section.
+]
+
+---
+
+# Espacements &amp; justification
+
+## Justification:
+
+- `\vfill` introduit un espace « ressort » : cette balise pousse ce qu'il y a à gauche et à droite pour occuper tout l'espace restant sur la ligne.
+- `\hfill`, même chose mais cette balise pousse ce qu'il y a au dessus et en dessous pour occuper tout l'espace restant sur la page.
+
+Le `\hfill` est très pratique pour la page titre d'un document qui a généralement besoin d'une justification horizontale.
+
+## Espacements:
+
+- `\hspace{1em}` et `\vspace{1em}` déterminent un espacement fixe entre deux éléments (une figure et un texte par exemple)
+
+Pour ceux qui sont familiés avec le traitement de texte (MS Word), c'est l'équivalent (en mieux) des tabulations.
+
+---
+
+# Taille et marges du document
+
+Les marges du document peuvent être définis grâce au package `geometry`:
+
+```tex
+\usepackage{geometry}
+
+\geometry{
+letterpaper,
+landscape,
+left=20mm,
+right=20mm,
+top=20mm,
+bottom=20mm
+}
+
+OU
+
+\usepackage[letterpaper,landscape,margin=20mm]{geometry}
+```
+
+Pour un contrôle fin des marges, vous pouvez vous rendre sur ce site: [https://fr.sharelatex.com/learn/Page_size_and_margins](https://fr.sharelatex.com/learn/Page_size_and_margins).
+
+
+---
+
+# Références internes au document
+
+Il est possible à tout moment de référer une partie de son document à une section particulière grâce aux balises `\label` et `\ref`. On appelle ça des *ancres de page*.
+
+```tex
+[...]
+\begin{document}
+
+\section{Introduction}
+\label{sec:intro}
+
+\subsection{Les réseaux écologiques}
+\label{subsec:res}
+
+Dans mon introduction (section \ref{sec:intro}), je vous ai présenté les réseaux écologiques
+(section \ref{subsec:res},\href{ielab.recherche.usherbrooke.ca}{site internet}).
+
+\end{document}
+```
+
+Les numéros de sections s'ajusteront automatiquement si vous ajoutez ou enlevez des sections.
+
+&lt;!-- **Important:** Tout comme la table des matières, il faudra deux compilations consécutives pour visualiser les références dans le texte.
+--&gt;
+
+---
+
+# Personnalisation du document
+
+Les références internes (`\ref` et `\href`) du document auront des couleurs par défault.
+Vous pouvez modifier ce comportement par défaut en modifiant la balise `\hypersetup` suivante:
+
+```tex
+\hypersetup{
+   backref=true,                           % Permet d ajouter des liens dans
+   pagebackref=true,                       % les bibliographies
+   hyperindex=true,                        % Ajoute des liens dans les index.
+   colorlinks=true,                        % Colorise les liens.
+   breaklinks=true,                        % Permet le retour à la ligne dans les liens trop longs.
+   urlcolor= blue,                         % Couleur des hyperliens.
+   linkcolor= blue,                        % Couleur des liens internes.
+   bookmarks=true,                         % Créé des signets pour Acrobat.
+   bookmarksopen=true,                     % Si les signets Acrobat sont créés,
+                                           % les afficher complètement.
+   pdftitle={Mon document au format TeX},  % Titre du document.
+                                           % Informations apparaissant dans
+   pdfauthor={PoluX},                      % dans les informations du document
+   pdfsubject={Projet wikiBooks}           % sous Acrobat.
+}
+```
+
+---
+
+# Exercice 5 (15 minutes):
+
+Reproduire la page titre du département de Biologie (sans utiliser les métadonnées et `\maketitle`).
+
+Si vous désirez, utilisez les métadonnées pour produire la page titre. La procédure est la suivante:
+
+```tex
+[...]
+
+\begin{document}
+
+\makeatletter
+\begin{titlepage}
+
+Ceci est le titre du document: \@title
+Il a été écrit par \@author\space le \@date
+
+\end{titlepage}
+\makeatother
+
+[...]
+```
+
+---
+class: inverse, center, middle
+
+# Les principaux environnements `\(\LaTeX\)`
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Ajouter une figure
+
+.pull-left[
+.font80[
+```tex
+\begin{figure}
+
+\includegraphics[width=0.35\textwidth]{fig.eps}
+
+\caption{The metacommunity as a graph
+  of local communities. Each community is
+  connected by dispersal to one or more
+  communities.}
+
+\end{figure}
+```
+]]
+
+.pull-right[
+
+- `\begin{figure}` ouvre l'environnement figure
+- `\includegraphics` spécifie la figure à ajouter et sa taille relative
+- `\caption` définie la légende de la figure
+- `\end{figure}` ferme l'environnement figure
+]
+
+---
+
+# Ajouter une équation
+
+.pull-left[
+
+Dans le texte:
+
+```tex
+La théorie de la biogéographie
+des îles donne la richesse
+en espèces $S$ à l'équilibre
+au point où les courbes
+$I(S)$ et $E(S)$ se croisent.
+```
+]
+
+.pull-right[
+
+En retrait du texte:
+
+```tex
+\begin{equation}
+  S^* = \frac{I}{I+E}
+\end{equation}
+```
+]
+
+---
+
+# Ajouter un tableau - structure
+
+.pull-left[
+.font90[
+```tex
+\begin{table}[]
+\centering
+\caption{Une légende adéquate}
+\label{my-label}
+\begin{tabular}{lc|r}
+aligné à gauche &amp; au centre &amp; à droite  \\
+\hline
+val11 &amp; val12 &amp; val13   \\
+val21 &amp; val22 &amp; val23   \\
+val31 &amp; val32 &amp; va33
+\end{tabular}
+\end{table}
+```
+]]
+
+.pull-right[
+
+&lt;br/&gt;
+&lt;br/&gt;
+.center[
+&lt;img src="assets/img/table.png" height="200px" style="border-style:solid;border-width:1px;"&gt;&lt;/img&gt;
+]
+]
+
+---
+
+# Ajouter un tableau - quelques astuces
+
+
+- 1- Nous avons vu, la semaine dernière, la fonction R `kable()`. Cette fonction nous permet d'obtenir un tableau de R directement en format `\(\LaTeX\)`:
+
+```r
+library(knitr)
+kable(CO2, format="latex")
+```
+
+&lt;br/&gt;
+
+- 2- Pour des tableaux de formes plus complexes, la tâche peut être lourde, il existe des outils en ligne pour dessiner des tableaux et obtenir le code `\(\LaTeX\)` associé (voir  [http://www.tablesgenerator.com](http://www.tablesgenerator.com)).
+
+---
+
+# Ajouter une ancre à ces environnements
+
+On utilise `\label` comme pour les sections.
+
+```tex
+\begin{equation}
+  label{eq:tib}
+  S^* = \frac{I}{I+E}
+\end{equation}
+```
+
+Et ensuite on y réfère dans le texte ainsi:
+
+```tex
+La théorie de la biogéographie des îles donne la richesse
+en espèces $S$ à l'équilibre au point où les courbes
+$I(S)$ et $E(S)$ se croisent, ce qui donne pour solution \ref{eq:tib}.
+```
+
+---
+
+# Ajouter des énumérations
+
+.pull-left[
+
+## On peut y aller simplement de points
+
+```tex
+\begin{itemize}
+  \item Premier élément
+  \item Second élément
+  \item Troisième élément
+\end{itemize}
+```
+]
+
+.pull-right[
+
+## Ou encore d'une liste numérotée
+
+```tex
+\begin{enumerate}
+  \item Premier élément
+  \item Second élément
+  \item Troisième élément
+\end{enumerate}
+```
+]
+
+---
+class: inverse, center, middle
+
+# La bibliographie
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Les entrées `bibtex`
+
+Les références que l'on va citer sont entreposées dans un fichier `.bib`.
+
+Le fichier doit contenir des entrées `bibtex` qui ressemblent à:
+.font80[
+```tex
+@article{gravel2006a,
+  title={Reconciling niche and neutrality: the continuum hypothesis},
+  author={Gravel, Dominique and Canham, Charles D and Beaudet, Marilou and Messier, Christian},
+  journal={Ecology letters},
+  volume={9},
+  number={4},
+  pages={399--409},
+  year={2006},
+  publisher={Wiley Online Library}
+}
+```
+]
+
+---
+
+# Exercice 6
+
+**Étape 1.** Ouvrez un nouveau fichier et enregistrer ce fichier `mabiblio.bib` au même emplacement que votre fichier `.tex`
+
+---
+
+# Les entrées `bibtex`
+
+La plupart des journaux et portail de recherche fournissent des entrées `bibtex` pour citer les publications:
+
+- Par exemple: [Google scholar](https://scholar.google.fr/scholar?q=Dominique+Gravel&amp;btnG=&amp;hl=en&amp;as_sdt=0%2C5)
+
+Des logiciels de bibliographie telle que EndNote, Zotero et Mendeley pemettent d'obtenir des entrées `bibtex`.
+
+Si vous voulez en savoir davantage: [http://steveviss.github.io/Talk_bib/#1](http://steveviss.github.io/Talk_bib/#1)
+
+---
+
+# Exercice 6 (suite)
+
+**Étape 2.** En vous servant de Google Scholar, remplissez votre fichier `mabiblio.bib` avec 2 entrées bibtex.
+
+
+---
+
+# Déclarer le fichier `bibtex`
+
+.pull-left[
+
+```tex
+\documentclass[12pt]{article}
+
+[...]
+
+\begin{document}
+
+Je vais citer un très bon
+article \cite{gravel2006a}.
+
+\bibliographystyle{plain}
+% Le fichier .bib doit
+% être avec le fichier .tex
+
+\bibliography{monfichierbib}
+% Noter ici que l'on ne met
+% pas l'extension du fichier.
+
+\end{document}
+```
+]
+
+.pull-right[
+
+Nous désirons maintenant nous servir des entrées `bibtex` dans le document `\(\LaTeX\)` afin de citer ces références.
+
+- `\bibliography{}`: permet de spécifier le nom du fichier `.bib`.
+- `\bibliographystyle{}`: permet de choisir le style de bibliographie. Il en existe plusieurs: `plain`, `unsrt`, `alpha`, `abbrv`, `apalike` etc..
+
+Vous pouvez trouver davantage d'information [ici](https://fr.wikibooks.org/wiki/LaTeX/Gestion_de_la_bibliographie).
+]
+
+---
+
+# Exercice 6 (suite)
+
+**Étape 3.** En vous servant de votre fichier que vous venez d'enregistrer (`mabiblio.bib`), citez vos deux références dans votre document à l'aide de la commande `\cite`.
+
+```tex
+\documentclass[12pt]{article}
+
+[...]
+
+\begin{document}
+
+Je vais citer un très bon
+article \cite{gravel2006a}.
+
+\bibliographystyle{plain}
+% Le fichier .bib doit être avec le fichier .tex
+
+\bibliography{monfichierbib}
+% Noter ici que l'on ne met pas l'extension du fichier.
+
+\end{document}
+```
+
+---
+
+# Compiler le document `\(\LaTeX\)` avec bibliographie
+
+La compilation d'un document avec bibliographie requière l'utilisation du compilateur `bibtex`.
+## La compilation se déroule donc en trois étapes dans le terminal:
+
+1. Scanner le fichier `.tex` à la recherche de références aux figures, sections etc.
+
+  ```bash
+  pdflatex monfichier.tex
+  ```
+
+2. Scanner les fichiers à la recherche des balises `\cite{}`
+
+  ```bash
+  bibtex monfichier
+  ```
+
+3. Compiler le document final en se servant des `.aux` (étape 1) et `.bbl` (étape 2)
+
+  ```bash
+  pdflatex monfichier.tex
+  ```
+
+Et voilà, nous avons un document final.
+
+---
+
+# Exercice 6 (suite)
+
+**Étape 4.** En vous servant de votre terminal, compilez votre document `\(\LaTeX\)` avec vos deux citations.
+
+## Rappel, la compilation se déroule en trois étapes:
+
+1. Scanner le fichier `.tex` à la recherche de références aux figures, sections etc.
+
+  ```bash
+  pdflatex monfichier.tex
+  ```
+
+2. Scanner le fichier `.tex` à la recherche des balises `\cite{}`
+
+  ```bash
+  bibtex monfichier.tex
+  ```
+
+3. Compiler le document final en se servant des `.aux` (étape 1) et `.bbl` (étape 2)
+
+  ```bash
+  pdflatex monfichier.tex
+  ```
+
+---
+class: inverse, center, middle
+
+# Travail final
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Objectif
+
+Écrire un rapport sous forme d'article scientifique
+
+---
+
+# Consignes
+
+Vous devez remettre les résultats de votre analyse des données de collaboration entre les étudiants de la classe.
+
+Le rapport doit contenir :
+
+- L'illustration du réseau
+- 3 figures
+- 1 tableau
+- Un titre et un résumé
+- Une courte introduction spécifiant les questions
+- Une courte description de la méthode et des résultats
+- Une discussion, enrichie de citations provenant de la littérature scientifique
+- L'ensemble du texte doit faire 1000-1500 mots max
+- Une bibliographie
+
+---
+
+# Consignes
+
+Nous vous demandons de remettre les scripts permettant de générer l'ensemble du document, incluant : 
+
+- La création de la base de données
+- La correction des données originales
+- L'injection des données
+- Les requêtes
+- La production des figures et tableaux
+- Le document LaTeX (en format tex) incluant des citations
+- Le fichier de bibliographie
+
+---
+
+# Évaluation
+
+À terme, selon les principes de science reproductible, nous devrions pouvoir exécuter l'ensemble de votre analyse sur un autre ordinateur, sans avoir à changer le code. 
+
+Habituellement nous devrions utiliser la commande `make` pour tout exécuter automatiquement, mais cette étape sera annulée compte tenu de la formule à distance qui nous empêche d'utiliser les ordinateurs du laboratoire informatique. 
+
+Néanmoins, l'ensemble de ce matériel doit se trouver sur un dépôt git auquel vous nous donnerez accès. Dans ce dépôt se trouveront les fichiers de données originales en csv, les scripts, le document tex ainsi que la bibliographie.
+
+---
+
+# Évaluation
+
+- Respect des consignes (tous les éléments listés précédemment sont inclus et fonctionnels - 60%)
+- Reproductibilité (30%)
+  - Organisation du code en scripts séparés et lisibles
+  - Commentaires et respect des bonnes pratiques 
+  -  Utilisation de Git
+- Originalité (10%)
+
+Le contenu du rapport n'est pas d'une grande importance, il est prétexte à faire toutes les étapes du travail. Ne vous attardez pas à la rédaction, l'objectif est seulement de décrire rapidement votre démarche et d'utiliser LaTeX pour la préparation d'un rapport.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="../assets/macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "monokai",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
