@@ -72,13 +72,28 @@
 - Discussion :          Données ouvertes en science 
 
 
-
-### Cours 5  : makefile et visualisation
-
-### Cours 6  : visualisation
+### Cours 5  : visualisation
 
 
-### Cours 7  : LaTeX
+- Réflexion sur la question 15 min
+
+- Présentation : ABC des figures 40 min 
+
+- Réflexion sur la figure 15 min
+
+- Présentation : une figure étape par étape sur R - 25 min 
+
+- Présentation : figure sur igraph -  15 min
+
+- Présentation du travail de session : 10 min
+
+- Discussion sur la tricherie et la reproductibilité : 30 min
+    Responsabilité des journaux ?
+    Réviseurs
+    Directeurs de recherche
+    Collaborateurs
+
+### Cours 6  : LaTeX
 
 
 

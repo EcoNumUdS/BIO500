@@ -237,10 +237,10 @@ Au terme de ce cours, l'étudiant sera en mesure de réaliser l'ensemble de la  
 
 - Planifier une base de données et la préparation de formulaires pour leur acquisition ;
 - Programmer et interroger une base de données relationnelle ;
-- Compiler et exécuter un script au moyen de makefile ;
+- Compiler et exécuter un projet au moyen de la librairie drake ;
 - Maintenir un cahier de laboratoire au moyen de RMarkdown ;
 - Représenter visuellement les données au moyen de R ;
-- Préparer un rapport d'étude au moyen de LaTeX ;
+- Préparer un rapport d'étude ;
 - Utiliser un système de contrôle de version pour le suivi des modifications sur du code ;
 - Porter un regard critique sur la reproductibilité et la transparence d'études scientifiques ;
 
@@ -262,7 +262,7 @@ Au terme de ce cours, l'étudiant sera en mesure de réaliser l'ensemble de la  
 ## Bloc 2: Outils pour une science reproductible et transparente
 
 - Système de contrôle de version git
-- Le makefile et ses alternatives sur R
+- La librarie drake pour l'exécution de projets sur R
 - Le cahier de laboratoire RMarkdown
 
 ---
@@ -280,13 +280,13 @@ Au terme de ce cours, l'étudiant sera en mesure de réaliser l'ensemble de la  
 
 # Contenu du cours
 
-## Bloc 4: Communication scientifique au moyen de LaTeX
+## Bloc 4: Communication scientifique au moyen de RMarkdown
 
 - Rédaction de rapports et d'articles scientifiques
 - Mise en page
 - Insertion de figures et tableaux
 - Gestion des références
-- Utilisation de Beamer pour les présentations
+
 
 ---
 
@@ -300,159 +300,7 @@ Nous progresserons dans l'exécution du travail de session. Le travail sera divi
 
 # Évaluation
 
-L'évaluation porte sur la réalisation d'un travail de session (75%), réalisé en équipe de 4 personnes. Le travail sera divisé en 3 étapes réparties au cours de la session. L'évaluation finale (25%) portera sur la rédaction d'un essai de 1500 mots sur les enjeux de reproductibilité en science expérimentale.
-
-```{r echo=FALSE, eval=FALSE}
-
----
-class: inverse, center, middle
-
-# Survol de Linux / Ubuntu
-
-<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
-
----
-# Un nouveau monde s'ouvre à vous...
-
-.pull-left[
-  Il existe une [grande diversité de distributions](https://fr.wikipedia.org/wiki/Liste_des_distributions_Linux) Linux (Systèmes d'exploitation). L'ensemble de ces distributions sont gratuites et libres (OpenSource) !
-
-  ## Alors, pourquoi Ubuntu?
-
-  - Une importante communauté d'utilisateurs (estimé à 25 millions)
-  - Aussi facile d'utilisation que Microsoft Windows
-]
-
-.pull-right[
-  .center[
-  <img src="assets/img/linux_distros.png" width="90%"></img>
-  ]
-]
----
-
-# Sur la machine virtuelle Ubuntu...
-
-**Les logiciels/langages que nous utiliserons dans le cours ont déjà été installés pour vous.**
-
-- R (avec les librairies nécessaires)
-- La distribution complète de LaTeX
-- Git
-- SQL
-- SublimeText
-- Le terminal (crt+alt+t)
-
----
-
-# L'environnement UNITY
-
-.pull-left[
-  - Le lanceur
-  - Naviguer dans les fichers : `<ctrl> <n>`
-  - Chercher un programme
-  - Changer les paramètres
-]
-
-.pull-right[
-  .center[
-    <img src="assets/img/unity.png" width="100%"></img>
-  ]
-]
-
----
-
-# L'environnement UNITY
-
-.pull-left[
-  ## Le terminal
-
-  - Lancer le terminal: <br> `<ctrl> <alt> <t>`
-  - Changer de répertoire avec `cd`
-  - Liste des fichiers dans le dossier actuel avec `ls`
-  - Installer des programmes: <br> `sudo apt install unity-tweak-tool`
-]
-
-.pull-right[
-  .center[
-    <img src="assets/img/terminal.png" width="90%"></img>
-  ]
-]
-
----
-# L'environnement UNITY
-
-.pull-left[
-  ## Lire un PDF
-
-  - Le programme par défaut est `Visionneur`
-  - D'autres programmes sont disponibles, notamment pour éditer des PDFs. J'utilise `xournal`.
-]
-
-.pull-right[
-  .center[
-    <img src="assets/img/miraldo.png" width="90%"></img>
-  ]
-]
-
----
-
-# L'environnement UNITY
-
-.pull-left[
-  ## Naviguer sur le web
-
-  - `FireFox` est le navigateur par défaut, vous pouvez aussi utiliser `Chrome`
-]
-
-.pull-right[
-  .center[
-    <img src="assets/img/firefox.png" width="90%"></img>
-  ]
-]
-
----
-
-# Démarrer des programmes
-
-.pull-left[
-  ## SublimeText2
-
-  - Ouvrir un script
-  - Nouveau script
-  - Changer le surligneur de syntaxe
-]
-
-.pull-right[
-  .center[
-    <img src="assets/img/sublimetext.png" width="90%"></img>
-  ]
-]
-
----
-# Démarrer des programmes
-
-## Lancer R à partir de SublimeText
-
-- Il faut lancer 'SublimeREPL' au moyen des touches `<ctrl> <shift> <p>` et sélection R
-- Une fois la nouvelle fenêtre ouverte, les commandes peuvent être soumises avec `<ctrl> <enter>`
-
-**ASTUCE:** les fenêtres sur Linux peuvent être alignées sur la gauche, la droite ou le centre automatiquement au moyen de la commande `<ctr> <alt> <flèche>`
-
----
-
-# Démarrer des programmes
-
-.pull-left[
-  ## R directement dans le terminal
-
-  Il faut ouvrir un terminal avec `<ctrl> <alt> <t>` et ensuite taper `R`
-]
-
-.pull-right[
-  .center[
-    <img src="assets/img/terminalR.png" width="90%"></img>
-  ]
-]
-```
+L'évaluation porte sur la réalisation d'un travail de session (75%), réalisé en équipe de 4 personnes. Le travail sera divisé en 3 étapes réparties au cours de la session. L'évaluation finale (25%) portera sur la rédaction d'un essai de 1500 mots sur les enjeux de reproductibilité en écologie.
 
 ---
 class: inverse, center, middle
@@ -497,13 +345,8 @@ class: inverse, center, middle
 
 ## Travail
 
-- Prenez le temps de vous familiariser avec la Machine virtuelle Ubuntu.
-  - Exemples: Créer des fichiers et des dossiers, changer le fond d'écran, etc.
-
 - Commencez à récolter les données pour le travail de session.
 
-## Lectures
+## Lecture
 
 - Baker, M. 2016. Is there a reproducibility crisis ? Nature, 533 : 452:454
-- Munafo, M.R. et al. 2017. A manifesto for reproducible science. Nature Human Behaviour 1: 0021
-- Open Science Collaboration. 2015. Estimating the reproducibility of psychological science. Science 349 : 943.
