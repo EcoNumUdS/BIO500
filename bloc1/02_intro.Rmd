@@ -313,7 +313,7 @@ class: inverse, center, middle
 
 # Rappel du problème
 
-Est-ce que le réseau de collaboration entre les étudiants est affecté par l'enseignement à distance et les règles de distanciation ?
+Est-ce que les propriétés du réseau de collaboration entre étudiants d'écologie diffèrent de celles des réseaux écologiques ?
 
 ---
 
