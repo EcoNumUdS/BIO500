@@ -336,7 +336,7 @@ str(knitr::opts_chunk$get())
 ---
 # L'univers RMarkdown
 
-![](https://ulyngs.github.io/rmarkdown-workshop-2019/slides/figures/rmarkdown_universe.jpg)
+![](https://ulyngs.github.io/rmarkdown-workshop/slides/figures/rmarkdown_universe.jpg)
 
 .font60[*Source: Ulrik Lyngs*]
 
