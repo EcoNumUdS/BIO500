@@ -23,7 +23,7 @@ class: inverse, center, middle
 
 - Documentation (dynamique) des analyses
 - Facilite la partage/communication des résultats
-- Utilisable sur les système de controle de version (Git)
+- Utilisable sur les systèmes de controle de version (Git)
 - Reproductible!
 
 ---
@@ -120,40 +120,28 @@ Ici nous avons du `code`.
 .font90[
 .pull-left[
 ```md
-Lorem ipsum dolor sit amet,
-consectetur
-adipiscing elit.
-- Cras convallis purus.
-- Nunc faucibus.
-- Maecenas ipsum dolor.
+Le texte qui suit est une liste :
+- Premier item
+- Second item
+- Troisième item
 
-Nulla vehicula metus vel tortor
-venenatis luctus.
-Etiam tempus sit amet ligula
-nec pretium. Aenean ultrices
-massa sed pulvinar pulvinar.
-1. Duis aliquam commodo volutpat.
-1. Mauris ultrices.
-1. Aliquam eu erat.
+Pour faire une énumération : 
+1. Item 1
+2. Item 2
+3. Item 3
 ```
 ]
 
 .pull-right[
-Lorem ipsum dolor sit amet,
-consectetur
-adipiscing elit.
-- Cras convallis purus.
-- Nunc faucibus.
-- Maecenas ipsum dolor.
+Le texte qui suit est une liste :
+- Premier item
+- Second item
+- Troisième item
 
-Nulla vehicula metus vel tortor
-venenatis luctus.
-Etiam tempus sit amet ligula
-nec pretium. Aenean ultrices
-massa sed pulvinar pulvinar.
-1. Duis aliquam commodo volutpat.
-1. Mauris ultrices.
-1. Aliquam eu erat.
+Pour faire une énumération : 
+1. Item 1
+2. Item 2
+3. Item 3
 ]
 ]
 
@@ -161,10 +149,10 @@ massa sed pulvinar pulvinar.
 # Markdown - images
 
 ```md
-![Chema d'un projet de recherche](assets/img/flow_full_repro.png)
+![Schéma d'un projet de recherche](assets/img/flow_full_repro.png)
 ```
 
-![Chema d'un projet de recherche](assets/img/flow_full_repro.png)
+![Schéma d'un projet de recherche](assets/img/flow_full_repro.png)
 
 ---
 # Markdown - liens
@@ -206,14 +194,16 @@ Voici le [lien](https://github.com/EcoNumUdS/BIO500) pour le GitHub du cours BIO
 
 <br><br><br><br><br><br><br><br><br>
 - Le `:` spécifie l'alignement
-- Possibilité d'utiliser des packages R spécialisés pour imprimer des tableaux automatiquement à partir de R
+- Possibilité d'utiliser des packages R spécialisés pour imprimer des tableaux automatiquement à partir de R (nous les verrons au dernier cours)
 
 
 
 ---
 # Code chunk (script R)
 
-### Code Rmarkdown:
+L'utilité de Rmarkdown est de combiner du texte, du code et des images dans le même document
+
+### Code dans le document Rmarkdown :
 
 .font80[
 ````md
@@ -227,10 +217,12 @@ head(iris_setosa)
 ````
 ]
 
-### Sortir Rmarkdown:
+---
+# Code chunk (script R)
+
+### Sortie Rmarkdown une fois compilé :
 
 .font80[
-Le code R doit être à l'intérieur d'un bloc de code (*code chunk*). Par example:
 
 ```{r}
 data(iris)
@@ -243,7 +235,7 @@ head(iris_setosa)
 # Code chunk (script R)
 
 .pull-left[
-### Code Rmarkdown:
+### :
 
 .font80[
 ````md
@@ -255,7 +247,7 @@ plot(iris$Sepal.Length, iris$Sepal.Width)
 ]]
 
 .pull-right[
-### Sortir Rmarkdown:
+### Sortie:
 
 .font80[
 ```{r}
@@ -265,7 +257,7 @@ plot(iris$Sepal.Length, iris$Sepal.Width)
 ]]
 
 ---
-# Code R en ligne
+# Inclure du code directement dans un texte pour imprimer des valeurs
 
 ### Code Rmarkdown:
 
@@ -274,7 +266,7 @@ le jeu de données *iris* comprend `r length(unique(iris$Species))` espèces
 avec un total de `r nrow(iris)` fleurs mesurées.
 ```
 
-### Sortir Rmarkdown:
+### Sortie:
 
 le jeu de données *iris* comprend `r length(unique(iris$Species))` espèces avec un total de `r nrow(iris)` fleurs mesurées.
 
@@ -282,13 +274,13 @@ le jeu de données *iris* comprend `r length(unique(iris$Species))` espèces ave
 # Configuration des code chunk
 
 .font80[
-Nomer le bloc de code (utile pour débogage)
+Nommer le bloc de code (utile pour débogage)
 ````md
 ```{r plot_iris}`r ''`
 plot(iris$Sepal.Length, iris$Sepal.Width)
 ```
 ````
-`echo=FALSE`:  afficher les résultat, mais pas le code
+`echo=FALSE`:  afficher les résultats, mais pas le code
 ````md
 ```{r plot_iris, echo=FALSE}`r ''`
 plot(iris$Sepal.Length, iris$Sepal.Width)
@@ -309,9 +301,7 @@ plot(iris$Sepal.Length, iris$Sepal.Width)
 ]
 
 ---
-# Configuration des code chunk
-
-Ajuster la taille de la figure
+# Ajuster la taille de la figure
 
 ````md
 ```{r plot_iris, fig.height = 3, fig.width = 5, fig.align = "center"}`r ''`
@@ -336,7 +326,7 @@ str(knitr::opts_chunk$get())
 ---
 # L'univers RMarkdown
 
-![](https://ulyngs.github.io/rmarkdown-workshop/slides/figures/rmarkdown_universe.jpg)
+![Tutoriel](https://ulyngs.github.io/rmarkdown-workshop/slides/figures/rmarkdown_universe.jpg)
 
 .font60[*Source: Ulrik Lyngs*]
 
@@ -360,10 +350,13 @@ class: inverse, center, middle
 
 - Identifiez clairement vos questions de recherche
 - Planifiez les requêtes à réaliser pour traiter les données
+- Créez un dépôt github pour votre projet 
+- Créez un cahier de laboratoire où sont notées toutes vos étapes 
+- Versez votre travail sur le dépôt en ligne
 
 ---
 
-# Lectures
+# Lecture
 
 Les enjeux de reproductibilité en science expérimentale
 
