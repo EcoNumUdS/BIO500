@@ -365,14 +365,7 @@ class: inverse, center, middle
 
 # Lectures
 
-Est-ce que la science ouverte peut prévenir la fraude ?
+Les enjeux de reproductibilité en science expérimentale
 
-.center[
-  <img src="assets/img/spider.png" width="30%"></img>
-]
-
-[Lien vers l'article dans Science](https://www.sciencemag.org/news/2020/01/spider-biologist-denies-suspicions-widespread-data-fraud-his-animal-personality)
-
-[Et un lien vers un blog qui explique comment la triche a été réalisée](https://laskowskilab.faculty.ucdavis.edu/2020/01/29/retractions/)
-
+[Milcu et al. 2018. Genotypic variability enhances the reproducibility of an ecological study. Nature Ecology and Evolution](http://millsonia.free.fr/publications/milcu2018NEE.pdf)
 ---
