@@ -415,24 +415,25 @@ Un tutoriel complet est disponible ici[https://happygitwithr.com/rstudio-git-git
 # En résumé
 
 .pull-left[
-1.Racontez l'histoire de votre projet
+1. Enregistrer l'histoire du projet
 - `git add`
 - `git commit`
 - `git status`
 
-2.Voyager dans le temps
-- `git log`
+2. Voyager dans le temps
 - `git checkout`
 
-3.Expérimentez avec les changements
+3. Expérimenter les changements
 - `git branch`
 - `git merge`
 
 ]
 .pull-right[
-4.Backup de votre travail & 5. Collaborer sur des projets
-- `git remote`
+
+4. Verser sur le serveur 
 - `git push`
+
+5. Collaborer sur des projets
 - `git pull`
 - `git clone`
 ]
