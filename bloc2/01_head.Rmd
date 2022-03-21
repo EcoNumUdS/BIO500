@@ -17,8 +17,8 @@ output:
 ```{r child = '02_git.Rmd'}
 ```
 
-```{r child = '03_make.Rmd'}
+```{r child = '03_rmarkdown.Rmd'}
 ```
 
-```{r child = '04_Rmarkdown.Rmd'}
+```{r child = '04_target.Rmd'}
 ```
