@@ -68,7 +68,7 @@ Ses difficultées techniques:
 
 ---
 
-# Systèmes de contrôle éxistants
+# Systèmes de contrôle existants
 
 ## Un exemple avec Dropbox
 
@@ -78,7 +78,7 @@ Ses difficultées techniques:
 
 ---
 
-# Systèmes de contrôle éxistants
+# Systèmes de contrôle existants
 
 ## Un exemple MS Word
 
@@ -133,58 +133,120 @@ Selon [Alice Bartlett](https://twitter.com/alicebartlett?lang=en), Git vous perm
 
 --
 
-Mais le désavantage de fonctionner seulement avec les fichiers plein texte...
+Mais le désavantage de fonctionner seulement avec les fichiers "plain text"...
 
-**Question**: Qu'est ce qu'un fichier plein texte?
+**Question**: Qu'est ce qu'un fichier "plain text"?
 
-<!-- TODO: Qu'est ce qu'un fichier plein texte? Est-ce que je peux faire du contrôle de version avec un document word -->
+---
+# Les grandes étapes de git
+
+0. Explorer interface web de github
+1. Créer un compte
+2. Créer un dépôt 
+3. Installer git 
+4. Associer un dépôt à RStudio
+5. Bien structurer un projet 
+6. Enregistrer les modifications 
+7. Revenir en arrière 
+8. Récupérer les modifications de co-équipiers
+
+---
+# 0. Explorer l'interface github
+
+- Aller à la page du cours BIO500[https://github.com/EcoNumUdS/BIO500]
+
+---
+# 1. Créer un compte
+
+- Aller à la page D'accueil de gitub[https://github.com]
+- Sélectionner "sign up" et entrer les informations
+
+---
+# 2. Créer un nouveau projet
+
+- S'inscrire avec "sign in"
+- Sélectionner le bouton new pour créer un nouveau dépôt 
+- Suivre les instructions 
+- On peut changer les options pour avoir un dépôt publique (tous peuvent consulter) ou un dépôt privé (accessible sur invitation seulement)
+
+---
+# 2. Créer un nouveau projet
+## Le fichier readme.md
+
+- Utilisation du language markdown 
+- Décrit le contenu dépôt et son utilisation 
+- Permet de spécifier la license et autres informations si nécessaire 
+- On peut l'éditer directement en ligne avec le bouton 
+
+---
+# 3. Installer git 
+
+Instructions pour Windows[https://git-scm.com/download/win] 
+
+Instructions pour Mac[http://git-scm.com/download/mac] 
+
+
+**L'interface web est très efficace mais certains pourraient apprécier utiliser un git client pour gérer les fusions, branches et l'historique**
+
+---
+# 4. Associer un projet R avec Rstudio
+
+Sur github 
+
+- Cliquer sur le boutone "clone" 
+- Copier l'URL du dépôt 
+
+Dans RStudio
+
+- *File > New Project > Version Control > Git*
+  + Si cette option n'est pas disponible, consulter l'assistance ici[https://happygitwithr.com/rstudio-see-git.html] 
+- Copier l'URL pour cloner le dépôt
+- S'assurer de placer le dépôt au bon endroit sur l'ordinateur ! 
+- On peut ouvrir le projet ultérieurement avec *File > Open project* en sélectionnant le fichier avec l'extension .Rproj
+
+---
+# 5. Bien structurer un projet 
+
+Il est recommandé de bien organiser ses fichiers afin de s'y retrouver plus facilement. On y retrouve habituellement les éléments suivants  : 
+
+- *readme.md*: information sur le dépôt 
+- *.Rproj*: informations sur le projet R
+- *.git* : informations sur l'historique d'utilisation de git 
+- *.gitignore*:  contient les extensions de fichier ignorés par git
+- **data** : données du projet ainsi que la base de données
+- **scripts**: tous les scripts R
+- **figures**: résultats des analyses
+- **rapport**: rapport final 
+
+---
+# 5. Bien structurer un projet 
+
+Organisez votre répertoire en ajoutant les nouveaux dossiers data, scripts, figures et rapport
+
+---
+# 6. Enregistrer des modifications 
+
+- Sélectionner l'onglet git dans le quadrant supérieur droit
+- Cliquer sur le bouton "commit" pour enregistrer les modifications
+- Résumer les modifications en une courte phrase
+- Cliquer sur le bouton "push" pour verser les modifications vers le serveur
+- Valider en ligne sur votre page si les modifications ont été ajoutées 
+
+---
+# 6. Enregistrer des modifications 
+
+
+**Exercice**: créer un nouveau script dans le dossier "scripts", inscrire une commande et ensuite enregistrer les modifications 
 
 ---
 class: inverse, center, middle
 
-# 0. Créer un projet
+# L'histoire d'un projet
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
 ---
-
-# Initialisation d'un dépôt Git
-
-Git suit les modifications à l'intérieur d'un dossier que l'on appelle dépôt (`repository`).
-
-Pour initialiser le suivi d'un répertoire (initialiser un dépôt), il vous suffit d'utiliser la commande `git init`.
-
-.font90[
-```bash
-mkdir ~/Documents/travail_BIO500 # Créer un répertoire de travail dans le répertoire Documents.
-cd  ~/Documents/travail_BIO500 # Se déplacer vers ce répertoire
-git init # Initialiser le suivi de version de ce dossier.
-ls -a # Lister tous le contenu du répertoire de travail.
-```
-]
-
-Le dossier `.git` permet de garder une trace de l'ensemble des opérations que vous allez faire dans ce répertoire.
-
----
-
-# Exercice 1 - Initialiser le répertoire avec git
-
-**À l'aide de votre terminal:**
-
-1. Créer un dossier (`mkdir`)
-2. Créer un fichier (`touch`)
-3. Initialiser votre dépot `git` (`git init`)
-4. Vérifier que le dossier caché (`.git`) se trouve dans votre nouveau répertoire
-
----
-class: inverse, center, middle
-
-# 1. Racontez l'histoire de votre projet
-
-<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
-
----
-# 1. Racontez l'histoire de votre projet
+# L'histoire d'un projet
 
 .pull-left[
 ## Une situation familière:
@@ -218,91 +280,6 @@ MonTravailSession/
   |___ rapportVeg.tex
 ```
 ]
-
----
-
-# Git en 3 étapes
-
-On modifie le ou les fichiers, on ajoute la modification à Git puis on met un commentaire sur la modification apportée.
-
-**En 3 étapes:**
-
-1. Modification d'un ou plusieurs fichiers sources (e.g. Ajout d'un paragraphe)
-2. `git add monFichier1.txt monFichier2.txt`
-3. `git commit -m "mon commentaire"`
-
-On répète ces étapes à plusieurs reprises au cours de l'écriture d'un document et/ou de l'avancement d'un projet.
-
---
-
-**Question**: Qu'est ce qu'un bon commentaire?
-
-<img src="./assets/img/badCommitm.png" width="100%"></img>
-
----
-
-# Git status
-
-Votre meilleur ami, `git status`, permet de prendre connaissance de l'état de votre dépôt Git.
-
-```bash
-Sur la branche master
-
-Validation initiale
-
-Fichiers non suivis:
-  (utilisez "git add <fichier>..." pour inclure dans ce qui
-  sera validé)
-
-
-        monFichier1.txt
-
-aucune modification ajoutée à la validation mais des
-fichiers non suivis sont présents (utilisez "git add" pour
-les suivre).
-```
-
----
-
-# Exercice 2 - Effectuer votre premier `commit`
-
-## Première partie
-
-1. Déplacer vous dans votre répertoire de travail
-2. Ajouter un fichier intituler `travail_BIO500.txt` et remplisser le de faux texte
-3. Effectuer un `git status`
-
-## Deuxième partie
-
-4. Ajouter ce fichier à votre dépot git (`git add`)
-5. Effectuer un `git status`
-6. Décrire la modification que vous venez d'apporter (`git commit`)
-
-À chaque `git status`, prenez le temps de regarder la sortie (message)
-
----
-
-# Exercice 2: Effectuer votre premier `commit`
-
-## Troisième partie
-
-7. Modifier le fichier `travail_BIO500.txt`
-8. Ajouter la modification à votre dépot git (`git add`)
-9. Effectuer un `git status`
-
-À chaque `git status`, prenez le temps de regarder la sortie (message).
-
-## Quatrième partie
-
-10. Modifier à nouveau le fichier `travail_BIO500.txt`
-11. Effectuer un `git diff` ou `git diff NomDuFichier`
-
----
-class: inverse, center, middle
-
-# 2. Voyager dans le temps
-
-<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
 ---
 
@@ -372,7 +349,6 @@ Date:   Wed Feb 28 20:33:20 2018 -0500
   ]
 ]
 
-
 ---
 
 # Se déplacer sur la branche `master`
@@ -412,125 +388,28 @@ Permet de se déplacer vers le `commit` le plus récent.
 ]
 
 ---
+# 7. Revenir en arrière dans le temps
 
-# Exercice 3 - Se déplacer à travers l'historique
+Les commandes de git sont très efficaces et puissantes, elles peuvent néanmoins être fastidieuses et difficiles pour les débutants. 
 
-En reprenant votre dépot de travail `git` (Exercice 2), parcourez votre historique (`git log`) et remontez à votre premier commentaire (`commit`).
-
-
----
-class: inverse, center, middle
-
-# 3. Expérimentez avec les changements
-
-<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
-
----
-# Créer une nouvelle branche
-
-Pour créer une nouvelle branche on utilise deux étapes:
-
-```bash
-# Créer la branche
-git branch <NomDeLaBranche>
-```
-```bash
-# Se déplacer vers la nouvelle branche
-git checkout <NomDeLaBranche>
-```
-
-Une fois qu'on a fait tous nous motifications (`git commit`), et qu'on désire ajouter ces changements dans la branche master:
-
-```bash
-# Se déplacer vers la branche master
-git checkout master
-# fusionner les deux branches
-git merge <NomDeLaBranche>
-```
+RStudio facilite ce travail avec un simple onglet "history" et avec un navigateur qui vous permet de passer d'une version à l'autre et de mettre en valeur les modifications qui ont été enregistrées sous forme de commit.
 
 
 ---
-class: inverse, center, middle
+# 8. Travailler en équipe 
 
-# 4. Backup votre travail <br>&<br> 5. Collaborer sur des projets
-
-<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
-
----
-
-# Les serveurs Git distants
-
-Jusqu'à présent nous avons travaillé localement sur votre ordinateur. Il est cependant possible de synchroniser votre travail sur un serveur Git (dépots distants). Ce procédé présente deux avantages indéniables:
-
-1. Sauvegarder votre travail (Back-up)
-2. Permettre à un collègue de travailler avec vous sur votre dêpot.
+- git a été spécifiquement créé pour travailler en équipe
+- Plusieurs utilisateurs peuvent se connecter au même répertoire et y apporter des modifications 
+- À chaque fois que l'on ouvre un projet il est approprié d'utiliser la commande "git pull" (un bouton sur l'interface git de Rstudio) afin de récupérer les modifications des autres membres de l'équipe
+- Les restrictions d'utilisation et les invitations peuvent être gérées à partir du site web de github 
 
 ---
+# La puissance de git
 
-# Les serveurs Git distants
+Les fonctionnalités de git sont immenses et RStudio permet de bien les utiliser. 
 
-Il existe plusieurs entreprises offrant des services gratuits pour héberger votre dépôt:
+Un tutoriel complet est disponible ici[https://happygitwithr.com/rstudio-git-github.html]
 
-- [Gitlab](https://about.gitlab.com/): Serveur hébergeable dans votre infrastructure.
-- [Bitbucket](https://bitbucket.org/): Gratuit avec dépot privé illimité.
-- [Github](https://github.com/): Gratuit avec nombre de dépôt privé limité.
-
-Nous travaillerons avec GitHub, la plateforme la plus populaire, une vitrine pour dévoiler vos compétences de programmeur.
-
----
-
-# Exercice 4: Ouvrez un compte sur Github
-
-1. Rendez-vous à l'adresse: https://github.com/
-2. Ouvrez un compte / Inscrivez-vous
-3. Créez un nouveau dépot sur GitHub intitulé: `monTravail_BIO500`
-
----
-
-# Envoyer votre dépôt local sur le serveur Github
-
-```bash
-git remote add origin https://adresseVersVotreDepot.git
-git remote -v
-```
-
-Votre dépot local vient de se transformer en dépôt distant. Cependant, rien n'a encore été envoyé sur le serveur.
-
----
-
-# Envoyer votre dépôt local sur le serveur Github
-
-On va maintenant envoyer les fichiers et l'historique de modifications de ces derniers sur le serveur.
-
-```bash
-git push origin master
-# Le serveur va vous demander de vous authentifier avec vos accès GitHub
-```
-
-`origin` est le serveur distant (toujours par défault)
-`master` est la branche sur laquelle vous placez vos fichiers
-
----
-
-# Récupérer des modif. apporté par un collègue
-
-Imaginez maintenant que l'un de vos collègues apporte des modifications à votre code ou travail et qu'il publie ses modifications (s'il dispose des droits) sur votre dépôt.
-
-```bash
-git pull origin master
-# Le serveur va vous demander de vous authentifier avec vos accès GitHub
-```
-
----
-
-# Cloner un dépôt distant
-
-Il est possible à tout moment de récupérer un dépôt distant pour le téléverser sur son ordinateur.
-
-```bash
-cd Documents
-git clone https://github.com/EcoNumUdS/BIO500.git
-```
 
 ---
 # En résumé
