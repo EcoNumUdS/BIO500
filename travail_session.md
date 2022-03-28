@@ -4,11 +4,11 @@
  
 L'objectif d'un essai est de présenter une perspective sur un enjeu scientifique, appuyé par une argumentation logique et une lecture critique de la littérature. L'objectif spécifique de ce travail est de formuler et défendre une opinion sur les enjeux de reproductibilité en écologie. 
 
-Plus concrètement, je vous invite à préparer un article pour le journal Québec Science, où on vous a invité à titre de chercheur à écrire l'éditorial du mois sur cet enjeu. Plus spécifiquement, je vous demande de vous exprimer sur l'importance de la rigueur scientifique et des standards de reproductibilité pour la recherche sur la COVID. Je vous invite à lire et à réagir à cet article du Fonds de recherche du Québec :
+Le journal Québec Science vous a invité à titre de chercheur à écrire l'éditorial du mois sur cet enjeu. Plus spécifiquement, on vous demande de vous exprimer sur l'importance de la transparence et des standards de reproductibilité dans un contexte où il y a une accélération de la recherche.  Cette invitation fait suite à la publication d'un article par le scientifique en chef au sujet de la recherche sur la COVID :
 
-https://www.scientifique-en-chef.gouv.qc.ca/impacts/ddr-des-etudes-trop-rapides-en-temps-de-covid/
+[FRQNT. Des études trop rapides en temps de COVID ?] (http://www.scientifique-en-chef.gouv.qc.ca/impacts/ddr-des-etudes-trop-rapides-en-temps-de-covid/)
 
-Vous devez défendre par quels moyens vous pourriez améliorer la reproductibilité de la science sur la COVID si vous étiez en charge d'un laboratoire dans une institution universitaire. Vous êtes invités à faire une lecture critique de la situation actuelle et à proposer des mesures qui permettront de répondre aux enjeux identifiés.   
+Vous êtes invités à faire une lecture critique de la situation actuelle et à proposer des mesures qui permettront de répondre aux enjeux identifiés.
 
 Québec Science est un journal destiné à un grand public, je vous invite donc à personnaliser votre argumentation et à rendre original sa présentation. Vous pouvez utiliser des tableaux, des figures ou encore des encadrés pour étayer vos propos. Essayer de faire plus que de rapporter les arguments présentés en classe, n'hésitez pas à personnaliser votre essai. 
 
