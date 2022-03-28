@@ -1023,3 +1023,19 @@ Québec Science est un journal destiné à un grand public, alors je vous invite
 - Qualité de la langue
 
 ---
+
+
+# Lectures
+
+Est-ce que la science ouverte peut prévenir la fraude ?
+
+.center[
+  <img src="assets/img/spider.png" width="30%"></img>
+]
+
+[Lien vers l'article dans Science](https://www.sciencemag.org/news/2020/01/spider-biologist-denies-suspicions-widespread-data-fraud-his-animal-personality)
+
+[Et un lien vers un blog qui explique comment la triche a été réalisée](https://laskowskilab.faculty.ucdavis.edu/2020/01/29/retractions/)
+
+---
+

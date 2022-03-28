@@ -13,7 +13,7 @@ class: title-slide, middle
 
 <div class="lab-logo"></div>
 
-# Séance 4
+# Séance 5-6
 
 <hr width="65%" align="left" size="0.3" color="orange"></hr>
 
@@ -410,8 +410,8 @@ Les fonctionnalités de git sont immenses et RStudio permet de bien les utiliser
 
 Un tutoriel complet est disponible ici[https://happygitwithr.com/rstudio-git-github.html]
 
-
 ---
+
 # En résumé
 
 .pull-left[
@@ -440,11 +440,10 @@ Un tutoriel complet est disponible ici[https://happygitwithr.com/rstudio-git-git
 
 ---
 
-# Lectures
+# Lecture de la semaine
 
-Sandve et al. 2013. Ten Simple Rules for Reproducible Computational
-Research. PLoS Computational Biology. 9: e1003285
+Les enjeux de reproductibilité en science expérimentale
 
-Silberzahn et Uhlman. 2015. Many hands make tight work. Nature 526 : 189-191.
+[Milcu et al. 2018. Genotypic variability enhances the reproducibility of an ecological study. Nature Ecology and Evolution](http://millsonia.free.fr/publications/milcu2018NEE.pdf)
 
-Barba. 2016. The hard road to reproducibility. Science 354: 142.
+---

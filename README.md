@@ -5,7 +5,6 @@
 (2 crédits)
 
 - **Professeur:** Dominique Gravel
-- **Assistant:** [Willian Vieira](https://github.com/willvieira)
 
 
 ## Bloc 1: Planification de la collecte et organisation des données
@@ -22,8 +21,8 @@
 [![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc2/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc2/bloc2.pdf)
 
 - Système de contrôle de version git
-- Le makefile et ses variantes
 - Le cahier de laboratoire RMarkdown
+- L'utilisation de Target pour l'automatisation des tâches
 
 ## Bloc 3: Visualisation des données
 
@@ -34,7 +33,7 @@
 - Paramètres graphiques
 - Packages R spécialisés
 
-## Bloc 4: Communication scientifique au moyen de LaTeX
+## Bloc 4: Communication scientifique
 
 [![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc4/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc4/bloc4.pdf)
 
@@ -42,7 +41,6 @@
 - Mise en page
 - Insertion de figures et tableaux
 - Gestion des références
-- Utilisation de Beamer pour les présentations
 
 ## Compiler les présentations localement
 

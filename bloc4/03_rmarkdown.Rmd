@@ -1,3 +1,5 @@
+
+---
 class: inverse, center, middle
 
 # Le cahier de laboratoire RMarkdown
@@ -68,8 +70,8 @@ class: inverse, center, middle
 ```r
 ---
 title: "Mon titre"
-author: "Dominique Gravel"
-date: "29/03/2022"
+author: "Willian Vieira"
+date: "10/03/2021"
 output: html_document
     toc: true
 ---
@@ -83,7 +85,7 @@ Voir `?html_document`, `?pdf_document`, `?word_document`
 ---
 # Markdown (contenu)
 
-Du "plain text" avec une syntaxe minimaliste pour la mise en forme du texte
+Plein texte avec une syntaxe minimaliste pour la mise en forme du texte
 
 .font90[
 .pull-left[
@@ -205,7 +207,7 @@ L'utilité de Rmarkdown est de combiner du texte, du code et des images dans le 
 
 .font80[
 ````md
-Le code R doit être à l'intérieur d'un bloc de code (*code chunk*). Par exemple:
+Le code R doit être à l'intérieur d'un bloc de code (*code chunk*). Par example:
 
 ```{r}`r ''`
 data(iris)
@@ -233,7 +235,7 @@ head(iris_setosa)
 # Code chunk (script R)
 
 .pull-left[
-### Code :
+### :
 
 .font80[
 ````md
@@ -255,12 +257,11 @@ plot(iris$Sepal.Length, iris$Sepal.Width)
 ]]
 
 ---
-
-# Inclure du code directement dans le texte
+# Inclure du code directement dans un texte pour imprimer des valeurs
 
 ### Code Rmarkdown:
 
-```{r eval=FALSE}
+```{r,eval=FALSE}
 le jeu de données *iris* comprend `r length(unique(iris$Species))` espèces
 avec un total de `r nrow(iris)` fleurs mesurées.
 ```
@@ -270,7 +271,6 @@ avec un total de `r nrow(iris)` fleurs mesurées.
 le jeu de données *iris* comprend `r length(unique(iris$Species))` espèces avec un total de `r nrow(iris)` fleurs mesurées.
 
 ---
-
 # Configuration des code chunk
 
 .font80[
@@ -322,6 +322,7 @@ str(knitr::opts_chunk$get())
 ```
 ]
 
+
 ---
 # L'univers RMarkdown
 
@@ -330,12 +331,17 @@ str(knitr::opts_chunk$get())
 .font60[*Source: Ulrik Lyngs*]
 
 ---
-
 # Autres ressources disponibles en ligne :
 
 - R Markdown: The Definitive Guide [https://bookdown.org/yihui/rmarkdown/](https://bookdown.org/yihui/rmarkdown/)
-- Cheat sheet [https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf)
 - RMarkdown gallery [https://rmarkdown.rstudio.com/gallery.html](https://rmarkdown.rstudio.com/gallery.html)
 - ResearchDown [https://insileco.github.io/ResearchDown/](https://insileco.github.io/ResearchDown/)
+
+---
+class: inverse, center, middle
+
+# Travail pour la semaine
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
 ---
