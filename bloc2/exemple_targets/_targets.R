@@ -1,5 +1,4 @@
 # _targets.R file
-rm(list = ls()) # Pour éviter d'être contaminé par étapes précentes
 library(targets)
 source("R/analyse.R")
 source("R/figure.R")

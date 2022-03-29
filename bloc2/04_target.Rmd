@@ -105,7 +105,6 @@ Le package `targets` exécute seulement les targets qui ne sont pas à jour.
 
 ```{r eval = FALSE}
 # _targets.R file
-rm(list = ls()) # Pour éviter d'être contaminé par étapes précentes
 library(targets)
 source("exemple_targets/R/analyse.R")
 source("exemple_targets/R/figure.R")
