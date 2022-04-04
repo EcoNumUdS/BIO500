@@ -1,1 +1,1 @@
-mon_modele = function(data) lm(data$Y~data$X)
+mon_modele = function(data) glm(data$Y~data$X)

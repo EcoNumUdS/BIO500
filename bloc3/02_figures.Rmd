@@ -227,75 +227,6 @@ class: inverse, center, middle
   <img src="assets/img/data2ink.jpg" width="100%"></img>
 ]
 
-
----
-class: inverse, center, middle
-
-# Types de figures
-
-<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
-
----
-
-# Diagramme de dispersion (Scatter plot)
-
-```{r, echo=FALSE,out.height = '550px', dpi=300, fig.align="center"}
-arbres  <- read.csv2("assets/data/arbres.csv")
-densite <- table(arbres[,c(3,5)])
-elevation <- as.numeric(row.names(densite))
-plot(elevation, densite[,1], pch = 19, xlab = "Elevation", ylab = "Densité")
-points(elevation, densite[,3])
-```
-
----
-
-# Diagrammes à bâtons (Bar plot)
-
-```{r, echo=FALSE,out.height = '550px', dpi=300, fig.align="center"}
-arbres  <- read.csv2("assets/data/arbres.csv")
-n_tot <- table(arbres$esp)
-barplot(n_tot)
-```
-
----
-
-# Histogrammes
-
-```{r, echo=FALSE,out.height = '550px', dpi=300, fig.align="center"}
-hist(densite[,3])
-```
-
----
-
-# Représentation 3-D
-
-```{r, echo=FALSE,out.height = '550px', dpi=300, fig.align="center"}
-x <- 10*(1:nrow(volcano))
-y <- 10*(1:ncol(volcano))
-image(x, y, volcano, col = terrain.colors(100), axes = FALSE)
-axis(1, at = seq(100, 800, by = 100))
-axis(2, at = seq(100, 600, by = 100))
-box()
-title(main = "Maunga Whau Volcano", font.main = 4)
-```
-
----
-
-# Lignes de contour
-
-```{r, echo=FALSE,out.height = '550px', dpi=300, fig.align="center"}
-x <- 10*(1:nrow(volcano))
-y <- 10*(1:ncol(volcano))
-image(x, y, volcano, col = terrain.colors(100), axes = FALSE)
-axis(1, at = seq(100, 800, by = 100))
-axis(2, at = seq(100, 600, by = 100))
-box()
-title(main = "Maunga Whau Volcano", font.main = 4)
-contour(x, y, volcano, levels = seq(90, 200, by = 5),
-add = TRUE, col = "black")
-```
-
-
 ---
 class: inverse, center, middle
 
@@ -403,7 +334,7 @@ title(main = "Densité au long du gradient d'élévation")
 
 ---
 
-# Superposer des points d'autre données
+# Superposer des points d'autres données
 
 ```{r, eval = FALSE}
 points(elevation, densite[,3], pch = 19, cex = 1.5)
@@ -744,13 +675,6 @@ plot(g, vertex.label = NA, edge.arrow.mode = 0,
 
 ---
 
-# Exercice
-
-<br>
-## Compiler la matrice d'adjacence et faire une première représentation du réseau avec `igraph`
-
----
-
 # Changer la couleur des noeuds
 
 .pull-left[
@@ -915,7 +839,7 @@ Exporter des tableaux depuis R vers son document de travail peut être difficile
 1. Enregistrer le `data.frame` dans un fichier avec la fonction `write.table()` ou `write.csv()`
 2. Éditer et faire la mise en page dans MS Excel ou MS Word.
 
-Le package `knitr` permet de faciliter cette procédure en exportant le `data.frame` directement dans son document de travail LaTeX.
+Le package `knitr` permet de faciliter cette procédure en exportant le `data.frame` directement dans son document de travail RMarkdown.
 
 ---
 
@@ -933,12 +857,11 @@ head(iris)
 
 # Exporter des tableaux
 
-Je souhaite maintenant exporter ce `data.frame` en LateX (un format que nous verrons lors de la prochaine séance):
+Je souhaite maintenant exporter ce `data.frame` en markdown:
 
 ```{r}
 library(knitr)
-iris_tex <- kable(iris,format="latex")
-writeLines(iris_tex, con = "./assets/data/iris.tex", sep = "\n", useBytes = FALSE)
+iris_tex <- kable(iris,format="pipe")
 ```
 
 ---
