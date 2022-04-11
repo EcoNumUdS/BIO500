@@ -14,8 +14,6 @@ output:
       beforeInit: "../assets/macros.js"
 ---
 
-```{r child = '02_latex.Rmd'}
+```{r child = '02_rmarkdown.Rmd'}
 ```
 
-```{r child = '03_rmarkdown.Rmd'}
-```
