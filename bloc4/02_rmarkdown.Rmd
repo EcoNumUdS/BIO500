@@ -1,0 +1,141 @@
+class: title-slide, middle
+
+<style type="text/css">
+  .title-slide {
+    background-image: url('../assets/img/bg.jpg');
+    background-color: #23373B;
+    background-size: contain;
+    border: 0px;
+    background-position: 600px 0;
+    line-height: 1;
+  }
+</style>
+
+<div class="lab-logo"></div>
+
+# Bloc 4
+
+<hr width="65%" align="left" size="0.3" color="orange"></hr>
+
+## Documents dynamiques <br> avec $Rmarkdown$
+
+<hr width="65%" align="left" size="0.3" color="orange" style="margin-bottom:40px;" alt="@Martin Sanchez"></hr>
+
+.instructors[
+  **BIO500** - Dominique Gravel
+]
+
+---
+
+# Bloc 4
+
+- Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/bloc4/).
+
+
+---
+class: inverse, center, middle
+
+# Introduction
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
+---
+
+# Pourquoi $Rmarkdown$?
+
+<br>
+.center[
+  <img src="assets/img/why_rmarkdown.png" width="60%"></img>
+]
+
+---
+
+# Bases des $Rmarkdown$
+
+Voir les [diapositives du cours 2](https://econumuds.github.io/BIO500/bloc2/#33) pour un rappel
+
+---
+
+# Pourquoi $Rmarkdown$
+
+
+- Documentation (dynamique) des analyses
+- Facilite la partage/communication des résultats
+- Utilisable sur les systèmes de controle de version (Git)
+- Reproductible!
+
+---
+
+# Librairie `rticles`
+
+```r
+install.packages("rticles")
+```
+
+- Fournit une multitude de gabarits `Rmarkdown` (.Rmd)
+- Différents types (articles/rapports)
+
+---
+
+# Via Rstudio
+
+<br>
+.center[
+    ![:scale 90%](assets/img/rstudio_rticles.png)
+]
+
+---
+
+# Anatomie du gabarit .Rmd
+
+Même anatomie que présentée dans le bloc2 (YAML - Rmarkdown - Code R), mais générée automatiquement.
+
+<br>
+.center[
+![:scale 90%](assets/img/pnas_generatedfiles.png)
+]
+
+---
+
+# Le YAML
+
+```r
+---
+title: Exemple de rapport `Rmarkdown` en sortie d'un pipeline `targets`
+
+# Use letters for affiliations, numbers to show equal authorship (if applicable) and to indicate the corresponding author
+author:
+  - name: Benjamin Mercier
+    affiliation: a
+
+address:
+  - code: a
+    address: Université de Sherbrooke, Départment de biologie, 2500 Boulevard de l'Université, Sherbrooke, Québec, J1K 2R1
+
+abstract: |
+  Eurytus auris. Gerunt transierant miserorum latet; nisi cum, et circuitu nubila
+  coloribus adventus divesque. Loca partibus breve et unum maior stellis inpia et
+  luporum. 
+
+keywords:
+  - Mot-clé
+  - Mot-clé
+  - Optionel
+  - Optionel
+  - Optionel
+
+## must be one of: pnasresearcharticle (usual two-column layout), pnasmathematics (one column layout), or pnasinvited (invited submissions only)
+pnas_type: pnasresearcharticle
+
+bibliography: pnas-sample.bib
+csl: pnas.csl
+
+## change to true to add optional line numbering
+lineno: false
+
+output: rticles::pnas_article
+---
+```
+
+
+
