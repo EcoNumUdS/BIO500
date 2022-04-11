@@ -1,0 +1,152 @@
+---
+title: Exemple de rapport `Rmarkdown` en sortie d'un pipeline `targets`
+
+# Use letters for affiliations, numbers to show equal authorship (if applicable) and to indicate the corresponding author
+author:
+  - name: Benjamin Mercier
+    affiliation: a
+
+address:
+  - code: a
+    address: Université de Sherbrooke, Départment de biologie, 2500 Boulevard de l'Université, Sherbrooke, Québec, J1K 2R1
+
+abstract: |
+  Eurytus auris. Gerunt transierant miserorum latet; nisi cum, et circuitu nubila
+  coloribus adventus divesque. Loca partibus breve et unum maior stellis inpia et
+  luporum. Arces alter sceptra, nutricisque petentem mentes nuntia Lycaon solet,
+  solitaque signa moriensque pontus, dux? Corpora testataque, novo tumidum. Eurytus auris.
+  Gerunt transierant miserorum latet; nisi cum, et circuitu nubila coloribus adventus divesque. 
+  Loca partibus breve et unum maior stellis inpia et luporum. Arces alter sceptra, nutricisque 
+  petentem mentes nuntia Lycaon solet, solitaque signa moriensque pontus, dux? Corpora 
+  testataque, novo tumidum.
+
+keywords:
+  - Mot-clé
+  - Mot-clé
+  - Optionel
+  - Optionel
+  - Optionel
+
+## must be one of: pnasresearcharticle (usual two-column layout), pnasmathematics (one column layout), or pnasinvited (invited submissions only)
+pnas_type: pnasresearcharticle
+
+bibliography: pnas-sample.bib
+csl: pnas.csl
+
+## change to true to add optional line numbering
+lineno: false
+
+output: rticles::pnas_article
+---
+
+# Introduction
+**Voici un exemple de citation @berard1994embedding, et en voici deux autres @belkin2002using [@coifman2005geometric].** 
+Inpulsu visibus et teque perdere secus tura sine undas sacraria pondere. Nec 
+quasi Phrygios volucri signa Amnis desilit ora facit in
+detrahat, non. Et iuvencae sitim natum, sit quid ut sibi nec ardeat, pressa
+fassaque. Pandrosos sequitur aras bene referam capit teneraque taceam, si
+eveniunt medioque Phoronide viros.
+
+# Méthode
+
+Per recepto pugnes. Soror est adiit nusquam, in arserunt nondum tempore
+bracchia. Pater tempora limen. Falcata parentibus dolor et vobis aranea! Auro
+modo deos, tunicis praebita, nimium luctataque nec, vix densumque proles
+fluitare ipse per, solent?
+Pondera abrumpit cum quaeque iuris. Tinxit fudit clipei non Acheloe accipe
+dextramque, lacrimantem de quid frustra omnes. Indigenae exta quamque modo meae,
+detur idem curas prope erat. Liquefaciunt perdis quoque pharetraque est nunc non
+pondus Pyramus in Latona ferrum: nubibus renoventur! Fallacia sonuit Proreus,
+aurora: omen cur a moenia ore ego narret, ego. Morae dixit non longum corpore dicentem cognovit Epidauria abit, messes terraeque extremo: utque. Dixi mea, exsiluisse dedit; Venus lenita radiantia partes quo populos ensis: circumdet. Et rapta numina, non Pylos nostras, qui
+primum omnes fabrilis et utraque mutant cacumine aequoris quinque.
+
+
+Lorem markdownum moveo flagellis torusque monte maestisque praemia arces
+coniunx, qui fuit? Nec cinctam natus. Defossos egregius. Imago una paterno
+pavido me chlamydis civilique feros.
+
+## Première partie
+
+Lorem markdownum et est, an mane luctu iugis ignibus in hostia peragit dum eadem
+equinis, par gradus ubi! Silet canities sine dedecet, fides virum capro:
+loquuntur ante. Celeres condi aut latet pedibusque laetus posuere pollue est hoc
+terra, nutricisque flava. Eurytus auris. Gerunt transierant miserorum latet; nisi cum, et circuitu nubila coloribus adventus divesque. Loca partibus breve et unum maior stellis inpia et
+luporum. Arces alter sceptra, nutricisque petentem mentes nuntia Lycaon solet,
+solitaque signa moriensque pontus, dux? Corpora testataque, novo tumidum. Eurytus auris. Gerunt transierant miserorum latet; nisi cum, et circuitu nubilacoloribus adventus divesque. Loca partibus breve et unum maior stellis inpia etluporum. Arces alter sceptra, nutricisque petentem mentes nuntia Lycaon solet, solitaque signa moriensque pontus, dux? Corpora testataque, novo tumidum.
+
+Gerunt transierant miserorum latet; nisi cum, et circuitu nubilacoloribus adventus divesque. Loca partibus breve et unum maior stellis inpia etluporum. Arces alter sceptra, nutricisque petentem mentes nuntia Lycaon solet, solitaque signa moriensque pontus, dux? Corpora testataque, novo tumidum.
+
+## Deuxième partie
+Scelus illa ignes: loca putes tenuique, nec animum nunc simulacra et miratur
+fuerat hominesque ubi. Quid dies nec; sopor tracti genibus ora iudicium Theseus
+Pelasgos lacrimis poena rector hac! Nitidum dextro. Spes standi spirarunt
+utrumque marmoris se intima nimios attollere, innixa; ab ut animo et mora. Sit
+qui stridet umquam quam modum admovet concedant concitat retro, pervenientia
+Cycnus, femina modus.
+
+# Résultats
+
+Tyriam et Cererem secura genetivaque exiguo an mitra sine omnem siderea attollit
+missa. Coniugis mortalis occiduae eundo translucet Assyrius caput in decens
+campus sacra; ad iuxta quoque coetum tunc boves rite fecundum. Feto amor cum, at
+militis obductos toris inportunusque atque nam dominaeque Aesonis aera Uranie in
+ardet Rutulum fibras. Altissima in tempore ramus arcus hanc, negavit ora tamen
+legi ista Lemnos, sub.
+
+**Voici comment inclure une figure .pdf préalablement générée et la citer/référencer dans le texte, via son `label`: Figure \ref{fig:plot1}**. 
+
+Amnis novos illuc cultusque: parvoque nimiumque murra simplicitas.
+
+![Espace pour graphique de régression linéaire. \label{fig:plot1}]("../results/plot_lm.pdf"){ width=50% height=40%}
+
+Lorem markdownum et est, an mane luctu iugis ignibus in hostia peragit dum eadem
+equinis, par gradus ubi! Silet canities sine dedecet, fides virum capro:
+loquuntur ante. Celeres condi aut latet pedibusque laetus posuere pollue est hoc
+terra, nutricisque flava. Eurytus auris. Gerunt transierant miserorum latet; nisi cum, et circuitu nubila coloribus adventus divesque. Loca partibus breve et unum maior stellis inpia et
+luporum. Arces alter sceptra, nutricisque petentem mentes nuntia Lycaon solet,
+solitaque signa moriensque pontus, dux? Corpora testataque, novo tumidum. Eurytus auris. Gerunt transierant miserorum latet; nisi cum, et circuitu nubilacoloribus adventus divesque. Loca partibus breve et unum maior stellis inpia etluporum. Loca partibus breve et unum maior stellis inpia etluporum.
+
+
+Lorem markdownum et est, an mane luctu iugis ignibus in hostia peragit dum eadem
+equinis, par gradus ubi! Silet canities sine dedecet, fides virum capro:
+loquuntur ante. Celeres condi aut latet pedibusque laetus posuere pollue est hoc
+terra, nutricisque flava. Eurytus auris. Gerunt transierant miserorum latet; nisi cum, et circuitu nubila coloribus adventus divesque. Loca partibus breve et unum maior stellis inpia et
+luporum. Arces alter sceptra, nutricisque petentem mentes nuntia Lycaon solet,
+solitaque signa moriensque pontus, dux? Corpora testataque, novo tumidum. Eurytus auris. Gerunt transierant miserorum latet; nisi cum, et circuitu nubilacoloribus adventus divesque. Loca partibus breve et unum maior stellis inpia etluporum. Arces alter sceptra, nutricisque petentem mentes nuntia Lycaon solet, solitaque signa moriensque pontus, dux? Corpora testataque, novo tumidum.
+
+# Discussion
+
+Per recepto pugnes. Soror est adiit nusquam, in arserunt nondum tempore
+bracchia. Pater tempora limen. Falcata parentibus dolor et vobis aranea! Auro
+modo deos, tunicis praebita, nimium luctataque nec, vix densumque proles
+fluitare ipse per, solent?
+Pondera abrumpit cum quaeque iuris. Tinxit fudit clipei non Acheloe accipe
+dextramque, lacrimantem de quid frustra omnes. Indigenae exta quamque modo meae,
+detur idem curas prope erat. Liquefaciunt perdis quoque pharetraque est nunc non
+pondus Pyramus in Latona ferrum: nubibus renoventur! Fallacia sonuit Proreus,
+aurora: omen cur a moenia ore ego narret, ego. Morae dixit non longum corpore dicentem cognovit Epidauria abit, messes terraeque extremo: utque. Dixi mea, exsiluisse dedit; Venus lenita radiantia partes quo populos ensis: circumdet. Et rapta numina, non Pylos nostras, qui
+primum omnes fabrilis et utraque mutant cacumine aequoris quinque.
+
+Ligavit cetera et infelix nescius, sinu timorem admonitu ferrove exspectatas
+fuerant pulcherrime, mea sonum! Formae munera, est trahendo regem supplice.
+Verba lacrimis gradus, verbis iam tempore aratri sed, at imagine momordit. Teque
+esse, ante pariter desere in quae: illa socium inque meae: et ipso canos:
+peteretis? Temptanda Daedalus et palmis incumbere tempora ambit.
+
+Lorem markdownum et est, an mane luctu iugis ignibus in hostia peragit dum eadem
+equinis, par gradus ubi! Silet canities sine dedecet, fides virum capro:
+loquuntur ante. Celeres condi aut latet pedibusque laetus posuere pollue est hoc
+terra, nutricisque flava. Eurytus auris. Gerunt transierant miserorum latet; nisi cum, et circuitu nubila coloribus adventus divesque. Loca partibus breve et unum maior stellis inpia et
+luporum. Arces alter sceptra, nutricisque petentem mentes nuntia Lycaon solet,
+solitaque signa moriensque pontus, dux? Corpora testataque, novo tumidum. Eurytus auris. Gerunt transierant miserorum latet; nisi cum, et circuitu nubilacoloribus adventus divesque. Loca partibus breve et unum maior stellis inpia etluporum. Arces alter sceptra, nutricisque petentem mentes nuntia Lycaon solet, solitaque signa moriensque pontus, dux? Corpora testataque, novo tumidum.
+
+# Conclusion
+
+Ligavit cetera et infelix nescius, sinu timorem admonitu ferrove exspectatas
+fuerant pulcherrime, mea sonum! Formae munera, est trahendo regem supplice.
+Verba lacrimis gradus, verbis iam tempore aratri sed, at imagine momordit. Teque
+esse, ante pariter desere in quae: illa socium inque meae: et ipso canos:
+peteretis? Temptanda Daedalus et palmis incumbere tempora ambit.
+
+\newpage
+# Bibliographie{-}
