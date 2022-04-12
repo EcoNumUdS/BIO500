@@ -17,7 +17,7 @@ class: title-slide, middle
 
 <hr width="65%" align="left" size="0.3" color="orange"></hr>
 
-## Documents dynamiques <br> avec $Rmarkdown$
+## Documents dynamiques <br> avec Rmarkdown
 
 <hr width="65%" align="left" size="0.3" color="orange" style="margin-bottom:40px;" alt="@Martin Sanchez"></hr>
 
@@ -41,7 +41,13 @@ class: inverse, center, middle
 
 ---
 
-# Pourquoi $Rmarkdown$?
+# Bases de Rmarkdown
+
+Voir les [diapositives du cours 2](https://econumuds.github.io/BIO500/bloc2/#33) pour un rappel approfondi
+
+---
+
+# Pourquoi Rmarkdown?
 
 <br>
 .center[
@@ -50,19 +56,13 @@ class: inverse, center, middle
 
 ---
 
-# Bases des $Rmarkdown$
-
-Voir les [diapositives du cours 2](https://econumuds.github.io/BIO500/bloc2/#33) pour un rappel
-
----
-
-# Pourquoi $Rmarkdown$
-
+# Pourquoi Rmarkdown?
 
 - Documentation (dynamique) des analyses
 - Facilite la partage/communication des résultats
 - Utilisable sur les systèmes de controle de version (Git)
 - Reproductible!
+- Dans un environnement avec lequel vous êtes familier.ères
 
 ---
 
@@ -79,38 +79,60 @@ install.packages("rticles")
 
 # Via Rstudio
 
-<br>
 .center[
     ![:scale 90%](assets/img/rstudio_rticles.png)
 ]
 
 ---
 
-# Anatomie du gabarit .Rmd
+# Exemple `rticles`
 
-Même anatomie que présentée dans le bloc2 (YAML - Rmarkdown - Code R), mais générée automatiquement.
+.left[
+- Template `PNAS Journal Article`
+- Principaux fichiers: .Rmd, .bib, .csl
+]
 
-<br>
-.center[
-![:scale 90%](assets/img/pnas_generatedfiles.png)
+.right[
+![:scale 30%](assets/img/pnas_generatedfiles.png)
 ]
 
 ---
 
+# Anatomie du gabarit .Rmd
+
+Même anatomie que présentée dans le bloc2, mais générée automatiquement.
+
+<br>
+.center[
+![:scale 90%](assets/img/Rmarkdown_anatomie.png)
+]
+
+
+---
+
+# Le YAML - Rappel
+
+- Les métadonnées et les options du document sont définies ici
+- La syntaxe est `cle: value`
+- Commence et se termine entre trois tirets `---`
+- Toujours au début du document
+
+---
 # Le YAML
 
+.font70[
 ```r
 ---
-title: Exemple de rapport `Rmarkdown` en sortie d'un pipeline `targets`
+title: "Exemple de rapport `Rmarkdown` en sortie d'un pipeline `targets`"
 
 # Use letters for affiliations, numbers to show equal authorship (if applicable) and to indicate the corresponding author
 author:
-  - name: Benjamin Mercier
-    affiliation: a
+  - name: "Benjamin Mercier"
+    affiliation: "a"
 
 address:
-  - code: a
-    address: Université de Sherbrooke, Départment de biologie, 2500 Boulevard de l'Université, Sherbrooke, Québec, J1K 2R1
+  - code: "a"
+    address: "Université de Sherbrooke, Départment de biologie, 2500 Boulevard de l'Université, Sherbrooke, Québec, J1K 2R1"
 
 abstract: |
   Eurytus auris. Gerunt transierant miserorum latet; nisi cum, et circuitu nubila
@@ -136,6 +158,226 @@ lineno: false
 output: rticles::pnas_article
 ---
 ```
+]
 
+---
+
+# Le YAML
+
+D'un gabarit à l'autre, les champs du YAML vont changer.
+
+Ce qui fait que chaque gabarit sera différent:
+- Le champ `csl`
+- Le champ `output`
+
+---
+
+# Gabarits "génériques"
+
+**Deux colonnes:**<br>
+Le gabarit 'PNAS Journal Article' est pratique.
+<br><br>
+**Une colonne:**<br>
+Le gabarit 'Elsevier Journal Article' est pratique.
+(Vous pourriez essayer le gabarit PNAS Journal Article avec la clé `pnas_type:` = `pnasmathematics`)
+
+---
+
+# Insertion de figures
+
+Insertion de figures préalablement générées via un script R.
+
+Structure: 
+- Légende
+- Label pour référencer dans le texte
+- Chemin pour accéder à la figure dans l'ordinateur
+- Commandes pour ajuster les dimensions
+
+.font90[
+```r
+![Légende figure. \label{fig:plot1}]("../results/plot_lm.pdf"){width=50% height=40%}
+```
+]
+
+---
+
+# Référencer une figure
+
+Utiliser la même balise que lorsque la figure a été créée et que son `\label` a été généré:
+
+```r
+Je fais référence à la Figure \ref{fig:plot1}.
+```
+.center[&darr;]
+
+```r
+Je fais référence à la Figure 1
+```
+
+---
+
+# Bibliographie et références
+
+Les références se font à l'aide du fichier .bib, lequel contient les références.
+
+Le fichier .bib est spécifié dans le YAML du document .Rmd à la clé:
+
+`bibliography: pnas-sample.bib`
+
+.font70[
+```bib
+@inproceedings{belkin2002using,
+  title={Using manifold stucture for partially labeled classification},
+  author={Belkin, Mikhail and Niyogi, Partha},
+  booktitle={Advances in neural information processing systems},
+  pages={929--936},
+  year={2002}
+}
+
+@article{berard1994embedding,
+  title={Embedding Riemannian manifolds by their heat kernel},
+  author={B{\'e}rard, Pierre and Besson, G{\'e}rard and Gallot, Sylvain},
+  journal={Geometric \& Functional Analysis GAFA},
+  volume={4},
+  number={4},
+  pages={373--398},
+  year={1994},
+  publisher={Springer}
+}
+```
+]
+
+---
+
+# Bibliographie et références
+
+Pour utiliser une référence dans le texte il suffit d'utiliser sa clé unique:
+
+```r
+Je fais référence à la première entrée du fichier.bib @belkin2002using.
+```
+
+Pour référencer plusieurs références:
+
+```r
+Je fais référence à plusieurs référence [@belkin2002using;@berard1994embedding]
+```
+
+---
+
+# Générer le fichier .bib
+
+**Optimal et rapide**:<br>
+- Logiciel de gestion des références comme Zotero, Mendeley, EndNote etc.
+- Générer le fichier .bib selon votre liste d'articles
+
+**Alternative**:<br>
+- Générer le fichier manuellement via un fichier `plain text`
+- Copier-coller les références bib de chacun des articles via par exemple GoogleScholar
+
+---
+
+# Fichier .bib manuellement
+
+.center[
+![:scale 90%](assets/img/googlescholar.png)
+]
+
+---
+
+class: inverse, center, middle
+
+# Exemple target et rmarkdown
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
+---
+
+# `targets` + rapport `rmarkdown`
+
+Structure du dossier principal:
+
+.left[
+- **Dossier _targets:** généré lors du tar_make()
+- **Fichier targets.R:** Cibles et actions du pipeline
+- **Dossier data:** les données
+- **Dossier R:** les scripts .R
+- **Dossier rapport:** contient le rapport.Rmd et les fichiers associés
+- **Dossier results:** contient les figures
+]
+
+.right[
+![:scale 20%](assets/img/structure_targets.png)
+]
+
+---
+
+# Fichier _targets.R
+
+Exemple bonifié du bloc2
+
+.font80[
+```r
+# _targets.R file
+library(targets)
+library(tarchetypes)
+source("R/analyse.R")
+source("R/figure.R")
+tar_option_set(packages = c("rmarkdown","knitr"))
+
+list(
+  tar_target(
+    data, # Le nom de l'objet
+    read.table("data/data.txt", header = T) # Lecture du fichier
+  ), 
+  tar_target(
+    resultat_modele, # Cible pour le modèle 
+    mon_modele(data) # Exécution de l'analyse
+  ),
+  tar_target(
+    figure, # Cible pour l'exécution de la figure
+    ma_figure(data, resultat_modele) # Réalisation de la figure
+  ),
+  tar_render(
+    rapport, # Cible du rapport
+    "rapport/rapport.Rmd" # Le path du rapport à renderiser
+  )
+)
+```
+]
+
+---
+
+# Compilation du Rmarkdown
+
+La librarie `tarchetypes` simplifie la compilation du fichier .Rmd.<br>
+Même syntaxe que les autres target `tar_target()`
+
+```r
+install.packages("tarchetypes")
+```
+
+```r
+tar_render(cible, "path/to/file.Rmd")
+```
+
+<br>
+
+L'instruction de compilation du fichier .Rmd sera toujours la dernière opération.
+
+---
+
+# Enregistrement des figures
+
+Utiliser la fonction pdf() pour donner un nom au fichier de la figure et l'ouvrir plus tard dans le document Rmarkdown.<br>
+
+```r
+ma_figure = function(data, resultat_modele) {
+  pdf(file = "results/plot_lm.pdf")
+  plot(data$X, data$Y, xlab = "X", ylab = "Y", cex.axis = 1.5, cex.lab = 1.5, pch = 5)
+  abline(resultat_modele)
+  dev.off()
+}
+```
 
 

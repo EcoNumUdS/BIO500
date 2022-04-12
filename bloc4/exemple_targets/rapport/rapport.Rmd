@@ -40,7 +40,7 @@ output: rticles::pnas_article
 ---
 
 # Introduction
-**Voici un exemple de citation @berard1994embedding, et en voici deux autres @belkin2002using [@coifman2005geometric].** 
+**Voici un exemple de citation @berard1994embedding, et en voici deux autres [@berard1994embedding;@belkin2002using;@coifman2005geometric].** 
 Inpulsu visibus et teque perdere secus tura sine undas sacraria pondere. Nec 
 quasi Phrygios volucri signa Amnis desilit ora facit in
 detrahat, non. Et iuvencae sitim natum, sit quid ut sibi nec ardeat, pressa
