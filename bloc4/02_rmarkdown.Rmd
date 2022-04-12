@@ -380,4 +380,4 @@ ma_figure = function(data, resultat_modele) {
 }
 ```
 
-
+---

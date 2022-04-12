@@ -16,4 +16,7 @@ output:
 
 ```{r child = '02_rmarkdown.Rmd'}
 ```
-
+```{r child = '03_travail_session.Rmd'}
+```
+```{r child = '04_latex.Rmd'}
+```

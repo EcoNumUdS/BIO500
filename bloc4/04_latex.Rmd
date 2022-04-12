@@ -1,61 +1,8 @@
-class: title-slide, middle
-
-<style type="text/css">
-  .title-slide {
-    background-image: url('../assets/img/bg.jpg');
-    background-color: #23373B;
-    background-size: contain;
-    border: 0px;
-    background-position: 600px 0;
-    line-height: 1;
-  }
-</style>
-
-<div class="lab-logo"></div>
-
-# Bloc 4
-
-<hr width="65%" align="left" size="0.3" color="orange"></hr>
-
-## Documents dynamiques <br> avec $LaTeX$
-
-<hr width="65%" align="left" size="0.3" color="orange" style="margin-bottom:40px;" alt="@Martin Sanchez"></hr>
-
-.instructors[
-  **BIO500** - Dominique Gravel
-]
-
----
-
-# Bloc 4
-
-- Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/bloc4/).
-
-
----
 class: inverse, center, middle
 
-# Introduction
+# Produire des documents avec $\LaTeX$ (extra)
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
-
----
-
-# Où sommes-nous?
-
-.center[
-  <img src="assets/img/flow_full.png" width="100%"></img>
-]
-
-
----
-
-# Pourquoi $\LaTeX$?
-
-<br>
-.center[
-  <img src="assets/img/latex_comp.gif" width="60%"></img>
-]
 
 ---
 
