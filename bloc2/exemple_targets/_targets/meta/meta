@@ -1,6 +1,8 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-data|stem|7a433df21e8beace|9cb7efb5d8ffe56f|5cb42b57398551be|1588979285||t19080.6207803237s|84b5b7948cf976f7|1858|rds|local|vector|||0.03||
-figure|stem|2ba2286ddb57a2d6|a3883a41d191701d|3ab46ef30c8c50ac|-1059386336||t19080.6218012959s|a1c456b03adbfbf8|44|rds|local|vector|||0.032||
+data|stem|9f03d2ecef4c0e29|e353fbf0253c360d|8f557223cc799451|1588979285||t19101.6627367587s||1859|rds|local|vector|||||_build_ target data did not return a character. dynamic files targets with format  file must return character vectors of file or directory paths.
+figure|stem|2ba2286ddb57a2d6|a3883a41d191701d|d491ddda3b2d176a|-1059386336||t19101.6627386106s|a1c456b03adbfbf8|44|rds|local|vector|||0.105||
 ma_figure|function|b8f3d11f95a9cc64|||||||||||||||
 mon_modele|function|d98244538a921d4c|||||||||||||||
-resultat_modele|stem|9d86161d100029ef|0cdec47ab5791d2f|444227d49e04dd67|128917945||t19080.6218008329s|de242cfe60afa56a|7707|rds|local|vector|||0.029||
+path|stem|72f02ea6fea21b97|5037f04c8f26848c|ef46db3751d8e999|-1383433547|data/data.txt|t19101.6626591198s|5e3a796f499617d6|4078|file|local|vector|||0.049||
+read_data|function|7df9fc3e8c28abee|||||||||||||||
+resultat_modele|stem|e6643f908b63d88c|0cdec47ab5791d2f|af81eea483c1d094|128917945||t19101.6627371754s|ee7097944472c88e|7705|rds|local|vector|||0.017||
