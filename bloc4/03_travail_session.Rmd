@@ -18,9 +18,7 @@ Vous devez remettre les résultats de votre analyse des données de collaboratio
 
 Le rapport doit contenir :
 
-- L'illustration du réseau
-- 3 figures
-- 1 tableau
+- 3 figures, incluant l'illustration du réseau
 - Un titre et un résumé
 - Une courte introduction spécifiant les questions
 - Une courte description de la méthode et des résultats
