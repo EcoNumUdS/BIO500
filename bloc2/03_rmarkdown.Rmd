@@ -14,7 +14,7 @@ class: inverse, center, middle
 
 - Un outil pour intégrer du texte, du code et des résultats
 - Un format de fichier (`.Rmd`) pour créer des documents dynamiques avec R
-- Un paquet R
+- Une libraire R
 
 ---
 # Pourquoi RMarkdown?

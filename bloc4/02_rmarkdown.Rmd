@@ -22,7 +22,7 @@ class: title-slide, middle
 <hr width="65%" align="left" size="0.3" color="orange" style="margin-bottom:40px;" alt="@Martin Sanchez"></hr>
 
 .instructors[
-  **BIO500** - Dominique Gravel
+  **BIO500** - Victor Cameron
 ]
 
 ---
@@ -287,7 +287,7 @@ Je fais référence à plusieurs référence [@belkin2002using;@berard1994embedd
 
 class: inverse, center, middle
 
-# Exemple target et rmarkdown
+# Exemple target et Rmarkdown
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 

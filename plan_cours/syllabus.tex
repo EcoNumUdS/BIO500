@@ -1,11 +1,14 @@
 \documentclass[12]{article}
 \usepackage[utf8]{inputenc}
-\usepackage{authblk} 
+\usepackage{array}
+\usepackage{caption}
+\usepackage{authblk}
 \usepackage{geometry}
-\usepackage{amsmath} 
+\usepackage{amsmath}
 \usepackage{hyperref}
 \usepackage[french]{babel}
 \usepackage{url}
+\usepackage[french]{isodate}
 
 \geometry{letterpaper,margin=2.5cm}
 
@@ -16,20 +19,53 @@
 
 %\def\labelitemi{$\bullet$}
 
-\title{BIO-500 \\ Méthodes en écologie computationelle}
-\date {\today}
-\author {Dominique Gravel}
+\title{BIO-500 : Méthodes en écologie computationelle}
+\date {Hiver 2023}
+\author {Victor cameron}
 
 \affil {Département de biologie \\
 Université de Sherbrooke \\ 
-Local D8-3066 \\ 
-819-821-8000 \#66589}
-\affil {\url{dominique.gravel@usherbrooke.ca}}
+Local D8-0012 \\ 
+819-821-8000 \#61928}
+\affil {\url{victor.cameron@usherbrooke.ca}}
 
 
 \begin{document}
 
 	\maketitle
+
+	%-----------------------------
+	\section*{Renseignements généraux\footnote{Ce plan de cours est soumis au \textit{Règlement facultaire d'évaluation des apprentissages des étudiantes et des étudiants} de la faculté des sciences de l'Université de Sherbrooke et y est conforme.}} 
+        
+        \begin{center}
+			\begin{tabular}{ m{22em} m{24em} }
+				\hline
+				\hline
+				\textbf{Nombre de crédits} & 2 \\ 
+				\hline
+				\textbf{Cours préalables} & Aucun \\
+				\hline
+				\textbf{Lieu du cours} & D7-2023 \\
+				\hline
+				\textbf{Jours et heures des cours} & 14 février, 7, 14, 21, 28 mars, 4 et 11 avril \\ & Tous les cours sont le mardi de 8h30 à 11h30 \\
+				\hline
+				\textbf{Session} & Hiver 2023 \\
+				\hline
+				\textbf{Date de début} & 14 février \\
+				\hline
+				\textbf{Date de fin} & 11 avril \\
+				\hline
+				\textbf{Date de remise de l'évaluation finale} & 22 avril à 16h00 \\
+				\hline
+				\textbf{Date limite de retrait} & 6 mars \\
+				\hline
+				\textbf{Date limite d'abandon} & 28 mars \\
+				\hline
+				\textbf{Assistant à l'enseignement} & Benjamin Mercier \\ & Local D8-0022 \\ & \url{benjamin.b.mercier@usherbrooke.ca} \\
+				\hline
+				\hline
+			\end{tabular}
+        \end{center}
 
 	%-----------------------------
 	\section*{Objectif général}
@@ -54,7 +90,7 @@ Local D8-3066 \\
 
 	\item Programmer et interroger une base de données relationnelle ;
 
-	\item Compiler et exécuter un projet au moyen de la librairie drake;
+	\item Compiler et exécuter un projet au moyen de la librairie trargets;
 
 	\item Représenter visuellement les données au moyen de R ;
 
@@ -69,9 +105,11 @@ Local D8-3066 \\
 	%-----------------------------
 	\section*{Pré-requis}
 
+	Un ordinateur portable personnel est requis pour ce cours.\\
+
 	Ce cours obligatoire est offert aux étudiants en fin de programme de
-	baccalauréat en biologie, concentration écologie. Aucun pré-requis n'est
-	exigé pour ce cours. 
+	baccalauréat en biologie, concentration écologie. Le cours 
+	\textit{BIO109 : Introduction à la programmation scientifique} est préalable à celui-ci.
 
     %-----------------------------     
 
@@ -89,7 +127,7 @@ Local D8-3066 \\
 
 
 	L'ensemble du matériel du cours sera disponible sur un dépôt git à l'adresse :\\
-	https://github.com/EcoNumUdS/BIO500.git
+	\url{https://github.com/EcoNumUdS/BIO500.git}
 
 	%-----------------------------
 	\section*{Contenu}
@@ -99,7 +137,7 @@ Local D8-3066 \\
 	\begin{itemize}
 	\renewcommand{\labelitemi}{$\bullet$}	
 		\item Types de données ;
-		\item Formulaires de saisie
+		\item Formulaires de saisie ;
 		\item Bases de données relationnelles SQL ;
 		\item Requêtes ;
 	\end{itemize}
@@ -110,7 +148,7 @@ Local D8-3066 \\
 	\begin{itemize}
 	\renewcommand{\labelitemi}{$\bullet$}	
 		\item Système de contrôle de version git ;
-		\item Librairie drake ; 
+		\item Librairie targets ; 
 		\item Cahier de laboratoire avec RMarkdown
 	\end{itemize}
 
@@ -120,11 +158,11 @@ Local D8-3066 \\
 	\begin{itemize}
 	\renewcommand{\labelitemi}{$\bullet$}	
 		\item Fonctions graphiques de base et paramètres graphiques ;
-		\item Packages R spécialisés ;
+		\item Libraries R spécialisés ;
 	\end{itemize}
 
 
-	\subsection*{Bloc 4 (3 séances): Communication scientifique au moyen de LaTeX}
+	\subsection*{Bloc 4 (1 séance): Communication scientifique au moyen de Rmarkdown}
 
 	\begin{itemize}
 	\renewcommand{\labelitemi}{$\bullet$}	
@@ -136,6 +174,75 @@ Local D8-3066 \\
 	%-----------------------------
 	\section*{Évaluation}
 
-	L'évaluation porte sur la réalisation d'un travail de session (75\%), réalisé en équipe de 4 personnes. Le travail sera divisé en 3 étapes réparties au cours de la session. L'évaluation finale (25\%) portera sur la rédaction d'un essai de 1500 mots sur les enjeux de reproductibilité en science expérimentale. Le travail de session et l'essai doivent être déposés au plus tard le vendredi 24 avril 2020 à 16:00. La pénalité est de 10\% par journée de retard.  
+	L'évaluation porte sur la réalisation d'un travail de session (75\%), réalisé en équipe de 4 personnes. Le travail sera divisé en 3 étapes réparties au cours de la session. L'évaluation finale (25\%) portera sur la rédaction d'un essai de 1200 mots sur les enjeux de reproductibilité en science expérimentale. Le travail de session et l'essai doivent être déposés au plus tard le vendredi 22 avril 2020 à 16:00. La pénalité est de 10\% par journée de retard.  
+
+	\subsection*{Modalités de remise}
+
+	Les travaux devront tous être remis sur Moodle. Aucun travail ne sera
+	accepté par courrier électronique.
+
+	\subsection*{Modalités de correction et de notation pour l'évaluation terminale}
+
+	La note obtenue pour l’ensemble des travaux sera convertie en fonction des
+	cotes proposées par la Politique d’évaluation de l’Université de Sherbrooke.
+	La notation définitive sera exprimée en conformité avec le règlement de la
+	Faculté des sciences de l’Université de Sherbrooke, soit à partir du tableau
+	suivant :
+	
+	\begin{center}
+		\begin{table}[h]
+        \begin{tabular}{| p{0.2\linewidth} | p{0.2\linewidth} | p{0.2\linewidth} | p{0.2\linewidth} | p{0.2\linewidth} | } 
+        \hline
+		% Header ------------
+        \textbf{Excellent} \linebreak A+, A, A- &
+		\textbf{Très bien}\hfill\hfill \linebreak B+, B, B- & 
+		\textbf{Bien} \linebreak C+, C, C- & 
+		\textbf{Passable} \linebreak D+, D &
+		\textbf{Échec} \linebreak E \\ [0.5ex] 
+        \hline\hline
+		% Body ------------
+		% A+ : 91\% et plus \hfill\hfill \linebreak A : 88 à 90\% \hfill\hfill \linebreak A- : 85 à 87\% \hfill\hfill & 
+		% B+ : 82 à 84\% \hfill\hfill \linebreak B : 79 à 81\% \hfill\hfill \linebreak B- : 76 à 78\% \hfill\hfill & 
+		% C+ : 73 à 75\% \hfill\hfill \linebreak C : 70 à 72\% \hfill\hfill \linebreak C- : 67 à 69\% \hfill\hfill & 
+		% D+ : 64 à 66\% \hfill\hfill \linebreak D : 60 à 63\% \hfill\hfill & 
+		% E : 0 à 59\% \hfill \\ 
+		% \hline
+		% \hline
+		% Footer ------------
+        \multicolumn{2}{l}{W : échec par abandon\hfill\hfill \linebreak
+            AB* : abandon\hfill\hfill \linebreak} &
+        \multicolumn{2}{l}{
+            IN** : Incomplet\hfill\hfill \linebreak 
+            R : réussite\hfill\hfill} \\
+		% \hline
+		\hline
+		\end{tabular}
+		\caption*{* La mention AB est consignée seulement si l’étudiante ou l’étudiant abandonne le cours avant la date
+		limite d'abandon. Si la date limite d’abandon est dépassée, la mention au relevé de notes de l’étudiante
+		ou de l’étudiant sera W.\\
+		** La metion IN est utilisée au relevé de notes pour les activités
+		pédagogiques lorsque, pour des motifs acceptés par la faculté ou le
+		centre universitaire de formation, l’étudiante ou l’étudiant n’a pas
+		satisfait à toutes les exigences. Est remplacée par la note W (échec
+		par abandon) au relevé de notes du trimestre au cours duquel prend fin
+		le délai accordé si l’activité n’a pas été complétée.}
+		\end{table}
+	\end{center}
+
+    La note finale du cours sera remise au plus tard deux semaines après le
+	dépôt de l'évaluation finale.
+
+    \subsection*{Appréciation de la qualité de la langue}
+
+    En conformité avec l'article 17 du règlement facultaire d'évaluation
+    des apprentissages des étudiantes et des étudiants, la qualité du français
+    écrit dans l’évaluation peut être pis en compte. Tout travail non conforme
+    aux exigences quant à la qualité du français écrit et aux normes de
+    présentation  peut retourné à l'étudiante ou à l'étudiant et peut aussi
+    entrainer la perte de points pour une mauvaise qualité du français écrit.
+    La qualité du français peut compter jusqu'à 5\% des points alloués à
+    l'évaluation.
+
+	
 
 \end{document}

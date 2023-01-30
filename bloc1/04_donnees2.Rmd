@@ -27,7 +27,7 @@ class: title-slide, middle
 <hr width="65%" align="left" size="0.3" color="orange" style="margin-bottom:40px;" alt="@Martin Sanchez"></hr>
 
 .instructors[
-  **BIO500** - Dominique Gravel
+  **BIO500** - Victor Cameron
 ]
 
 ---
@@ -265,7 +265,7 @@ head(articles)
 
 ---
 
-# Sélectionner des enregistrements unique
+# Sélectionner des enregistrements uniques
 
 .font80[
 .pull-left[
@@ -290,9 +290,10 @@ head(auteurs)
 .pull-left[
 ```{r, eval = FALSE}
 sql_requete <- "
-SELECT annee, citations, articleID
-  FROM articles ORDER BY citations DESC
-;"
+  SELECT annee, citations, articleID
+  FROM articles 
+  ORDER BY citations DESC;"
+
 derniers_articles <- dbGetQuery(con, sql_requete)
 head(derniers_articles)
 ```
@@ -304,9 +305,10 @@ head(derniers_articles)
 
 ```{r, echo = FALSE}
 sql_requete <- "
-SELECT annee, citations, articleID
-  FROM articles ORDER BY citations DESC
-;"
+  SELECT annee, citations, articleID
+  FROM articles
+  ORDER BY citations DESC;"
+
 derniers_articles <- dbGetQuery(con, sql_requete)
 head(derniers_articles)
 ```
@@ -319,9 +321,10 @@ head(derniers_articles)
 .pull-left[
 ```{r}
 sql_requete <- "
-SELECT auteur, statut, institution
-  FROM auteurs WHERE statut IS NOT NULL
-;"
+  SELECT auteur, statut, institution
+  FROM auteurs
+  WHERE statut IS NOT NULL;"
+
 auteurs <- dbGetQuery(con, sql_requete)
 head(auteurs)
 ```
@@ -342,11 +345,12 @@ head(auteurs)
 ```{r}
 sql_requete <- "
 SELECT articleID, annee
-  FROM articles WHERE
+FROM articles 
+WHERE
   (annee >= 2018 AND annee < 2020)
   OR (annee >= 2012 AND annee <= 2014)
-  ORDER BY annee
-;"
+ORDER BY annee;"
+
 articles <- dbGetQuery(con, sql_requete)
 head(articles)
 ```
@@ -368,8 +372,9 @@ head(articles)
 ```{r}
 sql_requete <- "
 SELECT articleID, titre
-  FROM articles WHERE titre LIKE '%interactions%'
-;"
+  FROM articles 
+  WHERE titre LIKE '%interactions%';"
+
 articles <- dbGetQuery(con, sql_requete)
 head(articles)
 ```
@@ -398,7 +403,7 @@ Dans ta table `auteurs`, essayez de trouver les auteurs dont l'institution est `
 sql_requete <- "
 SELECT avg(citations) AS moyenne,
   min(citations), max(citations)
-  FROM articles;"
+FROM articles;"
 
 resume_articles <- dbGetQuery(con, sql_requete)
 head(resume_articles)
@@ -423,9 +428,9 @@ head(resume_articles)
 ```{r}
 sql_requete <- "
 SELECT avg(citations) AS moyenne,
-count(articleID) AS nb_articles, annee
-  FROM articles
-  GROUP BY annee;"
+  count(articleID) AS nb_articles, annee
+FROM articles
+GROUP BY annee;"
 
 resume_articles <- dbGetQuery(con, sql_requete)
 head(resume_articles)
@@ -460,10 +465,9 @@ Le `INNER JOIN` est un type de jointure, renvoyant seulement les auteurs et les 
 
 ```{r}
 sql_requete <- "
-SELECT annee, auteur1, auteur2, journal, articles.articleID
+  SELECT annee, auteur1, auteur2, journal, articles.articleID
   FROM articles
-  INNER JOIN collaborations ON articles.articleID = collaborations.articleID
-  ;"
+  INNER JOIN collaborations ON articles.articleID = collaborations.articleID;"
 
 auteurs_articles <- dbGetQuery(con,sql_requete)
 head(auteurs_articles,4)
@@ -484,7 +488,7 @@ On peut spécifier la jointure avec `USING` seulement si les deux clés possède
 
 ```{r}
 sql_requete <- "
-SELECT annee, auteur1, auteur2, journal, articles.articleID
+  SELECT annee, auteur1, auteur2, journal, articles.articleID
   FROM articles
   INNER JOIN collaborations USING (articleID)
   ;"
@@ -509,8 +513,8 @@ head(auteurs_articles,4)
 sql_requete <- "
 SELECT auteur1, avg(citations) AS moy_citations FROM (
   SELECT auteur1, articleID, citations
-    FROM articles
-    INNER JOIN collaborations USING (articleID)
+  FROM articles
+  INNER JOIN collaborations USING (articleID)
 ) GROUP BY auteur1;"
 
 moy_auteurs <- dbGetQuery(con,sql_requete)
@@ -539,8 +543,8 @@ head(moy_auteurs)
 sql_requete <- "
 SELECT auteur1, avg(citations) AS moy_citations FROM (
   SELECT auteur1, articleID, citations
-    FROM articles
-    INNER JOIN collaborations USING (articleID)
+  FROM articles
+  INNER JOIN collaborations USING (articleID)
 ) GROUP BY auteur1
 HAVING moy_citations > 10;"
 
@@ -640,7 +644,7 @@ class: inverse, center, middle
 
 6. Écrire un script qui réalise les étapes 0-3 d'un bloc
 
-Assurez vous que le script fonctionne sur l'ordinateur du laboratoire et également entre des les différents ordinateurs des membres de votre équipe.
+Assurez vous que le script fonctionne sur les différents ordinateurs des membres de votre équipe.
 
 ---
 

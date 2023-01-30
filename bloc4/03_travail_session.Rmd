@@ -37,7 +37,7 @@ Nous vous demandons de remettre les scripts permettant de générer l'ensemble d
 - L'injection des données
 - Les requêtes
 - La production des figures et tableaux
-- Le document LaTeX (en format tex) incluant des citations
+- Le document RMarkdown (en format Rmd) incluant des citations
 - Le fichier de bibliographie
 
 ---
@@ -46,7 +46,7 @@ Nous vous demandons de remettre les scripts permettant de générer l'ensemble d
 
 À terme, selon les principes de science reproductible, nous devrions pouvoir exécuter l'ensemble de votre analyse sur un autre ordinateur, sans avoir à changer le code. 
 
-Habituellement nous devrions utiliser la commande `make` pour tout exécuter automatiquement, mais cette étape sera annulée compte tenu de la formule à distance qui nous empêche d'utiliser les ordinateurs du laboratoire informatique. 
+Nous utiliserons la commande `tar_make` pour tout exécuter automatiquement.
 
 Néanmoins, l'ensemble de ce matériel doit se trouver sur un dépôt git auquel vous nous donnerez accès. Dans ce dépôt se trouveront les fichiers de données originales en csv, les scripts, le document tex ainsi que la bibliographie.
 
@@ -61,6 +61,6 @@ Néanmoins, l'ensemble de ce matériel doit se trouver sur un dépôt git auquel
   -  Utilisation de Git
 - Originalité (10%)
 
-Le contenu du rapport n'est pas d'une grande importance, il est prétexte à faire toutes les étapes du travail. Ne vous attardez pas à la rédaction, l'objectif est seulement de décrire rapidement votre démarche et d'utiliser LaTeX pour la préparation d'un rapport. 
+Le contenu du rapport n'est pas d'une grande importance, il est prétexte à faire toutes les étapes du travail. Ne vous attardez pas à la rédaction, l'objectif est seulement de décrire rapidement votre démarche et d'utiliser `RMarkdown` pour la préparation d'un rapport. 
 
 ---

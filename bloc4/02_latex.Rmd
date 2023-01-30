@@ -22,7 +22,7 @@ class: title-slide, middle
 <hr width="65%" align="left" size="0.3" color="orange" style="margin-bottom:40px;" alt="@Martin Sanchez"></hr>
 
 .instructors[
-  **BIO500** - Dominique Gravel
+  **BIO500** - Victor Cameron
 ]
 
 ---
