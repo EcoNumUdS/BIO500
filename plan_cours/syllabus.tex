@@ -6,6 +6,8 @@
 \usepackage{geometry}
 \usepackage{amsmath}
 \usepackage{hyperref}
+\usepackage{multirow} % Pour les tableaux
+\usepackage{longtable} % Pour les tableaux
 \usepackage[french]{babel}
 \usepackage{url}
 \usepackage[french]{isodate}
@@ -19,9 +21,9 @@
 
 %\def\labelitemi{$\bullet$}
 
-\title{BIO-500 : Méthodes en écologie computationelle}
+\title{BIO500 : Méthodes en écologie computationelle}
 \date {Hiver 2023}
-\author {Victor cameron}
+\author {Victor Cameron}
 
 \affil {Département de biologie \\
 Université de Sherbrooke \\ 
@@ -132,43 +134,47 @@ Local D8-0012 \\
 	%-----------------------------
 	\section*{Contenu}
 
-	\subsection*{Bloc 1 (3 séances): Planification de la collecte et organisation des données}
-
-	\begin{itemize}
-	\renewcommand{\labelitemi}{$\bullet$}	
-		\item Types de données ;
-		\item Formulaires de saisie ;
-		\item Bases de données relationnelles SQL ;
-		\item Requêtes ;
-	\end{itemize}
-
-
-	\subsection*{Bloc 2 (1 séance): Outils pour une science reproductible et transparente}
-
-	\begin{itemize}
-	\renewcommand{\labelitemi}{$\bullet$}	
-		\item Système de contrôle de version git ;
-		\item Librairie targets ; 
-		\item Cahier de laboratoire avec RMarkdown
-	\end{itemize}
-
-
-	\subsection*{Bloc 3 (2 séances): Visualisation des données au moyen de R}
-
-	\begin{itemize}
-	\renewcommand{\labelitemi}{$\bullet$}	
-		\item Fonctions graphiques de base et paramètres graphiques ;
-		\item Libraries R spécialisés ;
-	\end{itemize}
-
-
-	\subsection*{Bloc 4 (1 séance): Communication scientifique au moyen de Rmarkdown}
-
-	\begin{itemize}
-	\renewcommand{\labelitemi}{$\bullet$}	
-		\item Rédaction de rapports et articles scientifiques ;
-		\item Gestion des références ;
-	\end{itemize}
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+% \usepackage{longtable}
+% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
+\begin{longtable}[c]{| p{0.2\linewidth} | p{0.25\linewidth} | p{0.3\linewidth} | p{0.25\linewidth} | }
+\hline
+Dates &
+  Contenus &
+  Activités &
+  Évaluations \\ \hline
+\endhead
+%
+\multirow{3}{*}{\begin{tabular}[c]{@{}l@{}}\textbf{Bloc 1}\\ 14 février au 20 mars\\ \\ Planification et\\organisation de la\\collecte et\\organisation des\\données\end{tabular}} &
+  \textbf{Introduction} &
+  \begin{tabular}[c]{@{}l@{}}\textbf{Séance 1} (14 février)\\ \\ \textit{Travaux}\\ - Commencer à récolter des\\données\\ \\ \textit{Lectures}\\ - Baker. 2016. Is there a\\reproducibility crisis ?\end{tabular} &
+   \\ \cline{2-4} 
+ &
+  \begin{tabular}[c]{@{}l@{}}\textbf{La gestion des données}\\ \textbf{biologiques}\\ - Types de données\\ - Formulaires de saisie\\ - Base de données\\relationnelles SQL\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}\textbf{Séance 2} (7 mars)\\ Discussion sur la reproducibilité\\ \\ \textit{Travaux}\\ - Collecter les données pour\\constituer un réseau\\ - Concevoir et scripter une base\\de données\\ - Collecter des données\\ - Préparer les arguments pour le\\débat\\ \\ \textit{Lectures}\\ - Poisot et al. 2014. Moving\\toward a sustainable ecological\\science: don't let ecological data\\go to waste!\\ - Mills et al. 2015. Archiving\\Primary Data: Solutions for\\Long-term Studies.\end{tabular} &
+   \\ \cline{2-4} 
+ &
+  \begin{tabular}[c]{@{}l@{}}\textbf{La gestion des données}\\ \textbf{biologiques}\\ - Bases de données\\relationnelles SQL\\ - Requêtes\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}\textbf{Séance 3} (14 mars)\\ \textbf{Débat sur le partage de}\\ \textbf{données}\\ \\ \textit{Travaux}\\ - Installer Git\\ - Scripter le traitement, la\\création de la base de données et\\l'injection de données\\ - Préparer les requêtes et les\\résultats\\ - Calculer les propriétés\\du réseau\\ \\ \textit{Lectures}\\ - Stokel-Walker \& Van Noorden.\\2023. What ChatGPT and\\generative AI mean for science.\\ - Nature Machine Learning.\\2023. The AI writing on the wall.\end{tabular} &
+   \\ \hline
+\multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}\textbf{Bloc 2}\\ 21 au 27 mars\\ \\ Outils pour une science\\reproducible\end{tabular}} &
+  \begin{tabular}[c]{@{}l@{}}\textbf{Les outils pour la}\\ \textbf{reproducibilité}\\ - Système de contrôle de\\version Git\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}\textbf{Séance 4} (21 mars)\\ Débat sur l'impact d'algorithmes\\comme ChatGPT sur la science et\\sa transparence\\ \\ \textit{Lectures}\\ - Milcu et al. 2018. Genotypic\\variability enhances the reproducibility\\of an ecological study\end{tabular} &
+   \\ \cline{2-4} 
+ &
+  \begin{tabular}[c]{@{}l@{}}\textbf{Les outils pour la}\\ \textbf{reproductibilité}\\ - Cahier de laboratoire avec\\RMarkdown\\ - Librairie targets\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}\textbf{Séance 5} (28 mars)\\ \textbf{Discussion sur les liens entre}\\ \textbf{la variabilité et la}\\ \textbf{reproducibilité}\\ \\ \textit{Travaux}\\ - Créer un cahier de laboratoire\\et le sauver sur GitHub\\ - Construire un script target pour\\suivre l'évolution du travail\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}\textbf{Essai (25\%)}\\ Rédaction d'un essai sur les\\enjeux de reproductibilité en\\science à remettre le 22 avril\\à 16h sur Moodle\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}\textbf{Bloc 3}\\ 28 mars au 10 avril\\ \\ Visualisation des\\données\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}\textbf{Visualisation des}\\ \textbf{données au moyen de R}\\ - Fonctions graphiques de\\base et paramètres\\graphiques\\ - Librairies R spécialisées\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}\textbf{Séance 6} (4 avril)\\ \\ \textit{Travaux}\\ - Identifier les questions de\\recherche\\ - Illustrer le réseau de\\collaboration\\ - Compléter l'analyse au moyen\\de visualisations\\ \\ \textit{Lectures}\\ - Pennisi. 2020. Spider biologist\\denies suspicions of widespread\\data fraud in his animal personality\\research\\ - Lawkowski. 2020. What to do\\when you don't trust your\\data anymore\end{tabular} &
+   \\ \hline
+\begin{tabular}[c]{@{}l@{}}\textbf{Bloc 4}\\ 11 au 22 avril\\ \\ Communication\\scientifique au moyen\\de RMarkdown\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}\textbf{Documents dynamiques}\\ \textbf{avec RMarkdown}\\ - Rédaction de rapports\\scientifiques\\ - Gestion des références\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}\textbf{Séance 7} (11 avril)\\ \textbf{Discussion sur la fraude en}\\ \textbf{science et sa prévention}\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}\textbf{Évaluation terminale}\\ \textbf{(75\%)}\\ Travail de session : Écrire\\un rapport de votre analyse\\des données de collaboration\\entre étudiants de la classe\\sous forme d'article\\scientifique\\ \\Tous les scripts sont à\\remettre sous la forme\\d'un dépôt GitHub\end{tabular} \\ \hline
+\end{longtable}
 
 
 	%-----------------------------
