@@ -4,7 +4,7 @@
 
 (2 crédits)
 
-- **Professeur:** Dominique Gravel
+- **Enseignant:** Victor Cameron
 
 
 ## Bloc 1: Planification de la collecte et organisation des données
