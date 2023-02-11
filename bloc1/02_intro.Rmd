@@ -41,9 +41,27 @@ class: inverse, center, middle
 
 ---
 
+# Introduction
+
+<div style='text-align:center;'>
+<img src="assets/img/darwin.jpg" height="500px"></img>
+</div>
+
+---
+
+# Introduction
+
+<div style='text-align:center;'>
+<img src="assets/img/jane_goodall.jpg" height="500px"></img>
+</div>
+
+---
+
 # L'écologie computationnelle
 
-
+<div style='text-align:center;'>
+<img src="assets/img/computational_ecology.jpg" height="500px"></img>
+</div>
 
 ---
 
@@ -52,8 +70,8 @@ class: inverse, center, middle
 S'intéresse aux mêmes questions, mais utilise une approche interdisciplinaire 
 entre l'informatique et l'analyse de données pour étudier les systèmes écologiques.
 
-Les outils utilisés incluent des modèles, mathématiques et statistiques et 
-des données.
+Les outils utilisés incluent les modèles, les mathématiques et les statistiques et 
+les données.
 
 
 ---
@@ -65,174 +83,55 @@ biodiversité et identifier les stratégies pour la protéger.
 
 La modélisation, elle est essentielle à l'étude des systèmes complexes.
 
-<!-- ---
+---
 
-# L'importance des réseaux
-
-.center[
-  <img src="assets/img/r0.png" height="500px"></img>
-]
+# L'écologie computationnelle
 
 ---
 
-# L'importance des réseaux
+# Enseignant
 
-.center[
-  <img src="assets/img/covid.png" height="500px"></img>
-]
+## Victor Cameron
+- victor.cameron@usherbrooke.ca
+- D8-0012
 
----
+## Benjamin Mercier (assistant)
+- benjamin.b.mercier@usherbrooke.ca
+- D8-0022
 
-# Le Bacon number
-
-.center[
-  <img src="assets/img/bacon.jpg" height="500px"></img>
-]
-
----
-# Le Bacon number
-
-Une hypothèse selon laquelle n'importe quel acteur peut être relié à Kevin Bacon via ses rôles dans 6 films ou moins.
-
----
-# Exemple
-
-- Kevin Bacon a lui-même un Bacon number de 0
-- Sean Penn a un Bacon number de 1 pour son rôle dans *Mystic River*
-- Madonna a un Bacon number de 2 pour son rôle dans *Shadows and Fog*, dans lequel figurait Camille Saviola, qui a elle-même joué avec Kevin Bacon dans *Queens Logic*
-
-Si le jeu vous amuse, allez consulter le site [The Oracle of Bacon](https://oracleofbacon.org/movielinks.php)
-
----
-# Six degrés de séparation
-
-Le jeu est une parodie du mythe urbain de six degrés de séparation, qui propose que tous les humains sur la terre soient à moins de six degrés de séparation dans une chaine "d'ami à ami".
-
-Kochen a proposé dans les années 50 que "*it is practically certain that any two individuals can contact one another by means of at most two intermediaries. In a [socially] structured population it is less likely but still seems probable. And perhaps for the whole world's population, probably only one more bridging individual should be needed.*"
-
----
-# L'expérience de Milgram
-
-- Inspiré des travaux de Gurevich
-- Étude des réseaux sociaux
-- Souhait d'évaluer la probabilité que deux personnes sélectionnées au hasard se connaissent
-
----
-# L'expérience de Milgram
-
-- Individus choisis au hasard au Nebraska et au Kansas, et qui devaient rejoindre des personnes à Boston.
-- Un paquet était envoyé, incluant des instructions, une lettre ainsi que de l'information sur la personne ciblée à Boston
-- Si la personne de départ connaissait directement la cible, elle devait lui envoyer directement la lettre
-- Sinon, la personne devait choisir un ami ou une connaissance qui était susceptible de connaître la personne cible
-- Une fois rendu à destination, le destinataire envoyait la chaîne de communication au chercheur
-
----
-# Résultats
-
-- 64 lettres sur 296 envoyées sont arrivées à destination
-- Le nombre de degrés moyens était entre 5 et 6
-
----
-# Suivi
-
-- L'expérience a été répliquée de nombreuses fois, notamment par Dodds et al. qui ont aussi confirmé un nombre de 6
-- Watts et Strogatz (1998) ont élaboré un modèle qui permet d'expliquer les propriétés de petit monde trouvées dans de nombreux réseaux
-
----
-# Le modèle de petits mondes
-
-.center[
-  <img src="assets/img/small_world.png" height="500px"></img>
-]
-
----
-# Les propriétés de petit monde en écologie
-
-.center[
-  <img src="assets/img/williams2002.png" height="500px"></img>
-]
+## Pour les questions d'intérêt général, utilisez le forum de discussion sur Moodle.
 
 ---
 
-# Les propriétés de petit monde en écologie
+# Biodiversité Québec
 
-.center[
-  <img src="assets/img/foodweb.png" height="500px"></img>
-]
-
----
-
-# Les propriétés de petit monde en écologie
-
-.center[
-  <img src="assets/img/cod.png" height="500px"></img>
-]
+<div style='text-align:center;'>
+<img src="assets/img/inventaires.png" height="500px"></img>
+</div>
 
 ---
 
-# Les propriétés de petit monde en écologie
+# Biodiversité Québec
 
-.center[
-  <img src="assets/img/pollinisateur.png" height="500px"></img>
-]
-
----
-
-# Les propriétés de petit monde en écologie
-
-.center[
-  <img src="assets/img/csbq.png" height="500px"></img>
-]
-
----
-# Le projet de session
-
-Est-ce que le réseau de collaborations entre les étudiants du bacc en écologie a les mêmes propriétés que les réseaux écologiques ?
-
----
-class: inverse, center, middle
-
-# La science reproductible
-
-<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+<div style='text-align:center;'>
+<img src="assets/img/portail.png" height="500px"></img>
+</div>
 
 ---
 
-# L'importance de la reproductibilité.
+# Biodiversité Québec
 
-## Ces situations peuvent survenir lors de votre carrière professionnelle:
-
-**Situation 1.** Un employeur souhaite que vous réalisiez les mêmes analyses 3 ans plus tard sur des données différentes.
-
-**Situation 2.** Vous avez commis une erreur dans votre saisie de données, vous devez reconduire vos analyses.
-
-**Situation 3.** Un des réviseurs de votre article scientifique vous demande de refaire vos analyses en tenant compte d'une nouvelle variable environnementale.
+<div style='text-align:center;'>
+<img src="assets/img/indicateurs.png" height="500px"></img>
+</div>
 
 ---
 
-# Les étapes du travail d'un biologiste
+# Biodiversité Québec
 
-.center[
-  <img src="assets/img/flow_biometrie.png"  width="90%"></img>
-]
-
----
-
-# Les étapes du travail d'un biologiste
-
-.center[
-<img src="assets/img/flow_bio500.png" width="90%"></img>
-]
-
-## Certaines étapes intermédiaires sont souvent oubliées.
-
-
----
-
-# Discussion
-
-Identification des étapes d'une étude scientifique susceptibles d'influer sur la reproductibilité.
- -->
+<div style='text-align:center;'>
+<img src="assets/img/BITH_RCP45_QC.gif" height="500px"></img>
+</div>
 
 ---
 class: inverse, center, middle
@@ -251,7 +150,7 @@ Au terme de ce cours, l'étudiant sera en mesure de réaliser l'ensemble de la  
 
 # Objectifs spécifiques
 
-- Planifier une base de données et la préparation de formulaires pour leur acquisition ;
+- Planifier une base de données et la préparation de formulaires pour l'acquisition de données ;
 - Programmer et interroger une base de données relationnelle ;
 - Compiler et exécuter un projet au moyen de la librairie drake ;
 - Maintenir un cahier de laboratoire au moyen de RMarkdown ;
@@ -324,6 +223,10 @@ class: inverse, center, middle
 # Projet de session
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
+---
+
+# Réseaux écologiques
 
 ---
 
