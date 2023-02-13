@@ -87,6 +87,34 @@ La modélisation, elle est essentielle à l'étude des systèmes complexes.
 
 # L'écologie computationnelle
 
+.pull-left[
+  ## Dynamiques des populations
+  .center[
+    <img src="assets/img/population_dynamics.jpg" height="150px"></img>
+  ]
+]
+
+.pull-right[
+  ## Écologie des communautés
+  .center[
+    <img src="assets/img/community_ecology.jpg" height="150px"></img>
+  ]
+]
+
+.pull-left[
+  ## Biologie de la conservation
+  .center[
+    <img src="assets/img/caribou.jpg" height="150px"></img>
+  ]
+]
+
+.pull-right[
+  ## Modélisation des écosystèmes
+  .center[
+    <img src="assets/img/ecosystem_model.jpg" height="150px"></img>
+  ]
+]
+
 ---
 
 # Enseignant
@@ -152,7 +180,7 @@ Au terme de ce cours, l'étudiant sera en mesure de réaliser l'ensemble de la  
 
 - Planifier une base de données et la préparation de formulaires pour l'acquisition de données ;
 - Programmer et interroger une base de données relationnelle ;
-- Compiler et exécuter un projet au moyen de la librairie drake ;
+- Compiler et exécuter un projet au moyen de la librairie target ;
 - Maintenir un cahier de laboratoire au moyen de RMarkdown ;
 - Représenter visuellement les données au moyen de R ;
 - Préparer un rapport d'étude ;
@@ -228,18 +256,25 @@ class: inverse, center, middle
 
 # Réseaux écologiques
 
+.center[
+  <img src="assets/img/forest.jpg" height="500px"></img>
+]
+
 ---
 
 # Réseaux écologiques
 
-Les réseaux sont la clée pour comprendre le fonctionnement des écosystèmes
-- Ils sont complexes et fascinants !
+Les réseaux sont la clef pour comprendre le fonctionnement des écosystèmes
+> Ils sont complexes et fascinants !
 
-Cette complexité exige de simplifier le problème pour l'étudier : *Modèle de petit monde*
+<br><br>
+***Les réseaux sont des outils vraiment utiles pour voir différents problèmes sous un autre angle, ce qui ouvre tout un autre monde d'analyses possibles***
+
+\- Benjamin -
 
 ---
 
-# Les propriétés de petit monde en écologie
+# Les propriétés des réseaux en écologie
 
 .center[
   <img src="assets/img/foodweb.png" height="500px"></img>
@@ -247,7 +282,7 @@ Cette complexité exige de simplifier le problème pour l'étudier : *Modèle de
 
 ---
 
-# Les propriétés de petit monde en écologie
+# Les propriétés des réseaux en écologie
 
 .center[
   <img src="assets/img/cod.png" height="500px"></img>
@@ -255,18 +290,41 @@ Cette complexité exige de simplifier le problème pour l'étudier : *Modèle de
 
 ---
 
-# Les propriétés de petit monde en écologie
+# Les propriétés des réseaux en écologie
 
-## Structure
-- Distance entre noeuds (connectivité)
+## Propriétés des réseaux
+
+.pull-left[
+- Distance entre nodes
 - Taille des nodes
+- Modularité (regroupement des nodes)
+]
+
+.pull-right[
+  <img src="assets/img/small_world_network.png" height="300px"></img>
+]
 
 ---
 
-# Les propriétés de petit monde en écologie
+# Les propriétés des réseaux en écologie
 
 .center[
   <img src="assets/img/csbq.png" height="500px"></img>
+]
+
+---
+
+# Les propriétés des réseaux en écologie
+
+La théorie des réseaux et l'étude de leurs propriétés sont des outils puissants. On les utilise pour comprendre 
+- Les interactions entre les espèces, 
+- Les interactions entre les groupes sociaux, 
+- La planification des réseaux de distribution d'électricité (grids), 
+- L'internet, 
+- etc.
+
+.center[
+  <img src="assets/img/electric_grid.jpg" height="250px"></img>
 ]
 
 ---
