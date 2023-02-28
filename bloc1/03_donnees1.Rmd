@@ -39,6 +39,25 @@ class: title-slide, middle
 
 ---
 
+# Biodiversité Québec
+
+## Offre de stage
+
+Biodiversité Québec développe une infrastructure informatique qui servira à documenter en temps réel
+l'état de la biodiversité et ses changements
+
+### Rôles
+- Numériser et intégrer des données à la base de données
+- Participation aux activités de développement éco-informatiques
+- Participation à diverses activité en fonction des aptitudes et des intérêts
+- Participation aux rencontres d'équipe, avec le ministère et avec les partenaires
+
+### Exigences
+
+Les outils utilisés (SQL, R, Git) seront couverts dans le cours
+
+---
+
 # Retour sur la semaine précédente
 
 Quels sont les champs à documenter ?
