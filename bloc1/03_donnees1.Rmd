@@ -58,9 +58,17 @@ Les outils utilisés (SQL, R, Git) seront couverts dans le cours
 
 ---
 
-# Retour sur la semaine précédente
+# Plan de cours
 
-Quels sont les champs à documenter ?
+## Dernière séance
+
+Nous avons défini les champs à documenter.
+
+## Aujourd'hui : La collecte, la saisie et l'entreposage de données biologiques
+
+- Les types de données
+- Les formulaires de saisie
+- Les bases de données relationnelles
 
 ---
 class: inverse, center, middle
@@ -287,7 +295,7 @@ On utilisera préférablement la norme [ISO8601](https://fr.wikipedia.org/wiki/I
 
   - `TIMESTAMP` (Heure et temps): `YYYY-MM-ddThh:mm:ss`. *ex. `1977-04-22T01:00:00-05:00` ou `1977-04-22T06:00:00Z`*
   - `DATE`: `YYYY-MM-dd`. *ex. 1997-04-22*
-  - `TIME`: `HH:mm:ss` dans un systéme de 24 heures. *ex. 01:30:00.*
+  - `TIME`: `HH:mm:ss` dans un système de 24 heures. *ex. 01:30:00.*
 
 Gardez à l'esprit que vos données pourraient être réutilisées à travers le monde.
 
@@ -486,10 +494,10 @@ class: inverse, center, middle
 # Les entrepôts existants
 
 .pull-left[
-  1. Les `fichiers textes` comme les CSV, TSV (Format libre et ouvert)
-  2. Les `tableurs` comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
-  3. Les `fichiers hierarchiques/structurés` HDF, NetCDF (Format libre et ouvert)
-  4. Les `bases de données relationnelles`
+1. Les `fichiers textes` comme les CSV, TSV (Format libre et ouvert)
+2. Les `tableurs` comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
+3. Les `fichiers hierarchiques/structurés` HDF, NetCDF (Format libre et ouvert)
+4. Les `bases de données relationnelles`
 ]
 
 .pull-right[
@@ -503,10 +511,10 @@ class: inverse, center, middle
 # Les entrepôts existants
 
 .pull-left[
-  1. Les `fichiers textes` comme les CSV, TSV (Format libre et ouvert)
-  2. Les `tableurs` comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
-  3. Les `fichiers hierarchiques/structurés` HDF, NetCDF (Format libre et ouvert)
-  4. Les `bases de données relationnelles`
+1. Les `fichiers textes` comme les CSV, TSV (Format libre et ouvert)
+2. Les `tableurs` comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
+3. Les `fichiers hierarchiques/structurés` HDF, NetCDF (Format libre et ouvert)
+4. Les `bases de données relationnelles`
 ]
 
 .pull-right[
@@ -542,7 +550,7 @@ class: inverse, center, middle
 
 - **Maintenir l'intégrité entre les enregistrements de nos tableaux**. Une observation ne peut être faite sur un site qui n'existe pas.
 - **Normaliser et contrôler la qualité des données**. Chaque colonne est un type précis de données. Des contraintes peuvent être appliquées sur chaque colonne.
-- **Éviter les redondances dans le stockage de l'information** (obtenir une [forme normale](https://fr.wikipedia.org/wiki/Forme_normale_(bases_de_donn%C3%A9es_relationnelles)), voir la section [Format de donnée du cours 2](https://econumuds.github.io/BIO500/cours2/#10).
+- **Éviter les redondances dans le stockage de l'information**
 
 ---
 class: inverse, center, middle
@@ -952,13 +960,13 @@ dbDisconnect(con)
 
 - Maintenant que vous en savez plus sur le format des données, vous devez écrire le script R pour créer votre base de données en spécifiant les tables, les champs et les clés liant les tables entre elles.
 
-- Commencez à récolter les données
+- Récoltez les données
 
 ---
 
 # Lectures et travail pour la semaine prochaine
 
-## Travail
+## Lectures
 
 - Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
 - Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
