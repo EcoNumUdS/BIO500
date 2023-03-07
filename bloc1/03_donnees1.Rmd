@@ -64,11 +64,15 @@ Les outils utilisés (SQL, R, Git) seront couverts dans le cours
 
 Nous avons défini les champs à documenter.
 
-## Aujourd'hui : La collecte, la saisie et l'entreposage de données biologiques
+## Aujourd'hui
 
-- Les types de données
-- Les formulaires de saisie
-- Les bases de données relationnelles
+Collecter des données : format et types de données
+
+Entreposer et archiver : bases de données relationnelles
+
+- Conceptualiser
+- Interagir avec une base de données (SQL)
+- Construire une base de données (R + SQL)
 
 ---
 class: inverse, center, middle
@@ -962,6 +966,8 @@ dbDisconnect(con)
 
 - Récoltez les données
 
+Les données devront être déposées sur Moodle d'ici vendredi.
+
 ---
 
 # Lectures et travail pour la semaine prochaine
@@ -976,3 +982,15 @@ dbDisconnect(con)
 # delete db file
 system('rm ./assets/data/reseau.db')
 ```
+
+---
+
+# Discussion
+
+## Is there a reproducibility crisis ?
+
+En équpe, résumez les principaux points de l'articles. Puis, discutez des questions suivantes :
+
+1. Que décrit l'article sur l'état de la reproductibilité en science ? Est-ce que les chercheurs sondés ont une impression juste ?
+2. "We want to be discovering new things but not generating too many false leads." Quel est le lien entre la reproductibilité et l'innovation ?
+3. Quels sont les particularités des domaines scientifiques qui sont les plus touchés par le problème de la reproductibilité ?
