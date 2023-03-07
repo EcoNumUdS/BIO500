@@ -966,7 +966,10 @@ dbDisconnect(con)
 
 - Récoltez les données
 
-Les données devront être déposées sur Moodle d'ici vendredi.
+## Les données devront être déposées sur Moodle d'ici vendredi.
+
+Les entrées dans la table *collaborations* doivent être faites **dans les deux sens** (auteur1, auteur2) et (auteur2, auteur1).
+
 
 ---
 
