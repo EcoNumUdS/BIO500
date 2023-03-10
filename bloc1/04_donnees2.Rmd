@@ -134,6 +134,32 @@ CREATE TABLE collaborations (
 dbSendQuery(con, tbl_collaborations)
 ```
 
+**Questions :** 
+
+La table `collaborations` est liée à quelles autres tables ?
+
+Comment la table à lier est spécifiée ?
+
+---
+
+# Création de la table `collaborations`
+
+
+```{r, eval=FALSE}
+tbl_collaborations <- "
+CREATE TABLE collaborations (
+  auteur1     VARCHAR(40),
+  auteur2     VARCHAR(40),
+  articleID   VARCHAR(20),
+  PRIMARY KEY (auteur1, auteur2, articleID),
+  FOREIGN KEY (auteur1) REFERENCES auteurs(auteur),      <--- table(colonne)
+  FOREIGN KEY (auteur2) REFERENCES auteurs(auteur),
+  FOREIGN KEY (articleID) REFERENCES articles(articleID)
+);"
+
+dbSendQuery(con, tbl_collaborations)
+```
+
 ---
 class: inverse, center, middle
 
@@ -168,7 +194,7 @@ dbWriteTable(con, append = TRUE, name = "collaborations", value = bd_collab, row
 Ce premier exercice est important pour la suite de la séance.
 
 1. Recréer la base de données `reseau` avec ses trois tables `auteurs`, `articles` et `collaborations`
-2. Insérer les données [auteurs.csv](https://raw.githubusercontent.com/EcoNumUdS/BIO500/master/bloc1/assets/data/db_reseau/authors.csv), [collaborations.csv](https://raw.githubusercontent.com/EcoNumUdS/BIO500/master/bloc1/assets/data/db_reseau/collaboration.csv) et [articles.csv](https://raw.githubusercontent.com/EcoNumUdS/BIO500/master/bloc1/assets/data/db_reseau/articles.csv) dans les deux tables à l'aide de la commande R `dbWriteTable()`
+2. Insérer les données [auteurs.csv](https://raw.githubusercontent.com/EcoNumUdS/BIO500/master/bloc1/assets/data/db_reseau/authors.csv), [collaborations.csv](https://raw.githubusercontent.com/EcoNumUdS/BIO500/master/bloc1/assets/data/db_reseau/collaboration.csv) et [articles.csv](https://raw.githubusercontent.com/EcoNumUdS/BIO500/master/bloc1/assets/data/db_reseau/articles.csv) dans les trois tables à l'aide de la commande R `dbWriteTable()`
 
 
 ---
@@ -527,6 +553,10 @@ head(moy_auteurs)
 - Pour ce faire, on peut bâtir une requête à partir d'une autre requête.
 ]
 
+--
+<br><br>
+## Pourquoi faire un `INNER JOIN` entre les tables `articles` et `collaborations` ?
+
 ---
 
 # Exercice 5
@@ -650,10 +680,10 @@ Assurez vous que le script fonctionne sur les différents ordinateurs des membre
 
 # Lectures
 
-## Débat sur le partage des données
+## Discussion sur l'utilisation de modèles de langage
 
-- Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
-- Mills et al. 2015. Archiving Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
+- [Stokel-Walker & Van Noorden. 2023. What ChatGPT and generative AI mean for science.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/Stokel-Walker2023.pdf)
+- [.2023. The AI writing on the wall.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/NatMaInt2023.pdf) 
 
 ---
 class: inverse, center, middle
