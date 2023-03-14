@@ -171,20 +171,34 @@ Mais le désavantage de fonctionner seulement avec les fichiers "plain text"...
 
 ---
 # 2. Créer un nouveau projet
-## Le fichier readme.md
+## Le fichier README.md
 
 - Utilisation du language markdown 
-- Décrit le contenu dépôt et son utilisation 
+- Décrit le contenu du dépôt et son utilisation 
 - Permet de spécifier la license et autres informations si nécessaire 
-- On peut l'éditer directement en ligne avec le bouton 
+- On peut l'éditer directement en ligne avec le bouton
 
 ---
 # 3. Installer git 
 
+## Git doit être installé sur les systèmes Windows
+
 Instructions pour Windows[https://git-scm.com/download/win] 
 
+--
+
+## Vérifier si Git est installé (Mac)
+
+Ouvrir le terminal et saisir la commande suivante :
+
+```bash
+git version
+```
+
+Si la commande n'est pas reconnue, il faut installer git :
 Instructions pour Mac[http://git-scm.com/download/mac] 
 
+--
 
 **L'interface web est très efficace mais certains pourraient apprécier utiliser un git client pour gérer les fusions, branches et l'historique**
 
@@ -193,7 +207,7 @@ Instructions pour Mac[http://git-scm.com/download/mac]
 
 Sur github 
 
-- Cliquer sur le boutone "clone" 
+- Cliquer sur le bouton "clone" 
 - Copier l'URL du dépôt 
 
 Dans RStudio
@@ -209,7 +223,7 @@ Dans RStudio
 
 Il est recommandé de bien organiser ses fichiers afin de s'y retrouver plus facilement. On y retrouve habituellement les éléments suivants  : 
 
-- *readme.md*: information sur le dépôt 
+- *README.md*: information sur le dépôt 
 - *.Rproj*: informations sur le projet R
 - *.git* : informations sur l'historique d'utilisation de git 
 - *.gitignore*:  contient les extensions de fichier ignorés par git
@@ -227,9 +241,9 @@ Organisez votre répertoire en ajoutant les nouveaux dossiers data, scripts, fig
 # 6. Enregistrer des modifications 
 
 - Sélectionner l'onglet git dans le quadrant supérieur droit
-- Cliquer sur le bouton "commit" pour enregistrer les modifications
+- Cliquer sur le bouton **commit** pour enregistrer les modifications
 - Résumer les modifications en une courte phrase
-- Cliquer sur le bouton "push" pour verser les modifications vers le serveur
+- Cliquer sur le bouton **push** pour verser les modifications vers le serveur
 - Valider en ligne sur votre page si les modifications ont été ajoutées 
 
 ---
@@ -415,29 +429,49 @@ Un tutoriel complet est disponible ici[https://happygitwithr.com/rstudio-git-git
 # En résumé
 
 .pull-left[
-1. Enregistrer l'histoire du projet
-- `git add`
-- `git commit`
-- `git status`
+## Enregistrer l'histoire du projet
+  - `git add`
+  - `git commit`
+  - `git status`
 
-2. Voyager dans le temps
-- `git checkout`
+## Voyager dans le temps
+  - `git checkout`
 
-3. Expérimenter les changements
-- `git branch`
-- `git merge`
+## Expérimenter les changements
+  - `git branch`
+  - `git merge`
 
 ]
 .pull-right[
 
-4. Verser sur le serveur 
-- `git push`
+## Verser sur le serveur 
+  - `git push`
 
-5. Collaborer sur des projets
-- `git pull`
-- `git clone`
+## Collaborer sur des projets
+  - `git pull`
+  - `git clone`
 ]
 
+---
+
+# Lectures
+
+## Discussion sur l'utilisation de modèles de langage
+
+- [Stokel-Walker & Van Noorden. 2023. What ChatGPT and generative AI mean for science.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/Stokel-Walker2023.pdf)
+- [.2023. The AI writing on the wall.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/NatMaInt2023.pdf) 
+
+---
+class: inverse, center, middle
+
+# Discussion : Partager ses données ou pas ?
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
+<br>
+## 15 minutes pour préparer ses arguments
+## 2 minutes pour présenter ses arguments
+## 20 minutes de débat
 ---
 
 # Lecture de la semaine
