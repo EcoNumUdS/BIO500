@@ -1,0 +1,94 @@
+---
+title: "Un beau RMarkdown"
+author: "Victor Cameron"
+output:
+  prettydoc::html_pretty:
+    theme: Cayman
+    highlight: github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Librairies requises pour un beau travail
+<!-- Ajouter une ligne horizontale -->
+***
+
+```{r, eval=FALSE}
+# Pour accéder à des thèmes
+# install.packages("prettydoc")
+# library("prettydoc")
+```
+
+<!-- Insérer des lignes -->
+<br><br>
+
+
+## Un peu de texte
+
+***
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<br><br>
+
+
+## Insérer des images
+
+***
+
+Les images peuvent être centrées !
+<br>
+
+<center>
+![Coding course](./img/programmer.gif)
+</center>
+
+<br><br>
+
+
+## Insérer une table
+***
+Les tables ont un plus beau rendu lorsqu'on utlise un thème [prettydoc](https://prettydoc.statr.me/index.html)
+
+<br>
+
+| Time          | Session  |   Topic |
+|:--------------|:--------:|--------:|
+| *left*        | *center* | *right* |
+| 01:00 - 01:50 |    1     | Anatomy |
+| 01:50 - 02:00 |          | *Break* |
+| 02:00 - 02:45 |    2     |  Tables |
+| 02:45 - 03:00 |          | *Break* |
+
+<br><br>
+
+
+## Insérer une citation
+***
+
+> Être ou ne pas être :
+
+> Là est la question !
+
+<br><br>
+
+
+## Conclusion
+***
+
+* R Markdown est génial.
+    * Le rapport entre la mise en forme et le contenu est excellent.
+    * Pour les analyses exploratoires, les articles de blog et autres, R Markdown sera un puissant stimulateur de productivité.
+* L'équipe de RStudio a rendu l'ensemble du processus très convivial.
+    * RStudio fournit des raccourcis utiles pour la compilation en HTML et l'exécution des fragments de code. Ces raccourcis sont présentés de manière claire.
+    * Les extensions incorporées à Markdown, en particulier la prise en charge des formules et des tableaux, sont particulièrement utiles.
+    * La fonction "sauter au fragment" facilite la navigation. Cela aide si les fragments de code ont des noms informatifs.
+    * L'auto-complétion pour les options des fragments de code R est vraiment utile. Voir également [la documentation des options de fragment sur le site web de knitr](http://yihui.name/knitr/options).
+* D'autres publications récentes sur R Markdown incluent celles de :
+     * [Christopher Gandrud](http://christophergandrud.blogspot.com.au/2012/05/dynamic-content-with-rstudio-markdown.html)
+     * [Markcus Gesmann](http://lamages.blogspot.com.au/2012/05/interactive-reports-in-r-with-knitr-and.html)
+     * [Rstudio sur R Markdown](http://rstudio.org/docs/authoring/using_markdown)
+     * [Yihui Xie](http://yihui.name/knitr/) : je tiens vraiment à le remercier pour le développement de `knitr`. Il a également publié [cet exemple de R Markdown](https://github.com/yihui/knitr/blob/master/inst/examples/knitr-minimal.Rmd).
