@@ -13,7 +13,7 @@ Un projet d'analyse de données comprend de nombreuses étapes, qui vont de la c
 1. Lancer le code
 2. Attendre qu'il s'exécute 
 3. Découvrir un bug 
-4. Recommencer la bouchle
+4. Recommencer la boucle
 
 Des petites modifications en amont peuvent affecter toute la chaîne en aval. Inversement, parfois on a seulement besoin de refaire une figure sans avoir à refaire toute la chaîne. 
 
@@ -187,7 +187,7 @@ Alternativement, pour une séquence d'analyse très compliquée, on pourrait vou
 Le grain d'une séquence dépend donc d'un compromis : 
 
 1. Les `targets` sont suffisamment importantes pour sauver du temps si elles sont ignorées (e.g. construire votre base de données et faire les injections) 
-2. Suffisamment petites pour qu'il soit pertinent d'automatiser le processis
+2. Suffisamment petites pour qu'il soit pertinent d'automatiser le processus
 3. Retourne un seul objet qui 
   - est facile à comprendre et interpréter
   - pertinent pour le projet 
@@ -195,7 +195,7 @@ Le grain d'une séquence dépend donc d'un compromis :
 
 ---
 
-# Le makefile comme outil de reproductiblité
+# Le `_targets.R` comme outil de reproductiblité
 
 La rédaction du ficher `_targets.R` nous force à spécifier les différentes étapes de notre démarche, à identifier les entrées et les sorties de différentes instructions à l'ordinateur. De cette façon, le fichier `_targets.R` permet de documenter rigoureusement la démarche réalisée.
 

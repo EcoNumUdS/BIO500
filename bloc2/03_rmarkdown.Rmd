@@ -5,6 +5,20 @@ class: inverse, center, middle
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
 ---
+# Retour sur le dernier cours
+
+Il est recommandé de bien organiser ses fichiers afin de s'y retrouver plus facilement. On y retrouve habituellement les éléments suivants  : 
+
+- *README.md*: information sur le dépôt 
+- *.Rproj*: informations sur le projet R
+- *.git* : informations sur l'historique d'utilisation de git 
+- *.gitignore*:  contient les extensions de fichier ignorés par git
+- **data** : données du projet ainsi que la base de données
+- **scripts**: tous les scripts R
+- **figures**: résultats des analyses
+- **rapport**: rapport final 
+
+---
 
 # C'est quoi le RMarkdown
 
@@ -52,30 +66,35 @@ class: inverse, center, middle
 # Exercice
 
 1. Ouvrir Rstudio
-2. Installer le paquet RMarkdown si necessaire (`install.packages('Rmarkdown')`)
-3. Creer nouveau document RMarkdown (bouton vert en haut à gauche)
+2. Installer la libraire RMarkdown si necessaire (`install.packages('Rmarkdown')`)
+3. Creer nouveau document RMarkdown (New File > RMarkdown)
 4. Identifier le YAML, texte, et code chunk du document `.Rmd`
 5. Compiler le document en html (bouton 🧶 `knit`)
+
+---
+# Le fichier RMarkdown
+
+Vous pouvez suivre à l'aide du fichier `rmd_de_base.Rmd` accessible sur [Moodle](https://moodle.usherbrooke.ca).
 
 ---
 # Le YAML (metadata)
 
 - les métadonnées et les options du document sont définies ici
-- La syntaxe est `cle: value`
-- Commence et se termine entre trois tirets `---`
+- La syntaxe est `cle: valeur`
+- Commence et se termine avec trois tirets `---`
 - Toujours au début du document
 
 ```r
 ---
 title: "Mon titre"
-author: "Dominique Gravel"
+author: "Victor Cameron"
 date: "29/03/2022"
 output: html_document
     toc: true
 ---
 ```
 
-Les options d'output dépendent de la sortie.
+Les options d'`output` définissent le type de document produit.
 
 Voir `?html_document`, `?pdf_document`, `?word_document`
 
