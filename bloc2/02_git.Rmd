@@ -140,7 +140,7 @@ Mais le désavantage de fonctionner seulement avec les fichiers "plain text"...
 ---
 # Les grandes étapes de git
 
-0. Explorer interface web de github
+0. Explorer l'interface web de github
 1. Créer un compte
 2. Créer un dépôt 
 3. Installer git 
@@ -151,18 +151,18 @@ Mais le désavantage de fonctionner seulement avec les fichiers "plain text"...
 8. Récupérer les modifications de co-équipiers
 
 ---
-# 0. Explorer l'interface github
+# 1. Explorer l'interface github
 
 - Aller à la page du cours BIO500[https://github.com/EcoNumUdS/BIO500]
 
 ---
-# 1. Créer un compte
+# 2. Créer un compte
 
 - Aller à la page D'accueil de gitub[https://github.com]
 - Sélectionner "sign up" et entrer les informations
 
 ---
-# 2. Créer un nouveau projet
+# 3. Créer un nouveau projet
 
 - S'inscrire avec "sign in"
 - Sélectionner le bouton new pour créer un nouveau dépôt 
@@ -170,7 +170,7 @@ Mais le désavantage de fonctionner seulement avec les fichiers "plain text"...
 - On peut changer les options pour avoir un dépôt publique (tous peuvent consulter) ou un dépôt privé (accessible sur invitation seulement)
 
 ---
-# 2. Créer un nouveau projet
+# 3. Créer un nouveau projet
 ## Le fichier README.md
 
 - Utilisation du language markdown 
@@ -179,7 +179,7 @@ Mais le désavantage de fonctionner seulement avec les fichiers "plain text"...
 - On peut l'éditer directement en ligne avec le bouton
 
 ---
-# 3. Installer git 
+# 4. Installer git 
 
 ## Git doit être installé sur les systèmes Windows
 
@@ -198,12 +198,51 @@ git version
 Si la commande n'est pas reconnue, il faut installer git :
 Instructions pour Mac[http://git-scm.com/download/mac] 
 
---
+---
+# 4. Associer git avec GitHub
 
-**L'interface web est très efficace mais certains pourraient apprécier utiliser un git client pour gérer les fusions, branches et l'historique**
+Il peut être nécessaire de configurer git pour qu'il puisse communiquer avec github.
+Cette étape se fait plus facilement avec le package `usethis` dans la console de RStudio :
+
+```r
+# Installer le package usethis
+install.packages("usethis")
+
+## Enregistrer les informations de l'utilisateur :
+usethis::use_git_config(user.name = "YourName", user.email = "your@mail.com")
+
+## Créer un jeton d'accès :
+usethis::create_github_token() 
+### Définir la date d'expiration comme "Aucune expiration"
+### Copier le jeton d'accès dans le presse-papier
+
+## Enregistrer le jeton d'accès :
+credentials::set_github_pat()
+# gitcreds::gitcreds_set()
+
+## Redémarrer R !!!
+```
 
 ---
-# 4. Associer un projet R avec Rstudio
+# 4. Associer git avec GitHub
+
+Il faut vérifier que git est bien configuré :
+
+```r
+usethis::git_sitrep()
+
+## Votre nom d'utilisateur et e-mail devraient être 
+## correctement retournés.
+
+## Aussi, le rapport devrait contenir quelque chose comme ceci :
+## 'Personal access token: '<found in env var>''
+
+## Si un message d'erreur persiste, vérifier que le fichier .Renviron est bien configuré :
+## Appeler `usethis::edit_r_environ()` pour mettre à jour le fichier manuellement.
+```
+
+---
+# 5. Associer un dépôt à RStudio
 
 Sur github 
 
@@ -219,7 +258,7 @@ Dans RStudio
 - On peut ouvrir le projet ultérieurement avec *File > Open project* en sélectionnant le fichier avec l'extension .Rproj
 
 ---
-# 5. Bien structurer un projet 
+# 6. Bien structurer un projet 
 
 Il est recommandé de bien organiser ses fichiers afin de s'y retrouver plus facilement. On y retrouve habituellement les éléments suivants  : 
 
@@ -233,12 +272,12 @@ Il est recommandé de bien organiser ses fichiers afin de s'y retrouver plus fac
 - **rapport**: rapport final 
 
 ---
-# 5. Bien structurer un projet 
+# 6. Bien structurer un projet 
 
 Organisez votre répertoire en ajoutant les nouveaux dossiers data, scripts, figures et rapport
 
 ---
-# 6. Enregistrer des modifications 
+# 7. Enregistrer des modifications 
 
 - Sélectionner l'onglet git dans le quadrant supérieur droit
 - Cliquer sur le bouton **commit** pour enregistrer les modifications
@@ -247,7 +286,7 @@ Organisez votre répertoire en ajoutant les nouveaux dossiers data, scripts, fig
 - Valider en ligne sur votre page si les modifications ont été ajoutées 
 
 ---
-# 6. Enregistrer des modifications 
+# 7. Enregistrer des modifications 
 
 
 **Exercice**: créer un nouveau script dans le dossier "scripts", inscrire une commande et ensuite enregistrer les modifications 
