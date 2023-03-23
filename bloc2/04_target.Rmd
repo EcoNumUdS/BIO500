@@ -178,7 +178,7 @@ Comme une fonction, une `target` peut faire trois choses :
 
 Si une target est trop longue, vous avez avantage à la briser en petits morceaux pour que chaque étape soit vérifiée. 
 
-Alternativement, pour une séquence d'analyse très compliquée, on pourrait vouloir regrouper les étapes pour éviter d'avoir une liste trop longues.  
+Alternativement, pour une séquence d'analyse très compliquée, on pourrait vouloir regrouper les étapes pour éviter d'avoir une liste trop longue.  
 
 ---
 
@@ -221,7 +221,7 @@ Manuel de targets [https://books.ropensci.org/targets/](https://books.ropensci.o
 
 # Nettoyage du dépôt en fin de script
 
-Il arrive que certains scripts génèrent des fichiers temporaires qui ne doivent pas être conservés inutilement. C'est le cas notamment des fichiers du dossier 'meta' qui sont utiles pour le diagnostique mais pas nécessaire d'être poussés sur github. 
+Il arrive que certains scripts génèrent des fichiers temporaires qui ne doivent pas être conservés inutilement et être poussés sur github. 
 
 Le fichier `.gitignore` vous permet d'identifier les fichiers qui ne doivent pas être versés sur le serveur. 
 
