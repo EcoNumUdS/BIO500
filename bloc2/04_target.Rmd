@@ -237,6 +237,8 @@ Construire un script `targets` qui contient les étapes suivantes :
 
 Note : la commande pour compiler du markdown est `render("mon_rmarkdown.Rmd")`
 
+Note : Alternativement, `tar_render()` peut être utilisé à la place de `render()` et de `tar_target()` pour compiler un document RMarkdown. *Voir la [documentation](https://docs.ropensci.org/tarchetypes/reference/tar_render.html).
+
 ---
 
 class: inverse, center, middle
@@ -255,3 +257,5 @@ class: inverse, center, middle
 - Créez un cahier de laboratoire où sont notées toutes vos étapes 
 - Versez votre travail sur le dépôt en ligne
 - Construire le `_targets.R` au fur et à mesure de vos progrès
+
+---

@@ -63,11 +63,17 @@ Le grain d'une séquence dépend donc d'un compromis :
 
 ## Exécuter le pipeline
 
-Utiliser la commande `tar_make()` pour exécuter le pipeline. De nombreuses informations utiles sont générées automatiquement lors de l'opération.
+**1. Visualiser les étapes qui doivent être mises à jour**
 
-**Visualiser les étapes qui doivent être mises à jour**
+Cette commande produit un graphique de dépendance du projet. Il est de bonne pratique de s'assurer que ce graphe ait les nodes correctement connectées avec les flèches. Chaque node représente une target ou un objet de l'environement global et une flèche la dépendance d'un node à un autre.
 ```
 tar_visnetwork()
+```
+
+**Exécuter le pipeline**
+La commande `tar_make()` permet d'exécuter le pipeline. De nombreuses informations utiles sont générées automatiquement lors de l'opération et sont placés dans le dossier `_targets`.
+```
+tar_make()
 ```
 
 ## Trucs et astuces

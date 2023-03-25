@@ -1,4 +1,3 @@
----
 class: inverse, center, middle
 
 # Essai sur la reproductibilité
@@ -52,5 +51,3 @@ Québec Science est un journal destiné à un grand public, alors je vous invite
 - Mise en page
 - Bibliographie
 - Qualité de la langue
-
----
