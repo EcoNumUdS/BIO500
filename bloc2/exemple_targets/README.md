@@ -70,7 +70,8 @@ Cette commande produit un graphique de dépendance du projet. Il est de bonne pr
 tar_visnetwork()
 ```
 
-**Exécuter le pipeline**
+**2. Exécuter le pipeline**
+
 La commande `tar_make()` permet d'exécuter le pipeline. De nombreuses informations utiles sont générées automatiquement lors de l'opération et sont placés dans le dossier `_targets`.
 ```
 tar_make()
