@@ -1,4 +1,11 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
 # Automatisation de processus
+
+***
 
 Un projet d'analyse de données comprend de nombreuses étapes, qui vont de la construction de la base de données, à la production du rapport, en passant par les analyses statistiques. L'ensemble du processus peut-être long et frustrant, surtout lorsque l'on a une boucle du genre :
 
@@ -70,7 +77,8 @@ Cette commande produit un graphique de dépendance du projet. Il est de bonne pr
 tar_visnetwork()
 ```
 
-**Exécuter le pipeline**
+**2. Exécuter le pipeline**
+
 La commande `tar_make()` permet d'exécuter le pipeline. De nombreuses informations utiles sont générées automatiquement lors de l'opération et sont placés dans le dossier `_targets`.
 ```
 tar_make()

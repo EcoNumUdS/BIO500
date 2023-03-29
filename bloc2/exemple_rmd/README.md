@@ -1,5 +1,7 @@
 # Introduction à RMarkdown
 
+***
+
 Trois exemples d'utilisation d'un RMarkdown sont présentés dans ce dépôt. Un exemple de base est présenté dans le fichier `rmd_de_base.Rmd`. Des exemples plus avancés sont présentés dans les fichiers `rmd_fancy.Rmd` et `rmd_pagedown.Rmd`.
 
 Pour débuter un document RMarkdown, RStudio propose des 'templates'. Pour accéder aux templates il sufit d'accéder au menu File -> New File -> R Markdown -> From Template.
