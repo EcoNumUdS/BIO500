@@ -31,8 +31,72 @@ class: title-slide, middle
 
 - Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/bloc3/).
 
-- Vous trouverez du matériel supplémentaire dans le [cours](http://kevincazelles.fr/talks/assets/QCBSGraphsR/Rgraphics.html#4) de [Kevin Cazelles](http://kevincazelles.fr/) et [Nicolas Casajus](http://www.cen.ulaval.ca/membre.aspx?id=3945098&membre=ncasajus) lors d'un atelier de communication visuelle du CSBQ.
-- Certaines diapositives sont également extraites de la présentation de [David Taylor](http://dtdata.io/prm/intro_dataviz_csbq.pdf)
+- Un guide des fonctionalités de R pour la visualisation des données vous est accessible [ici](https://github.com/EcoNumUdS/BIO500/blob/master/references/graphsonr.pdf).
+
+- Vous trouverez du matériel supplémentaire dans le [cours](https://r.qcbs.ca/workshop03/book-fr/index.html) du [CSBQ](https://qcbs.ca/).
+
+---
+class: inverse, center, middle
+
+# Pourquoi la visualisation de données est importante ?
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
+---
+
+# La visualisation de données
+
+.center[<blockquote class="twitter-tweet"><p lang="en" dir="ltr" href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/tidyverse?src=hash&amp;ref_src=twsrc%5Etfw">#tidyverse</a> <a href="https://twitter.com/hashtag/datajournalism?src=hash&amp;ref_src=twsrc%5Etfw">#datajournalism</a> <a href="https://twitter.com/hashtag/dataviz?src=hash&amp;ref_src=twsrc%5Etfw">#dataviz</a> <a href="https://twitter.com/hashtag/Penguins?src=hash&amp;ref_src=twsrc%5Etfw">#Penguins</a> <a href="https://t.co/u2rXkBehxS">pic.twitter.com/u2rXkBehxS</a></p>&mdash; Laura Navarro (@LauraNavarroSol) <a href="https://twitter.com/LauraNavarroSol/status/1289216490307063814?ref_src=twsrc%5Etfw">July 31, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>]
+
+---
+
+# La visualisation de données
+
+Les données sont essentielles pour supporter ses arguments et convaincre un auditoire. Toutefois, les données brutes endorment les auditeurs, ou pire, les font fuir. 
+
+## La visualisation de données permet de présenter les données de manière plus attrayante et plus facile à comprendre.
+
+Voyons comment tirer avantage de la visualisation de données.
+
+---
+
+# La visualisation de données
+
+## Quel est le message ?
+
+.center[
+  <img src="assets/img/table_visu.png" width="100%"></img>
+]
+
+---
+
+# La visualisation de données
+
+## Et maintenant ?
+
+.center[
+  <img src="assets/img/plot_visu.png" height="450px"></img>
+]
+
+---
+
+# La visualisation de données
+
+## Une courbe de tendance seule ne suffit pas !
+
+.center[
+  <img src="assets/img/plot_visu.png" height="450px"></img>
+]
+
+---
+
+# La visualisation de données
+
+## Les données sont utiles uniquement si elles peuvent être comprises
+
+.center[
+  <img src="assets/img/plot_visu.png" height="450px"></img>
+]
 
 ---
 class: inverse, center, middle
@@ -43,26 +107,76 @@ class: inverse, center, middle
 
 ---
 
-# Trop d'information
+# Qu'est-ce qui fait une bonne figure ?
+
+## Quelques questions à se poser :
+
+- Quel est le message à communiquer ?
+- Qui est le public
+- Quelle est la meilleure façon de visualiser le message
+
+Règle générale : **restez simple, utilisez moins d'encre**
+
+---
+
+# Qu'est-ce qui fait une bonne figure ?
+
+## Quel est le message de cette figure ?
 
 .center[
-  <img src="assets/img/Pacala.png" width="90%"></img>
+  <img src="assets/img/Pacala.png" width="80%"></img>
 ]
 
 ---
 
-# Non respect des normes graphiques
+# Qu'est-ce qui fait une bonne figure ?
+
+## Trop d'information !
+
+.center[
+  <img src="assets/img/Pacala.png" width="80%"></img>
+]
+
+---
+
+# Qu'est-ce qui fait une bonne figure ?
+
+## Comment cette figure pourrait être améliorée ?
+
+<br><br>
+.center[
+  <img src="assets/img/Boulangeat.png" width="100%"></img>
+]
+
+---
+
+# Qu'est-ce qui fait une bonne figure ?
+
+## Abus de symboles et de couleurs !
+
+<br><br>
+.center[
+  <img src="assets/img/Boulangeat.png" width="100%"></img>
+]
+
+---
+
+# Qu'est-ce qui fait une bonne figure ?
+
+## Que remarquez-vous en premier ?
 
 .center[
   <img src="assets/img/Desjardins.png" width="80%"></img>
 ]
 
 ---
-# Abus de symboles et de couleurs
 
-<br><br>
+# Qu'est-ce qui fait une bonne figure ?
+
+## Non respect des normes graphiques
+
 .center[
-  <img src="assets/img/Boulangeat.png" width="100%"></img>
+  <img src="assets/img/Desjardins.png" width="80%"></img>
 ]
 
 
@@ -75,20 +189,7 @@ class: inverse, center, middle
 
 ---
 
-# L'importance des graphiques
-
-<!-- La représentation visuelle de nos données est un **outil de persuasion** permettant d'illustrer nos résultats auprès du public et de nos pairs. Cet outil permet également de mieux comprendre les relations à l'intérieur de nos données par la visualisation. -->
-
-## La représentation visuelle des données permet de:
-
-- Synthétiser l'information.
-- Communiquer plus efficacement qu'un tableau.
-- Explorer nos données par la visualisation.
-- Présenter nos résultats et convaincre.
-
----
-
-# Explorer nos données par la visualisation
+# Identifier le message
 
 ## Voici un exemple illustrant l'importance de visualiser ses données:
 
@@ -98,7 +199,7 @@ class: inverse, center, middle
 
 ---
 
-# Explorer nos données par la visualisation
+# Identifier le message
 
 ## Voici un exemple illustrant l'importance de visualiser ses données:
 
@@ -236,6 +337,21 @@ class: inverse, center, middle
 
 ---
 
+# Exercice
+
+## 7 minutes
+
+Dessinez à la main une proposition de figure pour la phénologie des différentes espèces de chauve-souris du Québec.
+
+Message : Les dates de présence des chauve-souris varie selon les espèces.
+
+```{r, echo = FALSE}
+pheno <- read.csv("assets/data/phenologie.csv")
+head(pheno[, c(1,3,5)])
+```
+
+---
+
 # Préparer les données adéquatement
 
 - Habituellement un `data.frame` ou `une matrice`
@@ -270,7 +386,7 @@ par(mfrow = c(1,1))
 arbres <- read.csv2("assets/data/arbres.csv")
 densite <- table(arbres[,c(3,5)])
 elevation <- as.numeric(row.names(densite))
-plot(elevation, densite[,1], axes = FALSE,
+plot(elevation, densite[,1], axes = TRUE,
       xlab = "Élévation", ylab = "Densité")
 ```
 ]
@@ -280,7 +396,7 @@ plot(elevation, densite[,1], axes = FALSE,
 # Échelles logarithmiques
 
 ```{r, out.width = '55%', dpi=300, fig.align="center", warning=FALSE, message=FALSE}
-plot(elevation, densite[,1], axes = FALSE,
+plot(elevation, densite[,1], axes = TRUE,
       xlab = "Élévation", ylab = "Densité",
       log = "xy")
 ```
@@ -292,7 +408,7 @@ plot(elevation, densite[,1], axes = FALSE,
 ## Arguments `cex`, `cex.lab` et `cex.axis`
 
 ```{r, out.width = '50%', dpi=300, fig.align="center", warning=FALSE, message=FALSE}
-plot(elevation, densite[,1], axes = FALSE,
+plot(elevation, densite[,1], axes = TRUE,
       xlab = "Élévation", ylab = "Densité",
       cex.lab = 1.5, cex.axis = 1.25, cex = 1.5)
 ```
@@ -609,10 +725,57 @@ contour(x, y, volcano,
 
 
 ```{r, eval=FALSE}
-dev.copy2pdf(file = "test.pdf")
-dev.copy2png(file = "test.png")
-dev.copy2eps(file = "test.eps")
+dev.copy(pdf, file = "test.pdf")
+dev.copy(png, file = "test.png")
+dev.copy(svg, file = "test.eps")
 ```
+
+---
+
+# Exercice
+
+## 10 minutes
+
+Scripter votre figure sur R à l'aide des [données](./bloc3/assets/data/phenologie.csv)
+
+Si elle est trop élaborée, vous pouvez la simplifier pour la rendre plus facile à réaliser
+
+---
+
+# Exercice
+
+.center[
+  <img src="assets/img/pheno_1.png" width="100%"></img>
+]
+
+---
+
+# Exercice
+
+.center[
+  <img src="assets/img/pheno_2.png" width="100%"></img>
+]
+
+---
+class: inverse, center, middle
+
+# Troisième étape : être créatif !
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
+---
+
+# Créativité
+
+## Créer d'autres types de figures
+
+[Animation](https://quebio.ca/connect/?lang=fr#9/46.2359/-72.3120)
+
+[Interactivité](https://biodiversite-quebec.ca/fr/inventaires/site/268)
+
+[Infographies](https://www.visualcapitalist.com/history-of-pandemics-deadliest/)
+
+
 ---
 class: inverse, center, middle
 
@@ -624,7 +787,7 @@ class: inverse, center, middle
 
 # Une référence sur les réseaux écologiques à lire
 
-**Analysing ecological networks of species interactions**
+[**Analysing ecological networks of species interactions**](https://github.com/EcoNumUdS/BIO500/blob/master/references/Delmas2019.pdf)
 Delmas, E., M. Besson, M.-H. Brice, L. A. Burkle, G. V. Dalla Riva, M.-J. Fortin, D. Gravel, P. R. Guimarães Jr, D. H. Hembry, E. A. Newman, J. M. Olesen, M. M. Pires, J. D. Yeakel, and T. Poisot. 
 2019, Biological Reviews
 
@@ -644,11 +807,13 @@ library(igraph)
 
 ```{r,warning=FALSE,message=FALSE}
 library(igraph)
+# Asigner une interaction à 10% des paires de noeuds
 C <- 0.1
 S <- 15
 L <- matrix(0, nr = S, nc = S)
 L[runif(S*S) < C] = 1
 sum(L)
+# Créer un objet igraph
 g <- graph.adjacency(L)
 ```
 
@@ -795,7 +960,9 @@ plot(g, vertex.label=NA, edge.arrow.mode = 0,
 ## La modularité
 
 ```{r}
+# Évalue la présence communautés dans le graphe
 wtc = walktrap.community(g)
+# Calcule la modularité à partir des communautés
 modularity(wtc)
 ```
 
@@ -817,51 +984,10 @@ distances(g)
 
 ## La centralité des noeuds
 
+La centralité d'un noeud est une mesure de l'importance *proportionnelle* d'un noeud dans un graphe.
+
 ```{r}
 eigen_centrality(g)$vector
-```
-
----
-class: inverse, center, middle
-
-# Exporter des tableaux
-
-<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
-
----
-
-# Exporter des tableaux
-
-Exporter des tableaux depuis R vers son document de travail peut être difficile.
-
-## La procédure habituelle serait:
-
-1. Enregistrer le `data.frame` dans un fichier avec la fonction `write.table()` ou `write.csv()`
-2. Éditer et faire la mise en page dans MS Excel ou MS Word.
-
-Le package `knitr` permet de faciliter cette procédure en exportant le `data.frame` directement dans son document de travail RMarkdown.
-
----
-
-# Exporter des tableaux
-
-Prenons le jeu de données `iris` directement disponible sous R.
-
-```{r}
-data(iris)
-class(iris)
-head(iris)
-```
-
----
-
-# Exporter des tableaux
-
-Je souhaite maintenant exporter ce `data.frame` en markdown:
-
-```{r}
-library(knitr)
-iris_tex <- kable(iris,format="pipe")
 ```
 
 ---
@@ -901,6 +1027,3 @@ Est-ce que la science ouverte peut prévenir la fraude ?
 [Lien vers l'article dans Science](https://www.sciencemag.org/news/2020/01/spider-biologist-denies-suspicions-widespread-data-fraud-his-animal-personality)
 
 [Et un lien vers un blog qui explique comment la triche a été réalisée](https://laskowskilab.faculty.ucdavis.edu/2020/01/29/retractions/)
-
----
-
