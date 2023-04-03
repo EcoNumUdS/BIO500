@@ -347,7 +347,7 @@ Message : Les dates de présence des chauve-souris varie selon les espèces.
 
 ```{r, echo = FALSE}
 pheno <- read.csv("assets/data/phenologie.csv")
-head(pheno[, c(1,3,5)])
+head(pheno)
 ```
 
 ---
