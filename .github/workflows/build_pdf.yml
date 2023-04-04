@@ -6,7 +6,7 @@ name: Build pdf
 
 jobs:
   Build_deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@master
         with:
@@ -27,8 +27,8 @@ jobs:
 
       - name: Deploy gh_pages
         run: |
-          git config --global user.name 'willvieira'
-          git config --global user.email 'willian.vieira@usherbrooke.ca'
+          git config --global user.name 'vcameron1'
+          git config --global user.email 'victor.cameron@usherbrooke.ca'
           git pull
           git add .
           git commit -m "deploy pdf :rocket:"
