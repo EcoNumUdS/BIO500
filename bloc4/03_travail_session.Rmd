@@ -48,19 +48,33 @@ Nous vous demandons de remettre les scripts permettant de générer l'ensemble d
 
 Nous utiliserons la commande `tar_make` pour tout exécuter automatiquement.
 
-Néanmoins, l'ensemble de ce matériel doit se trouver sur un dépôt git auquel vous nous donnerez accès. Dans ce dépôt se trouveront les fichiers de données originales en csv, les scripts, le document tex ainsi que la bibliographie.
+Néanmoins, l'ensemble de ce matériel doit se trouver sur un dépôt git auquel vous nous donnerez accès. Dans ce dépôt se trouveront les fichiers de données originales en csv, les scripts, le document Rmd ainsi que la bibliographie.
 
 ---
 
 # Évaluation
 
-- Respect des consignes (tous les éléments listés précédemment sont inclus et fonctionnels - 60%)
-- Reproductibilité (30%)
-  - Organisation du code en scripts séparés et lisibles
-  - Commentaires et respect des bonnes pratiques 
-  -  Utilisation de Git
-- Originalité (10%)
+- Respect des consignes
+  - Présence et clarté des éléments du rapport
+  - Pertinence des visualisations
+  - Qualité du français
+- Reproductibilité
+  - Utilisation appropriée du versionnage
+  - Conception de la base de données
+  - Requêtes
+  - RMarkdown
+  - Automatisation (targets)
+  - structure du répertoire GitHub
 
 Le contenu du rapport n'est pas d'une grande importance, il est prétexte à faire toutes les étapes du travail. Ne vous attardez pas à la rédaction, l'objectif est seulement de décrire rapidement votre démarche et d'utiliser `RMarkdown` pour la préparation d'un rapport. 
+
+---
+class: inverse, center, middle
+
+# Discussion
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
+## Le rôle de la reproductibilité sur la prévension des fraudes
 
 ---
