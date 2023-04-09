@@ -87,6 +87,12 @@ install.packages("rticles")
 
 # Exemple `rticles`
 
+Un exemple complet, dans un répertoire type, est disponible sur [GitHub](https://github.com/EcoNumUdS/BIO500/tree/master/bloc4/exemple_targets)
+
+---
+
+# Exemple `rticles`
+
 .left[
 - Template `PNAS Journal Article`
 - Principaux fichiers: .Rmd, .bib, .csl
@@ -183,6 +189,50 @@ Le gabarit 'Elsevier Journal Article' est pratique.
 
 ---
 
+# Accéder aux données
+
+Lire les données produites dans les targets précédentes avec `tar_read` et `tar_load`
+
+Portion du fichier `_targets.R`
+```r
+list(
+  tar_target(name = data,            command = read.csv("./data.csv")),
+  tar_target(name = data_prep,       command = prep_donnees(data)),
+  tar_target(name = resultat_modele, command = mon_modele(data)),
+  tar_render(name = rapport,         path = "rapport/rapport.Rmd")
+)
+```
+
+Présenter une figure à partir des données produites au target `resultat_modele` Dans le rapport `RMarkdown`
+
+```r
+data_2_plot <- tar_read(resultat_modele)
+plot(data_2_plot)
+```
+
+---
+
+# Présenter une figure
+
+Structure du bloc de code : 
+- `fig.cap` : Légende
+- `\\label{fig:plot1}` : Label pour référencer dans le texte
+- `fig.width` : Commandes pour ajuster les dimensions
+
+```r
+'''{r figs, fig.cap="\\label{fig:plot1}Légende figure.", fig.width=7, fig.height=6}
+# tar_read() permet de lire l'objet créé par la target
+resultat_modele <- tar_read(resultat_modele)
+data <- tar_read(data)
+
+# Créer la figure
+plot(data$X, data$Y)
+abline(resultat_modele)
+'''
+```
+
+---
+
 # Insertion de figures
 
 Insertion de figures préalablement générées via un script R.
@@ -198,6 +248,8 @@ Structure:
 ![Légende figure. \label{fig:plot1}]("../results/plot_lm.pdf"){width=50% height=40%}
 ```
 ]
+
+Attention ! De cette façon, le rapport ne se met pas à jour s'il y a un changement dans la figure.
 
 ---
 
@@ -295,53 +347,101 @@ class: inverse, center, middle
 
 # `targets` + rapport `rmarkdown`
 
-Structure du dossier principal:
+Structure du dossier principal :
 
 .left[
-- **Dossier _targets:** généré lors du tar_make()
-- **Fichier targets.R:** Cibles et actions du pipeline
-- **Dossier data:** les données
-- **Dossier R:** les scripts .R
-- **Dossier rapport:** contient le rapport.Rmd et les fichiers associés
-- **Dossier results:** contient les figures
-]
+```
 
-.right[
-![:scale 20%](assets/img/structure_targets.png)
+├── data                            # Dossier de données
+│   ├── data.txt                    # Jeu de données 1
+│   ├── data_2.txt                  # Jeu de données 2
+
+
+├── R                               # Dossier de scripts R
+│   ├── prep_donnees.R              # Fonction utilisér comme targets
+│   ├── analyse.R                   # Fonction utilisée comme targets
+│   ├── figure.R                    # Fonction utilisée comme targets
+
+
+├── resultats                       # Contient les résultats 
+│   ├── resultats_modele.csv        # Résultats
+
+├── rapport                         # Contient le rapport et fichiers associés
+│   ├── rapport.Rmd                 # Rapport
+│   ├── pnas-sample.bib             # Fichier de bibliographie
+
+├── _targets.R                      # Fichier targets qui définie le pipeline
+
+
+```
 ]
 
 ---
 
 # Fichier _targets.R
 
-Exemple bonifié du bloc2
-
 .font80[
 ```r
-# _targets.R file
+# Version bonnifiée du bloc 2
 library(targets)
 library(tarchetypes)
 source("R/analyse.R")
-source("R/figure.R")
 tar_option_set(packages = c("rmarkdown","knitr"))
-
 list(
   tar_target(
-    data, # Le nom de l'objet
-    read.table("data/data.txt", header = T) # Lecture du fichier
-  ), 
-  tar_target(
-    resultat_modele, # Cible pour le modèle 
-    mon_modele(data) # Exécution de l'analyse
+    name = path, # Cible
+    command = "./data", # Dossier contenant les fichiers de données
+    format = "file" # Format de la cible
   ),
   tar_target(
-    figure, # Cible pour l'exécution de la figure
-    ma_figure(data, resultat_modele) # Réalisation de la figure
+    name = file_paths, # Cible
+    command = list.files(path, full.names = TRUE) # Liste les fichiers dans le dossier
+  ),
+  tar_target(
+    name = data, # Cible pour le modèle 
+    command = prep_donnees(file_paths) # Jointure des jeux de données
+  ),
+  tar_target(
+    name = resultat_modele, # Cible pour le modèle 
+    command = mon_modele(data) # Exécution de l'analyse
   ),
   tar_render(
-    rapport, # Cible du rapport
-    "rapport/rapport.Rmd" # Le path du rapport à renderiser
+    name = rapport, # Cible du rapport
+    path = "rapport/rapport.Rmd" # Le path du rapport à renderiser
   )
+)
+```
+]
+
+---
+
+# Suivre un ensemble de fichiers de données
+
+1. Une target pour suivre le dossier contenant les données
+.font80[
+```r
+tar_target(
+  name = path, # Cible
+  command = "./data", # Dossier contenant les fichiers de données
+  format = "file" # Format de la cible
+)
+```
+]
+2. Une target qui liste tous les fichiers du dossier
+.font80[
+```r
+tar_target(
+    name = file_paths, # Cible
+    command = list.files(path, full.names = TRUE) # Liste les fichiers dans le dossier
+  )
+```
+]
+3. Une target qui charge les données et les assemblent
+.font80[
+```r
+tar_target(
+  name = data, # Cible pour le modèle 
+  command = prep_donnees(file_paths) # Jointure des jeux de données
 )
 ```
 ]
@@ -364,20 +464,5 @@ tar_render(cible, "path/to/file.Rmd")
 <br>
 
 L'instruction de compilation du fichier .Rmd sera toujours la dernière opération.
-
----
-
-# Enregistrement des figures
-
-Utiliser la fonction pdf() pour donner un nom au fichier de la figure et l'ouvrir plus tard dans le document Rmarkdown.<br>
-
-```r
-ma_figure = function(data, resultat_modele) {
-  pdf(file = "results/plot_lm.pdf")
-  plot(data$X, data$Y, xlab = "X", ylab = "Y", cex.axis = 1.5, cex.lab = 1.5, pch = 5)
-  abline(resultat_modele)
-  dev.off()
-}
-```
 
 ---
