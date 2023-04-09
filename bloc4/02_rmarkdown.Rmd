@@ -203,7 +203,7 @@ list(
 )
 ```
 
-Présenter une figure à partir des données produites au target `resultat_modele` Dans le rapport `RMarkdown`
+Présenter une figure à partir des données produites au target `resultat_modele` dans le rapport `RMarkdown` et établit la dépendance du rapport à la target.
 
 ```r
 data_2_plot <- tar_read(resultat_modele)
