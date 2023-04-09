@@ -13,35 +13,6 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 
-% Pandoc citation processing
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-% for Pandoc 2.8 to 2.10.1
-\newenvironment{cslreferences}%
-  {}%
-  {\par}
-% For Pandoc 2.11+
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
-  \fi
-  % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 
 \templatetype{pnasresearcharticle}  % Choose template
@@ -51,8 +22,8 @@
 
 \author[a]{Benjamin Mercier}
 
-  \affil[a]{Université de Sherbrooke, Départment de biologie, 2500
-Boulevard de l'Université, Sherbrooke, Québec, J1K 2R1}
+  \affil[a]{Université de Sherbrooke, Départment de biologie, 2500 Boulevard de
+l'Université, Sherbrooke, Québec, J1K 2R1}
 
 
 % Please give the surname of the lead author for the running footer
@@ -106,8 +77,8 @@ tumidum.
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-\textbf{Voici un exemple de citation (1), et en voici deux autres (2,
-3).} Inpulsu visibus et teque perdere secus tura sine undas sacraria
+\textbf{Voici un exemple de citation (1), et en voici deux autres
+(1--3).} Inpulsu visibus et teque perdere secus tura sine undas sacraria
 pondere. Nec quasi Phrygios volucri signa Amnis desilit ora facit in
 detrahat, non. Et iuvencae sitim natum, sit quid ut sibi nec ardeat,
 pressa fassaque. Pandrosos sequitur aras bene referam capit teneraque
@@ -176,17 +147,6 @@ caput in decens campus sacra; ad iuxta quoque coetum tunc boves rite
 fecundum. Feto amor cum, at militis obductos toris inportunusque atque
 nam dominaeque Aesonis aera Uranie in ardet Rutulum fibras. Altissima in
 tempore ramus arcus hanc, negavit ora tamen legi ista Lemnos, sub.
-\textbf{Voici inclure une figure .pdf préalablement générée et la
-citer/référencer dans le texte, via son \texttt{label}: Figure
-\ref{fig:plot1}}. Amnis novos illuc cultusque: parvoque nimiumque murra
-simplicitas.
-
-\begin{figure}
-\centering
-\includegraphics[width=0.5\textwidth,height=0.4\textheight]{"../results/plot_lm.pdf"}
-\caption{Espace pour graphique de régression linéaire.
-\label{fig:plot1}}
-\end{figure}
 
 Lorem markdownum et est, an mane luctu iugis ignibus in hostia peragit
 dum eadem equinis, par gradus ubi! Silet canities sine dedecet, fides
@@ -198,8 +158,22 @@ luporum. Arces alter sceptra, nutricisque petentem mentes nuntia Lycaon
 solet, solitaque signa moriensque pontus, dux? Corpora testataque, novo
 tumidum. Eurytus auris. Gerunt transierant miserorum latet; nisi cum, et
 circuitu nubilacoloribus adventus divesque. Loca partibus breve et unum
-maior stellis inpia etluporum. Loca partibus breve et unum maior stellis
-inpia etluporum.
+maior stellis inpia etluporum.
+
+\textbf{Voici comment inclure une figure qui dépend de target
+précédentes et la citer/référencer dans le texte, via son
+\texttt{label}: Figure \ref{fig:plot1}}.
+
+Amnis novos illuc cultusque: parvoque nimiumque murra simplicitas.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{rapport_files/figure-latex/fig:plot1-1} 
+
+}
+
+\caption{\label{fig:plot1}Légende figure.}\label{fig:fig:plot1}
+\end{figure}
 
 Lorem markdownum et est, an mane luctu iugis ignibus in hostia peragit
 dum eadem equinis, par gradus ubi! Silet canities sine dedecet, fides
@@ -270,27 +244,21 @@ incumbere tempora ambit.
 \addcontentsline{toc}{section}{Bibliographie}
 
 \hypertarget{refs}{}
-\begin{CSLReferences}{0}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-berard1994embedding}{}}%
-\CSLLeftMargin{1. }
-\CSLRightInline{Bérard P, Besson G, Gallot S (1994) Embedding riemannian
-manifolds by their heat kernel. \emph{Geometric \& Functional Analysis
-GAFA} 4(4):373--398.}
+\leavevmode\hypertarget{ref-berard1994embedding}{}%
+1. Bérard P, Besson G, Gallot S (1994) Embedding riemannian manifolds by
+their heat kernel. \emph{Geometric \& Functional Analysis GAFA}
+4(4):373--398.
 
-\leavevmode\vadjust pre{\hypertarget{ref-belkin2002using}{}}%
-\CSLLeftMargin{2. }
-\CSLRightInline{Belkin M, Niyogi P (2002) Using manifold stucture for
-partially labeled classification. \emph{Advances in Neural Information
-Processing Systems}, pp 929--936.}
+\leavevmode\hypertarget{ref-belkin2002using}{}%
+2. Belkin M, Niyogi P (2002) Using manifold stucture for partially
+labeled classification. \emph{Advances in Neural Information Processing
+Systems}, pp 929--936.
 
-\leavevmode\vadjust pre{\hypertarget{ref-coifman2005geometric}{}}%
-\CSLLeftMargin{3. }
-\CSLRightInline{Coifman RR, et al. (2005) Geometric diffusions as a tool
-for harmonic analysis and structure definition of data: Diffusion maps.
+\leavevmode\hypertarget{ref-coifman2005geometric}{}%
+3. Coifman RR, et al. (2005) Geometric diffusions as a tool for harmonic
+analysis and structure definition of data: Diffusion maps.
 \emph{Proceedings of the National Academy of Sciences of the United
-States of America} 102(21):7426--7431.}
-
-\end{CSLReferences}
+States of America} 102(21):7426--7431.
 
 
 
@@ -298,3 +266,4 @@ States of America} 102(21):7426--7431.}
 % \bibliography{pnas-sample}
 
 \end{document}
+

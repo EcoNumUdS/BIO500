@@ -93,18 +93,30 @@ militis obductos toris inportunusque atque nam dominaeque Aesonis aera Uranie in
 ardet Rutulum fibras. Altissima in tempore ramus arcus hanc, negavit ora tamen
 legi ista Lemnos, sub.
 
-**Voici comment inclure une figure .pdf préalablement générée et la citer/référencer dans le texte, via son `label`: Figure \ref{fig:plot1}**. 
-
-Amnis novos illuc cultusque: parvoque nimiumque murra simplicitas.
-
-![Espace pour graphique de régression linéaire. \label{fig:plot1}]("../results/plot_lm.pdf"){ width=50% height=40%}
-
 Lorem markdownum et est, an mane luctu iugis ignibus in hostia peragit dum eadem
 equinis, par gradus ubi! Silet canities sine dedecet, fides virum capro:
 loquuntur ante. Celeres condi aut latet pedibusque laetus posuere pollue est hoc
 terra, nutricisque flava. Eurytus auris. Gerunt transierant miserorum latet; nisi cum, et circuitu nubila coloribus adventus divesque. Loca partibus breve et unum maior stellis inpia et
 luporum. Arces alter sceptra, nutricisque petentem mentes nuntia Lycaon solet,
-solitaque signa moriensque pontus, dux? Corpora testataque, novo tumidum. Eurytus auris. Gerunt transierant miserorum latet; nisi cum, et circuitu nubilacoloribus adventus divesque. Loca partibus breve et unum maior stellis inpia etluporum. Loca partibus breve et unum maior stellis inpia etluporum.
+solitaque signa moriensque pontus, dux? Corpora testataque, novo tumidum. Eurytus auris. Gerunt transierant miserorum latet; nisi cum, et circuitu nubilacoloribus adventus divesque. Loca partibus breve et unum maior stellis inpia etluporum.
+
+**Voici comment inclure une figure qui dépend de target précédentes et la citer/référencer dans le texte, via son `label`: Figure \ref{fig:plot1}**. 
+
+Amnis novos illuc cultusque: parvoque nimiumque murra simplicitas.
+
+<!-- ![Espace pour graphique de régression linéaire. \label{fig:plot1}]("../results/plot_lm.pdf"){ width=50% height=40%} -->
+
+```{r fig:plot1, echo=FALSE, fig.cap="\\label{fig:plot1}Légende figure.", fig.align='center', out.width='70%'}
+# Lire la sortie des targets resultat_modele, data et figure
+## (figure est une target qui ne produit rien, mais qui permet de lier la figure au rapport)
+## tar_read() permet de lire l'objet créé par la target
+resultat_modele <- tar_read(resultat_modele)
+data <- tar_read(data)
+
+# Créer la figure
+plot(data$X, data$Y, xlab = "X", ylab = "Y", cex.axis = 1.5, cex.lab = 1.5, pch = 19)
+abline(resultat_modele, col = "red", lwd = 2)
+```
 
 
 Lorem markdownum et est, an mane luctu iugis ignibus in hostia peragit dum eadem
