@@ -1,0 +1,8 @@
+# Bases de données {#sec-BD}
+
+
+## Refs
+
+- [*R for data science*](https://github.com/hadley/r4ds/blob/main/databases.qmd)
+- [*SQL for Data Scientists*](https://sqlfordatascientists.com) by Renée M. P. Teate is an introduction to SQL designed specifically for the needs of data scientists, and includes examples of the sort of highly interconnected data you're likely to encounter in real organizations.
+-  [*Practical SQL*](https://www.practicalsql.com) by Anthony DeBarros is written from the perspective of a data journalist (a data scientist specialized in telling compelling stories) and goes into more detail about getting your data into a database and running your own DBMS.

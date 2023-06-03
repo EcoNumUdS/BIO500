@@ -1,0 +1,14 @@
+# Préface {.unnumbered}
+
+Vous vous trouvez sur le site de la première édition de "BIO500 - Méthodes en écologie computationelle". Ce livre vous accompagnera dans la réalisation de la séquence d'une étude d'écologie : Vous apprendrez les standards de gestion, d'analyse et de présentation des données, ainsi que les outils technologiques requis pour y arriver.
+
+Visitez <https://github.com/EcoNumUdS/BIO500> pour trouver le matériel du cours.
+
+## Objectif général
+
+Les outils informatiques sont utilisés de façon croissante en écologie, que ce soit pour la réalisation d'analyses spatiales, statistiques ou pour la gestion de bases de données. On exige de plus en plus la transparence et la reproductibilité des études scientifiques et d'évaluations environnementales. 
+
+
+## Remerciements
+
+Ce livre doit beaucoup au travail des personnes qui ont développé le contenu et qui ont enseigné le cours depuis sa réation. Il n'aurait pu être écrit sans la contribution de Dominique Gravel, Steve Vissault, William Viera et Guillaume Blanchet.

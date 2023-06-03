@@ -1,0 +1,77 @@
+project:
+  type: book
+
+lang: fr
+
+book:
+  title: "BIO500 - Méthodes en écologie computationelle"
+  reader-mode: true
+
+  page-footer:
+    left: |
+      **BIO500 - Méthodes en écologie computationelle** a été écrit par Victor Cameron
+    right: |
+      Ce livre a été construit avec <a href="https://quarto.org/">Quarto</a>.
+  cover-image: bg.jpg
+  favicon: logo.jpg
+  site-url: https://econumuds.github.io/BIO500/
+  repo-url: https://github.com/EcoNumUdS/BIO500
+  repo-branch: main
+  repo-actions: [edit, issue]
+
+  chapters:
+    - index.qmd
+    - intro.qmd
+    
+
+    # Bloc 1: Planification de la collecte et organisation des données
+    - part: donnees.qmd
+      chapters:
+        - intro.qmd
+        - bases_de_donnees.qmd
+
+    # Bloc 2: Outils pour une science reproductible et transparente
+    - part: reproductibilite.qmd
+      chapters:
+        - intro.qmd
+        - intro.qmd
+
+    # Bloc 3: Visualisation des données    
+    - part: visualiser.qmd
+      chapters:
+        - intro.qmd
+        - intro.qmd
+
+    # Bloc 4: Communication scientifique   
+    - part: communiquer.qmd
+      chapters:
+        - intro.qmd
+        - intro.qmd
+
+    # Évaluations   
+    - part: programmer.qmd
+      chapters:
+        - intro.qmd
+        - intro.qmd
+
+    # Programmation   
+    - part: intro.qmd
+      chapters:
+        - intro.qmd
+        - intro.qmd
+
+    - references.qmd
+
+    
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    author-meta: "Victor Cameron"
+  pdf:
+    documentclass: scrreprt
+
+
+
