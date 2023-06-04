@@ -38,7 +38,7 @@ jobs:
           path: livre
         
       - name: Deploy gh_pages
-        uses: JamesIves/github-pages-deploy-action@releases/v4.4.2
+        uses: JamesIves/github-pages-deploy-action@v4.4.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
