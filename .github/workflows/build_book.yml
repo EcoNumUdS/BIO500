@@ -38,12 +38,11 @@ jobs:
           path: livre
         
       - name: Deploy gh_pages
-        uses: JamesIves/github-pages-deploy-action@releases/v4
+        uses: JamesIves/github-pages-deploy-action@releases/v4.4.2
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: livre/_book
-          SINGLE_COMMIT: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: livre/_book
 
       - name: Trigger next workflow - build slides pdf
         if: success()

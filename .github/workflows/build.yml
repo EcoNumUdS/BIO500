@@ -27,12 +27,12 @@ jobs:
         run: make deploy
       
       - name: Deploy gh_pages
-        uses: JamesIves/github-pages-deploy-action@releases/v4
+        uses: JamesIves/github-pages-deploy-action@releases/v4.4.2
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: slides
-          SINGLE_COMMIT: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: slides
+          single-commit: true
 
       - name: Trigger next workflow - render book
         if: success()
