@@ -25,19 +25,10 @@ jobs:
             docker run --rm -t -v `pwd`:/slides astefanutti/decktape https://econumuds.github.io/BIO500/$VARIABLE/ $VARIABLE/$VARIABLE.pdf
           done
 
-      # - name: Deploy gh_pages
-      #   uses: JamesIves/github-pages-deploy-action@releases/v4
-      #   with:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     BRANCH: gh-pages
-      #     FOLDER: slides
-      #     SINGLE_COMMIT: false
-
       - name: Deploy gh_pages
-        run: |
-          git config --global user.name 'willvieira'
-          git config --global user.email 'willian.vieira@usherbrooke.ca'
-          git pull
-          git add .
-          git commit -m "deploy pdf :rocket:"
-          git push origin gh-pages
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: slides
+          SINGLE_COMMIT: false
