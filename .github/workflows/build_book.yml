@@ -42,13 +42,13 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: Report/_book
-          SINGLE_COMMIT: true
+          FOLDER: livre/_book
+          SINGLE_COMMIT: false
 
       - name: Trigger next workflow - build slides pdf
         if: success()
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.REPO_GHA_PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.repository }}
           event-type: trigger-build_pdf
