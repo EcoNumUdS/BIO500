@@ -3,41 +3,63 @@ on:
     branches:
       - master
 
-name: Build html
+name: Render book and slides
 
 jobs:
-  Build_deploy:
+  build:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@master
-      - uses: r-lib/actions/setup-pandoc@v1
+
+      - uses: r-lib/actions/setup-pandoc@v2
+
+      - uses: quarto-dev/quarto-actions/setup@v2
         with:
-          pandoc-version: '2.7.3'
+          tinytex: true
+
       - uses: r-lib/actions/setup-r@v2
         with:
-            r-version: '3.6.0'
+            r-version: '4.2.0'
 
-      - name: Install dependencies
+      - name: Install R dependencies
         run: make install
 
-      - name: build html
+      - name: Render slides in html
         run: make
-        
-      - name: prepare deployment
-        run: make deploy
-      
-      - name: Deploy gh_pages
-        uses: JamesIves/github-pages-deploy-action@releases/v4
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: slides
-          SINGLE_COMMIT: true
 
-      - name: Trigger next workflow
-        if: success()
-        uses: peter-evans/repository-dispatch@v2
+      - name: Convert slides from html to pdf
+        run: |
+          for VARIABLE in `ls -d bloc*`
+          do
+            sudo chmod ugo+rwx $VARIABLE
+            docker run --rm -t -v `pwd`:/slides astefanutti/decktape $VARIABLE/ $VARIABLE/$VARIABLE.pdf
+          done
+
+      - name: Render quarto book
+        uses: quarto-dev/quarto-actions/render@v2
         with:
-          token: ${{ secrets.REPO_GHA_PAT }}
-          repository: ${{ github.repository }}
-          event-type: trigger-build_pdf
+          to: all
+          path: livre
+
+      - name: prepare html and pdf files for deployment
+        run: |
+          mkdir slides
+          cp -r ./assets ./slides
+          for dir in `ls -d bloc*`
+          do
+            mkdir -p ./slides/$dir
+            cp ./$dir/index.html ./slides/$dir
+            cp ./$dir/$dir.pdf ./slides/$dir
+            cp -r ./$dir/assets ./slides/$dir
+            if [ -d "./$dir/index_files" ]; then cp -r ./$dir/index_files ./slides/$dir; fi
+          done
+          cp -r ./livre/_book/* ./slides/
+          touch ./slides/.nojekyll
+
+      - name: Deploy gh_pages
+        uses: JamesIves/github-pages-deploy-action@v4.4.2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: slides
+          single-commit: true
