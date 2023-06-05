@@ -11,6 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
+      - uses: r-lib/actions/setup-pandoc@v2
+        with:
+          pandoc-version: '3.1.0'
+
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
           tinytex: true
