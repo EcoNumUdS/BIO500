@@ -38,11 +38,13 @@ jobs:
           path: livre
         
       - name: Deploy gh_pages
-        uses: JamesIves/github-pages-deploy-action@v4.4.2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: livre/_book
+        run: |
+          git config --global user.name 'willvieira'
+          git config --global user.email 'willian.vieira@usherbrooke.ca'
+          git pull
+          git add .
+          git commit -m "deploy pdf :rocket:"
+          git push origin gh-pages
 
       - name: Trigger next workflow - build slides pdf
         if: success()
@@ -51,3 +53,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.repository }}
           event-type: trigger-build_pdf
+

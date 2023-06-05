@@ -26,8 +26,10 @@ jobs:
           done
 
       - name: Deploy gh_pages
-        uses: JamesIves/github-pages-deploy-action@v4.4.2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: slides
+        run: |
+          git config --global user.name 'willvieira'
+          git config --global user.email 'willian.vieira@usherbrooke.ca'
+          git pull
+          git add .
+          git commit -m "deploy pdf :rocket:"
+          git push origin gh-pages
