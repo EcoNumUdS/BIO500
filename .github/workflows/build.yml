@@ -11,8 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      - uses: r-lib/actions/setup-pandoc@v2
-
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
           tinytex: true
@@ -54,6 +52,7 @@ jobs:
             if [ -d "./$dir/index_files" ]; then cp -r ./$dir/index_files ./slides/$dir; fi
           done
           cp -r ./livre/_book/* ./slides/
+          touch ./slides/.nojekyll
 
       - name: Deploy gh_pages
         uses: JamesIves/github-pages-deploy-action@v4.4.2
