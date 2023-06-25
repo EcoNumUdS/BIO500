@@ -1,6 +1,19 @@
 # Données {#sec-donnees .unnumbered}
 
-Planification de la collecte et organisation des données 
+Dans cette section, nous aborderons la planification de la collecte et de l'organisation des données en écologie computationnelle. Nous explorerons les différentes étapes et les aspects clés pour assurer une gestion efficace des données dans ce domaine. 
 
+Objectifs de section :
 
+- Compléter la collecte de données.
+- Représenter conceptuellement l'organisation de données sous forme de base de données.
+- Concevoir une base de données à l'aide du langage `SQL` et de la librairie `RSQLite`.
 
+---
+
+Au terme de cette section, vous serez en mesure de :
+
+- Récolter et saisir les données.
+- Écrire le script `R` pour créer votre base de données.
+- Injecter les données récoltées dans la base de données.
+- Effectuer des requêtes simples.
+- Écrire le script `R` pour automatiser les différentes étapes.
