@@ -1,5 +1,310 @@
 # Bases de données {#sec-BD}
 
+Parlons d'entreposage et d'archivage des données écologiques et des outils computationnels pour y arriver. Cette étape arrive après le plan de d'échantillonnage, de façon à ce que les données récoltées et leur nature sont connues.
+
+Bien des technologies sont disponibles pour l'entreposage des données allant du simple fichier texte (csv), des tableurs Excel, jusqu'aux insfrastructures de bases de données relationnelles. Il est difficile de sauver les données écologiques dans un tableur sans répéter l'information à cause de leur complexité et de leur nature multi-dimentionnelle. Par exemple, les métadonnées de l'inventaire doivent être répétés à toutes les taxons observés, pour chaque site inventorié et pour toutes les répétitions de l'inventaire de façon à ce que plusieurs valeurs peuvent être répétées inutillement des milliers, voir des milions de fois. Les répétitions peuvent réduire la performance de votre ordinateur en accroissant la mémoire nécessaire pour sauver et interagir avec des données.
+
+Supposons que vous disposez d'un jeu de données écologiques contenant des informations sur les espèces observées lors d'inventaires dans différents sites. Les métadonnées de l'inventaire comprennent des informations telles que la date de l'inventaire, le nom de l'observateur, la localisation du site, etc.
+
+Plutôt que de stocker ces données dans un seul tableau où les répétitions peuvent surcharger le fichier, vous pouvez utiliser plusieurs tableaux pour structurer les données de façon plus efficace :
+
+
+```{r}
+#| echo: false
+
+# Charger la bibliothèque sp pour manipuler des données spatiales
+library(sp)
+
+# Génération de données
+n_inventaires <- 100000
+n_especes <- 100
+n_repetitions <- 10
+
+# Génération des données pour les métadonnées de l'inventaire
+metadata <- data.frame(
+  inventaire_id = rep(1:n_inventaires, each = n_repetitions),
+  date = rep(as.Date("2023-06-01") + 0:(n_inventaires-1), each = n_repetitions),
+  observateur = rep(paste0("Observateur ", 1:(n_inventaires/n_repetitions)), each = n_repetitions),
+  site = rep(paste0("Site ", 1:(n_inventaires/n_repetitions)), each = n_repetitions),
+  longitude = runif(n_inventaires * n_repetitions, -180, 180),
+  latitude = runif(n_inventaires * n_repetitions, -90, 90)
+)
+
+# Génération des données pour les observations des espèces
+observations <- data.frame(
+  inventaire_id = rep(1:n_inventaires, each = n_repetitions),
+  espece = rep(paste0("Espèce ", 1:n_especes), n_inventaires*n_repetitions/n_especes),
+  nombre = sample(1:10, n_inventaires*n_repetitions, replace = TRUE)
+)
+
+# Assembler les données en un seul tableau
+merged_data <- merge(metadata, observations, by = "inventaire_id")
+
+# Mesurer la mémoire utilisée par l'objet merged_data
+memory_usage_merged <- object.size(merged_data) / 1024 / 1024
+
+# Version optimisée en deux tableaux de dimention n-2
+# Notez l'utilisation de la colonne inventaire_id présente dans les deux tables
+# pour lier les observations aux sites
+metadata_optimized <- unique(metadata)
+observations_optimized <- unique(observations)
+
+# Mesurer la mémoire utilisée par les objets metadata_optimized et observations_optimized
+memory_usage_metadata <- object.size(metadata_optimized) / 1024 / 1024
+memory_usage_observations <- object.size(observations_optimized) / 1024 / 1024
+```
+
+**Données assemblées en un seul tableau**
+```{r}
+#| echo: false
+
+# Afficher les résultats
+# print("Données assemblées en un seul tableau :")
+knitr::kable(head(merged_data),format="markdown")
+
+print(paste("Mémoire utilisée par l'approche avec un seul tableau :", memory_usage_merged, "Mo"))
+```
+
+**Version optimisée en deux tableaux**
+
+Tableau de métadonnées
+```{r}
+#| echo: false
+
+# print("\nVersion optimisée en deux tableaux :")
+# print("metadata_optimized :")
+knitr::kable(head(metadata_optimized),format="markdown")
+```
+
+Tableau des observations
+
+```{r}
+#| echo: false
+
+# print("\nobservations_optimized :")
+knitr::kable(head(observations_optimized),format="markdown")
+```
+
+Mémoire utilisée par l'approche avec deux tableaux
+
+```{r}
+#| echo: false
+
+# print("Mémoire utilisée par l'approche avec deux tableaux :")
+print(paste("   - metadata_optimized :", memory_usage_metadata, "Mo"))
+print(paste("   - observations_optimized :", memory_usage_observations, "Mo"))
+```
+
+**Comparaison de la différence de mémoire utilisée**
+
+```{r}
+#| echo: false
+
+# Comparaison de la différence de mémoire utilisée
+memory_difference <- memory_usage_merged - (memory_usage_metadata + memory_usage_observations)
+# print("\nDifférence de mémoire utilisée entre les deux approches :")
+print(paste("En Mo :", memory_difference, "Mo"))
+print(paste("En pourcentage :", (memory_difference / memory_usage_merged) * 100, "%"))
+```
+
+
+## Bases de données relationnelles
+
+Les bases de données redimentionnent le problème de multi-dimentionalité des données (en plusieurs tables de n-2) en plus d'optimiser la mémoire requise. Voici quelques avantages de l'approche :
+
+- **Maintenir l'intégrité entre les enregistrements de nos tableaux.** Une observation ne peut être faite sur un site qui n'existe pas.
+- **Normaliser et contrôler la qualité des données.** Chaque colonne est un type précis de données. Des contraintes peuvent être appliquées sur chaque colonne.
+- **Éviter les redondances dans le stockage de l'information.** Réduit aussi le risque d'erreurs lors de la saisie.
+
+Chaque dimention d'un jeu de données est isolée dans une table d'une base de données. Les tables sont liées entre elles par des relations pour maintenir la structure des données.
+
+```{r}
+#| label: schéma_étoile
+#| echo: false
+#| out-width: 70%
+#| fig-cap: |
+#|    [Shéma en étoile](https://en.wikipedia.org/wiki/Star_schema) de la structure des bases de données relationnelles.
+#| fig-alt: |
+#|   Schéma en étoile.
+
+knitr::include_graphics("./assets/img/star_eg.png", dpi = 270)
+```
+
+
+### Le format entité-relation
+
+Le format entité-relation est une méthode de modélisation des bases de données relationnelles. Il repose sur le concept d'entités, qui représentent des objets concrets ou abstraits du monde réel, et sur les relations qui existent entre ces entités.
+
+Dans ce format, une base de données relationnelle est constituée de tables, qui sont des entités. Chaque table représente une dimension spécifique du jeu de données, et chaque rangée de la table correspond à une occurrence spécifique de cette entité. Les attributs des entités sont représentés par les colonnes des tables, et chaque attribut contient une donnée spécifique.
+
+Dans une base de données chaque attribut/colonne est une donnée unique, c'est-à-dire qu'elle ne se répète pas ailleurs dans la base de données. La seule exception sont les colonnes d'associations, les clés.
+
+### Le concept d'association et des clés primaires et secondaires
+
+Les tables d'une base de données sont associées les unes aux autres par des relations pour faciliter la gestion et l'organisation des données. Ces relations peuvent être simples, comme une association "one to one" (1 -> 1), où une rangée d'une table est associée à une seule rangée d'une autre table. Par exemple, une table d'étudiants peut être associée à une table de coordonnées, où chaque étudiant a une seule adresse.
+
+Les relations peuvent également être "one to many" (1 -> n), où une rangée d'une table est associée à plusieurs rangées d'une autre table. Par exemple, dans un système de gestion d'une entreprise, une table de départements peut être associée à une table d'employés, où chaque département peut avoir plusieurs employés.
+
+```{r}
+#| label: Relations
+#| echo: false
+#| out-width: 70%
+#| fig-cap: |
+#|    Types d'association entre tables.
+#| fig-alt: |
+#|   Entités et relations.
+
+knitr::include_graphics("./assets/img/card.svg", dpi = 270)
+```
+
+Pour établir ces associations, les tables utilisent des *clés primaires* et des *clés secondaires*. Les clés primaires et secondaires jouent un rôle essentiel pour garantir l'intégrité et la cohérence des données. Une clé primaire est une colonne qui identifie de manière unique chaque rangée dans une table, elle agit comme un identifiant unique pour chaque occurrence de l'entité représentée par la table. En contrepartie, une clé secondaire est une colonne qui établit une relation avec une clé primaire d'une autre table. 
+
+Une clé primaire est essentielle pour assurer que chaque enregistrement soit unique dans la table, car elle **ne peut jamais être NULL** (c'est-à-dire qu'elle doit toujours contenir une valeur). Cela signifie qu'aucune autre rangée de la table ne peut avoir la même valeur pour sa clé primaire, garantissant ainsi l'unicité de chaque enregistrement.
+
+Il est important de noter que la clé primaire peut être composée de plusieurs colonnes, formant ainsi une clé primaire composite. Cette combinaison de colonnes agit toujours comme un identifiant unique pour chaque enregistrement, même si aucune des colonnes individuelles ne serait unique par elle-même. L'utilisation d'une clé primaire composite est utile lorsque nous avons besoin d'une clé plus complexe pour identifier de manière unique chaque enregistrement.
+
+Outre les clés primaires, les bases de données relationnelles utilisent également des clés secondaires, également appelées clés étrangères. Une clé secondaire est une colonne (ou un ensemble de colonnes) d'une table qui établit une relation avec la clé primaire d'une autre table. En reliant les tables par des clés secondaires, nous créons des relations entre les entités représentées par ces tables.
+
+Les clés secondaires permettent de relier les informations entre différentes tables et d'effectuer des requêtes pour obtenir des informations associées provenant de différentes parties de la base de données.
+
+```{r}
+#| label: Clés primaires et secondaires
+#| echo: false
+#| out-width: 70%
+#| fig-cap: |
+#|    Types d'association entre tables.
+#| fig-alt: |
+#|   Clés.
+
+knitr::include_graphics("./assets/img/keys_1.svg", dpi = 270)
+```
+
+En somme, les clés primaires et secondaires sont des concepts fondamentaux dans les bases de données relationnelles. Les clés primaires garantissent l'unicité des enregistrements dans une table, tandis que les clés secondaires établissent des liens entre les tables, permettant une gestion efficace des données et des requêtes complexes pour obtenir des informations pertinentes.
+
+### Le type des attributs
+
+Un type de données doit être assigné à chaque attribut. Voici les principaux types utilisés, pour tous les types de données, [voir la documentation SQLite3](https://www.sqlite.org/datatype3.html).
+
+| Appelation                | Type                 | Valeurs     | Taille           |
+|:--------------------------|:---------------------|:------------|:-----------------|
+| `BOLEAN`                  | Boléen               | vrai/faux   | 1 octet          |
+| `INTEGER`                 | Entiers              | -998, 123   | 1 à 4 octets     |
+| `DOUBLE`, `FLOAT`, `REAL` | Nombres réels        | 9.98, -4.34 | 4 à 8 octets     |
+| `CHAR`,`VARCHAR`          | Chaine de caractères | lapin       | n x 1 à 8 octets |
+| `TIMESTAMP`,`DATE`,`TIME` | Dates et heures      | 1998-02-16  | 4 à 8 octets     |
+
+
+## Les systèmes de gestion de base de données
+
+Les bases de données sont des entrepôts de données qui sont uniquement manipulés par le système de gestion de base de données ([SGBD](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es)). Les SGBD sont des logiciels intermédiaires entre l'utilisateur et la base de données, permettant d'exécuter des opérations sur la base de données, comme créer, interroger ou gérer, en cachant la complexité des manipulations des structures de la base de données. Alors qu'il existe plusieurs SGBD, ils opèrent tous à l'aide d'un langage de programmation, le *Structured Query Language* SQL.
+
+Dans le cadre du cours, nous utiliserons le SGBD `SQLite3`.
+
+`SQLite3` s'inscrit dans une approche de fichier de base de données. C'est-à-dire, qu'on se connecte au fichier de la base de données à l'aide d'un logiciel *client*. L'avantage est que la base de données est sauvée localement sur votre machine dans un fichier, mais vient avec le désavantage qu'un seul utilisateur ne peut se connecter dessus à la fois.
+
+```{r}
+#| label: db_flow
+#| echo: false
+#| out-width: 70%
+#| fig-cap: |
+#|    Serveur de base de données.
+#| fig-alt: |
+#|   serveur-client.
+
+knitr::include_graphics("./assets/img/db_flow.svg", dpi = 270)
+```
+
+En revanche, l'approche de serveur de base de données permet d'avoir plusieurs clients connectés sur un même serveur qui héberge la base de données. On peut donc être plusieurs à interagir en même temps avec. On pourrait envisager la situation suivante où plusieurs clients interragissent simultanément avec la base de données. Cependant, l'approche multi-utilisateurs peut uniquement se faire si le serveur est distant.
+
+```{r}
+#| label: db_flow_multi
+#| echo: false
+#| out-width: 70%
+#| fig-cap: |
+#|    Fichier de base de données.
+#| fig-alt: |
+#|   Fichier.
+
+knitr::include_graphics("./assets/img/db_flow_multi.svg", dpi = 270)
+```
+
+> **Le principe client-serveur**
+> Le *client* est un logiciel installé sur votre ordinateur. C'est le SGBD. On se sert de ce logiciel pour interagir avec le *serveur* de base de données présent localement ou à distance.
+> C'est sur ce principe qu'est bâti l'internet. Les clients sont vos logiciels navigateurs (chrome, firefox, etc) qui interragissent en envoyant des requêtes à des serveurs via une adresse URL.
+> Le même principe sera utilisé pour interagir avec votre base de données, mais via une connexion à un fichier enregistré dans votre ordinateur.
+ 
+## Le langage SQL
+
+Le `SQL` est un langage informatique désigné spécifiquement pour manipuler des base de données relationnelles. C'est le langage utilisé pour transmettre nos instrusctions au SGBD. Il permet de :
+
+1. Créer une base de données (`CREATE DATABASE`).
+2. Créer des tables et établir des relations (`CREATE TABLE`).
+3. Insérer des données (`INSERT`).
+4. Interroger les données par requête (`SELECT`).
+5. Supprimer des données ou des tables (`DROP`, `DELETE`).
+6. Mettre à jour des données ou des tables (`UPDATE`, `ALTER`).
+7. Supprimer la base de données (`DROP DATABASE`).
+
+Chacune de ces commandes est une instruction `SQL` envoyée au serveur pour manipuler et interroger la base de données.
+
+Les instructions `SQL` sont près de la structure des phrases ordinaire en anglais. Vous trouverez le langage plus intuitif que beaucoup d'autres, avec notament des instructions comme `CREATE`, `JOIN`, `GROUP BY`, etc. Le langage est déclaratif, il permet de décrire le résultat escompté, sans avoir à décrire comment l'obtenir. C'est une charactéristique voulue lors de sa création pour faciliter l'apprentissage et la lecture.
+
+### Créer et se connecter au fichier de base de données
+
+Précédemment, nous avons vu les aspects important de la conceptualisation d'une base de données avec les entités, les relations, les attributs et les types. Voyons maintenant comment passer au modèle informatique.
+
+- Le modèle conceptuel
+   1. Faire une liste des variables
+   2. Regrouper les variables dans des tables
+   3. Établir le type d'association entre les tables
+   4. Établir les clés primaires et étrangères
+   5. Assigner les types de données aux variables
+
+- Le modèle informatique
+   1. Créer et se connecter au fichier de base de données
+   2. Créer les tables et spécifier les clés
+   3. Ajouter de l'information dans les tables
+   4. Faire des requêtes pour extraire l'information
+
+Pour faciliter l'interaction avec la base de données et simplifier les manipulations, nous utiliserons `RStudio` et la librairie `RSQLite` qui contient le client `SQLite3` pour interagir avec la base de données. 
+
+D'abord, il faut se connecter à la base de données à l'aide de la commande `dbConnect()` et sauver cette connexion dans un objet. Nous réutiliserons cet objet à toutes les fois que nous enverrons une commande à la base de données pour spécifier la connection client-serveur.
+
+```R
+# install.packages('RSQLite')
+library(RSQLite)
+con <- dbConnect(SQLite(), dbname="./assets/data/reseau.db")
+## !ATTENTION!: Ceci est mon chemin d'accès vers le fichier!
+## Astuces: getwd() et setwd()
+```
+
+Ici, `con` est un objet contenant la connexion avec le serveur/fichier de base de données. Pour envoyer des instructions, c'est la commande `dbSendQuery()` qui est utilisée. Sont premier argument est l'object contenant la connexion et le second les instructions `SQL`.
+
+```R
+dbSendQuery(con,"Instructions SQL à envoyer;")
+```
+
+Il est à noter que le code `SQL` est enchassé entre `""` pour former une chaine de charactère. **Il s'agit d'une cause d'erreur fréquente !!!**
+
+Voici un exemple d'instruction SQL pour créer la table `auteurs`.
+
+```SQL
+CREATE TABLE auteurs (
+    auteur      VARCHAR(50),
+    statut      VARCHAR(40),
+    institution VARCHAR(200),
+    ville       VARCHAR(40),
+    pays        VARCHAR(40),
+    PRIMARY KEY (auteur)
+);
+```
+
+- `auteurs` est le nom de la table
+- Chaque attribut de la table (`auteur`,`statut` etc) dispose d'un type de données (`varchar(40)`,`DATE`,  etc) [Type de données SQLite](https://www.sqlite.org/datatype3.html)
+- La dernière ligne correspond aux contraintes de la table telle que la clé primaire.
+- **Question:** Cette clé primaire est composite ou simple?
+
+## Exercices
 
 ## Refs
 
