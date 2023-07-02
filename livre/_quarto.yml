@@ -2,6 +2,7 @@ project:
   type: book
 
 lang: fr
+number-depth: 2
 
 book:
   title: "BIO500 - Méthodes en écologie computationelle"
