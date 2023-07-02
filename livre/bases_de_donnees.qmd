@@ -251,7 +251,13 @@ Les instructions `SQL` sont près de la structure des phrases ordinaire en angla
 
 ### Créer et se connecter au fichier de base de données
 
-Précédemment, nous avons vu les aspects important de la conceptualisation d'une base de données avec les entités, les relations, les attributs et les types. Voyons maintenant comment passer au modèle informatique.
+
+
+## `RSQLite` pour interagir avec la base de données
+
+Précédemment, nous avons vu les aspects importants de la conceptualisation d'une base de données avec les entités, les relations, les attributs et les types. Voyons maintenant comment passer au modèle informatique.
+
+#### Conceptualiser et concevoir
 
 - Le modèle conceptuel
    1. Faire une liste des variables
@@ -266,19 +272,71 @@ Précédemment, nous avons vu les aspects important de la conceptualisation d'un
    3. Ajouter de l'information dans les tables
    4. Faire des requêtes pour extraire l'information
 
-Pour faciliter l'interaction avec la base de données et simplifier les manipulations, nous utiliserons `RStudio` et la librairie `RSQLite` qui contient le client `SQLite3` pour interagir avec la base de données. 
+#### Créer une nouvelle base de données
 
-D'abord, il faut se connecter à la base de données à l'aide de la commande `dbConnect()` et sauver cette connexion dans un objet. Nous réutiliserons cet objet à toutes les fois que nous enverrons une commande à la base de données pour spécifier la connection client-serveur.
+Pour faciliter l'interaction avec la base de données et simplifier les manipulations, nous utiliserons RStudio et la librairie open source `RSQLite` qui contient le client SQLite3. `RSQLite` propose une interface dans R qui permet d'interagir avec les bases de données.
+
+D'abord, il faut se connecter à la base de données à l'aide de la commande `dbConnect()` et sauver cette connexion dans un objet. L'information contenue dans l'objet est  Nous réutiliserons cet objet à toutes les fois que nous enverrons une commande à la base de données pour spécifier la connection client-serveur.
 
 ```R
 # install.packages('RSQLite')
-library(RSQLite)
-con <- dbConnect(SQLite(), dbname="./assets/data/reseau.db")
+library(DBI)
+
+ma_bd <- dbConnect(RSQLite::SQLite(), dbname="./assets/data/reseau.db")
 ## !ATTENTION!: Ceci est mon chemin d'accès vers le fichier!
 ## Astuces: getwd() et setwd()
+
+dbDisconnect(ma_bd)
 ```
 
-Ici, `con` est un objet contenant la connexion avec le serveur/fichier de base de données. Pour envoyer des instructions, c'est la commande `dbSendQuery()` qui est utilisée. Sont premier argument est l'object contenant la connexion et le second les instructions `SQL`.
+Ici, `ma_bd` est un objet contenant la connexion avec le serveur/fichier de base de données. 
+
+#### Créer des 
+
+
+#### Injecter des données
+
+Une table de données peut facilement être copiée dans une base de données SQLite avec `dbWriteTable()`. Pour ce faire, le tableau peut être ajouté comme une nouvelle table :
+
+```R
+ma_db <- dbConnect(RSQLite::SQLite(), dbname="./assets/data/reseau.db")
+dbWriteTable(ma_db, "mtcars", mtcars)
+dbWriteTable(ma_db, "iris", iris)
+
+# Lister les tables
+dbListTables(ma_db)
+#> [1] "iris"   "mtcars"
+```
+
+Des données peuvent aussi êtres ajoutées à une table déjà existante :
+
+```R
+auteurs <- read.csv(file = './assets/data/db_reseau/authors.csv')
+
+# Injection des enregistrements dans la BD
+dbWriteTable(con, append = TRUE, name = "auteurs", value = auteurs, row.names = FALSE)
+```
+
+#### Effectuer des requêtes
+
+Pour envoyer des instructions, c'est la commande `dbSendQuery()` qui est utilisée. Sont premier argument est l'object contenant la connexion et le second les instructions SQL.
+
+```R
+resr <- dbSendQuery(mydb, 'SELECT * FROM mtcars LIMIT 5')
+res
+#>    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+#> 1 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+#> 2 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+#> 3 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+#> 4 21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+#> 5 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+```
+
+> Il est à noter que le code SQL est enchassé entre `"` pour former une chaine de charactère. **L'ommition des `"` est une cause d'erreur fréquente !!!**
+
+#### Fermer la connexion
+
+Souvent oublié, il faut toujours fermer la connexion, se déconnecter de la base de données, avec la commande `dbDisconnect()` :
 
 ```R
 dbSendQuery(con,"Instructions SQL à envoyer;")
