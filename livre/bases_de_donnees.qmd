@@ -342,7 +342,26 @@ Souvent oublié, il faut toujours fermer la connexion, se déconnecter de la bas
 dbSendQuery(con,"Instructions SQL à envoyer;")
 ```
 
-Il est à noter que le code `SQL` est enchassé entre `""` pour former une chaine de charactère. **Il s'agit d'une cause d'erreur fréquente !!!**
+
+### Autres commandes
+
+- `DISTINCT`
+- `LIMIT`
+- `ORDER BY`
+
+
+### Agréger l'information
+
+Dand la sélection des champs :
+
+- Opérations sur les champs `MAX`, `MIN`, `SUM`, `AVG`, `COUNT`
+- Opérations sur plusieurs champs `*`, `/`, `-,` etc
+- `COUNT`
+- `GROUP BY` définit les champs sur lequel se fera l'agrégation des données.
+
+
+
+### CREATE TABLE
 
 Voici un exemple d'instruction SQL pour créer la table `auteurs`.
 
