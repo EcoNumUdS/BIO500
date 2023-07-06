@@ -5,7 +5,7 @@ lang: fr
 number-depth: 2
 
 book:
-  title: "BIO500 - Méthodes en écologie computationelle"
+  title: "Méthodes en écologie computationelle"
   reader-mode: true
 
   page-footer:
@@ -28,8 +28,10 @@ book:
     # Bloc 1: Planification de la collecte et organisation des données
     - part: donnees.qmd
       chapters:
-        - intro.qmd
+        - donnees_ecologiques.qmd
         - bases_de_donnees.qmd
+        - sql.qmd
+        - exercices_1.qmd
 
     # Bloc 2: Outils pour une science reproductible et transparente
     - part: reproductibilite.qmd
@@ -49,17 +51,19 @@ book:
         - intro.qmd
         - intro.qmd
 
-    # Évaluations   
+    # Programmation   
     - part: programmer.qmd
       chapters:
-        - intro.qmd
+        - debugger.qmd
+        # - bonnes_pratiques.qmd
+        - fonctions.qmd
         - intro.qmd
 
-    # Programmation   
-    - part: intro.qmd
-      chapters:
-        - intro.qmd
-        - intro.qmd
+    # # Annexes
+    # - part: annexes.qmd
+    # chapters: 
+    #   - installerR.qmd
+    #   - mise_a_jour_R.qmd
 
     - references.qmd
 
