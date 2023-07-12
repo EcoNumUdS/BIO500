@@ -39,7 +39,7 @@ Précédemment, nous avons vu les aspects importants de la conceptualisation d'u
    3. Ajouter de l'information dans les tables
    4. Faire des requêtes pour extraire l'information
 
-### Créer une nouvelle base de données
+### 1. Créer une nouvelle base de données
 
 Pour faciliter l'interaction avec la base de données et simplifier les manipulations, nous utiliserons RStudio et la librairie open source `RSQLite` qui contient le client SQLite3. `RSQLite` propose une interface dans R qui permet d'interagir avec les bases de données.
 
@@ -49,7 +49,7 @@ D'abord, il faut se connecter à la base de données à l'aide de la commande `d
 # install.packages('RSQLite')
 library(DBI)
 
-ma_bd <- dbConnect(RSQLite::SQLite(), dbname="./assets/data/reseau.db")
+ma_bd <- dbConnect(RSQLite::SQLite(), dbname="./my_database.db")
 ## !ATTENTION!: Ceci est mon chemin d'accès vers le fichier!
 ## Astuces: getwd() et setwd()
 
@@ -59,30 +59,50 @@ dbDisconnect(ma_bd)
 Ici, `ma_bd` est un objet contenant la connexion avec le serveur/fichier de base de données. 
 
 
-### Injecter des données
-
-Une table de données peut facilement être copiée dans une base de données SQLite avec `dbWriteTable()`. Pour ce faire, le tableau peut être ajouté comme une nouvelle table :
+### 2. Créer les tables
 
 ```R
-ma_db <- dbConnect(RSQLite::SQLite(), dbname="./assets/data/reseau.db")
-dbWriteTable(ma_db, "mtcars", mtcars)
-dbWriteTable(ma_db, "iris", iris)
+create_mtcars <- 
+    "CREATE TABLE mtcars (
+        auteur      VARCHAR(50),
+        statut      VARCHAR(40),
+        institution VARCHAR(200),
+        ville       VARCHAR(40),
+        pays        VARCHAR(40),
+        PRIMARY KEY (auteur)
+    );"
+dbSendQuery(con, create_mtcars)
+
+create_iris <- 
+    "CREATE TABLE iris (
+        auteur      VARCHAR(50),
+        statut      VARCHAR(40),
+        institution VARCHAR(200),
+        ville       VARCHAR(40),
+        pays        VARCHAR(40),
+        PRIMARY KEY (auteur)
+    );"
+dbSendQuery(con, create_iris)
+```
+
+
+### 3. Injecter des données
+
+Une table de données peut facilement être copiée dans une base de données SQLite avec `dbWriteTable()`. Pour ce faire, les données doivent avoir le même format que la table dans laquelle elles sont insérées :
+
+```R
+ma_db <- dbConnect(RSQLite::SQLite(), dbname="./my_database.db")
+
+# Injection des enregistrements dans la B
+dbWriteTable(con, append = TRUE, name = "mtcars", value = mtcars, row.names = FALSE)
+dbWriteTable(con, append = TRUE, name = "iris", value = iris, row.names = FALSE)
 
 # Lister les tables
 dbListTables(ma_db)
 #> [1] "iris"   "mtcars"
 ```
 
-Des données peuvent aussi êtres ajoutées à une table déjà existante :
-
-```R
-auteurs <- read.csv(file = './assets/data/db_reseau/authors.csv')
-
-# Injection des enregistrements dans la BD
-dbWriteTable(con, append = TRUE, name = "auteurs", value = auteurs, row.names = FALSE)
-```
-
-### Effectuer des requêtes
+### 4. Effectuer des requêtes
 
 Pour envoyer des instructions, c'est la commande `dbGetQuery()` qui est utilisée. Sont premier argument est l'object contenant la connexion et le second les instructions SQL.
 
@@ -99,7 +119,7 @@ res
 
 > Il est à noter que le code SQL est enchassé entre `"` pour former une chaine de charactère. **L'ommition des `"` est une cause d'erreur fréquente !!!**
 
-### Fermer la connexion
+### 5. Fermer la connexion
 
 Souvent oublié, il faut toujours fermer la connexion, se déconnecter de la base de données, avec la commande `dbDisconnect()` :
 
@@ -112,8 +132,10 @@ dbDisconnect(ma_bd)
 
 Les requêtes serviront à créer les tables de la base de données, à spécifier les clés, à filtrer les données et à extraire les données de la dase de données. Pour ce faire, une certaine maitrise du langage SQL est nécessaire.
 
+La requête type se découpe en quelques pièces détaillées dans les sections qui suivent :
+
 ```SQL
-SELECT colonnes/champs
+SELECT champs
 FROM table1
 JOIN table2 ON table1.foreignKey = table2.primaryKey
 WHERE criteres
@@ -130,7 +152,7 @@ SELECT champ1, champ2
 FROM table1;
 ```
 
-> Notez que toutes requêtes SQL doit se terminer par `;`, sans quoi un message d'erreur est retourné.
+> Notez que toutes requêtes SQL se terminent par `;`, sans quoi un message d'erreur est retourné.
 
 `*` retourne tous les champs :
 
@@ -147,7 +169,7 @@ SELECT *
 FROM table1;
 ```
 
-`AS` permet de renommer un champ :
+`AS` permet de renommer un champ dans la table retournée. La table table1 d'où les données proviennent n'est pas effecté par la commande. Cet astuce facilite l'organisation lorsque plusieurs champs ont le même nom ou que plusieurs champs sont aggrégés en une seule colonne :
 
 ```SQL
 SELECT prenom_nom AS auteur, institution_id AS employeur
@@ -166,7 +188,11 @@ FROM client
 WHERE ville = 'Sherbrooke';
 ```
 
+#### Champs numériques
+
 Les opérateur de comparaison standards tels que `>=`, `<=`, `=` sont accessibles pour les valeurs numériques.
+
+#### Champs de texte
 
 Les valeurs de texte sont filtrés avec `LIKE` et `NOT LIKE` :
 
@@ -178,6 +204,8 @@ WHERE nom LIKE '%Beauchamp%';
 
 `%` tient pour n'importequel caractère (Lyne Beauchamp, Julien Beauchamp-Lavallée) alors que `_` est utilisé pour un seul caractère (`WHERE nom LIKE 'Beauchamp_'` : Beauchamp, Beauchamps, etc.).
 
+#### Valeurs nulles
+
 `IS NULL` et `IS NOT NULL` filtrent les valeurs nulles :
 
 ```SQL
@@ -185,6 +213,8 @@ SELECT id, nom, no_telephonne, courriel
 FROM client
 WHERE nom IS NOT NULL;
 ```
+
+#### Filtres multi-critères
 
 On peut aussi effecturer des filtres multi-critères avec `AND` et `OR` :
 
@@ -236,9 +266,9 @@ SELECT COUNT(*)
 FROM client
 ```
 
-Des opérations peuvent également être effectuées sur plusieurs champs telles que des sommes, des divisions, etc. Les opérateurs couramment utilisés sont : `*`, `/`, `-`. 
+Des opérations peuvent également être effectuées sur plusieurs champs telles que des sommes, des divisions, etc. Les opérateurs couramment utilisés sont : `*`, `/`, `-`, `+`. 
 
-`GROUP BY` définit les champs sur lequel se fera l'agrégation des données. L'aggrégration se fait dand la sélection des champs :
+`GROUP BY` définit les champs sur lequel se fera l'agrégation des données. L'aggrégration se fait dans la sélection des champs :
 
 ```SQL
 SELECT COUNT(id)
@@ -265,7 +295,7 @@ Parfois, l'information requise est répartie dans plusieurs tables de la base de
 knitr::include_graphics("./assets/img/sql_joins.png", dpi = 270)
 ```
 
-Le type de jointure utilisé dépend du résultat attendu. Chaque jointure effectuée ne peut viser que deux tables : une table principale (nommée dans le *FROM*) et une table secondaire de laquelle des données sont extraites pour être ajoutées à la table principale. Chacun des types de jointures conserve les lignes et les information de chacune des tables différemment. 
+Le type de jointure utilisé dépend du résultat attendu. Chaque jointure effectuée ne peut viser que deux tables : une table principale (nommée dans le *FROM*) et une table secondaire de laquelle des données sont extraites pour être ajoutées à la table principale. Chacun des types de jointures conserve les lignes et les informations de chacune des tables différemment. 
 
 Une jointure se fait en spécifiant les champs correspondants (clés étrangères), comme ici où les deux tables partagent un identifiant unique du magasin (`id` et `magasin_id`).
 
@@ -293,7 +323,9 @@ magasin
 
 Voici quelques exemples de situations que vous pouvez rencontrer : 
 
-Le **lateral join** est un type de jointure entre tables très pratique par sa simplicité. Cependant, il peut produire des résultats innatendu puisque toutes les lignes correspondantes des tables seront retournées. Par exemple, la requête suivante produira un jeu de données de 7 lignes puisque le magasin 1 et 4 ont chacun 2 clients. Ces lignes seront donc duppliquées :
+#### Lateral join
+
+Le **lateral join** est un type de jointure entre tables très pratique de par sa simplicité. Cependant, il peut produire des résultats contre-intuitifs puisque toutes les lignes correspondantes des tables seront retournées. Par exemple, la jointure latérale des tables magasins (5 lignes) et client (5 lignes) par le champ id du magasin produira un jeu de données de 7 lignes puisque le magasin 1 et 4 ont chacun 2 clients. Ces lignes seront donc duppliquées :
 
 ```SQL
 SELECT client.id, nom, magasin.id, code_postal
@@ -311,6 +343,8 @@ WHERE client.magasin_id = magasin.id;
 
 > Notez que le champ d'une table est spécifié avec le format `table.champ`. Cela permet d'être explicite sur le champ visé puisqu'il peut y avoir de la redondance entre les tables, comme ici avec les colonnes `id`.
 
+#### Left join
+
 Le `LEFT JOIN` est la jointure la plus populaire puisqu'elle conserve les lignes de la table principale (de gauche) et ne joint que les colonnes de la seconde table (de droite) aux lignes correspondantes. Notez que lorsqu'il n'y a pas de correspondance, une valeure `NULL` est retournée :
 
 ```SQL
@@ -327,7 +361,9 @@ LEFT JOIN magasin ON client.magasin_id = magasin.id
 | 4 | Tremblay   | 8          | NULL        |
 | 5 | Beauregard | 4          | L4X1A7      |
 
-Le `INNER JOIN` ne renvoie que rangées des tables ayant un champ contenant une valeur commune. La requête suivante ne retourne que 4 lignes puisque la table magasin ne possède pas de id avec une valeure 8 :
+#### Inner join
+
+Le `INNER JOIN` ne renvoie que rangées des tables ayant un champ contenant une valeur commune. La requête suivante ne retourne que 4 lignes puisque la table magasin ne possède pas de id avec une valeur de 8 :
 
 ```SQL
 SELECT client.id, nom, magasin_id, code_postal
@@ -347,7 +383,7 @@ INNER JOIN magasin ON client.magasin_id = magasin.id
 
 Lorsque la requête désirée est particulièrement complexe, il est possible d'imbriquer des requêtes, de faire un `SELECT` sur le produit d'un autre `SELECT`. Pour ça, il existe deux méthodes :
 
-Spécifier la première requête dans le FROM de la seconde.
+Spécifier la première requête dans le FROM de la seconde :
 
 ```SQL
 SELECT nom 
@@ -359,7 +395,7 @@ FROM (
 HAVING magasin_id < 3;
 ```
 
-Exécuter une première requête et utiliser son retour comme une table.
+Exécuter une première requête et utiliser son retour comme une table :
 
 ```SQL
 WITH premiere_requete AS (
@@ -376,7 +412,7 @@ WHERE magasin_id < 3;
 
 ### Mettre à jour des enregistrements
 
-On peut mettre à jour les enregistrements d'une table sélectionnées avec des critères spécifiques : 
+On peut mettre à jour les enregistrements sélectionnés d'une table avec des critères spécifiques : 
 
 ```SQL
 UPDATE client      -- Table visée
@@ -386,6 +422,21 @@ WHERE id = 3;      -- Filtre pour sélectionner la valeur à mettre à jour
 
 > Notez que toutes les valeurs de la colonne *nom* de la table *client* dont *id=3* seront mises à jour pour Martin. Le risque d'erreur est important !!! Testez rigoureusement votre filtre avant d'effectuer la mise à jour.
 
+
+### Supprimer des enregistrements
+
+On peut supprimer des enregistrements sélectionnés d'une table avec des critères spécifiques : 
+
+```SQL
+DELETE FROM client
+WHERE nom = 'Martin';
+```
+
+ATTENTION ! Sans filtres, toutes les valeurs de la table sont supprimées :
+
+```SQL
+DELETE FROM client;
+```
 
 ### CREATE TABLE
 
