@@ -1,3 +1,19 @@
 # Reproductibilité {#sec-reprod .unnumbered}
 
-Outils pour une science reproductible et transparente 
+Cette section aborde les outils et techniques pour une science reproductible et transparente. 
+
+Objectifs de section
+
+- Utiliser Git pour versionner le projet.
+- Organiser sont répertoire de travail pour répondre aux exigeances de `targets`.
+- Utiliser de façon rudimentaire `RMarkdown` pour consigner des notes.
+
+--- 
+
+[![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc2/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc2/bloc2.pdf)
+
+Au terme de cette section, vous serez en mesure de :
+
+- De versionner les modifications au projet avec git.
+- Utiliser la librarie `targets` pour automatiser l'exécution de projets sur R.
+- Rédiger et compiler un cahier de laboratoire `RMarkdown`.
