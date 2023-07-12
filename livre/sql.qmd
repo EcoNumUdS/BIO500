@@ -196,6 +196,15 @@ WHERE
   OR (annee >= 1992 AND annee <= 1994);"
 ```
 
+#### Filtrer à posteriori
+
+Une requête peut retourner un champ agrégé, par exemple le résultat d'un produit et filtrer les lignes retournées en fonction du résultat de l'aggrégation avec `HAVING` :
+
+```SQL
+SELECT id, nom, no_telephonne, date_de_naissance * 2 AS annee2
+FROM client
+HAVING annee2 >= 4000;"
+```
 
 ### Autres commandes
 
