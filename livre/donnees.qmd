@@ -10,6 +10,9 @@ Objectifs de section :
 
 ---
 
+[![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc1/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc1/bloc1.pdf)
+
+
 Au terme de cette section, vous serez en mesure de :
 
 - Récolter et saisir les données.

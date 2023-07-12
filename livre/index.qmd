@@ -1,8 +1,29 @@
 # Préface {.unnumbered}
 
-Vous vous trouvez sur le site de la première édition de "BIO500 - Méthodes en écologie computationelle". Ce livre vous accompagnera dans la réalisation de la séquence d'une étude d'écologie : Vous apprendrez les standards de gestion, d'analyse et de présentation des données, ainsi que les outils technologiques requis pour y arriver.
+Vous vous trouvez sur le site de la première édition de "Méthodes en écologie computationelle", le livre d'accompagnement au cours BIO500. Ce livre vous accompagnera dans la réalisation de la séquence d'une étude d'écologie : vous apprendrez les standards de gestion, d'analyse et de présentation des données, ainsi que les outils technologiques requis pour y arriver.
 
 Visitez <https://github.com/EcoNumUdS/BIO500> pour trouver le matériel du cours.
+
+## Présentations en classe
+
+Les diapositives sont accessibles en format PDF et html :
+
+Bloc 1 : Planification de la collecte et organisation des données
+
+[![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc1/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc1/bloc1.pdf)
+
+
+Bloc 2 : Outils pour une science reproductible et transparente
+
+[![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc2/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc2/bloc2.pdf)
+
+Bloc 3 : Visualisation des données
+
+[![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc3/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc3/bloc3.pdf)
+
+Bloc 4: Communication scientifique
+
+[![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc4/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc4/bloc4.pdf)
 
 ## Objectif général
 
