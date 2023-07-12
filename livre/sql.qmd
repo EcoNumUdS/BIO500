@@ -374,7 +374,17 @@ WHERE magasin_id < 3;
 ```
 
 
+### Mettre à jour des enregistrements
 
+On peut mettre à jour les enregistrements d'une table sélectionnées avec des critères spécifiques : 
+
+```SQL
+UPDATE client      -- Table visée
+SET nom = 'Martin' -- Champ = nouvelle valeur
+WHERE id = 3;      -- Filtre pour sélectionner la valeur à mettre à jour
+```
+
+> Notez que toutes les valeurs de la colonne *nom* de la table *client* dont *id=3* seront mises à jour pour Martin. Le risque d'erreur est important !!! Testez rigoureusement votre filtre avant d'effectuer la mise à jour.
 
 
 ### CREATE TABLE
