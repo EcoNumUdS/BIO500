@@ -36,8 +36,9 @@ book:
     # Bloc 2: Outils pour une science reproductible et transparente
     - part: reproductibilite.qmd
       chapters:
-        - intro.qmd
-        - intro.qmd
+        - git.qmd
+        #- markdown1.qmd
+        #- targets.qmd
 
     # Bloc 3: Visualisation des données    
     - part: visualiser.qmd

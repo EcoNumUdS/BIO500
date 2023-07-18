@@ -1,0 +1,262 @@
+# Git {#sec-GIT}
+
+```{r}
+#| label: git
+#| echo: false
+#| out-width: 15%
+#| fig-cap: |
+#|    
+#| fig-alt: |
+#|   Git.
+
+knitr::include_graphics("./assets/img/git.png", dpi = 270)
+```
+
+Git est un système de contrôle de version pour programmeur. C'est un logiciel qui permet de suivre l'ajout et les modifications pour l'ensemble des fichiers d'un projet. D'une certaine façon, Git est le cahier de laboratoire du biologiste pour ce qui est de la sauvegarde, des analsyses de données et de la rédaction.
+
+
+## Notions de base
+
+Le principal avantage de Git réside dans sa capacité à suivre et à enregistrer les modifications apportées à un projet au fil du temps. Il permet aux collaborateurs de travailler simultanément sur différentes fonctionnalités, de fusionner leurs modifications et de revenir à des versions précédentes du code en cas de besoin.
+
+Une branche (master par défault) est un série de commentaires (commit) qui décrivent les modifications successives au projet. Chaque version du projet est associée à un commit. Le dernier commit est ce que l'on appelle la tête de la branche (HEAD), elle contient la version la plus récente des fichiers.
+
+```{r}
+#| label: git_branch
+#| echo: false
+#| out-width: 80%
+#| fig-cap: |
+#|    Concept de branche en Git. L'historique d'un projet est une ligne du temps (branche) de l'évolution du projet. Les modifications aux fichiers sont décits par des commits qui permettent d'en retracer l'historique.
+#| fig-alt: |
+#|   Git flow.
+
+knitr::include_graphics("./assets/img/git_1.svg", dpi = 270)
+```
+
+> On interagit avec Git soit par le terminal, soit par RStudio. Pour les besoins du cours, nous nous limiterons à RStudio, mais sachez que certains conflits (erreurs) ne pourront être résolus que dans le terminal.
+
+### Commandes Git de base
+
+RStudio facilite le travail avec Git à l'aide d'un simple onglet "Git" et avec un navigateur qui vous permet de passer d'une version à l'autre et de mettre en valeur les modifications qui ont été enregistrées sous forme de commit. Cet onglet permet d'exécuter certaines opérations de base pour le contrôle de version. Voici un petit lexique pour s'y retrouver :
+
+
+#### Git clone
+
+Clôner un projet hébergé sur GitHub vers votre machine locale. Cette opération est effectuée lors du démarage d'un nouveau projet RStudio et est accessible dans le menu "File > New Project > Version Control > Git".
+
+#### Git pull
+
+Récupérer les modifications des autres membres de l'équipe et se mettre à jour avec la version la plus récente du projet hébergé sur GitHub. À chaque fois que l'on ouvre un projet il est approprié d'utiliser la commande "Pull" (un bouton sur l'interface git de RStudio) afin de récupérer les modifications des autres membres de l'équipe.
+
+#### Git diff
+
+Affiche les modifications au fichiers qui ne sont pas encore associés à un commit.
+
+#### Git commit
+
+Crée un nouveau commit avec les modifications de l'index et associe un message descriptif.
+
+#### Git log ou "History"
+
+Affiche l'historique des commits avec les informations associées, tels que les auteurs, les dates et les messages de commit.
+
+#### Git push
+
+Téléverse vos commits vers le répertoire du projet GitHub.
+
+#### Git branch 
+
+Affiche la liste des branches.
+
+#### Git revert
+
+Abandonne toutes modifications aux fichiers sélectionnés.
+
+#### Git merge
+
+Fusionne une branche spécifiée dans la branche active.
+
+
+> Les fonctionnalités de git sont immenses et RStudio permet de bien les utiliser. Un tutoriel complet est disponible à [https://happygitwithr.com/rstudio-git-github.html](https://happygitwithr.com/rstudio-git-github.html).
+
+### Github
+
+GitHub est le serveur *cloud* du logiciel Git, comme OneDrive l'est pour d'autres types de fichiers. On peut y sauver les fichiers text (csv, R, md, ...) et l'historique du travail (commits, branches). Cela permet de collaborer à plusieurs partenaires sur un même projet.
+
+
+
+## Débuter avec Git
+
+### 0. Prérequis
+
+#### 0.1. Avoir un compte GitHub
+
+Aller à la page d'accueil de gitub [https://github.com](https://github.com). Sélectionner "sign up" et entrer les informations demandées.
+
+#### 0.2. R et RStudio sont installés et mis à jour
+
+1. Vérifier la version de `R` installée sur votre machine. Une version suppérieure à 4.1.1 est recommandée.
+
+```R
+R.version.string
+[1] "R version 4.2.2 Patched (2022-11-10 r83330)"
+```
+
+2. Besoin de mettre à jour RStudio ? Télécharger la dernière version ici : [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
+
+3. Mettre à jour les librairies installées sur votre ordinateur :
+
+```R
+update.packages(ask = FALSE, checkBuilt = TRUE)
+```
+
+#### 0.3. Git est installé
+
+##### Windows
+
+Git doit être installé sur les systèmes Windows. Instructions pour Windows : [https://git-scm.com/download/win](https://git-scm.com/download/win).
+
+##### Mac
+
+Git est installé par défault sur les ordinateurs Mac. Il suffit de vérifier la version installée :
+
+Ouvrir le terminal et saisir la commande suivante :
+
+```bash
+git version
+```
+
+Si la commande n'est pas reconnue, il faut installer git. Instructions pour Mac : [http://git-scm.com/download/mac](http://git-scm.com/download/mac). 
+
+
+#### 0.4. Git est associé avec GitHub
+
+Il peut être nécessaire de configurer git pour qu'il puisse communiquer avec github. Cette étape se fait plus facilement avec le package usethis dans la console de RStudio :
+
+```R
+# Installer le package usethis
+install.packages("usethis")
+## Enregistrer les informations de l'utilisateur :
+usethis::use_git_config(user.name = "YourName", user.email = "your@mail.com")
+## Créer un jeton d'accès :
+usethis::create_github_token() 
+### Définir la date d'expiration comme "Aucune expiration"
+### Copier le jeton d'accès dans le presse-papier
+## Enregistrer le jeton d'accès :
+credentials::set_github_pat()
+# gitcreds::gitcreds_set()
+## Redémarrer R !!!
+```
+
+Il faut vérifier que git est bien configuré :
+
+```R
+usethis::git_sitrep()
+## Votre nom d'utilisateur et e-mail devraient être 
+## correctement retournés.
+## Aussi, le rapport devrait contenir quelque chose comme ceci :
+## 'Personal access token: '<found in env var>''
+## Si un message d'erreur persiste, vérifier que le fichier .Renviron est bien configuré :
+## Appeler `usethis::edit_r_environ()` pour mettre à jour le fichier manuellement.
+```
+
+
+
+### 1. Créer un dépôt GitHub en ligne
+
+Accédez à [GitHub](https://github.com/) et connectez-vous à votre conte. Près de l'onglet "Repositories", sélectionnez le bouton vert 'New' pour créer un nouveau dépôt et suivre les instructions. Les options recommandées sont :
+
+- Repository template: No template.
+- Repository name: Le nom de votre projet.
+- Description: Une description du répertoire (non requis)
+- Public.
+
+
+### 2. Associer le dépôt à RStudio
+
+Sur le dépôt GitHub, cliquer sur le bouton "<> Code". Assurez-vous de sélectionner l'URL "HTTPS". Copier l'URL du dépôt.
+
+```{r}
+#| label: github_code
+#| echo: false
+#| out-width: 40%
+#| fig-cap: |
+#|    
+#| fig-alt: |
+#|   Git.
+
+knitr::include_graphics("./assets/img/github_code.png", dpi = 270)
+```
+
+Dans RStudio, créer un nouveau projet "Version Control" : File > New Project > Version Control > Git.
+
+> Si cette option n'est pas disponible, consulter l'assistance [https://happygitwithr.com/rstudio-see-git.html](https://happygitwithr.com/rstudio-see-git.html).
+
+- Copier l'URL dans "Repository URL" pour cloner le dépôt.
+- Accepter le nom du projet par défault. Celui-ci coincide avec le nom du répertoire GitHubé.
+- S'assurer de sauver le dépôt au bon endroit sur l'ordinateur !
+- Cliquer "Create Project".
+
+Si des fichiers sont déjà sauvés dans le répertoire GitHub, ils seront téléchargés dans le projet RStudio.
+
+On peut ouvrir le projet ultérieurement avec File > Open project en sélectionnant le fichier avec l'extension .Rproj.
+
+
+### 3. Enregistrer les modifications
+
+Après avoir effectué des modifications aux fichiers du projet, sauver ces modifications. Par exemple, ajouter "Ceci est une ligne ajoutée à la description du projet." au fichier `README.md` et sauver la modification.
+
+- Sélectionner l'onglet git dans le quadrant supérieur droit.
+- Cliquer sur le bouton commit pour enregistrer les modifications.
+- Résumer les modifications en une courte phrase (message de commit).
+- Cliquer sur le bouton "Push" pour téléverser les modifications vers le répertoire (serveur) GitHub.
+- Valider en ligne sur votre répertoire GitHub si les modifications ont été ajoutées.
+
+
+### 4. Revenir en arrière
+
+Les commandes de git sont très efficaces et puissantes, elles peuvent néanmoins être fastidieuses et difficiles pour les débutants.
+
+RStudio facilite ce travail avec un simple onglet "history" et avec un navigateur qui vous permet de passer d'une version à l'autre et de mettre en valeur les modifications qui ont été enregistrées sous forme de commit.
+
+
+### 5. Récupérer les modifications de co-équipiers
+
+Git a été spécifiquement créé pour travailler en équipe. Plusieurs utilisateurs peuvent se connecter au même répertoire et y apporter des modifications. Cependant, le répertoire en ligne GitHub est la version du projet à laquelle tous les utilisateurs contribuent. Il faut être rigoureux et fréquemment y téléverser ses modifications pour les rendre accessible aux autres (Push). Il faut également récupérer les modifications des autres membres de l'équipe (Pull).
+
+Les restrictions d'accès au répertoire GitHub et les invitations peuvent être gérées à partir du site web du répertoire.
+
+La collaboration entraine parfois des conflits entre version. Ceci est particulièrement fréquent lorsqu'on oublie d'effectuer un Push ou un Pull pendant un certain temps. La section suivante détaille les conflits courramment rencontrés.
+
+
+## Conflits
+
+Lors de l'utilisation de Git, voici quelques-uns des conflits les plus fréquemment rencontrés :
+
+1. Conflit de fusion (Merge conflict) : Ce conflit se produit lorsque Git ne parvient pas à fusionner automatiquement les modifications provenant de deux branches différentes. Il se produit généralement lorsque des modifications incompatibles sont apportées au même fichier, aux mêmes lignes de code ou lorsque des renommages de fichiers entraînent des conflits de nommage.
+
+2. Conflit de rébase (Rebase conflict) : Lorsque vous effectuez une opération de rébase pour intégrer les modifications d'une branche dans une autre, des conflits peuvent se produire si Git ne parvient pas à appliquer automatiquement les modifications. Cela peut se produire lorsque des modifications conflictuelles sont apportées aux mêmes fichiers ou aux mêmes parties de code.
+
+3. Conflit de stratégie de fusion (Merge strategy conflict) : Git offre plusieurs stratégies de fusion, telles que la fusion rapide (fast-forward), la fusion récursive (recursive) ou la fusion ours (ours). Lorsque vous spécifiez une stratégie de fusion spécifique et que celle-ci ne peut pas être appliquée en raison de conflits, un conflit de stratégie de fusion se produit.
+
+4. Conflit de nommage (Naming conflict) : Ce type de conflit se produit lorsque deux fichiers ou répertoires ont des noms similaires et que Git ne peut pas les distinguer clairement. Cela peut survenir lors de la fusion de branches contenant des fichiers ou des répertoires avec des noms conflictuels.
+
+5. Conflit de ligne blanche (Whitespace conflict) : Les conflits de ligne blanche surviennent lorsque les modifications apportées à un fichier incluent des changements mineurs tels que l'ajout ou la suppression d'espaces, de tabulations ou de retours à la ligne. Ces conflits se produisent généralement lors de la fusion ou de la rébase.
+
+Il est important de noter que ces conflits sont des situations normales lors de la collaboration avec Git. Lorsqu'un conflit se produit, Git marque les zones conflictuelles dans les fichiers concernés et il vous revient de les résoudre en choisissant quelles modifications garder ou en effectuant des ajustements manuels.
+
+> En cas de conflit, un message apparait dans la console RStudio indiquant la nature du problème. La présente section vous aide à en comprendre l'origine et il est fortement recommandé de copier-coller le message dans un moteur de recherche pour plus d'information. Toutefois, vous devez obligatoirement résoudre le conflit en choisissant les modifications à garder ou en effectuant des ajustement manuellement. 
+
+
+## Bien structurer son projet
+
+Il est recommandé de bien organiser ses fichiers afin de s'y retrouver plus facilement. On y retrouve habituellement les éléments suivants :
+
+- `README.md` : information sur le dépôt.
+- `.Rproj` : informations sur le projet R.
+- `.git` : informations sur l'historique d'utilisation de git.
+- `.gitignore` : contient les extensions de fichier ignorés par git.
+- `data` : données du projet ainsi que la base de données.
+- `scripts` : tous les scripts R.
+- `figures` : résultats des analyses.
+- `rapport` : rapport final.
