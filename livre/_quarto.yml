@@ -37,7 +37,7 @@ book:
     - part: reproductibilite.qmd
       chapters:
         - git.qmd
-        #- markdown1.qmd
+        - markdown1.qmd
         #- targets.qmd
 
     # Bloc 3: Visualisation des données    
