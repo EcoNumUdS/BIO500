@@ -38,7 +38,7 @@ book:
       chapters:
         - git.qmd
         - markdown1.qmd
-        #- targets.qmd
+        - targets.qmd
 
     # Bloc 3: Visualisation des données    
     - part: visualiser.qmd
