@@ -7,7 +7,7 @@
 
 Les données jouent un rôle essentiel dans la réponse aux questions de recherche en écologie computationnelle. Elles renferment l'information qui sera ultérieurement analysée, visualisée et communiquée. Comprendre les différents types de données utilisés dans ce domaine est fondamental pour assurer une collecte précise et une organisation adéquate, permettant ainsi d'exploiter au mieux ces données lors des étapes ultérieures de l'analyse écologique. Dans ce chapitre, nous explorerons en détail les types de données couramment rencontrés en écologie computationnelle pour faciliter la structuration.
 
-**Qu'est-ce qu'une donnéee en écologie ?**
+**Qu'est-ce qu'une donnée en écologie ?**
 
 Les données écologiques sont le résultat de la collecte, qui se fait souvent par le biais d'échantillonnage. Dans ce domaine, il est courant de rencontrer différents formats et types de données. En écologie, les données sont classées en quatre dimensions ou classes d'information :
 

@@ -1,0 +1,32 @@
+# Nettoyage et validation
+
+## Les jeux de données en écologie
+
+La données écologique est multidimentionnelle par sa nature. Cela implique, généralement, que la collecte des données est fragmentée en plusieurs entitées et résulte en une multitude de fichiers de données à traiter pour obtenir l'information requise à notre étude. Par exemple, des inventaires ornitologiques par points d'écoute génèrent des données provenant de plusieurs localisations à plusieurs points dans le temps. Il peut y avoir plusieurs techniciens impliqués dans la collecte et un différent tableau de saisi des données peut être utilisé par chacun ou à chaque localisation. Voyez-vous comment la gestion de ces données peut rapidement devenir complexe ?
+
+Bref, les données écologiques nécessaires à une étude sont généralement saisies dans une multitude de fichiers, par différentes personnes. Certaines tâches sont à ne pas négliger lors de la planification parce qu'elles exigent beaucoup de ressources :
+
+- Le nettoyage
+- La validation
+- L'injection dans la base de données
+
+Ce dernier point sera traité plus en détail dans la prochaine section (@sec-entreposer).
+
+## Vérifier les données
+
+Comme l'erreur est humaine, toute opération effectuée par un ou une technicienne, comme la saisie des données, est vouée à contenir des erreurs. Une importante étape dans la gestion des données est la validation de celles-ci, c'est-à-dire la vérification pour la **présence d'erreurs communes**, d'**erreurs délétaires** pour le projet et pour la bonne **structure de la donnée et du tableau**. Il y a plusieurs vérifications à effectuer et ces vérifications sont spécifiques au projet et aux données collectées. Par exemple, des données de collecte d'occurence d'espèces précaires au Québec doivent être associées à une localisation au Québec. Il est si facile de saisir une virgule au mauvais endroit et de se retrouver à l'autre bout du monde...
+
+De plus, comme les données sont souvent réparties dans un grand nombre de fichiers, il est nécessaire de répéter ces vérifications sur l'ensemble des fichiers de données avant de les injecter pour l'entreposage. Il est important que les données entrreposées soient valides !
+
+***Astuce*** : les vérifications doivent être insérées dans un processus qui peut être répété et réutilisé fréquemment. L'astuce est d'automatiser les vérifications pour qu'elles puissent être appliquées de la même façon à tous les fichiers. C'est là qu'il devient important de scripter ces vérifications ! 
+
+> Les vérifications gagnent à être enchassées dans une fonction de façon à ce que cette fonction puisse être appliquée sur tous les jeux de données. 
+
+
+## Ressources
+
+Il est assumé que vous êtes en mesure de concevoir des fonction dans le langage de programmation R suite à la réussite du cours *BIO109*. Toutefois, il s'agit d'un concept qui n'est pas trivial et qui demande de la pratique pour bien le saisir. Voici quelques références sur les fonctions :
+
+Une introduction aux fonctions et à l'écriture de fonction de [*R for data scientists*](https://r4ds.hadley.nz/functions.html).
+
+Une vidéo : [A tutorial for writing functions in R](https://www.youtube.com/watch?v=3uK1OzA7CTs)

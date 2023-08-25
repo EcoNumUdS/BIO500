@@ -1,0 +1,26 @@
+# Entreposage {#sec-entreposer .unnumbered}
+
+La section précédente aborde la création et la nature de la donnée écologique toutes deux influencées par la question de recherche. Cependant, une fois la donnée créée (plan d'échantillonnage complété, inventaires terrain, expérimentation, l'identification de jeux de données ou la simulation des données désirées), ces données ont besoin d'être organisées logiquement pour les entreposer. Cela en facilitera l'utilisation pour les analyses, la visualisation et la production de communication. L'entreposage est donc une étape cruciale dans le cycle de vie de la donnée et dans le processus scientifique.
+
+Cette section traitera des tâches reliées à l'entreposage des données dans un processus scientifique. Les aspects couverts seront l'exploration des données, le nettoyage et la validation des données, la conception de base de données et l'injection dans la base de données.
+
+Objectifs de section :
+
+- Explorer les données
+- Représenter conceptuellement l'organisation de données sous forme de base de données
+- Concevoir une base de données à l'aide du langage `SQL` et de la librairie `RSQLite`
+- Nettoyer et valider les jeux de données
+- Injecter les données dans la base de données
+
+---
+
+[![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc1/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc1/bloc1.pdf)
+
+
+Au terme de cette section, vous serez en mesure de :
+
+- Écrire le script `R` pour créer votre base de données
+- Concevoir les scripts de nettoyage et de validation des données
+- Injecter les données récoltées dans la base de données
+- Effectuer des requêtes simples
+- Écrire le script `R` pour automatiser les différentes étapes

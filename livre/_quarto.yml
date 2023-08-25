@@ -29,6 +29,11 @@ book:
     - part: donnees.qmd
       chapters:
         - donnees_ecologiques.qmd
+        - validation.qmd
+
+    # Bloc 1.5: Entreposer les données
+    - part: entreposer.qmd
+      chapters:
         - bases_de_donnees.qmd
         - sql.qmd
         - exercices_1.qmd
@@ -40,10 +45,11 @@ book:
         - markdown1.qmd
         - targets.qmd
 
+    # Bloc 3: Utiliser les données
     # Bloc 3: Visualisation des données    
     - part: visualiser.qmd
       chapters:
-        - intro.qmd
+        - figures.qmd
         - intro.qmd
 
     # Bloc 4: Communication scientifique   
