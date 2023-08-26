@@ -16,7 +16,7 @@ Chacune de ces commandes est une instruction `SQL` envoyée au serveur pour mani
 
 Les instructions `SQL` sont près de la structure des phrases ordinaire en anglais. Vous trouverez le langage plus intuitif que beaucoup d'autres, avec notament des instructions comme `CREATE`, `JOIN`, `GROUP BY`, etc. Le langage est déclaratif, il permet de décrire le résultat escompté, sans avoir à décrire comment l'obtenir. C'est une charactéristique voulue lors de sa création pour faciliter l'apprentissage et la lecture.
 
-> Le langage de programmation SQL et son utilisation sont détaillées dans la section [Utilisation avancée du SQL](http://localhost:4345/bases_de_donnees.html#utilisation-avanc%C3%A9e-du-sql).
+> Le langage de programmation SQL et son utilisation sont détaillées dans la @sec-sql_plus.
 
 
 
@@ -128,7 +128,7 @@ dbDisconnect(ma_bd)
 ```
 
 
-## Utilisation avancée du `SQL`
+## Utilisation avancée du `SQL` {#sec-sql_plus}
 
 Les requêtes serviront à créer les tables de la base de données, à spécifier les clés, à filtrer les données et à extraire les données de la dase de données. Pour ce faire, une certaine maitrise du langage SQL est nécessaire.
 

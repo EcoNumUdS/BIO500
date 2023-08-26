@@ -2,7 +2,7 @@
 
 ## Les jeux de données en écologie
 
-La données écologique est multidimentionnelle par sa nature. Cela implique, généralement, que la collecte des données est fragmentée en plusieurs entitées et résulte en une multitude de fichiers de données à traiter pour obtenir l'information requise à notre étude. Par exemple, des inventaires ornitologiques par points d'écoute génèrent des données provenant de plusieurs localisations à plusieurs points dans le temps. Il peut y avoir plusieurs techniciens impliqués dans la collecte et un différent tableau de saisi des données peut être utilisé par chacun ou à chaque localisation. Voyez-vous comment la gestion de ces données peut rapidement devenir complexe ?
+La donnée écologique est multidimentionnelle par sa nature. Cela implique, généralement, que la collecte des données est fragmentée en plusieurs entitées et résulte en une multitude de fichiers de données à traiter pour obtenir l'information requise à notre étude. Par exemple, des inventaires ornitologiques par points d'écoute génèrent des données provenant de plusieurs localisations à plusieurs points dans le temps. Il peut y avoir plusieurs techniciens impliqués dans la collecte et un différent tableau de saisi des données peut être utilisé par chacun ou à chaque localisation. Voyez-vous comment la gestion de ces données peut rapidement devenir complexe ?
 
 Bref, les données écologiques nécessaires à une étude sont généralement saisies dans une multitude de fichiers, par différentes personnes. Certaines tâches sont à ne pas négliger lors de la planification parce qu'elles exigent beaucoup de ressources :
 
@@ -10,7 +10,7 @@ Bref, les données écologiques nécessaires à une étude sont généralement s
 - La validation
 - L'injection dans la base de données
 
-Ce dernier point sera traité plus en détail dans la prochaine section (@sec-entreposer).
+Ce dernier point sera traité plus en détail dans le @sec-SQL.
 
 ## Vérifier les données
 

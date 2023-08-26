@@ -1,4 +1,4 @@
-# Entreposage {#sec-entreposer .unnumbered}
+# Entreposage {#sec-entreposer}
 
 La section précédente aborde la création et la nature de la donnée écologique toutes deux influencées par la question de recherche. Cependant, une fois la donnée créée (plan d'échantillonnage complété, inventaires terrain, expérimentation, l'identification de jeux de données ou la simulation des données désirées), ces données ont besoin d'être organisées logiquement pour les entreposer. Cela en facilitera l'utilisation pour les analyses, la visualisation et la production de communication. L'entreposage est donc une étape cruciale dans le cycle de vie de la donnée et dans le processus scientifique.
 
