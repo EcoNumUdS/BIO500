@@ -1,0 +1,85 @@
+# Visualiser {#sec-targets}
+
+Les données sont essentielles pour supporter ses arguments et convaincre un auditoire. Toutefois, les données brutes endorment les auditeurs, ou pire, les font fuir. 
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr" href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/tidyverse?src=hash&amp;ref_src=twsrc%5Etfw">#tidyverse</a> <a href="https://twitter.com/hashtag/datajournalism?src=hash&amp;ref_src=twsrc%5Etfw">#datajournalism</a> <a href="https://twitter.com/hashtag/dataviz?src=hash&amp;ref_src=twsrc%5Etfw">#dataviz</a> <a href="https://twitter.com/hashtag/Penguins?src=hash&amp;ref_src=twsrc%5Etfw">#Penguins</a> <a href="https://t.co/u2rXkBehxS">pic.twitter.com/u2rXkBehxS</a></p>&mdash; Laura Navarro (@LauraNavarroSol) <a href="https://twitter.com/LauraNavarroSol/status/1289216490307063814?ref_src=twsrc%5Etfw">July 31, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Un tableau est difficile à comprendre, la visualisation permet de partager plus efficacement son message. Toutefois, une figure mal conçue peut conduire à une fausse interprétation. L'idée est de transmettre une idée sans biaiser le lecteur.
+
+Le processus de création d'une visualisation réussie débute par l'identification du message à communiquer. Après, il faut développer une idée précise de la figure en la dessinant à la main. Finalement, une figure bénéficie de créativité !
+
+## Attributs d'une bonne figures
+
+Une bonne visualisation ne laisse pas de doute quant au message communiqué et le publique visé. Une figure faites pour d'autres scientifiques ne sera pas identique à une figure pour des étudiants du secondaire.
+
+De règle générale, il est recommandé de rester simple et d'utiliser moins d'encre.
+
+Il vaut mieux se limiter à trois dimentions maximum et limiter l'utilisation de symboles et de couleurs. Chaque élément d'une figure doit aider à comprendre le message.
+
+Choisir le bon type de représentation permet de mettre en valeur plus facilement ce qui doit être illustré.
+
+Respecter les normes graphiques : le choix des couleurs, taille des caractères, épaisseur de la ligne, disposition des marges, cadrage, etc a un impact important.
+
+## Choisir une visualisation
+
+### L'utilité de la visualisation
+
+#### Expliquer un processus
+
+Un processus se caractérise par une série ordonnée d'éléments. Par exemple, l'ordre des étapes pour réaliser un projet scientifique est essentiel au processus. Pour représenter le processus scientifique et d'autres données de ce type, il vaut mieux préviligier les visualisation qui exposent la nature ordonnée et connectée des éléments présentés. 
+
+![Types de visualisation recommandé pour un processus (tiré de https://www.simplifiedsciencepublishing.com)](assets/img/viz_process.png)
+
+#### Présenter une distribution
+
+Une distribution peut être utilisée pour une seule variable ou pour plusieurs variables continues. Ce type de données sert à montrer la variabilité ou la distribution des données.
+
+![Types de visualisation recommandé pour une distribution (tiré de https://www.datacamp.com)](assets/img/viz_distribution.png)
+
+#### Montrer une tendance
+
+Un jeu de données qui représente une tendance temporelle, par exemple la taille d'une population de caribou au cours des 50 dernières années, est particulièrement approprié pour un diagramme à ligne, un graphique d'aires ou un diagramme spline.
+
+![Types de visualisation recommandé pour une tendance (tiré de https://www.datacamp.com)](assets/img/viz_tendance.png)
+
+#### Comparer ou contraster
+
+Lorsque l'objectif est de comparer, de contraster ou de montrer une tendance, la représentation choisie doit mette l'emphase sur la différence entre les éléments de la figure. Certaines visualisations sont à prévilégier, comme les graphiques à barres, à lignes ou à boîtes.
+
+![Types de visualisation recommandé pour une comparaison (tiré de https://www.simplifiedsciencepublishing.com)](assets/img/viz_comparaison.png)
+
+#### Établir une relation
+
+Pour les données qui représentent une relation, comme un réseau trophique, certaines visualisation aident à mettre l'emphase sur les liens et la force de ces liens.
+
+![Diagramme de dispersion avec graphique à barres  (tiré de https://www.datacamp.com)](assets/img/viz_relations.png)
+
+#### Flux
+
+Les desures de flux sont courant en écologie. La coopération entre chercheurs d'une institution, mesuré en nombre de publications communes, est un exemple. On pense également aux flux d'énergie dans un chaine trophique.
+
+![Diagramme pour données de flux (tiré de https://www.datacamp.com)](assets/img/viz_flux.png)
+
+### Le publique cible
+
+#### Audience scientifique
+
+Une audience scientifique comprend toute personne qui est habituée à communiquer à l'aide de visualisation. On pense généralement à des étudiants en sciences, des professeurs et des chercheurs. Ces personnes rechercheront de l'information détaillée dans les visualisation, ainsi qu'un design qui met de l'avant le résultat. Le type de visualisation choisie pourra comprendre des détails statistiques comme la valeur p, la taile d'échantillon et les unités. 
+
+Les visualisation courantes sont :
+
+- Graphiques à barres (bar plot)
+- Histogrammes
+- Graphiques à ligne
+- Boîte et moustache
+- Diagramme de dispersion (scatter plot)
+- Heatmaps
+
+![Diagramme de dispersion avec boîtes (de https://www.simplifiedsciencepublishing.com/resources/scientific-data-visualization-tools-and-techniques)](assets/img/viz_scientifique.png)
+
+
+#### Audience publique 
+
+Un publique général peut être peu ou moins familier avec la communication visuelle. Il faut alors limiter la quantité de détails et mettre l'emphase sur le message général. Les illustrations, les infographiques et les cartes sont courants.
+
+![Déplacement des réfugiés ukrainiens entre le 3 et le 5 mars 2022 (de https://www.simplifiedsciencepublishing.com/resources/scientific-data-visualization-tools-and-techniques)](assets/img/viz_carte.png)
