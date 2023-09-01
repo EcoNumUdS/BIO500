@@ -50,7 +50,7 @@ book:
     - part: visualiser.qmd
       chapters:
         - figures.qmd
-        - intro.qmd
+        - composantes_graphiques.qmd
 
     # Bloc 4: Communication scientifique   
     - part: communiquer.qmd
