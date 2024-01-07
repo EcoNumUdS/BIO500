@@ -1,3 +1,21 @@
-# Communication {#sec-communiquer .unnumbered}
+# Communication scientifique {#sec-communiquer .unnumbered}
 
-Bloc 4 : Communication scientifique
+La communication scientifique prend plusieurs formes. Outre les présentations et la publication d'articles scientifiques, certains travaux de recherche peuvent être communiqués sous forme de mémoires ou de thèses ou encore être vulgarisés. Dans tous les cas, il est important que la communication s'insère dans le _workflow_ du projet. C'est l'étape logique qui suit l'utilisation des données (analyses, visualisation). Plusieurs outils sont disponibles dans RStudio pour la communication scientifique. Dans ce cours, nous nous concentrerons sur l'utilisation de RMarkdown pour la rédaction de rapports, d'articles scientifiques et de présentations. Nous verrons également comment gérer les références bibliographiques.
+
+Objectifs de section :
+
+- Utiliser la librairie `rticles` pour la rédaction de rapports et d'articles scientifiques
+- Générer une bibliographie
+
+---
+
+[![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc4/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc4/bloc4.pdf)
+
+
+Au terme de cette section, vous serez en mesure de :
+
+- Rédaction de rapports et d'articles scientifiques au moyen de RMarkdown
+- Mise en page
+- Insertion de figures et tableaux
+- Gestion des références
+- Préparer une présentation avec RMarkdown

@@ -1,0 +1,64 @@
+# Fonctions {#sec-fonctions}
+
+Une fonction est une séquence d'instructions groupées sous un nom, qui peut être appelée et exécutée de manière répétée. Vous connaissez probablement déjà quelques fonctions de base de R, comme `mean()` ou `sample()`. R permet d'utiliser des fonctions existantes, mais aussi d'en créer de nouvelles.
+
+Structure d'une fonction :
+```r
+ma_fonction <- function(var1, var2) {
+  # instructions
+  resultat <- var1 + var2
+  return(resultat)
+}
+```
+
+Utiliser une fonction :
+
+```r
+ma_fonction(1, 2)
+```
+
+**Paramètres et arguments**
+
+Les *paramètres* sont les noms des variables définis dans la signature de la fonction. Les *arguments* sont les valeurs passées à la fonction lors de son appel.
+
+```r
+ma_fonction(arg1 = 1, arg2 = 2)
+```
+
+**Retour de valeurs**
+
+La commande `return()` permet de retourner une valeur à la fin de la fonction. Il est important de spécifier la valeur à retourner pour être explicite. Si aucune valeur n'est retournée, la fonction retourne la dernière valeur calculée, ce qui peut porter à confusion et être la cause d'erreurs. Il est possible de retourner plusieurs valeurs en les insérant dans une liste.
+
+**Portée des variables**
+
+Les variables définies dans une fonction sont locales à cette fonction. Elles ne sont pas accessibles en dehors de la fonction. Les variables définies en dehors de la fonction sont accessibles à l'intérieur de la fonction, mais ne sont pas modifiées par la fonction.
+
+**Fonctions sans retour de valeur**
+
+Il est possible de créer des fonctions qui ne retournent aucune valeur. Ces fonctions sont utiles pour effectuer des opérations de type *side-effect*, comme l'affichage de messages ou la création de fichiers. Elles retournent la valeur `NULL` par défaut.
+
+```r
+my_void_function <- function() {
+  print("Cette fonction ne renvoie aucune valeur.")
+}
+```
+
+**Fonctions avec des arguments par défaut**
+
+Il est possible de définir des valeurs par défaut pour les arguments d'une fonction. Ces valeurs sont utilisées si l'utilisateur ne spécifie pas de valeur pour l'argument.
+
+```r
+my_function <- function(arg1 = 1, arg2 = 2) {
+  resultat <- arg1 + arg2
+  return(resultat)
+}
+```
+
+**Fonctions anonymes (lambda)**
+
+Concept plus avancé. Il est possible de créer des fonctions anonymes, c'est-à-dire des fonctions qui n'ont pas de nom. Ces fonctions sont utiles pour créer des fonctions simples qui ne seront utilisées qu'une seule fois.
+
+```r
+apply(my_matrix, 1, function(row) sum(row))
+```
+

@@ -1,8 +1,8 @@
 # Bases de données {#sec-BD}
 
-Parlons d'entreposage et d'archivage des données écologiques et des outils computationnels pour y arriver. Cette étape arrive après le plan de d'échantillonnage, de façon à ce que les données récoltées et leur nature sont connues.
+Parlons d'entreposage et d'archivage des données écologiques et des outils computationnels pour y arriver. Cette étape arrive après le plan d'échantillonnage, de façon à ce que les données récoltées et leur nature soient connues.
 
-Bien des technologies sont disponibles pour l'entreposage des données allant du simple fichier texte (csv), des tableurs Excel, jusqu'aux insfrastructures de bases de données relationnelles. Il est difficile de sauver les données écologiques dans un tableur sans répéter l'information à cause de leur complexité et de leur nature multi-dimentionnelle. Par exemple, les métadonnées de l'inventaire doivent être répétés à toutes les taxons observés, pour chaque site inventorié et pour toutes les répétitions de l'inventaire de façon à ce que plusieurs valeurs peuvent être répétées inutillement des milliers, voir des milions de fois. Les répétitions peuvent réduire la performance de votre ordinateur en accroissant la mémoire nécessaire pour sauver et interagir avec des données.
+Bien des technologies sont disponibles pour l'entreposage des données allant du simple fichier texte (csv), des tableurs Excel, jusqu'aux infrastructures de bases de données relationnelles. Il est difficile de sauver les données écologiques dans un tableur sans répéter l'information à cause de leur complexité et de leur nature multidimensionnelle. Par exemple, les métadonnées de l'inventaire doivent être répétées à toutes les taxons observés, pour chaque site inventorié et pour toutes les répétitions de l'inventaire de façon à ce que plusieurs valeurs puissent être répétées inutilement des milliers, voir des millions de fois. Les répétitions peuvent réduire la performance de votre ordinateur en accroissant la mémoire nécessaire pour sauver et interagir avec des données.
 
 Supposons que vous disposez d'un jeu de données écologiques contenant des informations sur les espèces observées lors d'inventaires dans différents sites. Les métadonnées de l'inventaire comprennent des informations telles que la date de l'inventaire, le nom de l'observateur, la localisation du site, etc.
 
@@ -44,7 +44,7 @@ merged_data <- merge(metadata, observations, by = "inventaire_id")
 memory_usage_merged <- object.size(merged_data) / 1024 / 1024
 nlines_merged <- nrow(merged_data)
 
-# Version optimisée en deux tableaux de dimention n-2
+# Version optimisée en deux tableaux de dimension n-2
 # Notez l'utilisation de la colonne inventaire_id présente dans les deux tables
 # pour lier les observations aux sites
 metadata_optimized <- unique(metadata)
@@ -124,13 +124,13 @@ print(paste("En pourcentage :", (memory_difference / memory_usage_merged) * 100,
 
 ## Les bases de données relationnelles
 
-Les bases de données redimentionnent le problème de multi-dimentionalité des données (en plusieurs tables de n-2) en plus d'optimiser la mémoire requise. Voici quelques avantages de l'approche :
+Les bases de données redimensionnent le problème de multidimensionnalité des données (en plusieurs tables de n-2) en plus d'optimiser la mémoire requise. Voici quelques avantages de l'approche :
 
 - **Maintenir l'intégrité entre les enregistrements de nos tableaux.** Une observation ne peut être faite sur un site qui n'existe pas.
 - **Normaliser et contrôler la qualité des données.** Chaque colonne est un type précis de données. Des contraintes peuvent être appliquées sur chaque colonne.
 - **Éviter les redondances dans le stockage de l'information.** Réduit aussi le risque d'erreurs lors de la saisie.
 
-Chaque dimention d'un jeu de données est isolée dans une table d'une base de données. Les tables sont liées entre elles par des relations pour maintenir la structure des données.
+Chaque dimension d'un jeu de données est isolée dans une table d'une base de données. Les tables sont liées entre elles par des relations pour maintenir la structure des données.
 
 ```{r}
 #| label: schéma_étoile
@@ -151,7 +151,7 @@ Le format entité-relation est une méthode de modélisation des bases de donné
 
 Dans ce format, une base de données relationnelle est constituée de tables, qui sont des entités. Chaque table représente une dimension spécifique du jeu de données, et chaque rangée de la table correspond à une occurrence spécifique de cette entité. Les attributs des entités sont représentés par les colonnes des tables, et chaque attribut contient une donnée spécifique.
 
-Dans une base de données chaque attribut/colonne est une donnée unique, c'est-à-dire qu'elle ne se répète pas ailleurs dans la base de données. La seule exception sont les colonnes d'associations, les clés.
+Dans une base de données, chaque attribut/colonne est une donnée unique, c'est-à-dire qu'elle ne se répète pas ailleurs dans la base de données. La seule exception est les colonnes d'associations, les clés.
 
 ### Le concept d'association et des clés primaires et secondaires
 
@@ -175,7 +175,7 @@ Pour établir ces associations, les tables utilisent des *clés primaires* et de
 
 Une clé primaire est essentielle pour assurer que chaque enregistrement soit unique dans la table, car elle **ne peut jamais être NULL** (c'est-à-dire qu'elle doit toujours contenir une valeur). Cela signifie qu'aucune autre rangée de la table ne peut avoir la même valeur pour sa clé primaire, garantissant ainsi l'unicité de chaque enregistrement.
 
-Il est important de noter que la clé primaire peut être composée de plusieurs colonnes, formant ainsi une clé primaire composite. Cette combinaison de colonnes agit toujours comme un identifiant unique pour chaque enregistrement, même si aucune des colonnes individuelles ne serait unique par elle-même. L'utilisation d'une clé primaire composite est utile lorsque nous avons besoin d'une clé plus complexe pour identifier de manière unique chaque enregistrement.
+Il est important de noter que la clé primaire peut être composée de plusieurs colonnes, formant ainsi une clé primaire composite. Cette combinaison de colonnes agit toujours comme un identifiant unique pour chaque enregistrement, même si aucune des colonnes individuelles n’était unique par elle-même. L'utilisation d'une clé primaire composite est utile lorsque nous avons besoin d'une clé plus complexe pour identifier de manière unique chaque enregistrement.
 
 Outre les clés primaires, les bases de données relationnelles utilisent également des clés secondaires, également appelées clés étrangères. Une clé secondaire est une colonne (ou un ensemble de colonnes) d'une table qui établit une relation avec la clé primaire d'une autre table. En reliant les tables par des clés secondaires, nous créons des relations entre les entités représentées par ces tables.
 
@@ -197,7 +197,7 @@ En somme, les clés primaires et secondaires sont des concepts fondamentaux dans
 
 ### Le type des attributs
 
-Un type de données doit être assigné à chaque attribut. Voici les principaux types utilisés, pour tous les types de données, [voir la documentation SQLite3](https://www.sqlite.org/datatype3.html).
+Un type de données doit être assigné à chaque attribut. Voici les principaux types utilisés, pour tous les types de données [voir la documentation SQLite3](https://www.sqlite.org/datatype3.html).
 
 | Appelation                | Type                 | Valeurs     | Taille           |
 |:--------------------------|:---------------------|:------------|:-----------------|
@@ -228,7 +228,7 @@ Dans le cadre du cours, nous utiliserons le SGBD `SQLite3`.
 knitr::include_graphics("./assets/img/db_flow.svg", dpi = 270)
 ```
 
-En revanche, l'approche de serveur de base de données permet d'avoir plusieurs clients connectés sur un même serveur qui héberge la base de données. On peut donc être plusieurs à interagir en même temps avec. On pourrait envisager la situation suivante où plusieurs clients interragissent simultanément avec la base de données. Cependant, l'approche multi-utilisateurs peut uniquement se faire si le serveur est distant.
+En revanche, l'approche de serveur de base de données permet d'avoir plusieurs clients connectés sur un même serveur qui héberge la base de données. On peut donc être plusieurs à interagir en même temps avec. On pourrait envisager la situation suivante où plusieurs clients interagissent simultanément avec la base de données. Cependant, l'approche multi-utilisateur peut uniquement se faire si le serveur est distant.
 
 ```{r}
 #| label: db_flow_multi
@@ -244,6 +244,6 @@ knitr::include_graphics("./assets/img/db_flow_multi.svg", dpi = 270)
 
 > **Le principe client-serveur**
 > Le *client* est un logiciel installé sur votre ordinateur. C'est le SGBD. On se sert de ce logiciel pour interagir avec le *serveur* de base de données présent localement ou à distance.
-> C'est sur ce principe qu'est bâti l'internet. Les clients sont vos logiciels navigateurs (chrome, firefox, etc) qui interragissent en envoyant des requêtes à des serveurs via une adresse URL.
+> C'est sur ce principe qu'est bâti l'internet. Les clients sont vos logiciels navigateurs (Chrome, Firefox, etc) qui interagissent en envoyant des requêtes à des serveurs via une adresse URL.
 > Le même principe sera utilisé pour interagir avec votre base de données, mais via une connexion à un fichier enregistré dans votre ordinateur.
  

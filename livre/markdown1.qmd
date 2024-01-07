@@ -12,9 +12,9 @@
 knitr::include_graphics("./assets/img/Rmarkdown.png", dpi = 270)
 ```
 
-Le `RMarkdown` est un outil pour générer des documents pouvant contenir des éléments de texte, de code et des éléments visuels tels que des figures. On distingue les fichiers RMarkdown par l'extension `.Rmd` ou `.rmd`. Ces derniers sont des documents dynamiques dans lesquels du code R est imbriqué. Le document RMarkdown est un fichier plain text, mais une fois compilé il produit un document html, Word ou pdf.
+Le `RMarkdown` est un outil pour générer des documents pouvant contenir des éléments de texte, de code et des éléments visuels tels que des figures. On distingue les fichiers RMarkdown par l'extension `.Rmd` ou `.rmd`. Ces derniers sont des documents dynamiques dans lesquels du code R est imbriqué. Le document RMarkdown est un fichier plain text, mais une fois compilé il produit un document HTML, Word ou PDF.
 
-Le RMarkdown est également une librairie R. Vous aurez dabord à l'installer.
+Le RMarkdown est également une librairie R. Vous aurez d’abord à l'installer.
 
 ```R
 install.packages("rmarkdown")
@@ -22,18 +22,18 @@ install.packages("rmarkdown")
 
 La force du RMarkdown, à la façon de [Latex](https://fr.wikipedia.org/wiki/LaTeX) que vous connaissez peut-être, est de séparer le contenu de la mise en page des documents produits. Vous verrez que le contenu, le texte, est rédigé en 'plain text' et que des structures séparées définissent le formatage du document. La rédaction est ainsi simplifiée, le format du document bénéficie de beaucoup plus de liberté et le document devient **reproductible** (!).
 
-> Notez que le RMarkdown est un lagage compilé, contrairement à R qui est interprété. C'est-à-dire, que le fichier RMarkdown doit être "knit" dans sont entièreté pour produire le document final (html, pdf ou Word).
+> Notez que le RMarkdown est un langage compilé, contrairement à R qui est interprété. C'est-à-dire, que le fichier RMarkdown doit être "knit" dans sont entièreté pour produire le document final (html, pdf ou Word).
 
 
 ## Produire un document avec RMarkdown
 
 Pour produire un RMarkdown, il faut :
 
-1. avoir la librarie installée sur sont ordinateur
-2. creer nouveau document RMarkdown à partir d'un gabarit (New File > RMarkdown)
+1. avoir la librairie installée sur son ordinateur
+2. créer nouveau document RMarkdown à partir d'un gabarit (New File > RMarkdown)
 3. compiler le document (bouton 🧶 knit)
 
-Un document html sera sauvé dans le répertorie de travail et s'affichera automatiquement dans RStudio.
+Un document HTML sera sauvé dans le répertorie de travail et s'affichera automatiquement dans RStudio.
 
 
 ## Anatomie du RMarkdown
@@ -50,11 +50,11 @@ Un document html sera sauvé dans le répertorie de travail et s'affichera autom
 knitr::include_graphics("assets/img/Rmarkdown_example.png", dpi = 270)
 ```
 
-Un fichier RMarkdown est composée de 3 structures : une portion YAML, une portion Markdown et des blocs de code. Chacune de ces structures occupe une fonction distincte.
+Un fichier RMarkdown est composé de 3 structures : une portion YAML, une portion Markdown et des blocs de code. Chacune de ces structures occupe une fonction distincte.
 
 ### YAML
 
-Le YAML est toujours situé au haut du document et défini les métadonnées et les options du document. C'est dans cette section séparée par `---` à son début et à sa fin que les informations sur le document et les paramètres servant à la mise en page se trouvent. Les paramètres suivent la syntaxe clé: valeur.
+Le YAML est toujours situé au haut du document et définit les métadonnées et les options du document. C'est dans cette section séparée par `---` à son début et à sa fin que les informations sur le document et les paramètres servant à la mise en page se trouvent. Les paramètres suivent la syntaxe clé: valeur.
 
 ```Markdown
 ---
@@ -102,7 +102,7 @@ Voici le [lien](https://github.com/EcoNumUdS/BIO500) pour le GitHub du cours BIO
 
 ### Blocs de code
 
-Un bloc de code peut être ajouté au document en sélectionnant l'icône vert du panneau RStudio. Le code R doit être à l'intérieur d'un bloc de code (*code chunk*). Par exemple:
+Un bloc de code peut être ajouté au document en sélectionnant l'icône verte du panneau RStudio. Le code R doit être à l'intérieur d'un bloc de code (*code chunk*). Par exemple:
 
 ````md
 ```{r}`r ''`
@@ -137,7 +137,7 @@ avec un total de `r nrow(iris)` fleurs mesurées.
 
 #### Configuration des code chunk
 
-Une bonne pratique est de nommer les blocs de code. Cela s'avère utile pour débogage. Deux blocs de code avec le même nom (label) retournera un message d'erreur `Duplicate chunk label 'chunk name', which has been used for the chunk`.
+Une bonne pratique est de nommer les blocs de code. Cela s'avère utile pour débogage. Deux blocs de code avec le même nom (label) retourneront un message d'erreur `Duplicate chunk label 'chunk name', which has been used for the chunk`.
 
 Par exemple, on spécifie le nom 'plot_iris' en le spécifiant après le r dans `{r plot_iris}`.
 

@@ -2,7 +2,7 @@
 
 ## Le langage `SQL`
 
-Le `SQL` est un langage informatique créé spécifiquement pour manipuler des base de données relationnelles. C'est le langage utilisé pour transmettre nos instrusctions au SGBD. Il permet de :
+Le `SQL` est un langage informatique créé spécifiquement pour manipuler des bases de données relationnelles. C'est le langage utilisé pour transmettre nos instructions au SGBD. Il permet de :
 
 1. Créer une base de données (`CREATE DATABASE`).
 2. Créer des tables et établir des relations (`CREATE TABLE`).
@@ -14,9 +14,9 @@ Le `SQL` est un langage informatique créé spécifiquement pour manipuler des b
 
 Chacune de ces commandes est une instruction `SQL` envoyée au serveur pour manipuler et interroger la base de données.
 
-Les instructions `SQL` sont près de la structure des phrases ordinaire en anglais. Vous trouverez le langage plus intuitif que beaucoup d'autres, avec notament des instructions comme `CREATE`, `JOIN`, `GROUP BY`, etc. Le langage est déclaratif, il permet de décrire le résultat escompté, sans avoir à décrire comment l'obtenir. C'est une charactéristique voulue lors de sa création pour faciliter l'apprentissage et la lecture.
+Les instructions `SQL` sont près de la structure des phrases ordinaire en anglais. Vous trouverez le langage plus intuitif que beaucoup d'autres, avec notamment des instructions comme `CREATE`, `JOIN`, `GROUP BY`, etc. Le langage est déclaratif, il permet de décrire le résultat escompté, sans avoir à décrire comment l'obtenir. C'est une caractéristique voulue lors de sa création pour faciliter l'apprentissage et la lecture.
 
-> Le langage de programmation SQL et son utilisation sont détaillées dans la @sec-sql_plus.
+> Le langage de programmation SQL et son utilisation sont détaillés dans la @sec-sql_plus.
 
 
 
@@ -43,7 +43,7 @@ Précédemment, nous avons vu les aspects importants de la conceptualisation d'u
 
 Pour faciliter l'interaction avec la base de données et simplifier les manipulations, nous utiliserons RStudio et la librairie open source `RSQLite` qui contient le client SQLite3. `RSQLite` propose une interface dans R qui permet d'interagir avec les bases de données.
 
-D'abord, il faut se connecter à la base de données à l'aide de la commande `dbConnect()` et sauver cette connexion dans un objet. L'information contenue dans l'objet est  Nous réutiliserons cet objet à toutes les fois que nous enverrons une commande à la base de données pour spécifier la connection client-serveur.
+D'abord, il faut se connecter à la base de données à l'aide de la commande `dbConnect()` et sauver cette connexion dans un objet. Nous réutiliserons cet objet pour spécifier la connexion client-serveur à toutes les fois que nous enverrons une commande à la base de données.
 
 ```R
 # install.packages('RSQLite')
@@ -71,7 +71,7 @@ create_mtcars <-
         pays        VARCHAR(40),
         PRIMARY KEY (auteur)
     );"
-dbSendQuery(con, create_mtcars)
+dbSendQuery(ma_bd, create_mtcars)
 
 create_iris <- 
     "CREATE TABLE iris (
@@ -82,7 +82,7 @@ create_iris <-
         pays        VARCHAR(40),
         PRIMARY KEY (auteur)
     );"
-dbSendQuery(con, create_iris)
+dbSendQuery(ma_bd, create_iris)
 ```
 
 
@@ -104,10 +104,10 @@ dbListTables(ma_db)
 
 ### 4. Effectuer des requêtes
 
-Pour envoyer des instructions, c'est la commande `dbGetQuery()` qui est utilisée. Sont premier argument est l'object contenant la connexion et le second les instructions SQL.
+Pour envoyer des instructions, c'est la commande `dbGetQuery()` qui est utilisée. Sont premier argument est l'objet contenant la connexion et le second les instructions SQL.
 
 ```R
-resr <- dbGetQuery(mydb, 'SELECT * FROM mtcars LIMIT 5')
+resr <- dbGetQuery(ma_bd, 'SELECT * FROM mtcars LIMIT 5')
 res
 #>    mpg cyl disp  hp drat    wt  qsec vs am gear carb
 #> 1 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
@@ -117,7 +117,7 @@ res
 #> 5 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
 ```
 
-> Il est à noter que le code SQL est enchassé entre `"` pour former une chaine de charactère. **L'ommition des `"` est une cause d'erreur fréquente !!!**
+> Il est à noter que le code SQL est enchâssé entre `"` pour former une chaine de caractères. **L'omission des `"` est une cause d'erreur fréquente !!!**
 
 ### 5. Fermer la connexion
 
@@ -130,7 +130,7 @@ dbDisconnect(ma_bd)
 
 ## Utilisation avancée du `SQL` {#sec-sql_plus}
 
-Les requêtes serviront à créer les tables de la base de données, à spécifier les clés, à filtrer les données et à extraire les données de la dase de données. Pour ce faire, une certaine maitrise du langage SQL est nécessaire.
+Les requêtes serviront à créer les tables de la base de données, à spécifier les clés, à filtrer les données et à extraire les données de la base de données. Pour ce faire, une certaine maitrise du langage SQL est nécessaire.
 
 La requête type se découpe en quelques pièces détaillées dans les sections qui suivent :
 
@@ -138,7 +138,7 @@ La requête type se découpe en quelques pièces détaillées dans les sections 
 SELECT champs
 FROM table1
 JOIN table2 ON table1.foreignKey = table2.primaryKey
-WHERE criteres
+WHERE critères
 ORDER BY colonne1 ASC
 LIMIT 10;
 ```
@@ -169,7 +169,7 @@ SELECT *
 FROM table1;
 ```
 
-`AS` permet de renommer un champ dans la table retournée. La table table1 d'où les données proviennent n'est pas effecté par la commande. Cet astuce facilite l'organisation lorsque plusieurs champs ont le même nom ou que plusieurs champs sont aggrégés en une seule colonne :
+`AS` permet de renommer un champ dans la table retournée. La table table1 d'où les données proviennent n'est pas affectée par la commande. Cette astuce facilite l'organisation lorsque plusieurs champs ont le même nom ou que plusieurs champs sont agrégés en une seule colonne :
 
 ```SQL
 SELECT prenom_nom AS auteur, institution_id AS employeur
@@ -190,11 +190,11 @@ WHERE ville = 'Sherbrooke';
 
 #### Champs numériques
 
-Les opérateur de comparaison standards tels que `>=`, `<=`, `=` sont accessibles pour les valeurs numériques.
+Les opérateurs de comparaison standard tels que `>=`, `<=`, `=` sont accessibles pour les valeurs numériques.
 
 #### Champs de texte
 
-Les valeurs de texte sont filtrés avec `LIKE` et `NOT LIKE` :
+Les valeurs de texte sont filtrées avec `LIKE` et `NOT LIKE` :
 
 ```SQL
 SELECT id, nom, no_telephonne, courriel
@@ -202,7 +202,7 @@ FROM client
 WHERE nom LIKE '%Beauchamp%';
 ```
 
-`%` tient pour n'importequel caractère (Lyne Beauchamp, Julien Beauchamp-Lavallée) alors que `_` est utilisé pour un seul caractère (`WHERE nom LIKE 'Beauchamp_'` : Beauchamp, Beauchamps, etc.).
+`%` tient pour n'importe quel caractère (Lyne Beauchamp, Julien Beauchamp-Lavallée) alors que `_` est utilisé pour un seul caractère (`WHERE nom LIKE 'Beauchamp_'` : Beauchamp, Beauchamps, etc.).
 
 #### Valeurs nulles
 
@@ -214,9 +214,9 @@ FROM client
 WHERE nom IS NOT NULL;
 ```
 
-#### Filtres multi-critères
+#### Filtres multicritères
 
-On peut aussi effecturer des filtres multi-critères avec `AND` et `OR` :
+On peut aussi effectuer des filtres multicritères avec `AND` et `OR` :
 
 ```SQL
 SELECT id, nom, no_telephonne, date_de_naissance AS annee
@@ -226,9 +226,9 @@ WHERE
   OR (annee >= 1992 AND annee <= 1994);"
 ```
 
-#### Filtrer à posteriori
+#### Filtrer a posteriori
 
-Une requête peut retourner un champ agrégé, par exemple le résultat d'un produit et filtrer les lignes retournées en fonction du résultat de l'aggrégation avec `HAVING` :
+Une requête peut retourner un champ agrégé, par exemple le résultat d'un produit et filtrer les lignes retournées en fonction du résultat de l'agrégation avec `HAVING` :
 
 ```SQL
 SELECT id, nom, no_telephonne, date_de_naissance * 2 AS annee2
@@ -238,7 +238,7 @@ HAVING annee2 >= 4000;"
 
 ### Autres commandes
 
-`DISTINCT` retourne les valeurs distinctes d'un champs :
+`DISTINCT` retourne les valeurs distinctes d'un champ :
 
 ```SQL
 SELECT DISTINCT nom
@@ -268,7 +268,7 @@ FROM client
 
 Des opérations peuvent également être effectuées sur plusieurs champs telles que des sommes, des divisions, etc. Les opérateurs couramment utilisés sont : `*`, `/`, `-`, `+`. 
 
-`GROUP BY` définit les champs sur lequel se fera l'agrégation des données. L'aggrégration se fait dans la sélection des champs :
+`GROUP BY` définit les champs sur lesquels se fera l'agrégation des données. L'agrégation se fait dans la sélection des champs :
 
 ```SQL
 SELECT COUNT(id)
@@ -325,7 +325,7 @@ Voici quelques exemples de situations que vous pouvez rencontrer :
 
 #### Lateral join
 
-Le **lateral join** est un type de jointure entre tables très pratique de par sa simplicité. Cependant, il peut produire des résultats contre-intuitifs puisque toutes les lignes correspondantes des tables seront retournées. Par exemple, la jointure latérale des tables magasins (5 lignes) et client (5 lignes) par le champ id du magasin produira un jeu de données de 7 lignes puisque le magasin 1 et 4 ont chacun 2 clients. Ces lignes seront donc duppliquées :
+Le **lateral join** est un type de jointure entre tables très pratique de par sa simplicité. Cependant, il peut produire des résultats contre-intuitifs puisque toutes les lignes correspondantes des tables seront retournées. Par exemple, la jointure latérale des tables magasins (5 lignes) et client (5 lignes) par le champ id du magasin produira un jeu de données de 7 lignes puisque le magasin 1 et 4 ont chacun 2 clients. Ces lignes seront donc dupliquées :
 
 ```SQL
 SELECT client.id, nom, magasin.id, code_postal
@@ -345,7 +345,7 @@ WHERE client.magasin_id = magasin.id;
 
 #### Left join
 
-Le `LEFT JOIN` est la jointure la plus populaire puisqu'elle conserve les lignes de la table principale (de gauche) et ne joint que les colonnes de la seconde table (de droite) aux lignes correspondantes. Notez que lorsqu'il n'y a pas de correspondance, une valeure `NULL` est retournée :
+Le `LEFT JOIN` est la jointure la plus populaire puisqu'elle conserve les lignes de la table principale (de gauche) et ne joint que les colonnes de la seconde table (de droite) aux lignes correspondantes. Notez que lorsqu'il n'y a pas de correspondance, une valeur `NULL` est retournée :
 
 ```SQL
 SELECT client.id, nom, magasin.id, code_postal
@@ -363,7 +363,7 @@ LEFT JOIN magasin ON client.magasin_id = magasin.id
 
 #### Inner join
 
-Le `INNER JOIN` ne renvoie que rangées des tables ayant un champ contenant une valeur commune. La requête suivante ne retourne que 4 lignes puisque la table magasin ne possède pas de id avec une valeur de 8 :
+Le `INNER JOIN` ne renvoie qu'une rangée des tables ayant un champ contenant une valeur commune. La requête suivante ne retourne que 4 lignes puisque la table magasin ne possède pas de id avec une valeur de 8 :
 
 ```SQL
 SELECT client.id, nom, magasin_id, code_postal

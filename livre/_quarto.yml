@@ -43,6 +43,7 @@ book:
       chapters:
         - git.qmd
         - markdown1.qmd
+        # - metadonnees.qmd
         - targets.qmd
 
     # Bloc 3: Utiliser les données
@@ -55,8 +56,8 @@ book:
     # Bloc 4: Communication scientifique   
     - part: communiquer.qmd
       chapters:
-        - intro.qmd
-        - intro.qmd
+        - rapports_rmd.qmd
+        # - intro.qmd
 
     # Programmation   
     - part: programmer.qmd
@@ -64,7 +65,7 @@ book:
         - debugger.qmd
         # - bonnes_pratiques.qmd
         - fonctions.qmd
-        - intro.qmd
+        # - intro.qmd
 
     # # Annexes
     # - part: annexes.qmd

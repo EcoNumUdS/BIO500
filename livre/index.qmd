@@ -32,4 +32,4 @@ Les outils informatiques sont utilisés de façon croissante en écologie, que c
 
 ## Remerciements
 
-Ce livre doit beaucoup au travail des personnes qui ont développé le contenu et qui ont enseigné le cours depuis sa réation. Il n'aurait pu être écrit sans la contribution de Dominique Gravel, Steve Vissault, Willian Vieira et Guillaume Blanchet.
+Ce livre doit beaucoup au travail des personnes qui ont développé le contenu et qui ont enseigné le cours depuis sa création. Il n'aurait pu être écrit sans la contribution de Dominique Gravel, Steve Vissault, Willian Vieira et Guillaume Blanchet.

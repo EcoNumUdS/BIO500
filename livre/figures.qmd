@@ -8,7 +8,7 @@ Un tableau est difficile à comprendre, la visualisation permet de partager plus
 
 Le processus de création d'une visualisation réussie débute par l'identification du message à communiquer. Après, il faut développer une idée précise de la figure en la dessinant à la main. Finalement, une figure bénéficie de créativité !
 
-## Attributs d'une bonne figures
+## Attributs d'une bonne figure
 
 Une bonne visualisation ne laisse pas de doute quant au message communiqué et le publique visé. Une figure faites pour d'autres scientifiques ne sera pas identique à une figure pour des étudiants du secondaire.
 
@@ -26,7 +26,7 @@ Respecter les normes graphiques : le choix des couleurs, taille des caractères,
 
 #### Expliquer un processus
 
-Un processus se caractérise par une série ordonnée d'éléments. Par exemple, l'ordre des étapes pour réaliser un projet scientifique est essentiel au processus. Pour représenter le processus scientifique et d'autres données de ce type, il vaut mieux préviligier les visualisation qui exposent la nature ordonnée et connectée des éléments présentés. 
+Un processus se caractérise par une série ordonnée d'éléments. Par exemple, l'ordre des étapes pour réaliser un projet scientifique est essentiel au processus. Pour représenter le processus scientifique et d'autres données de ce type, il vaut mieux prévilégier les visualisation qui exposent la nature ordonnée et connectée des éléments présentés. 
 
 ![Types de visualisation recommandé pour un processus (tiré de https://www.simplifiedsciencepublishing.com)](assets/img/viz_process.png)
 
