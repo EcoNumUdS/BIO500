@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+16,46.8707,"20:00:00","20:15:00","23/06/2017","20:08:23","présence","Dryobates villosus","species","Hairy woodpecker","Pic chevelu","Animalia","Chordata","Aves","Piciformes","Picidae","Dryobates","Dryobates villosus"
+16,46.8707,"20:00:00","20:15:00","23/06/2017","20:03:52","présence","Dendroica magnolia","species","Magnolia warbler","Paruline à tête cendrée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica magnolia"
+16,46.8707,"23:00:00","23:03:00","23/06/2017","23:01:36","présence","Passeriformes","order","Perching birds","Passereaux","Animalia","Chordata","Aves","Passeriformes","NULL","NULL","NULL"

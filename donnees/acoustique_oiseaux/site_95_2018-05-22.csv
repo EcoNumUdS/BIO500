@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+95,45.00642,"01:00:00","01:15:00","2018-05-22","NULL","présence","Antrostomus vociferus","species","Eastern whip-poor-will","Engoulevent bois-pourri","Animalia","Chordata","Aves","Caprimulgiformes","Caprimulgidae","Antrostomus","Antrostomus vociferus"
+95,45.00642,"01:00:00","01:15:00","2018-05-22","NULL","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"
+95,45.00642,"01:00:00","01:15:00","2018-05-22","NULL","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

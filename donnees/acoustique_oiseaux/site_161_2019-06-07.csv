@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+161,48.8312,"08:00:00","08:03:00","2019-06-07","08:02:04","présence","Catharus guttatus","species","Hermit thrush","Grive solitaire","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus guttatus"
+161,48.8312,"08:00:00","08:03:00","2019-06-07","08:02:33","présence","Colaptes auratus","species","Northern flicker","Pic flamboyant","Animalia","Chordata","Aves","Piciformes","Picidae","Colaptes","Colaptes auratus"
+161,48.8312,"08:00:00","08:03:00","2019-06-07","08:00:22","présence","Regulus calendula","species","Ruby-crowned kinglet","Roitelet à couronne rubis","Animalia","Chordata","Aves","Passeriformes","Regulidae","Regulus","Regulus calendula"
+161,48.8312,"08:00:00","08:03:00","2019-06-07","08:01:56","présence","Dendroica coronata","species","Yellow-rumped warbler","Paruline à croupion jaune","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica coronata"
+161,48.8312,"22:00:00","22:03:00","2019-06-07","22:00:12","présence","Catharus guttatus","species","Hermit thrush","Grive solitaire","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus guttatus"

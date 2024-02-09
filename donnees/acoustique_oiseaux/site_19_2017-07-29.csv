@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+19,45.9644,"06:00:00","06:15:00","29/07/2017","06:11:48","présence","Falco sparverius","species","American kestrel","Crécerelle d'amérique","Animalia","Chordata","Aves","Falconiformes","Falconidae","Falco","Falco sparverius"
+19,45.9644,"06:00:00","06:15:00","29/07/2017","06:09:26","présence","Falco sparverius","species","American kestrel","Crécerelle d'amérique","Animalia","Chordata","Aves","Falconiformes","Falconidae","Falco","Falco sparverius"
+19,45.9644,"19:00:00","19:15:00","29/07/2017","19:11:05","présence","Antigone canadensis","species","Sandhill crane","Grue du Canada","Animalia","Chordata","Aves","Gruiformes","Gruidae","Antigone","Antigone canadensis"

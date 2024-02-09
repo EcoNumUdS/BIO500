@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+9,48.2163,"13:00:00","13:15:00","05/07/2016","13:00:34","présence","Vireo olivaceus","species","Red-eyed vireo","Viréo aux yeux rouges","Animalia","Chordata","Aves","Passeriformes","Vireonidae","Vireo","Vireo olivaceus"
+9,48.2163,"13:00:00","13:15:00","05/07/2016","13:10:25","présence","Catharus ustulatus","species","Swainson's thrush","Grive à dos olive","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus ustulatus"

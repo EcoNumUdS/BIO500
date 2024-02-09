@@ -1,0 +1,7 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+471,46.73117,"13:00:00","13:15:00","05/06/2017","13:01:03","présence","Setophaga ruticilla","species","American redstart","Paruline flamboyante","Animalia","Chordata","Aves","Passeriformes","Parulidae","Setophaga","Setophaga ruticilla"
+471,46.73117,"13:00:00","13:15:00","05/06/2017","13:00:09","présence","Tachycineta bicolor","species","Tree swallow","Hirondelle bicolore","Animalia","Chordata","Aves","Passeriformes","Hirundinidae","Tachycineta","Tachycineta bicolor"
+471,46.73117,"13:00:00","13:15:00","05/06/2017","13:00:50","présence","Catharus fuscescens","species","Veery","Grive fauve","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus fuscescens"
+471,46.73117,"13:00:00","13:15:00","05/06/2017","13:12:23","présence","Vireo gilvus","species","Warbling vireo","Viréo mélodieux","Animalia","Chordata","Aves","Passeriformes","Vireonidae","Vireo","Vireo gilvus"
+471,46.73117,"13:00:00","13:15:00","05/06/2017","13:03:42","présence","Vireo","genus","NULL","NULL","Animalia","Chordata","Aves","Passeriformes","Vireonidae","Vireo","NULL"
+471,46.73117,"19:00:00","19:15:00","05/06/2017","NULL","présence","Corvus brachyrhynchos","species","American crow","Corneille d'amérique","Animalia","Chordata","Aves","Passeriformes","Corvidae","Corvus","Corvus brachyrhynchos"

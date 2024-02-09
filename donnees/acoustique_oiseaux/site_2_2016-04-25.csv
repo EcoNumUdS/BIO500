@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+2,46.7941,"08:00:00","08:15:00","25/04/2016","NULL","présence","Parus atricapilla","species","Black-capped chickadee","Mésange à tête noire","Animalia","Chordata","Aves","Passeriformes","Paridae","Parus","Parus atricapilla"
+2,46.7941,"08:00:00","08:15:00","25/04/2016","08:06:08","présence","Carduelis pinus","species","Pine siskin","Tarin","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Carduelis","Carduelis pinus"

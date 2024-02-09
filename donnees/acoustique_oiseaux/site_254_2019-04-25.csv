@@ -1,0 +1,2 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+254,45.0221,"03:00:00","03:15:00","2019-04-25","NULL","présence","Strix varia","species","Barred owl","Chouette rayée","Animalia","Chordata","Aves","Strigiformes","Strigidae","Strix","Strix varia"

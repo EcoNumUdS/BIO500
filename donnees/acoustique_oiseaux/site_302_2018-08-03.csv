@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+302,58.49218,"23:00:00","23:15:00","2018-08-03","23:06:16","présence","Branta canadensis","species","Canada goose","Bernache du Canada","Animalia","Chordata","Aves","Anseriformes","Anatidae","Branta","Branta canadensis"
+302,58.49218,"23:00:00","23:15:00","2018-08-03","23:13:30","présence","Gavia immer","species","Common loon","Plongeon huard","Animalia","Chordata","Aves","Gaviiformes","Gaviidae","Gavia","Gavia immer"
+302,58.49218,"23:00:00","23:15:00","2018-08-03","23:12:30","présence","Gavia immer","species","Common loon","Plongeon huard","Animalia","Chordata","Aves","Gaviiformes","Gaviidae","Gavia","Gavia immer"
+302,58.49218,"23:00:00","23:15:00","2018-08-03","23:07:57","présence","Gavia immer","species","Common loon","Plongeon huard","Animalia","Chordata","Aves","Gaviiformes","Gaviidae","Gavia","Gavia immer"
+302,58.49218,"23:00:00","23:15:00","2018-08-03","23:07:27","présence","Gavia immer","species","Common loon","Plongeon huard","Animalia","Chordata","Aves","Gaviiformes","Gaviidae","Gavia","Gavia immer"

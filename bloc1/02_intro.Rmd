@@ -30,7 +30,7 @@ class: title-slide, middle
 # Séance 1
 
 - Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/bloc1/).
-- L'ensemble du matériel de cours est disponible sur la page du cours [github](https://github.com/EcoNumUdS/BIO500).
+- L'ensemble du matériel de cours est disponible dans le [livre du cours](https://econumuds.github.io/BIO500/) et le [GitHub](https://github.com/EcoNumUdS/BIO500).
 
 ---
 class: inverse, center, middle
@@ -125,7 +125,7 @@ La modélisation, elle est essentielle à l'étude des systèmes complexes.
 
 ## Benjamin Mercier (assistant)
 - benjamin.b.mercier@usherbrooke.ca
-- D8-0022
+- D8-0012
 
 ## Pour les questions d'intérêt général, utilisez le forum de discussion sur Moodle.
 
@@ -172,7 +172,7 @@ class: inverse, center, middle
 
 # Objectif général
 
-Au terme de ce cours, l'étudiant sera en mesure de réaliser l'ensemble de la  séquence d'une étude d'écologie en respectant les standards de gestion,  d'analyse et de présentation des données. Le cours portera sur la réalisation d'un projet intégrateur, de la collecte des données à la production du rapport final.
+Au terme de ce cours, l'étudiant sera en mesure de **réaliser l'ensemble de la  séquence d'une étude d'écologie en respectant les standards de gestion, d'analyse et de présentation des données**. Le cours portera sur la réalisation d'un projet intégrateur, de la gestion des données à la production du rapport final.
 
 ---
 
@@ -239,11 +239,13 @@ Les cours vont comprendre une période de présentation entrecoupée d'exercices
 
 Nous progresserons dans l'exécution du travail de session. Le travail sera divisé en étapes et l'évaluation portera sur son intégration.
 
+Le matériel de cours est disponible dans le livre en ligne [https://econumuds.github.io/BIO500/](https://econumuds.github.io/BIO500/).
+
 ---
 
 # Évaluation
 
-L'évaluation porte sur la réalisation d'un travail de session (75%), réalisé en équipe de 4 personnes. Le travail sera divisé en 3 étapes réparties au cours de la session. L'évaluation finale (25%) portera sur la rédaction d'un essai de 1500 mots sur les enjeux de reproductibilité en écologie.
+L'évaluation porte sur la réalisation d'un travail de session (75%), réalisé en équipe de 4 personnes. Le travail sera divisé en 3 étapes réparties au cours de la session. L'évaluation finale (25%) portera sur la rédaction d'un essai sur les enjeux de reproductibilité en écologie.
 
 ---
 class: inverse, center, middle
@@ -254,7 +256,7 @@ class: inverse, center, middle
 
 ---
 
-# Réseaux écologiques
+# Inventaires écologiques
 
 .center[
   <img src="assets/img/forest.jpg" height="500px"></img>
@@ -262,94 +264,226 @@ class: inverse, center, middle
 
 ---
 
-# Réseaux écologiques
+# Les inventaires écologiques
 
-Les réseaux sont la clef pour comprendre le fonctionnement des écosystèmes
-> Ils sont complexes et fascinants !
+## Inventaire forestier
 
-<br><br>
-***Les réseaux sont des outils vraiment utiles pour voir différents problèmes sous un autre angle, ce qui ouvre tout un autre monde d'analyses possibles***
+- Une parcelle de 200x1000 mètres sur une montagne
+- DHP de tous les arbres de plus de 10 cm de diamètre sont mesurés
+- Données : dhp, coordonnées spatiales, Altitude_m, pH
 
-\- Benjamin -
+## Inventaire oiseaux
 
----
+- Suivi bioacoustique de 2016 à 2019 
+- Observations d'oiseaux (~30500 observations)
+- Données : espèces, date, heure, coordonnées spatiales, efforts
 
-# Les propriétés des réseaux en écologie
+## Inventaire benthos
 
-.center[
-  <img src="assets/img/foodweb.png" height="500px"></img>
-]
-
----
-
-# Les propriétés des réseaux en écologie
-
-.center[
-  <img src="assets/img/cod.png" height="500px"></img>
-]
-
----
-
-# Les propriétés des réseaux en écologie
-
-## Propriétés des réseaux
-
-.pull-left[
-- Distance entre nodes
-- Taille des nodes
-- Modularité (regroupement des nodes)
-]
-
-.pull-right[
-  <img src="assets/img/small_world_network.png" height="300px"></img>
-]
-
----
-
-# Les propriétés des réseaux en écologie
-
-.center[
-  <img src="assets/img/csbq.png" height="500px"></img>
-]
-
----
-
-# Les propriétés des réseaux en écologie
-
-La théorie des réseaux et l'étude de leurs propriétés sont des outils puissants. On les utilise pour comprendre 
-- Les interactions entre les espèces, 
-- Les interactions entre les groupes sociaux, 
-- La planification des réseaux de distribution d'électricité (grids), 
-- L'internet, 
-- etc.
-
-.center[
-  <img src="assets/img/electric_grid.jpg" height="250px"></img>
-]
+- Suivi de la biodiversité benthique
+- 43 stations d'échantillonnage
+- Données : abondance, taxons, substrat, 20+ variables d'habitat
 
 ---
 
 # Le projet de session
 
-Est-ce que les propriétés du réseau de collaboration entre étudiants d'écologie diffèrent de celles des réseaux écologiques ?
+## Comment les variations spatiales et temporelles influent-elles sur la structure des communautés ?
+
+Vous avez à choisir et analyser un inventaire écologique qui vous permettra de répondre à cette question.
+
+---
+
+# Inventaire forestier
+
+Résolution spatiale et temporelle
+
+- Une parcelle de 200x1000 mètres sur une montagne
+- DHP de tous les arbres de plus de 10 cm de diamètre sont mesurés
+- Données : dhp, coordonnées spatiales, Altitude_m, pH
+
+<div style='text-align:center;'>
+<img src="bloc1/assets/img/gosford.jpg" width="100%"></img>
+</div>
+
+---
+
+# Inventaire forestier
+
+Résolution spatiale 
+
+- Une parcelle de 200x1000 mètres sur une montagne
+- DHP de tous les arbres de plus de 10 cm de diamètre sont mesurés
+- Données : dhp, coordonnées spatiales, Altitude_m, pH
+
+<div style='text-align:center;'>
+<img src="assets/img/sutton.jpg" width="100%"></img>
+</div>
+
+---
+
+# Inventaire oiseaux
+
+Résolution spatiale et temporelle
+
+- Suivi bioacoustique de 2016 à 2019 
+- Observations d'oiseaux (~30500 observations)
+- Données : espèces, date, heure, coordonnées spatiales, efforts
+
+<div style='text-align:center;'>
+<img src="assets/img/inventaire_oiseaux.png" height="300px"></img>
+</div>
+
+---
+
+# Inventaire benthos
+
+Définition spatiale / temporelle
+
+- Suivi de la biodiversité benthique
+- 43 stations d'échantillonnage
+- Données : abondance, taxons, substrat, 20+ variables d'habitat
+
+<div style='text-align:center;'>
+<img src="assets/img/inventaire_benthos.png" height="300px"></img>
+</div>
+
 
 ---
 
 # Pour commencer
 
-En équipe de 4, on vous demande de commencer à planifier une campagne de collecte de données. Commencez par discuter des types de données que vous souhaitez récolter, faites la liste des informations nécessaires pour répondre à la question. Ensuite, établissez un protocole afin de récolter ces données.
+Les données disponibles sont sur Moodle (Généralités > Dossier Projet de session - données).
+
+En équipe de 4, on vous demande d'explorer les jeux de données. Commencez par lire les README.md et discuter des données disponibles. Ensuite, choisissez un de ces jeux de données pour votre travail de session.
 
 ---
 
 # Deuxième étape
 
-Préparez un formulaire de saisie de données avec Excel et commencez à le remplir avec les données entre les membres de votre équipe.
+Faites la liste des informations disponibles et de celles nécessaires pour répondre à la question de recherche.
+
+---
+class: inverse, center, middle
+
+# Retour sur les notions de programmation
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
 ---
 
-# Troisième étape
+# Retour sur les notions de programmation
 
-Retour en classe : partage de l'information et harmonisation des formulaires.
+1. Débugguer [chapitre 13]
+2. Fonctions [chapitre 14]
+
+---
+
+# Débugguer
+
+Les erreurs de programmation sont inévitables.
+
+## Comment les gérer ?
+
+.center[
+<img src="assets/img/bug_example.png" width="90%"></img>
+]
+
+---
+
+# Erreurs courantes
+
+- **Syntaxe** : oubli de parenthèse, de virgule, de guillemets, etc.
+- **Erreur d'indexation** : vérifier que les index sont dans les limites de l'objet
+- **Erreur de type** : tentatives d'effectuer des opérations incompatibles avec le type de données (`result <- "10" + 5`)
+- **Objet inexistant** : vérifier l'orthographe de l'objet et qu'il existe dans l'environnement de travail
+- **Erreurs logiques** : problèmes liés à la logique du code, comme des boucles infinies ou des conditions incorrectes
+-  **Données manquantes (NA)** : problèmes liés à la présence de données manquantes et à la manière dont elles sont traitées 
+```R
+my_vector <- c(1, 2, NA, 4)
+sum(my_vector)
+```
+- **Packages** : Problèmes avec l'installation, le chargement ou l'utilisation de packages
+
+---
+
+# Astuces
+
+- Tester régulièrement son code
+- Lire attentivement les messages d'erreurs et les avertissements (warnings) imprimés dans la console
+- **Redémarrer sa session R** et réessayer son code. Parfois des objets sont sauvés dans la mémoire et causent ou masquent les erreurs
+- Rechercher la documentation de la commande `??` (eg. `??plot`)
+- Googler le message d'erreur pour en comprendre la signification
+- Inspecter les objets dans l'environnement de travail avec `ls()`
+
+## Ressources
+
+- Stackoverflow
+- Ateliers R du [CSBQ](https://r.qcbs.ca/fr/workshops/) 
+- Google
+- Ateliers [Data Carpentry](https://datacarpentry.org/R-genomics/index.html)
+- ChatGPT n'est pas formidable pour R, mais peut donner des pistes d'interprétation
+
+---
+
+# Exercice
+
+## À faire à la maison
+
+```R
+# Script R avec des erreurs
+
+# Fonction pour calculer la somme des carrés des éléments d'un vecteur
+somme_carres <- function(vecteur) {
+  somme <- 0
+  for (i in 1:length(vecteur)) {
+    somme <- somme + vecteur[i]^2
+  }
+  retourne(somme)
+}
+
+# Vecteur d'exemple
+mon_vecteur <- c(1, 2, 3, 4, 5)
+
+# Appel de la fonction et affichage du résultat
+resultat <- somme_carres(mon_vecteur)
+print("La somme des carrés est : ", resultat)
+```
+
+---
+
+# Fonctions
+
+Préparez un script qui retournera le nombre d'auteurs par institution de recherche.
+
+
+| auteur | statut | institution |
+|:-------|:-------|:------------|
+| Jean-Baptiste Lamarck  | Académie de sciences |
+| Charles Darwin | NA | London Royal Society |
+| Conte de Buffon | Professor | MHNP |
+
+---
+
+# Fonctions
+
+Préparez un script qui retournera le nombre d'auteurs par institution de recherche.
+
+1. Un script qui contiendra le nom du fichier de données à lire, fera appel aux fonctions pour produire les résultats et imprimera le résultat.
+2. Un script qui contient une fonction qui prendra en argument le nom de fichier et retournera les données sous forme de dataframe.
+3. Un script qui contient une fonction qui prendra en argument le dataframe et retournera le nombre d'auteurs par institution.
+
+> Utilisez les données disponibles sur Moodle dans le fichier **Bloc1 > Exercice fonctions > `auteurs.csv`**.
+
+> Chapitre 14 du livre
+
+---
+
+# Fonctions
+
+## Retour en groupe
+
+
 
 ---
 class: inverse, center, middle
@@ -360,7 +494,7 @@ class: inverse, center, middle
 
 ---
 
-# L'importance de la reproductibilité.
+# L'importance de la reproductibilité
 
 ## Ces situations peuvent survenir lors de votre carrière professionnelle:
 
@@ -388,7 +522,6 @@ class: inverse, center, middle
 
 ## Certaines étapes intermédiaires sont souvent oubliées.
 
-
 ---
 
 # Discussion
@@ -405,10 +538,10 @@ class: inverse, center, middle
 ---
 # Lectures et travail
 
-## Travail
-
-- Commencez à récolter les données pour le travail de session.
-
 ## Lecture
 
 - Baker, M. 2016. Is there a reproducibility crisis ? Nature, 533 : 452:454
+- Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
+- Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
+
+> Disponible sur Moodle dans le dossier **Bloc 1 > Lectures**

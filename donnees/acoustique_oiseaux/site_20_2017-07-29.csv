@@ -1,0 +1,7 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+20,45.842,"06:00:00","06:15:00","29/07/2017","06:00:00","présence","Gavia immer","species","Common loon","Plongeon huard","Animalia","Chordata","Aves","Gaviiformes","Gaviidae","Gavia","Gavia immer"
+20,45.842,"07:00:00","07:15:00","29/07/2017","07:04:35","présence","Gavia immer","species","Common loon","Plongeon huard","Animalia","Chordata","Aves","Gaviiformes","Gaviidae","Gavia","Gavia immer"
+20,45.842,"12:00:00","12:15:00","29/07/2017","12:09:51","présence","Tyrannus tyrannus","species","Eastern kingbird","Tyran tritri","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Tyrannus","Tyrannus tyrannus"
+20,45.842,"12:00:00","12:15:00","29/07/2017","12:06:31","présence","Tyrannus tyrannus","species","Eastern kingbird","Tyran tritri","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Tyrannus","Tyrannus tyrannus"
+20,45.842,"19:00:00","19:15:00","29/07/2017","19:00:16","présence","Colaptes auratus","species","Northern flicker","Pic flamboyant","Animalia","Chordata","Aves","Piciformes","Picidae","Colaptes","Colaptes auratus"
+20,45.842,"20:00:00","20:15:00","29/07/2017","20:13:06","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

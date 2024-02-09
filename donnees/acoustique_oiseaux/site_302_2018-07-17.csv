@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+302,58.49218,"01:00:00","01:15:00","2018-07-17","01:10:09","présence","Charadriiformes","order","NULL","NULL","Animalia","Chordata","Aves","Charadriiformes","NULL","NULL","NULL"
+302,58.49218,"01:00:00","01:15:00","2018-07-17","01:10:00","présence","Charadrius semipalmatus","species","Semipalmated plover","Pluvier semipalmé","Animalia","Chordata","Aves","Charadriiformes","Charadriidae","Charadrius","Charadrius semipalmatus"
+302,58.49218,"01:00:00","01:15:00","2018-07-17","01:06:25","présence","Gallinago delicata","species","Wilson's snipe","Bécassine de wilson","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Gallinago","Gallinago delicata"
+302,58.49218,"01:00:00","01:15:00","2018-07-17","01:01:10","présence","Gallinago delicata","species","Wilson's snipe","Bécassine de wilson","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Gallinago","Gallinago delicata"
+302,58.49218,"01:00:00","01:15:00","2018-07-17","01:00:07","présence","Gallinago delicata","species","Wilson's snipe","Bécassine de wilson","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Gallinago","Gallinago delicata"

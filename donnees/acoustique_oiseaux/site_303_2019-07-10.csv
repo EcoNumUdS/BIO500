@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+303,61.31273,"23:00:00","23:03:00","2019-07-10","23:00:06","présence","Calidris pusilla","species","Semipalmated sandpiper","Bécasseau semipalmé","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Calidris","Calidris pusilla"
+303,61.31273,"23:00:00","23:03:00","2019-07-10","23:00:38","présence","Gallinago delicata","species","Wilson's snipe","Bécassine de wilson","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Gallinago","Gallinago delicata"
+303,61.31273,"23:00:00","23:03:00","2019-07-10","23:02:16","présence","Calcariidae","family","NULL","NULL","Animalia","Chordata","Aves","Passeriformes","Calcariidae","NULL","NULL"

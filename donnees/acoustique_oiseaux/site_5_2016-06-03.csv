@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+5,45.4475,"03:00:00","03:15:00","03/06/2016","03:01:12","présence","Empidonax alnorum","species","Alder flycatcher","Moucherolle des aulnes","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Empidonax","Empidonax alnorum"
+5,45.4475,"03:00:00","03:15:00","03/06/2016","03:09:15","présence","Strix varia","species","Barred owl","Chouette rayée","Animalia","Chordata","Aves","Strigiformes","Strigidae","Strix","Strix varia"
+5,45.4475,"03:00:00","03:15:00","03/06/2016","03:13:09","présence","Gallinago delicata","species","Wilson's snipe","Bécassine de wilson","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Gallinago","Gallinago delicata"

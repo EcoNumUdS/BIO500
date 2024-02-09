@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+26,47.6666,"03:00:00","03:15:00","22/06/2017","03:09:35","présence","Passeriformes","order","Perching birds","Passereaux","Animalia","Chordata","Aves","Passeriformes","NULL","NULL","NULL"
+26,47.6666,"03:00:00","03:15:00","22/06/2017","03:07:53","présence","Passeriformes","order","Perching birds","Passereaux","Animalia","Chordata","Aves","Passeriformes","NULL","NULL","NULL"
+26,47.6666,"03:00:00","03:15:00","22/06/2017","03:00:04","présence","Chordeiles minor","species","Common nighthawk","Engoulevent d'amérique","Animalia","Chordata","Aves","Caprimulgiformes","Caprimulgidae","Chordeiles","Chordeiles minor"
+26,47.6666,"03:00:00","03:15:00","22/06/2017","03:01:33","présence","Melospiza lincolnii","species","Lincoln's sparrow","Bruant de lincoln","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza lincolnii"

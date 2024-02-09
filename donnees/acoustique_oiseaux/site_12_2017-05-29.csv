@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+12,46.8684,"20:00:00","20:03:00","29/05/2017","20:02:50","présence","Pheucticus ludovicianus","species","Rose-breasted grosbeak","Cardinal à poitrine rose","Animalia","Chordata","Aves","Passeriformes","Cardinalidae","Pheucticus","Pheucticus ludovicianus"
+12,46.8684,"20:00:00","20:03:00","29/05/2017","20:02:33","présence","Actitis macularia","species","Spotted sandpiper","Chevalier grivelé","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Actitis","Actitis macularia"
+12,46.8684,"20:00:00","20:03:00","29/05/2017","20:02:38","présence","Melospiza georgiana","species","Swamp sparrow","Bruant des marais","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza georgiana"

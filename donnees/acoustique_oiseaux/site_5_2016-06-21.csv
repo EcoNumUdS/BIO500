@@ -1,0 +1,8 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+5,45.4475,"19:00:00","19:15:00","21/06/2016","19:08:06","présence","Corvus corax","species","Common raven","Grand corbeau","Animalia","Chordata","Aves","Passeriformes","Corvidae","Corvus","Corvus corax"
+5,45.4475,"23:00:00","23:15:00","21/06/2016","23:05:17","présence","Empidonax alnorum","species","Alder flycatcher","Moucherolle des aulnes","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Empidonax","Empidonax alnorum"
+5,45.4475,"23:00:00","23:15:00","21/06/2016","23:00:04","présence","Strix varia","species","Barred owl","Chouette rayée","Animalia","Chordata","Aves","Strigiformes","Strigidae","Strix","Strix varia"
+5,45.4475,"23:00:00","23:15:00","21/06/2016","23:06:25","présence","Gavia immer","species","Common loon","Plongeon huard","Animalia","Chordata","Aves","Gaviiformes","Gaviidae","Gavia","Gavia immer"
+5,45.4475,"23:00:00","23:15:00","21/06/2016","23:05:56","présence","Gavia immer","species","Common loon","Plongeon huard","Animalia","Chordata","Aves","Gaviiformes","Gaviidae","Gavia","Gavia immer"
+5,45.4475,"23:00:00","23:15:00","21/06/2016","23:05:01","présence","Podilymbus podiceps","species","Pied-billed grebe","Grèbe à bec bigarré","Animalia","Chordata","Aves","Podicipediformes","Podicipedidae","Podilymbus","Podilymbus podiceps"
+5,45.4475,"23:00:00","23:15:00","21/06/2016","23:01:22","présence","Gallinago delicata","species","Wilson's snipe","Bécassine de wilson","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Gallinago","Gallinago delicata"

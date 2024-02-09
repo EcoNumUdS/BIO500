@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+16,46.8707,"04:00:00","04:15:00","23/07/2017","04:10:44","présence","Catharus guttatus","species","Hermit thrush","Grive solitaire","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus guttatus"
+16,46.8707,"06:00:00","06:15:00","23/07/2017","06:04:03","présence","Dryobates pubescens","species","Downy woodpecker","Pic mineur","Animalia","Chordata","Aves","Piciformes","Picidae","Dryobates","Dryobates pubescens"
+16,46.8707,"08:00:00","08:15:00","23/07/2017","08:07:44","présence","Dryobates villosus","species","Hairy woodpecker","Pic chevelu","Animalia","Chordata","Aves","Piciformes","Picidae","Dryobates","Dryobates villosus"
+16,46.8707,"08:00:00","08:15:00","23/07/2017","08:06:42","présence","Dryobates villosus","species","Hairy woodpecker","Pic chevelu","Animalia","Chordata","Aves","Piciformes","Picidae","Dryobates","Dryobates villosus"
+16,46.8707,"20:00:00","20:15:00","23/07/2017","20:12:35","présence","Sitta canadensis","species","Red-breasted nuthatch","Sittelle à poitrine rousse","Animalia","Chordata","Aves","Passeriformes","Sittidae","Sitta","Sitta canadensis"

@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+179,47.6028,"04:00:00","04:15:00","2018-06-17","04:01:01","présence","Melospiza lincolnii","species","Lincoln's sparrow","Bruant de lincoln","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza lincolnii"
+179,47.6028,"04:00:00","04:15:00","2018-06-17","04:00:45","présence","Melospiza lincolnii","species","Lincoln's sparrow","Bruant de lincoln","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza lincolnii"
+179,47.6028,"04:00:00","04:15:00","2018-06-17","NULL","présence","Passerculus sandwichensis","species","Savannah sparrow","Bruant des prés","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Passerculus","Passerculus sandwichensis"
+179,47.6028,"04:00:00","04:15:00","2018-06-17","04:00:46","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

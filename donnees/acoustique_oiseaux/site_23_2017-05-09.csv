@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+23,46.2502,"05:00:00","05:15:00","09/05/2017","05:04:12","présence","Parus atricapilla","species","Black-capped chickadee","Mésange à tête noire","Animalia","Chordata","Aves","Passeriformes","Paridae","Parus","Parus atricapilla"
+23,46.2502,"05:00:00","05:15:00","09/05/2017","NULL","présence","Catharus guttatus","species","Hermit thrush","Grive solitaire","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus guttatus"
+23,46.2502,"05:00:00","05:15:00","09/05/2017","NULL","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"

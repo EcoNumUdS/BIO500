@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+251,49.1025,"06:00:00","06:03:00","2019-06-16","06:00:58","présence","Regulus satrapa","species","Golden-crowned kinglet","Roitelet à couronne dorée","Animalia","Chordata","Aves","Passeriformes","Regulidae","Regulus","Regulus satrapa"
+251,49.1025,"06:00:00","06:03:00","2019-06-16","06:00:54","présence","Troglodytes hiemalis","species","Animals","Troglodyte des forêts","Animalia","Chordata","Aves","Passeriformes","Troglodytidae","Troglodytes","Troglodytes hiemalis"
+251,49.1025,"06:00:00","06:03:00","2019-06-16","06:01:16","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"
+251,49.1025,"06:00:00","06:03:00","2019-06-16","06:00:16","présence","Dendroica coronata","species","Yellow-rumped warbler","Paruline à croupion jaune","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica coronata"

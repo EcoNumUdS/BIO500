@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+95,45.00642,"21:00:00","21:15:00","2018-05-15","NULL","présence","Scolopax minor","species","American woodcock","Bécasse d'amérique","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Scolopax","Scolopax minor"
+95,45.00642,"21:00:00","21:15:00","2018-05-15","NULL","présence","Antrostomus vociferus","species","Eastern whip-poor-will","Engoulevent bois-pourri","Animalia","Chordata","Aves","Caprimulgiformes","Caprimulgidae","Antrostomus","Antrostomus vociferus"
+95,45.00642,"21:00:00","21:15:00","2018-05-15","NULL","présence","Gallinago delicata","species","Wilson's snipe","Bécassine de wilson","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Gallinago","Gallinago delicata"
+95,45.00642,"22:00:00","22:03:00","2018-05-15","22:01:48","présence","Strix varia","species","Barred owl","Chouette rayée","Animalia","Chordata","Aves","Strigiformes","Strigidae","Strix","Strix varia"
+95,45.00642,"22:00:00","22:03:00","2018-05-15","22:02:15","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

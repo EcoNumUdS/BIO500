@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+255,48.1453,"03:00:00","03:15:00","2019-05-28","03:00:55","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"
+255,48.1453,"03:00:00","03:15:00","2019-05-28","03:10:10","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

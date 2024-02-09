@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+17,46.8893,"01:00:00","01:15:00","17/05/2017","01:00:24","présence","Passeriformes","order","Perching birds","Passereaux","Animalia","Chordata","Aves","Passeriformes","NULL","NULL","NULL"
+17,46.8893,"01:00:00","01:15:00","17/05/2017","01:12:36","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+469,46.65899,"04:00:00","04:15:00","05/06/2017","04:12:47","présence","Agelaius phoeniceus","species","Red-winged blackbird","Carouge à épaulettes","Animalia","Chordata","Aves","Passeriformes","Icteridae","Agelaius","Agelaius phoeniceus"
+469,46.65899,"04:00:00","04:15:00","05/06/2017","04:05:00","présence","Melospiza melodia","species","Song sparrow","Bruant chanteur","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza melodia"
+469,46.65899,"04:00:00","04:15:00","05/06/2017","04:04:28","présence","Melospiza georgiana","species","Swamp sparrow","Bruant des marais","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza georgiana"
+469,46.65899,"04:00:00","04:15:00","05/06/2017","04:11:53","présence","Catharus fuscescens","species","Veery","Grive fauve","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus fuscescens"
+469,46.65899,"04:00:00","04:15:00","05/06/2017","04:02:43","présence","Dendroica petechia","species","American yellow warbler","Paruline jaune","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica petechia"

@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+11,46.8766,"01:00:00","01:15:00","13/06/2017","01:12:01","présence","Strix varia","species","Barred owl","Chouette rayée","Animalia","Chordata","Aves","Strigiformes","Strigidae","Strix","Strix varia"
+11,46.8766,"01:00:00","01:15:00","13/06/2017","01:11:52","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"
+11,46.8766,"01:00:00","01:15:00","13/06/2017","01:06:31","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

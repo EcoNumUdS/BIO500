@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+3,45.4599,"13:00:00","13:15:00","27/06/2016","13:12:51","présence","Sphyrapicus varius","species","Yellow-bellied sapsucker","Pic maculé","Animalia","Chordata","Aves","Piciformes","Picidae","Sphyrapicus","Sphyrapicus varius"
+3,45.4599,"13:00:00","13:15:00","27/06/2016","13:02:55","présence","Sphyrapicus varius","species","Yellow-bellied sapsucker","Pic maculé","Animalia","Chordata","Aves","Piciformes","Picidae","Sphyrapicus","Sphyrapicus varius"

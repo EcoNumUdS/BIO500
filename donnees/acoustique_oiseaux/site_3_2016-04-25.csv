@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+3,45.4599,"04:00:00","04:15:00","25/04/2016","04:12:10","présence","Strix varia","species","Barred owl","Chouette rayée","Animalia","Chordata","Aves","Strigiformes","Strigidae","Strix","Strix varia"
+3,45.4599,"04:00:00","04:15:00","25/04/2016","04:04:50","présence","Bonasa umbellus","species","Ruffed grouse","Gélinotte huppée","Animalia","Chordata","Aves","Galliformes","Phasianidae","Bonasa","Bonasa umbellus"
+3,45.4599,"04:00:00","04:15:00","25/04/2016","04:01:59","présence","Bonasa umbellus","species","Ruffed grouse","Gélinotte huppée","Animalia","Chordata","Aves","Galliformes","Phasianidae","Bonasa","Bonasa umbellus"
+3,45.4599,"05:00:00","05:15:00","25/04/2016","05:00:03","présence","Catharus guttatus","species","Hermit thrush","Grive solitaire","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus guttatus"

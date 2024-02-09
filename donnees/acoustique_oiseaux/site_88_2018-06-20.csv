@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+88,45.99009,"03:00:00","03:15:00","2018-06-20","03:00:45","présence","Antrostomus vociferus","species","Eastern whip-poor-will","Engoulevent bois-pourri","Animalia","Chordata","Aves","Caprimulgiformes","Caprimulgidae","Antrostomus","Antrostomus vociferus"
+88,45.99009,"03:00:00","03:15:00","2018-06-20","03:08:11","présence","Melospiza melodia","species","Song sparrow","Bruant chanteur","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza melodia"
+88,45.99009,"03:00:00","03:15:00","2018-06-20","03:11:05","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

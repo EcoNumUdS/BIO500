@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+5,45.4475,"01:00:00","01:15:00","26/05/2016","01:00:00","présence","Scolopax minor","species","American woodcock","Bécasse d'amérique","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Scolopax","Scolopax minor"
+5,45.4475,"01:00:00","01:15:00","26/05/2016","01:04:49","présence","Branta canadensis","species","Canada goose","Bernache du Canada","Animalia","Chordata","Aves","Anseriformes","Anatidae","Branta","Branta canadensis"
+5,45.4475,"01:00:00","01:15:00","26/05/2016","01:12:53","présence","Gavia immer","species","Common loon","Plongeon huard","Animalia","Chordata","Aves","Gaviiformes","Gaviidae","Gavia","Gavia immer"
+5,45.4475,"01:00:00","01:15:00","26/05/2016","01:00:32","présence","Gavia immer","species","Common loon","Plongeon huard","Animalia","Chordata","Aves","Gaviiformes","Gaviidae","Gavia","Gavia immer"
+5,45.4475,"01:00:00","01:15:00","26/05/2016","01:03:20","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

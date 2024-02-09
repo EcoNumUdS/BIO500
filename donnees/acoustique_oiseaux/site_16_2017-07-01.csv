@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+16,46.8707,"19:00:00","19:15:00","01/07/2017","19:14:35","présence","Dendroica fusca","species","Blackburnian warbler","Paruline à gorge orangée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica fusca"
+16,46.8707,"19:00:00","19:15:00","01/07/2017","19:10:01","présence","Sphyrapicus varius","species","Yellow-bellied sapsucker","Pic maculé","Animalia","Chordata","Aves","Piciformes","Picidae","Sphyrapicus","Sphyrapicus varius"
+16,46.8707,"19:00:00","19:15:00","01/07/2017","19:04:24","présence","Dendroica coronata","species","Yellow-rumped warbler","Paruline à croupion jaune","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica coronata"
+16,46.8707,"19:00:00","19:15:00","01/07/2017","19:03:36","présence","Dendroica coronata","species","Yellow-rumped warbler","Paruline à croupion jaune","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica coronata"

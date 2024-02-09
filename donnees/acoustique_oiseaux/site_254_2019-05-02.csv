@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+254,45.0221,"19:00:00","19:15:00","2019-05-02","NULL","présence","Meleagris gallopavo","species","Wild turkey","Dindon sauvage","Animalia","Chordata","Aves","Galliformes","Phasianidae","Meleagris","Meleagris gallopavo"
+254,45.0221,"20:00:00","20:15:00","2019-05-02","NULL","présence","Meleagris gallopavo","species","Wild turkey","Dindon sauvage","Animalia","Chordata","Aves","Galliformes","Phasianidae","Meleagris","Meleagris gallopavo"
+254,45.0221,"23:00:00","23:03:00","2019-05-02","23:01:18","présence","Strix varia","species","Barred owl","Chouette rayée","Animalia","Chordata","Aves","Strigiformes","Strigidae","Strix","Strix varia"

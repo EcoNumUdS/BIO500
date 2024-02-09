@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+421,58.51624,"05:00:00","05:03:00","2018-07-16","05:01:19","présence","Spizelloides arborea","species","American tree sparrow","Bruant hudsonien","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Spizelloides","Spizelloides arborea"
+421,58.51624,"05:00:00","05:03:00","2018-07-16","05:00:23","présence","Branta canadensis","species","Canada goose","Bernache du Canada","Animalia","Chordata","Aves","Anseriformes","Anatidae","Branta","Branta canadensis"
+421,58.51624,"05:00:00","05:03:00","2018-07-16","05:01:13","présence","Passerculus sandwichensis","species","Savannah sparrow","Bruant des prés","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Passerculus","Passerculus sandwichensis"
+421,58.51624,"05:00:00","05:03:00","2018-07-16","05:00:00","présence","Zonotrichia leucophrys","species","White-crowned sparrow","Bruant à couronne blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia leucophrys"

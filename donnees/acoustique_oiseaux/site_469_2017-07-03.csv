@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+469,46.65899,"05:00:00","05:15:00","03/07/2017","05:13:25","présence","Corvus brachyrhynchos","species","American crow","Corneille d'amérique","Animalia","Chordata","Aves","Passeriformes","Corvidae","Corvus","Corvus brachyrhynchos"
+469,46.65899,"07:00:00","07:15:00","03/07/2017","07:07:01","présence","Geothlypis trichas","species","Common yellowthroat","Paruline masquée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Geothlypis","Geothlypis trichas"
+469,46.65899,"19:00:00","19:15:00","03/07/2017","19:01:18","présence","Agelaius phoeniceus","species","Red-winged blackbird","Carouge à épaulettes","Animalia","Chordata","Aves","Passeriformes","Icteridae","Agelaius","Agelaius phoeniceus"
+469,46.65899,"19:00:00","19:15:00","03/07/2017","19:00:30","présence","Agelaius phoeniceus","species","Red-winged blackbird","Carouge à épaulettes","Animalia","Chordata","Aves","Passeriformes","Icteridae","Agelaius","Agelaius phoeniceus"

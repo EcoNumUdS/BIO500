@@ -1,0 +1,19 @@
+# Rapports RMarkdown {#sec-rapports_rmd}
+
+L'article scientifique est la forme de communication la plus répandue. C'est la forme de communication officielle, qui permet de faire connaître les résultats de ses recherches et qui est utilisée pour référencer les travaux des autres. Heureusement, il existe des outils pour faciliter la rédaction d'articles scientifiques et leur intégration dans le _workflow_ d'un projet. De cette façon, il est possible de rendre les rapports reproductibles, ce qui est pratique lorsqu'on veut modifier une figure sans que la mise en page ne change ! Dans ce chapitre, nous allons voir comment utiliser RMarkdown pour rédiger des rapports scientifiques.
+
+![](assets/img/word_meme.png){width=40%}
+
+Les bases de RMarkdown sont présentés dans le @sec-rmd1. Il est certain que débuter avec RMarkdown est plus exigeant que d'utiliser Word. Parfois il est préférable d'utiliser Word, particulièrement pour les courts documents qui ne demandent pas beaucoup de travail. Cependant, les documents qui doivent évoluer dans le temps, qui sont longs, qui exigent la collaboration ou qui demandent beaucoup de travail de mise en page sont plus facilement gérés avec RMarkdown. De plus, RMarkdown permet de faire des rapports reproductibles, qui reposent sur un gabarit, ce qui est un avantage non négligeable. Ainsi, il est possible de ne s'occuper que du contenu et de laisser le style à RMarkdown.
+
+![](assets/img/why_rmarkdown.png){width=50%}
+
+
+## Un rapport stylé avec `rticles`
+
+Il existe plusieurs gabarits pour RMarkdown, qui permettent de créer des rapports stylés. Le package `rticles` permet d'installer plusieurs gabarits, dont certains sont très utiles pour les rapports scientifiques. Pour installer le package `rticles`, il faut utiliser la commande suivante :
+
+```{r eval=FALSE}
+install.packages("rticles")
+```
+

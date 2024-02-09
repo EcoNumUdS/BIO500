@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+255,48.1453,"20:00:00","20:03:00","2019-06-04","20:00:14","présence","Catharus guttatus","species","Hermit thrush","Grive solitaire","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus guttatus"
+255,48.1453,"20:00:00","20:03:00","2019-06-04","20:00:08","présence","Catharus guttatus","species","Hermit thrush","Grive solitaire","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus guttatus"
+255,48.1453,"20:00:00","20:03:00","2019-06-04","20:02:09","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"
+255,48.1453,"20:00:00","20:03:00","2019-06-04","20:00:11","présence","Regulus calendula","species","Ruby-crowned kinglet","Roitelet à couronne rubis","Animalia","Chordata","Aves","Passeriformes","Regulidae","Regulus","Regulus calendula"
+255,48.1453,"20:00:00","20:03:00","2019-06-04","20:00:41","présence","Regulus calendula","species","Ruby-crowned kinglet","Roitelet à couronne rubis","Animalia","Chordata","Aves","Passeriformes","Regulidae","Regulus","Regulus calendula"

@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+96,45.02227,"01:00:00","01:15:00","2018-06-03","01:11:18","présence","Empidonax alnorum","species","Alder flycatcher","Moucherolle des aulnes","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Empidonax","Empidonax alnorum"
+96,45.02227,"01:00:00","01:15:00","2018-06-03","01:07:08","présence","Empidonax alnorum","species","Alder flycatcher","Moucherolle des aulnes","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Empidonax","Empidonax alnorum"
+96,45.02227,"01:00:00","01:15:00","2018-06-03","01:00:10","présence","Strix varia","species","Barred owl","Chouette rayée","Animalia","Chordata","Aves","Strigiformes","Strigidae","Strix","Strix varia"
+96,45.02227,"01:00:00","01:15:00","2018-06-03","01:07:21","présence","Empidonax minimus","species","Least flycatcher","Moucherolle tchébec","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Empidonax","Empidonax minimus"
+96,45.02227,"01:00:00","01:15:00","2018-06-03","01:03:58","présence","Empidonax minimus","species","Least flycatcher","Moucherolle tchébec","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Empidonax","Empidonax minimus"

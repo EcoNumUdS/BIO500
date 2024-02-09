@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+19,45.9644,"07:00:00","07:15:00","25/07/2017","07:09:39","présence","Catharus guttatus","species","Hermit thrush","Grive solitaire","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus guttatus"
+19,45.9644,"19:00:00","19:15:00","25/07/2017","19:11:22","présence","Cyanocitta cristata","species","Blue jay","Geai bleu","Animalia","Chordata","Aves","Passeriformes","Corvidae","Cyanocitta","Cyanocitta cristata"
+19,45.9644,"20:00:00","20:15:00","25/07/2017","20:02:45","présence","Dendroica palmarum","species","Palm warbler","Paruline à couronne rousse","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica palmarum"

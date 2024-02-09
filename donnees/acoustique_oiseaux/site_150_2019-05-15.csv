@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+150,46.7897,"19:00:00","19:15:00","2019-05-15","19:05:24","présence","Quiscalus quiscula","species","Common grackle","Quiscale bronzé","Animalia","Chordata","Aves","Passeriformes","Icteridae","Quiscalus","Quiscalus quiscula"
+150,46.7897,"19:00:00","19:15:00","2019-05-15","19:13:43","présence","Corvus corax","species","Common raven","Grand corbeau","Animalia","Chordata","Aves","Passeriformes","Corvidae","Corvus","Corvus corax"
+150,46.7897,"19:00:00","19:15:00","2019-05-15","19:11:55","présence","Corvus corax","species","Common raven","Grand corbeau","Animalia","Chordata","Aves","Passeriformes","Corvidae","Corvus","Corvus corax"
+150,46.7897,"19:00:00","19:15:00","2019-05-15","19:00:11","présence","Agelaius phoeniceus","species","Red-winged blackbird","Carouge à épaulettes","Animalia","Chordata","Aves","Passeriformes","Icteridae","Agelaius","Agelaius phoeniceus"

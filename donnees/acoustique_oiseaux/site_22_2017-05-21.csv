@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+22,46.7112,"04:00:00","04:15:00","21/05/2017","NULL","présence","Catharus guttatus","species","Hermit thrush","Grive solitaire","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus guttatus"
+22,46.7112,"04:00:00","04:15:00","21/05/2017","NULL","présence","Zenaida macroura","species","Mourning dove","Tourterelle triste","Animalia","Chordata","Aves","Columbiformes","Columbidae","Zenaida","Zenaida macroura"
+22,46.7112,"04:00:00","04:15:00","21/05/2017","NULL","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"
+22,46.7112,"19:00:00","19:03:00","21/05/2017","19:02:53","présence","Catharus guttatus","species","Hermit thrush","Grive solitaire","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus guttatus"
+22,46.7112,"19:00:00","19:03:00","21/05/2017","19:00:08","présence","Zenaida macroura","species","Mourning dove","Tourterelle triste","Animalia","Chordata","Aves","Columbiformes","Columbidae","Zenaida","Zenaida macroura"

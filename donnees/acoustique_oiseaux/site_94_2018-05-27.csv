@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+94,45.03285,"03:00:00","03:15:00","2018-05-27","03:00:09","présence","Strix varia","species","Barred owl","Chouette rayée","Animalia","Chordata","Aves","Strigiformes","Strigidae","Strix","Strix varia"
+94,45.03285,"03:00:00","03:15:00","2018-05-27","03:00:00","présence","Strix varia","species","Barred owl","Chouette rayée","Animalia","Chordata","Aves","Strigiformes","Strigidae","Strix","Strix varia"
+94,45.03285,"03:00:00","03:15:00","2018-05-27","03:14:01","présence","Coccyzus erythropthalmus","species","Black-billed cuckoo","Coulicou à bec noir","Animalia","Chordata","Aves","Cuculiformes","Cuculidae","Coccyzus","Coccyzus erythropthalmus"
+94,45.03285,"03:00:00","03:15:00","2018-05-27","03:01:14","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"

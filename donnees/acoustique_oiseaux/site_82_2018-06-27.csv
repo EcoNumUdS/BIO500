@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+82,48.58128,"22:00:00","22:15:00","2018-06-27","22:13:06","présence","Bubo virginianus","species","Great horned owl","Grand-duc d'amérique","Animalia","Chordata","Aves","Strigiformes","Strigidae","Bubo","Bubo virginianus"
+82,48.58128,"22:00:00","22:15:00","2018-06-27","22:04:37","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"
+82,48.58128,"22:00:00","22:15:00","2018-06-27","22:11:00","présence","Bonasa umbellus","species","Ruffed grouse","Gélinotte huppée","Animalia","Chordata","Aves","Galliformes","Phasianidae","Bonasa","Bonasa umbellus"
+82,48.58128,"23:00:00","23:15:00","2018-06-27","23:10:25","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"

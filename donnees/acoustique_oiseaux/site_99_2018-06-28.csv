@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+99,45.97675,"23:00:00","23:15:00","2018-06-28","23:02:09","présence","Actitis macularia","species","Spotted sandpiper","Chevalier grivelé","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Actitis","Actitis macularia"
+99,45.97675,"23:00:00","23:15:00","2018-06-28","23:00:30","présence","Rallus limicola","species","Virginia rail","Râle de Virginie","Animalia","Chordata","Aves","Gruiformes","Rallidae","Rallus","Rallus limicola"
+99,45.97675,"23:00:00","23:15:00","2018-06-28","23:00:20","présence","Rallus limicola","species","Virginia rail","Râle de Virginie","Animalia","Chordata","Aves","Gruiformes","Rallidae","Rallus","Rallus limicola"
+99,45.97675,"23:00:00","23:15:00","2018-06-28","NULL","présence","Gallinago delicata","species","Wilson's snipe","Bécassine de wilson","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Gallinago","Gallinago delicata"

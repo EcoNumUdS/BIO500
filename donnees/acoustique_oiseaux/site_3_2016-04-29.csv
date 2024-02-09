@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+3,45.4599,"07:00:00","07:15:00","29/04/2016","NULL","présence","Turdus migratorius","species","American robin","Merle d'amérique","Animalia","Chordata","Aves","Passeriformes","Turdidae","Turdus","Turdus migratorius"
+3,45.4599,"07:00:00","07:15:00","29/04/2016","NULL","présence","Certhia americana","species","Brown creeper","Grimpereau brun","Animalia","Chordata","Aves","Passeriformes","Certhiidae","Certhia","Certhia americana"
+3,45.4599,"07:00:00","07:15:00","29/04/2016","NULL","présence","Junco hyemalis","species","Dark-eyed junco","Junco ardoisé","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Junco","Junco hyemalis"

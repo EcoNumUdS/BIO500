@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+94,45.03285,"08:00:00","08:15:00","2018-05-10","08:06:25","présence","Strix varia","species","Barred owl","Chouette rayée","Animalia","Chordata","Aves","Strigiformes","Strigidae","Strix","Strix varia"
+94,45.03285,"08:00:00","08:15:00","2018-05-10","08:06:09","présence","Buteo platypterus","species","Broad-winged hawk","Petite buse","Animalia","Chordata","Aves","Accipitriformes","Accipitridae","Buteo","Buteo platypterus"

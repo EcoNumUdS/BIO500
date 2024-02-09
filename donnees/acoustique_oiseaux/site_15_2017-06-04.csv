@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+15,46.3908,"01:00:00","01:15:00","04/06/2017","01:02:19","présence","Empidonax alnorum","species","Alder flycatcher","Moucherolle des aulnes","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Empidonax","Empidonax alnorum"
+15,46.3908,"03:00:00","03:15:00","04/06/2017","03:00:04","présence","Empidonax alnorum","species","Alder flycatcher","Moucherolle des aulnes","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Empidonax","Empidonax alnorum"
+15,46.3908,"03:00:00","03:15:00","04/06/2017","03:02:33","présence","Melospiza georgiana","species","Swamp sparrow","Bruant des marais","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza georgiana"

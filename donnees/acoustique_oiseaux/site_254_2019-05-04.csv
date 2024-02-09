@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+254,45.0221,"06:00:00","06:15:00","2019-05-04","NULL","présence","Haemorhous purpureus","species","Purple finch","Roselin pourpré","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Haemorhous","Haemorhous purpureus"
+254,45.0221,"13:00:00","13:15:00","2019-05-04","NULL","présence","Corvus corax","species","Common raven","Grand corbeau","Animalia","Chordata","Aves","Passeriformes","Corvidae","Corvus","Corvus corax"
+254,45.0221,"13:00:00","13:15:00","2019-05-04","NULL","présence","Dryobates pubescens","species","Downy woodpecker","Pic mineur","Animalia","Chordata","Aves","Piciformes","Picidae","Dryobates","Dryobates pubescens"
+254,45.0221,"19:00:00","19:15:00","2019-05-04","NULL","présence","Parus atricapilla","species","Black-capped chickadee","Mésange à tête noire","Animalia","Chordata","Aves","Passeriformes","Paridae","Parus","Parus atricapilla"
+254,45.0221,"19:00:00","19:15:00","2019-05-04","NULL","présence","Melanerpes carolinus","species","Red-bellied woodpecker","Pic à ventre roux","Animalia","Chordata","Aves","Piciformes","Picidae","Melanerpes","Melanerpes carolinus"

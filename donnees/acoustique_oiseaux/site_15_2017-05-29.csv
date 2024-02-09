@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+15,46.3908,"04:00:00","04:15:00","29/05/2017","NULL","présence","Empidonax alnorum","species","Alder flycatcher","Moucherolle des aulnes","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Empidonax","Empidonax alnorum"
+15,46.3908,"04:00:00","04:15:00","29/05/2017","NULL","présence","Geothlypis trichas","species","Common yellowthroat","Paruline masquée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Geothlypis","Geothlypis trichas"
+15,46.3908,"04:00:00","04:15:00","29/05/2017","NULL","présence","Gallinago delicata","species","Wilson's snipe","Bécassine de wilson","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Gallinago","Gallinago delicata"

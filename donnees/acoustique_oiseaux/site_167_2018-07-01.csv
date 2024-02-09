@@ -1,0 +1,7 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+167,58.0519,"05:00:00","05:03:00","2018-07-01","05:00:30","présence","Turdus migratorius","species","American robin","Merle d'amérique","Animalia","Chordata","Aves","Passeriformes","Turdidae","Turdus","Turdus migratorius"
+167,58.0519,"05:00:00","05:03:00","2018-07-01","05:00:15","présence","Perisoreus canadensis","species","Gray jay","Mésangeai du Canada","Animalia","Chordata","Aves","Passeriformes","Corvidae","Perisoreus","Perisoreus canadensis"
+167,58.0519,"05:00:00","05:03:00","2018-07-01","05:00:10","présence","Melospiza lincolnii","species","Lincoln's sparrow","Bruant de lincoln","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza lincolnii"
+167,58.0519,"05:00:00","05:03:00","2018-07-01","05:01:07","présence","Passerculus sandwichensis","species","Savannah sparrow","Bruant des prés","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Passerculus","Passerculus sandwichensis"
+167,58.0519,"05:00:00","05:03:00","2018-07-01","05:00:05","présence","Zonotrichia leucophrys","species","White-crowned sparrow","Bruant à couronne blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia leucophrys"
+167,58.0519,"05:00:00","05:03:00","2018-07-01","05:02:40","présence","Acanthis","genus","NULL","NULL","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Acanthis","NULL"

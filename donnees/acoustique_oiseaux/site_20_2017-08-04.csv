@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+20,45.842,"06:00:00","06:15:00","04/08/2017","06:01:10","présence","Parus atricapilla","species","Black-capped chickadee","Mésange à tête noire","Animalia","Chordata","Aves","Passeriformes","Paridae","Parus","Parus atricapilla"
+20,45.842,"06:00:00","06:15:00","04/08/2017","06:07:02","présence","Dryobates villosus","species","Hairy woodpecker","Pic chevelu","Animalia","Chordata","Aves","Piciformes","Picidae","Dryobates","Dryobates villosus"

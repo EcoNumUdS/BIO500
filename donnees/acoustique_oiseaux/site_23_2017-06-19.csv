@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+23,46.2502,"06:00:00","06:15:00","19/06/2017","06:10:59","présence","Sphyrapicus varius","species","Yellow-bellied sapsucker","Pic maculé","Animalia","Chordata","Aves","Piciformes","Picidae","Sphyrapicus","Sphyrapicus varius"
+23,46.2502,"08:00:00","08:15:00","19/06/2017","08:06:26","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"

@@ -1,0 +1,7 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+5,45.4475,"04:00:00","04:15:00","28/04/2016","NULL","présence","Scolopax minor","species","American woodcock","Bécasse d'amérique","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Scolopax","Scolopax minor"
+5,45.4475,"04:00:00","04:15:00","28/04/2016","NULL","présence","Gallinago delicata","species","Wilson's snipe","Bécassine de wilson","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Gallinago","Gallinago delicata"
+5,45.4475,"05:00:00","05:15:00","28/04/2016","NULL","présence","Botaurus lentiginosus","species","American bittern","Butor d'amérique","Animalia","Chordata","Aves","Pelecaniformes","Ardeidae","Botaurus","Botaurus lentiginosus"
+5,45.4475,"05:00:00","05:15:00","28/04/2016","NULL","présence","Scolopax minor","species","American woodcock","Bécasse d'amérique","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Scolopax","Scolopax minor"
+5,45.4475,"05:00:00","05:15:00","28/04/2016","NULL","présence","Melospiza georgiana","species","Swamp sparrow","Bruant des marais","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza georgiana"
+5,45.4475,"05:00:00","05:15:00","28/04/2016","NULL","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

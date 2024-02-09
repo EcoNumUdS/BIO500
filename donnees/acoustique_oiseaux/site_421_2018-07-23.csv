@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+421,58.51624,"03:00:00","03:15:00","2018-07-23","03:05:24","présence","Charadrius semipalmatus","species","Semipalmated plover","Pluvier semipalmé","Animalia","Chordata","Aves","Charadriiformes","Charadriidae","Charadrius","Charadrius semipalmatus"
+421,58.51624,"03:00:00","03:15:00","2018-07-23","03:04:02","présence","Charadrius semipalmatus","species","Semipalmated plover","Pluvier semipalmé","Animalia","Chordata","Aves","Charadriiformes","Charadriidae","Charadrius","Charadrius semipalmatus"

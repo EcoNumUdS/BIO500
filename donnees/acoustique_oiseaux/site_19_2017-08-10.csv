@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+19,45.9644,"05:00:00","05:15:00","10/08/2017","05:11:26","présence","Catharus guttatus","species","Hermit thrush","Grive solitaire","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus guttatus"
+19,45.9644,"07:00:00","07:15:00","10/08/2017","07:13:52","présence","Falco sparverius","species","American kestrel","Crécerelle d'amérique","Animalia","Chordata","Aves","Falconiformes","Falconidae","Falco","Falco sparverius"
+19,45.9644,"07:00:00","07:15:00","10/08/2017","07:12:07","présence","Cyanocitta cristata","species","Blue jay","Geai bleu","Animalia","Chordata","Aves","Passeriformes","Corvidae","Cyanocitta","Cyanocitta cristata"

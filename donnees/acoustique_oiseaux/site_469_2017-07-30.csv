@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+469,46.65899,"13:00:00","13:15:00","30/07/2017","13:11:31","présence","Rallus limicola","species","Virginia rail","Râle de Virginie","Animalia","Chordata","Aves","Gruiformes","Rallidae","Rallus","Rallus limicola"
+469,46.65899,"20:00:00","20:15:00","30/07/2017","20:05:04","présence","Dendroica petechia","species","American yellow warbler","Paruline jaune","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica petechia"

@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+245,55.29361,"01:00:00","01:15:00","2019-06-29","01:14:27","présence","Aegolius funereus","species","Boreal owl","Nyctale de tengmalm","Animalia","Chordata","Aves","Strigiformes","Strigidae","Aegolius","Aegolius funereus"
+245,55.29361,"01:00:00","01:15:00","2019-06-29","01:06:45","présence","Aegolius funereus","species","Boreal owl","Nyctale de tengmalm","Animalia","Chordata","Aves","Strigiformes","Strigidae","Aegolius","Aegolius funereus"

@@ -1,0 +1,3 @@
+# TODO
+
+- Guide d'aide pour les principaux bugs lors de l'installation des librairies

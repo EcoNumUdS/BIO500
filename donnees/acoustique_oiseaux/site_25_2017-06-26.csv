@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+25,46.9580212,"12:00:00","12:15:00","26/06/2017","12:11:34","présence","Sitta canadensis","species","Red-breasted nuthatch","Sittelle à poitrine rousse","Animalia","Chordata","Aves","Passeriformes","Sittidae","Sitta","Sitta canadensis"
+25,46.9580212,"19:00:00","19:15:00","26/06/2017","19:07:40","présence","Chaetura pelagica","species","Chimney swift","Martinet ramoneur","Animalia","Chordata","Aves","Apodiformes","Apodidae","Chaetura","Chaetura pelagica"
+25,46.9580212,"19:00:00","19:15:00","26/06/2017","19:06:58","présence","Chaetura pelagica","species","Chimney swift","Martinet ramoneur","Animalia","Chordata","Aves","Apodiformes","Apodidae","Chaetura","Chaetura pelagica"
+25,46.9580212,"20:00:00","20:15:00","26/06/2017","20:12:31","présence","Dendroica virens","species","Black-throated green warbler","Paruline à gorge noire","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica virens"
+25,46.9580212,"20:00:00","20:15:00","26/06/2017","20:04:04","présence","Chaetura pelagica","species","Chimney swift","Martinet ramoneur","Animalia","Chordata","Aves","Apodiformes","Apodidae","Chaetura","Chaetura pelagica"

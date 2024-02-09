@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+8,46.7822,"03:00:00","03:15:00","03/06/2016","03:01:57","présence","Parulidae","family","New world warblers","Passereaux","Animalia","Chordata","Aves","Passeriformes","Parulidae","NULL","NULL"
+8,46.7822,"03:00:00","03:15:00","03/06/2016","03:02:55","présence","Empidonax alnorum","species","Alder flycatcher","Moucherolle des aulnes","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Empidonax","Empidonax alnorum"
+8,46.7822,"03:00:00","03:15:00","03/06/2016","03:03:36","présence","Melospiza lincolnii","species","Lincoln's sparrow","Bruant de lincoln","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza lincolnii"
+8,46.7822,"03:00:00","03:15:00","03/06/2016","03:02:12","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

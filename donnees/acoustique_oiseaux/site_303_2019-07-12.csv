@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+303,61.31273,"08:00:00","08:03:00","2019-07-12","08:00:01","présence","Calcariidae","family","NULL","NULL","Animalia","Chordata","Aves","Passeriformes","Calcariidae","NULL","NULL"
+303,61.31273,"20:00:00","20:15:00","2019-07-12","20:08:10","présence","Anthus rubescens","species","American pipit","Pipit d'amérique","Animalia","Chordata","Aves","Passeriformes","Motacillidae","Anthus","Anthus rubescens"
+303,61.31273,"20:00:00","20:15:00","2019-07-12","20:08:00","présence","Anthus rubescens","species","American pipit","Pipit d'amérique","Animalia","Chordata","Aves","Passeriformes","Motacillidae","Anthus","Anthus rubescens"
+303,61.31273,"20:00:00","20:15:00","2019-07-12","20:07:39","présence","Calcariidae","family","NULL","NULL","Animalia","Chordata","Aves","Passeriformes","Calcariidae","NULL","NULL"
+303,61.31273,"20:00:00","20:15:00","2019-07-12","20:04:13","présence","Calcariidae","family","NULL","NULL","Animalia","Chordata","Aves","Passeriformes","Calcariidae","NULL","NULL"

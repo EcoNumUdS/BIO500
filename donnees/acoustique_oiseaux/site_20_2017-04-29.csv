@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+20,45.842,"04:00:00","04:15:00","29/04/2017","04:02:29","présence","Strix varia","species","Barred owl","Chouette rayée","Animalia","Chordata","Aves","Strigiformes","Strigidae","Strix","Strix varia"
+20,45.842,"04:00:00","04:15:00","29/04/2017","04:13:56","présence","Gavia immer","species","Common loon","Plongeon huard","Animalia","Chordata","Aves","Gaviiformes","Gaviidae","Gavia","Gavia immer"
+20,45.842,"04:00:00","04:15:00","29/04/2017","04:13:36","présence","Gavia immer","species","Common loon","Plongeon huard","Animalia","Chordata","Aves","Gaviiformes","Gaviidae","Gavia","Gavia immer"
+20,45.842,"04:00:00","04:15:00","29/04/2017","04:00:20","présence","Melospiza georgiana","species","Swamp sparrow","Bruant des marais","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza georgiana"

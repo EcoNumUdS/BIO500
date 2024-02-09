@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+101,49.843,"05:00:00","05:03:00","2018-06-10","05:02:20","présence","Anatidae","family","Ducks","Canards","Animalia","Chordata","Aves","Anseriformes","Anatidae","NULL","NULL"
+101,49.843,"05:00:00","05:03:00","2018-06-10","05:01:56","présence","Melospiza georgiana","species","Swamp sparrow","Bruant des marais","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza georgiana"
+101,49.843,"05:00:00","05:03:00","2018-06-10","05:00:00","présence","Tachycineta bicolor","species","Tree swallow","Hirondelle bicolore","Animalia","Chordata","Aves","Passeriformes","Hirundinidae","Tachycineta","Tachycineta bicolor"
+101,49.843,"05:00:00","05:03:00","2018-06-10","05:02:16","présence","Troglodytes hiemalis","species","Animals","Troglodyte des forêts","Animalia","Chordata","Aves","Passeriformes","Troglodytidae","Troglodytes","Troglodytes hiemalis"
+101,49.843,"05:00:00","05:03:00","2018-06-10","05:02:35","présence","Dendroica coronata","species","Yellow-rumped warbler","Paruline à croupion jaune","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica coronata"

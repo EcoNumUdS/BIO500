@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+20,45.842,"05:00:00","05:15:00","25/07/2017","05:04:55","présence","Gavia immer","species","Common loon","Plongeon huard","Animalia","Chordata","Aves","Gaviiformes","Gaviidae","Gavia","Gavia immer"
+20,45.842,"07:00:00","07:15:00","25/07/2017","07:00:20","présence","Geothlypis trichas","species","Common yellowthroat","Paruline masquée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Geothlypis","Geothlypis trichas"
+20,45.842,"12:00:00","12:15:00","25/07/2017","12:14:44","présence","Buteo platypterus","species","Broad-winged hawk","Petite buse","Animalia","Chordata","Aves","Accipitriformes","Accipitridae","Buteo","Buteo platypterus"

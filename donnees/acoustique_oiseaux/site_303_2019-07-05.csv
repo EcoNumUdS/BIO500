@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+303,61.31273,"03:00:00","03:03:00","2019-07-05","03:00:03","présence","Plectrophenax nivalis","species","Snow bunting","Plectrophane des neiges","Animalia","Chordata","Aves","Passeriformes","Calcariidae","Plectrophenax","Plectrophenax nivalis"
+303,61.31273,"03:00:00","03:03:00","2019-07-05","03:00:47","présence","Plectrophenax nivalis","species","Snow bunting","Plectrophane des neiges","Animalia","Chordata","Aves","Passeriformes","Calcariidae","Plectrophenax","Plectrophenax nivalis"

@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+254,45.0221,"05:00:00","05:15:00","2019-04-18","NULL","présence","Cardinalis cardinalis","species","Northern cardinal","Cardinal rouge","Animalia","Chordata","Aves","Passeriformes","Cardinalidae","Cardinalis","Cardinalis cardinalis"
+254,45.0221,"06:00:00","06:15:00","2019-04-18","NULL","présence","Passeriformes","order","Perching birds","Passereaux","Animalia","Chordata","Aves","Passeriformes","NULL","NULL","NULL"
+254,45.0221,"06:00:00","06:15:00","2019-04-18","NULL","présence","Molothrus ater","species","Brown-headed cowbird","Vacher à tête brune","Animalia","Chordata","Aves","Passeriformes","Icteridae","Molothrus","Molothrus ater"

@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+247,58.725,"04:00:00","04:15:00","2019-06-29","04:04:34","présence","Spizelloides arborea","species","American tree sparrow","Bruant hudsonien","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Spizelloides","Spizelloides arborea"
+247,58.725,"04:00:00","04:15:00","2019-06-29","04:04:28","présence","Dendroica striata","species","Blackpoll warbler","Paruline rayée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica striata"
+247,58.725,"04:00:00","04:15:00","2019-06-29","04:11:07","présence","Zonotrichia leucophrys","species","White-crowned sparrow","Bruant à couronne blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia leucophrys"
+247,58.725,"04:00:00","04:15:00","2019-06-29","04:11:36","présence","Acanthis","genus","NULL","NULL","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Acanthis","NULL"
+247,58.725,"04:00:00","04:15:00","2019-06-29","04:04:51","présence","Acanthis","genus","NULL","NULL","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Acanthis","NULL"

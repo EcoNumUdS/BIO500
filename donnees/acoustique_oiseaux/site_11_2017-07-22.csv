@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+11,46.8766,"06:00:00","06:15:00","22/07/2017","06:13:38","présence","Dryocopus pileatus","species","Pileated woodpecker","Grand pic","Animalia","Chordata","Aves","Piciformes","Picidae","Dryocopus","Dryocopus pileatus"
+11,46.8766,"06:00:00","06:15:00","22/07/2017","06:12:59","présence","Dryocopus pileatus","species","Pileated woodpecker","Grand pic","Animalia","Chordata","Aves","Piciformes","Picidae","Dryocopus","Dryocopus pileatus"
+11,46.8766,"08:00:00","08:15:00","22/07/2017","08:06:01","présence","Geothlypis trichas","species","Common yellowthroat","Paruline masquée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Geothlypis","Geothlypis trichas"
+11,46.8766,"08:00:00","08:15:00","22/07/2017","08:03:51","présence","Dryocopus pileatus","species","Pileated woodpecker","Grand pic","Animalia","Chordata","Aves","Piciformes","Picidae","Dryocopus","Dryocopus pileatus"
+11,46.8766,"19:00:00","19:15:00","22/07/2017","19:06:40","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+10,48.2158,"03:00:00","03:15:00","25/05/2016","NULL","présence","Scolopax minor","species","American woodcock","Bécasse d'amérique","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Scolopax","Scolopax minor"
+10,48.2158,"03:00:00","03:15:00","25/05/2016","NULL","présence","Melospiza georgiana","species","Swamp sparrow","Bruant des marais","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza georgiana"
+10,48.2158,"03:00:00","03:15:00","25/05/2016","NULL","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

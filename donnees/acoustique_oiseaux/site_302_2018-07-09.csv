@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+302,58.49218,"03:00:00","03:15:00","2018-07-09","NULL","présence","Passerculus sandwichensis","species","Savannah sparrow","Bruant des prés","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Passerculus","Passerculus sandwichensis"
+302,58.49218,"03:00:00","03:15:00","2018-07-09","NULL","présence","Zonotrichia leucophrys","species","White-crowned sparrow","Bruant à couronne blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia leucophrys"

@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+95,45.00642,"03:00:00","03:15:00","2018-07-19","03:13:54","présence","Passeriformes","order","Perching birds","Passereaux","Animalia","Chordata","Aves","Passeriformes","NULL","NULL","NULL"
+95,45.00642,"03:00:00","03:15:00","2018-07-19","03:11:35","présence","Antrostomus vociferus","species","Eastern whip-poor-will","Engoulevent bois-pourri","Animalia","Chordata","Aves","Caprimulgiformes","Caprimulgidae","Antrostomus","Antrostomus vociferus"
+95,45.00642,"03:00:00","03:15:00","2018-07-19","03:02:50","présence","Antrostomus vociferus","species","Eastern whip-poor-will","Engoulevent bois-pourri","Animalia","Chordata","Aves","Caprimulgiformes","Caprimulgidae","Antrostomus","Antrostomus vociferus"

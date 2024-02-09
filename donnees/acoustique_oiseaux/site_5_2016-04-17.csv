@@ -1,0 +1,2 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+5,45.4475,"03:00:00","03:15:00","17/04/2016","NULL","présence","Branta canadensis","species","Canada goose","Bernache du Canada","Animalia","Chordata","Aves","Anseriformes","Anatidae","Branta","Branta canadensis"

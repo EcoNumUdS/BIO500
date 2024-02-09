@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+302,58.49218,"05:00:00","05:15:00","2018-08-15","05:03:20","présence","Anatidae","family","NULL","NULL","Animalia","Chordata","Aves","Anseriformes","Anatidae","NULL","NULL"
+302,58.49218,"05:00:00","05:15:00","2018-08-15","05:00:00","présence","Anatidae","family","NULL","NULL","Animalia","Chordata","Aves","Anseriformes","Anatidae","NULL","NULL"

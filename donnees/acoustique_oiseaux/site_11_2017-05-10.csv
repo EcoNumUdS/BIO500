@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+11,46.8766,"07:00:00","07:15:00","10/05/2017","NULL","présence","Haemorhous purpureus","species","Purple finch","Roselin pourpré","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Haemorhous","Haemorhous purpureus"
+11,46.8766,"07:00:00","07:15:00","10/05/2017","NULL","présence","Regulus calendula","species","Ruby-crowned kinglet","Roitelet à couronne rubis","Animalia","Chordata","Aves","Passeriformes","Regulidae","Regulus","Regulus calendula"
+11,46.8766,"07:00:00","07:15:00","10/05/2017","NULL","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"
+11,46.8766,"07:00:00","07:15:00","10/05/2017","NULL","présence","Dendroica coronata","species","Yellow-rumped warbler","Paruline à croupion jaune","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica coronata"

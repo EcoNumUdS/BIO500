@@ -1,0 +1,7 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+161,48.8312,"08:00:00","08:03:00","2019-06-01","08:00:02","présence","Passeriformes","order","Perching birds","Passereaux","Animalia","Chordata","Aves","Passeriformes","NULL","NULL","NULL"
+161,48.8312,"08:00:00","08:03:00","2019-06-01","08:00:09","présence","Corvus corax","species","Common raven","Grand corbeau","Animalia","Chordata","Aves","Passeriformes","Corvidae","Corvus","Corvus corax"
+161,48.8312,"08:00:00","08:03:00","2019-06-01","08:00:12","présence","Corvus corax","species","Common raven","Grand corbeau","Animalia","Chordata","Aves","Passeriformes","Corvidae","Corvus","Corvus corax"
+161,48.8312,"08:00:00","08:03:00","2019-06-01","08:01:39","présence","Tringa melanoleuca","species","Greater yellowlegs","Grand chevalier","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Tringa","Tringa melanoleuca"
+161,48.8312,"08:00:00","08:03:00","2019-06-01","08:01:38","présence","Antigone canadensis","species","Sandhill crane","Grue du Canada","Animalia","Chordata","Aves","Gruiformes","Gruidae","Antigone","Antigone canadensis"
+161,48.8312,"08:00:00","08:03:00","2019-06-01","08:00:07","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+254,45.0221,"06:00:00","06:15:00","2019-04-26","NULL","présence","Tachycineta bicolor","species","Tree swallow","Hirondelle bicolore","Animalia","Chordata","Aves","Passeriformes","Hirundinidae","Tachycineta","Tachycineta bicolor"
+254,45.0221,"07:00:00","07:15:00","2019-04-26","NULL","présence","Regulus calendula","species","Ruby-crowned kinglet","Roitelet à couronne rubis","Animalia","Chordata","Aves","Passeriformes","Regulidae","Regulus","Regulus calendula"

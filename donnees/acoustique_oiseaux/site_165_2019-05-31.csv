@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+165,48.1079,"08:00:00","08:03:00","2019-05-31","08:00:18","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"
+165,48.1079,"08:00:00","08:03:00","2019-05-31","08:00:49","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"
+165,48.1079,"08:00:00","08:03:00","2019-05-31","08:00:11","présence","Sphyrapicus varius","species","Yellow-bellied sapsucker","Pic maculé","Animalia","Chordata","Aves","Piciformes","Picidae","Sphyrapicus","Sphyrapicus varius"

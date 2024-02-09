@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+3,45.4599,"06:00:00","06:15:00","27/04/2016","NULL","présence","Certhia americana","species","Brown creeper","Grimpereau brun","Animalia","Chordata","Aves","Passeriformes","Certhiidae","Certhia","Certhia americana"
+3,45.4599,"06:00:00","06:15:00","27/04/2016","NULL","présence","Corvus corax","species","Common raven","Grand corbeau","Animalia","Chordata","Aves","Passeriformes","Corvidae","Corvus","Corvus corax"
+3,45.4599,"06:00:00","06:15:00","27/04/2016","NULL","présence","Junco hyemalis","species","Dark-eyed junco","Junco ardoisé","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Junco","Junco hyemalis"
+3,45.4599,"06:00:00","06:15:00","27/04/2016","NULL","présence","Dryobates pubescens","species","NULL","NULL","Animalia","Chordata","Aves","Piciformes","Picidae","Dryobates","Dryobates pubescens"

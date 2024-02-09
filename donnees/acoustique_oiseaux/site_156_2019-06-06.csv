@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+156,48.4883,"20:00:00","20:03:00","2019-06-06","20:00:30","présence","Regulus calendula","species","Ruby-crowned kinglet","Roitelet à couronne rubis","Animalia","Chordata","Aves","Passeriformes","Regulidae","Regulus","Regulus calendula"
+156,48.4883,"20:00:00","20:03:00","2019-06-06","20:01:26","présence","Dendroica coronata","species","Yellow-rumped warbler","Paruline à croupion jaune","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica coronata"

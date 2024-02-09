@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+21,45.859,"12:00:00","12:15:00","27/04/2017","12:00:11","présence","Regulus satrapa","species","Golden-crowned kinglet","Roitelet à couronne dorée","Animalia","Chordata","Aves","Passeriformes","Regulidae","Regulus","Regulus satrapa"
+21,45.859,"12:00:00","12:15:00","27/04/2017","NULL","présence","Troglodytes hiemalis","species","Animals","Troglodyte des forêts","Animalia","Chordata","Aves","Passeriformes","Troglodytidae","Troglodytes","Troglodytes hiemalis"
+21,45.859,"12:00:00","12:15:00","27/04/2017","NULL","présence","Sphyrapicus varius","species","Yellow-bellied sapsucker","Pic maculé","Animalia","Chordata","Aves","Piciformes","Picidae","Sphyrapicus","Sphyrapicus varius"

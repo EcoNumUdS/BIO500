@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+160,46.8771,"01:00:00","01:15:00","2019-06-05","NULL","présence","Gavia immer","species","Common loon","Plongeon huard","Animalia","Chordata","Aves","Gaviiformes","Gaviidae","Gavia","Gavia immer"
+160,46.8771,"03:00:00","03:15:00","2019-06-05","NULL","présence","Scolopax minor","species","American woodcock","Bécasse d'amérique","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Scolopax","Scolopax minor"

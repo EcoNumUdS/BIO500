@@ -1,0 +1,7 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+157,49.0058,"05:00:00","05:03:00","2019-06-05","05:02:53","présence","Passeriformes","order","Perching birds","Passereaux","Animalia","Chordata","Aves","Passeriformes","NULL","NULL","NULL"
+157,49.0058,"05:00:00","05:03:00","2019-06-05","05:02:26","présence","Passeriformes","order","Perching birds","Passereaux","Animalia","Chordata","Aves","Passeriformes","NULL","NULL","NULL"
+157,49.0058,"05:00:00","05:03:00","2019-06-05","05:01:17","présence","Dendroica tigrina","species","Cape may warbler","Paruline tigrée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica tigrina"
+157,49.0058,"05:00:00","05:03:00","2019-06-05","05:01:07","présence","Regulus calendula","species","Ruby-crowned kinglet","Roitelet à couronne rubis","Animalia","Chordata","Aves","Passeriformes","Regulidae","Regulus","Regulus calendula"
+157,49.0058,"05:00:00","05:03:00","2019-06-05","05:00:05","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"
+157,49.0058,"05:00:00","05:03:00","2019-06-05","05:02:04","présence","Dendroica coronata","species","Yellow-rumped warbler","Paruline à croupion jaune","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica coronata"

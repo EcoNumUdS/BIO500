@@ -1,0 +1,145 @@
+# Métadonnées {#sec-metadonnees}
+
+La transparence et la reproductibilité des données ne peuvent être assurées que si la documentation explicative accompagne le jeu de données. Nous appelons cette documentation les **métadonnées**.
+
+Elles fournissent un contexte et des détails sur la manière dont les données ont été collectées, traitées et interprétées. Les métadonnées sont essentielles pour comprendre et utiliser correctement les ensembles de données écologiques. On y retrouve :
+
+- La localisation géographique
+- Les méthodes de collecte
+- La période temporelle couverte
+- La couverture taxonomique
+- La structure du jeu de données
+- etc.
+
+Les métadonnées en écologie sont essentielles pour assurer la transparence, la crédibilité et la réutilisabilité des données. Elles facilitent également la collaboration entre les chercheurs et permettent une intégration plus efficace des données dans des études plus larges ou des analyses comparatives.
+
+
+## Le standard EML
+
+Le EML, ou le Ecological Metadata Language, est un standard bien établi en écologie pour structurer les métadonnées. Le standard est un langage spécifique aux métadonnées développé pour faciliter la description, le partage et la gestion des ensembles de données écologiques.
+
+Au minimum, un créateur, un titre et une date de publication sont requis, mais puisque l'EML est conçu de manière modulaire, il peut être étendu pour inclure des informations spécifiques à un projet ou à une discipline. Par exemple, on peut y décrire la couverture spatiale, temporelle ou taxonomique ainsi qu'une description des différents champs du jeu de données. D'une certaine façon, il s'agit d'une méthode standardisée de noter l'information donnée dans les `README.md` que je vous ai fournie avec les jeux de données.
+
+Étapes pour construire un fichier de métadonnées écologiques :
+
+1. Identification du jeu de données :
+        Titre : Donnez un titre significatif au jeu de données.
+        Créateurs : Identifiez les personnes ou organisations responsables de la collecte et de la gestion des données.
+
+2. Description générale du jeu de données :
+        Résumé : Fournissez un résumé concis du contenu du jeu de données.
+        Objectifs : Décrivez les objectifs de la collecte des données.
+
+3. Informations spatiales :
+        Couverture géographique : Précisez la zone géographique couverte par le jeu de données.
+        Coordonnées : Incluez les coordonnées géographiques (latitude et longitude) si applicables.
+
+4. Informations temporelles :
+        Période temporelle : Indiquez la période temporelle couverte par les données.
+
+5. Méthodes de collecte :
+        Description des méthodes : Expliquez en détail les méthodes utilisées pour collecter les données.
+        Instruments : Mentionnez les instruments ou équipements utilisés.
+
+6. Variables et attributs :
+        Liste des variables : Identifiez les différentes variables ou paramètres mesurés.
+        Unités de mesure : Spécifiez les unités de mesure associées à chaque variable.
+
+7. Structure des données :
+        Entités et attributs : Décrivez la structure des données, y compris les entités et les attributs.
+        Format des données : Précisez le format dans lequel les données sont stockées (CSV, Excel, base de données, etc.).
+
+8. Qualité des données :
+        Contrôles de qualité : Expliquez les procédures de contrôle de qualité appliquées aux données.
+
+9. Usage prévu et restrictions :
+        Conditions d'utilisation : Définissez les conditions d'utilisation et les restrictions éventuelles pour le jeu de données.
+
+10. Références bibliographiques :
+    Références : Citez les sources bibliographiques pertinentes liées aux données.
+
+11. Formats de sortie :
+    Formats de fichier : Indiquez les formats dans lesquels les données peuvent être disponibles (par exemple, CSV, Excel, etc.).
+
+12. Licence :
+    Licence d'utilisation : Spécifiez la licence d'utilisation des données (Creative Commons, domaine public, etc.).
+
+
+## Construire un fichier EML
+
+D'abord, il faut savoir qu'un fichier EML est basé sur le langage de balisage extensible XML (eXtensible Markup Language). C'est un langage fortement structuré et hiérarchique, ce qui le rend difficilement lisible par l'humain. En revanche, cela facilite la lecture par les machines. En voici un court exemple.
+
+```XML
+<eml xmlns="eml://ecoinformatics.org/eml-2.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 eml.xsd">
+  <dataset>
+    <title>Étude sur la biodiversité d'une forêt tropicale</title>
+    
+    <creator>
+      <individualName>
+        <givenName>John</givenName>
+        <surName>Doe</surName>
+      </individualName>
+      <organizationName>Centre de Recherche en Écologie</organizationName>
+    </creator>
+    
+    <pubDate>2023-03-15</pubDate>
+    
+    <geographicCoverage>
+      <geographicDescription>Forêt tropicale d'Amazonie</geographicDescription>
+      <boundingCoordinates>
+        <westBoundingCoordinate>-70.0</westBoundingCoordinate>
+        <eastBoundingCoordinate>-65.0</eastBoundingCoordinate>
+        <southBoundingCoordinate>-5.0</southBoundingCoordinate>
+        <northBoundingCoordinate>0.0</northBoundingCoordinate>
+      </boundingCoordinates>
+    </geographicCoverage>
+    
+    <temporalCoverage>
+      <startDate>2022-01-01</startDate>
+      <endDate>2022-12-31</endDate>
+    </temporalCoverage>
+    
+    <methods>
+      <methodStep>
+        <description>Relevé de la faune et de la flore</description>
+        <methodCode>ABC123</methodCode>
+      </methodStep>
+      <!-- Autres étapes de méthodologie -->
+    </methods>
+    
+    <dataTable>
+      <entityName>BiodiversiteData</entityName>
+      <attributeList>
+        <attribute>
+          <attributeName>Espece</attributeName>
+          <attributeLabel>Nom de l'espèce</attributeLabel>
+        </attribute>
+        <attribute>
+          <attributeName>Abondance</attributeName>
+          <attributeLabel>Nombre d'individus</attributeLabel>
+        </attribute>
+      </attributeList>
+    </dataTable>
+    
+  </dataset>
+</eml>
+```
+
+Cet exemple représente une structure de base avec des informations telles que le titre du jeu de données, le créateur, la couverture géographique, la période temporelle, les méthodes de collecte, et la structure des données avec des attributs spécifiques. Les balises telles que `<title>`,` <creator>`, `<geographicCoverage>`, `<temporalCoverage>`, `<methods>`, et `<dataTable>` sont utilisées pour organiser les métadonnées d'une manière cohérente selon la norme EML. Notez que dans un cas réel, des détails supplémentaires et d'autres balises pourraient être inclus en fonction des besoins spécifiques du jeu de données écologiques.
+
+Heureusement pour nous, il existe des outils pour faciliter la rédaction de fichiers EML. Voyons le package R `EMLassemblyline`.
+
+```R
+# Fixer le répertoire de travail
+setwd(".")
+
+# Installer et appeler la librairie EMLassemblyline
+remotes::install_github("EDIorg/EMLassemblyline")
+library(EMLassemblyline)
+
+# Créer les répertoires nécessaires
+# # Le fichier `run_EMLassemblyline_for_data_package.R` sera créé
+# # il faudra l'éditer manuellement
+template_directories(dir.name = "NomDuProjet")
+```
+

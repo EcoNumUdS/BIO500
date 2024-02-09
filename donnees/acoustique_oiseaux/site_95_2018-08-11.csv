@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+95,45.00642,"05:00:00","05:15:00","2018-08-11","05:12:08","présence","Turdus migratorius","species","American robin","Merle d'amérique","Animalia","Chordata","Aves","Passeriformes","Turdidae","Turdus","Turdus migratorius"
+95,45.00642,"07:00:00","07:15:00","2018-08-11","07:14:15","présence","Cardellina canadensis","species","Canada warbler","Paruline du Canada","Animalia","Chordata","Aves","Passeriformes","Parulidae","Cardellina","Cardellina canadensis"
+95,45.00642,"23:00:00","23:15:00","2018-08-11","23:14:04","présence","Strix varia","species","Barred owl","Chouette rayée","Animalia","Chordata","Aves","Strigiformes","Strigidae","Strix","Strix varia"

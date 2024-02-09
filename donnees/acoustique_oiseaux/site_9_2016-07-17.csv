@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+9,48.2163,"06:00:00","06:15:00","17/07/2016","06:06:37","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"
+9,48.2163,"06:00:00","06:15:00","17/07/2016","06:04:21","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"
+9,48.2163,"06:00:00","06:15:00","17/07/2016","06:02:02","présence","Sitta canadensis","species","Red-breasted nuthatch","Sittelle à poitrine rousse","Animalia","Chordata","Aves","Passeriformes","Sittidae","Sitta","Sitta canadensis"
+9,48.2163,"06:00:00","06:15:00","17/07/2016","06:00:27","présence","Vireo","genus","NULL","NULL","Animalia","Chordata","Aves","Passeriformes","Vireonidae","Vireo","NULL"
+9,48.2163,"08:00:00","08:15:00","17/07/2016","08:05:54","présence","Vireo","genus","NULL","NULL","Animalia","Chordata","Aves","Passeriformes","Vireonidae","Vireo","NULL"

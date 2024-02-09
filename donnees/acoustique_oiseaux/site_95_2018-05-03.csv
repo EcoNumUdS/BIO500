@@ -1,0 +1,7 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+95,45.00642,"05:00:00","05:15:00","2018-05-03","NULL","présence","Scolopax minor","species","American woodcock","Bécasse d'amérique","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Scolopax","Scolopax minor"
+95,45.00642,"05:00:00","05:15:00","2018-05-03","NULL","présence","Branta canadensis","species","Canada goose","Bernache du Canada","Animalia","Chordata","Aves","Anseriformes","Anatidae","Branta","Branta canadensis"
+95,45.00642,"05:00:00","05:15:00","2018-05-03","NULL","présence","Melospiza georgiana","species","Swamp sparrow","Bruant des marais","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza georgiana"
+95,45.00642,"05:00:00","05:15:00","2018-05-03","NULL","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"
+95,45.00642,"22:00:00","22:03:00","2018-05-03","22:01:45","présence","Passerellidae","family","American sparrows","Passereaux","Animalia","Chordata","Aves","Passeriformes","Passerellidae","NULL","NULL"
+95,45.00642,"22:00:00","22:03:00","2018-05-03","22:02:01","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

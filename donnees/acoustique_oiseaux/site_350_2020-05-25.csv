@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+350,45.48906,"22:00:00","22:03:00","2020-05-25","22:00:40","présence","Strix varia","species","Barred owl","Chouette rayée","Animalia","Chordata","Aves","Strigiformes","Strigidae","Strix","Strix varia"
+350,45.48906,"22:00:00","22:03:00","2020-05-25","22:00:00","présence","Antrostomus vociferus","species","Eastern whip-poor-will","Engoulevent bois-pourri","Animalia","Chordata","Aves","Caprimulgiformes","Caprimulgidae","Antrostomus","Antrostomus vociferus"

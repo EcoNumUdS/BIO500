@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+96,45.02227,"03:00:00","03:15:00","2018-06-05","03:14:32","présence","Empidonax alnorum","species","Alder flycatcher","Moucherolle des aulnes","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Empidonax","Empidonax alnorum"
+96,45.02227,"03:00:00","03:15:00","2018-06-05","03:06:18","présence","Empidonax alnorum","species","Alder flycatcher","Moucherolle des aulnes","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Empidonax","Empidonax alnorum"
+96,45.02227,"03:00:00","03:15:00","2018-06-05","03:06:15","présence","Melospiza georgiana","species","Swamp sparrow","Bruant des marais","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza georgiana"
+96,45.02227,"03:00:00","03:15:00","2018-06-05","03:01:55","présence","Rallus limicola","species","Virginia rail","Râle de Virginie","Animalia","Chordata","Aves","Gruiformes","Rallidae","Rallus","Rallus limicola"
+96,45.02227,"03:00:00","03:15:00","2018-06-05","03:00:03","présence","Rallus limicola","species","Virginia rail","Râle de Virginie","Animalia","Chordata","Aves","Gruiformes","Rallidae","Rallus","Rallus limicola"

@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+101,49.843,"07:00:00","07:03:00","2018-06-18","07:02:11","présence","Turdidae","family","NULL","NULL","Animalia","Chordata","Aves","Passeriformes","Turdidae","NULL","NULL"
+101,49.843,"07:00:00","07:03:00","2018-06-18","07:02:36","présence","Regulus calendula","species","Ruby-crowned kinglet","Roitelet à couronne rubis","Animalia","Chordata","Aves","Passeriformes","Regulidae","Regulus","Regulus calendula"
+101,49.843,"07:00:00","07:03:00","2018-06-18","07:02:30","présence","Melospiza georgiana","species","Swamp sparrow","Bruant des marais","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza georgiana"
+101,49.843,"07:00:00","07:03:00","2018-06-18","07:01:34","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+3,45.4599,"08:00:00","08:15:00","19/04/2016","NULL","présence","Troglodytes hiemalis","species","Animals","Troglodyte des forêts","Animalia","Chordata","Aves","Passeriformes","Troglodytidae","Troglodytes","Troglodytes hiemalis"
+3,45.4599,"08:00:00","08:15:00","19/04/2016","08:02:29","présence","Sphyrapicus varius","species","Yellow-bellied sapsucker","Pic maculé","Animalia","Chordata","Aves","Piciformes","Picidae","Sphyrapicus","Sphyrapicus varius"

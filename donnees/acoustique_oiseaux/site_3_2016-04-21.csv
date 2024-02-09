@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+3,45.4599,"12:00:00","12:15:00","21/04/2016","NULL","présence","Certhia americana","species","Brown creeper","Grimpereau brun","Animalia","Chordata","Aves","Passeriformes","Certhiidae","Certhia","Certhia americana"
+3,45.4599,"12:00:00","12:15:00","21/04/2016","12:09:26","présence","Corvus corax","species","Common raven","Grand corbeau","Animalia","Chordata","Aves","Passeriformes","Corvidae","Corvus","Corvus corax"
+3,45.4599,"12:00:00","12:15:00","21/04/2016","12:08:43","présence","Corvus corax","species","Common raven","Grand corbeau","Animalia","Chordata","Aves","Passeriformes","Corvidae","Corvus","Corvus corax"
+3,45.4599,"12:00:00","12:15:00","21/04/2016","NULL","présence","Sphyrapicus varius","species","Yellow-bellied sapsucker","Pic maculé","Animalia","Chordata","Aves","Piciformes","Picidae","Sphyrapicus","Sphyrapicus varius"

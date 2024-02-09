@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+245,55.29361,"01:00:00","01:15:00","2019-06-23","01:13:32","présence","Aegolius funereus","species","Boreal owl","Nyctale de tengmalm","Animalia","Chordata","Aves","Strigiformes","Strigidae","Aegolius","Aegolius funereus"
+245,55.29361,"01:00:00","01:15:00","2019-06-23","01:07:00","présence","Aegolius funereus","species","Boreal owl","Nyctale de tengmalm","Animalia","Chordata","Aves","Strigiformes","Strigidae","Aegolius","Aegolius funereus"
+245,55.29361,"01:00:00","01:15:00","2019-06-23","01:12:35","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

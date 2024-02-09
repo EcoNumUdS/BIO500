@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+152,45.9669,"22:00:00","22:15:00","2019-06-25","22:03:35","présence","Ardea herodias","species","Great blue heron","Grand héron","Animalia","Chordata","Aves","Pelecaniformes","Ardeidae","Ardea","Ardea herodias"
+152,45.9669,"22:00:00","22:15:00","2019-06-25","22:05:12","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"
+152,45.9669,"22:00:00","22:15:00","2019-06-25","22:14:17","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

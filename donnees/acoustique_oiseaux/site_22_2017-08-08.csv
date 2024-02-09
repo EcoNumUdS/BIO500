@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+22,46.7112,"05:00:00","05:15:00","08/08/2017","05:07:36","présence","Turdus migratorius","species","American robin","Merle d'amérique","Animalia","Chordata","Aves","Passeriformes","Turdidae","Turdus","Turdus migratorius"
+22,46.7112,"05:00:00","05:15:00","08/08/2017","05:10:59","présence","Dendroica caerulescens","species","Black-throated blue warbler","Paruline","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica caerulescens"

@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+81,47.45812,"20:00:00","20:03:00","2018-05-23","20:00:28","présence","Passerella iliaca","species","Fox sparrow","Bruant fauve","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Passerella","Passerella iliaca"
+81,47.45812,"23:00:00","23:15:00","2018-05-23","23:05:12","présence","Scolopax minor","species","American woodcock","Bécasse d'amérique","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Scolopax","Scolopax minor"
+81,47.45812,"23:00:00","23:15:00","2018-05-23","23:00:50","présence","Scolopax minor","species","American woodcock","Bécasse d'amérique","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Scolopax","Scolopax minor"

@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+16,46.8707,"08:00:00","08:15:00","08/08/2017","08:03:33","présence","Dryobates pubescens","species","Downy woodpecker","Pic mineur","Animalia","Chordata","Aves","Piciformes","Picidae","Dryobates","Dryobates pubescens"
+16,46.8707,"08:00:00","08:15:00","08/08/2017","08:04:40","présence","Colaptes auratus","species","Northern flicker","Pic flamboyant","Animalia","Chordata","Aves","Piciformes","Picidae","Colaptes","Colaptes auratus"
