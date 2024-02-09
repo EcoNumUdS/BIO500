@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+253,46.4001,"20:00:00","20:03:00","2019-06-06","20:00:12","présence","Dendroica caerulescens","species","Black-throated blue warbler","Paruline","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica caerulescens"
+253,46.4001,"20:00:00","20:03:00","2019-06-06","20:01:43","présence","Dendroica virens","species","Black-throated green warbler","Paruline à gorge noire","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica virens"

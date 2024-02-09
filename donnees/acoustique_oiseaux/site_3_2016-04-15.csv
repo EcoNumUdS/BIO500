@@ -1,0 +1,7 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+3,45.4599,"06:00:00","06:15:00","15/04/2016","06:02:09","présence","Corvus corax","species","Common raven","Grand corbeau","Animalia","Chordata","Aves","Passeriformes","Corvidae","Corvus","Corvus corax"
+3,45.4599,"06:00:00","06:15:00","15/04/2016","06:11:40","présence","Dryobates pubescens","species","Downy woodpecker","Pic mineur","Animalia","Chordata","Aves","Piciformes","Picidae","Dryobates","Dryobates pubescens"
+3,45.4599,"06:00:00","06:15:00","15/04/2016","06:05:31","présence","Dryobates pubescens","species","Downy woodpecker","Pic mineur","Animalia","Chordata","Aves","Piciformes","Picidae","Dryobates","Dryobates pubescens"
+3,45.4599,"06:00:00","06:15:00","15/04/2016","NULL","présence","Regulus satrapa","species","Golden-crowned kinglet","Roitelet à couronne dorée","Animalia","Chordata","Aves","Passeriformes","Regulidae","Regulus","Regulus satrapa"
+3,45.4599,"06:00:00","06:15:00","15/04/2016","06:06:48","présence","Carduelis pinus","species","Pine siskin","Tarin","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Carduelis","Carduelis pinus"
+3,45.4599,"06:00:00","06:15:00","15/04/2016","NULL","présence","Troglodytes hiemalis","species","Animals","Troglodyte des forêts","Animalia","Chordata","Aves","Passeriformes","Troglodytidae","Troglodytes","Troglodytes hiemalis"

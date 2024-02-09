@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+2,46.7941,"08:00:00","08:15:00","26/06/2016","08:05:33","présence","Dryocopus pileatus","species","Pileated woodpecker","Grand pic","Animalia","Chordata","Aves","Piciformes","Picidae","Dryocopus","Dryocopus pileatus"
+2,46.7941,"08:00:00","08:15:00","26/06/2016","08:04:18","présence","Dryocopus pileatus","species","Pileated woodpecker","Grand pic","Animalia","Chordata","Aves","Piciformes","Picidae","Dryocopus","Dryocopus pileatus"

@@ -1,0 +1,8 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+21,45.859,"05:00:00","05:15:00","05/05/2017","05:06:27","présence","Passeriformes","order","Perching birds","Passereaux","Animalia","Chordata","Aves","Passeriformes","NULL","NULL","NULL"
+21,45.859,"05:00:00","05:15:00","05/05/2017","05:06:22","présence","Regulus satrapa","species","Golden-crowned kinglet","Roitelet à couronne dorée","Animalia","Chordata","Aves","Passeriformes","Regulidae","Regulus","Regulus satrapa"
+21,45.859,"05:00:00","05:15:00","05/05/2017","05:00:30","présence","Catharus guttatus","species","Hermit thrush","Grive solitaire","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus guttatus"
+21,45.859,"05:00:00","05:15:00","05/05/2017","05:00:06","présence","Catharus guttatus","species","Hermit thrush","Grive solitaire","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus guttatus"
+21,45.859,"05:00:00","05:15:00","05/05/2017","05:07:15","présence","Troglodytes hiemalis","species","Animals","Troglodyte des forêts","Animalia","Chordata","Aves","Passeriformes","Troglodytidae","Troglodytes","Troglodytes hiemalis"
+21,45.859,"05:00:00","05:15:00","05/05/2017","05:02:34","présence","Troglodytes hiemalis","species","Animals","Troglodyte des forêts","Animalia","Chordata","Aves","Passeriformes","Troglodytidae","Troglodytes","Troglodytes hiemalis"
+21,45.859,"05:00:00","05:15:00","05/05/2017","05:14:06","présence","Sphyrapicus varius","species","Yellow-bellied sapsucker","Pic maculé","Animalia","Chordata","Aves","Piciformes","Picidae","Sphyrapicus","Sphyrapicus varius"

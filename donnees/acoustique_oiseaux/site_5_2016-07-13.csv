@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+5,45.4475,"04:00:00","04:15:00","13/07/2016","04:03:59","présence","Empidonax alnorum","species","Alder flycatcher","Moucherolle des aulnes","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Empidonax","Empidonax alnorum"
+5,45.4475,"13:00:00","13:15:00","13/07/2016","13:05:02","présence","Dendroica magnolia","species","Magnolia warbler","Paruline à tête cendrée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica magnolia"
+5,45.4475,"13:00:00","13:15:00","13/07/2016","13:09:44","présence","Parula americana","species","Northern parula","Paruline à collier","Animalia","Chordata","Aves","Passeriformes","Parulidae","Parula","Parula americana"
+5,45.4475,"13:00:00","13:15:00","13/07/2016","13:09:07","présence","Parula americana","species","Northern parula","Paruline à collier","Animalia","Chordata","Aves","Passeriformes","Parulidae","Parula","Parula americana"
+5,45.4475,"13:00:00","13:15:00","13/07/2016","13:02:07","présence","Cardellina pusilla","species","Wilson's warbler","Paruline à calotte noire","Animalia","Chordata","Aves","Passeriformes","Parulidae","Cardellina","Cardellina pusilla"

@@ -1,0 +1,7 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+254,45.0221,"06:00:00","06:15:00","2019-04-30","NULL","présence","Branta canadensis","species","Canada goose","Bernache du Canada","Animalia","Chordata","Aves","Anseriformes","Anatidae","Branta","Branta canadensis"
+254,45.0221,"06:00:00","06:15:00","2019-04-30","NULL","présence","Melanerpes carolinus","species","Red-bellied woodpecker","Pic à ventre roux","Animalia","Chordata","Aves","Piciformes","Picidae","Melanerpes","Melanerpes carolinus"
+254,45.0221,"07:00:00","07:15:00","2019-04-30","NULL","présence","Regulus calendula","species","Ruby-crowned kinglet","Roitelet à couronne rubis","Animalia","Chordata","Aves","Passeriformes","Regulidae","Regulus","Regulus calendula"
+254,45.0221,"08:00:00","08:15:00","2019-04-30","NULL","présence","Cyanocitta cristata","species","Blue jay","Geai bleu","Animalia","Chordata","Aves","Passeriformes","Corvidae","Cyanocitta","Cyanocitta cristata"
+254,45.0221,"08:00:00","08:15:00","2019-04-30","NULL","présence","Passerella iliaca","species","Fox sparrow","Bruant fauve","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Passerella","Passerella iliaca"
+254,45.0221,"20:00:00","20:15:00","2019-04-30","NULL","présence","Meleagris gallopavo","species","Wild turkey","Dindon sauvage","Animalia","Chordata","Aves","Galliformes","Phasianidae","Meleagris","Meleagris gallopavo"

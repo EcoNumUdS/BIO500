@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+306,58.05353,"12:00:00","12:15:00","2018-08-08","12:13:34","présence","Perisoreus canadensis","species","Gray jay","Mésangeai du Canada","Animalia","Chordata","Aves","Passeriformes","Corvidae","Perisoreus","Perisoreus canadensis"
+306,58.05353,"12:00:00","12:15:00","2018-08-08","12:12:49","présence","Perisoreus canadensis","species","Gray jay","Mésangeai du Canada","Animalia","Chordata","Aves","Passeriformes","Corvidae","Perisoreus","Perisoreus canadensis"
+306,58.05353,"12:00:00","12:15:00","2018-08-08","12:14:09","présence","Junco hyemalis","species","Dark-eyed junco","Junco ardoisé","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Junco","Junco hyemalis"

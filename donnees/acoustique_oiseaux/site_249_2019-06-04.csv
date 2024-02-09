@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+249,49.1182,"20:00:00","20:03:00","2019-06-04","20:00:02","présence","Corvus brachyrhynchos","species","American crow","Corneille d'amérique","Animalia","Chordata","Aves","Passeriformes","Corvidae","Corvus","Corvus brachyrhynchos"
+249,49.1182,"20:00:00","20:03:00","2019-06-04","20:01:19","présence","Corvus brachyrhynchos","species","American crow","Corneille d'amérique","Animalia","Chordata","Aves","Passeriformes","Corvidae","Corvus","Corvus brachyrhynchos"
+249,49.1182,"20:00:00","20:03:00","2019-06-04","20:02:43","présence","Ceryle alcyon","species","Belted kingfisher","Martin-pêcheur d'amérique","Animalia","Chordata","Aves","Coraciiformes","Alcedinidae","Ceryle","Ceryle alcyon"

@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+469,46.65899,"07:00:00","07:15:00","25/06/2017","07:00:30","présence","Vireo","genus","Vireos","Viréo","Animalia","Chordata","Aves","Passeriformes","Vireonidae","Vireo","NULL"
+469,46.65899,"07:00:00","07:15:00","25/06/2017","07:04:48","présence","Dendroica petechia","species","American yellow warbler","Paruline jaune","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica petechia"
+469,46.65899,"19:00:00","19:15:00","25/06/2017","19:11:15","présence","Agelaius phoeniceus","species","Red-winged blackbird","Carouge à épaulettes","Animalia","Chordata","Aves","Passeriformes","Icteridae","Agelaius","Agelaius phoeniceus"

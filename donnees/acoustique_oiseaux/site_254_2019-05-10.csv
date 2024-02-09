@@ -1,0 +1,2 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+254,45.0221,"19:00:00","19:15:00","2019-05-10","NULL","présence","Hylocichla mustelina","species","Wood thrush","Grive des bois","Animalia","Chordata","Aves","Passeriformes","Turdidae","Hylocichla","Hylocichla mustelina"

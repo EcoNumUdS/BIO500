@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+17,46.8893,"06:00:00","06:15:00","29/07/2017","06:03:53","présence","Dryobates pubescens","species","Downy woodpecker","Pic mineur","Animalia","Chordata","Aves","Piciformes","Picidae","Dryobates","Dryobates pubescens"
+17,46.8893,"06:00:00","06:15:00","29/07/2017","06:06:30","présence","Loxia leucoptera","species","Two-barred crossbill","Bec-croisé bifascié","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Loxia","Loxia leucoptera"
+17,46.8893,"19:00:00","19:15:00","29/07/2017","19:14:19","présence","Loxia leucoptera","species","Two-barred crossbill","Bec-croisé bifascié","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Loxia","Loxia leucoptera"
+17,46.8893,"21:00:00","21:15:00","29/07/2017","21:02:22","présence","Bubo virginianus","species","Great horned owl","Grand-duc d'amérique","Animalia","Chordata","Aves","Strigiformes","Strigidae","Bubo","Bubo virginianus"
+17,46.8893,"23:00:00","23:15:00","29/07/2017","23:03:32","présence","Bubo virginianus","species","Great horned owl","Grand-duc d'amérique","Animalia","Chordata","Aves","Strigiformes","Strigidae","Bubo","Bubo virginianus"

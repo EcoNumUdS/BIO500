@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+26,47.6666,"05:00:00","05:15:00","29/08/2017","05:00:12","présence","Gavia immer","species","Common loon","Plongeon huard","Animalia","Chordata","Aves","Gaviiformes","Gaviidae","Gavia","Gavia immer"
+26,47.6666,"19:00:00","19:15:00","29/08/2017","19:02:13","présence","Ceryle alcyon","species","Belted kingfisher","Martin-pêcheur d'amérique","Animalia","Chordata","Aves","Coraciiformes","Alcedinidae","Ceryle","Ceryle alcyon"
+26,47.6666,"19:00:00","19:15:00","29/08/2017","19:01:24","présence","Ceryle alcyon","species","Belted kingfisher","Martin-pêcheur d'amérique","Animalia","Chordata","Aves","Coraciiformes","Alcedinidae","Ceryle","Ceryle alcyon"
+26,47.6666,"19:00:00","19:15:00","29/08/2017","19:07:47","présence","Gavia immer","species","Common loon","Plongeon huard","Animalia","Chordata","Aves","Gaviiformes","Gaviidae","Gavia","Gavia immer"
+26,47.6666,"19:00:00","19:15:00","29/08/2017","19:00:57","présence","Loxia leucoptera","species","Two-barred crossbill","Bec-croisé bifascié","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Loxia","Loxia leucoptera"

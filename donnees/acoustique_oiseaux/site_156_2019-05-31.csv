@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+156,48.4883,"20:00:00","20:03:00","2019-05-31","20:02:07","présence","Junco hyemalis","species","Dark-eyed junco","Junco ardoisé","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Junco","Junco hyemalis"
+156,48.4883,"20:00:00","20:03:00","2019-05-31","20:00:00","présence","Passerella iliaca","species","Fox sparrow","Bruant fauve","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Passerella","Passerella iliaca"
+156,48.4883,"20:00:00","20:03:00","2019-05-31","20:00:01","présence","Catharus guttatus","species","Hermit thrush","Grive solitaire","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus guttatus"
+156,48.4883,"20:00:00","20:03:00","2019-05-31","20:00:04","présence","Catharus guttatus","species","Hermit thrush","Grive solitaire","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus guttatus"
+156,48.4883,"20:00:00","20:03:00","2019-05-31","20:00:46","présence","Regulus calendula","species","Ruby-crowned kinglet","Roitelet à couronne rubis","Animalia","Chordata","Aves","Passeriformes","Regulidae","Regulus","Regulus calendula"

@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+165,48.1079,"19:00:00","19:03:00","2019-06-14","19:01:35","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"
+165,48.1079,"19:00:00","19:03:00","2019-06-14","19:02:53","présence","Catharus fuscescens","species","Veery","Grive fauve","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus fuscescens"
+165,48.1079,"19:00:00","19:03:00","2019-06-14","19:00:12","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"
+165,48.1079,"19:00:00","19:03:00","2019-06-14","19:00:37","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"
+165,48.1079,"19:00:00","19:03:00","2019-06-14","19:01:21","présence","Sphyrapicus varius","species","Yellow-bellied sapsucker","Pic maculé","Animalia","Chordata","Aves","Piciformes","Picidae","Sphyrapicus","Sphyrapicus varius"

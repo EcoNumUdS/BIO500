@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+409,58.73103,"01:00:00","01:15:00","2019-06-22","01:12:08","présence","Anas crecca","species","Common teal","Sarcelle d'hiver","Animalia","Chordata","Aves","Anseriformes","Anatidae","Anas","Anas crecca"
+409,58.73103,"01:00:00","01:15:00","2019-06-22","01:09:40","présence","Melospiza lincolnii","species","Lincoln's sparrow","Bruant de lincoln","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza lincolnii"
+409,58.73103,"01:00:00","01:15:00","2019-06-22","01:00:44","présence","Melospiza lincolnii","species","Lincoln's sparrow","Bruant de lincoln","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza lincolnii"
+409,58.73103,"01:00:00","01:15:00","2019-06-22","01:08:03","présence","Charadrius semipalmatus","species","Semipalmated plover","Pluvier semipalmé","Animalia","Chordata","Aves","Charadriiformes","Charadriidae","Charadrius","Charadrius semipalmatus"
+409,58.73103,"01:00:00","01:15:00","2019-06-22","01:00:20","présence","Gallinago delicata","species","Wilson's snipe","Bécassine de wilson","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Gallinago","Gallinago delicata"

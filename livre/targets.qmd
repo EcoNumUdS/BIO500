@@ -1,0 +1,156 @@
+# Targets {#sec-targets}
+
+`Targets` est une librairie R qui permet l'automatisation d'un processus. On l'utilise pour définir les directives qui sont exécutées par l'ordinateur de façon à rendre un projet **reproductible**.
+
+```R
+install.packages("targets")
+```
+
+Un projet d'analyse de données comprend de nombreuses étapes, qui vont de la construction de la base de données, à la production du rapport, en passant par les analyses statistiques. L'ensemble du processus peut-être long et frustrant, surtout lorsque l'on a une boucle du genre : 
+
+1. Lancer le code
+2. Attendre qu'il s'exécute 
+3. Découvrir un bogue 
+4. Recommencer la boucle
+
+Des petites modifications en amont peuvent affecter toute la chaîne en aval. Inversement, parfois on a seulement besoin de refaire une figure sans avoir à refaire toute la chaîne. 
+
+La programmation d'une séquence d'instructions permet de formaliser ce processus et de s'attarder seulement aux étapes qui doivent être mises à jour.
+
+
+## Le pipeline
+
+On parle de pipeline ou de workflow pour désigner la séquence d'instructions. Elle contient l'ensemble des instructions nécessaires pour automatiser la réalisation des différentes composantes d'un projet.
+
+C'est dans le fichier `_targets.R` que le pipeline est défini.
+
+
+### Le fichier `_targets.R`
+
+Ici, il est bien important de garder en tête que l'on définit une *séquence d'instructions*. Une étape (appelée target) dépend de ce qui est produit à l'étape précédente pour exécuter une opération et produire un objet qui sera utilisé par la prochaine étape. 
+
+#### Un exemple minimal
+
+Un exemple complet est disponible dans le répertoire [exemple_targets](https://github.com/EcoNumUdS/BIO500/tree/master/bloc2/exemple_targets).
+
+Imaginons le processus suivant :
+
+1. Lire le fichier de données "data.txt"
+2. Faire une régression linéaire
+3. Faire une figure et l'enregistrer
+
+Le [répertoire de travail](https://github.com/EcoNumUdS/BIO500/tree/master/bloc2/exemple_targets) contient les données sauvées dans un sous-dossier 'data', les sripts pour faire l'analyse et la figure dans le dossier 'R' et un fichier `_targets.R` qui exécute le pipeline.
+
+```md
+├── data             # Dossier de données
+│   ├── data.txt     # Jeu de données
+
+├── R                # Dossier de scripts R
+│   ├── figure.R     # Fonction utilisée comme targets
+│   ├── analyse.R    # Fonction utilisée comme targets
+
+├── _targets.R       # Fichier targets qui définit le pipeline
+```
+
+
+Il y a deux scripts d'analyse, `./R/analyse.R` et `./R/figure.R`. Le deuxième dépend du premier qui dépend lui-même des données (données -> analyse -> figure).
+
+Le fichier _targets.R se subdivise en 3 sections. D'abord, les dépendances à la librairie targets et aux autres librairies. Ensuite, l'exécution des scripts R qui contiennent les fonctions du pipeline. Finalement, le pipeline composé d'une liste contenant une série de targets.
+
+
+```{r eval = FALSE}
+# ===========================================
+# _targets.R file
+# ===========================================
+# Dépendances
+library(targets)
+tar_option_set(packages = c("MASS", "igraph"))
+
+# Scripts R
+source("R/analyse.R")
+source("R/figure.R")
+
+# Pipeline
+list(
+  # Une target pour le chemin du fichier de donnée permet de suivre les 
+  # changements dans le fichier
+  tar_target(
+    name = path, # Cible
+    command = "data/data.txt", # Emplacement du fichier
+    format = "file"
+  ), 
+  # La target suivante a "path" pour dépendance et importe les données. Sans
+  # la séparation de ces deux étapes, la dépendance serait brisée et une
+  # modification des données n'entrainerait pas l'exécution du pipeline
+  tar_target(
+    name = data, # Cible pour l'objet de données
+    command = read.table(path) # Lecture des données
+  ),   
+  tar_target(
+    resultat_modele, # Cible pour le modèle 
+    mon_modele(data) # Exécution de l'analyse
+  ),
+  tar_target(
+    figure, # Cible pour l'exécution de la figure
+    ma_figure(data, resultat_modele) # Réalisation de la figure
+  )
+)
+```
+
+
+#### La target
+
+Une target est une étape de la séquence d'instructions, elle est utilisée comme argument dans une étape suivante. On la défini avec `tar_targets()` dans le fichier _targets.R.
+
+> **ATTENTION !!!** La target est *TOUJOURS* une fonction.
+
+Une target est au minimum une cible (nom d'un objet) et une dépendance (commande R). Une target produit un objet R qui est enregistré dans la mémoire de la session. Une dépendance est une expression qui dépend d'une target précédente. Le package `targets` exécute seulement les targets qui ne sont pas à jour. Ainsi, Une target est exécutée seulement lorsque la target dont elle dépend est plus récente que l'objet qu'elle produit. 
+
+**Faire une bonne target**
+
+Comme une fonction, une target peut faire trois choses :
+
+1. Produire des données
+2. Analyser des données
+3. Résumer une analyse ou des données (e.g. figure, tableau)
+
+Si une target est trop longue, vous avez avantage à la briser en petits morceaux pour que chaque étape soit vérifiée. Alternativement, pour une séquence d'analyse très compliquée, on pourrait vouloir regrouper les étapes pour éviter d'avoir une liste trop longue. 
+
+Le grain d'une séquence dépend donc d'un compromis :
+
+1. Les targets sont suffisamment importantes pour sauver du temps si elles sont ignorées (e.g. construire votre base de données et faire les injections)
+2. Suffisamment petites pour qu'il soit pertinent d'automatiser le processus
+3. Retourne un seul objet qui
+    - est facile à comprendre et interpréter
+    - pertinent pour le projet
+    - peut être sauvé comme objet
+
+
+## Exécuter le pipeline
+
+**1. Visualiser les étapes qui doivent être mises à jour**
+
+Cette commande produit un graphique de dépendance du projet. Il est de bonne pratique de s'assurer que ce graphe ait les nodes correctement connectées avec les flèches. Chaque node représente une target ou un objet de l'environnement global et une flèche la dépendance d'un node à un autre.
+
+```r
+tar_visnetwork()
+```
+
+**2. Exécuter le pipeline**
+
+La commande `tar_make()` permet d'exécuter le pipeline. De nombreuses informations utiles sont générées automatiquement lors de l'opération et sont placées dans le dossier `_targets`.
+
+```r
+tar_make()
+```
+
+> Notez que le pipeline ne se lance pas en exécutant le code du fichier _targets.R, mais bien avec l'exécution de tar_make() !
+
+## Trucs et astuces
+
+Par expérience, `targets` est une librairie de haut niveau pour utilisateurs expérimentés. Les erreurs sont difficiles à trouver et à régler. Il faut s'assurer que chaque étape fonctionne avant d'en ajouter une autre. Il faut donc ***construire progressivement*** son fichier `_target.R` et s'assurer qu'une étape s'exécute parfaitement avant de passer à la suivante.
+
+
+## Pour plus d'information
+
+Manuel de targets [https://books.ropensci.org/targets/](https://books.ropensci.org/targets/)

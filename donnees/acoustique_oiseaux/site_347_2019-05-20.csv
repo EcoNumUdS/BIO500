@@ -1,0 +1,8 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+347,45.53705,"07:00:00","07:03:00","2019-05-20","07:00:03","présence","Parus atricapilla","species","Black-capped chickadee","Mésange à tête noire","Animalia","Chordata","Aves","Passeriformes","Paridae","Parus","Parus atricapilla"
+347,45.53705,"07:00:00","07:03:00","2019-05-20","07:00:06","présence","Dendroica virens","species","Black-throated green warbler","Paruline à gorge noire","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica virens"
+347,45.53705,"07:00:00","07:03:00","2019-05-20","07:01:19","présence","Dendroica virens","species","Black-throated green warbler","Paruline à gorge noire","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica virens"
+347,45.53705,"07:00:00","07:03:00","2019-05-20","07:00:05","présence","Myiarchus crinitus","species","Great crested flycatcher","Tyran huppé","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Myiarchus","Myiarchus crinitus"
+347,45.53705,"07:00:00","07:03:00","2019-05-20","07:00:16","présence","Catharus guttatus","species","Hermit thrush","Grive solitaire","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus guttatus"
+347,45.53705,"07:00:00","07:03:00","2019-05-20","07:00:09","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"
+347,45.53705,"07:00:00","07:03:00","2019-05-20","07:00:00","présence","Vireo","genus","NULL","NULL","Animalia","Chordata","Aves","Passeriformes","Vireonidae","Vireo","NULL"

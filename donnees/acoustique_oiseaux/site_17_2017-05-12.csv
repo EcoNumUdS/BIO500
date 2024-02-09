@@ -1,0 +1,7 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+17,46.8893,"13:00:00","13:15:00","12/05/2017","13:00:50","présence","Parulidae","family","New world warblers","Passereaux","Animalia","Chordata","Aves","Passeriformes","Parulidae","NULL","NULL"
+17,46.8893,"13:00:00","13:15:00","12/05/2017","13:00:00","présence","Vireo solitarius","species","Blue-headed vireo","Viréo à tête bleue","Animalia","Chordata","Aves","Passeriformes","Vireonidae","Vireo","Vireo solitarius"
+17,46.8893,"13:00:00","13:15:00","12/05/2017","13:06:15","présence","Regulus calendula","species","Ruby-crowned kinglet","Roitelet à couronne rubis","Animalia","Chordata","Aves","Passeriformes","Regulidae","Regulus","Regulus calendula"
+17,46.8893,"13:00:00","13:15:00","12/05/2017","13:09:48","présence","Bonasa umbellus","species","Ruffed grouse","Gélinotte huppée","Animalia","Chordata","Aves","Galliformes","Phasianidae","Bonasa","Bonasa umbellus"
+17,46.8893,"13:00:00","13:15:00","12/05/2017","13:06:04","présence","Troglodytes hiemalis","species","Animals","Troglodyte des forêts","Animalia","Chordata","Aves","Passeriformes","Troglodytidae","Troglodytes","Troglodytes hiemalis"
+17,46.8893,"13:00:00","13:15:00","12/05/2017","13:00:12","présence","Dendroica coronata","species","Yellow-rumped warbler","Paruline à croupion jaune","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica coronata"

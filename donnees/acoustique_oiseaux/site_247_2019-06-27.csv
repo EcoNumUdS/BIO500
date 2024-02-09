@@ -1,0 +1,8 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+247,58.725,"04:00:00","04:15:00","2019-06-27","04:12:20","présence","Spizelloides arborea","species","American tree sparrow","Bruant hudsonien","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Spizelloides","Spizelloides arborea"
+247,58.725,"04:00:00","04:15:00","2019-06-27","04:11:14","présence","Dendroica striata","species","Blackpoll warbler","Paruline rayée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica striata"
+247,58.725,"04:00:00","04:15:00","2019-06-27","04:13:19","présence","Parkesia noveboracensis","species","Northern waterthrush","Paruline des ruisseaux","Animalia","Chordata","Aves","Passeriformes","Parulidae","Parkesia","Parkesia noveboracensis"
+247,58.725,"04:00:00","04:15:00","2019-06-27","04:11:10","présence","Parkesia noveboracensis","species","Northern waterthrush","Paruline des ruisseaux","Animalia","Chordata","Aves","Passeriformes","Parulidae","Parkesia","Parkesia noveboracensis"
+247,58.725,"04:00:00","04:15:00","2019-06-27","04:11:26","présence","Zonotrichia leucophrys","species","White-crowned sparrow","Bruant à couronne blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia leucophrys"
+247,58.725,"04:00:00","04:15:00","2019-06-27","04:13:40","présence","Acanthis","genus","NULL","NULL","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Acanthis","NULL"
+247,58.725,"04:00:00","04:15:00","2019-06-27","04:11:30","présence","Acanthis","genus","NULL","NULL","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Acanthis","NULL"

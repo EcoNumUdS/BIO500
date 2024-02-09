@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+25,46.9580212,"01:00:00","01:15:00","05/06/2017","01:04:38","présence","Aegolius acadicus","species","Northern saw-whet owl","Petite nyctale","Animalia","Chordata","Aves","Strigiformes","Strigidae","Aegolius","Aegolius acadicus"
+25,46.9580212,"03:00:00","03:15:00","05/06/2017","03:08:06","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"
+25,46.9580212,"03:00:00","03:15:00","05/06/2017","03:11:14","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

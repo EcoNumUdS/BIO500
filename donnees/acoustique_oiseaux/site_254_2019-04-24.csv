@@ -1,0 +1,8 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+254,45.0221,"06:00:00","06:15:00","2019-04-24","NULL","présence","Icteridae","family","American blackbirds","Ictéridés","Animalia","Chordata","Aves","Passeriformes","Icteridae","NULL","NULL"
+254,45.0221,"06:00:00","06:15:00","2019-04-24","NULL","présence","Certhia americana","species","Brown creeper","Grimpereau brun","Animalia","Chordata","Aves","Passeriformes","Certhiidae","Certhia","Certhia americana"
+254,45.0221,"07:00:00","07:15:00","2019-04-24","NULL","présence","Molothrus ater","species","Brown-headed cowbird","Vacher à tête brune","Animalia","Chordata","Aves","Passeriformes","Icteridae","Molothrus","Molothrus ater"
+254,45.0221,"07:00:00","07:15:00","2019-04-24","NULL","présence","Certhia americana","species","Brown creeper","Grimpereau brun","Animalia","Chordata","Aves","Passeriformes","Certhiidae","Certhia","Certhia americana"
+254,45.0221,"07:00:00","07:15:00","2019-04-24","NULL","présence","Dryocopus pileatus","species","Pileated woodpecker","Grand pic","Animalia","Chordata","Aves","Piciformes","Picidae","Dryocopus","Dryocopus pileatus"
+254,45.0221,"07:00:00","07:15:00","2019-04-24","NULL","présence","Sitta canadensis","species","Red-breasted nuthatch","Sittelle à poitrine rousse","Animalia","Chordata","Aves","Passeriformes","Sittidae","Sitta","Sitta canadensis"
+254,45.0221,"08:00:00","08:15:00","2019-04-24","NULL","présence","Dendroica coronata","species","Yellow-rumped warbler","Paruline à croupion jaune","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica coronata"

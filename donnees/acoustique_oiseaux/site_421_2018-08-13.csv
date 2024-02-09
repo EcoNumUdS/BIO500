@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+421,58.51624,"22:00:00","22:15:00","2018-08-13","22:08:32","présence","Calidris minutilla","species","Least sandpiper","Bécasseau minuscule","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Calidris","Calidris minutilla"
+421,58.51624,"22:00:00","22:15:00","2018-08-13","22:06:43","présence","Anatidae","family","NULL","NULL","Animalia","Chordata","Aves","Anseriformes","Anatidae","NULL","NULL"

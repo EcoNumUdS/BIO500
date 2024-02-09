@@ -1,0 +1,7 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+247,58.725,"03:00:00","03:15:00","2019-06-26","03:13:20","présence","Spizelloides arborea","species","American tree sparrow","Bruant hudsonien","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Spizelloides","Spizelloides arborea"
+247,58.725,"03:00:00","03:15:00","2019-06-26","03:10:49","présence","Dendroica striata","species","Blackpoll warbler","Paruline rayée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica striata"
+247,58.725,"03:00:00","03:15:00","2019-06-26","03:14:23","présence","Passerella iliaca","species","Fox sparrow","Bruant fauve","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Passerella","Passerella iliaca"
+247,58.725,"03:00:00","03:15:00","2019-06-26","03:13:48","présence","Passerella iliaca","species","Fox sparrow","Bruant fauve","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Passerella","Passerella iliaca"
+247,58.725,"03:00:00","03:15:00","2019-06-26","03:11:49","présence","Zonotrichia leucophrys","species","White-crowned sparrow","Bruant à couronne blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia leucophrys"
+247,58.725,"03:00:00","03:15:00","2019-06-26","03:12:52","présence","Acanthis","genus","NULL","NULL","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Acanthis","NULL"

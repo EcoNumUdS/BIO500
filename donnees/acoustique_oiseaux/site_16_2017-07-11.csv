@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+16,46.8707,"19:00:00","19:15:00","11/07/2017","19:00:43","présence","Parula americana","species","Northern parula","Paruline à collier","Animalia","Chordata","Aves","Passeriformes","Parulidae","Parula","Parula americana"
+16,46.8707,"19:00:00","19:15:00","11/07/2017","19:12:47","présence","Sitta canadensis","species","Red-breasted nuthatch","Sittelle à poitrine rousse","Animalia","Chordata","Aves","Passeriformes","Sittidae","Sitta","Sitta canadensis"

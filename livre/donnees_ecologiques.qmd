@@ -7,7 +7,7 @@
 
 Les données jouent un rôle essentiel dans la réponse aux questions de recherche en écologie computationnelle. Elles renferment l'information qui sera ultérieurement analysée, visualisée et communiquée. Comprendre les différents types de données utilisés dans ce domaine est fondamental pour assurer une collecte précise et une organisation adéquate, permettant ainsi d'exploiter au mieux ces données lors des étapes ultérieures de l'analyse écologique. Dans ce chapitre, nous explorerons en détail les types de données couramment rencontrés en écologie computationnelle pour faciliter la structuration.
 
-**Qu'est-ce qu'une donnéee en écologie ?**
+**Qu'est-ce qu'une donnée en écologie ?**
 
 Les données écologiques sont le résultat de la collecte, qui se fait souvent par le biais d'échantillonnage. Dans ce domaine, il est courant de rencontrer différents formats et types de données. En écologie, les données sont classées en quatre dimensions ou classes d'information :
 
@@ -17,7 +17,7 @@ Les données écologiques sont le résultat de la collecte, qui se fait souvent 
 4. Données spatiales : Elles décrivent la répartition géographique des espèces et des caractéristiques environnementales, en utilisant des coordonnées géographiques ou d'autres systèmes de localisation.
 
 
-Les données écologiques présentent une multidimensionalité qui les rend complexes à saisir et à stocker. Par exemple, prenons l'exemple de la caractérisation de la succession d'une forêt. Des biologistes effectuent des mesures sur chaque arbre, en enregistrant l'identifiant de l'individu (ID), l'espèce, la localisation, le diamètre à hauteur de poitrine (DHP) et l'année de mesure, car les relevés seront répétés dans le temps. La multitude de dimensions des données nécessite une rigueur dans le formatage des données afin de bien les organiser et de maintenir les relations logiques.
+Les données écologiques présentent une multidimensionnalité qui les rend complexes à saisir et à stocker. Par exemple, prenons l'exemple de la caractérisation de la succession d'une forêt. Des biologistes effectuent des mesures sur chaque arbre, en enregistrant l'identifiant de l'individu (ID), l'espèce, la localisation, le diamètre à hauteur de poitrine (DHP) et l'année de mesure, car les relevés seront répétés dans le temps. La multitude de dimensions des données nécessite une rigueur dans le formatage des données afin de bien les organiser et de maintenir les relations logiques.
 
 ```{r}
 #| label: data_cube
@@ -41,11 +41,11 @@ Les données sont généralement assemblées dans des tableaux, par exemple avec
 
 **1. Un jeu de données, un tableau**
 
-Pour représenter efficacement les données en tableau et organiser les données avec rigeur, chaque jeu de données doit être saisi dans son propre tableau. Ainsi, un tableau contient un type d'information. Pour ajouter des données sur le climat à l'exemple de relevé écologique d'une forêt, on ajoutera une nouveau tableau dans lequel sera noté la localisation, la date et une série de variables climatiques.
+Pour représenter efficacement les données en tableau et organiser les données avec rigueur, chaque jeu de données doit être saisi dans son propre tableau. Ainsi, un tableau contient un type d'information. Pour ajouter des données sur le climat à l'exemple de relevé écologique d'une forêt, on ajoutera un nouveau tableau dans lequel seront notées la localisation, la date et une série de variables climatiques.
 
-**2. Prévilégier un format long**
+**2. Privilégier un format long**
 
-On retrouve généralement deux types de format, le format *large* et le format *long*. Alors que le format large peut contenir des valeurs manquantes puisqu'une variable est saisie dans plusieurs colonnes, le format long est plus propre et se prête beaucoup mieux au traitement des données.
+On retrouve généralement deux types de formats, le format *large* et le format *long*. Alors que le format large peut contenir des valeurs manquantes puisqu'une variable est saisie dans plusieurs colonnes, le format long est plus propre et se prête beaucoup mieux au traitement des données.
 
 ```{r}
 #| label: format_exemples
@@ -97,9 +97,9 @@ En définissant correctement le type des données, on évite les erreurs de mani
 
 La définition appropriée des types de données est cruciale pour garantir la cohérence, la fiabilité et la sécurité des opérations informatiques. Cela permet également d'optimiser les performances et d'améliorer la compréhension du code. En informatique, on distingue plusieurs types :
 
-| Appelation                | Type                 | Valeurs     | Taille           |
+| Appellation                | Type                 | Valeurs     | Taille           |
 |---------------------------|----------------------|-------------|------------------|
-| `BOLEAN`                  | Boléen               | vrai/faux   | 1 octet          |
+| `BOLEAN`                  | Booléen               | vrai/faux   | 1 octet          |
 | `INTEGER`                 | Entiers              | -998, 123   | 1 à 4 octets     |
 | `DOUBLE`, `FLOAT`, `REAL` | Nombres réels        | 9.98, -4.34 | 4 à 8 octets     |
 | `CHAR`,`VARCHAR`          | Chaine de caractères | lapin       | n x 1 à 8 octets |
@@ -108,7 +108,7 @@ La définition appropriée des types de données est cruciale pour garantir la c
 
 ### Les données temporelles
 
-La plupart des languages de programmation proposent les types `TIMESTAMP`, `DATE` et `TIME` pour représenter la donnée temporelle. Il est recommandé d'utiliser un de ces types pour tenir compte du fuseau horaire et de l'effet de l'heure d'été et d'hiver, car ils offrent un format standardisé compréhensible dans différents pays et systèmes.
+La plupart des langages de programmation proposent les types `TIMESTAMP`, `DATE` et `TIME` pour représenter la donnée temporelle. Il est recommandé d'utiliser un de ces types pour tenir compte du fuseau horaire et de l'effet de l'heure d'été et d'hiver, car ils offrent un format standardisé compréhensible dans différents pays et systèmes.
 
 - `TIMESTAMP` (Heure et temps): `YYYY-MM-ddThh:mm:ss`. *ex. `1977-04-22T01:00:00-05:00` ou `1977-04-22T06:00:00Z`*
 - `DATE`: `YYYY-MM-dd`. *ex. 1997-04-22*
@@ -141,14 +141,14 @@ Il est recommandé de sauver l'identification d'une espèce en utilisant une ré
 
 ### Les données spatiales
 
-Les données spatiales sont définies par une position sur un plan géographique. La valeur de cette position change en fonction de la méthode utilisée pour convertir la planète en un plan, appelée la *projection géographique*. Il existe [des dizaines de familles de projections gréographiques](https://en.wikipedia.org/wiki/List_of_map_projections). Certaines minimisent la déformation spatiale (particulièrement importante à nos latitudes), d'autres optimisent la superficie proportionnelle (pour éviter que le Groendland n'apparaisse plus grand que l'Afrique). La projection utilisée change selon l'utilisation à faire des données spatiale, que ce soit une analyse spatiale ou la sauvegarde d'une position géographique.
+Les données spatiales sont définies par une position sur un plan géographique. La valeur de cette position change en fonction de la méthode utilisée pour convertir la planète en un plan, appelée la *projection géographique*. Il existe [des dizaines de familles de projections géographiques](https://en.wikipedia.org/wiki/List_of_map_projections). Certaines minimisent la déformation spatiale (particulièrement importante à nos latitudes), d'autres optimisent la superficie proportionnelle (pour éviter que le Groendland n'apparaisse plus grand que l'Afrique). La projection utilisée change selon l'utilisation à faire des données spatiales, que ce soit une analyse spatiale ou la sauvegarde d'une position géographique.
 
 ```{r}
 #| label: proj
 #| echo: false
 #| out-width: 80%
 #| fig-cap: |
-#|    Trois types de surfaces de projections parmi les plus connues : Cônique, cylindrique et plane. La cônique projète les méridiens en lignes droites et les parallèles en arc-de-cercles. La cylindrique projète les méridiens régulièrement espacés qui sont représentés par des lignes verticales également espacées, et les parallèles par des lignes horizontales. 
+#|    Trois types de surfaces de projections parmi les plus connues : Conique, cylindrique et plane. La conique projète les méridiens en lignes droites et les parallèles en arc de cercle. La cylindrique projète les méridiens régulièrement espacés qui sont représentés par des lignes verticales également espacées, et les parallèles par des lignes horizontales. 
 #| fig-alt: |
 #|   Format des tables de données.
 
@@ -164,7 +164,7 @@ Ainsi, lorsque l'on entrepose des données spatiales, trois colonnes doivent êt
 
 ### L'absence de données
 
-Parfois, une donnée est manquante lorsqu'elle a été perdue ou est inconnue. On prévilégie l'ajout d'un `NA` (Not available) pour montrer que l'information est réellement absente.
+Parfois, une donnée est manquante lorsqu'elle a été perdue ou est inconnue. On privilégie l'ajout d'un `NA` (Not available) pour montrer que l'information est réellement absente.
 
 On évite d'entrer une valeur numérique puisque celle-ci peut être confondante et entrainer des erreurs lors de l'analyse des données. Par exemple, l'entrée d'un `0` dans une colonne numérique ne peut permettre la distinction avec les vrais 0 et influencer la moyenne. Cette pratique est donc à proscrire !
 

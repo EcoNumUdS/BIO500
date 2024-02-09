@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+469,46.65899,"04:00:00","04:15:00","18/05/2017","04:00:40","présence","Melospiza melodia","species","Song sparrow","Bruant chanteur","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza melodia"
+469,46.65899,"04:00:00","04:15:00","18/05/2017","04:05:04","présence","Actitis macularia","species","Spotted sandpiper","Chevalier grivelé","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Actitis","Actitis macularia"
+469,46.65899,"04:00:00","04:15:00","18/05/2017","04:00:44","présence","Melospiza georgiana","species","Swamp sparrow","Bruant des marais","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza georgiana"

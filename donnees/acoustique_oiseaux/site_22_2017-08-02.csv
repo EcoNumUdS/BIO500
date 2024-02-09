@@ -1,0 +1,2 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+22,46.7112,"06:00:00","06:15:00","02/08/2017","06:12:10","présence","Vireo","genus","NULL","NULL","Animalia","Chordata","Aves","Passeriformes","Vireonidae","Vireo","NULL"

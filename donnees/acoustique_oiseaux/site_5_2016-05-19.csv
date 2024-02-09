@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+5,45.4475,"12:00:00","12:15:00","19/05/2016","NULL","présence","Carduelis tristis","species","American goldfinch","Chardonneret jaune","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Carduelis","Carduelis tristis"
+5,45.4475,"12:00:00","12:15:00","19/05/2016","NULL","présence","Geothlypis trichas","species","Common yellowthroat","Paruline masquée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Geothlypis","Geothlypis trichas"
+5,45.4475,"12:00:00","12:15:00","19/05/2016","12:08:42","présence","Cardellina pusilla","species","Wilson's warbler","Paruline à calotte noire","Animalia","Chordata","Aves","Passeriformes","Parulidae","Cardellina","Cardellina pusilla"

@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+421,58.51624,"03:00:00","03:15:00","2018-07-03","NULL","présence","Passerculus sandwichensis","species","Savannah sparrow","Bruant des prés","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Passerculus","Passerculus sandwichensis"
+421,58.51624,"03:00:00","03:15:00","2018-07-03","NULL","présence","Zonotrichia leucophrys","species","White-crowned sparrow","Bruant à couronne blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia leucophrys"
+421,58.51624,"03:00:00","03:15:00","2018-07-03","NULL","présence","Anatidae","family","NULL","NULL","Animalia","Chordata","Aves","Anseriformes","Anatidae","NULL","NULL"
+421,58.51624,"03:00:00","03:15:00","2018-07-03","NULL","présence","Spizelloides arborea","species","American tree sparrow","Bruant hudsonien","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Spizelloides","Spizelloides arborea"
+421,58.51624,"03:00:00","03:15:00","2018-07-03","NULL","présence","Calidris minutilla","species","Least sandpiper","Bécasseau minuscule","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Calidris","Calidris minutilla"

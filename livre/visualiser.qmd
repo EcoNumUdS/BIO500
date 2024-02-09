@@ -1,3 +1,19 @@
 # Visualisation {#sec-visualiser .unnumbered}
 
-Visualisation des données 
+Les données permettent le développement de la connaissance et d'appuyer ses arguments, mais communiquer un message rerquiert plus. La visualisation de données permet de présenter les données de manière plus attrayante et plus facile à comprendre. Dans cette vignette, nous verrons comment tirer avantage de la visualisation de données.
+
+Objectifs de section :
+
+- Représenter les attributs d'une visualisatrion efficace
+- Utiliser les différentes fonctions graphiques de base sur R
+
+---
+
+[![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc3/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc3/bloc3.pdf)
+
+
+Au terme de cette section, vous serez en mesure de :
+
+- Cerner le message à partager et choisir la visualisation appropriée
+- Utiliser les paramètres graphiques sur R pour optimiser la visualisation
+- Utiliser les libraries graphiques avancées

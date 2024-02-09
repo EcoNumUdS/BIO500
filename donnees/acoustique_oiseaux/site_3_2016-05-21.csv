@@ -1,0 +1,8 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+3,45.4599,"07:00:00","07:15:00","21/05/2016","NULL","présence","Turdus migratorius","species","American robin","Merle d'amérique","Animalia","Chordata","Aves","Passeriformes","Turdidae","Turdus","Turdus migratorius"
+3,45.4599,"07:00:00","07:15:00","21/05/2016","NULL","présence","Certhia americana","species","Brown creeper","Grimpereau brun","Animalia","Chordata","Aves","Passeriformes","Certhiidae","Certhia","Certhia americana"
+3,45.4599,"07:00:00","07:15:00","21/05/2016","NULL","présence","Dendroica caerulescens","species","Black-throated blue warbler","Paruline","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica caerulescens"
+3,45.4599,"07:00:00","07:15:00","21/05/2016","NULL","présence","Dryobates pubescens","species","Downy woodpecker","Pic mineur","Animalia","Chordata","Aves","Piciformes","Picidae","Dryobates","Dryobates pubescens"
+3,45.4599,"07:00:00","07:15:00","21/05/2016","NULL","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"
+3,45.4599,"07:00:00","07:15:00","21/05/2016","NULL","présence","Sitta canadensis","species","Red-breasted nuthatch","Sittelle à poitrine rousse","Animalia","Chordata","Aves","Passeriformes","Sittidae","Sitta","Sitta canadensis"
+3,45.4599,"07:00:00","07:15:00","21/05/2016","NULL","présence","Sphyrapicus varius","species","Yellow-bellied sapsucker","Pic maculé","Animalia","Chordata","Aves","Piciformes","Picidae","Sphyrapicus","Sphyrapicus varius"

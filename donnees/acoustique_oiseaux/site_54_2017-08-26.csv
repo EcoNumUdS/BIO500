@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+54,58.6462,"05:00:00","05:03:00","26/08/2017","05:00:38","présence","Turdus migratorius","species","American robin","Merle d'amérique","Animalia","Chordata","Aves","Passeriformes","Turdidae","Turdus","Turdus migratorius"
+54,58.6462,"05:00:00","05:03:00","26/08/2017","05:00:10","présence","Zonotrichia leucophrys","species","White-crowned sparrow","Bruant à couronne blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia leucophrys"
+54,58.6462,"05:00:00","05:03:00","26/08/2017","05:00:21","présence","Zonotrichia leucophrys","species","White-crowned sparrow","Bruant à couronne blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia leucophrys"
+54,58.6462,"05:00:00","05:03:00","26/08/2017","05:02:49","présence","Acanthis","genus","NULL","NULL","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Acanthis","NULL"
+54,58.6462,"05:00:00","05:03:00","26/08/2017","05:02:38","présence","Acanthis","genus","NULL","NULL","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Acanthis","NULL"

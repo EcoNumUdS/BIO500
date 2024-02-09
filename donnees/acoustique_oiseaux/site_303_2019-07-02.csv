@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+303,61.31273,"23:00:00","23:15:00","2019-07-02","23:02:32","présence","Laridae","family","Gulls","Becs-en-ciseaux","Animalia","Chordata","Aves","Charadriiformes","Laridae","NULL","NULL"
+303,61.31273,"23:00:00","23:15:00","2019-07-02","23:04:07","présence","Branta canadensis","species","Canada goose","Bernache du Canada","Animalia","Chordata","Aves","Anseriformes","Anatidae","Branta","Branta canadensis"
+303,61.31273,"23:00:00","23:15:00","2019-07-02","23:05:18","présence","Gavia immer","species","Common loon","Plongeon huard","Animalia","Chordata","Aves","Gaviiformes","Gaviidae","Gavia","Gavia immer"
+303,61.31273,"23:00:00","23:15:00","2019-07-02","23:06:18","présence","Gavia stellata","species","Red-throated diver","Plongeon catmarin","Animalia","Chordata","Aves","Gaviiformes","Gaviidae","Gavia","Gavia stellata"
+303,61.31273,"23:00:00","23:15:00","2019-07-02","23:13:58","présence","Gallinago delicata","species","Wilson's snipe","Bécassine de wilson","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Gallinago","Gallinago delicata"

@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+295,48.161222,"08:00:00","08:03:00","2020-06-24","08:00:12","présence","Passeriformes","order","Perching birds","Passereaux","Animalia","Chordata","Aves","Passeriformes","NULL","NULL","NULL"
+295,48.161222,"08:00:00","08:03:00","2020-06-24","08:00:12","présence","Dendroica castanea","species","Bay-breasted warbler","Paruline à poitrine baie","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica castanea"
+295,48.161222,"08:00:00","08:03:00","2020-06-24","08:02:45","présence","Catharus guttatus","species","Hermit thrush","Grive solitaire","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus guttatus"
+295,48.161222,"08:00:00","08:03:00","2020-06-24","08:02:02","présence","Leiothlypis ruficapilla","species","Nashville warbler","Paruline à joues grises","Animalia","Chordata","Aves","Passeriformes","Parulidae","Leiothlypis","Leiothlypis ruficapilla"
+295,48.161222,"08:00:00","08:03:00","2020-06-24","08:00:01","présence","Troglodytes hiemalis","species","Animals","Troglodyte des forêts","Animalia","Chordata","Aves","Passeriformes","Troglodytidae","Troglodytes","Troglodytes hiemalis"

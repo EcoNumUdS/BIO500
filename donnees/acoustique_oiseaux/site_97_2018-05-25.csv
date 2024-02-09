@@ -1,0 +1,7 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+97,46.0535,"20:00:00","20:03:00","2018-05-25","20:00:01","présence","Catharus guttatus","species","Hermit thrush","Grive solitaire","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus guttatus"
+97,46.0535,"20:00:00","20:03:00","2018-05-25","20:00:05","présence","Catharus guttatus","species","Hermit thrush","Grive solitaire","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus guttatus"
+97,46.0535,"20:00:00","20:03:00","2018-05-25","20:00:10","présence","Catharus guttatus","species","Hermit thrush","Grive solitaire","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus guttatus"
+97,46.0535,"20:00:00","20:03:00","2018-05-25","20:00:01","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"
+97,46.0535,"20:00:00","20:03:00","2018-05-25","20:01:34","présence","Dryocopus pileatus","species","Pileated woodpecker","Grand pic","Animalia","Chordata","Aves","Piciformes","Picidae","Dryocopus","Dryocopus pileatus"
+97,46.0535,"20:00:00","20:03:00","2018-05-25","20:01:51","présence","Dryobates pubescens","species","NULL","NULL","Animalia","Chordata","Aves","Piciformes","Picidae","Dryobates","Dryobates pubescens"

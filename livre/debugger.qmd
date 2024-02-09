@@ -1,0 +1,33 @@
+# Déboguer {#sec-visualiser}
+
+Une tâche importante du programmeur est de déboguer son code. Qui n'oublie pas une virgule, une parenthèse ? Il existe des astuces pour être efficace. En voici quelques-unes.
+
+## Erreurs courantes
+
+- **Syntaxe** : oubli de parenthèse, de virgule, de guillemets, etc.
+- **Erreur d'indexation** : vérifier que les index sont dans les limites de l'objet
+- **Erreur de type** : tentatives d'effectuer des opérations incompatibles avec le type de données (`result <- "10" + 5`)
+- **Objet inexistant** : vérifier l'orthographe de l'objet et qu'il existe dans l'environnement de travail
+- **Erreurs logiques** : problèmes liés à la logique du code, comme des boucles infinies ou des conditions incorrectes
+-  **Données manquantes (NA)** : problèmes liés à la présence de données manquantes et à la manière dont elles sont traitées ```R my_vector <- c(1, 2, NA, 4)
+sum(my_vector)```
+- **Packages** : Problèmes avec l'installation, le chargement ou l'utilisation de packages
+
+## Astuces de débogage
+
+- Tester régulièrement son code
+- Lire attentivement les messages d'erreurs et les avertissements (warnings) imprimés dans la console
+- **Redémarrer sa session R** et réessayer son code. Parfois des objets sont sauvés dans la mémoire et causent ou masquent les erreurs
+- Rechercher la documentation de la commande `??` (eg. `??plot`)
+- Googler le message d'erreur pour en comprendre la signification
+- Inspecter les objets dans l'environnement de travail avec `ls()`
+
+## Ressources
+
+Voici quelques ressources pour vous aider à déboguer votre code :
+
+- Stackoverflow
+- Ateliers R du [CSBQ](https://r.qcbs.ca/fr/workshops/) 
+- Google
+- Ateliers [Data Carpentry](https://datacarpentry.org/R-genomics/index.html)
+- ChatGPT n'est pas formidable pour R, mais peut donner des pistes d'interprétation

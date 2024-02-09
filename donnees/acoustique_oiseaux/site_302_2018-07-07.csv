@@ -1,0 +1,8 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+302,58.49218,"03:00:00","03:15:00","2018-07-07","NULL","présence","Spizelloides arborea","species","American tree sparrow","Bruant hudsonien","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Spizelloides","Spizelloides arborea"
+302,58.49218,"03:00:00","03:15:00","2018-07-07","NULL","présence","Clangula hyemalis","species","Long-tailed duck","Harelde kakawi","Animalia","Chordata","Aves","Anseriformes","Anatidae","Clangula","Clangula hyemalis"
+302,58.49218,"03:00:00","03:15:00","2018-07-07","NULL","présence","Anas acuta","species","Northern pintail","Canard pilet","Animalia","Chordata","Aves","Anseriformes","Anatidae","Anas","Anas acuta"
+302,58.49218,"03:00:00","03:15:00","2018-07-07","NULL","présence","Passerculus sandwichensis","species","Savannah sparrow","Bruant des prés","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Passerculus","Passerculus sandwichensis"
+302,58.49218,"03:00:00","03:15:00","2018-07-07","NULL","présence","Zonotrichia leucophrys","species","White-crowned sparrow","Bruant à couronne blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia leucophrys"
+302,58.49218,"03:00:00","03:15:00","2018-07-07","NULL","présence","Gallinago delicata","species","Wilson's snipe","Bécassine de wilson","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Gallinago","Gallinago delicata"
+302,58.49218,"03:00:00","03:15:00","2018-07-07","NULL","présence","Anatidae","family","NULL","NULL","Animalia","Chordata","Aves","Anseriformes","Anatidae","NULL","NULL"

@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+16,46.8707,"19:00:00","19:15:00","07/07/2017","19:06:19","présence","Vireo solitarius","species","Blue-headed vireo","Viréo à tête bleue","Animalia","Chordata","Aves","Passeriformes","Vireonidae","Vireo","Vireo solitarius"
+16,46.8707,"19:00:00","19:15:00","07/07/2017","19:02:44","présence","Vireo solitarius","species","Blue-headed vireo","Viréo à tête bleue","Animalia","Chordata","Aves","Passeriformes","Vireonidae","Vireo","Vireo solitarius"

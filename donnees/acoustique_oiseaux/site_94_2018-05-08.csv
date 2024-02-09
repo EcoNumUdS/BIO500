@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+94,45.03285,"06:00:00","06:15:00","2018-05-08","06:12:40","présence","Myiarchus crinitus","species","Great crested flycatcher","Tyran huppé","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Myiarchus","Myiarchus crinitus"
+94,45.03285,"07:00:00","07:15:00","2018-05-08","07:14:10","présence","Hylocichla mustelina","species","Wood thrush","Grive des bois","Animalia","Chordata","Aves","Passeriformes","Turdidae","Hylocichla","Hylocichla mustelina"
+94,45.03285,"08:00:00","08:15:00","2018-05-08","08:13:04","présence","Pheucticus ludovicianus","species","Rose-breasted grosbeak","Cardinal à poitrine rose","Animalia","Chordata","Aves","Passeriformes","Cardinalidae","Pheucticus","Pheucticus ludovicianus"

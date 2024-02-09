@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+25,46.9580212,"19:00:00","19:15:00","18/07/2017","19:13:26","présence","Archilochus colubris","species","Ruby-throated hummingbird","Colibri à gorge rubis","Animalia","Chordata","Aves","Apodiformes","Trochilidae","Archilochus","Archilochus colubris"
+25,46.9580212,"20:00:00","20:15:00","18/07/2017","20:03:36","présence","Dendroica caerulescens","species","Black-throated blue warbler","Paruline","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica caerulescens"
+25,46.9580212,"20:00:00","20:15:00","18/07/2017","20:05:54","présence","Archilochus colubris","species","Ruby-throated hummingbird","Colibri à gorge rubis","Animalia","Chordata","Aves","Apodiformes","Trochilidae","Archilochus","Archilochus colubris"
+25,46.9580212,"22:00:00","22:15:00","18/07/2017","22:06:45","présence","Gavia immer","species","Common loon","Plongeon huard","Animalia","Chordata","Aves","Gaviiformes","Gaviidae","Gavia","Gavia immer"

@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+5,45.4475,"06:00:00","06:15:00","30/04/2016","NULL","présence","Corvus corax","species","Common raven","Grand corbeau","Animalia","Chordata","Aves","Passeriformes","Corvidae","Corvus","Corvus corax"
+5,45.4475,"06:00:00","06:15:00","30/04/2016","NULL","présence","Sayornis phoebe","species","Eastern phoebe","Moucherolle phébi","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Sayornis","Sayornis phoebe"
+5,45.4475,"06:00:00","06:15:00","30/04/2016","NULL","présence","Agelaius phoeniceus","species","Red-winged blackbird","Carouge à épaulettes","Animalia","Chordata","Aves","Passeriformes","Icteridae","Agelaius","Agelaius phoeniceus"
+5,45.4475,"06:00:00","06:15:00","30/04/2016","NULL","présence","Melospiza georgiana","species","Swamp sparrow","Bruant des marais","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza georgiana"
+5,45.4475,"06:00:00","06:15:00","30/04/2016","NULL","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+248,50.2091,"07:00:00","07:15:00","2019-06-10","07:14:40","présence","Dendroica fusca","species","Blackburnian warbler","Paruline à gorge orangée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica fusca"
+248,50.2091,"20:00:00","20:03:00","2019-06-10","20:00:21","présence","Catharus guttatus","species","Hermit thrush","Grive solitaire","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus guttatus"

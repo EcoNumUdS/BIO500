@@ -1,1 +1,3 @@
 # Programmation {#sec-programmer .unnumbered}
+
+Cette section présente certaines notions de base de la programmation en R. Elle est destinée à ceux qui ont besoin d'une mise à jour.

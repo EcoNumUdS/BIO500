@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+17,46.8893,"06:00:00","06:15:00","13/07/2017","06:03:45","présence","Leiothlypis ruficapilla","species","Nashville warbler","Paruline à joues grises","Animalia","Chordata","Aves","Passeriformes","Parulidae","Leiothlypis","Leiothlypis ruficapilla"
+17,46.8893,"08:00:00","08:15:00","13/07/2017","08:07:29","présence","Vireo solitarius","species","Blue-headed vireo","Viréo à tête bleue","Animalia","Chordata","Aves","Passeriformes","Vireonidae","Vireo","Vireo solitarius"
+17,46.8893,"08:00:00","08:15:00","13/07/2017","08:14:25","présence","Dendroica magnolia","species","Magnolia warbler","Paruline à tête cendrée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica magnolia"
+17,46.8893,"08:00:00","08:15:00","13/07/2017","08:09:07","présence","Loxia leucoptera","species","Two-barred crossbill","Bec-croisé bifascié","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Loxia","Loxia leucoptera"
+17,46.8893,"12:00:00","12:15:00","13/07/2017","12:10:25","présence","Loxia leucoptera","species","Two-barred crossbill","Bec-croisé bifascié","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Loxia","Loxia leucoptera"

@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+176,47.6532,"06:00:00","06:03:00","2018-06-14","06:00:22","présence","Dendroica castanea","species","Bay-breasted warbler","Paruline à poitrine baie","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica castanea"
+176,47.6532,"06:00:00","06:03:00","2018-06-14","06:00:08","présence","Dendroica castanea","species","Bay-breasted warbler","Paruline à poitrine baie","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica castanea"
+176,47.6532,"06:00:00","06:03:00","2018-06-14","06:00:10","présence","Dendroica magnolia","species","Magnolia warbler","Paruline à tête cendrée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica magnolia"

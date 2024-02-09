@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+97,46.0535,"06:00:00","06:03:00","2018-06-14","06:02:10","présence","Cyanocitta cristata","species","Blue jay","Geai bleu","Animalia","Chordata","Aves","Passeriformes","Corvidae","Cyanocitta","Cyanocitta cristata"
+97,46.0535,"06:00:00","06:03:00","2018-06-14","06:02:25","présence","Empidonax minimus","species","Least flycatcher","Moucherolle tchébec","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Empidonax","Empidonax minimus"
+97,46.0535,"06:00:00","06:03:00","2018-06-14","06:01:03","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"
+97,46.0535,"06:00:00","06:03:00","2018-06-14","06:01:32","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"

@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+254,45.0221,"06:00:00","06:15:00","2019-04-16","NULL","présence","Molothrus ater","species","Brown-headed cowbird","Vacher à tête brune","Animalia","Chordata","Aves","Passeriformes","Icteridae","Molothrus","Molothrus ater"
+254,45.0221,"06:00:00","06:15:00","2019-04-16","NULL","présence","Meleagris gallopavo","species","Wild turkey","Dindon sauvage","Animalia","Chordata","Aves","Galliformes","Phasianidae","Meleagris","Meleagris gallopavo"
+254,45.0221,"19:00:00","19:15:00","2019-04-16","NULL","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"
+254,45.0221,"23:00:00","23:15:00","2019-04-16","NULL","présence","Charadrius vociferus","species","Killdeer","Pluvier kildir","Animalia","Chordata","Aves","Charadriiformes","Charadriidae","Charadrius","Charadrius vociferus"

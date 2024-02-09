@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+20,45.842,"07:00:00","07:15:00","05/05/2017","NULL","présence","Corvus brachyrhynchos","species","American crow","Corneille d'amérique","Animalia","Chordata","Aves","Passeriformes","Corvidae","Corvus","Corvus brachyrhynchos"
+20,45.842,"07:00:00","07:15:00","05/05/2017","07:11:11","présence","Haemorhous purpureus","species","Purple finch","Roselin pourpré","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Haemorhous","Haemorhous purpureus"
+20,45.842,"07:00:00","07:15:00","05/05/2017","07:11:39","présence","Melospiza melodia","species","Song sparrow","Bruant chanteur","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza melodia"
+20,45.842,"07:00:00","07:15:00","05/05/2017","NULL","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"
+20,45.842,"07:00:00","07:15:00","05/05/2017","NULL","présence","Sphyrapicus varius","species","Yellow-bellied sapsucker","Pic maculé","Animalia","Chordata","Aves","Piciformes","Picidae","Sphyrapicus","Sphyrapicus varius"

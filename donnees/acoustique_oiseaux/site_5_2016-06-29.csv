@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+5,45.4475,"04:00:00","04:15:00","29/06/2016","04:07:00","présence","Empidonax alnorum","species","Alder flycatcher","Moucherolle des aulnes","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Empidonax","Empidonax alnorum"
+5,45.4475,"05:00:00","05:15:00","29/06/2016","05:13:47","présence","Cardellina pusilla","species","Wilson's warbler","Paruline à calotte noire","Animalia","Chordata","Aves","Passeriformes","Parulidae","Cardellina","Cardellina pusilla"
+5,45.4475,"07:00:00","07:15:00","29/06/2016","07:06:43","présence","Empidonax alnorum","species","Alder flycatcher","Moucherolle des aulnes","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Empidonax","Empidonax alnorum"

@@ -1,0 +1,7 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+25,46.9580212,"05:00:00","05:15:00","01/08/2017","05:06:34","présence","Troglodytes hiemalis","species","Animals","Troglodyte des forêts","Animalia","Chordata","Aves","Passeriformes","Troglodytidae","Troglodytes","Troglodytes hiemalis"
+25,46.9580212,"07:00:00","07:15:00","01/08/2017","07:01:24","présence","Cyanocitta cristata","species","Blue jay","Geai bleu","Animalia","Chordata","Aves","Passeriformes","Corvidae","Cyanocitta","Cyanocitta cristata"
+25,46.9580212,"19:00:00","19:15:00","01/08/2017","19:05:58","présence","Chaetura pelagica","species","Chimney swift","Martinet ramoneur","Animalia","Chordata","Aves","Apodiformes","Apodidae","Chaetura","Chaetura pelagica"
+25,46.9580212,"19:00:00","19:15:00","01/08/2017","19:05:10","présence","Chaetura pelagica","species","Chimney swift","Martinet ramoneur","Animalia","Chordata","Aves","Apodiformes","Apodidae","Chaetura","Chaetura pelagica"
+25,46.9580212,"20:00:00","20:15:00","01/08/2017","20:11:12","présence","Chaetura pelagica","species","Chimney swift","Martinet ramoneur","Animalia","Chordata","Aves","Apodiformes","Apodidae","Chaetura","Chaetura pelagica"
+25,46.9580212,"20:00:00","20:15:00","01/08/2017","20:08:35","présence","Chaetura pelagica","species","Chimney swift","Martinet ramoneur","Animalia","Chordata","Aves","Apodiformes","Apodidae","Chaetura","Chaetura pelagica"

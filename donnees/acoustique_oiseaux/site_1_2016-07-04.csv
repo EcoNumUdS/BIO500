@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+1,46.8088,"07:00:00","07:15:00","04/07/2016","07:09:27","présence","Colaptes auratus","species","Northern flicker","Pic flamboyant","Animalia","Chordata","Aves","Piciformes","Picidae","Colaptes","Colaptes auratus"
+1,46.8088,"08:00:00","08:15:00","04/07/2016","08:02:15","présence","Dendroica magnolia","species","Magnolia warbler","Paruline à tête cendrée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica magnolia"
+1,46.8088,"08:00:00","08:15:00","04/07/2016","08:01:43","présence","Dendroica magnolia","species","Magnolia warbler","Paruline à tête cendrée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica magnolia"
+1,46.8088,"13:00:00","13:15:00","04/07/2016","13:08:22","présence","Buteo lineatus","species","Red-shouldered hawk","Buse à épaulettes","Animalia","Chordata","Aves","Accipitriformes","Accipitridae","Buteo","Buteo lineatus"
+1,46.8088,"13:00:00","13:15:00","04/07/2016","13:06:51","présence","Buteo lineatus","species","Red-shouldered hawk","Buse à épaulettes","Animalia","Chordata","Aves","Accipitriformes","Accipitridae","Buteo","Buteo lineatus"

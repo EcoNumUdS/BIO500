@@ -1,19 +1,19 @@
 # Données {#sec-donnees .unnumbered}
 
-Dans cette section, nous aborderons la planification de la collecte et de l'organisation des données en écologie computationnelle. Nous explorerons les différentes étapes et les aspects clés pour assurer une gestion efficace des données dans ce domaine. 
+Dans cette section, nous aborderons la première étape dans le cycle de vie de la donnée : sa création. La création de la donnée se fait de plusieurs façons, par des inventaires terrain, des expérimentations ou même la simulation de données. Cette section portera sur la planification de la création (la collecte) et de l'organisation des données en écologie. Nous explorerons les différentes étapes et les aspects clés pour assurer une gestion efficace des données dans ce domaine. Cette section débute avec une perspective sur la nature de la donnée en écologie.
 
 Objectifs de section :
 
-- Compléter la collecte de données.
-- Représenter conceptuellement l'organisation de données sous forme de base de données.
-- Concevoir une base de données à l'aide du langage `SQL` et de la librairie `RSQLite`.
+- Rédiger une question de recherche
+- Compléter la collecte de données
 
 ---
 
+[![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc1/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc1/bloc1.pdf)
+
+
 Au terme de cette section, vous serez en mesure de :
 
-- Récolter et saisir les données.
-- Écrire le script `R` pour créer votre base de données.
-- Injecter les données récoltées dans la base de données.
-- Effectuer des requêtes simples.
-- Écrire le script `R` pour automatiser les différentes étapes.
+- Formuler une question de recherche
+- Créer les données : inventaires terrain, expérimentation, l'identification de jeux de données ou la simulation des données 
+- Saisir les données dans des chiffriers

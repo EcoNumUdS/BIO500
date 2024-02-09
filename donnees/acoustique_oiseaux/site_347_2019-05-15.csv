@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+347,45.53705,"01:00:00","01:15:00","2019-05-15","01:00:08","présence","Strix varia","species","Barred owl","Chouette rayée","Animalia","Chordata","Aves","Strigiformes","Strigidae","Strix","Strix varia"
+347,45.53705,"01:00:00","01:15:00","2019-05-15","01:04:42","présence","Actitis macularia","species","Spotted sandpiper","Chevalier grivelé","Animalia","Chordata","Aves","Charadriiformes","Scolopacidae","Actitis","Actitis macularia"

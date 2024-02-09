@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+17,46.8893,"13:00:00","13:15:00","17/07/2017","13:13:57","présence","Corvus corax","species","Common raven","Grand corbeau","Animalia","Chordata","Aves","Passeriformes","Corvidae","Corvus","Corvus corax"
+17,46.8893,"13:00:00","13:15:00","17/07/2017","13:10:12","présence","Parula americana","species","Northern parula","Paruline à collier","Animalia","Chordata","Aves","Passeriformes","Parulidae","Parula","Parula americana"
+17,46.8893,"13:00:00","13:15:00","17/07/2017","13:00:17","présence","Parula americana","species","Northern parula","Paruline à collier","Animalia","Chordata","Aves","Passeriformes","Parulidae","Parula","Parula americana"
+17,46.8893,"19:00:00","19:15:00","17/07/2017","19:07:45","présence","Loxia leucoptera","species","Two-barred crossbill","Bec-croisé bifascié","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Loxia","Loxia leucoptera"
+17,46.8893,"20:00:00","20:15:00","17/07/2017","20:11:57","présence","Loxia leucoptera","species","Two-barred crossbill","Bec-croisé bifascié","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Loxia","Loxia leucoptera"

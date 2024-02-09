@@ -1,8 +1,8 @@
 # Bases de données {#sec-BD}
 
-Parlons d'entreposage et d'archivage des données écologiques et des outils computationnels pour y arriver. Cette étape arrive après le plan de d'échantillonnage, de façon à ce que les données récoltées et leur nature sont connues.
+Parlons d'entreposage et d'archivage des données écologiques et des outils computationnels pour y arriver. Cette étape arrive après le plan d'échantillonnage, de façon à ce que les données récoltées et leur nature soient connues.
 
-Bien des technologies sont disponibles pour l'entreposage des données allant du simple fichier texte (csv), des tableurs Excel, jusqu'aux insfrastructures de bases de données relationnelles. Il est difficile de sauver les données écologiques dans un tableur sans répéter l'information à cause de leur complexité et de leur nature multi-dimentionnelle. Par exemple, les métadonnées de l'inventaire doivent être répétés à toutes les taxons observés, pour chaque site inventorié et pour toutes les répétitions de l'inventaire de façon à ce que plusieurs valeurs peuvent être répétées inutillement des milliers, voir des milions de fois. Les répétitions peuvent réduire la performance de votre ordinateur en accroissant la mémoire nécessaire pour sauver et interagir avec des données.
+Bien des technologies sont disponibles pour l'entreposage des données allant du simple fichier texte (csv), des tableurs Excel, jusqu'aux infrastructures de bases de données relationnelles. Il est difficile de sauver les données écologiques dans un tableur sans répéter l'information à cause de leur complexité et de leur nature multidimensionnelle. Par exemple, les métadonnées de l'inventaire doivent être répétées à toutes les taxons observés, pour chaque site inventorié et pour toutes les répétitions de l'inventaire de façon à ce que plusieurs valeurs puissent être répétées inutilement des milliers, voir des millions de fois. Les répétitions peuvent réduire la performance de votre ordinateur en accroissant la mémoire nécessaire pour sauver et interagir avec des données.
 
 Supposons que vous disposez d'un jeu de données écologiques contenant des informations sur les espèces observées lors d'inventaires dans différents sites. Les métadonnées de l'inventaire comprennent des informations telles que la date de l'inventaire, le nom de l'observateur, la localisation du site, etc.
 
@@ -42,8 +42,9 @@ merged_data <- merge(metadata, observations, by = "inventaire_id")
 
 # Mesurer la mémoire utilisée par l'objet merged_data
 memory_usage_merged <- object.size(merged_data) / 1024 / 1024
+nlines_merged <- nrow(merged_data)
 
-# Version optimisée en deux tableaux de dimention n-2
+# Version optimisée en deux tableaux de dimension n-2
 # Notez l'utilisation de la colonne inventaire_id présente dans les deux tables
 # pour lier les observations aux sites
 metadata_optimized <- unique(metadata)
@@ -52,6 +53,8 @@ observations_optimized <- unique(observations)
 # Mesurer la mémoire utilisée par les objets metadata_optimized et observations_optimized
 memory_usage_metadata <- object.size(metadata_optimized) / 1024 / 1024
 memory_usage_observations <- object.size(observations_optimized) / 1024 / 1024
+nlines_metadata <- nrow(metadata_optimized)
+nlines_observations <- nrow(observations_optimized)
 ```
 
 **Données assemblées en un seul tableau**
@@ -61,8 +64,15 @@ memory_usage_observations <- object.size(observations_optimized) / 1024 / 1024
 # Afficher les résultats
 # print("Données assemblées en un seul tableau :")
 knitr::kable(head(merged_data),format="markdown")
+```
 
-print(paste("Mémoire utilisée par l'approche avec un seul tableau :", memory_usage_merged, "Mo"))
+Mémoire utilisée par l'approche avec un seul tableau
+
+```{r}
+#| echo: false
+
+print(paste0("Mémoire utilisée : ", memory_usage_merged, " Mo"))
+print(paste0("Taille du tableau : ", nlines_merged, " lignes"))
 ```
 
 **Version optimisée en deux tableaux**
@@ -91,8 +101,10 @@ Mémoire utilisée par l'approche avec deux tableaux
 #| echo: false
 
 # print("Mémoire utilisée par l'approche avec deux tableaux :")
-print(paste("   - metadata_optimized :", memory_usage_metadata, "Mo"))
-print(paste("   - observations_optimized :", memory_usage_observations, "Mo"))
+print(paste("metadata_optimized :", memory_usage_metadata, "Mo"))
+print(paste("observations_optimized :", memory_usage_observations, "Mo"))
+print(paste0("Taille de tableau de métadonnées : ", nlines_metadata, " lignes"))
+print(paste0("Taille de tableau des observations : ", nlines_observations, " lignes"))
 ```
 
 **Comparaison de la différence de mémoire utilisée**
@@ -102,21 +114,23 @@ print(paste("   - observations_optimized :", memory_usage_observations, "Mo"))
 
 # Comparaison de la différence de mémoire utilisée
 memory_difference <- memory_usage_merged - (memory_usage_metadata + memory_usage_observations)
+line_difference <- nlines_merged - (nlines_observations + nlines_metadata)
 # print("\nDifférence de mémoire utilisée entre les deux approches :")
 print(paste("En Mo :", memory_difference, "Mo"))
+print(paste("En lignes :", line_difference, "lines"))
 print(paste("En pourcentage :", (memory_difference / memory_usage_merged) * 100, "%"))
 ```
 
 
-## Bases de données relationnelles
+## Les bases de données relationnelles
 
-Les bases de données redimentionnent le problème de multi-dimentionalité des données (en plusieurs tables de n-2) en plus d'optimiser la mémoire requise. Voici quelques avantages de l'approche :
+Les bases de données redimensionnent le problème de multidimensionnalité des données (en plusieurs tables de n-2) en plus d'optimiser la mémoire requise. Voici quelques avantages de l'approche :
 
 - **Maintenir l'intégrité entre les enregistrements de nos tableaux.** Une observation ne peut être faite sur un site qui n'existe pas.
 - **Normaliser et contrôler la qualité des données.** Chaque colonne est un type précis de données. Des contraintes peuvent être appliquées sur chaque colonne.
 - **Éviter les redondances dans le stockage de l'information.** Réduit aussi le risque d'erreurs lors de la saisie.
 
-Chaque dimention d'un jeu de données est isolée dans une table d'une base de données. Les tables sont liées entre elles par des relations pour maintenir la structure des données.
+Chaque dimension d'un jeu de données est isolée dans une table d'une base de données. Les tables sont liées entre elles par des relations pour maintenir la structure des données.
 
 ```{r}
 #| label: schéma_étoile
@@ -137,7 +151,7 @@ Le format entité-relation est une méthode de modélisation des bases de donné
 
 Dans ce format, une base de données relationnelle est constituée de tables, qui sont des entités. Chaque table représente une dimension spécifique du jeu de données, et chaque rangée de la table correspond à une occurrence spécifique de cette entité. Les attributs des entités sont représentés par les colonnes des tables, et chaque attribut contient une donnée spécifique.
 
-Dans une base de données chaque attribut/colonne est une donnée unique, c'est-à-dire qu'elle ne se répète pas ailleurs dans la base de données. La seule exception sont les colonnes d'associations, les clés.
+Dans une base de données, chaque attribut/colonne est une donnée unique, c'est-à-dire qu'elle ne se répète pas ailleurs dans la base de données. La seule exception est les colonnes d'associations, les clés.
 
 ### Le concept d'association et des clés primaires et secondaires
 
@@ -161,7 +175,7 @@ Pour établir ces associations, les tables utilisent des *clés primaires* et de
 
 Une clé primaire est essentielle pour assurer que chaque enregistrement soit unique dans la table, car elle **ne peut jamais être NULL** (c'est-à-dire qu'elle doit toujours contenir une valeur). Cela signifie qu'aucune autre rangée de la table ne peut avoir la même valeur pour sa clé primaire, garantissant ainsi l'unicité de chaque enregistrement.
 
-Il est important de noter que la clé primaire peut être composée de plusieurs colonnes, formant ainsi une clé primaire composite. Cette combinaison de colonnes agit toujours comme un identifiant unique pour chaque enregistrement, même si aucune des colonnes individuelles ne serait unique par elle-même. L'utilisation d'une clé primaire composite est utile lorsque nous avons besoin d'une clé plus complexe pour identifier de manière unique chaque enregistrement.
+Il est important de noter que la clé primaire peut être composée de plusieurs colonnes, formant ainsi une clé primaire composite. Cette combinaison de colonnes agit toujours comme un identifiant unique pour chaque enregistrement, même si aucune des colonnes individuelles n’était unique par elle-même. L'utilisation d'une clé primaire composite est utile lorsque nous avons besoin d'une clé plus complexe pour identifier de manière unique chaque enregistrement.
 
 Outre les clés primaires, les bases de données relationnelles utilisent également des clés secondaires, également appelées clés étrangères. Une clé secondaire est une colonne (ou un ensemble de colonnes) d'une table qui établit une relation avec la clé primaire d'une autre table. En reliant les tables par des clés secondaires, nous créons des relations entre les entités représentées par ces tables.
 
@@ -183,7 +197,7 @@ En somme, les clés primaires et secondaires sont des concepts fondamentaux dans
 
 ### Le type des attributs
 
-Un type de données doit être assigné à chaque attribut. Voici les principaux types utilisés, pour tous les types de données, [voir la documentation SQLite3](https://www.sqlite.org/datatype3.html).
+Un type de données doit être assigné à chaque attribut. Voici les principaux types utilisés, pour tous les types de données [voir la documentation SQLite3](https://www.sqlite.org/datatype3.html).
 
 | Appelation                | Type                 | Valeurs     | Taille           |
 |:--------------------------|:---------------------|:------------|:-----------------|
@@ -194,9 +208,9 @@ Un type de données doit être assigné à chaque attribut. Voici les principaux
 | `TIMESTAMP`,`DATE`,`TIME` | Dates et heures      | 1998-02-16  | 4 à 8 octets     |
 
 
-## Les systèmes de gestion de base de données
+## Les SGBD
 
-Les bases de données sont des entrepôts de données qui sont uniquement manipulés par le système de gestion de base de données ([SGBD](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es)). Les SGBD sont des logiciels intermédiaires entre l'utilisateur et la base de données, permettant d'exécuter des opérations sur la base de données, comme créer, interroger ou gérer, en cachant la complexité des manipulations des structures de la base de données. Alors qu'il existe plusieurs SGBD, ils opèrent tous à l'aide d'un langage de programmation, le *Structured Query Language* SQL.
+Les bases de données sont des entrepôts de données qui sont uniquement manipulés par le *système de gestion de base de données* ([SGBD](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es)). Les SGBD sont des logiciels intermédiaires entre l'utilisateur et la base de données, permettant d'exécuter des opérations sur la base de données, comme créer, interroger ou gérer, en cachant la complexité des manipulations des structures de la base de données. Alors qu'il existe plusieurs SGBD, ils opèrent tous à l'aide d'un langage de programmation, le *Structured Query Language* SQL.
 
 Dans le cadre du cours, nous utiliserons le SGBD `SQLite3`.
 
@@ -205,7 +219,7 @@ Dans le cadre du cours, nous utiliserons le SGBD `SQLite3`.
 ```{r}
 #| label: db_flow
 #| echo: false
-#| out-width: 70%
+#| out-width: 20%
 #| fig-cap: |
 #|    Serveur de base de données.
 #| fig-alt: |
@@ -214,14 +228,14 @@ Dans le cadre du cours, nous utiliserons le SGBD `SQLite3`.
 knitr::include_graphics("./assets/img/db_flow.svg", dpi = 270)
 ```
 
-En revanche, l'approche de serveur de base de données permet d'avoir plusieurs clients connectés sur un même serveur qui héberge la base de données. On peut donc être plusieurs à interagir en même temps avec. On pourrait envisager la situation suivante où plusieurs clients interragissent simultanément avec la base de données. Cependant, l'approche multi-utilisateurs peut uniquement se faire si le serveur est distant.
+En revanche, l'approche de serveur de base de données permet d'avoir plusieurs clients connectés sur un même serveur qui héberge la base de données. On peut donc être plusieurs à interagir en même temps avec. On pourrait envisager la situation suivante où plusieurs clients interagissent simultanément avec la base de données. Cependant, l'approche multi-utilisateur peut uniquement se faire si le serveur est distant.
 
 ```{r}
 #| label: db_flow_multi
 #| echo: false
-#| out-width: 70%
+#| out-width: 60%
 #| fig-cap: |
-#|    Fichier de base de données.
+#|    Approche multi-utilisateur.
 #| fig-alt: |
 #|   Fichier.
 
@@ -230,250 +244,6 @@ knitr::include_graphics("./assets/img/db_flow_multi.svg", dpi = 270)
 
 > **Le principe client-serveur**
 > Le *client* est un logiciel installé sur votre ordinateur. C'est le SGBD. On se sert de ce logiciel pour interagir avec le *serveur* de base de données présent localement ou à distance.
-> C'est sur ce principe qu'est bâti l'internet. Les clients sont vos logiciels navigateurs (chrome, firefox, etc) qui interragissent en envoyant des requêtes à des serveurs via une adresse URL.
+> C'est sur ce principe qu'est bâti l'internet. Les clients sont vos logiciels navigateurs (Chrome, Firefox, etc) qui interagissent en envoyant des requêtes à des serveurs via une adresse URL.
 > Le même principe sera utilisé pour interagir avec votre base de données, mais via une connexion à un fichier enregistré dans votre ordinateur.
  
-## Le langage SQL
-
-Le `SQL` est un langage informatique désigné spécifiquement pour manipuler des base de données relationnelles. C'est le langage utilisé pour transmettre nos instrusctions au SGBD. Il permet de :
-
-1. Créer une base de données (`CREATE DATABASE`).
-2. Créer des tables et établir des relations (`CREATE TABLE`).
-3. Insérer des données (`INSERT`).
-4. Interroger les données par requête (`SELECT`).
-5. Supprimer des données ou des tables (`DROP`, `DELETE`).
-6. Mettre à jour des données ou des tables (`UPDATE`, `ALTER`).
-7. Supprimer la base de données (`DROP DATABASE`).
-
-Chacune de ces commandes est une instruction `SQL` envoyée au serveur pour manipuler et interroger la base de données.
-
-Les instructions `SQL` sont près de la structure des phrases ordinaire en anglais. Vous trouverez le langage plus intuitif que beaucoup d'autres, avec notament des instructions comme `CREATE`, `JOIN`, `GROUP BY`, etc. Le langage est déclaratif, il permet de décrire le résultat escompté, sans avoir à décrire comment l'obtenir. C'est une charactéristique voulue lors de sa création pour faciliter l'apprentissage et la lecture.
-
-### Créer et se connecter au fichier de base de données
-
-
-
-## `RSQLite` pour interagir avec la base de données
-
-Précédemment, nous avons vu les aspects importants de la conceptualisation d'une base de données avec les entités, les relations, les attributs et les types. Voyons maintenant comment passer au modèle informatique.
-
-#### Conceptualiser et concevoir
-
-- Le modèle conceptuel
-   1. Faire une liste des variables
-   2. Regrouper les variables dans des tables
-   3. Établir le type d'association entre les tables
-   4. Établir les clés primaires et étrangères
-   5. Assigner les types de données aux variables
-
-- Le modèle informatique
-   1. Créer et se connecter au fichier de base de données
-   2. Créer les tables et spécifier les clés
-   3. Ajouter de l'information dans les tables
-   4. Faire des requêtes pour extraire l'information
-
-#### Créer une nouvelle base de données
-
-Pour faciliter l'interaction avec la base de données et simplifier les manipulations, nous utiliserons RStudio et la librairie open source `RSQLite` qui contient le client SQLite3. `RSQLite` propose une interface dans R qui permet d'interagir avec les bases de données.
-
-D'abord, il faut se connecter à la base de données à l'aide de la commande `dbConnect()` et sauver cette connexion dans un objet. L'information contenue dans l'objet est  Nous réutiliserons cet objet à toutes les fois que nous enverrons une commande à la base de données pour spécifier la connection client-serveur.
-
-```R
-# install.packages('RSQLite')
-library(DBI)
-
-ma_bd <- dbConnect(RSQLite::SQLite(), dbname="./assets/data/reseau.db")
-## !ATTENTION!: Ceci est mon chemin d'accès vers le fichier!
-## Astuces: getwd() et setwd()
-
-dbDisconnect(ma_bd)
-```
-
-Ici, `ma_bd` est un objet contenant la connexion avec le serveur/fichier de base de données. 
-
-#### Créer des 
-
-
-#### Injecter des données
-
-Une table de données peut facilement être copiée dans une base de données SQLite avec `dbWriteTable()`. Pour ce faire, le tableau peut être ajouté comme une nouvelle table :
-
-```R
-ma_db <- dbConnect(RSQLite::SQLite(), dbname="./assets/data/reseau.db")
-dbWriteTable(ma_db, "mtcars", mtcars)
-dbWriteTable(ma_db, "iris", iris)
-
-# Lister les tables
-dbListTables(ma_db)
-#> [1] "iris"   "mtcars"
-```
-
-Des données peuvent aussi êtres ajoutées à une table déjà existante :
-
-```R
-auteurs <- read.csv(file = './assets/data/db_reseau/authors.csv')
-
-# Injection des enregistrements dans la BD
-dbWriteTable(con, append = TRUE, name = "auteurs", value = auteurs, row.names = FALSE)
-```
-
-#### Effectuer des requêtes
-
-Pour envoyer des instructions, c'est la commande `dbSendQuery()` qui est utilisée. Sont premier argument est l'object contenant la connexion et le second les instructions SQL.
-
-```R
-resr <- dbSendQuery(mydb, 'SELECT * FROM mtcars LIMIT 5')
-res
-#>    mpg cyl disp  hp drat    wt  qsec vs am gear carb
-#> 1 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-#> 2 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-#> 3 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
-#> 4 21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
-#> 5 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
-```
-
-> Il est à noter que le code SQL est enchassé entre `"` pour former une chaine de charactère. **L'ommition des `"` est une cause d'erreur fréquente !!!**
-
-#### Fermer la connexion
-
-Souvent oublié, il faut toujours fermer la connexion, se déconnecter de la base de données, avec la commande `dbDisconnect()` :
-
-```R
-dbDisconnect(ma_bd)
-```
-
-
-## Utilisation avancée du `SQL`
-
-Les requêtes serviront à créer les tables de la base de données, à spécifier les clés, à filtrer les données et à extraire les données de la dase de données. Pour ce faire, une certaine maitrise du langage SQL est nécessaire.
-
-```SQL
-SELECT colonnes/champs
-FROM table1
-JOIN table2 ON table1.foreignKey = table2.primaryKey
-WHERE criteres
-ORDER BY colonne1 ASC
-LIMIT 10;
-```
-
-### Sélectionner des données
-
-Les requêtes SQL sont une suite d'opérations séquentielles débutant par la définition des champs à être retournés `SELECT`, suivi de la table d'où les données sont extraites `FROM` et finalement des autres commandes :
-
-```SQL
-SELECT champ1, champ2
-FROM table1;
-```
-
-> Notez que toutes requêtes SQL doit se terminer par `;`, sans quoi un message d'erreur est retourné.
-
-`*` retourne tous les champs :
-
-```SQL
-SELECT *
-FROM table1;
-```
-
-`--` le double tiret permet d'écrire des commentaires :
-
-```SQL
--- Sélection de tous les champs
-SELECT *
-FROM table1;
-```
-
-`AS` permet de renommer un champ :
-
-```SQL
-SELECT prenom_nom AS auteur, institution_id AS employeur
-FROM table1;
-```
-
-### Filtrer la requête
-
-`WHERE` spécifie les critères de la requête. 
-
-On ne peut pas filtrer (`WHERE`) avant que les opérations `SELECT`, `FROM` et `JOIN` soient complétées.
-
-```SQL
-SELECT id, nom, no_telephonne, courriel
-FROM client
-WHERE ville = 'Sherbrooke';
-```
-
-Les opérateur de comparaison standards tels que `>=`, `<=`, `=` sont accessibles pour les valeurs numériques.
-
-Les valeurs de texte sont filtrés avec `LIKE` et `NOT LIKE` :
-
-```SQL
-SELECT id, nom, no_telephonne, courriel
-FROM client
-WHERE nom LIKE '%Beauchamp%';
-```
-
-`%` tient pour n'importequel caractère (Lyne Beauchamp, Julien Beauchamp-Lavallée) alors que `_` est utilisé pour un seul caractère (`WHERE nom LIKE 'Beauchamp_'` : Beauchamp, Beauchamps, etc.).
-
-`IS NULL` et `IS NOT NULL` filtrent les valeurs nulles :
-
-```SQL
-SELECT id, nom, no_telephonne, courriel
-FROM client
-WHERE nom IS NOT NULL;
-```
-
-On peut aussi effecturer des filtres multi-critères avec `AND` et `OR` :
-
-```SQL
-SELECT id, nom, no_telephonne, date_de_naissance AS annee
-FROM client
-WHERE
-  (annee <= 2008 AND annee > 2000)
-  OR (annee >= 1992 AND annee <= 1994);"
-```
-
-
-### Autres commandes
-
-- `DISTINCT`
-- `LIMIT`
-- `ORDER BY`
-
-
-### Agréger l'information
-
-Dand la sélection des champs :
-
-- Opérations sur les champs `MAX`, `MIN`, `SUM`, `AVG`, `COUNT`
-- Opérations sur plusieurs champs `*`, `/`, `-,` etc
-- `COUNT`
-- `GROUP BY` définit les champs sur lequel se fera l'agrégation des données.
-
-
-
-### CREATE TABLE
-
-Voici un exemple d'instruction SQL pour créer la table `auteurs`.
-
-```SQL
-CREATE TABLE auteurs (
-    auteur      VARCHAR(50),
-    statut      VARCHAR(40),
-    institution VARCHAR(200),
-    ville       VARCHAR(40),
-    pays        VARCHAR(40),
-    PRIMARY KEY (auteur)
-);
-```
-
-- `auteurs` est le nom de la table
-- Chaque attribut de la table (`auteur`,`statut` etc) dispose d'un type de données (`varchar(40)`,`DATE`,  etc) [Type de données SQLite](https://www.sqlite.org/datatype3.html)
-- La dernière ligne correspond aux contraintes de la table telle que la clé primaire.
-- **Question:** Cette clé primaire est composite ou simple?
-
-## Exercices
-
-## Refs
-
-- [*R for data science*](https://github.com/hadley/r4ds/blob/main/databases.qmd)
-- [*SQL for Data Scientists*](https://sqlfordatascientists.com) by Renée M. P. Teate is an introduction to SQL designed specifically for the needs of data scientists, and includes examples of the sort of highly interconnected data you're likely to encounter in real organizations.
--  [*Practical SQL*](https://www.practicalsql.com) by Anthony DeBarros is written from the perspective of a data journalist (a data scientist specialized in telling compelling stories) and goes into more detail about getting your data into a database and running your own DBMS.

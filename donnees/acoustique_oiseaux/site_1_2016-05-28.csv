@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+1,46.8088,"19:00:00","19:03:00","28/05/2016","19:01:16","présence","Botaurus lentiginosus","species","American bittern","Butor d'amérique","Animalia","Chordata","Aves","Pelecaniformes","Ardeidae","Botaurus","Botaurus lentiginosus"
+1,46.8088,"23:00:00","23:03:00","28/05/2016","23:00:44","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+149,48.4878,"03:00:00","03:15:00","2019-07-05","03:01:34","présence","Empidonax alnorum","species","Alder flycatcher","Moucherolle des aulnes","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Empidonax","Empidonax alnorum"
+149,48.4878,"03:00:00","03:15:00","2019-07-05","03:11:38","présence","Chordeiles minor","species","Common nighthawk","Engoulevent d'amérique","Animalia","Chordata","Aves","Caprimulgiformes","Caprimulgidae","Chordeiles","Chordeiles minor"
+149,48.4878,"03:00:00","03:15:00","2019-07-05","03:11:28","présence","Chordeiles minor","species","Common nighthawk","Engoulevent d'amérique","Animalia","Chordata","Aves","Caprimulgiformes","Caprimulgidae","Chordeiles","Chordeiles minor"
+149,48.4878,"03:00:00","03:15:00","2019-07-05","03:00:02","présence","Zonotrichia albicollis","species","White-throated sparrow","Bruant à gorge blanche","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Zonotrichia","Zonotrichia albicollis"

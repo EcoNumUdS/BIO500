@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+2,46.7941,"01:00:00","01:15:00","02/06/2016","01:06:19","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"
+2,46.7941,"03:00:00","03:15:00","02/06/2016","03:09:44","présence","Botaurus lentiginosus","species","American bittern","Butor d'amérique","Animalia","Chordata","Aves","Pelecaniformes","Ardeidae","Botaurus","Botaurus lentiginosus"
+2,46.7941,"03:00:00","03:15:00","02/06/2016","03:13:57","présence","Seiurus aurocapilla","species","Ovenbird","Paruline couronnée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Seiurus","Seiurus aurocapilla"

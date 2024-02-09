@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+154,50.1999,"12:00:00","12:03:00","2019-06-15","12:00:00","présence","Dendroica magnolia","species","Magnolia warbler","Paruline à tête cendrée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Dendroica","Dendroica magnolia"
+154,50.1999,"12:00:00","12:03:00","2019-06-15","12:02:10","présence","Haemorhous purpureus","species","Purple finch","Roselin pourpré","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Haemorhous","Haemorhous purpureus"
+154,50.1999,"12:00:00","12:03:00","2019-06-15","12:00:34","présence","Regulus calendula","species","Ruby-crowned kinglet","Roitelet à couronne rubis","Animalia","Chordata","Aves","Passeriformes","Regulidae","Regulus","Regulus calendula"
+154,50.1999,"12:00:00","12:03:00","2019-06-15","12:00:16","présence","Leiothlypis peregrina","species","Tennessee warbler","Paruline obscure","Animalia","Chordata","Aves","Passeriformes","Parulidae","Leiothlypis","Leiothlypis peregrina"

@@ -1,0 +1,3 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+151,45.0293,"01:00:00","01:15:00","2019-04-29","01:00:59","présence","Porzana carolina","species","Sora","Marouette de caroline","Animalia","Chordata","Aves","Gruiformes","Rallidae","Porzana","Porzana carolina"
+151,45.0293,"01:00:00","01:15:00","2019-04-29","01:00:54","présence","Rallus limicola","species","Virginia rail","Râle de Virginie","Animalia","Chordata","Aves","Gruiformes","Rallidae","Rallus","Rallus limicola"

@@ -1,0 +1,6 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+22,46.7112,"05:00:00","05:15:00","04/08/2017","05:04:03","présence","Bombycilla cedrorum","species","Cedar waxwing","Jaseur d'amérique","Animalia","Chordata","Aves","Passeriformes","Bombycillidae","Bombycilla","Bombycilla cedrorum"
+22,46.7112,"05:00:00","05:15:00","04/08/2017","05:06:13","présence","Zenaida macroura","species","Mourning dove","Tourterelle triste","Animalia","Chordata","Aves","Columbiformes","Columbidae","Zenaida","Zenaida macroura"
+22,46.7112,"06:00:00","06:15:00","04/08/2017","06:14:12","présence","Bombycilla cedrorum","species","Cedar waxwing","Jaseur d'amérique","Animalia","Chordata","Aves","Passeriformes","Bombycillidae","Bombycilla","Bombycilla cedrorum"
+22,46.7112,"06:00:00","06:15:00","04/08/2017","06:03:30","présence","Dryocopus pileatus","species","Pileated woodpecker","Grand pic","Animalia","Chordata","Aves","Piciformes","Picidae","Dryocopus","Dryocopus pileatus"
+22,46.7112,"07:00:00","07:15:00","04/08/2017","07:00:52","présence","Contopus virens","species","Eastern wood pewee","Pioui de l'est","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Contopus","Contopus virens"

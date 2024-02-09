@@ -1,0 +1,5 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+160,46.8771,"08:14:06","08:29:06","2019-05-31","NULL","présence","Empidonax alnorum","species","Alder flycatcher","Moucherolle des aulnes","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Empidonax","Empidonax alnorum"
+160,46.8771,"08:14:06","08:29:06","2019-05-31","NULL","présence","Empidonax flaviventris","species","Yellow-bellied flycatcher","Moucherolle à ventre jaune","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Empidonax","Empidonax flaviventris"
+160,46.8771,"13:00:00","13:15:00","2019-05-31","NULL","présence","Picidae","family","Woodpeckers","Fourmiliers","Animalia","Chordata","Aves","Piciformes","Picidae","NULL","NULL"
+160,46.8771,"21:00:00","21:15:00","2019-05-31","NULL","présence","Geothlypis trichas","species","Common yellowthroat","Paruline masquée","Animalia","Chordata","Aves","Passeriformes","Parulidae","Geothlypis","Geothlypis trichas"

@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+176,47.6532,"08:00:00","08:03:00","2018-05-29","08:02:05","présence","Regulus satrapa","species","Golden-crowned kinglet","Roitelet à couronne dorée","Animalia","Chordata","Aves","Passeriformes","Regulidae","Regulus","Regulus satrapa"
+176,47.6532,"08:00:00","08:03:00","2018-05-29","08:00:48","présence","Carduelis pinus","species","Pine siskin","Tarin","Animalia","Chordata","Aves","Passeriformes","Fringillidae","Carduelis","Carduelis pinus"
+176,47.6532,"08:00:00","08:03:00","2018-05-29","08:00:28","présence","Empidonax flaviventris","species","Yellow-bellied flycatcher","Moucherolle à ventre jaune","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Empidonax","Empidonax flaviventris"

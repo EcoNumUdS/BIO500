@@ -1,0 +1,8 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+14,47.1199,"19:00:00","19:03:00","29/06/2017","19:01:55","présence","Passeriformes","order","Perching birds","Passereaux","Animalia","Chordata","Aves","Passeriformes","NULL","NULL","NULL"
+14,47.1199,"19:00:00","19:03:00","29/06/2017","19:00:02","présence","Cyanocitta cristata","species","Blue jay","Geai bleu","Animalia","Chordata","Aves","Passeriformes","Corvidae","Cyanocitta","Cyanocitta cristata"
+14,47.1199,"19:00:00","19:03:00","29/06/2017","19:02:52","présence","Corvus corax","species","Common raven","Grand corbeau","Animalia","Chordata","Aves","Passeriformes","Corvidae","Corvus","Corvus corax"
+14,47.1199,"19:00:00","19:03:00","29/06/2017","19:00:24","présence","Leiothlypis ruficapilla","species","Nashville warbler","Paruline à joues grises","Animalia","Chordata","Aves","Passeriformes","Parulidae","Leiothlypis","Leiothlypis ruficapilla"
+14,47.1199,"19:00:00","19:03:00","29/06/2017","19:00:00","présence","Melospiza georgiana","species","Swamp sparrow","Bruant des marais","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Melospiza","Melospiza georgiana"
+14,47.1199,"19:00:00","19:03:00","29/06/2017","19:00:05","présence","Catharus ustulatus","species","Swainson's thrush","Grive à dos olive","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus ustulatus"
+14,47.1199,"19:00:00","19:03:00","29/06/2017","19:00:09","présence","Catharus ustulatus","species","Swainson's thrush","Grive à dos olive","Animalia","Chordata","Aves","Passeriformes","Turdidae","Catharus","Catharus ustulatus"

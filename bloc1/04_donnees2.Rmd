@@ -678,6 +678,16 @@ Assurez vous que le script fonctionne sur les différents ordinateurs des membre
 
 ---
 
+# Évaluation
+
+Chaque équipe doit évaluer les scripts d'assemblage et de nettoyage d'une autre équipe
+
+- À compléter pour le **18 mars**
+- La personne qui a remis le travail est responsable d'entrer l'évaluation
+- Tous les commentaires doivent être formulés comme une question
+
+---
+
 # Lectures
 
 ## Discussion sur l'utilisation de modèles de langage

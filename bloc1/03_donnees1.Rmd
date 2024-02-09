@@ -975,16 +975,63 @@ Les entrées dans la table *collaborations* doivent être faites **dans les deux
 
 # Lectures et travail pour la semaine prochaine
 
-## Lectures
+## Travail
 
-- Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
-- Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
+- Assembler les données				
+- Valider et nettoyer les données				
 
+## Évaluation
+
+Évaluation formative à remettre pour le 11 mars sur Moodle (ATELIER Assemblage, nettoyage et validation des données)
+
+Vous avez à soumettre vos scripts qui servent à assembler, nettoyer et valider les données. Vos scripts doivent produire une ou plusieurs tables de données (dataframe) prêtes à être injectées. Chacun de ces dataframes peut représenter une table de la base de données à venir.
 
 ```{r,echo=FALSE}
 # delete db file
 system('rm ./assets/data/reseau.db')
 ```
+
+---
+
+# Lectures et travail pour la semaine prochaine
+
+## Évaluation
+
+**Un membre par équipe** aura à remettre un dossier .zip contenant les scripts et les données
+
+- Remise par un seul membre par équipe
+- Spécifiez pour quel jeu de donnée les scripts sont utilisés
+- Commentez vos scripts pour que votre processus soit évident aux autres
+- Divisez les tâches en fonctions distinctes
+- Un script par fonction
+- Un script principal qui décrit le processus et fait appel aux fonctions qui exécutent les tâches
+- Vos scripts doivent produire un ou des dataframes prêts à être injectés dans la base de données. Chacun des dataframes doit représenter une table de la base de données
+
+---
+
+# Lectures et travail pour la semaine prochaine
+
+## Évaluation
+
+La grille de correction est diponible sur Moodle 
+
+Bloc 1 > Assemblage, nettoyage et validation des données > Formulaire d'évaluation
+
+- Structure du programme
+- Fonctionnement du programme
+- Respect des bonnes pratiques de programmation
+
+---
+
+# Lectures et travail pour la semaine prochaine
+
+## Évaluation
+
+.center[
+<img src="assets/img/grille_eval1.png" width="90%"></img>
+]
+
+<!-- Ajouter grille d'évaluation sur Moodle -->
 
 ---
 

@@ -1,0 +1,4 @@
+"site_id","lat","time_start","time_finish","date_obs","time_obs","variable","valid_scientific_name","rank","vernacular_en","vernacular_fr","kingdom","phylum","class","order","family","genus","species"
+306,58.05353,"05:00:00","05:15:00","2018-07-15","05:12:53","présence","Junco hyemalis","species","Dark-eyed junco","Junco ardoisé","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Junco","Junco hyemalis"
+306,58.05353,"05:00:00","05:15:00","2018-07-15","05:11:26","présence","Passerella iliaca","species","Fox sparrow","Bruant fauve","Animalia","Chordata","Aves","Passeriformes","Passerellidae","Passerella","Passerella iliaca"
+306,58.05353,"21:00:00","21:15:00","2018-07-15","21:13:57","présence","Empidonax flaviventris","species","Yellow-bellied flycatcher","Moucherolle à ventre jaune","Animalia","Chordata","Aves","Passeriformes","Tyrannidae","Empidonax","Empidonax flaviventris"
