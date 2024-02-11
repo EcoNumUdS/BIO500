@@ -12,9 +12,6 @@ Plutôt que de stocker ces données dans un seul tableau où les répétitions p
 ```{r}
 #| echo: false
 
-# Charger la bibliothèque sp pour manipuler des données spatiales
-library(sp)
-
 # Génération de données
 n_inventaires <- 100000
 n_especes <- 100

@@ -6,10 +6,18 @@
 
 - **Enseignant:** Victor Cameron
 
+## Livre du cours
+
+[![](https://img.shields.io/badge/HTML-Livre-orange)](https://econumuds.github.io/BIO500/)
+
+- Matériel de cours
+- Tutoriels
+- Exemples
+- Matériel supplémentaire
 
 ## Bloc 1: Planification de la collecte et organisation des données
 
-[![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc1/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc1/bloc1.pdf)
+[![](https://img.shields.io/badge/HTML-Livre-orange)](https://econumuds.github.io/BIO500/donnees.html) [![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc1/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc1/bloc1.pdf)
 
 - Types de données
 - Formulaires de saisie
@@ -18,7 +26,7 @@
 
 ## Bloc 2: Outils pour une science reproductible et transparente
 
-[![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc2/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc2/bloc2.pdf)
+[![](https://img.shields.io/badge/HTML-Livre-orange)](https://econumuds.github.io/BIO500/reproductibilite.html) [![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc2/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc2/bloc2.pdf)
 
 - Système de contrôle de version git
 - Le cahier de laboratoire RMarkdown
@@ -26,7 +34,7 @@
 
 ## Bloc 3: Visualisation des données
 
-[![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc3/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc3/bloc3.pdf)
+[![](https://img.shields.io/badge/HTML-Livre-orange)](https://econumuds.github.io/BIO500/visualiser.html) [![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc3/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc3/bloc3.pdf)
 
 - Les types de graphiques
 - Fonctions graphiques de base sur R
@@ -35,7 +43,7 @@
 
 ## Bloc 4: Communication scientifique
 
-[![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc4/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc4/bloc4.pdf)
+[![](https://img.shields.io/badge/HTML-Livre-orange)](https://econumuds.github.io/BIO500/communiquer.html) [![](https://img.shields.io/badge/HTML-Pr%C3%A9sentation-blue)](https://econumuds.github.io/BIO500/bloc4/) [![](https://img.shields.io/badge/PDF-Pr%C3%A9sentation-yellow)](https://econumuds.github.io/BIO500/bloc4/bloc4.pdf)
 
 - Rédaction de rapports et d'articles scientifiques
 - Mise en page
