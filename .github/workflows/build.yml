@@ -21,9 +21,6 @@ jobs:
         with:
             r-version: '4.2.0'
 
-      - name: Install system dependencies
-        run: sudo apt-get install librsvg
-
       - name: Install R dependencies
         run: make install
 
@@ -41,7 +38,7 @@ jobs:
       - name: Render quarto book
         uses: quarto-dev/quarto-actions/render@v2
         with:
-          to: all
+          to: html
           path: livre
 
       - name: prepare html and pdf files for deployment
