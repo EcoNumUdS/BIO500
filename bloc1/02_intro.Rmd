@@ -241,6 +241,11 @@ Nous progresserons dans l'exécution du travail de session. Le travail sera divi
 
 Le matériel de cours est disponible dans le livre en ligne [https://econumuds.github.io/BIO500/](https://econumuds.github.io/BIO500/).
 
+.center[
+  <img src="assets/img/livre.jpng" height="300px"></img>
+]
+
+
 ---
 
 # Évaluation
