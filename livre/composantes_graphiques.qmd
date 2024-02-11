@@ -129,7 +129,7 @@ plot(x = 1:10, y = runif(n = 10, min = 1, max = 10))
 La taille du texte est définie par le paramètre `cex` de la commande `par()`. La valeur par défaut est 1. La valeur 2 permet d'augmenter la taille du texte de 200% et la valeur 0.5 permet de diminuer la taille du texte de 50%.
 
 ```{r cex}
-par(cex = 2)
+par(cex = 0.5, mar=c(1,1,1,1))
 plot(x = 1:10, y = runif(n = 10, min = 1, max = 10))
 ```
 
