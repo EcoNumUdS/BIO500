@@ -1,6 +1,6 @@
 # Méthodes en écologie computationnelle
 
-[![Build html](https://github.com/EcoNumUdS/BIO500/workflows/Build%20html/badge.svg)](https://github.com/EcoNumUdS/BIO500/actions)
+[![Render book and slides](https://github.com/EcoNumUdS/BIO500/actions/workflows/build.yml/badge.svg)](https://github.com/EcoNumUdS/BIO500/actions/workflows/build.yml)
 
 (2 crédits)
 
