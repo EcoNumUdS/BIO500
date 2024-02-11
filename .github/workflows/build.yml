@@ -21,6 +21,9 @@ jobs:
         with:
             r-version: '4.2.0'
 
+      - name: Install system dependencies
+        run: sudo apt-get install librsvg
+
       - name: Install R dependencies
         run: make install
 
