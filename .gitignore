@@ -70,3 +70,8 @@ index_files
 *.synctex.gz
 *.synctex.gz(busy)
 *.pdfsync
+
+
+# Data files
+donnees/prep_benthos.r
+donnees/prep_oiseaux.r

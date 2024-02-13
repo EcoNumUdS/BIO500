@@ -1,4 +1,4 @@
-# Inventaires du Benthos au Québec
+# Inventaires des oiseaux au Québec
 
 Ce jeu de données mesure la composition et la phénologie acoustique des oiseaux au Québec. Il est issu d'un programme de suivi de la biodiversité acoustique réalisé par le Ministère de l'Environnement, de la Lutte contre les Changements Climatiques, de la Faune et des Parcs (MELCCFP) dans le cadre du Réseau de suivi de la biodiversité du Québec. Ces données recensent les observations acoustiques d'oiseaux.
 
