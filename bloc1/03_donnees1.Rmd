@@ -39,40 +39,21 @@ class: title-slide, middle
 
 ---
 
-# Biodiversité Québec
-
-## Offre de stage
-
-Biodiversité Québec développe une infrastructure informatique qui servira à documenter en temps réel
-l'état de la biodiversité et ses changements
-
-### Rôles
-- Numériser et intégrer des données à la base de données
-- Participation aux activités de développement éco-informatiques
-- Participation à diverses activité en fonction des aptitudes et des intérêts
-- Participation aux rencontres d'équipe, avec le ministère et avec les partenaires
-
-### Exigences
-
-Les outils utilisés (SQL, R, Git) seront couverts dans le cours
-
----
-
 # Plan de cours
 
 ## Dernière séance
 
-Nous avons défini les champs à documenter.
+Nous avons exploré les jeux de données
 
 ## Aujourd'hui
 
-Collecter des données : format et types de données
+Gestion des données : format et types de données
 
 Entreposer et archiver : bases de données relationnelles
 
 - Conceptualiser
-- Interagir avec une base de données (SQL)
 - Construire une base de données (R + SQL)
+- Interagir avec une base de données (SQL)
 
 ---
 class: inverse, center, middle
@@ -197,6 +178,7 @@ df2 <- dcast(ids + esp ~ annees, data=df, value.var="dhp_mm")
 names(df2)[1] <- "ID"
 kable(df2,format="markdown")
 ```
+
 - Privilégier le format long
 - Une ligne = une observation
 ]]
@@ -215,6 +197,7 @@ kable(df2,format="markdown")
   df <- data.frame(ID_plot=ID_plot,ID_arbre=ids,ID_multi=sub_ids,esp=esp,annees=annees,dhp_mm=dhp_mm)
   kable(df,format="markdown")
   ```
+
 ]
 
 .pull-right[
@@ -578,9 +561,7 @@ class: inverse, center, middle
 # Étape 1. Faire une liste des variables
 
 
-1. Dresser la liste des informations collectées par les différents groupes.
-2. Regrouper les variables communes entre les équipes pour obtenir un format de données conjoint.
-
+1. Dresser la liste des informations collectées.
 
 ---
 
@@ -658,6 +639,9 @@ Une façon de représenter l'information dans un modèle de type entités-relati
 
 L'étape suivante est de se connecter à la base de données afin de transcrire ce modèle conceptuel en modèle logique (c.a.d compréhensible par l'ordinateur).
 
+.center[
+  <img src="assets/img/star_eg.png" width="30%"></img>
+]
 
 ---
 class: inverse, center, middle
@@ -948,43 +932,44 @@ dbSendQuery(con,"DROP TABLE auteurs;")
 # Supprimer la base de données
 
 ```{r, eval=FALSE}
-dbSendQuery(con,"DROP DATABASE reseau;")
 dbDisconnect(con)
 ```
 
-- `DROP DATABASE` fonctionne seulement avec d'autres SGBDs (approche serveur).
-- Dans le cas de SQLite3, on supprime simplement le fichier `*.db`.
+- Dans le cas de SQLite3, on supprime la base de données en déplaçant le fichier `*.db` dans la corbeille.
 - `dbDisconnect(con)` permet de fermer la connection avec le fichier de base de données (permet à un autre utilisateur de se connecter).
 
 ---
+class: inverse, center, middle
 
-# Lectures et travail pour la semaine prochaine
+# Lectures et travail pour le prochain cours
 
-## Travail
-
-- Maintenant que vous en savez plus sur le format des données, vous devez écrire le script R pour créer votre base de données en spécifiant les tables, les champs et les clés liant les tables entre elles.
-
-- Récoltez les données
-
-## Les données devront être déposées sur Moodle d'ici vendredi.
-
-Les entrées dans la table *collaborations* doivent être faites **dans les deux sens** (auteur1, auteur2) et (auteur2, auteur1).
-
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
 ---
 
-# Lectures et travail pour la semaine prochaine
+# Lectures et travail pour le prochain cours
 
 ## Travail
 
-- Assembler les données				
-- Valider et nettoyer les données				
+- Assembler les données	en tables			
+- Valider et nettoyer les données	(scripter des tests pour *détecter* et *corriger* les erreurs potentielles)
+- Conceptualiser la base de données	(tables, champs et clés)
+- Compléter l'évaluation formative #1
 
-## Évaluation
+---
+class: inverse, center, middle
 
-Évaluation formative à remettre pour le 11 mars sur Moodle (ATELIER Assemblage, nettoyage et validation des données)
+# Évaluation formative #1 
 
-Vous avez à soumettre vos scripts qui servent à assembler, nettoyer et valider les données. Vos scripts doivent produire une ou plusieurs tables de données (dataframe) prêtes à être injectées. Chacun de ces dataframes peut représenter une table de la base de données à venir.
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
+---
+
+# Évaluation formative #1 
+
+**À remettre pour le 11 mars sur Moodle**
+
+Vous avez à soumettre vos scripts qui servent à assembler, nettoyer et valider les données. Vos scripts doivent produire une ou plusieurs tables de données (dataframe) prêtes à être injectées. Chacun de ces dataframes représente une table de la base de données à venir.
 
 ```{r,echo=FALSE}
 # delete db file
@@ -993,45 +978,49 @@ system('rm ./assets/data/reseau.db')
 
 ---
 
-# Lectures et travail pour la semaine prochaine
-
-## Évaluation
+# Évaluation formative #1
 
 **Un membre par équipe** aura à remettre un dossier .zip contenant les scripts et les données
 
-- Remise par un seul membre par équipe
-- Spécifiez pour quel jeu de donnée les scripts sont utilisés
+Résumé des consignes :
+
+- Spécifiez pour quel jeu de données les scripts sont utilisés
+- Validation : tests pour détecter et corriger les erreurs *présentes* et *potentielles*
 - Commentez vos scripts pour que votre processus soit évident aux autres
 - Divisez les tâches en fonctions distinctes
-- Un script par fonction
 - Un script principal qui décrit le processus et fait appel aux fonctions qui exécutent les tâches
-- Vos scripts doivent produire un ou des dataframes prêts à être injectés dans la base de données. Chacun des dataframes doit représenter une table de la base de données
+- Le produit final sera un ou des dataframes prêts à être injectés dans la base de données. Chacun des dataframes doit représenter une table de la base de données
 
 ---
 
-# Lectures et travail pour la semaine prochaine
+# Évaluation formative #1
 
-## Évaluation
+## La grille de correction est diponible sur Moodle
 
-La grille de correction est diponible sur Moodle 
-
-Bloc 1 > Assemblage, nettoyage et validation des données > Formulaire d'évaluation
-
-- Structure du programme
-- Fonctionnement du programme
-- Respect des bonnes pratiques de programmation
+## Le dépôt se fait dans l'Atelier du Bloc 1 sur Moodle
 
 ---
 
-# Lectures et travail pour la semaine prochaine
+# Évaluation formative #1
 
-## Évaluation
+[Grille d'évaluation](https://github.com/EcoNumUdS/BIO500/ressources/exercie_donnees_grille_de_correction.pdf)
 
-.center[
-<img src="assets/img/grille_eval1.png" width="90%"></img>
-]
+Les questions questions devront êtres posées sur le forum de Moodle.
 
-<!-- Ajouter grille d'évaluation sur Moodle -->
+---
+class: inverse, center, middle
+
+# Discussion
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
+---
+
+# Discussion
+
+## 7 minutes pour résumer le point de vue de l'auteur et ses arguments
+
+## 10 minutes de discussion
 
 ---
 

@@ -242,7 +242,7 @@ Nous progresserons dans l'exécution du travail de session. Le travail sera divi
 Le matériel de cours est disponible dans le livre en ligne [https://econumuds.github.io/BIO500/](https://econumuds.github.io/BIO500/).
 
 .center[
-  <img src="assets/img/livre.jpng" height="300px"></img>
+  <img src="assets/img/livre.png" height="250px"></img>
 ]
 
 
@@ -308,7 +308,7 @@ Résolution spatiale et temporelle
 - Données : dhp, coordonnées spatiales, Altitude_m, pH
 
 <div style='text-align:center;'>
-<img src="bloc1/assets/img/gosford.jpg" width="100%"></img>
+<img src="assets/img/gosford.jpg" width="500px"></img>
 </div>
 
 ---
@@ -343,7 +343,7 @@ Résolution spatiale et temporelle
 
 # Inventaire benthos
 
-Définition spatiale / temporelle
+Résolution spatiale et temporelle
 
 - Suivi de la biodiversité benthique
 - 43 stations d'échantillonnage
@@ -464,7 +464,7 @@ Préparez un script qui retournera le nombre d'auteurs par institution de recher
 
 | auteur | statut | institution |
 |:-------|:-------|:------------|
-| Jean-Baptiste Lamarck  | Académie de sciences |
+| Jean-Baptiste Lamarck | NA | Académie de sciences |
 | Charles Darwin | NA | London Royal Society |
 | Conte de Buffon | Professor | MHNP |
 
