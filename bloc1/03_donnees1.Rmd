@@ -545,17 +545,6 @@ class: inverse, center, middle
 
 1. Dresser la liste des informations collectées.
 
-Quelques exemples : 
-
- >- La couleur des yeux
- >- La grandeur des chausseurs
- >- Le noms de votre grand-mère
- >- Est-ce que vous courrez en sentier ?
- >- Minutes au kilomètre
- >- Tourne à gauche ou à droite ?
- >- Poutine préférée
- >- Avez-vous déjà vu une grive de Bicknell ?
-
 ---
 
 # Étape 2. Regrouper les variables dans des tables
@@ -671,9 +660,9 @@ class: inverse, center, middle
 
 .pull-right[
   .font90[
-  >- Pour créer, interroger, gérer et maintenir des bases de données, on utilisera un **[Système de Gestion de Base de Données](https://www.youtube.com/watch?v=rGm6imM-7AI) (souvent appelé SGBD)**.
+  >- Pour créer, interroger, gérer et maintenir des bases de données, on utilisera un **[Système de Gestion de Base de Données](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es) (souvent appelé SGBD)**.
   >- Mais ces systèmes disposent tous d'un dénominateur commun: le `langage SQL`
-  >- SQL - Définition : Seul le Québec Libre 
+  >- Dans ce cours, nous utiliserons le système de gestion de données `SQLite3` (**Approche fichier de base de données**).
   ]
 ]
 
@@ -695,11 +684,9 @@ class: inverse, center, middle
 2. Créer des tables et établir des relations (`CREATE TABLE`).
 3. Insérer des données (`INSERT`).
 4. Interroger les données par requête (`SELECT`).
-5. Libérer le Québec.
-6. Supprimer des données ou des tables (`DROP`, `DELETE`).
-7. Soupirer très fort.
-8. Mettre à jour des données ou des tables (`UPDATE`, `ALTER`).
-9. Supprimer la base de données (`DROP DATABASE`).
+5. Supprimer des données ou des tables (`DROP`, `DELETE`).
+6. Mettre à jour des données ou des tables (`UPDATE`, `ALTER`).
+7. Supprimer la base de données (`DROP DATABASE`).
 
 Chacune de ces commandes est une instruction `SQL` envoyée au serveur pour manipuler et interroger la base de données.
 
@@ -950,27 +937,9 @@ dbDisconnect(con)
 ---
 class: inverse, center, middle
 
-# En résumé
-
-<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
-
----
-
-# Pourquoi McGill pense être la meilleure université
-
-- Parce que Graham Bell a inventé le téléphone
-- Parce que Victor Cameron a fait son BSc là !
-- Ils ont un musée
-- Parce que Victor Cameron a fait son BSc là !
-- Centre de la science de la biodiversité du Québec
-
----
-class: inverse, center, middle
-
 # Lectures et travail pour le prochain cours
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
-
 
 ---
 
