@@ -1,1 +1,117 @@
 # Exercices
+
+## Exercice 1
+
+### Étape 1
+
+1. Créer la base de données `reseau` avec ses deux tables `auteurs` et `articles`
+2. Insérer les données [auteurs.csv](https://raw.githubusercontent.com/EcoNumUdS/BIO500/master/bloc1/assets/data/db_reseau/authors.csv) et [articles.csv](https://raw.githubusercontent.com/EcoNumUdS/BIO500/master/bloc1/assets/data/db_reseau/articles.csv) dans les deux tables à l'aide de la commande R `dbWriteTable()`
+
+### Étape 2
+
+Ajouter une troisième table `collaborations` à la base de données `reseau` et insérer les données [collaboration.csv](https://raw.githubusercontent.com/EcoNumUdS/BIO500/master/bloc1/assets/data/db_reseau/collaboration.csv) dans cette table.
+
+```R
+collabTD <- '
+CREATE TABLE collaborations (
+    auteur1     VARCHAR(40),
+    auteur2     VARCHAR(40),
+    articleID   VARCHAR(20),
+    PRIMARY KEY (auteur1, auteur2, articleID),
+    FOREIGN KEY (auteur1) REFERENCES auteurs(author),
+    FOREIGN KEY (auteur2) REFERENCES auteurs(author),
+    FOREIGN KEY (articleID) REFERENCES articles(articleID)
+);'
+
+collaboration <- read.csv('collaboration.csv')
+dbWriteTable(con, append = TRUE, name = "collaborations", value = collaboration, row.names = FALSE)
+```
+
+## Exercice 2
+
+Que fait la commande suivante ?
+
+`DISTINCT`
+
+```R
+sql_requete <- "
+    SELECT DISTINCT auteur1
+    FROM collaborations;"
+
+req <- dbGetQuery(con, sql_requete)
+head(req)
+```
+
+`LIMIT`
+
+```R
+sql_requete <- "
+    SELECT *
+    FROM collaborations
+    LIMIT 10;"
+
+req <- dbGetQuery(con, sql_requete)
+head(req)
+```
+
+`ORDER BY`
+
+```R
+sql_requete <- "
+    SELECT annee, citations, articleID
+    FROM articles 
+    ORDER BY citations DESC;"
+
+derniers_articles <- dbGetQuery(con, sql_requete)
+head(derniers_articles)
+```
+
+`WHERE` pour les valeurs numériques
+
+```R
+sql_requete <- "
+    SELECT articleID, annee
+    FROM articles 
+    WHERE annee >= 2018;"
+  
+derniers_articles <- dbGetQuery(con, sql_requete)
+head(derniers_articles)
+```
+
+`WHERE` pour les valeurs texte (character)
+
+```R
+sql_requete <- "
+    SELECT articleID, titre
+    FROM articles 
+    WHERE titre LIKE '%interactions%';"
+
+articles <- dbGetQuery(con, sql_requete)
+head(articles)
+```
+
+`WHERE` pour effectuer des filtres multicritères
+
+```R
+sql_requete <- "
+    SELECT articleID, annee
+    FROM articles 
+    WHERE
+    (annee >= 2018 AND annee < 2020)
+    OR (annee >= 2012 AND annee <= 2014)"
+
+articles <- dbGetQuery(con, sql_requete)
+head(articles)
+```
+
+`WHERE` et `IS NOT NULL`
+
+```R
+sql_requete <- "
+  SELECT auteur, statut, institution
+  FROM auteurs
+  WHERE statut IS NOT NULL;"
+
+auteurs <- dbGetQuery(con, sql_requete)
+head(auteurs)
+```

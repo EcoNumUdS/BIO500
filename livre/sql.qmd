@@ -39,7 +39,7 @@ Précédemment, nous avons vu les aspects importants de la conceptualisation d'u
    3. Ajouter de l'information dans les tables
    4. Faire des requêtes pour extraire l'information
 
-### 1. Créer une nouvelle base de données
+### 1. Connexion au serveur
 
 Pour faciliter l'interaction avec la base de données et simplifier les manipulations, nous utiliserons RStudio et la librairie open source `RSQLite` qui contient le client SQLite3. `RSQLite` propose une interface dans R qui permet d'interagir avec les bases de données.
 
@@ -62,59 +62,98 @@ Ici, `ma_bd` est un objet contenant la connexion avec le serveur/fichier de base
 ### 2. Créer les tables
 
 ```R
-create_mtcars <- 
-    "CREATE TABLE mtcars (
-        auteur      VARCHAR(50),
-        statut      VARCHAR(40),
-        institution VARCHAR(200),
-        ville       VARCHAR(40),
-        pays        VARCHAR(40),
-        PRIMARY KEY (auteur)
+creer_automobiles <- 
+    "CREATE TABLE automobiles (
+        id          INTEGER PRIMARY KEY AUTOINCREMENT,
+        marque      VARCHAR(50),
+        modele      VARCHAR(50),
+        annee       INTEGER CHECK(annee >= 0),
+        consommation REAL CHECK(consommation >= 0),
+        cylindree   INTEGER CHECK(cylindree >= 0),
     );"
-dbSendQuery(ma_bd, create_mtcars)
+dbSendQuery(ma_bd, creer_automobiles)
 
-create_iris <- 
-    "CREATE TABLE iris (
-        auteur      VARCHAR(50),
-        statut      VARCHAR(40),
-        institution VARCHAR(200),
-        ville       VARCHAR(40),
-        pays        VARCHAR(40),
-        PRIMARY KEY (auteur)
+creer_proprios <- 
+    "CREATE TABLE proprios (
+        automobile_id    INTEGER NOT NULL,
+        prenom           VARCHAR(100) NOT NULL,
+        nom              VARCHAR(100) NOT NULL,
+        no_permis        VARCHAR(10),
+        PRIMARY KEY (prenom, nom),
+        FOREIGN KEY (automobile_id) REFERENCES mtcars(id)
     );"
-dbSendQuery(ma_bd, create_iris)
+dbSendQuery(ma_bd, creer_proprios)
 ```
+
+> Notez que les instructions SQL sont des chaînes de caractères. Elles sont envoyées au serveur avec la commande `dbSendQuery()`.
+
+**Types de données**
+
+Un type de données (VARCHAR, INTEGER, etc.) doit être spécifié pour chaque champ. Les types de données disponibles dépendent du SGBD utilisé. Pour SQLite, les types de données sont les suivants :
+
+| Appelation                | Type                 | Valeurs     |
+|:--------------------------|:---------------------|:------------|
+| `BOLEAN`                  | Boléen               | vrai/faux   |
+| `INTEGER`                 | Entiers              | -998, 123   |
+| `DOUBLE`, `FLOAT`, `REAL` | Nombres réels        | 9.98, -4.34 |
+| `CHAR`,`VARCHAR`, `TEXT`  | Chaine de caractères | lapin       |
+| `TIMESTAMP`,`DATE`,`TIME` | Dates et heures      | 1998-02-16  |
+
+[voir la documentation SQLite3](https://www.sqlite.org/datatype3.html)
+
+`VARCHAR` est un type de données pour les chaînes de caractères de longueur variable. Il faut spécifier la longueur maximale de la chaîne de caractères entre parenthèses. Par exemple. le champs `marque` de la table `automobiles` est de type `VARCHAR(50)`, c'est-à-dire qu'il peut contenir des chaînes de caractères de 50 caractères au maximum.
+
+**Clef primaire**
+
+La clé primaire est un champ ou un ensemble de champs qui identifie de manière unique chaque enregistrement d'une table. Elle est utilisée pour garantir l'unicité des enregistrements. La clé primaire est un index unique pour chaque enregistrement de la table. Elle est obligatoire pour chaque table.
+
+Dans l'exemple ci-dessus, c'est le champ `id` qui est la clé primaire de la table `automobiles` puisque tous les champs de la table contribuent à l'unicité de la ligne. La combinaison des champs `prenom` et `nom` est la clé primaire de la table `proprios`.
+
+`id      INTEGER PRIMARY KEY AUTOINCREMENT,` spécifie que le champ `id` est la clé primaire de la table `automobiles`. Cette clé est de type `INTEGER` et est incrémentée automatiquement à chaque nouvel enregistrement. Aucune valeur n'est à spécifier pour ce champ lors de l'insertion d'un nouvel enregistrement, la base de données s'en charge automatiquement lors de l'injection d'une nouvelle ligne.
+
+**Clef secondaire**
+
+La clé étrangère est un champ ou un ensemble de champs qui référence une clé primaire d'une autre table. Elle est utilisée pour garantir l'intégrité référentielle des données Elle n'est pas obligatoire pour chaque table, par exemple, la table `automobiles` n'a pas de clé étrangère. Par contre, la table `proprios` a une clé étrangère `automobile_id` qui référence la clé primaire `id` de la table `automobiles`.
+
+**Contraintes**
+
+Les contraintes sont des règles qui sont appliquées aux données de la table. Par exemple, `NOT NULL` spécifie que le champ ne peut pas contenir de valeurs nulles. `CHECK` spécifie une condition qui doit être vraie pour chaque enregistrement.
 
 
 ### 3. Injecter des données
 
-Une table de données peut facilement être copiée dans une base de données SQLite avec `dbWriteTable()`. Pour ce faire, les données doivent avoir le même format que la table dans laquelle elles sont insérées :
+Une table de données peut facilement être copiée dans une base de données SQLite avec `dbWriteTable()`. 
 
 ```R
-ma_db <- dbConnect(RSQLite::SQLite(), dbname="./my_database.db")
+automobiles_db <- dbConnect(RSQLite::SQLite(), dbname="./automobiles.db")
 
 # Injection des enregistrements dans la B
-dbWriteTable(con, append = TRUE, name = "mtcars", value = mtcars, row.names = FALSE)
-dbWriteTable(con, append = TRUE, name = "iris", value = iris, row.names = FALSE)
+dbWriteTable(con, append = TRUE, name = "automobiles", value = mtcars, row.names = FALSE)
+dbWriteTable(con, append = TRUE, name = "proprios", value = iris, row.names = FALSE)
 
 # Lister les tables
-dbListTables(ma_db)
-#> [1] "iris"   "mtcars"
+dbListTables(automobiles_db)
+#> [1] "automobiles"   "proprios"
 ```
+
+Pour ce faire, Les données doivent avoir le même **format** que la table dans laquelle elles sont insérées
+- Les colonnes doivent être dans le même ordre
+- Les noms des colonnes doivent être identiques
+- Les types de données doivent être compatibles
+- 
 
 ### 4. Effectuer des requêtes
 
-Pour envoyer des instructions, c'est la commande `dbGetQuery()` qui est utilisée. Sont premier argument est l'objet contenant la connexion et le second les instructions SQL.
+Pour envoyer des instructions, c'est la commande `dbGetQuery()` qui est utilisée. Son premier argument est l'objet contenant la connexion et le second les instructions SQL.
 
 ```R
-resr <- dbGetQuery(ma_bd, 'SELECT * FROM mtcars LIMIT 5')
+resr <- dbGetQuery(automobiles_db, 'SELECT * FROM automobiles LIMIT 4')
 res
-#>    mpg cyl disp  hp drat    wt  qsec vs am gear carb
-#> 1 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-#> 2 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-#> 3 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
-#> 4 21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
-#> 5 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+#> id  marque  modele annee consommation cylindree
+#>  1    Ford    F150  2016         21.0         6
+#>  2   Honda   Pilot  2013         21.0         6
+#>  3   Honda   Civic  2007         28.8         4
+#>  4   Mazda     MX5  2019         19.4         4
 ```
 
 > Il est à noter que le code SQL est enchâssé entre `"` pour former une chaine de caractères. **L'omission des `"` est une cause d'erreur fréquente !!!**
@@ -124,7 +163,7 @@ res
 Souvent oublié, il faut toujours fermer la connexion, se déconnecter de la base de données, avec la commande `dbDisconnect()` :
 
 ```R
-dbDisconnect(ma_bd)
+dbDisconnect(automobiles_db)
 ```
 
 
@@ -254,7 +293,13 @@ FROM client
 LIMIT 5;
 ```
 
-`ORDER BY` permet d'ordonner les rangées selon 
+`ORDER BY` permet d'ordonner les rangées retournées en fonction d'une colonne. `ASC` est utilisé pour ordonner en ordre croissant, `DESC` pour ordonner en ordre décroissant :
+
+```SQL
+SELECT id, nom, date_de_naissance
+FROM client
+ORDER BY date_de_naissance ASC;
+```
 
 
 ### Agréger l'information

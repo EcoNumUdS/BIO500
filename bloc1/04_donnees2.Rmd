@@ -32,138 +32,174 @@ class: title-slide, middle
 
 ---
 
-# Les grandes étapes
+# Évaluation formative #1
 
-1. Spécifier la connexion avec le serveur
-2. Créer la base de données
-3. Créer les tables et spécifier les clés
-4. Ajouter de l'information dans les tables
-5. Faire des requêtes pour extraire l'information
+Était à remettre hier (11 mars)
+
+## Vous avez jusqu'à lundi prochain (18 mars) pour compléter l'évaluation des scripts d'assemblage et de nettoyage d'une autre équipe.
+
+- Tout se fait dans l'Atelier *Évaluation formative #1 : Atelier*
+- Vous avez à noter le travail d'une autre équipe selon les critères :
+  - Structure du programme
+  - Fonctionnement du programme
+  - Application des bonnes pratiques de programmation
+- Tous les commentaires doivent être formulés comme une question
 
 ---
 class: inverse, center, middle
 
-# Retour rapide sur la séance de la <br> semaine dernière
+# Retour rapide sur la <br> dernière séance
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
+Chapitre 4 [*Bases de données*](https://econumuds.github.io/BIO500/bases_de_donnees.html)
+
+Chapitre 5 [*SQL et RSQLite*](https://econumuds.github.io/BIO500/sql.html)
+
+---
+
+# Les grandes étapes
+
+## Le modèle conceptuel
+   1. Faire une liste des variables
+   2. Regrouper les variables dans des tables
+   3. Établir le type d'association entre les tables
+   4. Établir les clés primaires et étrangères
+   5. Assigner les types de données aux variables
+
+## Le modèle informatique
+   1. Créer et se connecter au fichier de base de données
+   2. Créer les tables et spécifier les clés
+   3. Injecter les données dans les tables
+   4. Faire des requêtes pour extraire l'information
+
+---
+
+# Conceptualiser la base de données
+
+.center[
+  <img src="assets/img/star_eg.png" width="80%"></img>
+]
 
 ---
 
 # Connexion au serveur
 
-```{r remove db file, eval=TRUE, echo=FALSE}
-system("rm -rf ./assets/data/reseau.db")
-```
-
-
-```{r eval=TRUE, echo=TRUE, message=FALSE,results='hide'}
+```R
 # install.packages('RSQLite')
 library(RSQLite)
 
-con <- dbConnect(SQLite(), dbname="./assets/data/reseau.db")
-
-tbl_auteurs <- "
-CREATE TABLE auteurs (
-  auteur      VARCHAR(50),
-  statut      VARCHAR(40),
-  institution VARCHAR(200),
-  ville       VARCHAR(40),
-  pays        VARCHAR(40),
-  PRIMARY KEY (auteur)
-);"
-
-dbSendQuery(con, tbl_auteurs)
-```
-
-**Question:** Sur ce script, où sont les instructions SQL? Òu sont les commandes R?
-
----
-
-# Création de la table `auteurs`
-
-```{r, eval=FALSE, warning=FALSE}
-tbl_auteurs <- "
-CREATE TABLE auteurs (
-  auteur      VARCHAR(50),
-  statut      VARCHAR(40),
-  institution VARCHAR(200),
-  ville       VARCHAR(40),
-  pays        VARCHAR(40),
-  PRIMARY KEY (auteur)
-);"
-
-dbSendQuery(con, tbl_auteurs)
+con <- dbConnect(SQLite(), dbname="automobiles.db")
 ```
 
 ---
 
-# Création de la table `articles`
+# Création de la table `automobiles`
 
+```R
+# install.packages('RSQLite')
+library(RSQLite)
 
-```{r  message=FALSE, results='hide', warning=FALSE}
-tbl_articles <- "
-CREATE TABLE articles (
-articleID   VARCHAR(20) NOT NULL,
-titre       VARCHAR(200) NOT NULL,
-journal     VARCHAR(80),
-annee       DATE,
-citations   INTEGER CHECK(annee >= 0),
-PRIMARY KEY (articleID)
-);"
+con <- dbConnect(SQLite(), dbname="automobiles.db")
 
-dbSendQuery(con, tbl_articles)
+creer_automobiles <- 
+  "CREATE TABLE automobiles (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    marque      VARCHAR(50),
+    models      VARCHAR(50),
+    annee       INTEGER CHECK(annee >= 0)
+  );"
+dbSendQuery(ma_bd, creer_automobiles)
 ```
+
+**Question:** Sur ce script, où sont les instructions SQL? Où sont les commandes R ?
 
 ---
 
-# Création de la table `collaborations`
+# Création de la table `automobiles`
 
+```R
+# install.packages('RSQLite')
+library(RSQLite)
 
-```{r  message=FALSE, results='hide', warning=FALSE}
-tbl_collaborations <- "
-CREATE TABLE collaborations (
-  auteur1     VARCHAR(40),
-  auteur2     VARCHAR(40),
-  articleID   VARCHAR(20),
-  PRIMARY KEY (auteur1, auteur2, articleID),
-  FOREIGN KEY (auteur1) REFERENCES auteurs(auteur),
-  FOREIGN KEY (auteur2) REFERENCES auteurs(auteur),
-  FOREIGN KEY (articleID) REFERENCES articles(articleID)
-);"
+con <- dbConnect(SQLite(), dbname="automobiles.db")
 
-dbSendQuery(con, tbl_collaborations)
+creer_automobiles <- 
+  "CREATE TABLE automobiles (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    marque      VARCHAR(50),
+    modele      VARCHAR(50),
+    annee       INTEGER CHECK(annee >= 0)
+  );"
+dbSendQuery(con, creer_automobiles)
 ```
 
-**Questions :** 
-
-La table `collaborations` est liée à quelles autres tables ?
-
-Comment la table à lier est spécifiée ?
+**Question:** Sur ce script, où est la clef primaire ?
 
 ---
 
-# Création de la table `collaborations`
+# Création de la table `automobiles`
 
+```R
+# install.packages('RSQLite')
+library(RSQLite)
 
-```{r, eval=FALSE}
-tbl_collaborations <- "
-CREATE TABLE collaborations (
-  auteur1     VARCHAR(40),
-  auteur2     VARCHAR(40),
-  articleID   VARCHAR(20),
-  PRIMARY KEY (auteur1, auteur2, articleID),
-  FOREIGN KEY (auteur1) REFERENCES auteurs(auteur),      <--- table(colonne)
-  FOREIGN KEY (auteur2) REFERENCES auteurs(auteur),
-  FOREIGN KEY (articleID) REFERENCES articles(articleID)
-);"
+con <- dbConnect(SQLite(), dbname="automobiles.db")
 
-dbSendQuery(con, tbl_collaborations)
+creer_automobiles <- 
+  "CREATE TABLE automobiles (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    marque      VARCHAR(50),
+    modele      VARCHAR(50),
+    annee       INTEGER CHECK(annee >= 0)
+  );"
+dbSendQuery(con, creer_automobiles)
 ```
+
+**Question:** Sur ce script, quelle est la contrainte ?
+
+---
+
+# Création de la table `proprios`
+
+```R
+creer_proprios <- 
+  "CREATE TABLE proprios (
+    automobile_id    INTEGER NOT NULL,
+    prenom           VARCHAR(100) NOT NULL,
+    nom              VARCHAR(100) NOT NULL,
+    no_permis        VARCHAR(10),
+    PRIMARY KEY (prenom, nom),
+    FOREIGN KEY (automobile_id) REFERENCES automobiles(id)
+  );"
+dbSendQuery(con, creer_proprios)
+```
+
+**Question:** Que référence la clef secondaire ?
+
+---
+
+# Création de la table `proprios`
+
+```R
+creer_proprios <- 
+  "CREATE TABLE proprios (
+    automobile_id    INTEGER NOT NULL,
+    prenom           VARCHAR(100) NOT NULL,
+    nom              VARCHAR(100) NOT NULL,
+    no_permis        VARCHAR(10),
+    PRIMARY KEY (prenom, nom),
+    FOREIGN KEY (automobile_id) REFERENCES automobiles(id)
+  );"
+dbSendQuery(con, creer_proprios)
+```
+
+**Question:** Que fait `NOT NULL` ?
 
 ---
 class: inverse, center, middle
 
-# Ajouter de l'information dans les tables
+# Injecter les données dans les tables
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
@@ -174,28 +210,82 @@ class: inverse, center, middle
 La librairie RSQLite peut nous aider plus facilement à accomplir cette tâche:
 
 .font80[
-```{r create db, warning=FALSE}
+```R
 # Lecture des fichiers CSV
-bd_auteurs <- read.csv(file = './assets/data/db_reseau/authors.csv')
-bd_articles <- read.csv(file = './assets/data/db_reseau/articles.csv')
-bd_collab <- read.csv(file = './assets/data/db_reseau/collaboration.csv')
+bd_automobiles <- read.csv(file = 'donnees/automobiles.csv')
+bd_proprios <- read.csv(file = 'donnees/proprios.csv')
 
 # Injection des enregistrements dans la BD
-dbWriteTable(con, append = TRUE, name = "auteurs", value = bd_auteurs, row.names = FALSE)
-dbWriteTable(con, append = TRUE, name = "articles", value = bd_articles, row.names = FALSE)
-dbWriteTable(con, append = TRUE, name = "collaborations", value = bd_collab, row.names = FALSE)
+dbWriteTable(con, append = TRUE, name = "automobiles", value = bd_automobiles, row.names = FALSE)
+dbWriteTable(con, append = TRUE, name = "proprios", value = bd_proprios, row.names = FALSE)
 ```
 ]
+
+Les données doivent avoir le même **format** que la table dans laquelle elles sont insérées
+- Les colonnes doivent être dans le même ordre
+- Les noms des colonnes doivent être identiques
+- Les types de données doivent être compatibles
+
+---
+
+# Fermer la connexion
+
+Souvent oublié, il faut toujours fermer la connexion, se déconnecter de la base de données, avec la commande `dbDisconnect()` :
+
+```R
+dbDisconnect(con)
+```
 
 ---
 
 # Exercice 1
 
-Ce premier exercice est important pour la suite de la séance.
+Vous le trouverez dans le chapitre 6 [*Exercices*](https://econumuds.github.io/BIO500/exercices_1.html) du livre
 
-1. Recréer la base de données `reseau` avec ses trois tables `auteurs`, `articles` et `collaborations`
-2. Insérer les données [auteurs.csv](https://raw.githubusercontent.com/EcoNumUdS/BIO500/master/bloc1/assets/data/db_reseau/authors.csv), [collaborations.csv](https://raw.githubusercontent.com/EcoNumUdS/BIO500/master/bloc1/assets/data/db_reseau/collaboration.csv) et [articles.csv](https://raw.githubusercontent.com/EcoNumUdS/BIO500/master/bloc1/assets/data/db_reseau/articles.csv) dans les trois tables à l'aide de la commande R `dbWriteTable()`
+1. Créer la base de données `reseau` avec ses deux tables `auteurs` et `articles`
+2. Insérer les données [auteurs.csv](https://raw.githubusercontent.com/EcoNumUdS/BIO500/master/bloc1/assets/data/db_reseau/authors.csv) et [articles.csv](https://raw.githubusercontent.com/EcoNumUdS/BIO500/master/bloc1/assets/data/db_reseau/articles.csv) dans les deux tables à l'aide de la commande R `dbWriteTable()`
 
+**auteurs**
+.font80[
+```R
+##                  auteur    statut                     institution      ville   pays
+## 1 Pierre-Marc Brousseau      <NA> Universite du Quebec a Montreal   Montreal Canada
+## 2      Dominique Gravel Professor        Universite de Sherbrooke Sherbrooke Canada
+## 3        I. Tanya Handa      <NA> Universite du Quebec a Montreal   Montreal Canada
+```
+]
+
+**articles**
+.font80[
+```R
+##        articleID                               journal                             titre annee citations
+## 1 Brousseau2018b                    Functional Ecology Trait matching and phylogeny as p  2018        21
+## 2     Laigle2018                                 Oikos Species traits as drivers of food  2018        21 
+## 3   grossman2018 Environmental and Experimental Botany Synthesis and future research dir  2018        30
+```
+]
+
+---
+
+# Exercice 1 (suite)
+
+Ajouter une troisième table `collaborations` à la base de données `reseau` et insérer les données [collaboration.csv](https://raw.githubusercontent.com/EcoNumUdS/BIO500/master/bloc1/assets/data/db_reseau/collaboration.csv) dans cette table.
+
+```R
+collabTD <- '
+CREATE TABLE collaborations (
+    auteur1     VARCHAR(40),
+    auteur2     VARCHAR(40),
+    articleID   VARCHAR(20),
+    PRIMARY KEY (auteur1, auteur2, articleID),
+    FOREIGN KEY (auteur1) REFERENCES auteurs(author),
+    FOREIGN KEY (auteur2) REFERENCES auteurs(author),
+    FOREIGN KEY (articleID) REFERENCES articles(articleID)
+);'
+
+collaboration <- read.csv('collaboration.csv')
+dbWriteTable(con, append = TRUE, name = "collaborations", value = collaboration, row.names = FALSE)
+```
 
 ---
 class: inverse, center, middle
@@ -233,7 +323,7 @@ LIMIT 10;
 
 .pull-left[
 .font90[
-```{r, eval = FALSE}
+```R
 sql_requete <- "
 SELECT articleID, journal, annee
   FROM articles LIMIT 10
@@ -242,7 +332,8 @@ SELECT articleID, journal, annee
 articles <- dbGetQuery(con, sql_requete)
 head(articles)
 ```
-]]
+]
+]
 
 .pull-right[
 - `SELECT` spécifie les colonnes.
@@ -252,14 +343,74 @@ head(articles)
 ]
 
 ```{r, echo = FALSE}
+#| include: false
+
+library(RSQLite)
+con <- dbConnect(SQLite(), dbname="./assets/data/reseau.db")
+
+  # create author table
+  authorTB <- '
+CREATE TABLE auteurs (
+    auteur      VARCHAR(50),
+    statut      VARCHAR(40),
+    institution VARCHAR(200),
+    ville       VARCHAR(40),
+    pays        VARCHAR(40),
+    PRIMARY KEY (auteur)
+);'
+
+  # create article table
+  articleTB <- '
+CREATE TABLE articles (
+  articleID   VARCHAR(20) NOT NULL,
+  titre       VARCHAR(200) NOT NULL,
+  journal     VARCHAR(80),
+  annee       DATE,
+  citations   INTEGER CHECK(annee >= 0),
+  PRIMARY KEY (articleID)
+);'
+
+  # create collaboration table
+  collabTD <- '
+CREATE TABLE collaborations (
+    auteur1     VARCHAR(40),
+    auteur2     VARCHAR(40),
+    articleID   VARCHAR(20),
+    PRIMARY KEY (auteur1, auteur2, articleID),
+    FOREIGN KEY (auteur1) REFERENCES auteurs(author),
+    FOREIGN KEY (auteur2) REFERENCES auteurs(author),
+    FOREIGN KEY (articleID) REFERENCES articles(articleID)
+);'
+
+
+  dbSendQuery(con, authorTB)
+  dbSendQuery(con, articleTB)
+  dbSendQuery(con, collabTD)
+
+
+  authors <- read.csv('./assets/data/db_reseau/authors.csv')
+  dbWriteTable(con, append = TRUE, name = "auteurs", value = authors, row.names = FALSE)
+
+  articles <- read.csv('./assets/data/db_reseau/articles.csv')
+  dbWriteTable(con, append = TRUE, name = "articles", value = articles, row.names = FALSE)
+
+  collaboration <- read.csv('./assets/data/db_reseau/collaboration.csv')
+  dbWriteTable(con, append = TRUE, name = "collaborations", value = collaboration, row.names = FALSE)
+```
+
+
+```{r, echo = FALSE}
+con <- dbConnect(SQLite(), dbname="./assets/data/reseau.db")
+
 sql_requete <- "
-SELECT articleID, journal, annee
+  SELECT articleID, journal, annee
   FROM articles LIMIT 10
 ;"
 
 articles <- dbGetQuery(con, sql_requete)
 head(articles)
 ```
+
 ---
 
 # Sélectionner des tables et des colonnes
@@ -267,8 +418,9 @@ head(articles)
 .font90[
 .pull-left[
 ```{r, eval = FALSE}
-sql_requete <- "SELECT *
-FROM collaborations LIMIT 10;"
+sql_requete <- "
+  SELECT *
+  FROM collaborations;"
 
 articles <- dbGetQuery(con, sql_requete)
 head(articles)
@@ -277,13 +429,12 @@ head(articles)
 
 .pull-right[
 .font90[
-- `*` permet de ne pas spécifier une colonne en particulier.
+- `*` permet de retourner toutes les colonnes
 - Cette requête retournera toutes les colonnes de la table `collaborations`
-- Note: L'instruction `LIMIT` est utilisée dans les prochaines diapos afin de permettre le rendu des requêtes sur une diapo.
 ]]
 
 ```{r, echo = FALSE}
-sql_requete <- "SELECT * FROM collaborations LIMIT 10;"
+sql_requete <- "SELECT * FROM collaborations;"
 
 articles <- dbGetQuery(con, sql_requete)
 head(articles)
@@ -291,57 +442,166 @@ head(articles)
 
 ---
 
-# Sélectionner des enregistrements uniques
+# Exercice 2
+
+Chaque équipe aura à expliquer l'action et le résultat d'une commande SQL parmi les suivantes :
+
+1. `LIMIT`
+2. `DISTINCT`
+3. `ORDER BY` 
+4. `WHERE` pour les valeurs numériques
+5. `WHERE` pour les valeurs textuelles
+6. `WHERE` pour effectuer des filtres multicritères
+7. `WHERE` et `IS NOT NULL`
+
+> Les scripts à expliquer sont dans le chapitre 6 [*Exercices*](https://econumuds.github.io/BIO500/exercices_1.html) du livre
+
+---
+
+# `LIMIT`
 
 .font80[
 .pull-left[
 ```{r}
-sql_requete <- "SELECT DISTINCT auteur1
-FROM collaborations LIMIT 10;"
+sql_requete <- "
+    SELECT *
+    FROM collaborations
+    LIMIT 10;"
 
-auteurs <- dbGetQuery(con, sql_requete)
-head(auteurs)
+req <- dbGetQuery(con, sql_requete)
+head(req)
 ```
-]]
-
-.pull-right[
-- L'instruction `DISTINCT` permettra de retourner des noms présent dans la table auteurs.
+]
 ]
 
 ---
 
-# Ordonner la table
+# `DISTINCT`
+
 
 .font80[
 .pull-left[
-```{r, eval = FALSE}
+```{r}
 sql_requete <- "
-  SELECT annee, citations, articleID
-  FROM articles 
-  ORDER BY citations DESC;"
+    SELECT DISTINCT auteur1
+    FROM collaborations;"
 
-derniers_articles <- dbGetQuery(con, sql_requete)
-head(derniers_articles)
+req <- dbGetQuery(con, sql_requete)
+head(req)
 ```
-]]
-
-.pull-right[
-- `ORDER BY` permet de trier par ordre croissant (`ASC`) ou décroissant (`DESC`).
 ]
-
-```{r, echo = FALSE}
-sql_requete <- "
-  SELECT annee, citations, articleID
-  FROM articles
-  ORDER BY citations DESC;"
-
-derniers_articles <- dbGetQuery(con, sql_requete)
-head(derniers_articles)
-```
+]
 
 ---
 
-# Critères avec `NULL`
+# `ORDER BY`
+
+`ORDER BY` permet de trier par ordre croissant (`ASC`) ou décroissant (`DESC`).
+
+.font80[
+.pull-left[
+```{r}
+sql_requete <- "
+    SELECT annee, citations, articleID
+    FROM articles 
+    ORDER BY citations DESC;"
+
+derniers_articles <- dbGetQuery(con, sql_requete)
+head(derniers_articles)
+```
+]
+]
+
+
+---
+
+# `WHERE` pour les valeurs numériques
+
+.font80[
+.pull-left[
+```{r}
+sql_requete <- "
+    SELECT articleID, annee
+    FROM articles 
+    WHERE annee >= 2018;"
+  
+derniers_articles <- dbGetQuery(con, sql_requete)
+head(derniers_articles)
+```
+]
+]
+
+---
+
+# `WHERE` pour les valeurs numériques
+
+.font80[
+.pull-left[
+```{r}
+sql_requete <- "
+    SELECT articleID, annee
+    FROM articles 
+    WHERE annee >= 2018;"
+  
+derniers_articles <- dbGetQuery(con, sql_requete)
+head(derniers_articles)
+```
+]
+]
+
+.pull-right[
+- Multi-critères avec `AND` et `OR`
+- Les parenthèses définissent les priorités d'opérations.
+- Opérateurs de comparaison: `>=`,`<=`, `=` (Valeurs numériques)
+- [Documentation sur les opérateurs de comparaisons](https://www.sqlite.org/lang_expr.html)
+]
+
+---
+
+# `WHERE` pour les valeurs textuelles
+
+.font80[
+.pull-left[
+```{r}
+sql_requete <- "
+    SELECT articleID, titre
+    FROM articles 
+    WHERE titre LIKE '%interactions%';"
+
+articles <- dbGetQuery(con, sql_requete)
+head(articles)
+```
+]
+]
+
+---
+
+# `WHERE` pour les valeurs textuelles
+
+.font80[
+.pull-left[
+```{r}
+sql_requete <- "
+    SELECT articleID, titre
+    FROM articles 
+    WHERE titre LIKE '%interactions%';"
+
+articles <- dbGetQuery(con, sql_requete)
+head(articles)
+```
+]
+]
+
+.pull-right[
+- Rechercher dans le texte: `LIKE`
+- `%`: n'importe quels caractères
+- `_`: un seul caractère (exemple: `_1_` peut renvoyer `113` ou encore `A1C`)
+- Le critère contraire est aussi possible avec `NOT` (exemple: `WHERE titre NOT LIKE '%interactions%'`)
+]
+
+---
+
+# `WHERE` et `IS NOT NULL`
 
 .font80[
 .pull-left[
@@ -356,68 +616,24 @@ head(auteurs)
 ```
 ]]
 
-.pull-right[
-.font90[
-- `WHERE`, spécifie les critères de la requête.
-- `statut IS NULL` permet d'obtenir seulement les auteurs n'ayant pas de statut.
-]]
-
 ---
 
-# Combiner les critères
+# `WHERE` pour filtres multicritères
 
 .font80[
 .pull-left[
 ```{r}
 sql_requete <- "
-SELECT articleID, annee
-FROM articles 
-WHERE
-  (annee >= 2018 AND annee < 2020)
-  OR (annee >= 2012 AND annee <= 2014)
-ORDER BY annee;"
+    SELECT articleID, annee
+    FROM articles 
+    WHERE (annee >= 2018 AND annee < 2020)
+      OR (annee >= 2012 AND annee <= 2014)"
 
 articles <- dbGetQuery(con, sql_requete)
 head(articles)
 ```
-]]
-
-.pull-right[
-- Multi-critères avec `AND` et `OR`
-- Les parenthèses définissent les priorités d'opérations.
-- Opérateurs de comparaison: `>=`,`<=`, `=` (Valeurs numériques)
-- [Documentation sur les opérateurs de comparaisons](https://www.sqlite.org/lang_expr.html)
 ]
-
----
-
-# Critères sur le texte avec `LIKE`
-
-.font80[
-.pull-left[
-```{r}
-sql_requete <- "
-SELECT articleID, titre
-  FROM articles 
-  WHERE titre LIKE '%interactions%';"
-
-articles <- dbGetQuery(con, sql_requete)
-head(articles)
-```
-]]
-
-.pull-right[
-- Rechercher dans le texte: `LIKE`
-- `%`: n'importe quels caractères
-- `_`: un seul caractère (exemple: `_1_` peut renvoyer `113` ou encore `A1C`)
-- Le critère contraire est aussi possible avec `NOT` (exemple: `WHERE titre NOT LIKE '%interactions%'`)
 ]
-
----
-
-# Exercice 2
-
-Dans ta table `auteurs`, essayez de trouver les auteurs dont l'institution est `Universite de Sherbrooke`.
 
 ---
 
@@ -427,9 +643,9 @@ Dans ta table `auteurs`, essayez de trouver les auteurs dont l'institution est `
 .pull-left[
 ```{r}
 sql_requete <- "
-SELECT avg(citations) AS moyenne,
-  min(citations), max(citations)
-FROM articles;"
+  SELECT avg(citations) AS moyenne,
+    min(citations), max(citations)
+  FROM articles;"
 
 resume_articles <- dbGetQuery(con, sql_requete)
 head(resume_articles)
@@ -453,10 +669,10 @@ head(resume_articles)
 .pull-left[
 ```{r}
 sql_requete <- "
-SELECT avg(citations) AS moyenne,
-  count(articleID) AS nb_articles, annee
-FROM articles
-GROUP BY annee;"
+  SELECT avg(citations) AS moyenne,
+    count(articleID) AS nb_articles, annee
+  FROM articles
+  GROUP BY annee;"
 
 resume_articles <- dbGetQuery(con, sql_requete)
 head(resume_articles)
@@ -467,14 +683,6 @@ head(resume_articles)
 - `COUNT` permet de dénombrer le nombre de lignes.
 - `GROUP BY` définit les champs sur lequel se fera l'agrégation des données.
 ]
-
----
-
-# Exercice 3
-
-À l'aide de la base de données `reseau`, dénombrer le nombre de collaborations par auteur.
-
-Quel est l'auteur qui a le plus de collaborations ?
 
 ---
 class: inverse, center, middle
@@ -508,24 +716,7 @@ head(auteurs_articles,4)
 
 ---
 
-# Jointures entre tables
-
-On peut spécifier la jointure avec `USING` seulement si les deux clés possèdent le même nom.
-
-```{r}
-sql_requete <- "
-  SELECT annee, auteur1, auteur2, journal, articles.articleID
-  FROM articles
-  INNER JOIN collaborations USING (articleID)
-  ;"
-
-auteurs_articles <- dbGetQuery(con,sql_requete)
-head(auteurs_articles,4)
-```
-
----
-
-# Exercice 4
+# Exercice 3
 
 ## Quel article a le plus d'auteurs ?
 
@@ -559,7 +750,7 @@ head(moy_auteurs)
 
 ---
 
-# Exercice 5
+# Exercice 4
 
 ## Est-ce que le nombre de citations est proportionnel au nombre de collaborateurs par article ?
 
@@ -652,55 +843,24 @@ class: inverse, center, middle
 
 # Travail de la semaine
 
-0. Uniformiser les tables des différentes équipes (en script)
+À partir des données du jeu de données validé, formaté et assemblé :
 
 1. Créer la base de données
-
-2. Injecter les données
-
-3. Faire les requêtes suivantes :
-  - Nombre de liens par étudiant
-  - Décompte de liens par paire d'étudiants
-
+2. Injecter les données dans les tables
+3. Faire les requêtes qui serviront à vos analyses pour répondre à la question de recherche
 4. Enregistrer le résultat des requêtes dans un fichier csv
-
----
-
-# Travail de la semaine
-
-5. En post-traitement sur R :
-  - Calculer le nombre d'étudiants, le nombre de liens et la connectance du réseau
-  - Calculer le nombre de liens moyens par étudiant et la variance
-
-6. Écrire un script qui réalise les étapes 0-3 d'un bloc
 
 Assurez vous que le script fonctionne sur les différents ordinateurs des membres de votre équipe.
 
 ---
 
-# Évaluation
+# Évaluation formative #1
 
 Chaque équipe doit évaluer les scripts d'assemblage et de nettoyage d'une autre équipe
 
 - À compléter pour le **18 mars**
 - La personne qui a remis le travail est responsable d'entrer l'évaluation
 - Tous les commentaires doivent être formulés comme une question
-
----
-
-# Lectures
-
-## Discussion sur l'utilisation de modèles de langage
-
-- [Stokel-Walker & Van Noorden. 2023. What ChatGPT and generative AI mean for science.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/Stokel-Walker2023.pdf)
-- [.2023. The AI writing on the wall.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/NatMaInt2023.pdf) 
-
----
-class: inverse, center, middle
-
-# Discussion
-
-<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
 ```{r remove db file2, eval=TRUE, echo=FALSE}
 system("rm -rf ./assets/data/reseau.db")
