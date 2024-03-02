@@ -150,6 +150,8 @@ Mais le désavantage de fonctionner seulement avec les fichiers "plain text"...
 7. Revenir en arrière 
 8. Récupérer les modifications de co-équipiers
 
+Complétez les étapes en suivant les instructions données dans le [chapitre 7 (étapes 0 à 3)](https://econumuds.github.io/BIO500/git.html#d%C3%A9buter-avec-git)
+
 ---
 # 1. Explorer l'interface github
 
@@ -493,6 +495,28 @@ Un tutoriel complet est disponible ici[https://happygitwithr.com/rstudio-git-git
 
 ---
 
+# Exercice 
+
+1. En équipe de 2, utiliser un dépôt créé par un des membres de l'équipe et le cloner sur l'ordinateur de l'autre membre
+2. Chacun ajoute un fichier dans le dépôt et enregistre les modifications
+3. Git add, commit et push
+
+Qu'est-ce qui arrive ?
+
+--
+
+## Un merge conflict (conflit de fusion) !!
+
+---
+
+# Gestion des conflits
+
+Le conflit de de fusion est le résultat de deux modifications concurrentes sur un même fichier. C'est le conflit le plus fréquent et survient lors qu'on oublie de `git pull` avant de `git push`
+
+Il est possible de résoudre le conflit directement dans RStudio. Essayez-vous !
+
+---
+
 # Lectures
 
 ## Discussion sur l'utilisation de modèles de langage
@@ -503,7 +527,7 @@ Un tutoriel complet est disponible ici[https://happygitwithr.com/rstudio-git-git
 ---
 class: inverse, center, middle
 
-# Discussion : Partager ses données ou pas ?
+# Débat : Les LLM apportent ou pas à la science ?
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
@@ -511,6 +535,7 @@ class: inverse, center, middle
 ## 15 minutes pour préparer ses arguments
 ## 2 minutes pour présenter ses arguments
 ## 20 minutes de débat
+
 ---
 
 # Lecture de la semaine
