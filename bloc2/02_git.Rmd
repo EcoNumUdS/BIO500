@@ -498,7 +498,7 @@ Un tutoriel complet est disponible ici[https://happygitwithr.com/rstudio-git-git
 # Exercice 
 
 1. En équipe de 2, utiliser un dépôt créé par un des membres de l'équipe et le cloner sur l'ordinateur de l'autre membre
-2. Chacun ajoute un fichier dans le dépôt et enregistre les modifications
+2. Chacun ajoute le même fichier dans le dépôt et enregistre les modifications
 3. Git add, commit et push
 
 Qu'est-ce qui arrive ?
