@@ -171,6 +171,19 @@ Accédez à [GitHub](https://github.com/) et connectez-vous à votre compte. Pr�
 - Description: Une description du répertoire (non requis)
 - Public.
 
+### Bien structurer son projet 
+
+Il est recommandé de bien organiser ses fichiers afin de s'y retrouver plus facilement. On y retrouve habituellement les éléments suivants  : 
+
+- *README.md*: information sur le dépôt 
+- *.Rproj*: informations sur le projet R
+- *.git* : informations sur l'historique d'utilisation de git 
+- *.gitignore*:  contient les extensions de fichier ignorés par git
+- **data** : données du projet ainsi que la base de données
+- **scripts**: tous les scripts R
+- **figures**: résultats des analyses
+- **rapport**: rapport final 
+
 
 ### 2. Associer le dépôt à RStudio
 

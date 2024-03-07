@@ -1,3 +1,31 @@
+class: title-slide, middle
+
+<style type="text/css">
+  .title-slide {
+    background-image: url('../assets/img/bg.jpg');
+    background-color: #23373B;
+    background-size: contain;
+    border: 0px;
+    background-position: 600px 0;
+    line-height: 1;
+  }
+</style>
+
+<div class="lab-logo"></div>
+
+# Séance 4
+
+<hr width="65%" align="left" size="0.3" color="orange"></hr>
+
+## Les outils pour la reproductibilité
+
+<hr width="65%" align="left" size="0.3" color="orange" style="margin-bottom:40px;" alt="@Martin Sanchez"></hr>
+
+.instructors[
+  **BIO500** - Victor Cameron
+]
+
+---
 class: inverse, center, middle
 
 # Le cahier de laboratoire RMarkdown
@@ -356,5 +384,12 @@ str(knitr::opts_chunk$get())
 - Cheat sheet [https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf)
 - RMarkdown gallery [https://rmarkdown.rstudio.com/gallery.html](https://rmarkdown.rstudio.com/gallery.html)
 - ResearchDown [https://insileco.github.io/ResearchDown/](https://insileco.github.io/ResearchDown/)
+
+---
+class: inverse, center, middle
+
+# Discussion
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
 ---
