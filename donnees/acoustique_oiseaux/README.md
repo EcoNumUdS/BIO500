@@ -2,7 +2,7 @@
 
 Ce jeu de données mesure la composition et la phénologie acoustique des oiseaux au Québec. Il est issu d'un programme de suivi de la biodiversité acoustique réalisé par le Ministère de l'Environnement, de la Lutte contre les Changements Climatiques, de la Faune et des Parcs (MELCCFP) dans le cadre du Réseau de suivi de la biodiversité du Québec. Ces données recensent les observations acoustiques d'oiseaux.
 
-Les inventaires acoustiques d'oiseaux sont réalisés à l'aide d'un enregistreur acoustique qui enregistre les sons de la nature. Les enregistrements sont ensuite analysés par un taxonomiste qui identifie les espèces d'oiseaux présentes. Les inventaires sont réalisés à l'aide d'un protocole standardisé qui permet de comparer les inventaires entre eux.
+Les inventaires acoustiques d'oiseaux sont réalisés à l'aide d'un enregistreur acoustique qui enregistre les sons de la nature. Les enregistrements représentent des efforts d'échantillonnage et sont ensuite analysés par un taxonomiste qui identifie les espèces d'oiseaux présentes. Lorsque possible, l'heure (time_obs) de l'observation est indiquée. Les inventaires sont réalisés à l'aide d'un protocole standardisé qui permet de comparer les inventaires entre eux.
 
 Le protocole est décrit dans le document suivant : [Protocole d’inventaire acoustique multiespèce avec appareil Song Meter Mini Bat (SMMB)](https://mffp.gouv.qc.ca/documents/faune/protocole-inventaire-acoustique-multiespece.pdf)
 
@@ -15,8 +15,8 @@ Le protocole est décrit dans le document suivant : [Protocole d’inventaire ac
 
 - `site_id` identifiant unique du site
 - `lat` latitude du site
-- `time_start` heure de début d'observation
-- `time_finish` heure de fin d'observation
+- `time_start` heure de début de l'effort d'observation
+- `time_finish` heure de fin de l'effort d'observation
 - `date_obs` date de l'observation
 - `time_obs` heure de l'observation
 - `variable` variable mesurée
