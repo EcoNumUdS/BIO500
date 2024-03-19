@@ -37,7 +37,21 @@ knitr::include_graphics("./assets/img/git_1.svg", dpi = 270)
 
 ### Commandes Git de base
 
-RStudio facilite le travail avec Git à l'aide d'un simple onglet "Git" et avec un navigateur qui vous permet de passer d'une version à l'autre et de mettre en valeur les modifications qui ont été enregistrées sous forme de commit. Cet onglet permet d'exécuter certaines opérations de base pour le contrôle de version. Voici un petit lexique pour s'y retrouver :
+RStudio facilite le travail avec Git à l'aide d'un simple onglet "Git" et avec un navigateur *history* qui vous permet de passer d'une version à l'autre et de visionner les modifications qui ont été enregistrées sous forme de commit. Cet onglet permet d'exécuter certaines opérations de base pour le contrôle de version. 
+
+```{r}
+#| label: git_rstudio
+#| echo: false
+#| out-width: 40%
+#| fig-cap: |
+#|    
+#| fig-alt: |
+#|   rstudio.
+
+knitr::include_graphics("./assets/img/rstudio_git_history.gif", dpi = 270)
+```
+
+Voici un petit lexique pour s'y retrouver :
 
 
 #### Git clone
@@ -87,7 +101,11 @@ GitHub est le serveur *cloud* du logiciel Git, comme OneDrive l'est pour d'autre
 
 ## Débuter avec Git
 
+Pour débuter avec Git, il faut d'abord s'assurer que les prérequis sont bien installés et configurés. Ensuite, il faut créer un dépôt GitHub en ligne et l'associer à RStudio. Enfin, il faut apprendre à enregistrer les modifications, à revenir en arrière et à récupérer les modifications des co-équipiers.
+
 ### 0. Prérequis
+
+Un bon point de départ est d'explorer l'interface web de GitHub. Accéder à la page du cours BIO500 et observer l'organisation des fichiers et les fonctionnalités présentées : (https://github.com/EcoNumUdS/BIO500)[https://github.com/EcoNumUdS/BIO500]
 
 #### 0.1. Avoir un compte GitHub
 
@@ -136,15 +154,19 @@ Il peut être nécessaire de configurer git pour qu'il puisse communiquer avec g
 ```R
 # Installer le package usethis
 install.packages("usethis")
+
 ## Enregistrer les informations de l'utilisateur :
 usethis::use_git_config(user.name = "YourName", user.email = "your@mail.com")
+
 ## Créer un jeton d'accès :
 usethis::create_github_token() 
 ### Définir la date d'expiration comme "Aucune expiration"
-### Copier le jeton d'accès dans le presse-papier
+### Copier le jeton d'accès dans le presse-papier (et votre gestionnaire de mot de passe)
+
 ## Enregistrer le jeton d'accès :
 credentials::set_github_pat()
 # gitcreds::gitcreds_set()
+
 ## Redémarrer R !!!
 ```
 
@@ -168,8 +190,10 @@ Accédez à [GitHub](https://github.com/) et connectez-vous à votre compte. Pr�
 
 - Repository template: No template.
 - Repository name: Le nom de votre projet.
-- Description: Une description du répertoire (non requis)
+- Description: Une description du répertoire (non requis).
 - Public.
+
+Il est plus facile de collaborer avec des dépôts publics. D'autres utilisateurs peuvent voir votre code et être invité à y contribuer. Les dépôt publiques seront utiles pour votre projet final qui se fait en équipe.
 
 ### Bien structurer son projet 
 
@@ -183,6 +207,10 @@ Il est recommandé de bien organiser ses fichiers afin de s'y retrouver plus fac
 - **scripts**: tous les scripts R
 - **figures**: résultats des analyses
 - **rapport**: rapport final 
+
+**Le fichier README.md** 
+
+Le fichier README est un fichier texte qui contient des informations sur le projet. Il est souvent utilisé pour présenter le projet à d'autres utilisateurs. Il est écrit en markdown, un langage de balisage léger qui est facile à lire et à écrire. Le fichier README.md est souvent le premier fichier que les utilisateurs verront lorsqu'ils accéderont à votre dépôt. Il est donc important de bien le rédiger. On peut l'éditer directement en ligne avec le bouton.
 
 
 ### 2. Associer le dépôt à RStudio
@@ -220,8 +248,9 @@ On peut ouvrir le projet ultérieurement avec File > Open project en sélectionn
 Après avoir effectué des modifications aux fichiers du projet, sauver ces modifications. Par exemple, ajouter "Ceci est une ligne ajoutée à la description du projet." au fichier `README.md` et sauver la modification.
 
 - Sélectionner l'onglet git dans le quadrant supérieur droit.
-- Cliquer sur le bouton commit pour enregistrer les modifications.
-- Résumer les modifications en une courte phrase (message de commit).
+- Ouvrir la fenêtre *commit* pour enregistrer les modifications.
+- Cocher (*staged*) les fichiers modifiés que vous souhaitez enregistrer.
+- Résumer les modifications en une courte phrase (message de commit) et puis cliquer sur le bouton *commit* pour enregistrer les modifications.
 - Cliquer sur le bouton "Push" pour téléverser les modifications vers le répertoire (serveur) GitHub.
 - Valider en ligne sur votre répertoire GitHub si les modifications ont été ajoutées.
 
@@ -241,6 +270,10 @@ Les restrictions d'accès au répertoire GitHub et les invitations peuvent être
 
 La collaboration entraine parfois des conflits entre versions. Ceci est particulièrement fréquent lorsqu'on oublie d'effectuer un Push ou un Pull pendant un certain temps. La section suivante détaille les conflits couramment rencontrés.
 
+### 6. Supprimer un dépôt
+
+Si vous souhaitez supprimer un dépôt de votre ordinateur, il suffit de supprimer le répertoire (dossier) du projet sur votre ordinateur. Il s'agit d'un dossier standard. Si vous souhaitez supprimer le dépôt de GitHub, aller dans les paramètres du répertoire et sélectionner "Delete this repository".
+
 
 ## Conflits
 
@@ -248,13 +281,49 @@ Lors de l'utilisation de Git, voici quelques-uns des conflits les plus fréquemm
 
 1. Conflit de fusion (Merge conflict) : Ce conflit se produit lorsque Git ne parvient pas à fusionner automatiquement les modifications provenant de deux branches différentes. Il se produit généralement lorsque des modifications incompatibles sont apportées au même fichier, aux mêmes lignes de code ou lorsque des renommages de fichiers entraînent des conflits de nommage.
 
-2. Conflit de rébase (Rebase conflict) : Lorsque vous effectuez une opération de rébase pour intégrer les modifications d'une branche dans une autre, des conflits peuvent se produire si Git ne parvient pas à appliquer automatiquement les modifications. Cela peut se produire lorsque des modifications conflictuelles sont apportées aux mêmes fichiers ou aux mêmes parties de code.
+```{r}
+#| label: push_error
+#| echo: false
+#| out-width: 40%
+#| fig-cap: |
+#|    
+#| fig-alt: |
+#|   push-error.
 
-3. Conflit de stratégie de fusion (Merge strategy conflict) : Git offre plusieurs stratégies de fusion, telles que la fusion rapide (fast-forward), la fusion récursive (recursive) ou la fusion ours (ours). Lorsque vous spécifiez une stratégie de fusion spécifique et que celle-ci ne peut pas être appliquée en raison de conflits, un conflit de stratégie de fusion se produit.
+knitr::include_graphics("./assets/img/git-conflict-01-push-error.png", dpi = 270)
+```
 
-4. Conflit de nommage (Naming conflict) : Ce type de conflit se produit lorsque deux fichiers ou répertoires ont des noms similaires et que Git ne peut pas les distinguer clairement. Cela peut survenir lors de la fusion de branches contenant des fichiers ou des répertoires avec des noms conflictuels.
+> Pour résoudre le conflit depuis RStudio, il choisir certains de vos changements ainsi que certains de ceux de votre collaborateur, vous pouvez alors éditer manuellement et corriger le fichier. Lorsque vous *pull* le fichier avec un conflit, Git remarque qu'il y a un conflit et modifie le fichier pour afficher à la fois vos propres modifications et celles de votre collaborateur dans le fichier. Il affiche également le fichier dans l'onglet Git avec une icône orange en forme de U, ce qui indique que le fichier est non fusionné et donc en attente de votre aide pour résoudre le conflit. 
+> Il délimite ces blocs avec une série de signes inférieurs et supérieurs, de sorte qu'ils sont faciles à trouver : Pour résoudre les conflits, il vous suffit de trouver tous ces blocs et de les éditer afin que le fichier apparaisse comme vous le souhaitez (en choisissant vos lignes, celles de votre collaborateur, une combinaison ou quelque chose de complètement nouveau) et d'enregistrer. Assurez-vous de supprimer les lignes de délimitation qui commencent par
 
-5. Conflit de ligne blanche (Whitespace conflict) : Les conflits de ligne blanche surviennent lorsque les modifications apportées à un fichier incluent des changements mineurs tels que l'ajout ou la suppression d'espaces, de tabulations ou de retour à la ligne. Ces conflits se produisent généralement lors de la fusion ou de la rébase.
+    ```
+    <<<<<<<,
+    =======,
+    et >>>>>>>
+    ```
+
+    Une fois que vous avez apporté ces modifications, il vous suffit d'ajouter (*staging*), de *commit* et de *push* les fichiers pour résoudre le conflit.
+
+```{r}
+#| label: merge_conflict
+#| echo: false
+#| out-width: 40%
+#| fig-cap: |
+#|    
+#| fig-alt: |
+#|   merge.
+
+knitr::include_graphics("./assets/img/rstudio-merge-conflict.png", dpi = 270)
+```
+
+
+1. Conflit de rébase (Rebase conflict) : Lorsque vous effectuez une opération de rébase pour intégrer les modifications d'une branche dans une autre, des conflits peuvent se produire si Git ne parvient pas à appliquer automatiquement les modifications. Cela peut se produire lorsque des modifications conflictuelles sont apportées aux mêmes fichiers ou aux mêmes parties de code.
+
+2. Conflit de stratégie de fusion (Merge strategy conflict) : Git offre plusieurs stratégies de fusion, telles que la fusion rapide (fast-forward), la fusion récursive (recursive) ou la fusion ours (ours). Lorsque vous spécifiez une stratégie de fusion spécifique et que celle-ci ne peut pas être appliquée en raison de conflits, un conflit de stratégie de fusion se produit.
+
+3. Conflit de nommage (Naming conflict) : Ce type de conflit se produit lorsque deux fichiers ou répertoires ont des noms similaires et que Git ne peut pas les distinguer clairement. Cela peut survenir lors de la fusion de branches contenant des fichiers ou des répertoires avec des noms conflictuels.
+
+4. Conflit de ligne blanche (Whitespace conflict) : Les conflits de ligne blanche surviennent lorsque les modifications apportées à un fichier incluent des changements mineurs tels que l'ajout ou la suppression d'espaces, de tabulations ou de retour à la ligne. Ces conflits se produisent généralement lors de la fusion ou de la rébase.
 
 Il est important de noter que ces conflits sont des situations normales lors de la collaboration avec Git. Lorsqu'un conflit se produit, Git marque les zones conflictuelles dans les fichiers concernés et il vous revient de les résoudre en choisissant quelles modifications garder ou en effectuant des ajustements manuels.
 
