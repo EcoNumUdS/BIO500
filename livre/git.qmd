@@ -296,13 +296,13 @@ knitr::include_graphics("./assets/img/git-conflict-01-push-error.png", dpi = 270
 > Pour résoudre le conflit depuis RStudio, il choisir certains de vos changements ainsi que certains de ceux de votre collaborateur, vous pouvez alors éditer manuellement et corriger le fichier. Lorsque vous *pull* le fichier avec un conflit, Git remarque qu'il y a un conflit et modifie le fichier pour afficher à la fois vos propres modifications et celles de votre collaborateur dans le fichier. Il affiche également le fichier dans l'onglet Git avec une icône orange en forme de U, ce qui indique que le fichier est non fusionné et donc en attente de votre aide pour résoudre le conflit. 
 > Il délimite ces blocs avec une série de signes inférieurs et supérieurs, de sorte qu'ils sont faciles à trouver : Pour résoudre les conflits, il vous suffit de trouver tous ces blocs et de les éditer afin que le fichier apparaisse comme vous le souhaitez (en choisissant vos lignes, celles de votre collaborateur, une combinaison ou quelque chose de complètement nouveau) et d'enregistrer. Assurez-vous de supprimer les lignes de délimitation qui commencent par
 
-    ```
-    <<<<<<<,
-    =======,
-    et >>>>>>>
-    ```
+```
+<<<<<<<,
+=======,
+et >>>>>>>
+```
 
-    Une fois que vous avez apporté ces modifications, il vous suffit d'ajouter (*staging*), de *commit* et de *push* les fichiers pour résoudre le conflit.
+> Une fois que vous avez apporté ces modifications, il vous suffit d'ajouter (*staging*), de *commit* et de *push* les fichiers pour résoudre le conflit.
 
 ```{r}
 #| label: merge_conflict
