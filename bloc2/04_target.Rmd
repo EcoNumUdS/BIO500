@@ -259,3 +259,22 @@ class: inverse, center, middle
 - Construire le `_targets.R` au fur et à mesure de vos progrès
 
 ---
+class: inverse, center, middle
+
+# Évaluation formative #2
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
+## Structurer sa base de données
+
+---
+
+## Évaluation formative #2
+
+Chaque équipe doit évaluer les scripts d'une autre équipe
+
+- À compléter pour le **8 avril**
+- La personne qui a remis le travail est responsable d'entrer l'évaluation
+- Tous les commentaires doivent être formulés comme une question
+
+---

@@ -388,8 +388,36 @@ str(knitr::opts_chunk$get())
 ---
 class: inverse, center, middle
 
-# Discussion
+# Évaluation formative #2
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
+## Structurer sa base de données
+
+---
+
+## Évaluation formative #2
+
+**À remettre pour le 1er avril sur Moodle**
+
+Vous avez à soumettre vos scripts qui servent à créer votre base de données. Vos scripts doivent contenir les commandes `R` et `SQL` pour créer la base de données, ses tables et injecter les données.
+
+## La grille d'évaluation est diponible sur Moodle
+
+[Grille d'évaluation](https://github.com/EcoNumUdS/BIO500/blob/master/ressources/bd_grille_de_correction.pdf)
+
+---
+
+## Évaluation formative #2
+
+**Un membre par équipe** aura à remettre un dossier .zip contenant les scripts nécessaires pour créer la base de donnée et y injecter les données.
+
+- Remise par un seul membre par équipe
+- Spécifiez pour quel jeu de donnée la bd est conçue
+- Commentez vos scripts pour que votre processus soit évident aux autres
+- Diviser les tâches en fonctions distinctes
+- Un script pour une fonction
+- Un script principal qui décrit le processus et fait appel aux fonctions qui exécutent les tâches
+- Vos scripts doivent produire une base de données avec les tables, le type de chacun des champs, les clés primaires et secondaires et les contraintes
 
 ---
