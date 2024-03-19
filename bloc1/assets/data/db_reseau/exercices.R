@@ -85,7 +85,7 @@ head(resume_auteurs)
 sql_requete <- "
 SELECT articleID, annee, count(DISTINCT auteur1) AS nb_auteurs
 FROM collaborations
-INNER JOIN articles USING (articleID)
+INNER JOIN articles ON articles.articleID = collaborations.articleID
 GROUP BY articleID
 ORDER BY nb_auteurs DESC;"
 
@@ -98,7 +98,7 @@ lsql_requete <- "
 SELECT articleID, citations, count(auteur1) AS nb_auteurs FROM (
 	SELECT DISTINCT articleID, auteur1, citations
 	  FROM collaborations
-	  INNER JOIN articles USING (articleID)
+	  INNER JOIN articles ON articles.articleID = collaborations.articleID
 ) GROUP BY articleID;"
 
 resume_articles <- dbGetQuery(con, sql_requete)
