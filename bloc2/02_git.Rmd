@@ -358,13 +358,13 @@ Le conflit de de fusion est le résultat de deux modifications concurrentes sur 
 
 Il est possible de résoudre le conflit directement dans RStudio. Essayez-vous !
 
-Marche à suivre : (https://econumuds.github.io/BIO500/git.html#conflits)[https://econumuds.github.io/BIO500/git.html#conflits]
+Marche à suivre : [https://econumuds.github.io/BIO500/git.html#conflits](https://econumuds.github.io/BIO500/git.html#conflits)
 
 ---
 
 # Gestion des conflits
 
-(Chapitre 7.3 *Git, Conflits*)[https://econumuds.github.io/BIO500/git.html#conflits]
+[Chapitre 7.3 *Git, Conflits*](https://econumuds.github.io/BIO500/git.html#conflits)
 
 - Ouvrir le fichier en conflit
 - Résoudre le conflit
