@@ -1,7 +1,7 @@
 ---
 title: BIO500
-author: "Dominique Gravel"
-date: "Hiver 2022"
+author: "Victor Cameron"
+date: "Hiver 2024"
 output:
   xaringan::moon_reader:
     css: [default, ../assets/bio500.css, "hygge"]

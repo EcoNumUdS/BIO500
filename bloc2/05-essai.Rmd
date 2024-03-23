@@ -14,7 +14,7 @@ L'objectif d'un essai est de présenter une perspective sur un enjeu scientifiqu
 
 # Mise en situation
 
-Le journal Québec Science vous a invité à titre de chercheur à écrire l'éditorial du mois sur cet enjeu. Plus spécifiquement, on vous demande de vous exprimer sur l'importance de la *transparence* et des standards de *reproductibilité* dans un contexte où il y a une accélération de la recherche par l'utilisation d'intelligence artificielle. Cette invitation fait suite à la publication d'un article paru dans le dernier numéro du journal :
+Le journal Québec Science vous a invité à titre de chercheur à écrire l'éditorial du mois sur cet enjeu. Plus spécifiquement, on vous demande de vous exprimer sur l'importance de la *transparence* et des standards de *reproductibilité* dans un contexte où il y a une accélération de la recherche par l'utilisation de l'intelligence artificielle. Cette invitation fait suite à la publication d'un article paru dans le dernier numéro du journal :
 
 [ChatGPT en science : alerte à l’imposteur!](https://www.quebecscience.qc.ca/edito/chatgpt-science-alerte-imposteur/)
 
@@ -32,9 +32,9 @@ Québec Science est un journal destiné à un grand public, alors je vous invite
 
 - Le texte doit faire au maximum 1200 mots et doit être accompagné d'un résumé court, provocateur de 100 mots. Le document peut être supporté par une figure et/ou un tableau.
 - L'argumentaire doit être supporté de littérature scientifique appropriée. Vous pouvez utiliser les références discutées en classe, celles disponible sur le dépôt git et vous devez également trouver de **nouvelles références** pour appuyer vos propos.
+- Pour chaque argument (positif ou negatif) amené, vous devez en **donner un exemple personnel et concret** prenant place dans le cadre d'un travail scolaire.
 - Le texte peut être structuré en sections afin de permettre au lecteur de suivre le développement de l'argumentaire.
 - La section finale doit résumer les principaux points.
-- Utiliser RMarkdown pour la mise en forme du document.
 
 ---
 
@@ -47,6 +47,7 @@ Québec Science est un journal destiné à un grand public, alors je vous invite
     + Identification de l'apport de l'intelligence artificielle
     + Identification des problèmes
     + Proposition de solutions
+    + Qualité de la mise en contexte personnelle (exemples)
 - Originalité
 - Mise en page
 - Bibliographie

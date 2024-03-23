@@ -100,6 +100,18 @@ Hyperlien.
 Voici le [lien](https://github.com/EcoNumUdS/BIO500) pour le GitHub du cours BIO500.
 ```
 
+Une table
+
+```
+| Time          | Session  |   Topic |
+|:--------------|:--------:|--------:|
+| *left*        | *center* | *right* |
+| 01:00 - 01:50 |    1     | Anatomy |
+| 01:50 - 02:00 |          | *Break* |
+| 02:00 - 02:45 |    2     |  Tables |
+| 02:45 - 03:00 |          | *Break* |
+```
+
 ### Blocs de code
 
 Un bloc de code peut être ajouté au document en sélectionnant l'icône verte du panneau RStudio. Le code R doit être à l'intérieur d'un bloc de code (*code chunk*). Par exemple:

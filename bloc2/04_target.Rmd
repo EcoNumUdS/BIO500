@@ -29,7 +29,7 @@ La programmation d'une séquence d'instructions permet de formaliser ce processu
 
 # Quel outil utiliser ?
 
-Le `makefile` est sans contredit l'outil le plus commun et le plus puissant. Spécifique au système d'exploitation UNIX, il peut seulement être utilisé sur les Mac, Linux, et des machines virtuelles. Pas pratique pour les utilisateurs Windows !
+<!-- Le `makefile` est sans contredit l'outil le plus commun et le plus puissant. Spécifique au système d'exploitation UNIX, il peut seulement être utilisé sur les Mac, Linux, et des machines virtuelles. Pas pratique pour les utilisateurs Windows ! -->
 
 Nous utiliserons la librairie `targets` pour assurer la reproductibilité de la démarche entreprise dans le cours. L'ensemble des instructions nécessaires à la production du rapport, de la création de la base de données à la compilation du document écrit, seront contenues dans une séquence d'instructions, plus généralement appelée 'workflow' ou 'pipeline'.
 
@@ -41,10 +41,22 @@ Nous utiliserons la librairie `targets` pour assurer la reproductibilité de la 
 2. Faire une régression linéaire 
 3. Faire une figure et l'enregistrer
 
+## Vous pouvez suivre avec le [chapitre 9](https://econumuds.github.io/BIO500/targets.html) du livre
+
 ---
 
 # La structure de fichiers sur votre ordinateur 
 
+```md
+├── data             # Dossier de données
+│   ├── data.txt     # Jeu de données
+
+├── R                # Dossier de scripts R
+│   ├── figure.R     # Fonction utilisée comme targets
+│   ├── analyse.R    # Fonction utilisée comme targets
+
+├── _targets.R       # Fichier targets qui définit le pipeline
+```
 
 ---
 
@@ -91,11 +103,11 @@ Quatre éléments peuvent être modifiés :
 
 Une `target` est une étape de la séquence d'instructions.  
 
-Une `target` est au minimum une cible (nom d'un objet) et une dépendance (commande R) 
+Une `target` est au minimum une _cible_ (nom d'un objet) et une _dépendance_ (commande R) 
 
 Une `target` produit un objet R qui est enregistré dans la mémoire de la session
 
-Une dépendance est une expression qui dépent d'une `target` précédente
+Une _dépendance_ est une expression qui dépent d'une `target` précédente
 
 Le package `targets` exécute seulement les targets qui ne sont pas à jour. 
 
@@ -108,7 +120,7 @@ Le package `targets` exécute seulement les targets qui ne sont pas à jour.
 library(targets)
 source("exemple_targets/R/analyse.R")
 source("exemple_targets/R/figure.R")
-tar_option_set(packages = c("MASS", "igraph"))
+tar_option_set(packages = c("MASS"))
 list(
   tar_target(
     data, # Le nom de l'objet
@@ -137,30 +149,22 @@ Une target est exécutée seulement lorsque la `target` dont elle dépend est pl
 
 ---
 
-# Construction de la séquence
+# La séquence
 
-On peut visualiser la séquence : 
+## 1. On peut visualiser la séquence
 
 ```{r eval = FALSE}
 source("exemple_targets/_targets.R")
 tar_glimpse()
 ```
 
----
-
-# Exécuter la séquence 
+## 2. Exécuter la séquence 
 
 ```{r eval = FALSE}
 tar_make()
 ```
 
-De nombreuses informations utiles sont générées automatiquement lors de l'opération.
-
----
-
-# Quelles étapes sont à jour ?
-
-Il est possible de visualiser les étapes qui sont à jour et celles qui ne le sont pas. 
+## 3. Visualiser les étapes qui sont à jour et celles qui ne le sont pas
 
 ```{r eval = FALSE}
 tar_visnetwork()
@@ -219,25 +223,25 @@ Manuel de targets [https://books.ropensci.org/targets/](https://books.ropensci.o
 
 ---
 
-# Nettoyage du dépôt en fin de script
-
-Il arrive que certains scripts génèrent des fichiers temporaires qui ne doivent pas être conservés inutilement et être poussés sur github. 
-
-Le fichier `.gitignore` vous permet d'identifier les fichiers qui ne doivent pas être versés sur le serveur. 
-
----
-
 # Exercice 
 
 Construire un script `targets` qui contient les étapes suivantes : 
 
-1. Tirer au hasard 1000 valeurs d'une distribution normale avec une moyenne de 1 et un écart-type de 1
-2. Faire un histogramme de ces 1000 valeurs
+1. Tirer au hasard 1000 valeurs d'une distribution normale avec une moyenne de 1 et un écart-type de 1 `rnorn(1000, 1, 1)`
+2. Faire un histogramme de ces 1000 valeurs `hist()`
 3. Produire un document html avec RMarkdown 
 
 Note : la commande pour compiler du markdown est `render("mon_rmarkdown.Rmd")`
 
 Note : Alternativement, `tar_render()` peut être utilisé à la place de `render()` et de `tar_target()` pour compiler un document RMarkdown. *Voir la [documentation](https://docs.ropensci.org/tarchetypes/reference/tar_render.html).
+
+---
+
+# Nettoyage du dépôt en fin de script
+
+Il arrive que certains scripts génèrent des fichiers temporaires qui ne doivent pas être conservés inutilement et être poussés sur github. 
+
+Le fichier `.gitignore` vous permet d'identifier les fichiers qui ne doivent pas être versés sur le serveur. 
 
 ---
 
@@ -254,7 +258,7 @@ class: inverse, center, middle
 - Identifiez clairement vos questions de recherche
 - Planifiez les requêtes à réaliser pour traiter les données
 - Créez un dépôt github pour votre projet 
-- Créez un cahier de laboratoire où sont notées toutes vos étapes 
+- Créez un cahier de laboratoire où sont notées toutes vos étapes
 - Versez votre travail sur le dépôt en ligne
 - Construire le `_targets.R` au fur et à mesure de vos progrès
 
@@ -269,12 +273,28 @@ class: inverse, center, middle
 
 ---
 
-## Évaluation formative #2
+# Évaluation formative #2
 
-Chaque équipe doit évaluer les scripts d'une autre équipe
+**À remettre pour le 1er avril sur Moodle**
 
-- À compléter pour le **8 avril**
-- La personne qui a remis le travail est responsable d'entrer l'évaluation
-- Tous les commentaires doivent être formulés comme une question
+Vous avez à soumettre vos scripts qui servent à créer votre base de données. Vos scripts doivent contenir les commandes `R` et `SQL` pour créer la base de données, ses tables et injecter les données.
+
+## La grille d'évaluation est diponible sur Moodle
+
+[Grille d'évaluation](https://github.com/EcoNumUdS/BIO500/blob/master/ressources/bd_grille_de_correction.pdf)
+
+---
+
+# Évaluation formative #2
+
+**Un membre par équipe** aura à remettre un dossier .zip contenant les scripts nécessaires pour créer la base de donnée et y injecter les données.
+
+- Remise par un seul membre par équipe
+- Spécifiez pour quel jeu de donnée la bd est conçue
+- Commentez vos scripts pour que votre processus soit évident aux autres
+- Diviser les tâches en fonctions distinctes
+- Un script pour une fonction
+- Un script principal qui décrit le processus et fait appel aux fonctions qui exécutent les tâches
+- Vos scripts doivent produire une base de données avec les tables, le type de chacun des champs, les clés primaires et secondaires et les contraintes
 
 ---
