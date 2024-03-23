@@ -29,7 +29,7 @@ class: title-slide, middle
 
 # Bloc 3
 
-- Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/bloc3/).
+- Les notions sont abordés dans les chapitres [10](https://econumuds.github.io/BIO500/figures.html) et [11](https://econumuds.github.io/BIO500/composantes_graphiques.html) du livre.
 
 - Un guide des fonctionalités de R pour la visualisation des données vous est accessible [ici](https://github.com/EcoNumUdS/BIO500/blob/master/references/graphsonr.pdf).
 
@@ -226,26 +226,6 @@ class: inverse, center, middle
 
 <!-- - Problème: ratio 8/3 -->
 
-
----
-
-# Communiquer par les graphiques
-
-<br>
-.center[
-  <img src="assets/img/Weisgerber_1.png" width="80%"></img>
-]
-
----
-
-# Communiquer par les graphiques
-
-<br>
-.center[
-  <img src="assets/img/Weisgerber2.png" width="80%"></img>
-]
-
-
 ---
 class: inverse, center, middle
 
@@ -320,12 +300,44 @@ class: inverse, center, middle
 
 ---
 
-# Quelques conseils
+# Choisir une visualisation
 
-- Limiter le ratio encre/données afin de faciliter la lecture.
+## Présenter une distribution
 
 .center[
-  <img src="assets/img/data2ink.jpg" width="100%"></img>
+  <img src="assets/img/viz_distribution.png" height="150px"></img>
+]
+
+## Montrer une tendance
+
+.center[
+  <img src="assets/img/viz_tendance.png" height="150px"></img>
+]
+
+---
+
+# Choisir une visualisation
+
+## Comparer ou contraster
+
+.center[
+  <img src="assets/img/viz_comparaison.png" height="150px"></img>
+]
+
+## Établir une relation
+
+.center[
+  <img src="assets/img/viz_relation.png" height="150px"></img>
+]
+
+---
+
+# Choisir une visualisation
+
+## Flux
+
+.center[
+  <img src="assets/img/viz_flux.png" height="150px"></img>
 ]
 
 ---
@@ -339,7 +351,7 @@ class: inverse, center, middle
 
 # Exercice
 
-## 7 minutes
+## 10 minutes
 
 Dessinez à la main une proposition de figure pour la phénologie des différentes espèces de chauve-souris du Québec.
 
@@ -734,7 +746,7 @@ dev.copy(svg, file = "test.eps")
 
 # Exercice
 
-## 10 minutes
+## 15 minutes
 
 Scripter votre figure sur R à l'aide des [données](./bloc3/assets/data/phenologie.csv)
 
@@ -787,7 +799,6 @@ class: inverse, center, middle
 # Consignes
 
 - Identifier clairement vos questions de recherche
-- Illustrer le réseau de collaborations
 - Compléter votre analyse au moyen de 3 figures et 1 tableau
 
 ---
@@ -812,3 +823,24 @@ Est-ce que la science ouverte peut prévenir la fraude ?
 [Lien vers l'article dans Science](https://www.sciencemag.org/news/2020/01/spider-biologist-denies-suspicions-widespread-data-fraud-his-animal-personality)
 
 [Et un lien vers un blog qui explique comment la triche a été réalisée](https://laskowskilab.faculty.ucdavis.edu/2020/01/29/retractions/)
+
+---
+class: inverse, center, middle
+
+# Évaluation formative #2
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
+## Structurer sa base de données
+
+---
+
+## Évaluation formative #2
+
+Chaque équipe doit évaluer les scripts d'une autre équipe
+
+- À compléter pour le **8 avril**
+- La personne qui a remis le travail est responsable d'entrer l'évaluation
+- Tous les commentaires doivent être formulés comme une question
+
+---
