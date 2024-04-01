@@ -748,7 +748,7 @@ dev.copy(svg, file = "test.eps")
 
 ## 15 minutes
 
-Scripter votre figure sur R à l'aide des [données](./bloc3/assets/data/phenologie.csv)
+Scripter votre figure sur R à l'aide des [données](./assets/data/phenologie.csv)
 
 Si elle est trop élaborée, vous pouvez la simplifier pour la rendre plus facile à réaliser
 
