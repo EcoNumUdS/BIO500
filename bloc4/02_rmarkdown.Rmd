@@ -27,23 +27,12 @@ class: title-slide, middle
 
 ---
 
-# Bloc 4
+# Aujourd'hui
 
-- Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/bloc4/).
+1. Documents dynamiques avec Rmarkdown
+2. Arrimage avec `targets`
 
-
----
-class: inverse, center, middle
-
-# Introduction
-
-<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
-
----
-
-# Bases de Rmarkdown
-
-Voir les [diapositives du cours 2](https://econumuds.github.io/BIO500/bloc2/#33) pour un rappel approfondi
+Voir les [diapositives du cours 2](https://econumuds.github.io/BIO500/bloc2/#33) et les [chapitres 8 et 9](https://econumuds.github.io/BIO500/markdown1.html) pour un rappel approfondi
 
 ---
 
@@ -87,7 +76,15 @@ install.packages("rticles")
 
 # Exemple `rticles`
 
-Un exemple complet, dans un répertoire type, est disponible sur [GitHub](https://github.com/EcoNumUdS/BIO500/tree/master/bloc4/exemple_targets)
+.center[
+    ![:scale 90%](assets/img/rapport_template.png)
+]
+
+---
+
+# Exemple `rticles`
+
+Un exemple complet, dans un répertoire type, est disponible sur [Moodle](https://github.com/EcoNumUdS/BIO500/tree/master/bloc4/exemple_targets)
 
 ---
 
@@ -119,7 +116,7 @@ Même anatomie que présentée dans le bloc2, mais générée automatiquement.
 # Le YAML - Rappel
 
 - Les métadonnées et les options du document sont définies ici
-- La syntaxe est `cle: value`
+- La syntaxe est `key: value`
 - Commence et se termine entre trois tirets `---`
 - Toujours au début du document
 
@@ -184,8 +181,8 @@ Ce qui fait que chaque gabarit sera différent:
 Le gabarit 'PNAS Journal Article' est pratique.
 <br><br>
 **Une colonne:**<br>
-Le gabarit 'Elsevier Journal Article' est pratique.
-(Vous pourriez essayer le gabarit PNAS Journal Article avec la clé `pnas_type:` = `pnasmathematics`)
+
+Vous pourriez essayer le gabarit PNAS Journal Article avec la clé `pnas_type: pnasmathematics`
 
 ---
 
@@ -203,7 +200,7 @@ list(
 )
 ```
 
-Présenter une figure à partir des données produites au target `resultat_modele` dans le rapport `RMarkdown` et établit la dépendance du rapport à la target.
+Présenter une figure à partir des données produites à la target `resultat_modele` dans le rapport `RMarkdown` et établir la dépendance du rapport à la target
 
 ```r
 data_2_plot <- tar_read(resultat_modele)
@@ -233,7 +230,7 @@ abline(resultat_modele)
 
 ---
 
-# Insertion de figures
+# Insertion d'images
 
 Insertion de figures préalablement générées via un script R.
 
@@ -312,7 +309,7 @@ Je fais référence à la première entrée du fichier.bib @belkin2002using.
 Pour référencer plusieurs références:
 
 ```r
-Je fais référence à plusieurs référence [@belkin2002using;@berard1994embedding]
+Je fais référence à plusieurs références [@belkin2002using;@berard1994embedding]
 ```
 
 ---
@@ -337,132 +334,10 @@ Je fais référence à plusieurs référence [@belkin2002using;@berard1994embedd
 
 ---
 
-class: inverse, center, middle
+# À vous de jouer
 
-# Exemple target et Rmarkdown
+## Créez un rapport `Rmarkdown` avec le gabarit `PNAS Journal Article` puis compilez-le
 
-<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
-
----
-
-# `targets` + rapport `rmarkdown`
-
-Structure du dossier principal :
-
-.left[
-```
-
-├── data                            # Dossier de données
-│   ├── data.txt                    # Jeu de données 1
-│   ├── data_2.txt                  # Jeu de données 2
-
-
-├── R                               # Dossier de scripts R
-│   ├── prep_donnees.R              # Fonction utilisér comme targets
-│   ├── analyse.R                   # Fonction utilisée comme targets
-│   ├── figure.R                    # Fonction utilisée comme targets
-
-
-├── resultats                       # Contient les résultats 
-│   ├── resultats_modele.csv        # Résultats
-
-├── rapport                         # Contient le rapport et fichiers associés
-│   ├── rapport.Rmd                 # Rapport
-│   ├── pnas-sample.bib             # Fichier de bibliographie
-
-├── _targets.R                      # Fichier targets qui définie le pipeline
-
-
-```
-]
-
----
-
-# Fichier _targets.R
-
-.font80[
-```r
-# Version bonnifiée du bloc 2
-library(targets)
-library(tarchetypes)
-source("R/analyse.R")
-tar_option_set(packages = c("rmarkdown","knitr"))
-list(
-  tar_target(
-    name = path, # Cible
-    command = "./data", # Dossier contenant les fichiers de données
-    format = "file" # Format de la cible
-  ),
-  tar_target(
-    name = file_paths, # Cible
-    command = list.files(path, full.names = TRUE) # Liste les fichiers dans le dossier
-  ),
-  tar_target(
-    name = data, # Cible pour le modèle 
-    command = prep_donnees(file_paths) # Jointure des jeux de données
-  ),
-  tar_target(
-    name = resultat_modele, # Cible pour le modèle 
-    command = mon_modele(data) # Exécution de l'analyse
-  ),
-  tar_render(
-    name = rapport, # Cible du rapport
-    path = "rapport/rapport.Rmd" # Le path du rapport à renderiser
-  )
-)
-```
-]
-
----
-
-# Suivre un ensemble de fichiers de données
-
-1. Une target pour suivre le dossier contenant les données
-.font80[
-```r
-tar_target(
-  name = path, # Cible
-  command = "./data", # Dossier contenant les fichiers de données
-  format = "file" # Format de la cible
-)
-```
-]
-2. Une target qui liste tous les fichiers du dossier
-.font80[
-```r
-tar_target(
-    name = file_paths, # Cible
-    command = list.files(path, full.names = TRUE) # Liste les fichiers dans le dossier
-  )
-```
-]
-3. Une target qui charge les données et les assemblent
-.font80[
-```r
-tar_target(
-  name = data, # Cible pour le modèle 
-  command = prep_donnees(file_paths) # Jointure des jeux de données
-)
-```
-]
-
----
-
-# Compilation du Rmarkdown
-
-La librarie `tarchetypes` simplifie la compilation du fichier .Rmd.<br>
-Même syntaxe que les autres target `tar_target()`
-
-```r
-install.packages("tarchetypes")
-```
-
-```r
-tar_render(cible, "path/to/file.Rmd")
-```
-
-<br>
-
-L'instruction de compilation du fichier .Rmd sera toujours la dernière opération.
+Modifiez certains éléments et vérifiez le résultat dans le fichier PDF généré.
 
 ---

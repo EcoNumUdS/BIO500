@@ -1,0 +1,87 @@
+# Targets (avancé) {#sec-targets_avance}
+
+Ce chapitre couvrira certaines notions plus avancées concernant la production de rapport, notamment la gestion des dépendances entre un rapport RMArkdown et des targets.
+
+
+Un exemple exhaustif de rapport RMarkdown avec des targets est disponible dans le dépôt GitHub [exemple_targets](https://github.com/EcoNumUdS/BIO500/tree/master/bloc4/exemple_targets). 
+
+Ce répertoire présente comment organiser un projet en un répertoire de travail reproductible.
+Il représente un exemple répondant aux attentes pour le travail terminal.
+
+Le fichier `_targets.R` présenté dans ce répertoire est un exemple de pipeline permettant
+d'automatiser l'exécution et d'optimiser la mise à jour du projet dans un souci de reproductibilité.
+Une target rerpésente une étape du projet dont l'exécution dépend du produit d'une ou de targets 
+précédents.
+
+Le pipeline présenté dans cet exemple suit l'état de plusieurs jeux de données, les assemble,
+produit une analyse et présente les résultats à l'aide d'une visualisation dans un rapport `RMarkdown`.
+
+L'exemple présenté permet de suivre **plusieurs fichiers de données** et de définir les
+**dépendances du rapport**. Comme établir ces dépendances requiert [certaines technicalités](https://econumuds.github.io/BIO500/bloc4/#16), je vous suggère
+de vous inspirer grandement de l'exemple présenté.
+
+
+## Compiler un rapport RMarkdown avec des targets
+
+La librarie `tarchetypes` simplifie la compilation du fichier `.Rmd` avec `tar_render()` qui partage une syntaxe similaire aux autres targets `tar_target()`
+
+```r
+install.packages("tarchetypes")
+```
+
+```r
+tar_render(
+    cible, 
+    "path/to/file.Rmd")
+```
+
+L'instruction de compilation du fichier .Rmd doit toujours être la dernière targets.
+
+
+## Expliciter les dépendances dans un rapport RMarkdown
+
+Il est recommandé de charger dans un rapport RMarkdown les données produites dans une target précédente à l'aide de `tar_read` ou `tar_load` pour expliciter les dépendances entre les targets. Cela permet de s'assurer que les targets sont bien exécutées dans le bon ordre. 
+
+```r
+# Charger les données
+data <- tar_read("nomDuTarget")
+
+# Afficher les premières lignes
+head(data)
+```
+
+
+## Suivre un ensemble de fichiers de données
+
+Il est possible de suivre un ensemble de fichiers de données en utilisant une target pour lister les fichiers et une autre pour les charger.
+Cette approche a l'avantage de permettre la mise à jour automatisée du projet lorsque les fichiers de données sont modifiés.
+
+Cette approche requiert trois targets :
+
+**1. Une target pour suivre le dossier contenant les données**
+
+```r
+tar_target(
+  name = path, # Cible
+  command = "./data", # Dossier contenant les fichiers de données
+  format = "file" # Format de la cible
+)
+```
+
+**2. Une target qui liste tous les fichiers du dossier**
+
+```r
+tar_target(
+    name = file_paths, # Cible
+    command = list.files(path, full.names = TRUE) # Liste les fichiers dans le dossier
+  )
+```
+
+**3. Une target qui charge les données et les assemblent**
+
+```r
+tar_target(
+  name = data, # Cible 
+  command = prep_donnees(file_paths) # Jointure des jeux de données
+)
+```

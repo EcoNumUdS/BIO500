@@ -1,7 +1,7 @@
 ---
 title: BIO500
-author: "Dominique Gravel"
-date: "Hiver 2020"
+author: "Victor Cameron"
+date: "Hiver 2024"
 output:
   xaringan::moon_reader:
     css: [default, ../assets/bio500.css, "hygge"]
@@ -16,7 +16,8 @@ output:
 
 ```{r child = '02_rmarkdown.Rmd'}
 ```
-```{r child = '03_travail_session.Rmd'}
+```{r child = '03_targets2.Rmd'}
 ```
-```{r child = '04_latex.Rmd'}
+```{r child = '04_travail_session.Rmd'}
 ```
+

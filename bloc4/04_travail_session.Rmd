@@ -18,11 +18,12 @@ Vous devez remettre les résultats de votre analyse des données de collaboratio
 
 Le rapport doit contenir :
 
-- 3 figures, incluant l'illustration du réseau
+- 3 figures
 - Un titre et un résumé
 - Une courte introduction spécifiant les questions
 - Une courte description de la méthode et des résultats
 - Une discussion, enrichie de citations provenant de la littérature scientifique
+- Références internes (figures, bibliographie)
 - L'ensemble du texte doit faire 1000-1500 mots max
 - Une bibliographie
 
@@ -60,7 +61,7 @@ Néanmoins, l'ensemble de ce matériel doit se trouver sur un dépôt git auquel
   - Qualité du français
 - Reproductibilité
   - Utilisation appropriée du versionnage
-  - Conception de la base de données
+  - Validation des données et conception de la base de données
   - Requêtes
   - RMarkdown
   - Automatisation (targets)
@@ -75,6 +76,5 @@ class: inverse, center, middle
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
-## Le rôle de la reproductibilité sur la prévension des fraudes
+## Le rôle de la reproductibilité pour la prévension des fraudes
 
----

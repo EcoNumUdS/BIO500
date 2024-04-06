@@ -45,6 +45,7 @@ book:
         - markdown1.qmd
         # - metadonnees.qmd
         - targets.qmd
+        - targets_avance.qmd
 
     # Bloc 3: Utiliser les données
     # Bloc 3: Visualisation des données    
