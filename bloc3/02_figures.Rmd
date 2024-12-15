@@ -789,7 +789,112 @@ class: inverse, center, middle
 
 ---
 
+# Les cartes
+
+- Les cartes sont un outil de visualisation très puissant.
+- Elles permettent de représenter des données géographiques.
+
+Deux types de données géographiques :
+
+- Les données raster
+- Les données vectorielles
+
+---
+
+# Les cartes
+
+## Données raster
+
+- Les données raster sont des données qui sont stockées sous forme de grilles régulières.
+
+```{r, eval=TRUE, echo=FALSE}
+library(terra)
+
+# Créer une matrice de valeurs aléatoires
+mat <- matrix(data = runif(n = 100, min = 1, max = 10), nrow = 10, ncol = 10)
+
+# Créer un objet raster à partir de la matrice
+r <- rast(mat)
+
+# Afficher l'objet raster
+plot(r)
+```
+
+---
+
+# Les cartes
+
+## Données raster
+
+
+```{r, eval=FALSE, echo=TRUE}
+library(terra)
+
+# Créer une matrice de valeurs aléatoires
+mat <- matrix(data = runif(n = 100, min = 1, max = 10), nrow = 10, ncol = 10)
+
+# Créer un objet raster à partir de la matrice
+r <- rast(mat)
+
+# Afficher l'objet raster
+r
+```
+
+
+---
+
+# Les cartes
+
+## Données vectorielles
+
+- Les données vectorielles sont des données qui sont associées à des coordonnées géographiques et qui sont stockées sous forme de points, de lignes ou de polygones.
+- Les données vectorielles sont souvent utilisées pour représenter des données discrètes, telles que les limites administratives ou les points d'intérêt.
+
+```{r, eval=TRUE, echo=FALSE}
+library(sf)
+
+# Créer des données vectorielles
+pts <- st_sfc(st_point(c(1, 1)), st_point(c(1, 2)), st_point(c(2, 2)), st_point(c(2, 1)))
+shp <- st_sf(data.frame(id = 1:4), geometry = pts)
+
+# Faire une figure avec les données vectorielles
+plot(shp)
+
+## Ajouter la position des points
+text(x = 1:4, y = 1:4, labels = c("POINT (1,1)", "POINT (1,2)", "POINT (2,2)", "(2,1)"))
+```
+
+---
+
+# Les cartes
+
+## Données vectorielles
+
+```{r, eval=FALSE}
+library(sf)
+
+# Créer des données vectorielles
+pts <- st_sfc(st_point(c(1, 1)), st_point(c(2, 2)), st_point(c(3, 3)), st_point(c(4, 4)))
+shp <- st_sf(data.frame(id = 1:4), geometry = pts)
+
+# Donner un nom aux points
+shp$nom <- c("A", "B", "C", "D")
+
+# Sauver les données
+st_write(obj = shp, dsn = "assets/points.shp")
+
+# Lire des données vectorielles à partir d'un fichier shapefile
+nc <- st_read(dsn = "assets/points.shp")
+
+# Afficher les données vectorielles
+nc
+```
+
+---
+
 # Cartes interactives avec `leaflet`
+
+ATTENTION !! Cette fonctionnalité requiert plus de ressources et ne fonctionne pas sur tous les appareils.
 
 ```{r, eval=FALSE}
 library(leaflet)
@@ -811,7 +916,11 @@ m
 
 ## 15 minutes
 
-Gnénérez une carte interactive qui présente la localisation des 3 campus de l'UdS.
+Gnénérez une carte de couverture du sol pour le mont Bellevue.
+
+Couverture du sol : <https://www.donneesquebec.ca/recherche/dataset/utilisation-du-territoire>
+
+Mont Bellevue : [en format geopackage](./assets/data/mont_bellevue.geojson)
 
 ---
 class: inverse, center, middle
