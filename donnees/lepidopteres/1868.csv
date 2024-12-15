@@ -1,0 +1,3 @@
+"observed_scientific_name","year_obs","day_obs","time_obs","dwc_event_date","obs_variable","obs_unit","obs_value","lat","lon","original_source","creator","title","publisher","intellectual_rights","license","owner"
+"Papilio brevicauda",1868,1,"00:00:00","1868-01-01T00:00:00","occurrence",NA,1,49.5,-63,"gbif","GBIF","Lyman Entomological Museum","Canadian Biodiversity Information Facility","Canadian Biodiversity Information Facility","cc0 1.0","Canadian Biodiversity Information Facility"
+"Pieris oleracea",1868,1,"00:00:00","1868-01-01T00:00:00","occurrence",NA,1,49.5,-63,"gbif","GBIF","Lyman Entomological Museum","Canadian Biodiversity Information Facility","Canadian Biodiversity Information Facility","cc0 1.0","Canadian Biodiversity Information Facility"
