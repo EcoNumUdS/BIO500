@@ -1,0 +1,87 @@
+# Conception graphique : les cartes {#sec-cartes}
+
+Les données spatiales sont des données qui sont associées à des coordonnées géographiques qui peuvent être représentées sous forme de cartes. Alors que certaines tendances de covariables peuvent être identifiées à l'aide de graphiques classiques, les cartes permettent de visualiser les données sur une carte géographique. Les cartes sont particulièrement utiles pour identifier des tendances spatiales et des clusters. Dans ce chapitre, nous allons explorer les différentes méthodes pour créer des cartes à l'aide de R.
+
+## Les cartes avec R
+
+Il existe plusieurs librairies pour créer des cartes avec R. Les librairies les plus populaires sont `sf` et `terra`. La librairie `sf` est une librairie qui permet de manipuler des données *vectorielles* et de créer des cartes. La librairie `terra` est une librairie qui permet de manipuler des données *raster* et de créer des cartes. Dans ce chapitre, nous allons explorer les deux librairies pour créer des cartes.
+
+### Les données raster
+
+Les données raster sont des données qui sont associées à des coordonnées géographiques et qui sont stockées sous forme de grille. On retrouve ces données dans des fichiers *.tif* ou *.TIFF*.
+
+Les données raster sont souvent utilisées pour représenter des données continues, telles que la température ou la précipitation, ou catégoriques, telles que la couverture du sol. Les données raster peuvent être représentées sous forme de cartes en utilisant des couleurs pour représenter les valeurs des données.
+
+La librairie `terra` permet de manipuler des données raster. La fonction `rast()` permet de lire un fichier raster (.tif) ou créer un objet raster à partir d'une matrice. Par exemple, la commande suivante crée un objet raster à partir d'une matrice de valeurs aléatoires.
+
+```{r create raster}
+library(terra)
+
+# Créer une matrice de valeurs aléatoires
+mat <- matrix(data = runif(n = 100, min = 1, max = 10), nrow = 10, ncol = 10)
+
+# Créer un objet raster à partir de la matrice
+r <- rast(mat)
+
+# Afficher l'objet raster
+r
+```
+
+L'objet raster `r` contient les données raster et les informations sur les coordonnées géographiques. Les données raster peuvent être affichées sous forme de carte en utilisant la fonction `plot()`.
+
+```{r plot raster}
+# Afficher les données raster sous forme de carte
+plot(r)
+```
+
+Les données raster peuvent être manipulées de différentes manières, telles que la transformation, la reclassification et la combinaison de données raster. Les données raster peuvent également être combinées avec des données vectorielles pour créer des cartes plus complexes.
+
+### Les données vectorielles
+
+Les données vectorielles sont des données qui sont associées à des coordonnées géographiques et qui sont stockées sous forme de points, de lignes ou de polygones. On retrouve ce type de données stockées dans des fichiers *.shp*, *.gpkg*, etc.
+
+Les données vectorielles sont souvent utilisées pour représenter des données discrètes, telles que les limites administratives ou les points d'intérêt. Les données vectorielles peuvent être représentées sous forme de cartes en utilisant des symboles pour représenter les données.
+
+La librairie `sf` permet de manipuler des données vectorielles. La fonction `st_read()` permet de lire des données vectorielles à partir d'un fichier. Par exemple, la commande suivante lit des données vectorielles à partir d'un fichier shapefile.
+
+```{r read shapefile}
+library(sf)
+
+# Sauver des données vectorielles dans un fichier shapefile
+pts <- st_sfc(st_point(c(1, 1)), st_point(c(2, 2)), st_point(c(3, 3)), st_point(c(4, 4)))
+shp <- st_sf(data.frame(id = 1:4), geometry = pts)
+shp$nom <- c("A", "B", "C", "D") # Donner un nom aux points
+st_write(obj = shp, dsn = "assets/points.shp") # Sauver les données
+
+# Lire des données vectorielles à partir d'un fichier shapefile
+nc <- st_read(dsn = "assets/points.shp")
+
+# Afficher les données vectorielles
+nc
+```
+
+Chaque ligne de l'objet `nc` contient les données vectorielles associées à un point. La colonne `geometry` contient les coordonnées géographiques du point et les autres colonnes contiennent les attributs associés au point.
+
+Les données vectorielles peuvent être affichées sous forme de carte en utilisant la fonction `plot()`.
+
+```{r plot shapefile}
+# Afficher les données vectorielles sous forme de carte
+plot(nc)
+```
+
+Les données vectorielles peuvent être manipulées de différentes manières, telles que la transformation, la reclassification et la combinaison de données vectorielles. 
+
+#### Visualiser interactivement des données vectorielles
+
+La librairie `leaflet` permet de créer des cartes interactives à partir de données vectorielles. La fonction `leaflet()` permet de créer une carte interactive et la fonction `addMarkers()` permet d'ajouter des marqueurs à la carte. Par exemple, la commande suivante crée une carte interactive avec des marqueurs.
+
+```r
+library(leaflet)
+
+# Visualiser interactivement la position du point suivant sur une carte OpenStreetMap
+m <- leaflet() |> addTiles() |> addPopups(-71.9248274566659, 45.38004875084951, 'BIO500 se tient ici')
+
+m
+```
+
+Plus d'informations sur la librairie `leaflet` sont disponibles sur ce tutoriel : <https://www.geeksforgeeks.org/leaflet-package-in-r/>.

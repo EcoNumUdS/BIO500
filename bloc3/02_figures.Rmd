@@ -788,6 +788,32 @@ class: inverse, center, middle
 [Infographies](https://www.visualcapitalist.com/history-of-pandemics-deadliest/)
 
 ---
+
+# Cartes interactives avec `leaflet`
+
+```{r, eval=FALSE}
+library(leaflet)
+
+# Créer une carte interactive
+m <- leaflet() |>
+  addTiles() |>
+  setView(lng = -72.3120, lat = 46.2359, zoom = 9)
+
+# Ajouter un marqueur
+m <- m |> addMarkers(lng = -72.3120, lat = 46.2359, popup = "UdS")
+
+m
+```
+
+---
+
+# Exercice
+
+## 15 minutes
+
+Gnénérez une carte interactive qui présente la localisation des 3 campus de l'UdS.
+
+---
 class: inverse, center, middle
 
 # Travail de la semaine
