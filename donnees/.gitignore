@@ -1,0 +1,8 @@
+*.r
+*.csv
+
+!series_temporelles/*
+!lepidopteres/*
+!benthos/*
+!arbres/*
+!acoustique_oiseaux/*
