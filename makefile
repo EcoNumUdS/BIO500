@@ -20,8 +20,8 @@ deploy:
 			if [ -d "./$$dir/index_files" ]; then cp -r ./$$dir/index_files ./slides/$$dir; fi ; \
 	done
 
-install:
-	Rscript -e 'if (!require(pak)) install.packages("pak"); (!require(rmarkdown)) pak::pak("rmarkdown"); if (!require(knitr)) pak::pak("knitr"); if (!require(xaringan)) pak::pak("xaringan"); if (!require(RSQLite)) pak::pak("RSQLite"); if (!require(RPostgreSQL)) pak::pak("RPostgreSQL"); if (!require(ggplot2)) pak::pak("ggplot2"); if (!require(reshape2)) pak::pak("reshape2"); if (!require(knitr)) pak::pak("knitr"); if (!require(sf)) pak::pak("sf"); if (!require(terra)) pak::pak("terra");'
+# install:
+# 	Rscript -e 'if (!require(pak)) install.packages("pak"); (!require(rmarkdown)) pak::pak("rmarkdown"); if (!require(knitr)) pak::pak("knitr"); if (!require(xaringan)) pak::pak("xaringan"); if (!require(RSQLite)) pak::pak("RSQLite"); if (!require(RPostgreSQL)) pak::pak("RPostgreSQL"); if (!require(ggplot2)) pak::pak("ggplot2"); if (!require(reshape2)) pak::pak("reshape2"); if (!require(knitr)) pak::pak("knitr"); if (!require(sf)) pak::pak("sf"); if (!require(terra)) pak::pak("terra");'
 
 clean:
 	rm $(HTML)
