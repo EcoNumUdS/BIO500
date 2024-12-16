@@ -21,7 +21,7 @@ deploy:
 	done
 
 install:
-	Rscript -e 'if (!require(rmarkdown)) install.packages("rmarkdown"); if (!require(knitr)) install.packages("knitr"); if (!require(xaringan)) install.packages("xaringan"); if (!require(RSQLite)) install.packages("RSQLite"); if (!require(RPostgreSQL)) install.packages("RPostgreSQL"); if (!require(ggplot2)) install.packages("ggplot2"); if (!require(reshape2)) install.packages("reshape2"); if (!require(knitr)) install.packages("knitr");'
+	Rscript -e 'if (!require(pak)) install.packages("pak"); (!require(rmarkdown)) pak::pak("rmarkdown"); if (!require(knitr)) pak::pak("knitr"); if (!require(xaringan)) pak::pak("xaringan"); if (!require(RSQLite)) pak::pak("RSQLite"); if (!require(RPostgreSQL)) pak::pak("RPostgreSQL"); if (!require(ggplot2)) pak::pak("ggplot2"); if (!require(reshape2)) pak::pak("reshape2"); if (!require(knitr)) pak::pak("knitr"); if (!require(sf)) pak::pak("sf"); if (!require(terra)) pak::pak("terra");'
 
 clean:
 	rm $(HTML)
