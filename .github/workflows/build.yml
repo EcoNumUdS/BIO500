@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      # - uses: r-lib/actions/setup-pandoc@v2
+      - uses: r-lib/actions/setup-pandoc@v2
 
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
@@ -21,22 +21,8 @@ jobs:
         with:
             r-version: '4.2.0'
 
-      # - name: Install libcurl on Linux
-      #   run: sudo apt-get update -y && sudo apt-get install -y libcurl4-openssl-dev
-
-      - uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          install-pandoc: true
-          extra-packages: |
-            any::rmarkdown
-            any::knitr
-            any::xaringan
-            any::RSQLite
-            any::RPostgreSQL
-            any::ggplot2
-            any::reshape2
-            any::sf
-            any::terra
+      - name: Install libcurl on Linux
+        run: sudo apt-get update -y && sudo apt-get install -y libcurl4-openssl-dev
 
       - name: Render slides in html
         run: make
