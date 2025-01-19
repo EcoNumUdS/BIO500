@@ -963,7 +963,7 @@ class: inverse, center, middle
 
 # Évaluation formative #1 
 
-**À remettre pour le 11 mars sur Moodle**
+**À remettre pour le 10 mars sur Moodle**
 
 Vous avez à soumettre vos scripts qui servent à assembler, nettoyer et valider les données. Vos scripts doivent produire une ou plusieurs tables de données (dataframe) prêtes à être injectées. Chacun de ces dataframes représente une table de la base de données à venir.
 

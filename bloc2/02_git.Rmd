@@ -381,6 +381,7 @@ Marche à suivre : [https://econumuds.github.io/BIO500/git.html#conflits](https:
 
 - [Stokel-Walker & Van Noorden. 2023. What ChatGPT and generative AI mean for science.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/Stokel-Walker2023.pdf)
 - [.2023. The AI writing on the wall.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/NatMaInt2023.pdf) 
+- [Wilkinson et al. 2016. The FAIR Guiding Principles for scientific data management and stewardship.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/wilkinson2016.pdf)
 
 ---
 class: inverse, center, middle
