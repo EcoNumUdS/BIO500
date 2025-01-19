@@ -1,4 +1,4 @@
 Title: Diapo cours BIO500 (UdS)
 Version: 2.0.0
-Imports: knitr, rmarkdown, DiagrammeR, ggplot2, RSQLite, RPostgreSQL, reshape2, igraph
+Imports: knitr, rmarkdown, DiagrammeR, ggplot2, RSQLite, RPostgreSQL, reshape2, sf, terra
 Remotes: yihui/xaringan

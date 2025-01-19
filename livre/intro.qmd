@@ -29,7 +29,7 @@ Voici un bref résumé des objectifs spécifiques. Au terme de ce cours, vous se
 
 - Programmer et interroger une base de données relationnelle.
 
-- Compiler et exécuter un projet au moyen de la librairie `trargets`.
+- Compiler et exécuter un projet au moyen de la librairie `targets`.
 
 - Représenter visuellement les données au moyen de `R`.
 
@@ -81,7 +81,7 @@ Les tâches et exercices vus dans ce cours nécessiteront plusieurs librairies. 
 #| eval: false
 
 install.packages(
-  c("RSQLite", "Rmarkdown", "targets", "tarchetypes", "igraph", "rticles")
+  c("RSQLite", "Rmarkdown", "targets", "tarchetypes", "rticles", "sf", "terra", "leaflet")
   )
 ```
 

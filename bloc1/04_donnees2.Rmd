@@ -854,14 +854,34 @@ Assurez vous que le script fonctionne sur les différents ordinateurs des membre
 
 ---
 
+# Travail de la semaine
+
+En préparation au prochain cours, vous devrez :
+
+- Créer un compte sur GitHub
+- Mettre à jour R et RStudio
+- Installer Git
+
+Les instructions se trouvent dans le [chapitre 7, Section 7.2](https://econumuds.github.io/BIO500/git.html#d%C3%A9buter-avec-git)
+
+---
+
 # Évaluation formative #1
 
 Chaque équipe doit évaluer les scripts d'assemblage et de nettoyage d'une autre équipe
 
-- À compléter pour le **18 mars**
+- À compléter pour le **17 mars**
 - La personne qui a remis le travail est responsable d'entrer l'évaluation
 - Tous les commentaires doivent être formulés comme une question
 
 ```{r remove db file2, eval=TRUE, echo=FALSE}
 system("rm -rf ./assets/data/reseau.db")
 ```
+
+---
+
+# Lectures
+
+- [Stokel-Walker & Van Noorden. 2023. What ChatGPT and generative AI mean for science.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/Stokel-Walker2023.pdf)
+- [.2023. The AI writing on the wall.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/NatMaInt2023.pdf) 
+- [Wilkinson et al. 2016. The FAIR Guiding Principles for scientific data management and stewardship.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/wilkinson2016.pdf)

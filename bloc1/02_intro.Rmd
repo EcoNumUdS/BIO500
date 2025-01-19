@@ -120,12 +120,12 @@ La modélisation, elle est essentielle à l'étude des systèmes complexes.
 # Enseignant
 
 ## Victor Cameron
-- victor.cameron@usherbrooke.ca
+- Victor.Cameron@usherbrooke.ca
 - D8-0012
 
-## Benjamin Mercier (assistant)
-- benjamin.b.mercier@usherbrooke.ca
-- D8-0012
+## Zacharie Scalzo (assistant)
+- Zacharie.Scalzo@usherbrooke.ca
+- D8-0022
 
 ## Pour les questions d'intérêt général, utilisez le forum de discussion sur Moodle.
 
@@ -271,23 +271,18 @@ class: inverse, center, middle
 
 # Les inventaires écologiques
 
-## Inventaire forestier
+## Inventaire lépidotères
 
-- Une parcelle de 200x1000 mètres sur une montagne
-- DHP de tous les arbres de plus de 10 cm de diamètre sont mesurés
-- Données : dhp, coordonnées spatiales, Altitude_m, pH
+- Observations ponctuelles de différentes sources
 
-## Inventaire oiseaux
-
-- Suivi bioacoustique de 2016 à 2019 
-- Observations d'oiseaux (~30500 observations)
-- Données : espèces, date, heure, coordonnées spatiales, efforts
 
 ## Inventaire benthos
 
 - Suivi de la biodiversité benthique
-- 43 stations d'échantillonnage
-- Données : abondance, taxons, substrat, 20+ variables d'habitat
+
+## Séries temporelles
+
+- Mesures répétées de taille de populations
 
 ---
 
@@ -299,45 +294,19 @@ Vous avez à choisir et analyser un inventaire écologique qui vous permettra de
 
 ---
 
-# Inventaire forestier
+# Inventaire lépidoptères
 
 Résolution spatiale et temporelle
 
-- Une parcelle de 200x1000 mètres sur une montagne
-- DHP de tous les arbres de plus de 10 cm de diamètre sont mesurés
-- Données : dhp, coordonnées spatiales, Altitude_m, pH
+- Assemblage d'observations ponctuelles de différentes sources
+- > 100 000 observations
+- Données : nom de l'espèce, lieu, date, coordonnées spatiales, source
+- Nom de l'espèce, lieu, date, coordonnées spatiales, source
 
 <div style='text-align:center;'>
 <img src="assets/img/gosford.jpg" width="500px"></img>
 </div>
 
----
-
-# Inventaire forestier
-
-Résolution spatiale 
-
-- Une parcelle de 200x1000 mètres sur une montagne
-- DHP de tous les arbres de plus de 10 cm de diamètre sont mesurés
-- Données : dhp, coordonnées spatiales, Altitude_m, pH
-
-<div style='text-align:center;'>
-<img src="assets/img/sutton.jpg" width="100%"></img>
-</div>
-
----
-
-# Inventaire oiseaux
-
-Résolution spatiale et temporelle
-
-- Suivi bioacoustique de 2016 à 2019 
-- Observations d'oiseaux (~30500 observations)
-- Données : espèces, date, heure, coordonnées spatiales, efforts
-
-<div style='text-align:center;'>
-<img src="assets/img/inventaire_oiseaux.png" height="300px"></img>
-</div>
 
 ---
 
@@ -353,6 +322,19 @@ Résolution spatiale et temporelle
 <img src="assets/img/inventaire_benthos.png" height="300px"></img>
 </div>
 
+---
+
+# Séries temporelles
+
+Résolution spatiale et temporelle
+
+- 8248 suivis de populations 
+- Entre 2 et ~40 mesures
+- Données : espèces, année, coordonnées spatiales, taille de population
+
+<div style='text-align:center;'>
+<img src="assets/img/time_series_map.png" height="300px"></img>
+</div>
 
 ---
 
@@ -379,8 +361,8 @@ class: inverse, center, middle
 
 # Retour sur les notions de programmation
 
-1. Débugguer [chapitre 13]
-2. Fonctions [chapitre 14]
+1. Débugguer [chapitre 15]
+2. Fonctions [chapitre 16]
 
 ---
 
@@ -457,7 +439,7 @@ print("La somme des carrés est : ", resultat)
 
 ---
 
-# Fonctions
+# Hackathon #1 - Fonctions
 
 Préparez un script qui retournera le nombre d'auteurs par institution de recherche.
 
@@ -466,11 +448,11 @@ Préparez un script qui retournera le nombre d'auteurs par institution de recher
 |:-------|:-------|:------------|
 | Jean-Baptiste Lamarck | NA | Académie de sciences |
 | Charles Darwin | NA | London Royal Society |
-| Conte de Buffon | Professor | MHNP |
+| Comte de Buffon | Professor | MHNP |
 
 ---
 
-# Fonctions
+# Hackathon #1 - Fonctions
 
 Préparez un script qui retournera le nombre d'auteurs par institution de recherche.
 
@@ -484,7 +466,7 @@ Préparez un script qui retournera le nombre d'auteurs par institution de recher
 
 ---
 
-# Fonctions
+# Hackathon #1 - Fonctions
 
 ## Retour en groupe
 
