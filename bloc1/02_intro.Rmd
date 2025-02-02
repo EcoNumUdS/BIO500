@@ -142,7 +142,7 @@ La modélisation, elle est essentielle à l'étude des systèmes complexes.
 # Biodiversité Québec
 
 <div style='text-align:center;'>
-<img src="assets/img/portail.png" height="500px"></img>
+<img src="assets/img/atlas.png" height="500px"></img>
 </div>
 
 ---
@@ -151,14 +151,6 @@ La modélisation, elle est essentielle à l'étude des systèmes complexes.
 
 <div style='text-align:center;'>
 <img src="assets/img/indicateurs.png" height="500px"></img>
-</div>
-
----
-
-# Biodiversité Québec
-
-<div style='text-align:center;'>
-<img src="assets/img/BITH_RCP45_QC.gif" height="500px"></img>
 </div>
 
 ---
@@ -194,7 +186,7 @@ Au terme de ce cours, l'étudiant sera en mesure de **réaliser l'ensemble de la
 ## Bloc 1: Planification de la collecte et organisation des données
 
 - Types de données
-- Formulaires de saisie
+- Gestion des données 
 - Bases de données relationnelles (SQL)
 - Requêtes
 
@@ -239,7 +231,13 @@ Les cours vont comprendre une période de présentation entrecoupée d'exercices
 
 Nous progresserons dans l'exécution du travail de session. Le travail sera divisé en étapes et l'évaluation portera sur son intégration.
 
-Le matériel de cours est disponible dans le livre en ligne [https://econumuds.github.io/BIO500/](https://econumuds.github.io/BIO500/).
+---
+
+# Matériel de cours
+
+Sur **moodle**, vous trouverez le matériel de cours. C'est l'endroit de référence où toute l'information se trouvera.
+
+Le contenu du cours est rassemblé dans le livre en ligne [https://econumuds.github.io/BIO500/](https://econumuds.github.io/BIO500/).
 
 .center[
   <img src="assets/img/livre.png" height="250px"></img>
@@ -250,7 +248,11 @@ Le matériel de cours est disponible dans le livre en ligne [https://econumuds.g
 
 # Évaluation
 
-L'évaluation porte sur la réalisation d'un travail de session (75%), réalisé en équipe de 4 personnes. Le travail sera divisé en 3 étapes réparties au cours de la session. L'évaluation finale (25%) portera sur la rédaction d'un essai sur les enjeux de reproductibilité en écologie.
+## L'évaluation porte sur la réalisation d'un travail de session (75%) et d'un essai (25%).
+
+Le projet sera réalisé en équipe de 4 personnes et sera divisé en 3 étapes réparties au cours de la session. 
+
+L'essai portera sur les enjeux de reproductibilité en écologie.
 
 ---
 class: inverse, center, middle
@@ -329,7 +331,7 @@ Résolution spatiale et temporelle
 Résolution spatiale et temporelle
 
 - 8248 suivis de populations 
-- Entre 2 et ~40 mesures
+- Entre 2 et ~40 mesures répétées
 - Données : espèces, année, coordonnées spatiales, taille de population
 
 <div style='text-align:center;'>
@@ -350,6 +352,8 @@ En équipe de 4, on vous demande d'explorer les jeux de données. Commencez par 
 
 Faites la liste des informations disponibles et de celles nécessaires pour répondre à la question de recherche.
 
+## Comment les variations spatiales et temporelles influent-elles sur la structure des communautés ?
+
 ---
 class: inverse, center, middle
 
@@ -361,8 +365,8 @@ class: inverse, center, middle
 
 # Retour sur les notions de programmation
 
-1. Débugguer [chapitre 15]
-2. Fonctions [chapitre 16]
+1. Débugguer [[chapitre 15](https://econumuds.github.io/BIO500/debugger.html)]
+2. Fonctions [[chapitre 16](https://econumuds.github.io/BIO500/fonctions.html)]
 
 ---
 
@@ -456,13 +460,13 @@ Préparez un script qui retournera le nombre d'auteurs par institution de recher
 
 Préparez un script qui retournera le nombre d'auteurs par institution de recherche.
 
-1. Un script qui contiendra le nom du fichier de données à lire, fera appel aux fonctions pour produire les résultats et imprimera le résultat.
+1. Un script principal qui contiendra le nom du fichier de données à lire, fera appel aux fonctions pour produire les résultats et imprimera le résultat.
 2. Un script qui contient une fonction qui prendra en argument le nom de fichier et retournera les données sous forme de dataframe.
 3. Un script qui contient une fonction qui prendra en argument le dataframe et retournera le nombre d'auteurs par institution.
 
 > Utilisez les données disponibles sur Moodle dans le fichier **Bloc1 > Exercice fonctions > `auteurs.csv`**.
 
-> Chapitre 14 du livre
+> Chapitre 16 du livre
 
 ---
 
