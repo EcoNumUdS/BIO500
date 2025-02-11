@@ -30,7 +30,7 @@ class: title-slide, middle
 # Séance 1
 
 - Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/bloc1/).
-- L'ensemble du matériel de cours est disponible dans le [livre du cours](https://econumuds.github.io/BIO500/) et le [GitHub](https://github.com/EcoNumUdS/BIO500).
+- L'ensemble du matériel de cours est disponible dans le [livre du cours](https://econumuds.github.io/BIO500/) et sur [Moodle](https://moodle.usherbrooke.ca/course/view.php?id=30394).
 
 ---
 class: inverse, center, middle
@@ -73,15 +73,32 @@ entre l'informatique et l'analyse de données pour étudier les systèmes écolo
 Les outils utilisés incluent les modèles, les mathématiques et les statistiques et 
 les données.
 
+--
+
+.pull-left[
+  ## Pourquoi ?
+  - Systèmes complexes
+  - Données massives
+  - Problèmes de conservation
+]
+
+.pull-right[
+  ## Comment ?
+  - Modélisation
+  - Analyse de données
+  - Programmation
+]
 
 ---
 
 # L'écologie computationnelle
 
-Les projections sont nécessaires pour identifier les facteurs qui menacent la
-biodiversité et identifier les stratégies pour la protéger.
+## Projections de biodiversité pour trois scénarios
 
-La modélisation, elle est essentielle à l'étude des systèmes complexes.
+.center[
+  <img src="assets/img/biodiversity_projections.jpg" height="400px"></img>
+]
+
 
 ---
 
@@ -302,8 +319,7 @@ Résolution spatiale et temporelle
 
 - Assemblage d'observations ponctuelles de différentes sources
 - > 100 000 observations
-- Données : nom de l'espèce, lieu, date, coordonnées spatiales, source
-- Nom de l'espèce, lieu, date, coordonnées spatiales, source
+- Données : nom de l'espèce, date, coordonnées spatiales, source
 
 <div style='text-align:center;'>
 <img src="assets/img/gosford.jpg" width="500px"></img>
@@ -443,7 +459,7 @@ print("La somme des carrés est : ", resultat)
 
 ---
 
-# Hackathon #1 - Fonctions
+# Hackathon - Fonctions
 
 Préparez un script qui retournera le nombre d'auteurs par institution de recherche.
 
@@ -456,7 +472,7 @@ Préparez un script qui retournera le nombre d'auteurs par institution de recher
 
 ---
 
-# Hackathon #1 - Fonctions
+# Hackathon - Fonctions
 
 Préparez un script qui retournera le nombre d'auteurs par institution de recherche.
 
@@ -470,11 +486,19 @@ Préparez un script qui retournera le nombre d'auteurs par institution de recher
 
 ---
 
-# Hackathon #1 - Fonctions
+# Hackathon - Fonctions
 
 ## Retour en groupe
 
+--
 
+```bash
+.
+├── 0_programme_principal.R
+├── 1_import_csv.R
+├── 2_analyse.R
+└── auteurs.csv
+```
 
 ---
 class: inverse, center, middle
@@ -518,6 +542,99 @@ class: inverse, center, middle
 # Discussion
 
 Identification des étapes d'une étude scientifique susceptibles d'influer sur la reproductibilité.
+
+--
+
+.center[
+<img src="assets/img/flow_bio500.png" width="90%"></img>
+]
+
+---
+
+# Principes FAIR
+
+S'applique aux données, algorithmes et workflows.
+
+.center[
+<img src="assets/img/fair_principle.jpg" height="400px"></img>
+]
+
+---
+
+# Principes FAIR
+
+## Findable
+
+(Trouvable) : Les données doivent être bien documentées et indexées pour être facilement retrouvées.
+
+DOI, métadonnées, catalogues de données.
+
+--
+
+## Accessible
+
+(Accessible) : Les données doivent être accessibles avec des protocoles ouverts et, si elles sont restreintes, clairement expliquées.
+
+Dépôts de données ouverts, licences claires, accès via des API.
+
+---
+
+# Principes FAIR
+
+## Interoperable
+
+(Interopérable) : Les données doivent être lisibles et utilisables par différents outils et logiciels.
+
+Formats ouverts, vocabulaire standardisé.
+
+--
+
+## Reusable
+
+(Réutilisable) : Les données doivent être suffisamment bien décrites et structurées pour être réutilisées dans d’autres contextes.
+
+Documentation détaillée, traçabilité des versions, attribution claire des auteurs.
+
+---
+
+# Discussion
+
+## Quels sont les liens concrets entre les principes FAIR et les étapes d'une étude scientifique ?
+
+.center[
+<img src="assets/img/flow_bio500.png" width="90%"></img>
+]
+
+
+<!-- 
+### **1. Contexte et importance des principes FAIR (5 min)**  
+- **Problème actuel en science** : Difficulté à reproduire des études, accès limité aux données, méthodes peu documentées.  
+- **Pourquoi les principes FAIR ?** : Créés pour améliorer la gestion, le partage et la réutilisation des données scientifiques.  
+- **Objectif** : Assurer que les données soient facilement retrouvables, accessibles, compatibles avec différents systèmes et réutilisables par d’autres chercheurs.  
+
+### **2. Présentation des quatre principes FAIR (10 min)**  
+
+1. **Findable (Trouvable)**  
+   - Définition : Les données doivent être bien documentées et indexées pour être facilement retrouvées.  
+   - Exemples : Utilisation d’identifiants uniques (DOI), métadonnées complètes, catalogues de données.  
+
+2. **Accessible (Accessible)**  
+   - Définition : Les données doivent être accessibles avec des protocoles ouverts et, si elles sont restreintes, clairement expliquées.  
+   - Exemples : Dépôts de données ouverts, licences claires (ex. Creative Commons), accès via des API.  
+
+3. **Interoperable (Interopérable)**  
+   - Définition : Les données doivent être lisibles et utilisables par différents outils et logiciels.  
+   - Exemples : Formats ouverts (CSV, JSON), vocabulaire standardisé (ex. Darwin Core pour la biodiversité).  
+
+4. **Reusable (Réutilisable)**  
+   - Définition : Les données doivent être suffisamment bien décrites et structurées pour être réutilisées dans d’autres contextes.  
+   - Exemples : Documentation détaillée, traçabilité des versions, attribution claire des auteurs.  
+
+### **3. Lien avec la reproductibilité (5 min)**  
+- Une étude reproductible nécessite que ses données soient bien organisées et accessibles.  
+- Les principes FAIR réduisent les obstacles à la reproduction des résultats en rendant les données plus compréhensibles et exploitables.  
+- **Question de transition pour la discussion** : Quels sont les liens concrets entre ces principes et les étapes d’une étude scientifique ?  
+-->
 
 ---
 class: inverse, center, middle
