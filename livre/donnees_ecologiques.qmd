@@ -137,7 +137,36 @@ Il est recommandé de sauver l'identification d'une espèce en utilisant une ré
 4. [NCBI](https://www.ncbi.nlm.nih.gov/)
 5. [BOLD](http://www.boldsystems.org/index.php/TaxBrowser_Home) (Projet code barre)
 
-**Exemple:** [TSN - 28731](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=28731#null)
+**ASTUCE**
+Certains outils permettent d'obtenir les codes d'espèces à partir du nom de l'espèce. Par exemple, le package `ritis` en R.
+
+```r
+# install.packages("ritis")
+library("ritis")
+
+# Recherche code TSN pour "Acer"
+itis_acer <- itis_search(q = "nameWOInd:Acer") # nameWOInd est le champ de recherche pour le nom scientifique
+head(itis_acer)
+
+# Recherche code TSN pour "Castor canadensis"
+itis_castor_canadensis <- itis_search(q = "nameWOInd:Castor\\ canadensis") # On échappe l'espace avec un double backslash
+```
+
+La documentation du package `ritis` est disponible <[https://docs.ropensci.org/ritis/index.html](https://docs.ropensci.org/ritis/index.html)>.
+
+Le package `rgbif` est également très utile pour obtenir des informations sur les espèces. 
+
+```r
+# install.packages("rgbif")
+library("rgbif")
+
+# Recherche d'informations sur l'espèce "Ursus americanus"
+taxonKey <- name_backbone("Ursus americanus")
+```
+
+La documentation du package `rgbif` est disponible <[https://docs.ropensci.org/rgbif/index.html](https://docs.ropensci.org/rgbif/index.html)>.
+
+> `ritis` est à prioriser puisqu'il s'agit une source de référence. GBIF est une base de données mondiale qui peut être plus lente à répondre et qui consomme les données de ITIS, WIKIDATA, etc.
 
 ### Les données spatiales
 
@@ -164,7 +193,7 @@ Ainsi, lorsque l'on entrepose des données spatiales, trois colonnes doivent êt
 
 ### L'absence de données
 
-Parfois, une donnée est manquante lorsqu'elle a été perdue ou est inconnue. On privilégie l'ajout d'un `NA` (Not available) pour montrer que l'information est réellement absente.
+Parfois, une donnée est manquante lorsqu'elle a été perdue ou est inconnue. On privilégie laisser la cellule vide (`NULL`) plutôt que d'entrer une valeur par défaut. Dans le cas où la donnée est manquante, on recommande d'en inscrire la raison dans un autre champ. 
 
 On évite d'entrer une valeur numérique puisque celle-ci peut être confondante et entrainer des erreurs lors de l'analyse des données. Par exemple, l'entrée d'un `0` dans une colonne numérique ne peut permettre la distinction avec les vrais 0 et influencer la moyenne. Cette pratique est donc à proscrire !
 

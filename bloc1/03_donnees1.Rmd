@@ -370,6 +370,27 @@ Même si l'identifiant change (nouvelle classification), nous serons en mesure d
 
 ---
 
+# Les données taxonomiques
+
+Certains outils permettent d'obtenir les codes d'espèces à partir du nom de l'espèce. Par exemple, le package [`ritis`](https://docs.ropensci.org/ritis/index.html) en R.
+
+```r
+# install.packages("ritis")
+library("ritis")
+
+# Recherche code TSN pour "Acer"
+itis_acer <- itis_search(q = "nameWOInd:Acer")
+head(itis_acer)
+
+# Recherche code TSN pour "Castor canadensis"
+itis_castor_canadensis <- itis_search(q = "nameWOInd:Castor\\ canadensis")
+```
+
+--
+> Alors que l'accès aux codes peut être automatisé, il est important de ne pas y mettre trop de temps !
+
+---
+
 # Les données spatiales
 
 - **Ce qu'il est important de savoir:** des coordonnées spatiales sans système de projection ne veulent strictement rien dire.
@@ -394,7 +415,7 @@ Même si l'identifiant change (nouvelle classification), nous serons en mesure d
 
 ---
 
-#  L'absence de données
+# L'absence de données
 
 ## On peut représenter l'absence de données de plusieurs façons:
 
@@ -407,13 +428,13 @@ Même si l'identifiant change (nouvelle classification), nous serons en mesure d
 
 ---
 
-#  Le format des données
+#  L'absence de données
 
 ## On peut représenter l'absence de données de plusieurs façons:
 
-- Laisser la cellule vide: montre que l'information n'a pas été saisie (un oublie)
+- Laisser la cellule vide (`NULL`): montre que l'information n'a pas été saisie. *Meilleure pratique*, peut être utilisée en combinaison avec un champ décrivant la raison de l'absence de données.
 
->- Mettre un `NA` (*Not Available*): Montre que l'information est réellement absente (car le NA est saisi par un humain).
+- Mettre un `NA` (*Not Available*): Montre que l'information est réellement absente (car le NA est saisi par un humain).
 
 >- <span style="text-decoration: line-through;"> Mettre un `0` </span>: **JAMAIS** (empêche la distinction entre un vrai d'un faux 0, influence la moyenne)
 
@@ -449,6 +470,25 @@ Si l'on ne choisit pas le type de données approprié, cela aura diverses consé
 > Selon les meilleures pratiques, est-ce que des modifications seront nécessaires ?
 
 > Les notions relatives aux données écologiques sont détaillées au [chapitre 2 du livre de cours](https://econumuds.github.io/BIO500/donnees_ecologiques.html).
+
+---
+class: inverse, center, middle
+
+# Nettoyage et validation des données
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
+---
+
+# Nettoyage et validation des données
+
+Vérifiez pour la présence de :
+- Erreurs communes 
+- Erreurs délétères pour le projet 
+- La bonne structure de la donnée et du tableau
+
+
+> Un chapitre du livre de cours est consacré à cette étape cruciale du processus de gestion des données. Voir [*Nettoyage et validation*](https://econumuds.github.io/BIO500/validation.html).
 
 ---
 class: inverse, center, middle
@@ -550,7 +590,7 @@ class: inverse, center, middle
 # Étape 2. Regrouper les variables dans des tables
 
 1. Déterminer les tables/entités:
-  - Qu'elles sont les unités d'échantillonnage? Autrement dit, sur quelles entités portent les mesures?
+  - Quelles sont les unités d'échantillonnage? Autrement dit, sur quelles entités portent les mesures?
 2. Remplir les tables avec les variables identifiées.
 
 À ce stade de la conceptualisation, une table est une entité possédant des attributs. Chaque attribut est une colonne.
@@ -1001,7 +1041,7 @@ Résumé des consignes :
 
 # Évaluation formative #1
 
-[Grille d'évaluation](https://github.com/EcoNumUdS/BIO500/ressources/exercie_donnees_grille_de_correction.pdf)
+[Grille d'évaluation](https://github.com/EcoNumUdS/BIO500/blob/master/ressources/exercie_donnees_grille_de_correction.pdf)
 
 Les questions questions devront êtres posées sur le forum de Moodle.
 
@@ -1016,18 +1056,54 @@ class: inverse, center, middle
 
 # Discussion
 
-## 7 minutes pour résumer le point de vue de l'auteur et ses arguments
+## Is there a reproducibility crisis ?
 
-## 10 minutes de discussion
+1. Que décrit l'article sur l'état de la reproductibilité en science ? 
+2. Est-ce que les chercheurs sondés ont une impression juste ?
+3. "We want to be discovering new things but not generating too many false leads." Il existe un lien évident entre la reproductibilité et l'innovation.
 
 ---
 
 # Discussion
 
+## 10 minutes pour résumer les arguments et points saillants en équipe
+
+Les questions pour alimenter la discussion sont sur Moodle *Bloc1 > Questions pour discussion - cours #2*
+
+- Sur la reproductibilité des résultats scientifiques
+- Sur le partage des données
+- Sur les défis des études à long terme
+
+## 10 minutes de partage
+
+
+<!-- # Discussion
+
 ## Is there a reproducibility crisis ?
 
-En équpe, résumez les principaux points de l'articles. Puis, discutez des questions suivantes :
+En équpe, résumez les principaux points de l'article. Puis, discutez des questions suivantes :
 
 1. Que décrit l'article sur l'état de la reproductibilité en science ? Est-ce que les chercheurs sondés ont une impression juste ?
 2. "We want to be discovering new things but not generating too many false leads." Quel est le lien entre la reproductibilité et l'innovation ?
 3. Quels sont les particularités des domaines scientifiques qui sont les plus touchés par le problème de la reproductibilité ?
+4. Quelles sont les solutions proposées pour améliorer la reproductibilité en science ? -->
+
+<!-- # Discussion : Questions pour discussion - cours #2
+
+### Sur la reproductibilité des résultats scientifiques :
+1. Quels sont les principaux facteurs qui expliquent les difficultés de reproduction des études scientifiques ?
+2. Pensez-vous que l'incapacité à reproduire une étude remet nécessairement en cause sa validité ?
+3. Avez-vous déjà rencontré des problèmes de reproductibilité dans vos propres travaux ou ceux de vos collègues ?
+4. Quelles solutions concrètes pourraient améliorer la reproductibilité en science ?
+
+### Sur le partage des données :
+5. Quels sont les principaux avantages du partage des données pour la communauté scientifique ?
+6. Quels freins empêchent encore aujourd’hui le partage ouvert des données ?
+7. Comment peut-on encourager une culture de partage des données sans compromettre la reconnaissance du travail des chercheurs ?
+8. Quels types de données devraient être systématiquement partagés et quels types peuvent légitimement être protégés ?
+
+### Sur les défis des études à long terme :
+9. Comment concilier le besoin de partage des données avec les investissements importants nécessaires aux études à long terme ?
+10. Quelles mesures pourraient être mises en place pour protéger les intérêts des chercheurs qui ont consacré des années à collecter des données avant de les partager ?
+11. À quel moment une équipe de recherche devrait-elle rendre ses données accessibles à d’autres scientifiques ?
+12. Existe-t-il des modèles de collaboration qui permettent à la fois un accès élargi aux données et une reconnaissance du travail des équipes ayant réalisé l’étude initiale ? -->
