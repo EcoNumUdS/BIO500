@@ -106,10 +106,10 @@ creer_automobiles <-
   "CREATE TABLE automobiles (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
     marque      VARCHAR(50),
-    models      VARCHAR(50),
+    modele      VARCHAR(50),
     annee       INTEGER CHECK(annee >= 0)
   );"
-dbSendQuery(ma_bd, creer_automobiles)
+dbSendQuery(con, creer_automobiles)
 ```
 
 **Question:** Sur ce script, où sont les instructions SQL? Où sont les commandes R ?
@@ -134,29 +134,16 @@ creer_automobiles <-
 dbSendQuery(con, creer_automobiles)
 ```
 
-**Question:** Sur ce script, où est la clef primaire ?
+**Question:** Sur ce script, où est 
+1. la clef primaire ?
 
----
+--
 
-# Création de la table `automobiles`
+2. la clef étrangère ?
 
-```R
-# install.packages('RSQLite')
-library(RSQLite)
+--
 
-con <- dbConnect(SQLite(), dbname="automobiles.db")
-
-creer_automobiles <- 
-  "CREATE TABLE automobiles (
-    id          INTEGER PRIMARY KEY AUTOINCREMENT,
-    marque      VARCHAR(50),
-    modele      VARCHAR(50),
-    annee       INTEGER CHECK(annee >= 0)
-  );"
-dbSendQuery(con, creer_automobiles)
-```
-
-**Question:** Sur ce script, quelle est la contrainte ?
+3. la contrainte ?
 
 ---
 
@@ -175,7 +162,7 @@ creer_proprios <-
 dbSendQuery(con, creer_proprios)
 ```
 
-**Question:** Que référence la clef secondaire ?
+**Question:** Que référence la clef étrangère ?
 
 ---
 
@@ -722,62 +709,31 @@ head(auteurs_articles,4)
 
 ---
 
-# Requêtes emboitées
+# Requêtes par étapes
 
-.font70[
-.pull-left[
+## Créer des tables temporaires dans une requête
+
 ```{r}
 sql_requete <- "
-SELECT auteur1, avg(citations) AS moy_citations FROM (
+WITH collaborations AS (
   SELECT auteur1, articleID, citations
   FROM articles
   INNER JOIN collaborations USING (articleID)
-) GROUP BY auteur1;"
-
-moy_auteurs <- dbGetQuery(con,sql_requete)
-head(moy_auteurs)
+)
+SELECT auteur1, avg(citations) AS moy_citations
+FROM collaborations
+GROUP BY auteur1;"
 ```
-]]
 
-.pull-right[
-- On s'interroge sur le nombre moyen de citations par auteur.
-- Pour ce faire, on peut bâtir une requête à partir d'une autre requête.
-]
-
---
-<br><br>
-## Pourquoi faire un `INNER JOIN` entre les tables `articles` et `collaborations` ?
+La requête est divisée en deux parties :
+1. La première partie crée une table temporaire `collaborations` avec les colonnes `auteur1`, `articleID` et `citations`.
+2. La deuxième partie fait une moyenne des citations par auteur.
 
 ---
 
 # Exercice 4
 
 ## Est-ce que le nombre de citations est proportionnel au nombre de collaborateurs par article ?
-
----
-
-# Filtrer les requêtes à posteriori
-
-.font70[
-.pull-left[
-```{r}
-sql_requete <- "
-SELECT auteur1, avg(citations) AS moy_citations FROM (
-  SELECT auteur1, articleID, citations
-  FROM articles
-  INNER JOIN collaborations USING (articleID)
-) GROUP BY auteur1
-HAVING moy_citations > 10;"
-
-moy_auteurs <- dbGetQuery(con,sql_requete)
-head(moy_auteurs)
-```
-]]
-
-.pull-right[
-- Il est possible de filtrer à posteriori sur la requête avec `HAVING`.
-]
-
 
 ---
 class: inverse, center, middle
@@ -788,9 +744,9 @@ class: inverse, center, middle
 
 ---
 
-# Sauvegarder une requête
+# Sauvegarder la table retournée par une requête
 
-Afin de sauvegarder les requêtes obtenues dans R par `dbGetQuery()`, il est possible d'utiliser les fonctions d'écritures tels que `write.table()` ou encore `write.csv()`.
+Afin de sauvegarder les données retournées par une requête obtenues dans R par `dbGetQuery()`, il est possible d'utiliser les fonctions d'écritures tels que `write.table()` ou encore `write.csv()`.
 
 ---
 class: inverse, center, middle
@@ -882,6 +838,6 @@ system("rm -rf ./assets/data/reseau.db")
 
 # Lectures
 
-- [Stokel-Walker & Van Noorden. 2023. What ChatGPT and generative AI mean for science.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/Stokel-Walker2023.pdf)
+- [Biswas. 2023. ChatGPT for Research and Publication: A Step-by-Step Guide](https://www.doi.org/10.5863/1551-6776-28.6.576)
 - [.2023. The AI writing on the wall.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/NatMaInt2023.pdf) 
 - [Wilkinson et al. 2016. The FAIR Guiding Principles for scientific data management and stewardship.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/wilkinson2016.pdf)
