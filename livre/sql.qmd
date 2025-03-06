@@ -111,7 +111,7 @@ Dans l'exemple ci-dessus, c'est le champ `id` qui est la clé primaire de la tab
 
 `id      INTEGER PRIMARY KEY AUTOINCREMENT,` spécifie que le champ `id` est la clé primaire de la table `automobiles`. Cette clé est de type `INTEGER` et est incrémentée automatiquement à chaque nouvel enregistrement. Aucune valeur n'est à spécifier pour ce champ lors de l'insertion d'un nouvel enregistrement, la base de données s'en charge automatiquement lors de l'injection d'une nouvelle ligne.
 
-**Clef secondaire**
+**Clef étrangère**
 
 La clé étrangère est un champ ou un ensemble de champs qui référence une clé primaire d'une autre table. Elle est utilisée pour garantir l'intégrité référentielle des données Elle n'est pas obligatoire pour chaque table, par exemple, la table `automobiles` n'a pas de clé étrangère. Par contre, la table `proprios` a une clé étrangère `automobile_id` qui référence la clé primaire `id` de la table `automobiles`.
 
@@ -262,17 +262,27 @@ SELECT id, nom, no_telephonne, date_de_naissance AS annee
 FROM client
 WHERE
   (annee <= 2008 AND annee > 2000)
-  OR (annee >= 1992 AND annee <= 1994);"
+  OR (annee >= 1992 AND annee <= 1994);
 ```
 
-#### Filtrer a posteriori
+#### Filtrer par étapes
 
-Une requête peut retourner un champ agrégé, par exemple le résultat d'un produit et filtrer les lignes retournées en fonction du résultat de l'agrégation avec `HAVING` :
+Une requête peut être divisée en plusieurs étapes pour faciliter la lecture et la compréhension. Chaque étape consiste en une table temporaire nommée. Par exemple, la requête suivante est divisée en trois étapes `table1`, `table2` et un `SELECT` final :
 
 ```SQL
-SELECT id, nom, no_telephonne, date_de_naissance * 2 AS annee2
-FROM client
-HAVING annee2 >= 4000;"
+WITH table1 AS (
+    SELECT id, nom, no_telephonne, date_de_naissance AS annee
+    FROM client
+    WHERE annee <= 2008 AND annee > 2000
+),
+table2 AS (
+    SELECT id, product_id, quantity
+    FROM commandes
+    WHERE quantity > 10
+)
+SELECT *
+FROM table1
+JOIN table2 ON table1.id = table2.id;
 ```
 
 ### Autres commandes
