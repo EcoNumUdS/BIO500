@@ -21,7 +21,7 @@ deploy:
 	done
 
 install:
-	Rscript -e 'if (!require(pak)) install.packages("pak"); if (!require(units)) install.packages("units", type="binary"); if (!require(rmarkdown)) pak::pak("rmarkdown"); if (!require(knitr)) pak::pak("knitr"); if (!require(xaringan)) pak::pak("xaringan"); if (!require(RSQLite)) pak::pak("RSQLite"); if (!require(RPostgreSQL)) pak::pak("RPostgreSQL"); if (!require(ggplot2)) pak::pak("ggplot2"); if (!require(reshape2)) pak::pak("reshape2"); if (!require(knitr)) pak::pak("knitr"); if (!require(sf)) pak::pak("sf"); if (!require(terra)) pak::pak("terra");'
+	Rscript -e 'if (!require(pak)) install.packages("pak"); source("https://docs.rstudio.com/rspm/admin/check-user-agent.R"); if (!require(units)) install.packages("units", type="binary"); if (!require(rmarkdown)) pak::pak("rmarkdown"); if (!require(knitr)) pak::pak("knitr"); if (!require(xaringan)) pak::pak("xaringan"); if (!require(RSQLite)) pak::pak("RSQLite"); if (!require(RPostgreSQL)) pak::pak("RPostgreSQL"); if (!require(ggplot2)) pak::pak("ggplot2"); if (!require(reshape2)) pak::pak("reshape2"); if (!require(knitr)) pak::pak("knitr"); if (!require(sf)) pak::pak("sf"); if (!require(terra)) pak::pak("terra");'
 
 clean:
 	rm $(HTML)
