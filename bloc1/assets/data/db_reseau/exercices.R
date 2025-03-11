@@ -83,23 +83,26 @@ head(resume_auteurs)
 
 # EXERCICE : QUEL ARTICLE A LE PLUS D'AUTEURS ?
 sql_requete <- "
-SELECT articleID, annee, count(DISTINCT auteur1) AS nb_auteurs
-FROM collaborations
-INNER JOIN articles ON articles.articleID = collaborations.articleID
-GROUP BY articleID
-ORDER BY nb_auteurs DESC;"
+  SELECT collaborations.articleID, annee, count(DISTINCT auteur1) AS nb_auteurs
+  FROM collaborations
+  LEFT JOIN articles ON articles.articleID = collaborations.articleID
+  GROUP BY collaborations.articleID
+  ORDER BY nb_auteurs DESC;"
 
 resume_articles <- dbGetQuery(con, sql_requete)
 head(resume_articles)
 
 
 # EXERCICE : Est-ce que le nombre de citations est proportionnel au nombre d'auteurs' par article ?
-lsql_requete <- "
-SELECT articleID, citations, count(auteur1) AS nb_auteurs FROM (
-	SELECT DISTINCT articleID, auteur1, citations
-	  FROM collaborations
-	  INNER JOIN articles ON articles.articleID = collaborations.articleID
-) GROUP BY articleID;"
+sql_requete <- "
+WITH distinct_article AS (
+  SELECT DISTINCT collaborations.articleID, auteur1, citations
+	FROM collaborations
+	LEFT JOIN articles ON articles.articleID = collaborations.articleID
+)
+SELECT articleID, citations, count(auteur1) AS nb_auteurs
+FROM distinct_article
+GROUP BY articleID;"
 
 resume_articles <- dbGetQuery(con, sql_requete)
 head(resume_articles)

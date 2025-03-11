@@ -34,9 +34,9 @@ class: title-slide, middle
 
 # Évaluation formative #1
 
-Était à remettre hier (11 mars)
+Était à remettre hier (10 mars)
 
-## Vous avez jusqu'à lundi prochain (18 mars) pour compléter l'évaluation des scripts d'assemblage et de nettoyage d'une autre équipe.
+## Vous avez jusqu'à lundi prochain (17 mars) pour compléter l'évaluation des scripts d'assemblage et de nettoyage d'une autre équipe.
 
 - Tout se fait dans l'Atelier *Évaluation formative #1 : Atelier*
 - Vous avez à noter le travail d'une autre équipe selon les critères :
