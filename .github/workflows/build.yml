@@ -21,8 +21,8 @@ jobs:
         with:
             r-version: '4.2.0'
 
-      - name: Install libcurl on Linux
-        run: sudo apt-get update -y && sudo apt-get install -y libcurl4-openssl-dev
+      - name: Install system dependencies
+        run: sudo apt-get update -y && sudo apt-get install -y libcurl4-openssl-dev libgdal-dev gdal-bin libgeos-dev libproj-dev libudunits2-dev
 
       - name: Install R dependencies
         run: make install
