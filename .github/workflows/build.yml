@@ -7,7 +7,7 @@ name: Render book and slides
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@master
 
@@ -22,7 +22,9 @@ jobs:
             r-version: '4.2.0'
 
       - name: Install system dependencies
-        run: sudo apt-get update -y && sudo apt-get install -y libcurl4-openssl-dev libgdal-dev gdal-bin libgeos-dev libproj-dev libudunits2-dev
+        run: |
+          sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+          sudo apt-get update -y && sudo apt-get install -y libcurl4-openssl-dev libgdal-dev gdal-bin libgeos-dev libproj-dev libudunits2-dev
 
       - name: Install R dependencies
         run: make install
