@@ -3,7 +3,8 @@
 ```{r}
 #| label: git
 #| echo: false
-#| out-width: 15%
+#| out-width: 20%
+#| fig-align: center
 #| fig-cap: |
 #|    
 #| fig-alt: |
@@ -42,7 +43,8 @@ RStudio facilite le travail avec Git à l'aide d'un simple onglet "Git" et avec 
 ```{r}
 #| label: git_rstudio
 #| echo: false
-#| out-width: 40%
+#| out-width: 80%
+#| fig-align: center
 #| fig-cap: |
 #|    
 #| fig-alt: |
@@ -96,7 +98,6 @@ Fusionne une branche spécifiée dans la branche active.
 ### Github
 
 GitHub est le serveur *cloud* du logiciel Git, comme OneDrive l'est pour d'autres types de fichiers. On peut y sauver les fichiers text (csv, R, md, ...) et l'historique du travail (commits, branches). Cela permet de collaborer à plusieurs partenaires sur un même projet.
-
 
 
 ## Débuter avec Git
@@ -197,20 +198,7 @@ Il est plus facile de collaborer avec des dépôts publics. D'autres utilisateur
 
 ### Bien structurer son projet 
 
-Il est recommandé de bien organiser ses fichiers afin de s'y retrouver plus facilement. On y retrouve habituellement les éléments suivants  : 
-
-- *README.md*: information sur le dépôt 
-- *.Rproj*: informations sur le projet R
-- *.git* : informations sur l'historique d'utilisation de git 
-- *.gitignore*:  contient les extensions de fichier ignorés par git
-- **data** : données du projet ainsi que la base de données
-- **scripts**: tous les scripts R
-- **figures**: résultats des analyses
-- **rapport**: rapport final 
-
-**Le fichier README.md** 
-
-Le fichier README est un fichier texte qui contient des informations sur le projet. Il est souvent utilisé pour présenter le projet à d'autres utilisateurs. Il est écrit en markdown, un langage de balisage léger qui est facile à lire et à écrire. Le fichier README.md est souvent le premier fichier que les utilisateurs verront lorsqu'ils accéderont à votre dépôt. Il est donc important de bien le rédiger. On peut l'éditer directement en ligne avec le bouton.
+!!!Important de bien structurer son projet pour faciliter la collaboration et la reproductibilité. Voir la section [Bien structurer son projet](#structurer-son-projet) dédiée à ce sujet.
 
 
 ### 2. Associer le dépôt à RStudio
@@ -221,6 +209,7 @@ Sur le dépôt GitHub, cliquer sur le bouton "<> Code". Assurez-vous de sélecti
 #| label: github_code
 #| echo: false
 #| out-width: 40%
+#| fig-align: center
 #| fig-cap: |
 #|    
 #| fig-alt: |
@@ -261,10 +250,23 @@ Les commandes de git sont très efficaces et puissantes, elles peuvent néanmoin
 
 RStudio facilite ce travail avec un simple onglet "history" et avec un navigateur qui vous permet de passer d'une version à l'autre et de mettre en valeur les modifications qui ont été enregistrées sous forme de commit.
 
+```{r}
+#| label: git_history
+#| echo: false
+#| out-width: 80%
+#| fig-align: center
+#| fig-cap: |
+#|    
+#| fig-alt: |
+#|   rstudio.
+
+knitr::include_graphics("./assets/img/rstudio_git_history.gif", dpi = 270)
+```
+
 
 ### 5. Récupérer les modifications de co-équipiers
 
-Git a été spécifiquement créé pour travailler en équipe. Plusieurs utilisateurs peuvent se connecter au même répertoire et y apporter des modifications. Cependant, le répertoire en ligne GitHub est la version du projet à laquelle tous les utilisateurs contribuent. Il faut être rigoureux et fréquemment y téléverser ses modifications pour les rendre accessibles aux autres (Push). Il faut également récupérer les modifications des autres membres de l'équipe (Pull).
+Git a été spécifiquement créé pour travailler en équipe. Plusieurs utilisateurs peuvent se connecter au même répertoire et y apporter des modifications. Cependant, le répertoire en ligne GitHub est la version du projet à laquelle tous les utilisateurs contribuent. Il faut être rigoureux et fréquemment y téléverser ses modifications pour les rendre accessibles aux autres (*push*). Il faut également récupérer les modifications des autres membres de l'équipe (*pull*).
 
 Les restrictions d'accès au répertoire GitHub et les invitations peuvent être gérées à partir du site web du répertoire.
 
@@ -272,19 +274,24 @@ La collaboration entraine parfois des conflits entre versions. Ceci est particul
 
 ### 6. Supprimer un dépôt
 
-Si vous souhaitez supprimer un dépôt de votre ordinateur, il suffit de supprimer le répertoire (dossier) du projet sur votre ordinateur. Il s'agit d'un dossier standard. Si vous souhaitez supprimer le dépôt de GitHub, aller dans les paramètres du répertoire et sélectionner "Delete this repository".
+Si vous souhaitez supprimer un dépôt de votre ordinateur, il suffit de supprimer le répertoire (dossier) du projet sur votre ordinateur. Il s'agit d'un dossier standard. Si vous souhaitez supprimer le dépôt de GitHub, allez dans les paramètres du répertoire et sélectionner "Delete this repository".
 
 
 ## Conflits
 
-Lors de l'utilisation de Git, voici quelques-uns des conflits les plus fréquemment rencontrés :
+L'utilisation de Git pour la collaboration entraine parfois des conflits entre versions lorsque des modifications incompatibles sont apportées au même fichier, aux mêmes lignes de code ou lorsque des renommages de fichiers entraînent des conflits de nommage. 
 
-1. Conflit de fusion (Merge conflict) : Ce conflit se produit lorsque Git ne parvient pas à fusionner automatiquement les modifications provenant de deux branches différentes. Il se produit généralement lorsque des modifications incompatibles sont apportées au même fichier, aux mêmes lignes de code ou lorsque des renommages de fichiers entraînent des conflits de nommage.
+Ces conflits sont des situations normales lors de la collaboration avec Git. Lorsqu'un conflit se produit, Git marque les zones conflictuelles dans les fichiers concernés et il vous revient de les résoudre en choisissant quelles modifications garder ou en effectuant des ajustements manuellement.
+
+Par exemple, vous éditez le fichier `README.md` et ajoutez une ligne de texte. Pendant ce temps, un collaborateur modifie également le fichier `README.md` et ajoute une autre ligne de texte. Lorsque vous essayez de *push* vos modifications, Git détecte un conflit entre les deux versions du fichier et vous empêche de continuer tant que le conflit n'est pas résolu.
+
+1. Ouvrir l'onglet Git dans RStudio et cliquer sur le bouton `pull` pour récupérer les modifications du répertoire GitHub. Si un conflit est détecté, un message d'erreur apparaît dans la console RStudio. Par exemple :
 
 ```{r}
 #| label: push_error
 #| echo: false
-#| out-width: 40%
+#| out-width: 80%
+#| fig-align: center
 #| fig-cap: |
 #|    
 #| fig-alt: |
@@ -293,21 +300,13 @@ Lors de l'utilisation de Git, voici quelques-uns des conflits les plus fréquemm
 knitr::include_graphics("./assets/img/git-conflict-01-push-error.png", dpi = 270)
 ```
 
-> Pour résoudre le conflit depuis RStudio, il choisir certains de vos changements ainsi que certains de ceux de votre collaborateur, vous pouvez alors éditer manuellement et corriger le fichier. Lorsque vous *pull* le fichier avec un conflit, Git remarque qu'il y a un conflit et modifie le fichier pour afficher à la fois vos propres modifications et celles de votre collaborateur dans le fichier. Il affiche également le fichier dans l'onglet Git avec une icône orange en forme de U, ce qui indique que le fichier est non fusionné et donc en attente de votre aide pour résoudre le conflit. 
-> Il délimite ces blocs avec une série de signes inférieurs et supérieurs, de sorte qu'ils sont faciles à trouver : Pour résoudre les conflits, il vous suffit de trouver tous ces blocs et de les éditer afin que le fichier apparaisse comme vous le souhaitez (en choisissant vos lignes, celles de votre collaborateur, une combinaison ou quelque chose de complètement nouveau) et d'enregistrer. Assurez-vous de supprimer les lignes de délimitation qui commencent par
-
-```
-<<<<<<<,
-=======,
-et >>>>>>>
-```
-
-> Une fois que vous avez apporté ces modifications, il vous suffit d'ajouter (*staging*), de *commit* et de *push* les fichiers pour résoudre le conflit.
+2. Inspecter les fichiers affectés par le conflit. Dans cet exemple, le fichier *README.md* est en conflit.
 
 ```{r}
 #| label: merge_conflict
 #| echo: false
-#| out-width: 40%
+#| out-width: 80%
+#| fig-align: center
 #| fig-cap: |
 #|    
 #| fig-alt: |
@@ -316,29 +315,142 @@ et >>>>>>>
 knitr::include_graphics("./assets/img/rstudio-merge-conflict.png", dpi = 270)
 ```
 
+2. Ouvrir le fichier en conflit et résoudre le conflit manuellement. Les lignes de code en conflit sont délimitées par des balises spéciales. Les modifications entrant depuis le répertoire GitHub (HEAD) suivent la ligne `<<<<<<< HEAD`. Vous verrez ensuite `=======` qui divise les modifications entrantes des modifications locales. Les modifications locales suivent la ligne `>>>>>>> branch-name`. Par exemple :
 
-1. Conflit de rébase (Rebase conflict) : Lorsque vous effectuez une opération de rébase pour intégrer les modifications d'une branche dans une autre, des conflits peuvent se produire si Git ne parvient pas à appliquer automatiquement les modifications. Cela peut se produire lorsque des modifications conflictuelles sont apportées aux mêmes fichiers ou aux mêmes parties de code.
+```r
+# BIO500 H2025
+Mon répertoire de travail pour le cours BIO500.
 
-2. Conflit de stratégie de fusion (Merge strategy conflict) : Git offre plusieurs stratégies de fusion, telles que la fusion rapide (fast-forward), la fusion récursive (recursive) ou la fusion ours (ours). Lorsque vous spécifiez une stratégie de fusion spécifique et que celle-ci ne peut pas être appliquée en raison de conflits, un conflit de stratégie de fusion se produit.
+<<<<<<< HEAD
+Nouvelle description du projet.
+=======
+Description initiale du projet.
+>>>>>>> 1234567890abcdef1234567890abcdef12345678
+```
 
-3. Conflit de nommage (Naming conflict) : Ce type de conflit se produit lorsque deux fichiers ou répertoires ont des noms similaires et que Git ne peut pas les distinguer clairement. Cela peut survenir lors de la fusion de branches contenant des fichiers ou des répertoires avec des noms conflictuels.
+3. Choisir les modifications à conserver et supprimer les balises de conflit. Dans cet exemple, on choisit de conserver la description initiale du projet. Le fichier modifié devrait ressembler à ceci :
 
-4. Conflit de ligne blanche (Whitespace conflict) : Les conflits de ligne blanche surviennent lorsque les modifications apportées à un fichier incluent des changements mineurs tels que l'ajout ou la suppression d'espaces, de tabulations ou de retour à la ligne. Ces conflits se produisent généralement lors de la fusion ou de la rébase.
+```r
+# BIO500 H2025
+Mon répertoire de travail pour le cours BIO500.
 
-Il est important de noter que ces conflits sont des situations normales lors de la collaboration avec Git. Lorsqu'un conflit se produit, Git marque les zones conflictuelles dans les fichiers concernés et il vous revient de les résoudre en choisissant quelles modifications garder ou en effectuant des ajustements manuels.
+Description initiale du projet.
+```
+   
+4. Après avoir résolu le conflit, ajouter les fichiers modifiés à l'index (*staging*).
+ 
+5. Commiter (*commit*) les modifications et pousser (*push*) les modifications vers le répertoire GitHub.
 
-> En cas de conflit, un message apparait dans la console RStudio indiquant la nature du problème. La présente section vous aide à en comprendre l'origine et il est fortement recommandé de copier-coller le message dans un moteur de recherche pour plus d'information. Toutefois, vous devez obligatoirement résoudre le conflit en choisissant les modifications à garder ou en effectuant des ajustements manuellement. 
+> En cas de conflit, un message apparait dans la console RStudio indiquant la nature du problème. Il est fortement recommandé de copier-coller le message dans un moteur de recherche pour plus d'information. Toutefois, vous devez obligatoirement résoudre le conflit en choisissant les modifications à garder ou en effectuant des ajustements manuellement. 
 
 
-## Bien structurer son projet
+## Structurer son projet
 
-Il est recommandé de bien organiser ses fichiers afin de s'y retrouver plus facilement. On y retrouve habituellement les éléments suivants :
+La structuration d'un projet est un élément clé pour sa reproductibilité et sa maintenance. La structure comprend l'organisation des fichiers ainsi que la documentation du code et du projet. 
 
-- `README.md` : information sur le dépôt.
-- `.Rproj` : informations sur le projet R.
-- `.git` : informations sur l'historique d'utilisation de git.
-- `.gitignore` : contient les extensions de fichier ignorés par git.
-- `data` : données du projet ainsi que la base de données.
-- `scripts` : tous les scripts R.
-- `figures` : résultats des analyses.
-- `rapport` : rapport final.
+À titre d'emxemple, voici un projet qui respecte les bonnes pratiques de structuration exigées par les journeaux scientifiques : [vcameron1/Metapop_ms](https://github.com/vcameron1/Metapop_ms)
+
+Voyons quelques éléments clés d'une structure optimale.
+
+### Structure du répertoire
+
+Une structure bien organisée facilite la navigation dans le projet et la localisation des ressources. Voici une structure de projet recommandée :
+
+```
+monProjet/
+│
+├── .git/
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── scripts/
+│   ├── data_cleaning.R
+│   ├── data_analysis.R
+│   └── data_analysis.R
+│
+├── results/
+│
+├── reports/
+│   ├── report.Rmd
+│   └── report.pdf
+│
+├── .gitignore
+│
+└── README.md
+```
+
+- `data/` : contient les données. Idéalement, les données brutes et traitées séparées.
+- `scripts/` : contient les scripts.
+- `results/` : contient les résultats générées par les scripts.
+- `reports/` : contient les rapports et documents rédigés.
+- `.gitignore` : fichier qui spécifie les fichiers à ignorer lors de la gestion de version.
+- `README.md` : contient une description du projet et des instructions pour son exécution.
+
+### Documentation
+
+La documentation est essentielle pour la reproductibilité et la maintenance d'un projet. Elle permet de comprendre le contexte, les objectifs et les résultats du projet. Voici deux éléments à documenter :
+
+- Le code : par des commentaires pour faciliter la compréhension.
+- Le projet : le fichier `README.md` permet de documenter le projet avec une description, une structure, des instructions et des informations complémentaires.
+
+#### Les commentaires
+
+Les commentaires sont des annotations dans le code source qui expliquent son fonctionnement. Ils permettent de structurer et de documenter le code, d'expliquer les choix de conception et de faciliter la compréhension du code par d'autres développeurs. Voici quelques bonnes pratiques pour écrire des commentaires :
+
+- Commenter le code de manière concise et claire.
+- Utiliser des commentaires pour diviser le script en blocs cohérents.
+- Utiliser des commentaires pour expliquer le code complexe ou non évident.
+- Éviter les commentaires inutiles ou redondants.
+- Mettre à jour les commentaires en même temps que le code.
+
+```r
+#############################################
+# Ce script permet de nettoyer les données
+#
+# Auteur: Victor Cameron
+# Date: 2021-10-01
+#############################################
+
+# 1. Charger les données
+data <- read.csv("data/raw/data.csv")
+
+# 2. Nettoyer les données
+clean_data <- clean_data(data)
+```
+
+#### Le fichier `README.md` 
+
+Le fichier README est un fichier texte qui contient des informations sur le projet. Il est souvent utilisé pour présenter le projet à d'autres utilisateurs. Le fichier README.md est souvent le premier fichier que les utilisateurs verront lorsqu'ils accéderont à votre dépôt. Il est donc important de bien le rédiger.
+
+Quelques éléments à inclure dans un fichier `README.md` :
+
+- Titre du projet : nom du projet.
+- Description du projet : objectifs, contexte, données, méthodes, résultats. Ça peut être un résumé du projet.
+- Structure du répertoire : organisation des fichiers, scripts et ressources.
+- Description des fichiers : rôles et contenus des principaux fichiers.
+- Instructions
+    - Comment exécuter le projet.
+    - Comment reproduire les résultats.
+    - Comment accéder aux données et aux ressources.
+- Auteurs et contributeurs : qui a travaillé sur le projet.
+
+### .gitignore
+
+Le fichier `.gitignore` spécifie les fichiers et dossiers à ignorer lors de la gestion de version avec Git. Il permet d'éviter d'inclure des fichiers temporaires, des fichiers de données volumineux ou des fichiers sensibles dans le dépôt Git. Voici un exemple de fichier `.gitignore` :
+
+```
+# Fichiers temporaires
+.Rhistory
+.RData
+.Rproj.user/
+
+# Fichiers de données volumineux
+data/raw/*.csv
+data/raw/*.zip
+
+# Fichiers sensibles
+config.yml
+credentials.json
+```

@@ -55,3 +55,7 @@ Pour 1 m², diviser par 3 = 729 org/m2
 [Guide de surveillance biologique basée sur les macroinvertébrés benthiques d'eau douce du Québec (gouv.qc.ca)](https://can01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.environnement.gouv.qc.ca%2Feau%2Feco_aqua%2Fmacroinvertebre%2Fsurveillance%2Fbenthiques.pdf&data=05%7C01%7CVictor.Cameron%40USherbrooke.ca%7C10921baf6084499beec908db9cd34465%7C3a5a8744593545f99423b32c3a5de082%7C0%7C0%7C638276203602274357%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=qbhPytqLNVgiZOxd9U5xnalCKdIepokrfuwgZf%2Bu%2FFU%3D&reserved=0)
 
 [Biodiversité Québec / Benthos](https://biodiversite-quebec.ca/fr/inventaires/inventaires/benthos)
+
+### Couverture spatiale
+
+Les données couvrent principalement le territoire du Québec et sont fournies en degrés (EPSG:4326).

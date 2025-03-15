@@ -27,6 +27,10 @@ Le protocole est décrit dans le document suivant : [Protocole d’inventaire ac
 
 ## Considérations importantes
 
+### Couverture spatiale
+
+Les données couvrent principalement le territoire du Québec et sont fournies en degrés (EPSG:4326).
+
 ### Validation
 
 Les données ont été validées par le après leur collection. Il est possible qu'il y ait des erreurs ou des inconsistances dans les données. Il est important de valider les données avant de les utiliser. Par exemple, certaines colonnes peuvent ne pas se combiner si elles ne sont pas du même type (ex. une colonne de texte ne peut pas se combiner avec une colonne de nombre).
