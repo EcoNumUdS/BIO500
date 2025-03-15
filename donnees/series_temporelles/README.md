@@ -30,6 +30,10 @@ Certaines colonnes vous seront utiles. Voici une description de celles-ci :
 
 ## Considérations importantes
 
+### Couverture spatiale
+
+Les données couvrent principalement le territoire du Québec, mais peuvent également inclure des observations provenant d'autres régions du Canada et des États-Unis. Les coordonnées sont fournies en degrés (EPSG:4326).
+
 ### Validation
 
 Les données ont été validées par le MELCCFP. Il est possible qu'il y ait des erreurs dans les données ou que le format d'un champ aie changé en cours de collecte. Il est important de valider les données avant de les utiliser. Par exemple, certaines colonnes peuvent ne pas se combiner si elles ne sont pas du même type (ex. une colonne de texte ne peut pas se combiner avec une colonne de nombre).
