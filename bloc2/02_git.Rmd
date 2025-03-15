@@ -68,7 +68,7 @@ Ses difficultées techniques:
 
 ---
 
-# Systèmes de contrôle existants
+# Systèmes de versionnage existants
 
 ## Un exemple avec Dropbox
 
@@ -78,7 +78,7 @@ Ses difficultées techniques:
 
 ---
 
-# Systèmes de contrôle existants
+# Systèmes de versionnage existants
 
 ## Un exemple MS Word
 
@@ -99,7 +99,7 @@ class: inverse, center, middle
 
 .pull-left[
 
-C'est un système qui permet de suivre l'**ajout** et les **modifications** pour un ensemble de fichier.
+C'est un système qui permet de suivre l'**ajout** et les **modifications** pour un ensemble de fichiers.
 
 **C'est le cahier de lab du programmeur.**
 
@@ -148,8 +148,6 @@ Mais le désavantage de fonctionner seulement avec les fichiers "plain text"...
 7. Revenir en arrière 
 8. Récupérer les modifications de co-équipiers
 
-Complétez les étapes en suivant les instructions données dans le [chapitre 7, Section 7.2](https://econumuds.github.io/BIO500/git.html#d%C3%A9buter-avec-git) (complétez les étapes 0 à 3)
-
 ---
 class: inverse, center, middle
 
@@ -180,6 +178,8 @@ MonTravailSession/
 ```
 ]]
 
+--
+
 .pull-right[
 
 ## Vous à la fin de ce cours:
@@ -189,7 +189,7 @@ MonTravailSession/
   |___ data/
         |___ data_01122018.csv
         |___ data_011022018.csv
-  |___ rapportVeg.tex
+  |___ rapportVeg.Rmd
 ```
 ]
 
@@ -281,23 +281,37 @@ Permet de se déplacer vers le `commit` le plus récent.
 ]
 
 ---
-# 7. Revenir en arrière dans le temps
+# Revenir en arrière dans le temps
 
 Les commandes de git sont très efficaces et puissantes, elles peuvent néanmoins être fastidieuses et difficiles pour les débutants. 
 
 RStudio facilite ce travail avec un simple onglet "history" et avec un navigateur qui vous permet de passer d'une version à l'autre et de mettre en valeur les modifications qui ont été enregistrées sous forme de commit.
 
+---
+
+# Exercice 
+
+1. Créer un dépôt sur GitHub
+2. Associer le dépôt à RStudio
+3. Ajouter un nouveau fichier (`add` *staged* et `commit`)
+4. Téléverser les modifications sur le serveur (`push`)
+5. Observerver les modifications sur le répertoire GitHub
 
 ---
-# 8. Travailler en équipe 
+# Travailler en équipe 
 
-- git a été spécifiquement créé pour travailler en équipe
-- Plusieurs utilisateurs peuvent se connecter au même répertoire et y apporter des modifications 
-- À chaque fois que l'on ouvre un projet il est approprié d'utiliser la commande "git pull" (un bouton sur l'interface git de Rstudio) afin de récupérer les modifications des autres membres de l'équipe
-- Les restrictions d'utilisation et les invitations peuvent être gérées à partir du site web de github 
-
+- Git a été spécifiquement créé pour travailler en équipe.
+- Plusieurs utilisateurs peuvent se connecter au même répertoire et y apporter des modifications.
+- À chaque fois que l'on ouvre un projet il est approprié d'utiliser la commande `git pull` (un bouton sur l'interface git de Rstudio) afin de récupérer les modifications des autres membres de l'équipe.
 
 ![](./assets/img/rstudio_git_pull.png)
+
+---
+# Travailler en équipe 
+
+.center[
+  <img src="./assets/img/git_workflow2.png" width="45%"></img>
+]
 
 ---
 # La puissance de git
@@ -312,17 +326,12 @@ Un tutoriel complet est disponible ici[https://happygitwithr.com/rstudio-git-git
 
 .pull-left[
 ## Enregistrer l'histoire du projet
-  - `git add`
+  - `git add` ou `git stage`
   - `git commit`
   - `git status`
 
 ## Voyager dans le temps
   - `git checkout`
-
-## Expérimenter les changements
-  - `git branch`
-  - `git merge`
-
 ]
 .pull-right[
 
@@ -338,9 +347,12 @@ Un tutoriel complet est disponible ici[https://happygitwithr.com/rstudio-git-git
 
 # Exercice 
 
-1. En équipe de 2, utiliser un dépôt créé par un des membres de l'équipe et le cloner sur l'ordinateur de l'autre membre
-2. Chacun modifie un même fichier présent dans le dépôt et enregistre les modifications
-3. Git commit et push
+Cet exercice se fait en équipe de 2.
+
+1. Un membre ajoute à son répertoire GitHub un fichier `README.md` avec `# Titre` pour entête et enregistre les modifications (`commit` puis `push`).
+2. Associer le dépôt GitHub à RStudio sur l'ordinateur du partenaire.
+3. Chacun modifie l'entête du fichier `README.md` et enregistre les modifications.
+4. Git `commit` puis `push`.
 
 Qu'est-ce qui arrive ?
 
@@ -358,7 +370,7 @@ Le conflit de de fusion est le résultat de deux modifications concurrentes sur 
 
 Il est possible de résoudre le conflit directement dans RStudio. Essayez-vous !
 
-Marche à suivre : [https://econumuds.github.io/BIO500/git.html#conflits](https://econumuds.github.io/BIO500/git.html#conflits)
+Marche à suivre : [Chapitre 7.3 *Git, Conflits*](https://econumuds.github.io/BIO500/git.html#conflits)
 
 ---
 
@@ -366,34 +378,139 @@ Marche à suivre : [https://econumuds.github.io/BIO500/git.html#conflits](https:
 
 [Chapitre 7.3 *Git, Conflits*](https://econumuds.github.io/BIO500/git.html#conflits)
 
-- Ouvrir le fichier en conflit
-- Résoudre le conflit
-- Enregistrer les modifications
-- `add` (*staging*) et `commit`, `push`
+1. `pull` pour récupérer les modifications
+2. Inspecter le fichier en conflit
+3. Résoudre le conflit
+4. Enregistrer les modifications : `add` (*staged*), `commit` et `push`
 
 ![](./assets/img/rstudio-merge-conflict.png)
 
 ---
+class: inverse, center, middle
 
-# Lectures
+# Structurer un projet
 
-## Discussion sur l'utilisation de modèles de langage
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
-- [Stokel-Walker & Van Noorden. 2023. What ChatGPT and generative AI mean for science.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/Stokel-Walker2023.pdf)
-- [.2023. The AI writing on the wall.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/NatMaInt2023.pdf) 
-- [Wilkinson et al. 2016. The FAIR Guiding Principles for scientific data management and stewardship.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/wilkinson2016.pdf)
+<br>
+- Organisation des fichiers
+- Documentation
+
+Un guide est disponible au [Chapitre 7. Git/Structurer son projet](https://econumuds.github.io/BIO500/git.html#Structurer-son-projet)
+
+---
+
+# Organisation des fichiers
+
+.small[
+```bash
+monProjet/
+│
+├── .git/
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── scripts/
+│   ├── data_cleaning.R
+│   ├── data_analysis.R
+│   └── data_analysis.R
+│
+├── results/
+│
+├── reports/
+│   ├── report.Rmd
+│   └── report.pdf
+│
+├── .gitignore
+│
+└── README.md
+```
+]
+
+---
+
+# Documentation
+
+- Le code : par des commentaires pour faciliter la compréhension.
+- Le projet : le fichier `README.md` permet de documenter le projet avec une description, une structure, des instructions et des informations complémentaires.
+---
+
+# Documentation
+
+## Le code
+
+```r
+#############################################
+# Ce script permet de nettoyer les données
+#
+# Auteur: Victor Cameron
+# Date: 2021-10-01
+#############################################
+
+# 1. Charger les données
+data <- read.csv("data/raw/data.csv")
+
+# 2. Nettoyer les données
+clean_data <- clean_data(data)
+```
+
+---
+
+# Documentation
+
+## README.md
+
+Quelques éléments à inclure dans un fichier `README.md` :
+
+- Titre du projet : nom du projet.
+- Description du projet : objectifs, contexte, données, méthodes, résultats. Ça peut être un résumé du projet.
+- Structure du répertoire : organisation des fichiers, scripts et ressources.
+- Description des fichiers : rôles et contenus des principaux fichiers.
+- Instructions
+    - Comment exécuter le projet.
+    - Comment reproduire les résultats.
+    - Comment accéder aux données et aux ressources.
+- Auteurs et contributeurs : qui a travaillé sur le projet.
+
+---
+
+# Exercice
+
+## En équipe de projet de session
+
+1. Un membre par équipe crée un répertoire GitHub publique pour le projet de session.
+2. Chaque membres de l'équipe clone le répertoire sur son ordinateur.
+3. Créer la structure de projet selon les bonnes pratiques.
+4. Ajouter un fichier README.md
+5. Ajouter un fichier .gitignore
 
 ---
 class: inverse, center, middle
 
-# Débat : Les LLM apportent ou pas à la science ?
+# Débat : Intelligence artificielle et écologie, opportunité ou menace pour la rigueur scientifique ?
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
 <br>
 ## 15 minutes pour préparer ses arguments
 ## 2 minutes pour présenter ses arguments
-## 20 minutes de débat
+## 20 minutes de discussion dirigée
+## 5 minutes vote et conclusion
+<!-- 
+    Sondage sur l’impact perçu des LLM.
+    Conclusion sur les pistes pour une utilisation responsable.
+-->
+
+<!-- 
+Points de réflexion :
+
+  -  Fiabilité et biais : Les LLM peuvent-ils introduire des biais dans l'analyse des données écologiques ?
+  -  Automatisation et créativité scientifique : Les LLM peuvent-ils renforcer la créativité ou risquent-ils de réduire l’esprit critique ?
+  -  Accès aux données et reproductibilité : Les LLM facilitent-ils l’accès à des connaissances dispersées ou compliquent-ils la transparence des méthodes ?
+  -  Éthique et impacts environnementaux : L'empreinte carbone des LLM est-elle compatible avec les objectifs de durabilité écologique ? 
+-->
 
 ---
 
