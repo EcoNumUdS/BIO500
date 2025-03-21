@@ -35,17 +35,27 @@ Nous utiliserons la librairie `targets` pour assurer la reproductibilité de la 
 
 ---
 
+# Introduction à `targets`
+
+1. Consulter le [chapitre Targets](https://econumuds.github.io/BIO500/targets.html).
+2. Regarder le [vidéo](https://player.vimeo.com/video/700982360?h=38c890bd4f) de présentation.
+3. Explorer la [documentation](https://books.ropensci.org/targets/).
+
+---
+
 # Un exemple minimal 
 
 1. Lire le fichier de données "data.txt"
 2. Faire une régression linéaire 
 3. Faire une figure et l'enregistrer
 
-## Vous pouvez suivre avec le [chapitre 9](https://econumuds.github.io/BIO500/targets.html) du livre
+## Vous pouvez suivre avec le [chapitre Targets](https://econumuds.github.io/BIO500/targets.html) du livre
 
 ---
 
-# La structure de fichiers sur votre ordinateur 
+# Un exemple minimal 
+
+## La structure de fichiers sur votre ordinateur 
 
 ```md
 ├── data             # Dossier de données
@@ -60,7 +70,9 @@ Nous utiliserons la librairie `targets` pour assurer la reproductibilité de la 
 
 ---
 
-# Le fichier de données 
+# Un exemple minimal 
+
+## Le fichier de données 
 
 ```{r}
 data = read.table("exemple_targets/data/data.txt", header = T)
@@ -68,8 +80,9 @@ head(data)
 ```
 
 ---
+# Un exemple minimal 
 
-# Le script analyse.R
+## Le script analyse.R
 
 ```{r eval = FALSE}
 resultat_modele = function(data) lm(data$Y~data$X)
@@ -77,7 +90,9 @@ resultat_modele = function(data) lm(data$Y~data$X)
 
 ---
 
-# Le script figure.R
+# Un exemple minimal 
+
+## Le script figure.R
 
 ```{r}
 ma_figure = function(data, resultat_modele) {
@@ -89,7 +104,9 @@ ma_figure = function(data, resultat_modele) {
 
 ---
 
-# Mise à jour de la séquence
+# Un exemple minimal 
+
+## Mise à jour de la séquence
 
 Quatre éléments peuvent être modifiés : 
 
@@ -99,7 +116,9 @@ Quatre éléments peuvent être modifiés :
 
 ---
 
-# target : définition
+# Un exemple minimal 
+
+## target : définition
 
 Une `target` est une étape de la séquence d'instructions.  
 
@@ -113,7 +132,9 @@ Le package `targets` exécute seulement les targets qui ne sont pas à jour.
 
 ---
 
-# Anatomie d'un fichier `_targets.R`
+# Un exemple minimal 
+
+## Anatomie d'un fichier `_targets.R`
 
 ```{r eval = FALSE}
 # _targets.R file
@@ -139,7 +160,9 @@ list(
 
 ---
 
-# Construction de la séquence (pipeline)
+# Un exemple minimal 
+
+## Construction de la séquence (pipeline)
 
 La construction d'une séquence d'opération est l'étape la plus importante. Cette étape se fait essentiellement avec du papier et un crayon, il faut identifier les dépendences entre les fonctions et les objets. 
 
@@ -149,22 +172,24 @@ Une target est exécutée seulement lorsque la `target` dont elle dépend est pl
 
 ---
 
-# La séquence
+# Un exemple minimal 
 
-## 1. On peut visualiser la séquence
+## La séquence
+
+### 1. On peut visualiser la séquence
 
 ```{r eval = FALSE}
 source("exemple_targets/_targets.R")
 tar_glimpse()
 ```
 
-## 2. Exécuter la séquence 
+### 2. Exécuter la séquence 
 
 ```{r eval = FALSE}
 tar_make()
 ```
 
-## 3. Visualiser les étapes qui sont à jour et celles qui ne le sont pas
+### 3. Visualiser les étapes qui sont à jour et celles qui ne le sont pas
 
 ```{r eval = FALSE}
 tar_visnetwork()
@@ -172,7 +197,9 @@ tar_visnetwork()
 
 ---
 
-# Qu'est-ce qui fait une bonne target ?
+# Un exemple minimal 
+
+## Qu'est-ce qui fait une bonne target ?
 
 Comme une fonction, une `target` peut faire trois choses : 
 
@@ -186,7 +213,9 @@ Alternativement, pour une séquence d'analyse très compliquée, on pourrait vou
 
 ---
 
-# Qu'est-ce qui fait une bonne `target` ? 
+# Un exemple minimal 
+
+## Qu'est-ce qui fait une bonne `target` ? 
 
 Le grain d'une séquence dépend donc d'un compromis : 
 

@@ -24,7 +24,7 @@ D'abord, les différents fichiers sont organisés selon la structure suivante :
 │   ├── rapport.Rmd                                         # Rapport
 │   ├── pnas-sample.bib                                     # Fichier de bibliographie
 
-├── _targets.R                                              # Fichier targets qui définie le pipeline
+├── _targets.R                                              # Fichier targets qui défini le pipeline
 
 
 ```
@@ -41,8 +41,7 @@ Le pipeline présenté dans cet exemple suit l'état de plusieurs jeux de donné
 produit une analyse et présente les résultats à l'aide d'une visualisation dans un rapport `RMarkdown`.
 
 L'exemple présenté permet de suivre **plusieurs fichiers de données** et de définir les
-**dépendances du rapport**. Comme établir ces dépendances requiert [certaines technicalités](https://econumuds.github.io/BIO500/bloc4/#16), je vous suggère
-de vous inspirer grandement de l'exemple présente. Celui-ci est conçu pour être *très*
+**dépendances du rapport**. Comme établir ces dépendances requiert [certaines technicalités](https://econumuds.github.io/BIO500/bloc4/#16), je vous suggère de vous inspirer grandement de l'exemple présenté. Celui-ci est conçu pour être *très*
 similaire à votre tâche dans le travail final et répondre aux attentes. Je dis ça, je dis rien !
 
 
