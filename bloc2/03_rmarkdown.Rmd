@@ -48,6 +48,21 @@ Il est recommandé de bien organiser ses fichiers afin de s'y retrouver plus fac
 
 ---
 
+# Retour sur le dernier cours
+
+## .gitignore
+
+Il existe des gabarits proposés pour [R](https://www.toptal.com/developers/gitignore/api/r).
+
+```bash
+# R
+*.Rproj.user
+*.Rhistory
+.RData
+```
+
+---
+
 # C'est quoi le RMarkdown
 
 .center[
