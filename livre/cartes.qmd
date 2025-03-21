@@ -51,7 +51,7 @@ library(sf)
 pts <- st_sfc(st_point(c(1, 1)), st_point(c(2, 2)), st_point(c(3, 3)), st_point(c(4, 4)))
 shp <- st_sf(data.frame(id = 1:4), geometry = pts)
 shp$nom <- c("A", "B", "C", "D") # Donner un nom aux points
-st_write(obj = shp, dsn = "assets/points.shp") # Sauver les données
+st_write(obj = shp, dsn = "assets/points.shp", append = TRUE) # Sauver les données
 
 # Lire des données vectorielles à partir d'un fichier shapefile
 nc <- st_read(dsn = "assets/points.shp")

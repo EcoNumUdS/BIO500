@@ -4,7 +4,7 @@
 # Défini le pipeline du projet
 #
 # Victor Cameron
-# 2023
+# 2024
 ###############################################################################
 
 # Notez qu'il n'est pas nécessaire de définir le working directory lorsqu'on

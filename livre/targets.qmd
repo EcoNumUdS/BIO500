@@ -17,6 +17,14 @@ Des petites modifications en amont peuvent affecter toute la chaîne en aval. In
 
 La programmation d'une séquence d'instructions permet de formaliser ce processus et de s'attarder seulement aux étapes qui doivent être mises à jour.
 
+## Introduction
+
+Ce chapitre est une introduction à la librairie `targets`. Nous allons voir comment définir un pipeline, exécuter les instructions et quelques trucs et astuces pour éviter les erreurs. Un répertoire d'exemple vous sera présenté pour illustrer les concepts et la [documentation de la librairie](https://books.ropensci.org/targets/) en offre davantage. Ce court vidéo tiré de cette documentation vous donnera un aperçu de la librairie :
+
+<center>
+<iframe src="https://player.vimeo.com/video/700982360?h=38c890bd4f" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+</center>
+
 
 ## Le pipeline
 
@@ -102,7 +110,11 @@ list(
 
 Une target est une étape de la séquence d'instructions, elle est utilisée comme argument dans une étape suivante. On la défini avec `tar_targets()` dans le fichier _targets.R.
 
-> **ATTENTION !!!** La target est *TOUJOURS* une fonction.
+:::{.callout-caution}
+## La target est une fonction
+
+La target est *TOUJOURS* une fonction.
+:::
 
 Une target est au minimum une cible (nom d'un objet) et une dépendance (commande R). Une target produit un objet R qui est enregistré dans la mémoire de la session. Une dépendance est une expression qui dépend d'une target précédente. Le package `targets` exécute seulement les targets qui ne sont pas à jour. Ainsi, Une target est exécutée seulement lorsque la target dont elle dépend est plus récente que l'objet qu'elle produit. 
 
@@ -144,7 +156,40 @@ La commande `tar_make()` permet d'exécuter le pipeline. De nombreuses informati
 tar_make()
 ```
 
-> Notez que le pipeline ne se lance pas en exécutant le code du fichier _targets.R, mais bien avec l'exécution de tar_make() !
+
+:::{.callout-important}
+## Éxécution du pipeline
+
+Notez que le pipeline ne se lance pas en exécutant le fichier _targets.R, mais bien avec l'exécution de `tar_make()`.
+:::
+
+
+## Modifications
+
+La librairie `targets` détecte les changements au code et aux données pour définir les quelles targets doivent être exécutées à nouveau et celles qui peuvent être ignorées.
+
+### Changement au code
+
+Une modification à un script duquel dépend une target entrainera sa mise à jour puisqu'elle est considérée comme obsolète. `tar_make()` exécutera la target et toutes celles qui en dépendent. Par exemple, si vous modifiez la fonction `ma_figure()` dans le script `figure.R`, la target `figure` sera exécutée à nouveau. Changeons la couleur des points de la figure pour voir le comportement de `targets` :
+
+```r
+ma_figure = function(data, resultat_modele) {
+  plot(data$X, data$Y, xlab = "X", ylab = "Y", cex.axis = 1.5, cex.lab = 1.5, pch = 19, col = "red")
+  abline(resultat_modele)
+}
+```
+
+`targets` détectera le changement et exécutera la target `figure` à nouveau, mais pas les targets `data` et `resultat_modele` puisqu'elles n'ont pas été modifiées et ne dépendent pas de la target `figure`. 
+
+```r
+tar_visnetwork()
+```
+
+```r
+tar_make()
+```
+
+
 
 ## Trucs et astuces
 

@@ -476,6 +476,21 @@ Quelques éléments à inclure dans un fichier `README.md` :
 
 ---
 
+# .gitignore
+
+## Ignorer certains fichiers de Git
+
+Il existe des gabarits proposés pour [R](https://www.toptal.com/developers/gitignore/api/r).
+
+```bash
+# R
+*.Rproj.user
+*.Rhistory
+.RData
+```
+
+---
+
 # Exercice
 
 ## En équipe de projet de session
