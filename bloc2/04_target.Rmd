@@ -1,6 +1,6 @@
 class: inverse, center, middle
 
-# Séquences d'instructions avec targets
+# Automatisation de processus avec targets
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
@@ -38,14 +38,14 @@ Nous utiliserons la librairie `targets` pour assurer la reproductibilité de la 
 # Introduction à `targets`
 
 1. Consulter le [chapitre Targets](https://econumuds.github.io/BIO500/targets.html).
-2. Regarder le [vidéo](https://player.vimeo.com/video/700982360?h=38c890bd4f) de présentation.
+2. Regarder la [vidéo](https://player.vimeo.com/video/700982360?h=38c890bd4f) de présentation.
 3. Explorer la [documentation](https://books.ropensci.org/targets/).
 
 ---
 
 # Un exemple minimal 
 
-1. Lire le fichier de données "data.txt"
+1. Lire le fichier de données `data.txt`
 2. Faire une régression linéaire 
 3. Faire une figure et l'enregistrer
 
@@ -82,7 +82,7 @@ head(data)
 ---
 # Un exemple minimal 
 
-## Le script analyse.R
+## Le script `analyse.R`
 
 ```{r eval = FALSE}
 resultat_modele = function(data) lm(data$Y~data$X)
@@ -92,7 +92,7 @@ resultat_modele = function(data) lm(data$Y~data$X)
 
 # Un exemple minimal 
 
-## Le script figure.R
+## Le script `figure.R`
 
 ```{r}
 ma_figure = function(data, resultat_modele) {
@@ -110,8 +110,8 @@ ma_figure = function(data, resultat_modele) {
 
 Quatre éléments peuvent être modifiés : 
 
-- Le fichier de données data.txt
-- Les scripts analyse.R et figure.R 
+- Le fichier de données `data.txt`
+- Les scripts `analyse.R` et `figure.R` 
 - La figure
 
 ---
@@ -319,7 +319,7 @@ Vous avez à soumettre vos scripts qui servent à créer votre base de données.
 **Un membre par équipe** aura à remettre un dossier .zip contenant les scripts nécessaires pour créer la base de donnée et y injecter les données.
 
 - Remise par un seul membre par équipe
-- Spécifiez pour quel jeu de donnée la bd est conçue
+- Spécifiez pour quel jeu de données la bd est conçue
 - Commentez vos scripts pour que votre processus soit évident aux autres
 - Diviser les tâches en fonctions distinctes
 - Un script pour une fonction

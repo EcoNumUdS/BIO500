@@ -26,11 +26,12 @@ class: title-slide, middle
 ]
 
 ---
-class: inverse, center, middle
 
-# Le cahier de laboratoire RMarkdown
+# Aujourd'hui
 
-<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+1. Retour sur le dernier cours [[Chapitre 7 Git](https://econumuds.github.io/BIO500/git.html)].
+2. Le cahier de laboratoire RMarkdown [[Chapitre 8 RMarkdown](https://econumuds.github.io/BIO500/markdown1.html#anatomie-du-rmarkdown)].
+3. Automatisation avec targets [[Chapitre 9 Targets](https://econumuds.github.io/BIO500/targets.html)].
 
 ---
 # Retour sur le dernier cours
@@ -56,10 +57,36 @@ Il existe des gabarits proposés pour [R](https://www.toptal.com/developers/giti
 
 ```bash
 # R
-*.Rproj.user
-*.Rhistory
 .RData
+.Rhistory
+
+# R projets
+.Rproj.user/
+
+# Résultats intermédiaires
+donnees_intermediaires/*
 ```
+
+---
+
+# Retour sur le dernier cours
+
+## Processus ETL
+
+.center[
+![:scale 70%](assets/img/etl_processus.png)
+]
+
+- **Extract** : Collecte des données brutes de diverses sources.
+- **Transform** : Nettoyage et mise en forme pour assurer cohérence et qualité.
+- **Load** : Stockage des données prêtes à l’usage dans un système cible.
+
+---
+class: inverse, center, middle
+
+# Le cahier de laboratoire RMarkdown
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
 ---
 
@@ -77,7 +104,7 @@ Il existe des gabarits proposés pour [R](https://www.toptal.com/developers/giti
 # Pourquoi RMarkdown?
 
 - Documentation (dynamique) des analyses
-- Facilite la partage/communication des résultats
+- Facilite le partage/communication des résultats
 - Utilisable sur les systèmes de controle de version (Git)
 - Reproductible!
 
@@ -122,7 +149,7 @@ Vous pouvez suivre à l'aide du livre [Chapitre 8 RMarkdown](https://econumuds.g
 ---
 # Le YAML (metadata)
 
-- les métadonnées et les options du document sont définies ici
+- Les métadonnées et les options du document sont définies ici
 - La syntaxe est `cle: valeur`
 - Commence et se termine avec trois tirets `---`
 - Toujours au début du document
