@@ -29,11 +29,19 @@ class: title-slide, middle
 
 # Bloc 3
 
-- Les notions sont abordés dans les chapitres [10](https://econumuds.github.io/BIO500/figures.html) et [11](https://econumuds.github.io/BIO500/composantes_graphiques.html) du livre.
+## Aujourd'hui
 
-- Un guide des fonctionalités de R pour la visualisation des données vous est accessible [ici](https://github.com/EcoNumUdS/BIO500/blob/master/references/graphsonr.pdf).
+- Identifier le message à communiquer
+- Les composantes graphiques
+- Les règles graphiques
+- Les types de figures
+- Les données spatiales
 
-- Vous trouverez du matériel supplémentaire dans le [cours](https://r.qcbs.ca/workshop03/book-fr/index.html) du [CSBQ](https://qcbs.ca/).
+Les notions sont abordés dans les chapitres [10](https://econumuds.github.io/BIO500/figures.html) et [11](https://econumuds.github.io/BIO500/composantes_graphiques.html) du livre.
+
+Un guide des fonctionalités de R pour la visualisation des données vous est accessible [ici](https://github.com/EcoNumUdS/BIO500/blob/master/references/graphsonr.pdf).
+
+Vous trouverez du matériel supplémentaire dans le [cours](https://r.qcbs.ca/workshop03/book-fr/index.html) du [CSBQ](https://qcbs.ca/).
 
 ---
 class: inverse, center, middle
@@ -104,6 +112,16 @@ class: inverse, center, middle
 # Qu'est-ce qui fait une bonne figure ?
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
+---
+
+# Qu'est-ce qui fait une bonne figure ?
+
+## Quelques exemples
+
+1. Le tableau de bord [Performance du réseau de la santé et des services sociaux](https://app.powerbi.com/view?r=eyJrIjoiOTFmZjc4NzAtMTBkMS00OTE5LWE4YjQtZTIzOTc5NDZjNmZlIiwidCI6IjA2ZTFmZTI4LTVmOGItNDA3NS1iZjZjLWFlMjRiZTFhNzk5MiJ9)
+2. S&P 500 [Global](https://www.spglobal.com/spdji/en/indices/equity/sp-500/#overview)
+3. Design d'information [Voilà:](https://chezvoila.com/fr/)
 
 ---
 
@@ -596,6 +614,8 @@ text(x = 875, y = 25, paste("R2=",r2), cex = 1.5)
 - `?axis`
 - `?mtext`
 
+## Chapitre 12 [Conception graphique](https://econumuds.github.io/BIO500/composantes_graphiques.html)
+
 ---
 class: inverse, center, middle
 
@@ -737,10 +757,12 @@ contour(x, y, volcano,
 
 
 ```{r, eval=FALSE}
-dev.copy(pdf, file = "test.pdf")
-dev.copy(png, file = "test.png")
-dev.copy(svg, file = "test.eps")
+png("figure.png")
+plot(x = 1:10, y = runif(n = 10, min = 1, max = 10))
+dev.off()
 ```
+
+D’autres formats sont aussi disponibles. Par exemple, `pdf()`, `jpeg()`, `bmp()` ou `tiff()`.
 
 ---
 
@@ -751,6 +773,11 @@ dev.copy(svg, file = "test.eps")
 Scripter votre figure sur R à l'aide des [données](./assets/data/phenologie.csv)
 
 Si elle est trop élaborée, vous pouvez la simplifier pour la rendre plus facile à réaliser
+
+```{r, echo = FALSE}
+pheno <- read.csv("assets/data/phenologie.csv")
+head(pheno)
+```
 
 ---
 
@@ -791,8 +818,7 @@ class: inverse, center, middle
 
 # Les cartes
 
-- Les cartes sont un outil de visualisation très puissant.
-- Elles permettent de représenter des données géographiques.
+Les cartes sont un outil de visualisation très puissant; Elles permettent de représenter des données géographiques.
 
 Deux types de données géographiques :
 
@@ -805,9 +831,9 @@ Deux types de données géographiques :
 
 ## Données raster
 
-- Les données raster sont des données qui sont stockées sous forme de grilles régulières.
+Les données raster sont des données qui sont stockées sous forme de grilles régulières.
 
-```{r, eval=TRUE, echo=FALSE}
+```{r, eval=TRUE, echo=FALSE, fig.align="center", out.width = '50%', dpi=300}
 library(terra)
 
 # Créer une matrice de valeurs aléatoires
@@ -840,6 +866,7 @@ r <- rast(mat)
 r
 ```
 
+Exemples : [covariables environnementales](https://io.biodiversite-quebec.ca/viewer/cec_land_cover/cec_land_cover_2020)
 
 ---
 
@@ -847,10 +874,10 @@ r
 
 ## Données vectorielles
 
-- Les données vectorielles sont des données qui sont associées à des coordonnées géographiques et qui sont stockées sous forme de points, de lignes ou de polygones.
-- Les données vectorielles sont souvent utilisées pour représenter des données discrètes, telles que les limites administratives ou les points d'intérêt.
+- Données associées à des coordonnées spatiales stockées sous forme de **points**, de **lignes** ou de **polygones**.
+- Utilisées pour représenter des données discrètes, telles que les limites administratives ou les points d'intérêt.
 
-```{r, eval=TRUE, echo=FALSE}
+```{r, eval=TRUE, echo=FALSE, fig.align="center", out.width = '40%', dpi=300}
 library(sf)
 
 # Créer des données vectorielles
@@ -858,7 +885,7 @@ pts <- st_sfc(st_point(c(1, 1)), st_point(c(1, 2)), st_point(c(2, 2)), st_point(
 shp <- st_sf(data.frame(id = 1:4), geometry = pts)
 
 # Faire une figure avec les données vectorielles
-plot(shp)
+plot(shp, axes = TRUE, xlab = "X", ylab = "Y", main = "Données vectorielles")
 
 ## Ajouter la position des points
 text(x = 1:4, y = 1:4, labels = c("POINT (1,1)", "POINT (1,2)", "POINT (2,2)", "(2,1)"))
