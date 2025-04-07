@@ -14,7 +14,7 @@ class: inverse, center, middle
 
 # Consignes
 
-Vous devez remettre les résultats de votre analyse des données de collaboration entre les étudiants de la classe.
+Vous devez remettre les résultats de vos analyses.
 
 Le rapport doit contenir :
 
@@ -50,6 +50,10 @@ Nous vous demandons de remettre les scripts permettant de générer l'ensemble d
 Nous utiliserons la commande `tar_make` pour tout exécuter automatiquement.
 
 Néanmoins, l'ensemble de ce matériel doit se trouver sur un dépôt git auquel vous nous donnerez accès. Dans ce dépôt se trouveront les fichiers de données originales en csv, les scripts, le document Rmd ainsi que la bibliographie.
+
+.content-box-red[Pour cette évaluation, ce sera la responsabilité de l'utilisateur d'installer 
+
+les librairies requises pour exécuter le code.]
 
 ---
 
