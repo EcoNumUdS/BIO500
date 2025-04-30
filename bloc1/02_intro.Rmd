@@ -509,6 +509,14 @@ class: inverse, center, middle
 
 ---
 
+# Discussion
+
+## La réplication en science : diagnostic et remède 
+
+[Les Jeux de la réplication: mettre des études à l'épreuve](https://ici.radio-canada.ca/tele/decouverte/site/segments/reportage/2020355/universite-social-science-economie)
+
+---
+
 # L'importance de la reproductibilité
 
 ## Ces situations peuvent survenir lors de votre carrière professionnelle:
@@ -604,7 +612,6 @@ Documentation détaillée, traçabilité des versions, attribution claire des au
 .center[
 <img src="assets/img/flow_bio500.png" width="90%"></img>
 ]
-
 
 <!-- 
 ### **1. Contexte et importance des principes FAIR (5 min)**  
