@@ -64,6 +64,7 @@ book:
     # Programmation   
     - part: programmer.qmd
       chapters:
+        - bonnes_pratiques.qmd
         - debugger.qmd
         # - bonnes_pratiques.qmd
         - fonctions.qmd
