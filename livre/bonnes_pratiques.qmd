@@ -1,0 +1,166 @@
+# Bonnes pratiques
+
+Lecture à faire avant le cours
+
+https://x.com/hadleywickham/status/940021008764846080
+
+Voici quelques concepts de programmation et conseils utiles pour débuter le cours.
+
+## Projets autonomes
+
+Un projet autonome est un projet qui contient toutes les ressources nécessaires à son exécution. Cela inclut les scripts, les données, et toute autre ressource nécessaire. L'objectif est de rendre le projet facilement partageable et exécutable sur n'importe quel autre ordinateur sans nécessiter de configurations supplémentaires.
+
+Pour créer un projet autonome :
+
+- Placez tous les fichiers relatifs au projet dans un seul dossier.
+- Utilisez des chemins relatifs pour accéder aux fichiers et aux ressources à l'intérieur du projet.
+- Évitez d'utiliser des chemins absolus ou des commandes comme `setwd()` qui dépendent de l'environnement spécifique de l'utilisateur.
+
+Tout script est écrit en assumant qu'il sera exécuté depuis le dossier projet (root) dans une session R fraiche. Il doit créer tout ce dont il a besoin ou accéder à des ressources (scripts et données) en spécifiant le chemin depuis le dossier projet.
+
+Ces pratiques garantissent que votre projet peut être facilement partagé et exécuté par d'autres, améliorant ainsi la reproductibilité et la collaboration.
+
+## `setwd()` ne devrait jamais être utilisé
+
+Pour des raisons évidentes, l'utilisation de la commande `setwd()` ne fonctionnera jamais sur aucun autre ordinateur que celui de son auteur, réduisant ainsi la reproductibilité d'un projet. La solution : spécifier le chemin depuis le dossier projet pour accéder à un objet ou un script.
+
+Comment éviter l'utilisation du setwd ?
+
+- Organiser chaque projet dans un seul dossier.
+- Pour travailler sur un projet, lancez votre session R depuis le dossier projet.
+
+## Structurer son projet
+
+La structuration d'un projet est un élément clé pour sa reproductibilité et sa maintenance. La structure comprend l'organisation des fichiers ainsi que la documentation du code et du projet. 
+
+À titre d'emxemple, voici un projet qui respecte les bonnes pratiques de structuration exigées par les journeaux scientifiques : [vcameron1/Metapop_ms](https://github.com/vcameron1/Metapop_ms)
+
+Voyons quelques éléments clés d'une structure optimale.
+
+### Structure du répertoire
+
+Une structure bien organisée facilite la navigation dans le projet et la localisation des ressources. Voici une structure de projet recommandée :
+
+```
+monProjet/
+│
+├── .git/
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── scripts/
+│   ├── data_cleaning.R
+│   ├── data_analysis.R
+│   └── data_analysis.R
+│
+├── results/
+│
+├── reports/
+│   ├── report.Rmd
+│   └── report.pdf
+│
+├── .gitignore
+│
+└── README.md
+```
+
+- `data/` : contient les données. Idéalement, les données brutes et traitées séparées.
+- `scripts/` : contient les scripts.
+- `results/` : contient les résultats générées par les scripts.
+- `reports/` : contient les rapports et documents rédigés.
+- `.gitignore` : fichier qui spécifie les fichiers à ignorer lors de la gestion de version.
+- `README.md` : contient une description du projet et des instructions pour son exécution.
+
+### Documentation
+
+La documentation est essentielle pour la reproductibilité et la maintenance d'un projet. Elle permet de comprendre le contexte, les objectifs et les résultats du projet. Voici deux éléments à documenter :
+
+- Le code : par des commentaires pour faciliter la compréhension.
+- Le projet : le fichier `README.md` permet de documenter le projet avec une description, une structure, des instructions et des informations complémentaires.
+
+#### Les commentaires
+
+Les commentaires sont des annotations dans le code source qui expliquent son fonctionnement. Ils permettent de structurer et de documenter le code, d'expliquer les choix de conception et de faciliter la compréhension du code par d'autres développeurs. Voici quelques bonnes pratiques pour écrire des commentaires :
+
+- Commenter le code de manière concise et claire.
+- Utiliser des commentaires pour diviser le script en blocs cohérents.
+- Utiliser des commentaires pour expliquer le code complexe ou non évident.
+- Éviter les commentaires inutiles ou redondants.
+- Mettre à jour les commentaires en même temps que le code.
+
+```r
+#############################################
+# Ce script permet de nettoyer les données
+#
+# Auteur: Victor Cameron
+# Date: 2021-10-01
+#############################################
+
+# 1. Charger les données
+data <- read.csv("data/raw/data.csv")
+
+# 2. Nettoyer les données
+clean_data <- clean_data(data)
+```
+
+#### Le fichier `README.md` 
+
+Le fichier README est un fichier texte qui contient des informations sur le projet. Il est souvent utilisé pour présenter le projet à d'autres utilisateurs. Le fichier README.md est souvent le premier fichier que les utilisateurs verront lorsqu'ils accéderont à votre dépôt. Il est donc important de bien le rédiger.
+
+Quelques éléments à inclure dans un fichier `README.md` :
+
+- Titre du projet : nom du projet.
+- Description du projet : objectifs, contexte, données, méthodes, résultats. Ça peut être un résumé du projet.
+- Structure du répertoire : organisation des fichiers, scripts et ressources.
+- Description des fichiers : rôles et contenus des principaux fichiers.
+- Instructions
+    - Comment exécuter le projet.
+    - Comment reproduire les résultats.
+    - Comment accéder aux données et aux ressources.
+- Auteurs et contributeurs : qui a travaillé sur le projet.
+
+### .gitignore
+
+Le fichier `.gitignore` spécifie les fichiers et dossiers à ignorer lors de la gestion de version avec Git. Il permet d'éviter d'inclure des fichiers temporaires, des fichiers de données volumineux ou des fichiers sensibles dans le dépôt Git. Voici un exemple de fichier `.gitignore` :
+
+```
+# Fichiers temporaires
+.Rhistory
+.RData
+.Rproj.user/
+
+# Fichiers de données volumineux
+data/raw/*.csv
+data/raw/*.zip
+
+# Fichiers sensibles
+config.yml
+credentials.json
+```
+
+Documentation : [https://git-scm.com/docs/gitignore](https://git-scm.com/docs/gitignore)
+
+
+## Validation des données et gestion des erreurs
+
+Il peut y avoir des erreurs dans la saisie des données. Quant à savoir s'il faut corriger les erreurs, cela dépend de votre certitude de la valeur valide. S'il ne vous est pas possible de déterminer avec certitude la valeur correcte, mieux vaut ne pas y toucher.
+
+Faut-il sauvegarder ces données quand même ? Je vous réfère au concept de "separation of concerns" qui suggère de séparer les tâches et besoins en blocs distincts. Ainsi, le stockage des données dans une base de données devrait être distinct de l'utilisation, puisque ces deux tâches répondent à des besoins différents. Heureusement, il existe de bonnes pratiques de correction et de gestion des données douteuses :
+
+- Outils et méthodes de validation
+    - Certaines librairies R comme **CoordinateCleaner** aident à la validation https://docs.ropensci.org/CoordinateCleaner/
+    - **Mettre en place un processus automatisé** pour signaler et traiter ces erreurs (ex. une fonction qui applique ces vérifications)
+    - **Documenter les critères de validation** pour assurer la reproductibilité du nettoyage
+- Marquage et stockage des observations incertaines
+    - C'est l'approche privilégiée par GBIF. Il définissent 50+ problèmes géospatiaux https://data-blog.gbif.org/post/issues-and-flags/
+    - A été recommandé par les guides et bonnes pratiques https://www.gbif.org/document/80528/ principles-and-methods-of-data-cleaning-primary-species-and-species-occurrence-data
+    - Ajouter une colonne certainty_status avec des valeurs comme :
+        - `valid` → Coordonnées validées
+        - `corrected` → Coordonnées corrigées
+        - `suspect` → Coordonnées douteuses
+        - `unknown` → Information manquante
+    - Ajouter une colonne `original_coordinates` pour conserver la donnée brute en cas de correction
+
+Cette approche est à privilégier pour les données spatiales et peut être appliquée aux autres dimensions du jeu de données.
