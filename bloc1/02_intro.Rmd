@@ -140,8 +140,12 @@ les données.
 - Victor.Cameron@usherbrooke.ca
 - D8-0012
 
-## Zacharie Scalzo (assistant)
-- Zacharie.Scalzo@usherbrooke.ca
+## Alexis Brouillette (assistant)
+- Alexis.Brouillette@usherbrooke.ca
+- D8-0022
+
+## Samuel Harimanana (assistant)
+- Samuel.Harimanana@usherbrooke.ca
 - D8-0022
 
 ## Pour les questions d'intérêt général, utilisez le forum de discussion sur Moodle.
@@ -260,6 +264,20 @@ Le contenu du cours est rassemblé dans le livre en ligne [https://econumuds.git
   <img src="assets/img/livre.png" height="250px"></img>
 ]
 
+---
+
+# Ressources
+
+## Utilisation des outils d'intelligence artificielle générative(IAg)
+
+**Travail de session**
+
+- L'utilisation d'outils d'IAg (ex. ChatGPT, Copilot, etc.) est permise pour la réalisation des travaux du cours. Cependant, il faut citer ces outils en précisant la nature de l'assistance fournie par l'outil (voir plan de cours pour détails).
+- Vous êtes responsable de la vérification de l'exactitude et de la pertinence des informations générées par ces outils.
+
+**Essai**
+
+- L'utilisation d'outils d'IAg est *strictement interdite pour la rédaction de l'essai*. Toute utilisation sera considérée comme une infraction.
 
 ---
 
@@ -646,12 +664,12 @@ Documentation détaillée, traçabilité des versions, attribution claire des au
 ---
 class: inverse, center, middle
 
-# Lectures et travail pour la semaine prochaine
+# Lectures et travaux pour la semaine prochaine
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
 ---
-# Lectures et travail
+# Lectures et travaux
 
 ## Lecture
 
@@ -660,3 +678,8 @@ class: inverse, center, middle
 - Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
 
 > Disponible sur Moodle dans le dossier **Bloc 1 > Lectures**
+
+## Travaux
+
+- Fiche de lecture #1
+- Explorer et choisir un jeu de données pour le projet de session
