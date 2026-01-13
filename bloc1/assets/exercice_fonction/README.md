@@ -5,7 +5,7 @@ Ce répertoire contient un exercice visant à pratiquer la création de fonction
 **Avant de débuter**
 
 Assurez-vous d'avoir une compréhension de base des concepts suivants :
-[Bonnes pratiques de programmation](https://econumuds.github.io/BIO500/bonnes_pratiques.html) <- À LIRE !!
+[Bonnes pratiques de programmation](https://econumuds.github.io/BIO500/bonnes_pratiques.html)
 
 
 **Ressources**
