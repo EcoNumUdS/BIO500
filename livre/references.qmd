@@ -2,3 +2,8 @@
 
 ::: {#refs}
 :::
+
+- [R ressources](https://gkhajduk.github.io/R-resources/)
+- [Hands-On Programming with R](https://rstudio-education.github.io/hopr/)
+- [Introduction to R](https://intro2r.com/)
+
