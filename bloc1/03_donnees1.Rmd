@@ -1058,24 +1058,16 @@ class: inverse, center, middle
 
 ## Is there a reproducibility crisis ?
 
-1. Que décrit l'article sur l'état de la reproductibilité en science ? 
-2. Est-ce que les chercheurs sondés ont une impression juste ?
-3. "We want to be discovering new things but not generating too many false leads." Il existe un lien évident entre la reproductibilité et l'innovation.
+1.     Quel est l'état de la reproductibilité en science ? Est-ce que les chercheurs sondés ont une opinion juste ?
+2.     "We want to be discovering new things but not generating too many false leeds." Quel est le lien entre la reproductibilité et l'innovation ?
+3.     Quels sont les particularités des domaines scientifiques qui sont les plus touchés par le problème de reproductibilité ?
+4.     Avez-vous vécu certains de ces problèmes dans le cadre d'un exercice ou d'un projet scolaire ?
 
----
+## 7 minutes pour comparer les réponses en équipe
 
-# Discussion
+> Pour aller plus loin : des questions supplémentaires sont sur Moodle *Bloc1 > Questions pour discussion - cours #2*
 
-## 10 minutes pour résumer les arguments et points saillants en équipe
-
-Les questions pour alimenter la discussion sont sur Moodle *Bloc1 > Questions pour discussion - cours #2*
-
-- Sur la reproductibilité des résultats scientifiques
-- Sur le partage des données
-- Sur les défis des études à long terme
-
-## 10 minutes de partage
-
+## 7 minutes de partage
 
 <!-- # Discussion
 
