@@ -22,8 +22,91 @@ De plus, comme les données sont souvent réparties dans un grand nombre de fich
 
 > Les vérifications gagnent à être enchâssées dans une fonction de façon à ce que cette fonction puisse être appliquée sur tous les jeux de données. 
 
+### Définition et objectifs du nettoyage
+
+Le nettoyage des données est un processus qui consiste à transformer des données brutes, incohérentes et désorganisées en un format structuré et adapté à l'analyse. Cette étape cruciale garantit que les jeux de données sont exempts d'erreurs, de valeurs manquantes et d'incohérences qui pourraient compromettre la validité de l'analyse ou les prédictions d'un modèle. Les principaux objectifs du nettoyage incluent :
+
+- Éliminer les erreurs et les redondances
+- Assurer l'exactitude et l'exhaustivité des données
+- Normaliser les formats et les types de données
+
+### Caractéristiques des données propres
+
+Les données propres sont structurées, complètes et exemptes d'erreurs ou de valeurs non pertinentes. Elles doivent présenter les caractéristiques suivantes :
+
+- Aucune ligne ou valeur dupliquée
+- Absence d'erreurs d'orthographe ou d'incohérences
+- Types de données corrects et homogènes
+- Aucun caractère spécial indésirable
+- Valeurs aberrantes identifiées et traitées de manière appropriée
+
+### Signes de données désordonnées
+
+Les données désordonnées nécessitent généralement des transformations ou des corrections avant leur utilisation. Les problèmes courants incluent :
+
+- Présence de caractères spéciaux (par exemple, des virgules dans les nombres)
+- Nombres stockés sous forme de texte
+- Lignes dupliquées ou manquantes
+- Incohérences orthographiques ou de formatage
+- Espaces blancs superflus ou zéros utilisés au lieu de valeurs manquantes
+
+Source : [Data Cleaning in R](https://www.geeksforgeeks.org/r-language/data-cleaning-in-r/)
 
 ## Ressources
+
+**gsub()**
+
+La fonction `gsub()` est très utile pour le nettoyage des données textuelles. Elle permet de remplacer toutes les occurrences d'un motif (pattern) par une chaîne de caractères spécifiée. Voici un exemple simple :
+
+```r
+# Exemple d'utilisation de gsub() pour nettoyer des données textuelles
+texte_brut <- c("Bonjour, monde!", "R est génial.", "Nettoyage des données.")
+texte_nettoye <- gsub("[[:punct:]]", "", texte_brut)
+print(texte_nettoye)
+# [1] "Bonjour monde"        "R est génial"        "Nettoyage des données"
+```
+
+**distinct() dplyr**
+
+La fonction `distinct()` du package `dplyr` est utilisée pour supprimer les lignes dupliquées dans un data frame. Voici un exemple d'utilisation :
+
+```rr
+library(dplyr)
+# Exemple d'utilisation de distinct() pour supprimer les lignes dupliquées
+data <- data.frame(
+  id = c(1, 2, 2, 3, 4, 4),
+  valeur = c("A", "B", "B", "C", "D", "D")
+)
+data_sans_duplicata <- distinct(data)
+print(data_sans_duplicata)
+#   id valeur
+# 1  1      A
+# 2  2      B
+# 3  3      C
+# 4  4      D
+```
+
+**str()**
+
+La fonction `str()` est utilisée pour afficher la structure interne d'un objet R, ce qui est particulièrement utile pour comprendre la composition d'un data frame ou d'une liste. Voici un exemple :
+
+```r
+# Exemple d'utilisation de str() pour afficher la structure d'un data frame
+data <- data.frame(
+  id = c(1, 2, 3),
+  valeur = c("A", "B", "C"),
+  score = c(10.5, 20.3, 15.8)
+)
+str(data)
+# 'data.frame':	3 obs. of  3 variables:
+#  $ id    : num  1 2 3
+#  $ valeur: chr  "A" "B" "C"
+#  $ score : num  10.5 20.3 15.8
+```
+
+### Ressources supplémentaires
+
+[Data science book](https://datasciencebook.ca/wrangling.html)
 
 Il est assumé que vous êtes en mesure de concevoir des fonctions dans le langage de programmation R suite à la réussite du cours *BIO109*. Toutefois, il s'agit d'un concept qui n'est pas trivial et qui demande de la pratique pour bien le saisir. Voici quelques références sur les fonctions :
 
