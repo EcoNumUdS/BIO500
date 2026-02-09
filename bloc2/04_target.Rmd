@@ -292,38 +292,45 @@ class: inverse, center, middle
 - Construire le `_targets.R` au fur et à mesure de vos progrès
 
 ---
+
+# Fiche de lecture
+
+Vous avez à lire "The FAIR Guiding Principles for scientific data management and stewardship" de Wilkinson (2016) et répondre aux questions suivante en une page maximum à remettre en PDF avant le cours du 31 mars :
+
+    Quel est l'importance des données, des métadonnées et du code dans crise actuelle de la reproductibilité ?
+    Pourquoi les principes FAIR ? Quelle est leur pertinence ?
+    Quel est le lien entre les principes FAIR et la reproductibilité ?
+
+[Wilkinson et al. 2016. The FAIR Guiding Principles for scientific data management and stewardship.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/wilkinson2016.pdf)
+
+---
+
 class: inverse, center, middle
 
-# Évaluation formative #2
+# Débat : Intelligence artificielle et écologie, opportunité ou menace pour la rigueur scientifique ?
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
-## Structurer sa base de données
+<br>
+## 15 minutes pour préparer ses arguments
+## 2 minutes pour présenter ses arguments
+## 20 minutes de discussion dirigée
+## 5 minutes vote et conclusion
+<!-- 
+    Sondage sur l’impact perçu des LLM.
+    Conclusion sur les pistes pour une utilisation responsable.
+-->
 
----
+<!-- 
+Points de réflexion :
 
-# Évaluation formative #2
+  -  Fiabilité et biais : Les LLM peuvent-ils introduire des biais dans l'analyse des données écologiques ?
+  -  Automatisation et créativité scientifique : Les LLM peuvent-ils renforcer la créativité ou risquent-ils de réduire l’esprit critique ?
+  -  Accès aux données et reproductibilité : Les LLM facilitent-ils l’accès à des connaissances dispersées ou compliquent-ils la transparence des méthodes ?
+  -  Éthique et impacts environnementaux : L'empreinte carbone des LLM est-elle compatible avec les objectifs de durabilité écologique ? 
 
-**À remettre pour le 1er avril sur Moodle**
-
-Vous avez à soumettre vos scripts qui servent à créer votre base de données. Vos scripts doivent contenir les commandes `R` et `SQL` pour créer la base de données, ses tables et injecter les données.
-
-## La grille d'évaluation est diponible sur Moodle
-
-[Grille d'évaluation](https://github.com/EcoNumUdS/BIO500/blob/master/ressources/bd_grille_de_correction.pdf)
-
----
-
-# Évaluation formative #2
-
-**Un membre par équipe** aura à remettre un dossier .zip contenant les scripts nécessaires pour créer la base de donnée et y injecter les données.
-
-- Remise par un seul membre par équipe
-- Spécifiez pour quel jeu de données la bd est conçue
-- Commentez vos scripts pour que votre processus soit évident aux autres
-- Diviser les tâches en fonctions distinctes
-- Un script pour une fonction
-- Un script principal qui décrit le processus et fait appel aux fonctions qui exécutent les tâches
-- Vos scripts doivent produire une base de données avec les tables, le type de chacun des champs, les clés primaires et secondaires et les contraintes
-
----
+Retour sur règles de l'université de Sherbrooke : 
+- Responsabilité étudiants : https://www.usherbrooke.ca/intranet-education/fileadmin/sites/intranet-education/documents/Intranet/Reglements_facultaires/Informations_facultaires_VF_en_vigueur.pdf
+- Lignes directrices : https://www.usherbrooke.ca/decouvrir/a-propos/priorites-institutionnelles/intelligence-artificielle/lignes-directrices-iag
+- Biblio : https://libguides.biblio.usherbrooke.ca/IA
+-->
