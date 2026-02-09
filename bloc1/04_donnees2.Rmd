@@ -32,11 +32,22 @@ class: title-slide, middle
 
 ---
 
+# Aujourd'hui
+
+1. Retour sur l'évaluation formative #1
+2. Retour sur le dernier cours [[Chapitre 4 Bases de données](https://econumuds.github.io/BIO500/bases_de_donnees.html)]
+3. Le langage de requête SQL [[Chapitre 5 SQL et RSQLite](https://econumuds.github.io/BIO500/sql.html)]
+4. Exercices pratiques [[Chapitre 6 Exercices](https://econumuds.github.io/BIO500/exercices_1.html)]
+5. Travail de la semaine
+6. Discussion sur les enjeux de reproductibilité en science expérimentale
+
+---
+
 # Évaluation formative #1
 
-Était à remettre hier (10 mars)
+Était à remettre hier (9 février)
 
-## Vous avez jusqu'à lundi prochain (17 mars) pour compléter l'évaluation des scripts d'assemblage et de nettoyage d'une autre équipe.
+## Vous avez jusqu'à lundi prochain (16 février) pour compléter l'évaluation des scripts d'assemblage et de nettoyage d'une autre équipe.
 
 - Tout se fait dans l'Atelier *Évaluation formative #1 : Atelier*
 - Vous avez à noter le travail d'une autre équipe selon les critères :
@@ -701,6 +712,10 @@ head(auteurs_articles,4)
   <img src="assets/img/sql_joins.png" width="80%"></img>
 ]
 
+--
+
+Vous trouverez une description et des exemples d'utilisation dans le chapitre 5 [*SQL et RSQLite*](https://econumuds.github.io/BIO500/sql.html#jointures-entre-tables)
+
 ---
 
 # Exercice 3
@@ -797,7 +812,7 @@ class: inverse, center, middle
 
 ---
 
-# Travail de la semaine
+# Travail de la semaine (à débuter cette semaine)
 
 À partir des données du jeu de données validé, formaté et assemblé :
 
@@ -826,7 +841,7 @@ Les instructions se trouvent dans le [chapitre 7, Section 7.2](https://econumuds
 
 Chaque équipe doit évaluer les scripts d'assemblage et de nettoyage d'une autre équipe
 
-- À compléter pour le **17 mars**
+- À compléter pour le **17 février**
 - La personne qui a remis le travail est responsable d'entrer l'évaluation
 - Tous les commentaires doivent être formulés comme une question
 
@@ -835,9 +850,56 @@ system("rm -rf ./assets/data/reseau.db")
 ```
 
 ---
+class: inverse, center, middle
 
-# Lectures
+# Discussion
 
-- [Biswas. 2023. ChatGPT for Research and Publication: A Step-by-Step Guide](https://www.doi.org/10.5863/1551-6776-28.6.576)
-- [.2023. The AI writing on the wall.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/NatMaInt2023.pdf) 
-- [Wilkinson et al. 2016. The FAIR Guiding Principles for scientific data management and stewardship.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/wilkinson2016.pdf)
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
+---
+
+# Discussion
+
+## Is there a reproducibility crisis ?
+
+1.     Quel est l'état de la reproductibilité en science ? Est-ce que les chercheurs sondés ont une opinion juste ?
+2.     "We want to be discovering new things but not generating too many false leeds." Quel est le lien entre la reproductibilité et l'innovation ?
+3.     Quels sont les particularités des domaines scientifiques qui sont les plus touchés par le problème de reproductibilité ?
+4.     Avez-vous vécu certains de ces problèmes dans le cadre d'un exercice ou d'un projet scolaire ?
+
+## 7 minutes pour comparer les réponses en équipe
+
+> Pour aller plus loin : des questions supplémentaires sont sur Moodle *Bloc1 > Questions pour discussion - cours #2*
+
+## 7 minutes de partage
+
+<!-- # Discussion
+
+## Is there a reproducibility crisis ?
+
+En équpe, résumez les principaux points de l'article. Puis, discutez des questions suivantes :
+
+1. Que décrit l'article sur l'état de la reproductibilité en science ? Est-ce que les chercheurs sondés ont une impression juste ?
+2. "We want to be discovering new things but not generating too many false leads." Quel est le lien entre la reproductibilité et l'innovation ?
+3. Quels sont les particularités des domaines scientifiques qui sont les plus touchés par le problème de la reproductibilité ?
+4. Quelles sont les solutions proposées pour améliorer la reproductibilité en science ? -->
+
+<!-- # Discussion : Questions pour discussion - cours #2
+
+### Sur la reproductibilité des résultats scientifiques :
+1. Quels sont les principaux facteurs qui expliquent les difficultés de reproduction des études scientifiques ?
+2. Pensez-vous que l'incapacité à reproduire une étude remet nécessairement en cause sa validité ?
+3. Avez-vous déjà rencontré des problèmes de reproductibilité dans vos propres travaux ou ceux de vos collègues ?
+4. Quelles solutions concrètes pourraient améliorer la reproductibilité en science ?
+
+### Sur le partage des données :
+5. Quels sont les principaux avantages du partage des données pour la communauté scientifique ?
+6. Quels freins empêchent encore aujourd’hui le partage ouvert des données ?
+7. Comment peut-on encourager une culture de partage des données sans compromettre la reconnaissance du travail des chercheurs ?
+8. Quels types de données devraient être systématiquement partagés et quels types peuvent légitimement être protégés ?
+
+### Sur les défis des études à long terme :
+9. Comment concilier le besoin de partage des données avec les investissements importants nécessaires aux études à long terme ?
+10. Quelles mesures pourraient être mises en place pour protéger les intérêts des chercheurs qui ont consacré des années à collecter des données avant de les partager ?
+11. À quel moment une équipe de recherche devrait-elle rendre ses données accessibles à d’autres scientifiques ?
+12. Existe-t-il des modèles de collaboration qui permettent à la fois un accès élargi aux données et une reconnaissance du travail des équipes ayant réalisé l’étude initiale ? -->
