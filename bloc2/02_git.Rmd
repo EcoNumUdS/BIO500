@@ -495,11 +495,15 @@ Il existe des gabarits proposés pour [R](https://www.toptal.com/developers/giti
 
 ## En équipe de projet de session
 
-1. Un membre par équipe crée un répertoire GitHub publique pour le projet de session.
+1. Chaque membre est ajouté à une équipe, ce qui donne accès à un répertoire GitHub pour le projet de session.
 2. Chaque membres de l'équipe clone le répertoire sur son ordinateur.
-3. Créer la structure de projet selon les bonnes pratiques.
+3. Créer la structure de projet selon les bonnes pratiques et y ajouter les fichiers nécessaires.
 4. Ajouter un fichier README.md
 5. Ajouter un fichier .gitignore
+
+<br>
+
+> Voir le [Chapitre *Bonnes pratiques*](https://econumuds.github.io/BIO500/bonnes_pratiques.html) pour les détails sur la structuration d'un projet et la documentation.
 
 ---
 
@@ -515,7 +519,7 @@ class: inverse, center, middle
 
 # Évaluation formative #2
 
-**À remettre pour le 1er avril sur Moodle**
+**À remettre pour le 17 mars sur Moodle**
 
 Vous avez à soumettre vos scripts qui servent à créer votre base de données. Vos scripts doivent contenir les commandes `R` et `SQL` pour créer la base de données, ses tables et injecter les données.
 
@@ -551,3 +555,5 @@ class: inverse, center, middle
 - [Biswas. 2023. ChatGPT for Research and Publication: A Step-by-Step Guide](https://www.doi.org/10.5863/1551-6776-28.6.576)
 - [Nat. Mach. Intell. 2023. The AI writing on the wall.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/NatMaInt2023.pdf) 
 - [Cooper. 2024. Harnessing language models for coding, teaching and inclusion to empoyer research in ecology and evolution.](https://doi.org/10.1111/2041-210X.14325)
+
+---
