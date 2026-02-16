@@ -368,7 +368,7 @@ monProjet/
 ├── scripts/
 │   ├── data_cleaning.R
 │   ├── data_analysis.R
-│   └── data_analysis.R
+│   └── data_visualisation.R
 │
 ├── results/
 │
