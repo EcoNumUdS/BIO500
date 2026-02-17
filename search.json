@@ -1,0 +1,835 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Méthodes en écologie computationelle",
+    "section": "",
+    "text": "Préface\nVous vous trouvez sur le site de la première édition de “Méthodes en écologie computationelle”, le livre d’accompagnement au cours BIO500. Ce livre vous accompagnera dans la réalisation de la séquence d’une étude d’écologie : vous apprendrez les standards de gestion, d’analyse et de présentation des données, ainsi que les outils technologiques requis pour y arriver.\nVisitez https://github.com/EcoNumUdS/BIO500 pour trouver le matériel du cours.",
+    "crumbs": [
+      "Préface"
+    ]
+  },
+  {
+    "objectID": "index.html#présentations-en-classe",
+    "href": "index.html#présentations-en-classe",
+    "title": "Méthodes en écologie computationelle",
+    "section": "Présentations en classe",
+    "text": "Présentations en classe\nLes diapositives sont accessibles en format PDF et html :\nBloc 1 : Planification de la collecte et organisation des données\n \nBloc 2 : Outils pour une science reproductible et transparente\n \nBloc 3 : Visualisation des données\n \nBloc 4: Communication scientifique",
+    "crumbs": [
+      "Préface"
+    ]
+  },
+  {
+    "objectID": "index.html#objectif-général",
+    "href": "index.html#objectif-général",
+    "title": "Méthodes en écologie computationelle",
+    "section": "Objectif général",
+    "text": "Objectif général\nLes outils informatiques sont utilisés de façon croissante en écologie, que ce soit pour la réalisation d’analyses spatiales, statistiques ou pour la gestion de bases de données. On exige de plus en plus la transparence et la reproductibilité des études scientifiques et d’évaluations environnementales.",
+    "crumbs": [
+      "Préface"
+    ]
+  },
+  {
+    "objectID": "index.html#remerciements",
+    "href": "index.html#remerciements",
+    "title": "Méthodes en écologie computationelle",
+    "section": "Remerciements",
+    "text": "Remerciements\nCe livre doit beaucoup au travail des personnes qui ont développé le contenu et qui ont enseigné le cours depuis sa création. Il n’aurait pu être écrit sans la contribution de Dominique Gravel, Steve Vissault, Willian Vieira et Guillaume Blanchet.",
+    "crumbs": [
+      "Préface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "1.1 Comment ce livre est organisé\nBienvenue au cours BIO500 - Méthodes en écologie computationelle ! Ce livre marque l’utilisation d’une nouvelle approche pédagogique dans le cours BIO500. Vous trouverez dans ce livre les objectifs, les connaissances, les ressources utiles et les tâches pour chacune des sections du cours.\nLe travail d’un biologiste tourne, généralement, autour de la collecte de données, l’analyse de ces données et la communication des résultats de son travail. Ou du moins, c’est ce que de nombreuses personnes pensent. Les tâches du ou de la biologiste sont plus diverses qu’il n’en parait au premier regard et certaines étapes intermédiaires sont souvent oubliées. En effet, il faut établir un plan d’acquisition de données, gérer ces données une fois collectées et les explorer pour en comprendre les finesses. Aujoud’hui plus que jamais, le quantité de données collectées peut être importante et de nature complexe. Cela représente un défi de taille auquel vous serez amenés à faire face sur le marché du travail et une bonne formation sera un atout considérable.\nL’écologie computationnelle se trouve à l’interface entre l’informatique et l’analyse de données pour étudier les systèmes écologiques et effectuer le suivi de la biodiversité. La disponibilité des données s’accroit rapidement et permet de se diriger vers une science prédictive. C’est pourquoi une approche computationnelle est requise pour répondre aux enjeux modernes de biodiversité.\nCe cours vous fera explorer chacune des étapes du travail de biologiste et à les réaliser dans le cadre d’un projet. Vous aurez à concevoir votre projet en tenant compte des étapes et des méthodes susceptibles d’influer sur la reproductibilité.\nVoici un bref résumé des objectifs spécifiques. Au terme de ce cours, vous serez en mesure de :\nCe livre est divisé en quatre sections reflétant les étapes d’une étude écologique que nous explorerons.\nTout projet de science reposant sur des données débute par la planification de la collecte et l’organisation des données.\nLes outils pour une science reproductible et transparente sont aujourd’hui incontournables. L’atteinte de standards de reproductibilité et de transparence pour les études n’est plus seulement demandée par certains cercles avant-gardistes, mais est dorénavant exigée par un nombre croissant de journaux scientifiques.\nLa visualisation de données est au centre d’une stratégie réussie de communication scientifique.\nLa communication scientifique marque la dernière étape d’une étude scientifique. Elle prend plusieurs formes et la plus répandue est assurément la publication d’articles dans des journaux scientifiques.\nDans chaque chapitre, un patron se répète : d’abord, des exemples motivants pour illustrer l’importance de la notion abordée, puis une plongée dans les détails. Chaque section du livre propose des exercices pour aider à intégrer les connaissances apprises. Malgré qu’il peut être facile de passer par-dessus les exercices, la pratique sur d’authentiques problèmes est le meilleur moyen d’apprendre.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#prérequis",
+    "href": "intro.html#prérequis",
+    "title": "1  Introduction",
+    "section": "1.2 Prérequis",
+    "text": "1.2 Prérequis\nUn ordinateur portable personnel est requis pour ce cours.\nCe cours obligatoire est offert aux étudiants en fin de programme de baccalauréat en biologie, concentration écologie. Le cours BIO109 : Introduction à la programmation scientifique est préalable à celui-ci.\nÀ la suite de BIO109, il est attendu de vous aillez une maitrise des concepts de base de la programmation en R (indexation de jeux de données, boucles, opération conditionnelles, algorithmie). Si la programmation demeure difficile, vous apprécierez les livres Hands on Programming with R de Garret Grolemund et R for Data Science (2e).\n\nR et RStudio\nPour débuter, il vous faudra télécharger R et RStudio si vous ne les avez pas déjà. Hand on Programming with R offre un excellent tutoriel en ligne.\nVous devriez régulièrement mettre à jour la version de R sur votre machine sans quoi vous pourriez vous frapper à des problèmes de compatibilité. Une mise à jour majeure de la version de R survient annuellement alors qu’il y a 2-3 mises à jour mineures par année. Une version minimale de R 4.2.0 ou plus récente est recommandée pour ce cours.\n\n\nLibrairies\nIl existe une myriade de librairies (packages) offrant des fonctions qui permettent d’effectuer des tâches spécialisées. Vous êtes libres d’utiliser les librairies de votre choix dans le cadre du cours.\nLes tâches et exercices vus dans ce cours nécessiteront plusieurs librairies. Vous pouvez les télécharger en exécutant la fonction install.packages dans la console de RStudio. Copiez-collez dans la console le morceau de code suivant pour installer les librairies nécessaires pour BIO500 :\n\ninstall.packages(\n  c(\"RSQLite\", \"Rmarkdown\", \"targets\", \"tarchetypes\", \"rticles\", \"sf\", \"terra\", \"leaflet\")\n  )\n\n\n\nGit\nPour assurer la reproductibilité et la transparence des travaux faits dans ce cours, tout sera scripté. Pour permettre la collaboration sur des scripts, nous utiliserons les fonctionnalités de versionnage de Git et de GitHub. Git est un logiciel qui est installé par défaut sur les systèmes d’exploitation Mac et Linux. Il devra être installé sur les systèmes Windows : https://git-scm.com/download/win.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#approche-pédagogique",
+    "href": "intro.html#approche-pédagogique",
+    "title": "1  Introduction",
+    "section": "1.3 Approche pédagogique",
+    "text": "1.3 Approche pédagogique\nCe livre vous accompagnera pour la durée du cours. Vous y trouverez des notions sur les différents outils utilisés, le matériel supplémentaire pour aller plus loin et de nombreuses ressources pour vous appuyer dans la maitrise des outils utilisés.\nEn classe, les séances seront constituées de courtes leçons magistrales couvrant les notions de base des différents outils utilisés, entrecoupées d’exercices spécifiques destinés à pratiquer les éléments enseignés. Les séances seront complémentées de discussions sur les enjeux de la reproductibilité en science. Les séances se concluront sur la réalisation d’un exercice intégrateur à compléter à la maison. L’apprentissage portera sur la réalisation d’un projet de session où vous serez responsables de l’ensemble des étapes d’une étude en écologie. Le travail sera réalisé par blocs, au fur et à mesure de la présentation du matériel.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "donnees.html",
+    "href": "donnees.html",
+    "title": "Données",
+    "section": "",
+    "text": "Dans cette section, nous aborderons la première étape dans le cycle de vie de la donnée : sa création. La création de la donnée se fait de plusieurs façons, par des inventaires terrain, des expérimentations ou même la simulation de données. Cette section portera sur la planification de la création (la collecte) et de l’organisation des données en écologie. Nous explorerons les différentes étapes et les aspects clés pour assurer une gestion efficace des données dans ce domaine. Cette section débute avec une perspective sur la nature de la donnée en écologie.\nObjectifs de section :\n\nRédiger une question de recherche\nCompléter la collecte de données\n\n\n \nAu terme de cette section, vous serez en mesure de :\n\nFormuler une question de recherche\nCréer les données : inventaires terrain, expérimentation, l’identification de jeux de données ou la simulation des données\nSaisir les données dans des chiffriers",
+    "crumbs": [
+      "Données"
+    ]
+  },
+  {
+    "objectID": "donnees_ecologiques.html",
+    "href": "donnees_ecologiques.html",
+    "title": "2  Données écologiques",
+    "section": "",
+    "text": "2.1 Le format des données\nLes données jouent un rôle essentiel dans la réponse aux questions de recherche en écologie computationnelle. Elles renferment l’information qui sera ultérieurement analysée, visualisée et communiquée. Comprendre les différents types de données utilisés dans ce domaine est fondamental pour assurer une collecte précise et une organisation adéquate, permettant ainsi d’exploiter au mieux ces données lors des étapes ultérieures de l’analyse écologique. Dans ce chapitre, nous explorerons en détail les types de données couramment rencontrés en écologie computationnelle pour faciliter la structuration.\nQu’est-ce qu’une donnée en écologie ?\nLes données écologiques sont le résultat de la collecte, qui se fait souvent par le biais d’échantillonnage. Dans ce domaine, il est courant de rencontrer différents formats et types de données. En écologie, les données sont classées en quatre dimensions ou classes d’information :\nLes données écologiques présentent une multidimensionnalité qui les rend complexes à saisir et à stocker. Par exemple, prenons l’exemple de la caractérisation de la succession d’une forêt. Des biologistes effectuent des mesures sur chaque arbre, en enregistrant l’identifiant de l’individu (ID), l’espèce, la localisation, le diamètre à hauteur de poitrine (DHP) et l’année de mesure, car les relevés seront répétés dans le temps. La multitude de dimensions des données nécessite une rigueur dans le formatage des données afin de bien les organiser et de maintenir les relations logiques.\nLa complexité de ces données multidimensionnelles réside dans le fait que chaque arbre représente une entité unique avec plusieurs caractéristiques qui varient dans le temps. Pour une analyse adéquate de la succession de la forêt, il est crucial de maintenir une structure de données cohérente et précise, en établissant des liens logiques entre les différentes dimensions, telles que l’identifiant de l’individu, l’espèce, la localisation, le DHP et l’année de mesure. Cela permettra une exploration et une interprétation efficaces des données, ainsi qu’une comparaison et une analyse sur le long terme.\nEn organisant correctement les données écologiques et en maintenant leurs relations logiques, les chercheurs peuvent tirer pleinement parti de ces informations pour répondre aux questions de recherche, détecter des tendances, prendre des décisions éclairées et contribuer à la compréhension des écosystèmes. Un formatage adéquat des données est donc essentiel pour garantir leur intégrité, leur accessibilité et leur réutilisabilité à long terme.\nLes données sont généralement assemblées dans des tableaux, par exemple avec le tableur Excel. Le format de la donnée fait référence au format donné au tableau, aux colonnes, aux noms de colonnes et au valeurs entrées. Voici quelques bonnes pratiques à garder en tête lors du formatage.\n1. Un jeu de données, un tableau\nPour représenter efficacement les données en tableau et organiser les données avec rigueur, chaque jeu de données doit être saisi dans son propre tableau. Ainsi, un tableau contient un type d’information. Pour ajouter des données sur le climat à l’exemple de relevé écologique d’une forêt, on ajoutera un nouveau tableau dans lequel seront notées la localisation, la date et une série de variables climatiques.\n2. Privilégier un format long\nOn retrouve généralement deux types de formats, le format large et le format long. Alors que le format large peut contenir des valeurs manquantes puisqu’une variable est saisie dans plusieurs colonnes, le format long est plus propre et se prête beaucoup mieux au traitement des données.\nFormat long versus large.\nDans le format long, une ligne comprend une observation, c’est-à-dire une variable par colonne et une valeur au croisement d’une ligne et d’une colonne.\nLe format des données d’après R for data science.\n3. Choisir des noms de colonne explicites\nPrivilégier les noms de colonnes courts, sans accents, sans espaces et explicites. Il est recommandé d’attacher les unités au nom de la colonne s’il n’y a pas de métadonnées (eg. dhp_mm).\nIl existe plusieurs conventions de dénomination des variables que nous appelons cases. Ces cases décrivent les règles de formatage des noms pour les noms composés de deux mots ou plus. Par souci de standardisation, nous utiliserons le snake_case dans ce cours.",
+    "crumbs": [
+      "Données",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Données écologiques</span>"
+    ]
+  },
+  {
+    "objectID": "donnees_ecologiques.html#le-format-des-données",
+    "href": "donnees_ecologiques.html#le-format-des-données",
+    "title": "2  Données écologiques",
+    "section": "",
+    "text": "Chaque variable doit être une colonne.\nChaque observation de la variable doit être dans une ligne distincte.\nChaque valeur est saisie dans sa propre cellule.\n\n\nNOTE : votre fichier de données destiné au stockage à long terme ne doit contenir que des données brutes et aucun champ calculé (par exemple, une colonne avec une moyenne, etc..)",
+    "crumbs": [
+      "Données",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Données écologiques</span>"
+    ]
+  },
+  {
+    "objectID": "donnees_ecologiques.html#les-types-de-données",
+    "href": "donnees_ecologiques.html#les-types-de-données",
+    "title": "2  Données écologiques",
+    "section": "2.2 Les types de données",
+    "text": "2.2 Les types de données\nLorsqu’il s’agit de manipuler des données en informatique, il est essentiel de comprendre les différents types de données et l’importance de bien définir le type de chaque donnée. Les types de données déterminent comment les informations sont stockées en mémoire et comment elles peuvent être traitées par les programmes. Ils jouent un rôle fondamental dans la garantie de l’intégrité des données, de la performance des opérations et de la fiabilité des résultats obtenus.\nEn attribuant le bon type à une donnée, on lui donne un sens spécifique et on définit les opérations qui peuvent être effectuées sur cette donnée. Par exemple, les nombres entiers, les nombres décimaux, les chaînes de caractères et les booléens sont des types de données couramment utilisés. Chacun de ces types de données a des caractéristiques et des règles qui lui sont propres, ce qui permet aux programmes de les manipuler de manière appropriée.\nEn définissant correctement le type des données, on évite les erreurs de manipulation ou d’interprétation. Par exemple, si une variable est déclarée comme étant de type entier, on peut s’assurer qu’elle ne contiendra que des valeurs numériques entières, ce qui permet d’éviter des incohérences lors des calculs ou des comparaisons. De même, en définissant le type des données entrées par l’utilisateur, on peut valider et filtrer ces entrées pour s’assurer de leur conformité aux attentes du programme.\nLa définition appropriée des types de données est cruciale pour garantir la cohérence, la fiabilité et la sécurité des opérations informatiques. Cela permet également d’optimiser les performances et d’améliorer la compréhension du code. En informatique, on distingue plusieurs types :\n\n\n\n\n\n\n\n\n\nAppellation\nType\nValeurs\nTaille\n\n\n\n\nBOLEAN\nBooléen\nvrai/faux\n1 octet\n\n\nINTEGER\nEntiers\n-998, 123\n1 à 4 octets\n\n\nDOUBLE, FLOAT, REAL\nNombres réels\n9.98, -4.34\n4 à 8 octets\n\n\nCHAR,VARCHAR\nChaine de caractères\nlapin\nn x 1 à 8 octets\n\n\nTIMESTAMP,DATE,TIME\nDates et heures\n1998-02-16\n4 à 8 octets\n\n\n\n\nLes données temporelles\nLa plupart des langages de programmation proposent les types TIMESTAMP, DATE et TIME pour représenter la donnée temporelle. Il est recommandé d’utiliser un de ces types pour tenir compte du fuseau horaire et de l’effet de l’heure d’été et d’hiver, car ils offrent un format standardisé compréhensible dans différents pays et systèmes.\n\nTIMESTAMP (Heure et temps): YYYY-MM-ddThh:mm:ss. ex. 1977-04-22T01:00:00-05:00 ou 1977-04-22T06:00:00Z\nDATE: YYYY-MM-dd. ex. 1997-04-22\nTIME: HH:mm:ss dans un système de 24 heures. ex. 01:30:00.\n\n\n\nLes données taxonomiques\nLa donnée taxonomique est particulièrement complexe à gérer. Vous aurez remarqué que la classification des espèces est en constante révision et sera amenée à être complètement revue pour tenir compte des bactéries. En effet, il n’existe pas une seule classification qui ne permette de distinguer toutes les espèces. Le mode de reproduction et l’histoire de vie de chacun des organismes posent d’importants défis à l’identification des espèces et c’est pourquoi la taxonomie d’un organisme comporte souvent de nombreux synonymes et révisions.\n\n\n\n\n\nOption\nExemple\n\n\n\n\n1. Code spécifique à l’étude\nACSA\n\n\n2. Code du ministère\nERS\n\n\n3. Nom scientifique\nAcer saccharum\n\n\n4. Nom vernaculaire\nÉrable à sucre\n\n\n5. Numéro Taxonomique (TSN - ITIS)\n28731\n\n\n\n\n\n\nÉvitez de ne sauver que le nom vernaculaire ou un code spécifique à l’étude puisque ceux-ci peuvent changer dans le temps ou entre régions géographiques. Sans la référence taxonomique, il peut être difficile de retracer ou de valider une identification.\n\nOn privilégie généralement l’utilisation de code d’espèce standardisée\nIl est recommandé de sauver l’identification d’une espèce en utilisant une référence taxonomique en plus du nom scientifique de l’espèce observée. Certaines bases de données de référence, comme ITIS, proposent un identifiant unique (TSN) pour chaque nom scientifique. De plus, ces identifiants permettent de tracer les synonymes et le nouvel identifiant taxonomique en cas de changement.\n\nITIS\nGBIF Backbone Taxonomy\nVASCAN (Plantes vasculaires du Canada)\nNCBI\nBOLD (Projet code barre)\n\nASTUCE Certains outils permettent d’obtenir les codes d’espèces à partir du nom de l’espèce. Par exemple, le package ritis en R.\n# install.packages(\"ritis\")\nlibrary(\"ritis\")\n\n# Recherche code TSN pour \"Acer\"\nitis_acer &lt;- itis_search(q = \"nameWOInd:Acer\") # nameWOInd est le champ de recherche pour le nom scientifique\nhead(itis_acer)\n\n# Recherche code TSN pour \"Castor canadensis\"\nitis_castor_canadensis &lt;- itis_search(q = \"nameWOInd:Castor\\\\ canadensis\") # On échappe l'espace avec un double backslash\nLa documentation du package ritis est disponible &lt;https://docs.ropensci.org/ritis/index.html&gt;.\nLe package rgbif est également très utile pour obtenir des informations sur les espèces.\n# install.packages(\"rgbif\")\nlibrary(\"rgbif\")\n\n# Recherche d'informations sur l'espèce \"Ursus americanus\"\ntaxonKey &lt;- name_backbone(\"Ursus americanus\")\nLa documentation du package rgbif est disponible &lt;https://docs.ropensci.org/rgbif/index.html&gt;.\n\nritis est à prioriser puisqu’il s’agit une source de référence. GBIF est une base de données mondiale qui peut être plus lente à répondre et qui consomme les données de ITIS, WIKIDATA, etc.\n\n\n\nLes données spatiales\nLes données spatiales sont définies par une position sur un plan géographique. La valeur de cette position change en fonction de la méthode utilisée pour convertir la planète en un plan, appelée la projection géographique. Il existe des dizaines de familles de projections géographiques. Certaines minimisent la déformation spatiale (particulièrement importante à nos latitudes), d’autres optimisent la superficie proportionnelle (pour éviter que le Groendland n’apparaisse plus grand que l’Afrique). La projection utilisée change selon l’utilisation à faire des données spatiales, que ce soit une analyse spatiale ou la sauvegarde d’une position géographique.\n\n\n\n\n\nTrois types de surfaces de projections parmi les plus connues : Conique, cylindrique et plane. La conique projète les méridiens en lignes droites et les parallèles en arc de cercle. La cylindrique projète les méridiens régulièrement espacés qui sont représentés par des lignes verticales également espacées, et les parallèles par des lignes horizontales.\n\n\n\n\nÀ nos latitudes, on privilégie l’utilisation d’une projection conique. Les ministères du Québec conseillent généralement l’utilisation d’une projection conique conforme de Lambert.\nAinsi, lorsque l’on entrepose des données spatiales, trois colonnes doivent être représentées : - La coordonnée en X - La coordonnée en Y - La projection écrite en texte (voir votre GPS), ou préférablement l’identifiant unique de la projection.\n\n\nL’absence de données\nParfois, une donnée est manquante lorsqu’elle a été perdue ou est inconnue. On privilégie laisser la cellule vide (NULL) plutôt que d’entrer une valeur par défaut. Dans le cas où la donnée est manquante, on recommande d’en inscrire la raison dans un autre champ.\nOn évite d’entrer une valeur numérique puisque celle-ci peut être confondante et entrainer des erreurs lors de l’analyse des données. Par exemple, l’entrée d’un 0 dans une colonne numérique ne peut permettre la distinction avec les vrais 0 et influencer la moyenne. Cette pratique est donc à proscrire !",
+    "crumbs": [
+      "Données",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Données écologiques</span>"
+    ]
+  },
+  {
+    "objectID": "donnees_ecologiques.html#références-supplémentaires",
+    "href": "donnees_ecologiques.html#références-supplémentaires",
+    "title": "2  Données écologiques",
+    "section": "2.3 Références supplémentaires",
+    "text": "2.3 Références supplémentaires\nBroman KW, Woo K (2017) Data organization in spreadsheets. The American Statistician.\nHart EM, Barmby P, LeBauer D, Michonneau F, Mount S, Mulrooney P, et al. (2016) Ten Simple Rules for Digital Data Storage. PLoS Comput Biol",
+    "crumbs": [
+      "Données",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Données écologiques</span>"
+    ]
+  },
+  {
+    "objectID": "validation.html",
+    "href": "validation.html",
+    "title": "3  Nettoyage et validation",
+    "section": "",
+    "text": "3.1 Les jeux de données en écologie\nLa donnée écologique est multidimensionnelle par sa nature. Cela implique, généralement, que la collecte des données est fragmentée en plusieurs entités et résulte en une multitude de fichiers de données à traiter pour obtenir l’information requise à notre étude. Par exemple, des inventaires ornithologiques par points d’écoute génèrent des données provenant de plusieurs localisations à plusieurs points dans le temps. Il peut y avoir plusieurs techniciens impliqués dans la collecte et un différent tableau de saisi des données peut être utilisé par chacun ou à chaque localisation. Voyez-vous comment la gestion de ces données peut rapidement devenir complexe ?\nBref, les données écologiques nécessaires à une étude sont généralement saisies dans une multitude de fichiers, par différentes personnes. Certaines tâches sont à ne pas négliger lors de la planification parce qu’elles exigent beaucoup de ressources :\nCe dernier point sera traité plus en détail dans le Chapitre 5.",
+    "crumbs": [
+      "Données",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Nettoyage et validation</span>"
+    ]
+  },
+  {
+    "objectID": "validation.html#les-jeux-de-données-en-écologie",
+    "href": "validation.html#les-jeux-de-données-en-écologie",
+    "title": "3  Nettoyage et validation",
+    "section": "",
+    "text": "Le nettoyage\nLa validation\nL’injection dans la base de données",
+    "crumbs": [
+      "Données",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Nettoyage et validation</span>"
+    ]
+  },
+  {
+    "objectID": "validation.html#vérifier-les-données",
+    "href": "validation.html#vérifier-les-données",
+    "title": "3  Nettoyage et validation",
+    "section": "3.2 Vérifier les données",
+    "text": "3.2 Vérifier les données\nComme l’erreur est humaine, toute opération effectuée par un ou une technicienne, comme la saisie des données, est vouée à contenir des erreurs. Une importante étape dans la gestion des données est la validation de celles-ci, c’est-à-dire la vérification pour la présence d’erreurs communes, d’erreurs délétères pour le projet et pour la bonne structure de la donnée et du tableau. Il y a plusieurs vérifications à effectuer et ces vérifications sont spécifiques au projet et aux données collectées. Par exemple, des données de collecte d’occurrence d’espèces précaires au Québec doivent être associées à une localisation au Québec. Il est si facile de saisir une virgule au mauvais endroit et de se retrouver à l’autre bout du monde…\nDe plus, comme les données sont souvent réparties dans un grand nombre de fichiers, il est nécessaire de répéter ces vérifications sur l’ensemble des fichiers de données avant de les injecter pour l’entreposage. Il est important que les données entreposées soient valides !\nAstuce : les vérifications doivent être insérées dans un processus qui peut être répété et réutilisé fréquemment. L’astuce est d’automatiser les vérifications pour qu’elles puissent être appliquées de la même façon à tous les fichiers. C’est là qu’il devient important de scripter ces vérifications !\n\nLes vérifications gagnent à être enchâssées dans une fonction de façon à ce que cette fonction puisse être appliquée sur tous les jeux de données.\n\n\nDéfinition et objectifs du nettoyage\nLe nettoyage des données est un processus qui consiste à transformer des données brutes, incohérentes et désorganisées en un format structuré et adapté à l’analyse. Cette étape cruciale garantit que les jeux de données sont exempts d’erreurs, de valeurs manquantes et d’incohérences qui pourraient compromettre la validité de l’analyse ou les prédictions d’un modèle. Les principaux objectifs du nettoyage incluent :\n\nÉliminer les erreurs et les redondances\nAssurer l’exactitude et l’exhaustivité des données\nNormaliser les formats et les types de données\n\n\n\nCaractéristiques des données propres\nLes données propres sont structurées, complètes et exemptes d’erreurs ou de valeurs non pertinentes. Elles doivent présenter les caractéristiques suivantes :\n\nAucune ligne ou valeur dupliquée\nAbsence d’erreurs d’orthographe ou d’incohérences\nTypes de données corrects et homogènes\nAucun caractère spécial indésirable\nValeurs aberrantes identifiées et traitées de manière appropriée\n\n\n\nSignes de données désordonnées\nLes données désordonnées nécessitent généralement des transformations ou des corrections avant leur utilisation. Les problèmes courants incluent :\n\nPrésence de caractères spéciaux (par exemple, des virgules dans les nombres)\nNombres stockés sous forme de texte\nLignes dupliquées ou manquantes\nIncohérences orthographiques ou de formatage\nEspaces blancs superflus ou zéros utilisés au lieu de valeurs manquantes\n\nSource : Data Cleaning in R",
+    "crumbs": [
+      "Données",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Nettoyage et validation</span>"
+    ]
+  },
+  {
+    "objectID": "validation.html#validation-des-données-et-gestion-des-erreurs",
+    "href": "validation.html#validation-des-données-et-gestion-des-erreurs",
+    "title": "3  Nettoyage et validation",
+    "section": "3.3 Validation des données et gestion des erreurs",
+    "text": "3.3 Validation des données et gestion des erreurs\nIl peut y avoir des erreurs dans la saisie des données. Quant à savoir s’il faut corriger les erreurs, cela dépend de votre certitude de la valeur valide. S’il ne vous est pas possible de déterminer avec certitude la valeur correcte, mieux vaut ne pas y toucher.\nFaut-il sauvegarder ces données quand même ? Je vous réfère au concept de “separation of concerns” qui suggère de séparer les tâches et besoins en blocs distincts. Ainsi, le stockage des données dans une base de données devrait être distinct de l’utilisation, puisque ces deux tâches répondent à des besoins différents. Heureusement, il existe de bonnes pratiques de correction et de gestion des données douteuses :\n\nOutils et méthodes de validation\n\nCertaines librairies R comme CoordinateCleaner aident à la validation https://docs.ropensci.org/CoordinateCleaner/\nMettre en place un processus automatisé pour signaler et traiter ces erreurs (ex. une fonction qui applique ces vérifications)\nDocumenter les critères de validation pour assurer la reproductibilité du nettoyage\n\nMarquage et stockage des observations incertaines\n\nC’est l’approche privilégiée par GBIF. Il définissent 50+ problèmes géospatiaux https://data-blog.gbif.org/post/issues-and-flags/\nA été recommandé par les guides et bonnes pratiques https://www.gbif.org/document/80528/ principles-and-methods-of-data-cleaning-primary-species-and-species-occurrence-data\nAjouter une colonne certainty_status avec des valeurs comme :\n\nvalid → Coordonnées validées\ncorrected → Coordonnées corrigées\nsuspect → Coordonnées douteuses\nunknown → Information manquante\n\nAjouter une colonne original_coordinates pour conserver la donnée brute en cas de correction\n\n\nCette approche est à privilégier pour les données spatiales et peut être appliquée aux autres dimensions du jeu de données.",
+    "crumbs": [
+      "Données",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Nettoyage et validation</span>"
+    ]
+  },
+  {
+    "objectID": "validation.html#ressources",
+    "href": "validation.html#ressources",
+    "title": "3  Nettoyage et validation",
+    "section": "3.4 Ressources",
+    "text": "3.4 Ressources\ngsub()\nLa fonction gsub() est très utile pour le nettoyage des données textuelles. Elle permet de remplacer toutes les occurrences d’un motif (pattern) par une chaîne de caractères spécifiée. Voici un exemple simple :\n# Exemple d'utilisation de gsub() pour nettoyer des données textuelles\ntexte_brut &lt;- c(\"Bonjour, monde!\", \"R est génial.\", \"Nettoyage des données.\")\ntexte_nettoye &lt;- gsub(\"[[:punct:]]\", \"\", texte_brut)\nprint(texte_nettoye)\n# [1] \"Bonjour monde\"        \"R est génial\"        \"Nettoyage des données\"\ndistinct() dplyr\nLa fonction distinct() du package dplyr est utilisée pour supprimer les lignes dupliquées dans un data frame. Voici un exemple d’utilisation :\nlibrary(dplyr)\n# Exemple d'utilisation de distinct() pour supprimer les lignes dupliquées\ndata &lt;- data.frame(\n  id = c(1, 2, 2, 3, 4, 4),\n  valeur = c(\"A\", \"B\", \"B\", \"C\", \"D\", \"D\")\n)\ndata_sans_duplicata &lt;- distinct(data)\nprint(data_sans_duplicata)\n#   id valeur\n# 1  1      A\n# 2  2      B\n# 3  3      C\n# 4  4      D\nstr()\nLa fonction str() est utilisée pour afficher la structure interne d’un objet R, ce qui est particulièrement utile pour comprendre la composition d’un data frame ou d’une liste. Voici un exemple :\n# Exemple d'utilisation de str() pour afficher la structure d'un data frame\ndata &lt;- data.frame(\n  id = c(1, 2, 3),\n  valeur = c(\"A\", \"B\", \"C\"),\n  score = c(10.5, 20.3, 15.8)\n)\nstr(data)\n# 'data.frame': 3 obs. of  3 variables:\n#  $ id    : num  1 2 3\n#  $ valeur: chr  \"A\" \"B\" \"C\"\n#  $ score : num  10.5 20.3 15.8\n\nRessources supplémentaires\nData science book\nIl est assumé que vous êtes en mesure de concevoir des fonctions dans le langage de programmation R suite à la réussite du cours BIO109. Toutefois, il s’agit d’un concept qui n’est pas trivial et qui demande de la pratique pour bien le saisir. Voici quelques références sur les fonctions :\nUne introduction aux fonctions et à l’écriture de fonction de R for data scientists.\nUne vidéo : A tutorial for writing functions in R",
+    "crumbs": [
+      "Données",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Nettoyage et validation</span>"
+    ]
+  },
+  {
+    "objectID": "entreposer.html",
+    "href": "entreposer.html",
+    "title": "Entreposage",
+    "section": "",
+    "text": "La section précédente aborde la création et la nature de la donnée écologique toutes deux influencées par la question de recherche. Cependant, une fois la donnée créée (plan d’échantillonnage complété, inventaires terrain, expérimentation, l’identification de jeux de données ou la simulation des données désirées), ces données ont besoin d’être organisées logiquement pour les entreposer. Cela en facilitera l’utilisation pour les analyses, la visualisation et la production de communication. L’entreposage est donc une étape cruciale dans le cycle de vie de la donnée et dans le processus scientifique.\nCette section traitera des tâches reliées à l’entreposage des données dans un processus scientifique. Les aspects couverts seront l’exploration des données, le nettoyage et la validation des données, la conception de base de données et l’injection dans la base de données.\nObjectifs de section :\n\nExplorer les données\nReprésenter conceptuellement l’organisation de données sous forme de base de données\nConcevoir une base de données à l’aide du langage SQL et de la librairie RSQLite\nNettoyer et valider les jeux de données\nInjecter les données dans la base de données\n\n\n \nAu terme de cette section, vous serez en mesure de :\n\nÉcrire le script R pour créer votre base de données\nConcevoir les scripts de nettoyage et de validation des données\nInjecter les données récoltées dans la base de données\nEffectuer des requêtes simples\nÉcrire le script R pour automatiser les différentes étapes",
+    "crumbs": [
+      "Entreposage"
+    ]
+  },
+  {
+    "objectID": "bases_de_donnees.html",
+    "href": "bases_de_donnees.html",
+    "title": "4  Bases de données",
+    "section": "",
+    "text": "4.1 Les bases de données relationnelles\nParlons d’entreposage et d’archivage des données écologiques et des outils computationnels pour y arriver. Cette étape arrive après le plan d’échantillonnage, de façon à ce que les données récoltées et leur nature soient connues.\nBien des technologies sont disponibles pour l’entreposage des données allant du simple fichier texte (csv), des tableurs Excel, jusqu’aux infrastructures de bases de données relationnelles. Il est difficile de sauver les données écologiques dans un tableur sans répéter l’information à cause de leur complexité et de leur nature multidimensionnelle. Par exemple, les métadonnées de l’inventaire doivent être répétées à toutes les taxons observés, pour chaque site inventorié et pour toutes les répétitions de l’inventaire de façon à ce que plusieurs valeurs puissent être répétées inutilement des milliers, voir des millions de fois. Les répétitions peuvent réduire la performance de votre ordinateur en accroissant la mémoire nécessaire pour sauver et interagir avec des données.\nSupposons que vous disposez d’un jeu de données écologiques contenant des informations sur les espèces observées lors d’inventaires dans différents sites. Les métadonnées de l’inventaire comprennent des informations telles que la date de l’inventaire, le nom de l’observateur, la localisation du site, etc.\nPlutôt que de stocker ces données dans un seul tableau où les répétitions peuvent surcharger le fichier, vous pouvez utiliser plusieurs tableaux pour structurer les données de façon plus efficace :\nDonnées assemblées en un seul tableau\nMémoire utilisée par l’approche avec un seul tableau\nVersion optimisée en deux tableaux\nTableau de métadonnées\nTableau des observations\nMémoire utilisée par l’approche avec deux tableaux\nComparaison de la différence de mémoire utilisée\nLes bases de données redimensionnent le problème de multidimensionnalité des données (en plusieurs tables de n-2) en plus d’optimiser la mémoire requise. Voici quelques avantages de l’approche :\nChaque dimension d’un jeu de données est isolée dans une table d’une base de données. Les tables sont liées entre elles par des relations pour maintenir la structure des données.\nShéma en étoile de la structure des bases de données relationnelles.",
+    "crumbs": [
+      "Entreposage",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Bases de données</span>"
+    ]
+  },
+  {
+    "objectID": "bases_de_donnees.html#les-bases-de-données-relationnelles",
+    "href": "bases_de_donnees.html#les-bases-de-données-relationnelles",
+    "title": "4  Bases de données",
+    "section": "",
+    "text": "Maintenir l’intégrité entre les enregistrements de nos tableaux. Une observation ne peut être faite sur un site qui n’existe pas.\nNormaliser et contrôler la qualité des données. Chaque colonne est un type précis de données. Des contraintes peuvent être appliquées sur chaque colonne.\nÉviter les redondances dans le stockage de l’information. Réduit aussi le risque d’erreurs lors de la saisie.\n\n\n\n\nLe format entité-relation\nLe format entité-relation est une méthode de modélisation des bases de données relationnelles. Il repose sur le concept d’entités, qui représentent des objets concrets ou abstraits du monde réel, et sur les relations qui existent entre ces entités.\nDans ce format, une base de données relationnelle est constituée de tables, qui sont des entités. Chaque table représente une dimension spécifique du jeu de données, et chaque rangée de la table correspond à une occurrence spécifique de cette entité. Les attributs des entités sont représentés par les colonnes des tables, et chaque attribut contient une donnée spécifique.\nDans une base de données, chaque attribut/colonne est une donnée unique, c’est-à-dire qu’elle ne se répète pas ailleurs dans la base de données. La seule exception est les colonnes d’associations, les clés.\n\n\nLe concept d’association et des clés primaires et secondaires\nLes tables d’une base de données sont associées les unes aux autres par des relations pour faciliter la gestion et l’organisation des données. Ces relations peuvent être simples, comme une association “one to one” (1 -&gt; 1), où une rangée d’une table est associée à une seule rangée d’une autre table. Par exemple, une table d’étudiants peut être associée à une table de coordonnées, où chaque étudiant a une seule adresse.\nLes relations peuvent également être “one to many” (1 -&gt; n), où une rangée d’une table est associée à plusieurs rangées d’une autre table. Par exemple, dans un système de gestion d’une entreprise, une table de départements peut être associée à une table d’employés, où chaque département peut avoir plusieurs employés.\n\n\n\n\n\nTypes d’association entre tables.\n\n\n\n\nPour établir ces associations, les tables utilisent des clés primaires et des clés secondaires. Les clés primaires et secondaires jouent un rôle essentiel pour garantir l’intégrité et la cohérence des données. Une clé primaire est une colonne qui identifie de manière unique chaque rangée dans une table, elle agit comme un identifiant unique pour chaque occurrence de l’entité représentée par la table. En contrepartie, une clé secondaire est une colonne qui établit une relation avec une clé primaire d’une autre table.\nUne clé primaire est essentielle pour assurer que chaque enregistrement soit unique dans la table, car elle ne peut jamais être NULL (c’est-à-dire qu’elle doit toujours contenir une valeur). Cela signifie qu’aucune autre rangée de la table ne peut avoir la même valeur pour sa clé primaire, garantissant ainsi l’unicité de chaque enregistrement.\nIl est important de noter que la clé primaire peut être composée de plusieurs colonnes, formant ainsi une clé primaire composite. Cette combinaison de colonnes agit toujours comme un identifiant unique pour chaque enregistrement, même si aucune des colonnes individuelles n’était unique par elle-même. L’utilisation d’une clé primaire composite est utile lorsque nous avons besoin d’une clé plus complexe pour identifier de manière unique chaque enregistrement.\nOutre les clés primaires, les bases de données relationnelles utilisent également des clés secondaires, également appelées clés étrangères. Une clé secondaire est une colonne (ou un ensemble de colonnes) d’une table qui établit une relation avec la clé primaire d’une autre table. En reliant les tables par des clés secondaires, nous créons des relations entre les entités représentées par ces tables.\nLes clés secondaires permettent de relier les informations entre différentes tables et d’effectuer des requêtes pour obtenir des informations associées provenant de différentes parties de la base de données.\n\n\n\n\n\nTypes d’association entre tables.\n\n\n\n\nEn somme, les clés primaires et secondaires sont des concepts fondamentaux dans les bases de données relationnelles. Les clés primaires garantissent l’unicité des enregistrements dans une table, tandis que les clés secondaires établissent des liens entre les tables, permettant une gestion efficace des données et des requêtes complexes pour obtenir des informations pertinentes.\n\n\nLe type des attributs\nUn type de données doit être assigné à chaque attribut. Voici les principaux types utilisés, pour tous les types de données voir la documentation SQLite3.\n\n\n\n\n\n\n\n\n\nAppelation\nType\nValeurs\nTaille\n\n\n\n\nBOLEAN\nBoléen\nvrai/faux\n1 octet\n\n\nINTEGER\nEntiers\n-998, 123\n1 à 4 octets\n\n\nDOUBLE, FLOAT, REAL\nNombres réels\n9.98, -4.34\n4 à 8 octets\n\n\nCHAR,VARCHAR\nChaine de caractères\nlapin\nn x 1 à 8 octets\n\n\nTIMESTAMP,DATE,TIME\nDates et heures\n1998-02-16\n4 à 8 octets",
+    "crumbs": [
+      "Entreposage",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Bases de données</span>"
+    ]
+  },
+  {
+    "objectID": "bases_de_donnees.html#les-sgbd",
+    "href": "bases_de_donnees.html#les-sgbd",
+    "title": "4  Bases de données",
+    "section": "4.2 Les SGBD",
+    "text": "4.2 Les SGBD\nLes bases de données sont des entrepôts de données qui sont uniquement manipulés par le système de gestion de base de données (SGBD). Les SGBD sont des logiciels intermédiaires entre l’utilisateur et la base de données, permettant d’exécuter des opérations sur la base de données, comme créer, interroger ou gérer, en cachant la complexité des manipulations des structures de la base de données. Alors qu’il existe plusieurs SGBD, ils opèrent tous à l’aide d’un langage de programmation, le Structured Query Language SQL.\nDans le cadre du cours, nous utiliserons le SGBD SQLite3.\nSQLite3 s’inscrit dans une approche de fichier de base de données. C’est-à-dire, qu’on se connecte au fichier de la base de données à l’aide d’un logiciel client. L’avantage est que la base de données est sauvée localement sur votre machine dans un fichier, mais vient avec le désavantage qu’un seul utilisateur ne peut se connecter dessus à la fois.\n\n\n\n\n\nServeur de base de données.\n\n\n\n\nEn revanche, l’approche de serveur de base de données permet d’avoir plusieurs clients connectés sur un même serveur qui héberge la base de données. On peut donc être plusieurs à interagir en même temps avec. On pourrait envisager la situation suivante où plusieurs clients interagissent simultanément avec la base de données. Cependant, l’approche multi-utilisateur peut uniquement se faire si le serveur est distant.\n\n\n\n\n\nApproche multi-utilisateur.\n\n\n\n\n\nLe principe client-serveur Le client est un logiciel installé sur votre ordinateur. C’est le SGBD. On se sert de ce logiciel pour interagir avec le serveur de base de données présent localement ou à distance. C’est sur ce principe qu’est bâti l’internet. Les clients sont vos logiciels navigateurs (Chrome, Firefox, etc) qui interagissent en envoyant des requêtes à des serveurs via une adresse URL. Le même principe sera utilisé pour interagir avec votre base de données, mais via une connexion à un fichier enregistré dans votre ordinateur.",
+    "crumbs": [
+      "Entreposage",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Bases de données</span>"
+    ]
+  },
+  {
+    "objectID": "sql.html",
+    "href": "sql.html",
+    "title": "5  SQL et RSQLite",
+    "section": "",
+    "text": "5.1 Le langage SQL\nLe SQL est un langage informatique créé spécifiquement pour manipuler des bases de données relationnelles. C’est le langage utilisé pour transmettre nos instructions au SGBD. Il permet de :\nChacune de ces commandes est une instruction SQL envoyée au serveur pour manipuler et interroger la base de données.\nLes instructions SQL sont près de la structure des phrases ordinaire en anglais. Vous trouverez le langage plus intuitif que beaucoup d’autres, avec notamment des instructions comme CREATE, JOIN, GROUP BY, etc. Le langage est déclaratif, il permet de décrire le résultat escompté, sans avoir à décrire comment l’obtenir. C’est une caractéristique voulue lors de sa création pour faciliter l’apprentissage et la lecture.",
+    "crumbs": [
+      "Entreposage",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>SQL et RSQLite</span>"
+    ]
+  },
+  {
+    "objectID": "sql.html#le-langage-sql",
+    "href": "sql.html#le-langage-sql",
+    "title": "5  SQL et RSQLite",
+    "section": "",
+    "text": "Créer une base de données (CREATE DATABASE).\nCréer des tables et établir des relations (CREATE TABLE).\nInsérer des données (INSERT).\nInterroger les données par requête (SELECT).\nSupprimer des données ou des tables (DROP, DELETE).\nMettre à jour des données ou des tables (UPDATE, ALTER).\nSupprimer la base de données (DROP DATABASE).\n\n\n\n\nLe langage de programmation SQL et son utilisation sont détaillés dans la Section 5.3.",
+    "crumbs": [
+      "Entreposage",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>SQL et RSQLite</span>"
+    ]
+  },
+  {
+    "objectID": "sql.html#rsqlite-pour-interagir-avec-la-base-de-données",
+    "href": "sql.html#rsqlite-pour-interagir-avec-la-base-de-données",
+    "title": "5  SQL et RSQLite",
+    "section": "5.2 RSQLite pour interagir avec la base de données",
+    "text": "5.2 RSQLite pour interagir avec la base de données\nPrécédemment, nous avons vu les aspects importants de la conceptualisation d’une base de données avec les entités, les relations, les attributs et les types. Voyons maintenant comment passer au modèle informatique.\n\nConceptualiser et concevoir\n\nLe modèle conceptuel\n\nFaire une liste des variables\nRegrouper les variables dans des tables\nÉtablir le type d’association entre les tables\nÉtablir les clés primaires et étrangères\nAssigner les types de données aux variables\n\nLe modèle informatique\n\nCréer et se connecter au fichier de base de données\nCréer les tables et spécifier les clés\nAjouter de l’information dans les tables\nFaire des requêtes pour extraire l’information\n\n\n\n\n1. Connexion au serveur\nPour faciliter l’interaction avec la base de données et simplifier les manipulations, nous utiliserons RStudio et la librairie open source RSQLite qui contient le client SQLite3. RSQLite propose une interface dans R qui permet d’interagir avec les bases de données.\nD’abord, il faut se connecter à la base de données à l’aide de la commande dbConnect() et sauver cette connexion dans un objet. Nous réutiliserons cet objet pour spécifier la connexion client-serveur à toutes les fois que nous enverrons une commande à la base de données.\n# install.packages('RSQLite')\nlibrary(DBI)\n\nma_bd &lt;- dbConnect(RSQLite::SQLite(), dbname=\"./my_database.db\")\n## !ATTENTION!: Ceci est mon chemin d'accès vers le fichier!\n## Astuces: getwd() et setwd()\n\ndbDisconnect(ma_bd)\nIci, ma_bd est un objet contenant la connexion avec le serveur/fichier de base de données.\n\n\n2. Créer les tables\ncreer_automobiles &lt;- \n    \"CREATE TABLE automobiles (\n        id          INTEGER PRIMARY KEY AUTOINCREMENT,\n        marque      VARCHAR(50),\n        modele      VARCHAR(50),\n        annee       INTEGER CHECK(annee &gt;= 0),\n        consommation REAL CHECK(consommation &gt;= 0),\n        cylindree   INTEGER CHECK(cylindree &gt;= 0),\n    );\"\ndbSendQuery(ma_bd, creer_automobiles)\n\ncreer_proprios &lt;- \n    \"CREATE TABLE proprios (\n        automobile_id    INTEGER NOT NULL,\n        prenom           VARCHAR(100) NOT NULL,\n        nom              VARCHAR(100) NOT NULL,\n        no_permis        VARCHAR(10),\n        PRIMARY KEY (prenom, nom),\n        FOREIGN KEY (automobile_id) REFERENCES mtcars(id)\n    );\"\ndbSendQuery(ma_bd, creer_proprios)\n\nNotez que les instructions SQL sont des chaînes de caractères. Elles sont envoyées au serveur avec la commande dbSendQuery().\n\nTypes de données\nUn type de données (VARCHAR, INTEGER, etc.) doit être spécifié pour chaque champ. Les types de données disponibles dépendent du SGBD utilisé. Pour SQLite, les types de données sont les suivants :\n\n\n\nAppelation\nType\nValeurs\n\n\n\n\nBOLEAN\nBoléen\nvrai/faux\n\n\nINTEGER\nEntiers\n-998, 123\n\n\nDOUBLE, FLOAT, REAL\nNombres réels\n9.98, -4.34\n\n\nCHAR,VARCHAR, TEXT\nChaine de caractères\nlapin\n\n\nTIMESTAMP,DATE,TIME\nDates et heures\n1998-02-16\n\n\n\nvoir la documentation SQLite3\nVARCHAR est un type de données pour les chaînes de caractères de longueur variable. Il faut spécifier la longueur maximale de la chaîne de caractères entre parenthèses. Par exemple. le champs marque de la table automobiles est de type VARCHAR(50), c’est-à-dire qu’il peut contenir des chaînes de caractères de 50 caractères au maximum.\nClef primaire\nLa clé primaire est un champ ou un ensemble de champs qui identifie de manière unique chaque enregistrement d’une table. Elle est utilisée pour garantir l’unicité des enregistrements. La clé primaire est un index unique pour chaque enregistrement de la table. Elle est obligatoire pour chaque table.\nDans l’exemple ci-dessus, c’est le champ id qui est la clé primaire de la table automobiles puisque tous les champs de la table contribuent à l’unicité de la ligne. La combinaison des champs prenom et nom est la clé primaire de la table proprios.\nid      INTEGER PRIMARY KEY AUTOINCREMENT, spécifie que le champ id est la clé primaire de la table automobiles. Cette clé est de type INTEGER et est incrémentée automatiquement à chaque nouvel enregistrement. Aucune valeur n’est à spécifier pour ce champ lors de l’insertion d’un nouvel enregistrement, la base de données s’en charge automatiquement lors de l’injection d’une nouvelle ligne.\nClef étrangère\nLa clé étrangère est un champ ou un ensemble de champs qui référence une clé primaire d’une autre table. Elle est utilisée pour garantir l’intégrité référentielle des données Elle n’est pas obligatoire pour chaque table, par exemple, la table automobiles n’a pas de clé étrangère. Par contre, la table proprios a une clé étrangère automobile_id qui référence la clé primaire id de la table automobiles.\nContraintes\nLes contraintes sont des règles qui sont appliquées aux données de la table. Par exemple, NOT NULL spécifie que le champ ne peut pas contenir de valeurs nulles. CHECK spécifie une condition qui doit être vraie pour chaque enregistrement.\n\n\n3. Injecter des données\nUne table de données peut facilement être copiée dans une base de données SQLite avec dbWriteTable().\nautomobiles_db &lt;- dbConnect(RSQLite::SQLite(), dbname=\"./automobiles.db\")\n\n# Injection des enregistrements dans la B\ndbWriteTable(con, append = TRUE, name = \"automobiles\", value = mtcars, row.names = FALSE)\ndbWriteTable(con, append = TRUE, name = \"proprios\", value = iris, row.names = FALSE)\n\n# Lister les tables\ndbListTables(automobiles_db)\n#&gt; [1] \"automobiles\"   \"proprios\"\nPour ce faire, Les données doivent avoir le même format que la table dans laquelle elles sont insérées - Les colonnes doivent être dans le même ordre - Les noms des colonnes doivent être identiques - Les types de données doivent être compatibles -\n\n\n4. Effectuer des requêtes\nPour envoyer des instructions, c’est la commande dbGetQuery() qui est utilisée. Son premier argument est l’objet contenant la connexion et le second les instructions SQL.\nresr &lt;- dbGetQuery(automobiles_db, 'SELECT * FROM automobiles LIMIT 4')\nres\n#&gt; id  marque  modele annee consommation cylindree\n#&gt;  1    Ford    F150  2016         21.0         6\n#&gt;  2   Honda   Pilot  2013         21.0         6\n#&gt;  3   Honda   Civic  2007         28.8         4\n#&gt;  4   Mazda     MX5  2019         19.4         4\n\nIl est à noter que le code SQL est enchâssé entre \" pour former une chaine de caractères. L’omission des \" est une cause d’erreur fréquente !!!\n\n\n\n5. Fermer la connexion\nSouvent oublié, il faut toujours fermer la connexion, se déconnecter de la base de données, avec la commande dbDisconnect() :\ndbDisconnect(automobiles_db)",
+    "crumbs": [
+      "Entreposage",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>SQL et RSQLite</span>"
+    ]
+  },
+  {
+    "objectID": "sql.html#sec-sql_plus",
+    "href": "sql.html#sec-sql_plus",
+    "title": "5  SQL et RSQLite",
+    "section": "5.3 Utilisation avancée du SQL",
+    "text": "5.3 Utilisation avancée du SQL\nLes requêtes serviront à créer les tables de la base de données, à spécifier les clés, à filtrer les données et à extraire les données de la base de données. Pour ce faire, une certaine maitrise du langage SQL est nécessaire.\nLa requête type se découpe en quelques pièces détaillées dans les sections qui suivent :\nSELECT champs\nFROM table1\nJOIN table2 ON table1.foreignKey = table2.primaryKey\nWHERE critères\nORDER BY colonne1 ASC\nLIMIT 10;\n\nSélectionner des données\nLes requêtes SQL sont une suite d’opérations séquentielles débutant par la définition des champs à être retournés SELECT, suivi de la table d’où les données sont extraites FROM et finalement des autres commandes :\nSELECT champ1, champ2\nFROM table1;\n\nNotez que toutes requêtes SQL se terminent par ;, sans quoi un message d’erreur est retourné.\n\n* retourne tous les champs :\nSELECT *\nFROM table1;\n-- le double tiret permet d’écrire des commentaires :\n-- Sélection de tous les champs\nSELECT *\nFROM table1;\nAS permet de renommer un champ dans la table retournée. La table table1 d’où les données proviennent n’est pas affectée par la commande. Cette astuce facilite l’organisation lorsque plusieurs champs ont le même nom ou que plusieurs champs sont agrégés en une seule colonne :\nSELECT prenom_nom AS auteur, institution_id AS employeur\nFROM table1;\n\n\nFiltrer la requête\nWHERE spécifie les critères de la requête.\nOn ne peut pas filtrer (WHERE) avant que les opérations SELECT, FROM et JOIN soient complétées.\nSELECT id, nom, no_telephonne, courriel\nFROM client\nWHERE ville = 'Sherbrooke';\n\nChamps numériques\nLes opérateurs de comparaison standard tels que &gt;=, &lt;=, = sont accessibles pour les valeurs numériques.\n\n\nChamps de texte\nLes valeurs de texte sont filtrées avec LIKE et NOT LIKE :\nSELECT id, nom, no_telephonne, courriel\nFROM client\nWHERE nom LIKE '%Beauchamp%';\n% tient pour n’importe quel caractère (Lyne Beauchamp, Julien Beauchamp-Lavallée) alors que _ est utilisé pour un seul caractère (WHERE nom LIKE 'Beauchamp_' : Beauchamp, Beauchamps, etc.).\n\n\nValeurs nulles\nIS NULL et IS NOT NULL filtrent les valeurs nulles :\nSELECT id, nom, no_telephonne, courriel\nFROM client\nWHERE nom IS NOT NULL;\n\n\nFiltres multicritères\nOn peut aussi effectuer des filtres multicritères avec AND et OR :\nSELECT id, nom, no_telephonne, date_de_naissance AS annee\nFROM client\nWHERE\n  (annee &lt;= 2008 AND annee &gt; 2000)\n  OR (annee &gt;= 1992 AND annee &lt;= 1994);\n\n\nFiltrer par étapes\nUne requête peut être divisée en plusieurs étapes pour faciliter la lecture et la compréhension. Chaque étape consiste en une table temporaire nommée. Par exemple, la requête suivante est divisée en trois étapes table1, table2 et un SELECT final :\nWITH table1 AS (\n    SELECT id, nom, no_telephonne, date_de_naissance AS annee\n    FROM client\n    WHERE annee &lt;= 2008 AND annee &gt; 2000\n),\ntable2 AS (\n    SELECT id, product_id, quantity\n    FROM commandes\n    WHERE quantity &gt; 10\n)\nSELECT *\nFROM table1\nJOIN table2 ON table1.id = table2.id;\n\n\n\nAutres commandes\nDISTINCT retourne les valeurs distinctes d’un champ :\nSELECT DISTINCT nom\nFROM client\nWHERE nom IS NOT NULL;\nLIMIT limite le nombre de lignes retournées. Cette commande est particulièrement utile pour explorer la base de données :\nSELECT id, nom, no_telephonne, courriel\nFROM client\nLIMIT 5;\nORDER BY permet d’ordonner les rangées retournées en fonction d’une colonne. ASC est utilisé pour ordonner en ordre croissant, DESC pour ordonner en ordre décroissant :\nSELECT id, nom, date_de_naissance\nFROM client\nORDER BY date_de_naissance ASC;\n\n\nAgréger l’information\nOn parle d’agrégation d’information lorsque plusieurs valeurs sont utilisées dans le calcul d’une nouvelle composite. Les opérations les plus courantes sont la somme de plusieurs valeurs (SUM), l’extraction de la valeur maximale (MAX) ou minimale (MIN), la moyenne (AVG) ou le nombre d’éléments (COUNT) :\nSELECT COUNT(*)\nFROM client\nDes opérations peuvent également être effectuées sur plusieurs champs telles que des sommes, des divisions, etc. Les opérateurs couramment utilisés sont : *, /, -, +.\nGROUP BY définit les champs sur lesquels se fera l’agrégation des données. L’agrégation se fait dans la sélection des champs :\nSELECT COUNT(id)\nFROM client\nGROUP BY magasin_id\nCette requête retourne le nombre de clients par magasin.\n\n\nJointures entre tables\nParfois, l’information requise est répartie dans plusieurs tables de la base de données. Dans ce cas, il faut joindre des données de plusieurs tables en utilisant les relations dans une requête.\n\n\n\n\n\nTypes de jointures SQL.\n\n\n\n\nLe type de jointure utilisé dépend du résultat attendu. Chaque jointure effectuée ne peut viser que deux tables : une table principale (nommée dans le FROM) et une table secondaire de laquelle des données sont extraites pour être ajoutées à la table principale. Chacun des types de jointures conserve les lignes et les informations de chacune des tables différemment.\nUne jointure se fait en spécifiant les champs correspondants (clés étrangères), comme ici où les deux tables partagent un identifiant unique du magasin (id et magasin_id).\nImaginez deux tables :\nclient\n\n\n\nid\nnom\ncourriel\nmagasin_id\n\n\n\n\n1\nBeaulieu\nabc@gmail.com\n1\n\n\n2\nWoot\nWoot@hotmail.com\n1\n\n\n3\nMcNicols\nmc@livre.ca\n4\n\n\n4\nTremblay\ntremc3001@usherbrooke.ca\n8\n\n\n5\nBeauregard\nfun_1998@yahoo.com\n4\n\n\n\nmagasin\n\n\n\nid\nno_civique\nrue\ncode_postal\n\n\n\n\n1\n1200\nKing\nJ1K2S8\n\n\n2\n134\nSherbrooke\nB4L3V6\n\n\n3\n13333\nSt-Denis\nF2H5F5\n\n\n4\n123\nMain\nL4X1A7\n\n\n5\n98422\n3è rang\nL1L4D6\n\n\n\nVoici quelques exemples de situations que vous pouvez rencontrer :\n\nLateral join\nLe lateral join est un type de jointure entre tables très pratique de par sa simplicité. Cependant, il peut produire des résultats contre-intuitifs puisque toutes les lignes correspondantes des tables seront retournées. Par exemple, la jointure latérale des tables magasins (5 lignes) et client (5 lignes) par le champ id du magasin produira un jeu de données de 7 lignes puisque le magasin 1 et 4 ont chacun 2 clients. Ces lignes seront donc dupliquées :\nSELECT client.id, nom, magasin.id, code_postal\nFROM  magasin, client\nWHERE client.magasin_id = magasin.id;\n\n\n\nid\nnom\nmagasin_id\ncode_postal\n\n\n\n\n1\nBeaulieu\n1\nJ1K2S8\n\n\n2\nWoot\n1\nJ1K2S8\n\n\n3\nMcNicols\n4\nL4X1A7\n\n\n4\nTremblay\n8\nNULL\n\n\n5\nBeauregard\n4\nL4X1A7\n\n\n\n\nNotez que le champ d’une table est spécifié avec le format table.champ. Cela permet d’être explicite sur le champ visé puisqu’il peut y avoir de la redondance entre les tables, comme ici avec les colonnes id.\n\n\n\nLeft join\nLe LEFT JOIN est la jointure la plus populaire puisqu’elle conserve les lignes de la table principale (de gauche) et ne joint que les colonnes de la seconde table (de droite) aux lignes correspondantes. Notez que lorsqu’il n’y a pas de correspondance, une valeur NULL est retournée :\nSELECT client.id, nom, magasin.id, code_postal\nFROM  client\nLEFT JOIN magasin ON client.magasin_id = magasin.id\n\n\n\nid\nnom\nmagasin_id\ncode_postal\n\n\n\n\n1\nBeaulieu\n1\nJ1K2S8\n\n\n2\nWoot\n1\nJ1K2S8\n\n\n3\nMcNicols\n4\nL4X1A7\n\n\n4\nTremblay\n8\nNULL\n\n\n5\nBeauregard\n4\nL4X1A7\n\n\n\n\n\nInner join\nLe INNER JOIN ne renvoie qu’une rangée des tables ayant un champ contenant une valeur commune. La requête suivante ne retourne que 4 lignes puisque la table magasin ne possède pas de id avec une valeur de 8 :\nSELECT client.id, nom, magasin_id, code_postal\nFROM  client\nINNER JOIN magasin ON client.magasin_id = magasin.id\n\n\n\nid\nnom\nmagasin_id\ncode_postal\n\n\n\n\n1\nBeaulieu\n1\nJ1K2S8\n\n\n2\nWoot\n1\nJ1K2S8\n\n\n3\nMcNicols\n4\nL4X1A7\n\n\n5\nBeauregard\n4\nL4X1A7\n\n\n\n\n\n\nRequêtes imbriquées\nLorsque la requête désirée est particulièrement complexe, il est possible d’imbriquer des requêtes, de faire un SELECT sur le produit d’un autre SELECT. Pour ça, il existe deux méthodes :\nSpécifier la première requête dans le FROM de la seconde :\nSELECT nom \nFROM (\n    SELECT client.id, nom, magasin_id, code_postal\n    FROM  client\n    INNER JOIN magasin ON client.magasin_id = magasin.id\n) GROUP BY client.id\nHAVING magasin_id &lt; 3;\nExécuter une première requête et utiliser son retour comme une table :\nWITH premiere_requete AS (\n    SELECT client.id, nom, magasin_id, code_postal\n    FROM  client\n    INNER JOIN magasin ON client.magasin_id = magasin.id\n) \nSELECT nom \nFROM premiere_requete\nGROUP BY id\nWHERE magasin_id &lt; 3;\n\n\nMettre à jour des enregistrements\nOn peut mettre à jour les enregistrements sélectionnés d’une table avec des critères spécifiques :\nUPDATE client      -- Table visée\nSET nom = 'Martin' -- Champ = nouvelle valeur\nWHERE id = 3;      -- Filtre pour sélectionner la valeur à mettre à jour\n\nNotez que toutes les valeurs de la colonne nom de la table client dont id=3 seront mises à jour pour Martin. Le risque d’erreur est important !!! Testez rigoureusement votre filtre avant d’effectuer la mise à jour.\n\n\n\nSupprimer des enregistrements\nOn peut supprimer des enregistrements sélectionnés d’une table avec des critères spécifiques :\nDELETE FROM client\nWHERE nom = 'Martin';\nATTENTION ! Sans filtres, toutes les valeurs de la table sont supprimées :\nDELETE FROM client;\n\n\nCREATE TABLE\nVoici un exemple d’instruction SQL pour créer la table auteurs.\nCREATE TABLE auteurs (\n    auteur      VARCHAR(50),\n    statut      VARCHAR(40),\n    institution VARCHAR(200),\n    ville       VARCHAR(40),\n    pays        VARCHAR(40),\n    PRIMARY KEY (auteur)\n);\n\nauteurs est le nom de la table\nChaque attribut de la table (auteur,statut etc) dispose d’un type de données (varchar(40),DATE, etc) Type de données SQLite\nLa dernière ligne correspond aux contraintes de la table telle que la clé primaire.\nQuestion: Cette clé primaire est composite ou simple?",
+    "crumbs": [
+      "Entreposage",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>SQL et RSQLite</span>"
+    ]
+  },
+  {
+    "objectID": "sql.html#refs",
+    "href": "sql.html#refs",
+    "title": "5  SQL et RSQLite",
+    "section": "5.4 Refs",
+    "text": "5.4 Refs\n\nR for data science\nSQL for Data Scientists by Renée M. P. Teate is an introduction to SQL designed specifically for the needs of data scientists, and includes examples of the sort of highly interconnected data you’re likely to encounter in real organizations.\nPractical SQL by Anthony DeBarros is written from the perspective of a data journalist (a data scientist specialized in telling compelling stories) and goes into more detail about getting your data into a database and running your own DBMS.",
+    "crumbs": [
+      "Entreposage",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>SQL et RSQLite</span>"
+    ]
+  },
+  {
+    "objectID": "exercices_1.html",
+    "href": "exercices_1.html",
+    "title": "6  Exercices",
+    "section": "",
+    "text": "6.1 Exercice 1",
+    "crumbs": [
+      "Entreposage",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Exercices</span>"
+    ]
+  },
+  {
+    "objectID": "exercices_1.html#exercice-1",
+    "href": "exercices_1.html#exercice-1",
+    "title": "6  Exercices",
+    "section": "",
+    "text": "Étape 1\n\nCréer la base de données reseau avec ses deux tables auteurs et articles\nInsérer les données auteurs.csv et articles.csv dans les deux tables à l’aide de la commande R dbWriteTable()\n\n\n\nÉtape 2\nAjouter une troisième table collaborations à la base de données reseau et insérer les données collaboration.csv dans cette table.\ncollabTD &lt;- '\nCREATE TABLE collaborations (\n    auteur1     VARCHAR(40),\n    auteur2     VARCHAR(40),\n    articleID   VARCHAR(20),\n    PRIMARY KEY (auteur1, auteur2, articleID),\n    FOREIGN KEY (auteur1) REFERENCES auteurs(author),\n    FOREIGN KEY (auteur2) REFERENCES auteurs(author),\n    FOREIGN KEY (articleID) REFERENCES articles(articleID)\n);'\n\ncollaboration &lt;- read.csv('collaboration.csv')\ndbWriteTable(con, append = TRUE, name = \"collaborations\", value = collaboration, row.names = FALSE)",
+    "crumbs": [
+      "Entreposage",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Exercices</span>"
+    ]
+  },
+  {
+    "objectID": "exercices_1.html#exercice-2",
+    "href": "exercices_1.html#exercice-2",
+    "title": "6  Exercices",
+    "section": "6.2 Exercice 2",
+    "text": "6.2 Exercice 2\nQue fait la commande suivante ?\nDISTINCT\nsql_requete &lt;- \"\n    SELECT DISTINCT auteur1\n    FROM collaborations;\"\n\nreq &lt;- dbGetQuery(con, sql_requete)\nhead(req)\nLIMIT\nsql_requete &lt;- \"\n    SELECT *\n    FROM collaborations\n    LIMIT 10;\"\n\nreq &lt;- dbGetQuery(con, sql_requete)\nhead(req)\nORDER BY\nsql_requete &lt;- \"\n    SELECT annee, citations, articleID\n    FROM articles \n    ORDER BY citations DESC;\"\n\nderniers_articles &lt;- dbGetQuery(con, sql_requete)\nhead(derniers_articles)\nWHERE pour les valeurs numériques\nsql_requete &lt;- \"\n    SELECT articleID, annee\n    FROM articles \n    WHERE annee &gt;= 2018;\"\n  \nderniers_articles &lt;- dbGetQuery(con, sql_requete)\nhead(derniers_articles)\nWHERE pour les valeurs texte (character)\nsql_requete &lt;- \"\n    SELECT articleID, titre\n    FROM articles \n    WHERE titre LIKE '%interactions%';\"\n\narticles &lt;- dbGetQuery(con, sql_requete)\nhead(articles)\nWHERE pour effectuer des filtres multicritères\nsql_requete &lt;- \"\n    SELECT articleID, annee\n    FROM articles \n    WHERE\n    (annee &gt;= 2018 AND annee &lt; 2020)\n    OR (annee &gt;= 2012 AND annee &lt;= 2014)\"\n\narticles &lt;- dbGetQuery(con, sql_requete)\nhead(articles)\nWHERE et IS NOT NULL\nsql_requete &lt;- \"\n  SELECT auteur, statut, institution\n  FROM auteurs\n  WHERE statut IS NOT NULL;\"\n\nauteurs &lt;- dbGetQuery(con, sql_requete)\nhead(auteurs)",
+    "crumbs": [
+      "Entreposage",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Exercices</span>"
+    ]
+  },
+  {
+    "objectID": "reproductibilite.html",
+    "href": "reproductibilite.html",
+    "title": "Reproductibilité",
+    "section": "",
+    "text": "Cette section aborde les outils et techniques pour une science reproductible et transparente.\nObjectifs de section\n\nUtiliser Git pour versionner le projet.\nOrganiser sont répertoire de travail pour répondre aux exigences de targets.\nUtiliser de façon rudimentaire RMarkdown pour consigner des notes.\n\n\n \nAu terme de cette section, vous serez en mesure de :\n\nDe versionner les modifications au projet avec git.\nUtiliser la librairie targets pour automatiser l’exécution de projets sur R.\nRédiger et compiler un cahier de laboratoire RMarkdown.",
+    "crumbs": [
+      "Reproductibilité"
+    ]
+  },
+  {
+    "objectID": "git.html",
+    "href": "git.html",
+    "title": "7  Git",
+    "section": "",
+    "text": "7.1 Notions de base\nGit est un système de contrôle de version pour programmeur. C’est un logiciel qui permet de suivre l’ajout et les modifications pour l’ensemble des fichiers d’un projet. D’une certaine façon, Git est le cahier de laboratoire du biologiste pour ce qui est de la sauvegarde, des analyses de données et de la rédaction.\nLe principal avantage de Git réside dans sa capacité à suivre et à enregistrer les modifications apportées à un projet au fil du temps. Il permet aux collaborateurs de travailler simultanément sur différentes fonctionnalités, de fusionner leurs modifications et de revenir à des versions précédentes du code en cas de besoin.\nUne branche (master par défaut) est une série de commentaires (commit) qui décrivent les modifications successives au projet. Chaque version du projet est associée à un commit. Le dernier commit est ce que l’on appelle la tête de la branche (HEAD), elle contient la version la plus récente des fichiers.\nConcept de branche en Git. L’historique d’un projet est une ligne du temps (branche) de l’évolution du projet. Les modifications aux fichiers sont décrites par des commits qui permettent d’en retracer l’historique.",
+    "crumbs": [
+      "Reproductibilité",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Git</span>"
+    ]
+  },
+  {
+    "objectID": "git.html#notions-de-base",
+    "href": "git.html#notions-de-base",
+    "title": "7  Git",
+    "section": "",
+    "text": "On interagit avec Git soit par le terminal, soit par RStudio. Pour les besoins du cours, nous nous limiterons à RStudio, mais sachez que certains conflits (erreurs) ne pourront être résolus que dans le terminal.\n\n\nCommandes Git de base\nRStudio facilite le travail avec Git à l’aide d’un simple onglet “Git” et avec un navigateur history qui vous permet de passer d’une version à l’autre et de visionner les modifications qui ont été enregistrées sous forme de commit. Cet onglet permet d’exécuter certaines opérations de base pour le contrôle de version.\n\n\n\n\n\n\n\n\n\nVoici un petit lexique pour s’y retrouver :\n\nGit clone\nCloner un projet hébergé sur GitHub vers votre machine locale. Cette opération est effectuée lors du démarrage d’un nouveau projet RStudio et est accessible dans le menu “File &gt; New Project &gt; Version Control &gt; Git”.\n\n\nGit pull\nRécupérer les modifications des autres membres de l’équipe et se mettre à jour avec la version la plus récente du projet hébergé sur GitHub. À chaque fois que l’on ouvre un projet, il est approprié d’utiliser la commande “Pull” (un bouton sur l’interface git de RStudio) afin de récupérer les modifications des autres membres de l’équipe.\n\n\nGit diff\nAffiche les modifications aux fichiers qui ne sont pas encore associés à un commit.\n\n\nGit commit\nCrée un nouveau commit avec les modifications de l’index et associe un message descriptif.\n\n\nGit log ou “History”\nAffiche l’historique des commits avec les informations associées, tels que les auteurs, les dates et les messages de commit.\n\n\nGit push\nTéléverse vos commits vers le répertoire du projet GitHub.\n\n\nGit branch\nAffiche la liste des branches.\n\n\nGit revert\nAbandonne toutes modifications aux fichiers sélectionnés.\n\n\nGit merge\nFusionne une branche spécifiée dans la branche active.\n\nLes fonctionnalités de git sont immenses et RStudio permet de bien les utiliser. Un tutoriel complet est disponible à https://happygitwithr.com/rstudio-git-github.html.\n\n\n\n\nGithub\nGitHub est le serveur cloud du logiciel Git, comme OneDrive l’est pour d’autres types de fichiers. On peut y sauver les fichiers text (csv, R, md, …) et l’historique du travail (commits, branches). Cela permet de collaborer à plusieurs partenaires sur un même projet.",
+    "crumbs": [
+      "Reproductibilité",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Git</span>"
+    ]
+  },
+  {
+    "objectID": "git.html#débuter-avec-git",
+    "href": "git.html#débuter-avec-git",
+    "title": "7  Git",
+    "section": "7.2 Débuter avec Git",
+    "text": "7.2 Débuter avec Git\nPour débuter avec Git, il faut d’abord s’assurer que les prérequis sont bien installés et configurés. Ensuite, il faut créer un dépôt GitHub en ligne et l’associer à RStudio. Enfin, il faut apprendre à enregistrer les modifications, à revenir en arrière et à récupérer les modifications des co-équipiers.\n\n0. Prérequis\nUn bon point de départ est d’explorer l’interface web de GitHub. Accéder à la page du cours BIO500 et observer l’organisation des fichiers et les fonctionnalités présentées : (https://github.com/EcoNumUdS/BIO500)[https://github.com/EcoNumUdS/BIO500]\n\n0.1. Avoir un compte GitHub\nAller à la page d’accueil de GitHub https://github.com. Sélectionner “sign up” et entrer les informations demandées.\n\n\n0.2. R et RStudio sont installés et mis à jour\n\nVérifier la version de R installée sur votre machine. Une version supérieure à 4.1.1 est recommandée.\n\nR.version.string\n[1] \"R version 4.2.2 Patched (2022-11-10 r83330)\"\n\nBesoin de mettre à jour RStudio ? Télécharger la dernière version ici : https://posit.co/download/rstudio-desktop/\nMettre à jour les librairies installées sur votre ordinateur :\n\nupdate.packages(ask = FALSE, checkBuilt = TRUE)\n\n\n0.3. Git est installé\n\nWindows\nGit doit être installé sur les systèmes Windows. Instructions pour Windows : https://git-scm.com/download/win.\n\n\nMac\nGit est installé par défaut sur les ordinateurs Mac. Il suffit de vérifier la version installée :\nOuvrir le terminal et saisir la commande suivante :\ngit version\nSi la commande n’est pas reconnue, il faut installer git. Instructions pour Mac : http://git-scm.com/download/mac.\n\n\n\n0.4. Git est associé avec GitHub\nIl peut être nécessaire de configurer git pour qu’il puisse communiquer avec github. Cette étape se fait plus facilement avec le package usethis dans la console de RStudio :\n# Installer le package usethis\ninstall.packages(\"usethis\")\n\n## Enregistrer les informations de l'utilisateur :\nusethis::use_git_config(user.name = \"YourName\", user.email = \"your@mail.com\")\n\n## Créer un jeton d'accès :\nusethis::create_github_token() \n### Définir la date d'expiration comme \"Aucune expiration\"\n### Copier le jeton d'accès dans le presse-papier (et votre gestionnaire de mot de passe)\n\n## Enregistrer le jeton d'accès :\ncredentials::set_github_pat()\n# gitcreds::gitcreds_set()\n\n## Redémarrer R !!!\nIl faut vérifier que git est bien configuré :\nusethis::git_sitrep()\n## Votre nom d'utilisateur et e-mail devraient être \n## correctement retournés.\n## Aussi, le rapport devrait contenir quelque chose comme ceci :\n## 'Personal access token: '&lt;found in env var&gt;''\n## Si un message d'erreur persiste, vérifier que le fichier .Renviron est bien configuré :\n## Appeler `usethis::edit_r_environ()` pour mettre à jour le fichier manuellement.\n\n\n\n1. Créer un dépôt GitHub en ligne\nAccédez à GitHub et connectez-vous à votre compte. Près de l’onglet “Repositories”, sélectionnez le bouton vert ‘New’ pour créer un nouveau dépôt et suivre les instructions. Les options recommandées sont :\n\nRepository template: No template.\nRepository name: Le nom de votre projet.\nDescription: Une description du répertoire (non requis).\nPublic.\n\nIl est plus facile de collaborer avec des dépôts publics. D’autres utilisateurs peuvent voir votre code et être invité à y contribuer. Les dépôt publiques seront utiles pour votre projet final qui se fait en équipe.\n\n\nBien structurer son projet\n!!! Important de bien structurer son projet pour faciliter la collaboration et la reproductibilité. Voir la section Bien structurer son projet du chapitre Bonnes pratiques dédiée à ce sujet.\n\n\n2. Associer le dépôt à RStudio\nSur le dépôt GitHub, cliquer sur le bouton “&lt;&gt; Code”. Assurez-vous de sélectionner l’URL “HTTPS”. Copier l’URL du dépôt.\n\n\n\n\n\n\n\n\n\nDans RStudio, créer un nouveau projet “Version Control” : File &gt; New Project &gt; Version Control &gt; Git.\n\nSi cette option n’est pas disponible, consulter l’assistance https://happygitwithr.com/rstudio-see-git.html.\n\n\nCopier l’URL dans “Repository URL” pour cloner le dépôt.\nAccepter le nom du projet par défaut. Celui-ci coincide avec le nom du répertoire GitHubé.\nS’assurer de sauver le dépôt au bon endroit sur l’ordinateur !\nCliquer “Create Project”.\n\nSi des fichiers sont déjà sauvés dans le répertoire GitHub, ils seront téléchargés dans le projet RStudio.\nOn peut ouvrir le projet ultérieurement avec File &gt; Open project en sélectionnant le fichier avec l’extension .Rproj.\n\n\n3. Enregistrer les modifications\nAprès avoir effectué des modifications aux fichiers du projet, sauver ces modifications. Par exemple, ajouter “Ceci est une ligne ajoutée à la description du projet.” au fichier README.md et sauver la modification.\n\nSélectionner l’onglet git dans le quadrant supérieur droit.\nOuvrir la fenêtre commit pour enregistrer les modifications.\nCocher (staged) les fichiers modifiés que vous souhaitez enregistrer.\nRésumer les modifications en une courte phrase (message de commit) et puis cliquer sur le bouton commit pour enregistrer les modifications.\nCliquer sur le bouton “Push” pour téléverser les modifications vers le répertoire (serveur) GitHub.\nValider en ligne sur votre répertoire GitHub si les modifications ont été ajoutées.\n\n\n\n4. Revenir en arrière\nLes commandes de git sont très efficaces et puissantes, elles peuvent néanmoins être fastidieuses et difficiles pour les débutants.\nRStudio facilite ce travail avec un simple onglet “history” et avec un navigateur qui vous permet de passer d’une version à l’autre et de mettre en valeur les modifications qui ont été enregistrées sous forme de commit.\n\n\n\n\n\n\n\n\n\n\n\n5. Récupérer les modifications de co-équipiers\nGit a été spécifiquement créé pour travailler en équipe. Plusieurs utilisateurs peuvent se connecter au même répertoire et y apporter des modifications. Cependant, le répertoire en ligne GitHub est la version du projet à laquelle tous les utilisateurs contribuent. Il faut être rigoureux et fréquemment y téléverser ses modifications pour les rendre accessibles aux autres (push). Il faut également récupérer les modifications des autres membres de l’équipe (pull).\nLes restrictions d’accès au répertoire GitHub et les invitations peuvent être gérées à partir du site web du répertoire.\nLa collaboration entraine parfois des conflits entre versions. Ceci est particulièrement fréquent lorsqu’on oublie d’effectuer un Push ou un Pull pendant un certain temps. La section suivante détaille les conflits couramment rencontrés.\n\n\n6. Supprimer un dépôt\nSi vous souhaitez supprimer un dépôt de votre ordinateur, il suffit de supprimer le répertoire (dossier) du projet sur votre ordinateur. Il s’agit d’un dossier standard. Si vous souhaitez supprimer le dépôt de GitHub, allez dans les paramètres du répertoire et sélectionner “Delete this repository”.",
+    "crumbs": [
+      "Reproductibilité",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Git</span>"
+    ]
+  },
+  {
+    "objectID": "git.html#conflits",
+    "href": "git.html#conflits",
+    "title": "7  Git",
+    "section": "7.3 Conflits",
+    "text": "7.3 Conflits\nL’utilisation de Git pour la collaboration entraine parfois des conflits entre versions lorsque des modifications incompatibles sont apportées au même fichier, aux mêmes lignes de code ou lorsque des renommages de fichiers entraînent des conflits de nommage.\nCes conflits sont des situations normales lors de la collaboration avec Git. Lorsqu’un conflit se produit, Git marque les zones conflictuelles dans les fichiers concernés et il vous revient de les résoudre en choisissant quelles modifications garder ou en effectuant des ajustements manuellement.\nPar exemple, vous éditez le fichier README.md et ajoutez une ligne de texte. Pendant ce temps, un collaborateur modifie également le fichier README.md et ajoute une autre ligne de texte. Lorsque vous essayez de push vos modifications, Git détecte un conflit entre les deux versions du fichier et vous empêche de continuer tant que le conflit n’est pas résolu.\n\nOuvrir l’onglet Git dans RStudio et cliquer sur le bouton pull pour récupérer les modifications du répertoire GitHub. Si un conflit est détecté, un message d’erreur apparaît dans la console RStudio. Par exemple :\n\n\n\n\n\n\n\n\n\n\n\nInspecter les fichiers affectés par le conflit. Dans cet exemple, le fichier README.md est en conflit.\n\n\n\n\n\n\n\n\n\n\n\nOuvrir le fichier en conflit et résoudre le conflit manuellement. Les lignes de code en conflit sont délimitées par des balises spéciales. Les modifications entrant depuis le répertoire GitHub (HEAD) suivent la ligne &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD. Vous verrez ensuite ======= qui divise les modifications entrantes des modifications locales. Les modifications locales suivent la ligne &gt;&gt;&gt;&gt;&gt;&gt;&gt; branch-name. Par exemple :\n\n# BIO500 H2025\nMon répertoire de travail pour le cours BIO500.\n\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\nNouvelle description du projet.\n=======\nDescription initiale du projet.\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; 1234567890abcdef1234567890abcdef12345678\n\nChoisir les modifications à conserver et supprimer les balises de conflit. Dans cet exemple, on choisit de conserver la description initiale du projet. Le fichier modifié devrait ressembler à ceci :\n\n# BIO500 H2025\nMon répertoire de travail pour le cours BIO500.\n\nDescription initiale du projet.\n\nAprès avoir résolu le conflit, ajouter les fichiers modifiés à l’index (staging).\nCommiter (commit) les modifications et pousser (push) les modifications vers le répertoire GitHub.\n\n\nEn cas de conflit, un message apparait dans la console RStudio indiquant la nature du problème. Il est fortement recommandé de copier-coller le message dans un moteur de recherche pour plus d’information. Toutefois, vous devez obligatoirement résoudre le conflit en choisissant les modifications à garder ou en effectuant des ajustements manuellement.",
+    "crumbs": [
+      "Reproductibilité",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Git</span>"
+    ]
+  },
+  {
+    "objectID": "markdown1.html",
+    "href": "markdown1.html",
+    "title": "8  RMarkdown",
+    "section": "",
+    "text": "8.1 Produire un document avec RMarkdown\nLe RMarkdown est un outil pour générer des documents pouvant contenir des éléments de texte, de code et des éléments visuels tels que des figures. On distingue les fichiers RMarkdown par l’extension .Rmd ou .rmd. Ces derniers sont des documents dynamiques dans lesquels du code R est imbriqué. Le document RMarkdown est un fichier plain text, mais une fois compilé il produit un document HTML, Word ou PDF.\nLe RMarkdown est également une librairie R. Vous aurez d’abord à l’installer.\nLa force du RMarkdown, à la façon de Latex que vous connaissez peut-être, est de séparer le contenu de la mise en page des documents produits. Vous verrez que le contenu, le texte, est rédigé en ‘plain text’ et que des structures séparées définissent le formatage du document. La rédaction est ainsi simplifiée, le format du document bénéficie de beaucoup plus de liberté et le document devient reproductible (!).\nPour produire un RMarkdown, il faut :\nUn document HTML sera sauvé dans le répertorie de travail et s’affichera automatiquement dans RStudio.",
+    "crumbs": [
+      "Reproductibilité",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>RMarkdown</span>"
+    ]
+  },
+  {
+    "objectID": "markdown1.html#produire-un-document-avec-rmarkdown",
+    "href": "markdown1.html#produire-un-document-avec-rmarkdown",
+    "title": "8  RMarkdown",
+    "section": "",
+    "text": "avoir la librairie installée sur son ordinateur\ncréer nouveau document RMarkdown à partir d’un gabarit (New File &gt; RMarkdown)\ncompiler le document (bouton 🧶 knit)",
+    "crumbs": [
+      "Reproductibilité",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>RMarkdown</span>"
+    ]
+  },
+  {
+    "objectID": "markdown1.html#anatomie-du-rmarkdown",
+    "href": "markdown1.html#anatomie-du-rmarkdown",
+    "title": "8  RMarkdown",
+    "section": "8.2 Anatomie du RMarkdown",
+    "text": "8.2 Anatomie du RMarkdown\n\n\n\n\n\n\n\n\n\nUn fichier RMarkdown est composé de 3 structures : une portion YAML, une portion Markdown et des blocs de code. Chacune de ces structures occupe une fonction distincte.\n\nYAML\nLe YAML est toujours situé au haut du document et définit les métadonnées et les options du document. C’est dans cette section séparée par --- à son début et à sa fin que les informations sur le document et les paramètres servant à la mise en page se trouvent. Les paramètres suivent la syntaxe clé: valeur.\n---\ntitle: \"Mon titre\"\nauthor: \"Victor Cameron\"\ndate: \"29/03/2022\"\noutput: html_document\n---\n\n\nMarkdown\nLes portions de texte (le contenu) du document constituent le Markdown. Il s’agit de “plain text” avec une syntaxe minimaliste pour contrôler certains éléments de la mise en forme du texte.\n# Titre 1\n## Titre 2\n### Titre 3\n\nCe mot est en *italique* et celui-ci\nen **gras**.\n\nLe texte qui suit est une liste :\n- Premier item\n- Second item\n- Troisième item\n\nPour faire une énumération : \n1. Item 1\n2. Item 2\n3. Item 3\nAjout d’une image.\n![Schéma d'un projet de recherche](chemin/vers/image.png)\nHyperlien.\nVoici le [lien](https://github.com/EcoNumUdS/BIO500) pour le GitHub du cours BIO500.\nUne table\n| Time          | Session  |   Topic |\n|:--------------|:--------:|--------:|\n| *left*        | *center* | *right* |\n| 01:00 - 01:50 |    1     | Anatomy |\n| 01:50 - 02:00 |          | *Break* |\n| 02:00 - 02:45 |    2     |  Tables |\n| 02:45 - 03:00 |          | *Break* |\n\n\nBlocs de code\nUn bloc de code peut être ajouté au document en sélectionnant l’icône verte du panneau RStudio. Le code R doit être à l’intérieur d’un bloc de code (code chunk). Par exemple:\n```{r}\ndata(iris)\niris_setosa &lt;- subset(iris, Species == 'setosa')\nhead(iris_setosa)\n```\nCe qui produit une fois le fichier compilé (knit) :\n\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa\n\n\nDu code peut être ajouté directement au texte de cette façon :\n\nLe jeu de données *iris* comprend \n`r length(unique(iris$Species))` espèces avec un total \nde `r nrow(iris)` fleurs mesurées.\n\nPour produire ceci :\nLe jeu de données iris comprend 3 espèces avec un total de 150 fleurs mesurées.\n\nConfiguration des code chunk\nUne bonne pratique est de nommer les blocs de code. Cela s’avère utile pour débogage. Deux blocs de code avec le même nom (label) retourneront un message d’erreur Duplicate chunk label 'chunk name', which has been used for the chunk.\nPar exemple, on spécifie le nom ‘plot_iris’ en le spécifiant après le r dans {r plot_iris}.\n```{r plot_iris}\nplot(iris$Sepal.Length, iris$Sepal.Width)\n```\necho=FALSE affiche les résultats, mais pas le code.\n```{r plot_iris, echo=FALSE}\nplot(iris$Sepal.Length, iris$Sepal.Width)\n```\neval=FALSE affiche le code sans qu’il ne soit évalué.\n```{r plot_iris, eval=FALSE}\nplot(iris$Sepal.Length, iris$Sepal.Width)\n```\ninclude=FALSE évalue le code, mais rien n’est affiché.\n```{r plot_iris, include=FALSE}\nplot(iris$Sepal.Length, iris$Sepal.Width)\n```\nToutes les options de configuration des code chunk sont retournées par :\n\nstr(knitr::opts_chunk$get())\n\nList of 56\n $ eval         : logi TRUE\n $ echo         : logi TRUE\n $ results      : chr \"markup\"\n $ tidy         : logi FALSE\n $ tidy.opts    : NULL\n $ collapse     : logi FALSE\n $ prompt       : logi FALSE\n $ comment      : logi NA\n $ highlight    : logi TRUE\n $ size         : chr \"normalsize\"\n $ background   : chr \"#F7F7F7\"\n $ strip.white  : 'AsIs' logi TRUE\n $ cache        : logi FALSE\n $ cache.path   : chr \"markdown1_cache/html/\"\n $ cache.vars   : NULL\n $ cache.lazy   : logi TRUE\n $ dependson    : NULL\n $ autodep      : logi FALSE\n $ cache.rebuild: logi FALSE\n $ fig.keep     : chr \"high\"\n $ fig.show     : chr \"asis\"\n $ fig.align    : chr \"default\"\n $ fig.path     : chr \"markdown1_files/figure-html/\"\n $ dev          : chr \"png\"\n $ dev.args     : NULL\n $ dpi          : int 96\n $ fig.ext      : NULL\n $ fig.width    : int 7\n $ fig.height   : int 5\n $ fig.env      : chr \"figure\"\n $ fig.cap      : NULL\n $ fig.scap     : NULL\n $ fig.lp       : chr \"fig:\"\n $ fig.subcap   : NULL\n $ fig.pos      : chr \"\"\n $ out.width    : NULL\n $ out.height   : NULL\n $ out.extra    : NULL\n $ fig.retina   : num 2\n $ external     : logi TRUE\n $ sanitize     : logi FALSE\n $ interval     : num 1\n $ aniopts      : chr \"controls,loop\"\n $ warning      : logi TRUE\n $ error        : logi FALSE\n $ message      : logi TRUE\n $ render       : NULL\n $ ref.label    : NULL\n $ child        : NULL\n $ engine       : chr \"R\"\n $ split        : logi FALSE\n $ include      : logi TRUE\n $ purl         : logi TRUE\n $ fig.asp      : NULL\n $ fenced.echo  : logi FALSE\n $ ft.shadow    : logi FALSE\n\n\n\n\n\nAjuster la taille d’une figure\n```{r plot_iris, fig.height = 3, fig.width = 5, fig.align = \"center\"}\nplot(iris$Sepal.Length, iris$Sepal.Width)\n```",
+    "crumbs": [
+      "Reproductibilité",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>RMarkdown</span>"
+    ]
+  },
+  {
+    "objectID": "markdown1.html#autres-ressources-disponibles-en-ligne",
+    "href": "markdown1.html#autres-ressources-disponibles-en-ligne",
+    "title": "8  RMarkdown",
+    "section": "8.3 Autres ressources disponibles en ligne :",
+    "text": "8.3 Autres ressources disponibles en ligne :\n\nR Markdown: The Definitive Guide https://bookdown.org/yihui/rmarkdown/\nCheat sheet https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf\nRMarkdown gallery https://rmarkdown.rstudio.com/gallery.html\nResearchDown https://insileco.github.io/ResearchDown/",
+    "crumbs": [
+      "Reproductibilité",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>RMarkdown</span>"
+    ]
+  },
+  {
+    "objectID": "targets.html",
+    "href": "targets.html",
+    "title": "9  Targets",
+    "section": "",
+    "text": "9.1 Introduction\nTargets est une librairie R qui permet l’automatisation d’un processus. On l’utilise pour définir les directives qui sont exécutées par l’ordinateur de façon à rendre un projet reproductible.\nUn projet d’analyse de données comprend de nombreuses étapes, qui vont de la construction de la base de données, à la production du rapport, en passant par les analyses statistiques. L’ensemble du processus peut-être long et frustrant, surtout lorsque l’on a une boucle du genre :\nDes petites modifications en amont peuvent affecter toute la chaîne en aval. Inversement, parfois on a seulement besoin de refaire une figure sans avoir à refaire toute la chaîne.\nLa programmation d’une séquence d’instructions permet de formaliser ce processus et de s’attarder seulement aux étapes qui doivent être mises à jour.\nCe chapitre est une introduction à la librairie targets. Nous allons voir comment définir un pipeline, exécuter les instructions et quelques trucs et astuces pour éviter les erreurs. Un répertoire d’exemple vous sera présenté pour illustrer les concepts et la documentation de la librairie en offre davantage. Ce court vidéo tiré de cette documentation vous donnera un aperçu de la librairie :",
+    "crumbs": [
+      "Reproductibilité",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Targets</span>"
+    ]
+  },
+  {
+    "objectID": "targets.html#le-pipeline",
+    "href": "targets.html#le-pipeline",
+    "title": "9  Targets",
+    "section": "9.2 Le pipeline",
+    "text": "9.2 Le pipeline\nOn parle de pipeline ou de workflow pour désigner la séquence d’instructions. Elle contient l’ensemble des instructions nécessaires pour automatiser la réalisation des différentes composantes d’un projet.\nC’est dans le fichier _targets.R que le pipeline est défini.\n\nLe fichier _targets.R\nIci, il est bien important de garder en tête que l’on définit une séquence d’instructions. Une étape (appelée target) dépend de ce qui est produit à l’étape précédente pour exécuter une opération et produire un objet qui sera utilisé par la prochaine étape.\n\nUn exemple minimal\nUn exemple complet est disponible dans le répertoire exemple_targets.\nImaginons le processus suivant :\n\nLire le fichier de données “data.txt”\nFaire une régression linéaire\nFaire une figure et l’enregistrer\n\nLe répertoire de travail contient les données sauvées dans un sous-dossier ‘data’, les sripts pour faire l’analyse et la figure dans le dossier ‘R’ et un fichier _targets.R qui exécute le pipeline.\n├── data             # Dossier de données\n│   ├── data.txt     # Jeu de données\n\n├── R                # Dossier de scripts R\n│   ├── figure.R     # Fonction utilisée comme targets\n│   ├── analyse.R    # Fonction utilisée comme targets\n\n├── _targets.R       # Fichier targets qui définit le pipeline\nIl y a deux scripts d’analyse, ./R/analyse.R et ./R/figure.R. Le deuxième dépend du premier qui dépend lui-même des données (données -&gt; analyse -&gt; figure).\nLe fichier _targets.R se subdivise en 3 sections. D’abord, les dépendances à la librairie targets et aux autres librairies. Ensuite, l’exécution des scripts R qui contiennent les fonctions du pipeline. Finalement, le pipeline composé d’une liste contenant une série de targets.\n\n# ===========================================\n# _targets.R file\n# ===========================================\n# Dépendances\nlibrary(targets)\ntar_option_set(packages = c(\"MASS\", \"igraph\"))\n\n# Scripts R\nsource(\"R/analyse.R\")\nsource(\"R/figure.R\")\n\n# Pipeline\nlist(\n  # Une target pour le chemin du fichier de donnée permet de suivre les \n  # changements dans le fichier\n  tar_target(\n    name = path, # Cible\n    command = \"data/data.txt\", # Emplacement du fichier\n    format = \"file\"\n  ), \n  # La target suivante a \"path\" pour dépendance et importe les données. Sans\n  # la séparation de ces deux étapes, la dépendance serait brisée et une\n  # modification des données n'entrainerait pas l'exécution du pipeline\n  tar_target(\n    name = data, # Cible pour l'objet de données\n    command = read.table(path) # Lecture des données\n  ),   \n  tar_target(\n    resultat_modele, # Cible pour le modèle \n    mon_modele(data) # Exécution de l'analyse\n  ),\n  tar_target(\n    figure, # Cible pour l'exécution de la figure\n    ma_figure(data, resultat_modele) # Réalisation de la figure\n  )\n)\n\n\n\nLa target\nUne target est une étape de la séquence d’instructions, elle est utilisée comme argument dans une étape suivante. On la défini avec tar_targets() dans le fichier _targets.R.\n\n\n\n\n\n\nMise en gardeLa target est une fonction\n\n\n\nLa target est TOUJOURS une fonction.\n\n\nUne target est au minimum une cible (nom d’un objet) et une dépendance (commande R). Une target produit un objet R qui est enregistré dans la mémoire de la session. Une dépendance est une expression qui dépend d’une target précédente. Le package targets exécute seulement les targets qui ne sont pas à jour. Ainsi, Une target est exécutée seulement lorsque la target dont elle dépend est plus récente que l’objet qu’elle produit.\nFaire une bonne target\nComme une fonction, une target peut faire trois choses :\n\nProduire des données\nAnalyser des données\nRésumer une analyse ou des données (e.g. figure, tableau)\n\nSi une target est trop longue, vous avez avantage à la briser en petits morceaux pour que chaque étape soit vérifiée. Alternativement, pour une séquence d’analyse très compliquée, on pourrait vouloir regrouper les étapes pour éviter d’avoir une liste trop longue.\nLe grain d’une séquence dépend donc d’un compromis :\n\nLes targets sont suffisamment importantes pour sauver du temps si elles sont ignorées (e.g. construire votre base de données et faire les injections)\nSuffisamment petites pour qu’il soit pertinent d’automatiser le processus\nRetourne un seul objet qui\n\nest facile à comprendre et interpréter\npertinent pour le projet\npeut être sauvé comme objet",
+    "crumbs": [
+      "Reproductibilité",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Targets</span>"
+    ]
+  },
+  {
+    "objectID": "targets.html#exécuter-le-pipeline",
+    "href": "targets.html#exécuter-le-pipeline",
+    "title": "9  Targets",
+    "section": "9.3 Exécuter le pipeline",
+    "text": "9.3 Exécuter le pipeline\n1. Visualiser les étapes qui doivent être mises à jour\nCette commande produit un graphique de dépendance du projet. Il est de bonne pratique de s’assurer que ce graphe ait les nodes correctement connectées avec les flèches. Chaque node représente une target ou un objet de l’environnement global et une flèche la dépendance d’un node à un autre.\ntar_visnetwork()\n2. Exécuter le pipeline\nLa commande tar_make() permet d’exécuter le pipeline. De nombreuses informations utiles sont générées automatiquement lors de l’opération et sont placées dans le dossier _targets.\ntar_make()\n\n\n\n\n\n\nImportantÉxécution du pipeline\n\n\n\nNotez que le pipeline ne se lance pas en exécutant le fichier _targets.R, mais bien avec l’exécution de tar_make().",
+    "crumbs": [
+      "Reproductibilité",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Targets</span>"
+    ]
+  },
+  {
+    "objectID": "targets.html#modifications",
+    "href": "targets.html#modifications",
+    "title": "9  Targets",
+    "section": "9.4 Modifications",
+    "text": "9.4 Modifications\nLa librairie targets détecte les changements au code et aux données pour définir les quelles targets doivent être exécutées à nouveau et celles qui peuvent être ignorées.\n\nChangement au code\nUne modification à un script duquel dépend une target entrainera sa mise à jour puisqu’elle est considérée comme obsolète. tar_make() exécutera la target et toutes celles qui en dépendent. Par exemple, si vous modifiez la fonction ma_figure() dans le script figure.R, la target figure sera exécutée à nouveau. Changeons la couleur des points de la figure pour voir le comportement de targets :\nma_figure = function(data, resultat_modele) {\n  plot(data$X, data$Y, xlab = \"X\", ylab = \"Y\", cex.axis = 1.5, cex.lab = 1.5, pch = 19, col = \"red\")\n  abline(resultat_modele)\n}\ntargets détectera le changement et exécutera la target figure à nouveau, mais pas les targets data et resultat_modele puisqu’elles n’ont pas été modifiées et ne dépendent pas de la target figure.\ntar_visnetwork()\ntar_make()",
+    "crumbs": [
+      "Reproductibilité",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Targets</span>"
+    ]
+  },
+  {
+    "objectID": "targets.html#trucs-et-astuces",
+    "href": "targets.html#trucs-et-astuces",
+    "title": "9  Targets",
+    "section": "9.5 Trucs et astuces",
+    "text": "9.5 Trucs et astuces\nPar expérience, targets est une librairie de haut niveau pour utilisateurs expérimentés. Les erreurs sont difficiles à trouver et à régler. Il faut s’assurer que chaque étape fonctionne avant d’en ajouter une autre. Il faut donc construire progressivement son fichier _target.R et s’assurer qu’une étape s’exécute parfaitement avant de passer à la suivante.",
+    "crumbs": [
+      "Reproductibilité",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Targets</span>"
+    ]
+  },
+  {
+    "objectID": "targets.html#pour-plus-dinformation",
+    "href": "targets.html#pour-plus-dinformation",
+    "title": "9  Targets",
+    "section": "9.6 Pour plus d’information",
+    "text": "9.6 Pour plus d’information\nManuel de targets https://books.ropensci.org/targets/",
+    "crumbs": [
+      "Reproductibilité",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Targets</span>"
+    ]
+  },
+  {
+    "objectID": "targets_avance.html",
+    "href": "targets_avance.html",
+    "title": "10  Targets (avancé)",
+    "section": "",
+    "text": "10.1 Compiler un rapport RMarkdown avec des targets\nCe chapitre couvrira certaines notions plus avancées concernant la production de rapport, notamment la gestion des dépendances entre un rapport RMArkdown et des targets.\nUn exemple exhaustif de rapport RMarkdown avec des targets est disponible dans le dépôt GitHub exemple_targets.\nCe répertoire présente comment organiser un projet en un répertoire de travail reproductible. Il représente un exemple répondant aux attentes pour le travail terminal.\nLe fichier _targets.R présenté dans ce répertoire est un exemple de pipeline permettant d’automatiser l’exécution et d’optimiser la mise à jour du projet dans un souci de reproductibilité. Une target rerpésente une étape du projet dont l’exécution dépend du produit d’une ou de targets précédents.\nLe pipeline présenté dans cet exemple suit l’état de plusieurs jeux de données, les assemble, produit une analyse et présente les résultats à l’aide d’une visualisation dans un rapport RMarkdown.\nL’exemple présenté permet de suivre plusieurs fichiers de données et de définir les dépendances du rapport. Comme établir ces dépendances requiert certaines technicalités, je vous suggère de vous inspirer grandement de l’exemple présenté.\nLa librarie tarchetypes simplifie la compilation du fichier .Rmd avec tar_render() qui partage une syntaxe similaire aux autres targets tar_target()\nL’instruction de compilation du fichier .Rmd doit toujours être la dernière targets.",
+    "crumbs": [
+      "Reproductibilité",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Targets (avancé)</span>"
+    ]
+  },
+  {
+    "objectID": "targets_avance.html#compiler-un-rapport-rmarkdown-avec-des-targets",
+    "href": "targets_avance.html#compiler-un-rapport-rmarkdown-avec-des-targets",
+    "title": "10  Targets (avancé)",
+    "section": "",
+    "text": "install.packages(\"tarchetypes\")\ntar_render(\n    cible, \n    \"path/to/file.Rmd\")",
+    "crumbs": [
+      "Reproductibilité",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Targets (avancé)</span>"
+    ]
+  },
+  {
+    "objectID": "targets_avance.html#expliciter-les-dépendances-dans-un-rapport-rmarkdown",
+    "href": "targets_avance.html#expliciter-les-dépendances-dans-un-rapport-rmarkdown",
+    "title": "10  Targets (avancé)",
+    "section": "10.2 Expliciter les dépendances dans un rapport RMarkdown",
+    "text": "10.2 Expliciter les dépendances dans un rapport RMarkdown\nIl est recommandé de charger dans un rapport RMarkdown les données produites dans une target précédente à l’aide de tar_read ou tar_load pour expliciter les dépendances entre les targets. Cela permet de s’assurer que les targets sont bien exécutées dans le bon ordre.\n# Charger les données\ndata &lt;- tar_read(\"nomDuTarget\")\n\n# Afficher les premières lignes\nhead(data)",
+    "crumbs": [
+      "Reproductibilité",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Targets (avancé)</span>"
+    ]
+  },
+  {
+    "objectID": "targets_avance.html#suivre-un-ensemble-de-fichiers-de-données",
+    "href": "targets_avance.html#suivre-un-ensemble-de-fichiers-de-données",
+    "title": "10  Targets (avancé)",
+    "section": "10.3 Suivre un ensemble de fichiers de données",
+    "text": "10.3 Suivre un ensemble de fichiers de données\nIl est possible de suivre un ensemble de fichiers de données en utilisant une target pour lister les fichiers et une autre pour les charger. Cette approche a l’avantage de permettre la mise à jour automatisée du projet lorsque les fichiers de données sont modifiés.\nCette approche requiert trois targets :\n1. Une target pour suivre le dossier contenant les données\ntar_target(\n  name = path, # Cible\n  command = \"./data\", # Dossier contenant les fichiers de données\n  format = \"file\" # Format de la cible\n)\n2. Une target qui liste tous les fichiers du dossier\ntar_target(\n    name = file_paths, # Cible\n    command = list.files(path, full.names = TRUE) # Liste les fichiers dans le dossier\n  )\n3. Une target qui charge les données et les assemblent\ntar_target(\n  name = data, # Cible \n  command = prep_donnees(file_paths) # Jointure des jeux de données\n)",
+    "crumbs": [
+      "Reproductibilité",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Targets (avancé)</span>"
+    ]
+  },
+  {
+    "objectID": "visualiser.html",
+    "href": "visualiser.html",
+    "title": "Visualisation",
+    "section": "",
+    "text": "Les données permettent le développement de la connaissance et d’appuyer ses arguments, mais communiquer un message rerquiert plus. La visualisation de données permet de présenter les données de manière plus attrayante et plus facile à comprendre. Dans cette vignette, nous verrons comment tirer avantage de la visualisation de données.\nObjectifs de section :\n\nReprésenter les attributs d’une visualisatrion efficace\nUtiliser les différentes fonctions graphiques de base sur R\n\n\n \nAu terme de cette section, vous serez en mesure de :\n\nCerner le message à partager et choisir la visualisation appropriée\nUtiliser les paramètres graphiques sur R pour optimiser la visualisation\nUtiliser les libraries graphiques avancées",
+    "crumbs": [
+      "Visualisation"
+    ]
+  },
+  {
+    "objectID": "figures.html",
+    "href": "figures.html",
+    "title": "11  Visualiser",
+    "section": "",
+    "text": "11.1 Attributs d’une bonne figure\nLes données sont essentielles pour supporter ses arguments et convaincre un auditoire. Toutefois, les données brutes endorment les auditeurs, ou pire, les font fuir.\nUn tableau est difficile à comprendre, la visualisation permet de partager plus efficacement son message. Toutefois, une figure mal conçue peut conduire à une fausse interprétation. L’idée est de transmettre une idée sans biaiser le lecteur.\nLe processus de création d’une visualisation réussie débute par l’identification du message à communiquer. Après, il faut développer une idée précise de la figure en la dessinant à la main. Finalement, une figure bénéficie de créativité !\nUne bonne visualisation ne laisse pas de doute quant au message communiqué et le publique visé. Une figure faites pour d’autres scientifiques ne sera pas identique à une figure pour des étudiants du secondaire.\nDe règle générale, il est recommandé de rester simple et d’utiliser moins d’encre.\nIl vaut mieux se limiter à trois dimentions maximum et limiter l’utilisation de symboles et de couleurs. Chaque élément d’une figure doit aider à comprendre le message.\nChoisir le bon type de représentation permet de mettre en valeur plus facilement ce qui doit être illustré.\nRespecter les normes graphiques : le choix des couleurs, taille des caractères, épaisseur de la ligne, disposition des marges, cadrage, etc a un impact important.",
+    "crumbs": [
+      "Visualisation",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Visualiser</span>"
+    ]
+  },
+  {
+    "objectID": "figures.html#choisir-une-visualisation",
+    "href": "figures.html#choisir-une-visualisation",
+    "title": "11  Visualiser",
+    "section": "11.2 Choisir une visualisation",
+    "text": "11.2 Choisir une visualisation\n\nL’utilité de la visualisation\n\nExpliquer un processus\nUn processus se caractérise par une série ordonnée d’éléments. Par exemple, l’ordre des étapes pour réaliser un projet scientifique est essentiel au processus. Pour représenter le processus scientifique et d’autres données de ce type, il vaut mieux prévilégier les visualisation qui exposent la nature ordonnée et connectée des éléments présentés.\n\n\n\nTypes de visualisation recommandé pour un processus (tiré de https://www.simplifiedsciencepublishing.com)\n\n\n\n\nPrésenter une distribution\nUne distribution peut être utilisée pour une seule variable ou pour plusieurs variables continues. Ce type de données sert à montrer la variabilité ou la distribution des données.\n\n\n\nTypes de visualisation recommandé pour une distribution (tiré de https://www.datacamp.com)\n\n\n\n\nMontrer une tendance\nUn jeu de données qui représente une tendance temporelle, par exemple la taille d’une population de caribou au cours des 50 dernières années, est particulièrement approprié pour un diagramme à ligne, un graphique d’aires ou un diagramme spline.\n\n\n\nTypes de visualisation recommandé pour une tendance (tiré de https://www.datacamp.com)\n\n\n\n\nComparer ou contraster\nLorsque l’objectif est de comparer, de contraster ou de montrer une tendance, la représentation choisie doit mette l’emphase sur la différence entre les éléments de la figure. Certaines visualisations sont à prévilégier, comme les graphiques à barres, à lignes ou à boîtes.\n\n\n\nTypes de visualisation recommandé pour une comparaison (tiré de https://www.simplifiedsciencepublishing.com)\n\n\n\n\nÉtablir une relation\nPour les données qui représentent une relation, comme un réseau trophique, certaines visualisation aident à mettre l’emphase sur les liens et la force de ces liens.\n\n\n\nDiagramme de dispersion avec graphique à barres (tiré de https://www.datacamp.com)\n\n\n\n\nFlux\nLes desures de flux sont courant en écologie. La coopération entre chercheurs d’une institution, mesuré en nombre de publications communes, est un exemple. On pense également aux flux d’énergie dans un chaine trophique.\n\n\n\nDiagramme pour données de flux (tiré de https://www.datacamp.com)\n\n\n\n\n\nLe publique cible\n\nAudience scientifique\nUne audience scientifique comprend toute personne qui est habituée à communiquer à l’aide de visualisation. On pense généralement à des étudiants en sciences, des professeurs et des chercheurs. Ces personnes rechercheront de l’information détaillée dans les visualisation, ainsi qu’un design qui met de l’avant le résultat. Le type de visualisation choisie pourra comprendre des détails statistiques comme la valeur p, la taile d’échantillon et les unités.\nLes visualisation courantes sont :\n\nGraphiques à barres (bar plot)\nHistogrammes\nGraphiques à ligne\nBoîte et moustache\nDiagramme de dispersion (scatter plot)\nHeatmaps\n\n\n\n\nDiagramme de dispersion avec boîtes (de https://www.simplifiedsciencepublishing.com/resources/scientific-data-visualization-tools-and-techniques)\n\n\n\n\nAudience publique\nUn publique général peut être peu ou moins familier avec la communication visuelle. Il faut alors limiter la quantité de détails et mettre l’emphase sur le message général. Les illustrations, les infographiques et les cartes sont courants.\n\n\n\nDéplacement des réfugiés ukrainiens entre le 3 et le 5 mars 2022 (de https://www.simplifiedsciencepublishing.com/resources/scientific-data-visualization-tools-and-techniques)",
+    "crumbs": [
+      "Visualisation",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Visualiser</span>"
+    ]
+  },
+  {
+    "objectID": "composantes_graphiques.html",
+    "href": "composantes_graphiques.html",
+    "title": "12  Conception graphique",
+    "section": "",
+    "text": "12.1 Fonctions graphiques\nPlusieurs librairies sont disponibles dans l’univers R pour faciliter la production de graphiques. L’utilisation de Lattice et ggplot2 est très répendu et bien que ces librairies soient intéressantes, elles reposent sur de nombreuses autres librairies. Puisqu’elles se développent constamment et rapidement, elles ont tendance à être instable. De plus, leur utilisation peut être ardue puisqu’elles possèdent des méthodes spécifiques, qui sont quasiment un autre langage de programmation. Bref, malgré que ces librairies soient intéressantes, les graphiques conçus à l’aide de ces librairies sont souvent non-reproductible puisqu’après un certain temps le code ne permettra pas de reproduire la figure. Par expérience, quelques mois suffisent pour que la structure des méthodes change et que la figure ne puisse plus être produite avec le code original.\nLe présent chapitre se concetra donc sur la conception graphique à l’aide du sytème graphique tradditionnel de R : la librairie graphics. La librairie graphics fait partie des librairies de base de R et aucune autre ne sera utilisée. Alors qu’elle est très puissante et permet de tout faire sans avoir recourt à d’autres librairies, le nombre de lignes de code nécessaire pour construire un graphique peut être important. Toutefois, la machinerie graphique de base de R est suffisament intuitive puisqu’elle repose sur la définition de paramètres graphiques.\nLa librairie graphics contient de nombreuses fonctions pour produire des graphiques. La fonction demo(graphics) permet d’obtenir un aperçu de visualisations possibles et du code pour les générer.\nLa commande suivante permet d’obtenir la liste des fonctions disponibles dans la librairie graphics.",
+    "crumbs": [
+      "Visualisation",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Conception graphique</span>"
+    ]
+  },
+  {
+    "objectID": "composantes_graphiques.html#fonctions-graphiques",
+    "href": "composantes_graphiques.html#fonctions-graphiques",
+    "title": "12  Conception graphique",
+    "section": "",
+    "text": "demo(graphics)\n\nls(\"package:graphics\")\n\nLa commande plot()\nLes graphiques sont construits à l’aide de fonctions qui définissent les paramètres graphiques. Par exemple, la fonction plot() permet de construire un graphique de base.\n\nplot(x = 1:10, y = runif(n = 10, min = 1, max = 10))\n\n\n\n\n\n\n\n\n\n\nLa commande par()\nplot() permet de construire des graphiques de base, mais aussi de construire des graphiques plus complexes en combinant plusieurs fonctions. Les paramètres graphiques sont définis dans la commande par(). Lorsqu’une figure est produite, R récupère les valeurs des paramètres graphiques dans la commande par() et les utilise pour construire la figure. 72 paramètres graphiques sont disponibles dans la commande par(). Voyons les 10 premiers\n\npar()[1:10]\n\n$xlog\n[1] FALSE\n\n$ylog\n[1] FALSE\n\n$adj\n[1] 0.5\n\n$ann\n[1] TRUE\n\n$ask\n[1] FALSE\n\n$bg\n[1] \"white\"\n\n$bty\n[1] \"o\"\n\n$cex\n[1] 1\n\n$cex.axis\n[1] 1\n\n$cex.lab\n[1] 1\n\n\nLes paramètres graphiques sont définis par défaut, mais ils peuvent être modifiés en utilisant la commande par(). Par exemple, la commande suivante permet de modifier la couleur de fond de la figure. Il est à noter que les paramètres graphiques doivent être définis avant la commande plot().\n\npar(bg = \"grey\")\nplot(x = 1:10, y = runif(n = 10, min = 1, max = 10))",
+    "crumbs": [
+      "Visualisation",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Conception graphique</span>"
+    ]
+  },
+  {
+    "objectID": "composantes_graphiques.html#visualisations-classiques",
+    "href": "composantes_graphiques.html#visualisations-classiques",
+    "title": "12  Conception graphique",
+    "section": "12.2 Visualisations classiques",
+    "text": "12.2 Visualisations classiques\nIl y a beaucoups de types de graphiques disponibles dans la librairie graphics. Voyons les plus classiques.\n\nNotez que les diagrammes sectioriels, les pie charts, ne sont pas recommandés puisqu’ils sont très difficiles à lire. Il est très difficile de comparer les proportions des secteurs d’un diagramme sectioriel. Il est préférable d’utiliser un diagramme en barres pour comparer des proportions.\n\n\nNuage de points\nAussi appelé diagramme de dispersion, le nuage de points est un graphique qui permet de visualiser la relation entre deux variables continues. La commande plot() permet de construire un nuage de points.\n\nplot(x = 1:10, y = runif(n = 10, min = 1, max = 10))\n\n\n\n\n\n\n\n\nPlusieurs type de nuages de points sont disponibles. Le type de nuage de points est défini par le paramètre type de la commande plot(). Les types de nuages de points disponibles sont les suivants :\n\n\n\nValeur\nDescription\n\n\n\n\np\npoints\n\n\nl\nlignes\n\n\nb\nlignes et points\n\n\nc\nlignes jointes par des segments droits\n\n\no\nlignes jointes par des segments droits et points\n\n\nh\nbarres verticales\n\n\ns\nplateau puis pente\n\n\nS\npente puis creux\n\n\nn\nne rien afficher\n\n\n\n\nplot(x = 1:10, y = runif(n = 10, min = 1, max = 10), type = \"h\")\n\n\n\n\n\n\n\n\n\n\nHistogramme\n\nhist(x = rnorm(n = 1000, mean = 0, sd = 1))\n\n\n\n\n\n\n\n\n\n\nDiagramme en barres\n\nbarplot(height = runif(n = 10, min = 1, max = 10))\n\n\n\n\n\n\n\n\n\n\nBoîte à moustache\n\nboxplot(x = runif(n = 10, min = 1, max = 10))\n\n\n\n\n\n\n\n\n\n\nExpressions mathématiques\nLes expressions mathématiques peuvent être utilisées pour tracer le comportement d’une fonction. Par exemple, la commande curve() permet de visualiser la fonction trigonométrique sin().\n\ncurve(sin(x), from = 0, to = 2 * pi)",
+    "crumbs": [
+      "Visualisation",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Conception graphique</span>"
+    ]
+  },
+  {
+    "objectID": "composantes_graphiques.html#paramètres-graphiques",
+    "href": "composantes_graphiques.html#paramètres-graphiques",
+    "title": "12  Conception graphique",
+    "section": "12.3 Paramètres graphiques",
+    "text": "12.3 Paramètres graphiques\n\nLa fonction par()\n\n\nLa fonte du texte\nLa fonte du texte est définie par le paramètre font de la commande par(). Les valeurs possibles sont les suivantes :\n\n\n\nValeur\nDescription\n\n\n\n\n1\nNormal\n\n\n2\nGras\n\n\n3\nItalique\n\n\n4\nGras et italique\n\n\n\n\npar(font = 3)\nplot(x = 1:10, y = runif(n = 10, min = 1, max = 10))\n\n\n\n\n\n\n\n\n\n\nLa taille du texte\nLa taille du texte est définie par le paramètre cex de la commande par(). La valeur par défaut est 1. La valeur 2 permet d’augmenter la taille du texte de 200% et la valeur 0.5 permet de diminuer la taille du texte de 50%.\n\npar(cex = 0.5, mar=c(1,1,1,1))\nplot(x = 1:10, y = runif(n = 10, min = 1, max = 10))\n\n\n\n\n\n\n\n\n\n\nLe type de lignes\nLe type de lignes est défini par le type de ligne lty, son épaisseur lwd et sa couleur col.\n\nplot(x = 1:10, y = runif(n = 10, min = 1, max = 10), type = \"l\", lty = 2, lwd = 2, col = \"red\")\n\n\n\n\n\n\n\n\n\n\nLes axes\nLes axes sont définis par les paramètres xaxt et yaxt. Les valeurs possibles sont les suivantes :\n\n\n\n\n\n\n\nValeur\nDescription\n\n\n\n\nn\nNe pas afficher les axes\n\n\ns\nAfficher les axes\n\n\nS\nAfficher les axes et les graduations\n\n\nd\nAfficher les axes et les graduations à l’intérieur du graphique\n\n\nD\nAfficher les axes et les graduations à l’intérieur du graphique\n\n\n\n\nplot(x = 1:10, y = runif(n = 10, min = 1, max = 10), xaxt = \"n\", yaxt = \"n\")\n\n\n\n\n\n\n\n\n\n\nLes marges\nLes marges sont définies par les paramètres mar et mai. Les marges extérieures sont définies par le paramètre mar et les marges intérieures sont définies par le paramètre mai. Les marges sont définies en pouces. La commande par() permet de définir les marges extérieures et intérieures.\n\npar(mar = c(1, 1, 1, 1), mai = c(1, 1, 1, 1))\nplot(x = 1:10, y = runif(n = 10, min = 1, max = 10))",
+    "crumbs": [
+      "Visualisation",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Conception graphique</span>"
+    ]
+  },
+  {
+    "objectID": "composantes_graphiques.html#ajouts",
+    "href": "composantes_graphiques.html#ajouts",
+    "title": "12  Conception graphique",
+    "section": "12.4 Ajouts",
+    "text": "12.4 Ajouts\nGraphique vierge\n\nplot(x = 1:10, y = runif(n = 10, min = 1, max = 10), type = \"n\")\n\n\n\n\n\n\n\n\nAxes et échelles\n\nplot(x = 1:10, y = runif(n = 10, min = 1, max = 10), xaxt = \"n\", yaxt = \"n\")\naxis(side = 1, at = 1:10)\n\n\n\n\n\n\n\n\nTexte\n\nplot(x = 1:10, y = 1:10, type = \"n\")\ntext(x = 1:10, y = 1:10, labels = 1:10)\n\n\n\n\n\n\n\n\nTitre de figure\n\nplot(x = 1:10, y = 1:10, type = \"n\")\ntitle(main = \"Titre de la figure\")\n\n\n\n\n\n\n\n\nLégende\n\nplot(x = 1:10, y = runif(n = 10, min = 1, max = 10), col = 1:10)\nlegend(x = \"topright\", legend = 1:10, fill = 1:10)\n\n\n\n\n\n\n\n\nFlèches\n\nplot(x = 1:10, y = 1:10, type = \"n\")\narrows(x0 = 1, y0 = 1, x1 = 10, y1 = 10)\n\n\n\n\n\n\n\n\nLignes\n\nplot(x = 1:10, y = 1:10, type = \"n\")\nlines(x = 1:10, y = 10:1)\n\n\n\n\n\n\n\n\nPoints\n\nplot(x = 1:10, y = 1:10, type = \"n\")\npoints(x = 1:10, y = runif(n = 10, min = 1, max = 10))",
+    "crumbs": [
+      "Visualisation",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Conception graphique</span>"
+    ]
+  },
+  {
+    "objectID": "composantes_graphiques.html#enregistrer-une-figure",
+    "href": "composantes_graphiques.html#enregistrer-une-figure",
+    "title": "12  Conception graphique",
+    "section": "12.5 Enregistrer une figure",
+    "text": "12.5 Enregistrer une figure\nR permet de produire une figure, mais il est aussi possible de l’enregistrer dans un fichier. La commande png() permet d’enregistrer la figure dans un fichier png. La commande dev.off() permet de fermer le fichier sans lequel l’enregistrement ne se complètera pas.\n\npng(\"figure.png\")\nplot(x = 1:10, y = runif(n = 10, min = 1, max = 10))\ndev.off()\n\nD’autres formats sont aussi disponibles. Par exemple, pdf(), jpeg(), bmp() ou tiff().",
+    "crumbs": [
+      "Visualisation",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Conception graphique</span>"
+    ]
+  },
+  {
+    "objectID": "composantes_graphiques.html#ressources-supplémentaires",
+    "href": "composantes_graphiques.html#ressources-supplémentaires",
+    "title": "12  Conception graphique",
+    "section": "12.6 Ressources supplémentaires",
+    "text": "12.6 Ressources supplémentaires\nL’art graphique sous R propose un guide d’utilisation du système graphique traditionnel de R pour produire des graphiques de haute qualité https://github.com/EcoNumUdS/BIO500/blob/master/references/graphsonr.pdf",
+    "crumbs": [
+      "Visualisation",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Conception graphique</span>"
+    ]
+  },
+  {
+    "objectID": "cartes.html",
+    "href": "cartes.html",
+    "title": "13  Conception graphique : les cartes",
+    "section": "",
+    "text": "13.1 Les cartes avec R\nLes données spatiales sont des données qui sont associées à des coordonnées géographiques qui peuvent être représentées sous forme de cartes. Alors que certaines tendances de covariables peuvent être identifiées à l’aide de graphiques classiques, les cartes permettent de visualiser les données sur une carte géographique. Les cartes sont particulièrement utiles pour identifier des tendances spatiales et des clusters. Dans ce chapitre, nous allons explorer les différentes méthodes pour créer des cartes à l’aide de R.\nIl existe plusieurs librairies pour créer des cartes avec R. Les librairies les plus populaires sont sf et terra. La librairie sf est une librairie qui permet de manipuler des données vectorielles et de créer des cartes. La librairie terra est une librairie qui permet de manipuler des données raster et de créer des cartes. Dans ce chapitre, nous allons explorer les deux librairies pour créer des cartes.",
+    "crumbs": [
+      "Visualisation",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Conception graphique : les cartes</span>"
+    ]
+  },
+  {
+    "objectID": "cartes.html#les-cartes-avec-r",
+    "href": "cartes.html#les-cartes-avec-r",
+    "title": "13  Conception graphique : les cartes",
+    "section": "",
+    "text": "Les données raster\nLes données raster sont des données qui sont associées à des coordonnées géographiques et qui sont stockées sous forme de grille. On retrouve ces données dans des fichiers .tif ou .TIFF.\nLes données raster sont souvent utilisées pour représenter des données continues, telles que la température ou la précipitation, ou catégoriques, telles que la couverture du sol. Les données raster peuvent être représentées sous forme de cartes en utilisant des couleurs pour représenter les valeurs des données.\nLa librairie terra permet de manipuler des données raster. La fonction rast() permet de lire un fichier raster (.tif) ou créer un objet raster à partir d’une matrice. Par exemple, la commande suivante crée un objet raster à partir d’une matrice de valeurs aléatoires.\n\nlibrary(terra)\n\nterra 1.8.93\n\n# Créer une matrice de valeurs aléatoires\nmat &lt;- matrix(data = runif(n = 100, min = 1, max = 10), nrow = 10, ncol = 10)\n\n# Créer un objet raster à partir de la matrice\nr &lt;- rast(mat)\n\n# Afficher l'objet raster\nr\n\nclass       : SpatRaster \nsize        : 10, 10, 1  (nrow, ncol, nlyr)\nresolution  : 1, 1  (x, y)\nextent      : 0, 10, 0, 10  (xmin, xmax, ymin, ymax)\ncoord. ref. :  \nsource(s)   : memory\nname        :    lyr.1 \nmin value   : 1.038126 \nmax value   : 9.941839 \n\n\nL’objet raster r contient les données raster et les informations sur les coordonnées géographiques. Les données raster peuvent être affichées sous forme de carte en utilisant la fonction plot().\n\n# Afficher les données raster sous forme de carte\nplot(r)\n\n\n\n\n\n\n\n\nLes données raster peuvent être manipulées de différentes manières, telles que la transformation, la reclassification et la combinaison de données raster. Les données raster peuvent également être combinées avec des données vectorielles pour créer des cartes plus complexes.\n\n\nLes données vectorielles\nLes données vectorielles sont des données qui sont associées à des coordonnées géographiques et qui sont stockées sous forme de points, de lignes ou de polygones. On retrouve ce type de données stockées dans des fichiers .shp, .gpkg, etc.\nLes données vectorielles sont souvent utilisées pour représenter des données discrètes, telles que les limites administratives ou les points d’intérêt. Les données vectorielles peuvent être représentées sous forme de cartes en utilisant des symboles pour représenter les données.\nLa librairie sf permet de manipuler des données vectorielles. La fonction st_read() permet de lire des données vectorielles à partir d’un fichier. Par exemple, la commande suivante lit des données vectorielles à partir d’un fichier shapefile.\n\nlibrary(sf)\n\nLinking to GEOS 3.12.2, GDAL 3.11.4, PROJ 9.4.1; sf_use_s2() is TRUE\n\n# Sauver des données vectorielles dans un fichier shapefile\npts &lt;- st_sfc(st_point(c(1, 1)), st_point(c(2, 2)), st_point(c(3, 3)), st_point(c(4, 4)))\nshp &lt;- st_sf(data.frame(id = 1:4), geometry = pts)\nshp$nom &lt;- c(\"A\", \"B\", \"C\", \"D\") # Donner un nom aux points\nst_write(obj = shp, dsn = \"assets/points.shp\", append = TRUE) # Sauver les données\n\nwriting: substituting ENGCRS[\"Undefined Cartesian SRS with unknown unit\"] for missing CRS\n\n\nUpdating layer `points' to data source `assets/points.shp' using driver `ESRI Shapefile'\nWriting 4 features with 2 fields and geometry type Point.\n\n# Lire des données vectorielles à partir d'un fichier shapefile\nnc &lt;- st_read(dsn = \"assets/points.shp\")\n\nReading layer `points' from data source \n  `/home/runner/work/BIO500/BIO500/livre/assets/points.shp' using driver `ESRI Shapefile'\nSimple feature collection with 4 features and 2 fields\nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: 1 ymin: 1 xmax: 4 ymax: 4\nProjected CRS: Undefined Cartesian SRS with unknown unit\n\n# Afficher les données vectorielles\nnc\n\nSimple feature collection with 4 features and 2 fields\nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: 1 ymin: 1 xmax: 4 ymax: 4\nProjected CRS: Undefined Cartesian SRS with unknown unit\n  id nom    geometry\n1  1   A POINT (1 1)\n2  2   B POINT (2 2)\n3  3   C POINT (3 3)\n4  4   D POINT (4 4)\n\n\nChaque ligne de l’objet nc contient les données vectorielles associées à un point. La colonne geometry contient les coordonnées géographiques du point et les autres colonnes contiennent les attributs associés au point.\nLes données vectorielles peuvent être affichées sous forme de carte en utilisant la fonction plot().\n\n# Afficher les données vectorielles sous forme de carte\nplot(nc)\n\n\n\n\n\n\n\n\nLes données vectorielles peuvent être manipulées de différentes manières, telles que la transformation, la reclassification et la combinaison de données vectorielles.\n\nVisualiser interactivement des données vectorielles\nLa librairie leaflet permet de créer des cartes interactives à partir de données vectorielles. La fonction leaflet() permet de créer une carte interactive et la fonction addMarkers() permet d’ajouter des marqueurs à la carte. Par exemple, la commande suivante crée une carte interactive avec des marqueurs.\nlibrary(leaflet)\n\n# Visualiser interactivement la position du point suivant sur une carte OpenStreetMap\nm &lt;- leaflet() |&gt; addTiles() |&gt; addPopups(-71.9248274566659, 45.38004875084951, 'BIO500 se tient ici')\n\nm\nPlus d’informations sur la librairie leaflet sont disponibles sur ce tutoriel : https://www.geeksforgeeks.org/leaflet-package-in-r/.",
+    "crumbs": [
+      "Visualisation",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Conception graphique : les cartes</span>"
+    ]
+  },
+  {
+    "objectID": "communiquer.html",
+    "href": "communiquer.html",
+    "title": "Communication scientifique",
+    "section": "",
+    "text": "La communication scientifique prend plusieurs formes. Outre les présentations et la publication d’articles scientifiques, certains travaux de recherche peuvent être communiqués sous forme de mémoires ou de thèses ou encore être vulgarisés. Dans tous les cas, il est important que la communication s’insère dans le workflow du projet. C’est l’étape logique qui suit l’utilisation des données (analyses, visualisation). Plusieurs outils sont disponibles dans RStudio pour la communication scientifique. Dans ce cours, nous nous concentrerons sur l’utilisation de RMarkdown pour la rédaction de rapports, d’articles scientifiques et de présentations. Nous verrons également comment gérer les références bibliographiques.\nObjectifs de section :\n\nUtiliser la librairie rticles pour la rédaction de rapports et d’articles scientifiques\nGénérer une bibliographie\n\n\n \nAu terme de cette section, vous serez en mesure de :\n\nRédaction de rapports et d’articles scientifiques au moyen de RMarkdown\nMise en page\nInsertion de figures et tableaux\nGestion des références\nPréparer une présentation avec RMarkdown",
+    "crumbs": [
+      "Communication scientifique"
+    ]
+  },
+  {
+    "objectID": "rapports_rmd.html",
+    "href": "rapports_rmd.html",
+    "title": "14  Rapports RMarkdown",
+    "section": "",
+    "text": "14.1 Un rapport stylé avec rticles\nL’article scientifique est la forme de communication la plus répandue. C’est la forme de communication officielle, qui permet de faire connaître les résultats de ses recherches et qui est utilisée pour référencer les travaux des autres. Heureusement, il existe des outils pour faciliter la rédaction d’articles scientifiques et leur intégration dans le workflow d’un projet. De cette façon, il est possible de rendre les rapports reproductibles, ce qui est pratique lorsqu’on veut modifier une figure sans que la mise en page ne change ! Dans ce chapitre, nous allons voir comment utiliser RMarkdown pour rédiger des rapports scientifiques.\nLes bases de RMarkdown sont présentés dans le Chapitre 8. Il est certain que débuter avec RMarkdown est plus exigeant que d’utiliser Word. Parfois il est préférable d’utiliser Word, particulièrement pour les courts documents qui ne demandent pas beaucoup de travail. Cependant, les documents qui doivent évoluer dans le temps, qui sont longs, qui exigent la collaboration ou qui demandent beaucoup de travail de mise en page sont plus facilement gérés avec RMarkdown. De plus, RMarkdown permet de faire des rapports reproductibles, qui reposent sur un gabarit, ce qui est un avantage non négligeable. Ainsi, il est possible de ne s’occuper que du contenu et de laisser le style à RMarkdown.\nIl existe plusieurs gabarits pour RMarkdown, qui permettent de créer des rapports stylés. Le package rticles permet d’installer plusieurs gabarits, dont certains sont très utiles pour les rapports scientifiques. Pour installer le package rticles, il faut utiliser la commande suivante :\ninstall.packages(\"rticles\")\nUn gabarit peut être sélectionné à partir du menu File &gt; New File &gt; R Markdown... dans RStudio. Il est possible de choisir un gabarit parmi ceux disponibles dans le package rticles et de l’adapter à ses besoins. Par exemple, le gabarit PNAS Journal Article ressemble à un article scientifique publié dans la revue PNAS :\nPlusieurs fichiers sont créés lors de la création du gabarit. En plus du .Rmd, on retrouve un .bib pour la blibliographie, un .cls et .sty pour les aspects visuels. Il est possible de modifier le style du rapport en modifiant certains fichiers.",
+    "crumbs": [
+      "Communication scientifique",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Rapports RMarkdown</span>"
+    ]
+  },
+  {
+    "objectID": "rapports_rmd.html#un-rapport-stylé-avec-rticles",
+    "href": "rapports_rmd.html#un-rapport-stylé-avec-rticles",
+    "title": "14  Rapports RMarkdown",
+    "section": "",
+    "text": "Personnaliser le rapport\nChoisir un gabarit générique\nLe gabarit PNAS Journal Article est pratique, il produit automatiquement un rapport en deux colonnes. Il est possible de changer le gabarit pour n’avoir qu’une colonne en modifiant le YAML du rapport .Rmd :\npnas_type: pnasmathematics\nPersonnaliser le style\nIl est possible de personnaliser le style du rapport en modifiant les fichiers .cls et .sty. Par exemple, il est possible de changer la couleur des liens hypertextes en modifiant la ligne suivante du fichier pnas-new.cls :\n%% Set URL link color & font\n\\renewcommand\\UrlFont{\\color{black}\\sffamily}",
+    "crumbs": [
+      "Communication scientifique",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Rapports RMarkdown</span>"
+    ]
+  },
+  {
+    "objectID": "rapports_rmd.html#accéder-aux-données",
+    "href": "rapports_rmd.html#accéder-aux-données",
+    "title": "14  Rapports RMarkdown",
+    "section": "14.2 Accéder aux données",
+    "text": "14.2 Accéder aux données\nIl est possible d’accéder aux données dans un rapport RMarkdown. Pour ce faire, il faut charger les données dans le rapport et les afficher. Par exemple, pour charger un fichier CSV et afficher les premières lignes :\n# Charger les données\ndata &lt;- read.csv(\"data.csv\")\n\n# Afficher les premières lignes\nhead(data)\nToutefois, cette façon de faire ne permet pas d’établir la dépendance entre le rapport et les données. Il est préférable de charger les données produites dans un autre target à l’aide de tar_read ou tar_load :\n# Charger les données\ndata &lt;- tar_read(\"nomDuTarget\")\n\n# Afficher les premières lignes\nhead(data)",
+    "crumbs": [
+      "Communication scientifique",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Rapports RMarkdown</span>"
+    ]
+  },
+  {
+    "objectID": "rapports_rmd.html#référencer-une-figure-ou-une-image",
+    "href": "rapports_rmd.html#référencer-une-figure-ou-une-image",
+    "title": "14  Rapports RMarkdown",
+    "section": "14.3 Référencer une figure ou une image",
+    "text": "14.3 Référencer une figure ou une image\nIl est possible de référencer une figure dans un rapport RMarkdown. Pour ce faire, il faut ajouter un label à la figure, puis utiliser la fonction ref pour faire référence à la figure.\nCréer une figure avec un label :\n'''{r figs, fig.cap=\"\\\\label{fig:plot1}Légende figure.\", fig.width=7, fig.height=6}\n# Créer la figure\nplot(data$X, data$Y)\n'''\n\n'''{r figs, fig.cap=\"\\\\label{fig:plot1}Légende figure.\", fig.width=7, fig.height=6}\n# Insérer une image\n![Légende figure. \\label{fig:img1}](\"../results/plot_lm.pdf\"){width=50% height=40%}\n'''\nFaire référence :\nJe fais référence à la Figure \\ref{fig:plot1} et à l'image \\ref{fig:img1}.\n.center[↓]\nJe fais référence à la Figure 1 et à l'image 1.",
+    "crumbs": [
+      "Communication scientifique",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Rapports RMarkdown</span>"
+    ]
+  },
+  {
+    "objectID": "rapports_rmd.html#bibliographie-et-références",
+    "href": "rapports_rmd.html#bibliographie-et-références",
+    "title": "14  Rapports RMarkdown",
+    "section": "14.4 Bibliographie et références",
+    "text": "14.4 Bibliographie et références\nIl est possible de citer des articles dans un rapport RMarkdown. Pour ce faire, il faut ajouter un fichier .bib contenant les références, puis utiliser la clé unique d’un article pour le citer.\nLe fichier .bib est spécifié dans le YAML du rapport et contient les références suivantes :\n@inproceedings{belkin2002using,\n  title={Using manifold stucture for partially labeled classification},\n  author={Belkin, Mikhail and Niyogi, Partha},\n  booktitle={Advances in neural information processing systems},\n  pages={929--936},\n  year={2002}\n}\n\n@article{berard1994embedding,\n  title={Embedding Riemannian manifolds by their heat kernel},\n  author={B{\\'e}rard, Pierre and Besson, G{\\'e}rard and Gallot, Sylvain},\n  journal={Geometric \\& Functional Analysis GAFA},\n  volume={4},\n  number={4},\n  pages={373--398},\n  year={1994},\n  publisher={Springer}\n}\nCiter un article du fichier .bib :\nJe fais référence à la première entrée du fichier.bib @belkin2002using.\nPour référencer plusieurs références:\nJe fais référence à plusieurs références [@belkin2002using;@berard1994embedding]\nIl est recommandé d’utiliser un logiciel de gestion de références comme Zotero ou Mendeley pour gérer les références. Ces logiciels permettent d’exporter les références dans un fichier .bib à partir de votre librairie d’articles. Il est également possible d’exporter les références depuis Google Scholar et de les copier-coller dans un fichier .bib, mais cela est moins pratique.",
+    "crumbs": [
+      "Communication scientifique",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Rapports RMarkdown</span>"
+    ]
+  },
+  {
+    "objectID": "programmer.html",
+    "href": "programmer.html",
+    "title": "Programmation",
+    "section": "",
+    "text": "Cette section présente certaines notions de base de la programmation en R. Elle est destinée à ceux qui ont besoin d’une mise à jour.",
+    "crumbs": [
+      "Programmation"
+    ]
+  },
+  {
+    "objectID": "bonnes_pratiques.html",
+    "href": "bonnes_pratiques.html",
+    "title": "15  Bonnes pratiques",
+    "section": "",
+    "text": "15.1 Projets autonomes\nLecture à faire avant le cours\nhttps://x.com/hadleywickham/status/940021008764846080\nVoici quelques concepts de programmation et conseils utiles pour débuter le cours.\nUn projet autonome est un projet qui contient toutes les ressources nécessaires à son exécution. Cela inclut les scripts, les données, et toute autre ressource nécessaire. L’objectif est de rendre le projet facilement partageable et exécutable sur n’importe quel autre ordinateur sans nécessiter de configurations supplémentaires.\nPour créer un projet autonome :\nTout script est écrit en assumant qu’il sera exécuté depuis le dossier projet (root) dans une session R fraiche. Il doit créer tout ce dont il a besoin ou accéder à des ressources (scripts et données) en spécifiant le chemin depuis le dossier projet.\nCes pratiques garantissent que votre projet peut être facilement partagé et exécuté par d’autres, améliorant ainsi la reproductibilité et la collaboration.",
+    "crumbs": [
+      "Programmation",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Bonnes pratiques</span>"
+    ]
+  },
+  {
+    "objectID": "bonnes_pratiques.html#projets-autonomes",
+    "href": "bonnes_pratiques.html#projets-autonomes",
+    "title": "15  Bonnes pratiques",
+    "section": "",
+    "text": "Placez tous les fichiers relatifs au projet dans un seul dossier.\nUtilisez des chemins relatifs pour accéder aux fichiers et aux ressources à l’intérieur du projet.\nÉvitez d’utiliser des chemins absolus ou des commandes comme setwd() qui dépendent de l’environnement spécifique de l’utilisateur.",
+    "crumbs": [
+      "Programmation",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Bonnes pratiques</span>"
+    ]
+  },
+  {
+    "objectID": "bonnes_pratiques.html#setwd-ne-devrait-jamais-être-utilisé",
+    "href": "bonnes_pratiques.html#setwd-ne-devrait-jamais-être-utilisé",
+    "title": "15  Bonnes pratiques",
+    "section": "15.2 setwd() ne devrait jamais être utilisé",
+    "text": "15.2 setwd() ne devrait jamais être utilisé\nPour des raisons évidentes, l’utilisation de la commande setwd() ne fonctionnera jamais sur aucun autre ordinateur que celui de son auteur, réduisant ainsi la reproductibilité d’un projet. La solution : spécifier le chemin depuis le dossier projet pour accéder à un objet ou un script.\nComment éviter l’utilisation du setwd ?\n\nOrganiser chaque projet dans un seul dossier.\nPour travailler sur un projet, lancez votre session R depuis le dossier projet.",
+    "crumbs": [
+      "Programmation",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Bonnes pratiques</span>"
+    ]
+  },
+  {
+    "objectID": "bonnes_pratiques.html#structurer-son-projet",
+    "href": "bonnes_pratiques.html#structurer-son-projet",
+    "title": "15  Bonnes pratiques",
+    "section": "15.3 Structurer son projet",
+    "text": "15.3 Structurer son projet\nLa structuration d’un projet est un élément clé pour sa reproductibilité et sa maintenance. La structure comprend l’organisation des fichiers ainsi que la documentation du code et du projet.\nÀ titre d’emxemple, voici un projet qui respecte les bonnes pratiques de structuration exigées par les journeaux scientifiques : vcameron1/Metapop_ms\nVoyons quelques éléments clés d’une structure optimale.\n\nStructure du répertoire\nUne structure bien organisée facilite la navigation dans le projet et la localisation des ressources. Voici une structure de projet recommandée :\nmonProjet/\n│\n├── .git/\n│\n├── data/\n│   ├── raw/\n│   └── processed/\n│\n├── scripts/\n│   ├── data_cleaning.R\n│   ├── data_analysis.R\n│   └── data_analysis.R\n│\n├── results/\n│\n├── reports/\n│   ├── report.Rmd\n│   └── report.pdf\n│\n├── .gitignore\n│\n└── README.md\n\ndata/ : contient les données. Idéalement, les données brutes et traitées séparées.\nscripts/ : contient les scripts.\nresults/ : contient les résultats générées par les scripts.\nreports/ : contient les rapports et documents rédigés.\n.gitignore : fichier qui spécifie les fichiers à ignorer lors de la gestion de version.\nREADME.md : contient une description du projet et des instructions pour son exécution.\n\n\n\nDocumentation\nLa documentation est essentielle pour la reproductibilité et la maintenance d’un projet. Elle permet de comprendre le contexte, les objectifs et les résultats du projet. Voici deux éléments à documenter :\n\nLe code : par des commentaires pour faciliter la compréhension.\nLe projet : le fichier README.md permet de documenter le projet avec une description, une structure, des instructions et des informations complémentaires.\n\n\nLes commentaires\nLes commentaires sont des annotations dans le code source qui expliquent son fonctionnement. Ils permettent de structurer et de documenter le code, d’expliquer les choix de conception et de faciliter la compréhension du code par d’autres développeurs. Voici quelques bonnes pratiques pour écrire des commentaires :\n\nCommenter le code de manière concise et claire.\nUtiliser des commentaires pour diviser le script en blocs cohérents.\nUtiliser des commentaires pour expliquer le code complexe ou non évident.\nÉviter les commentaires inutiles ou redondants.\nMettre à jour les commentaires en même temps que le code.\n\n#############################################\n# Ce script permet de nettoyer les données\n#\n# Auteur: Victor Cameron\n# Date: 2021-10-01\n#############################################\n\n# 1. Charger les données\ndata &lt;- read.csv(\"data/raw/data.csv\")\n\n# 2. Nettoyer les données\nclean_data &lt;- clean_data(data)\n\n\nLe fichier README.md\nLe fichier README est un fichier texte qui contient des informations sur le projet. Il est souvent utilisé pour présenter le projet à d’autres utilisateurs. Le fichier README.md est souvent le premier fichier que les utilisateurs verront lorsqu’ils accéderont à votre dépôt. Il est donc important de bien le rédiger.\nQuelques éléments à inclure dans un fichier README.md :\n\nTitre du projet : nom du projet.\nDescription du projet : objectifs, contexte, données, méthodes, résultats. Ça peut être un résumé du projet.\nStructure du répertoire : organisation des fichiers, scripts et ressources.\nDescription des fichiers : rôles et contenus des principaux fichiers.\nInstructions\n\nComment exécuter le projet.\nComment reproduire les résultats.\nComment accéder aux données et aux ressources.\n\nAuteurs et contributeurs : qui a travaillé sur le projet.\n\n\n\n\n.gitignore\nLe fichier .gitignore spécifie les fichiers et dossiers à ignorer lors de la gestion de version avec Git. Il permet d’éviter d’inclure des fichiers temporaires, des fichiers de données volumineux ou des fichiers sensibles dans le dépôt Git. Voici un exemple de fichier .gitignore :\n# Fichiers temporaires\n.Rhistory\n.RData\n.Rproj.user/\n\n# Fichiers de données volumineux\ndata/raw/*.csv\ndata/raw/*.zip\n\n# Fichiers sensibles\nconfig.yml\ncredentials.json\nDocumentation : https://git-scm.com/docs/gitignore",
+    "crumbs": [
+      "Programmation",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Bonnes pratiques</span>"
+    ]
+  },
+  {
+    "objectID": "debugger.html",
+    "href": "debugger.html",
+    "title": "16  Déboguer",
+    "section": "",
+    "text": "16.1 Erreurs courantes\nUne tâche importante du programmeur est de déboguer son code. Qui n’oublie pas une virgule, une parenthèse ? Il existe des astuces pour être efficace. En voici quelques-unes.",
+    "crumbs": [
+      "Programmation",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Déboguer</span>"
+    ]
+  },
+  {
+    "objectID": "debugger.html#erreurs-courantes",
+    "href": "debugger.html#erreurs-courantes",
+    "title": "16  Déboguer",
+    "section": "",
+    "text": "Syntaxe : oubli de parenthèse, de virgule, de guillemets, etc.\nErreur d’indexation : vérifier que les index sont dans les limites de l’objet\nErreur de type : tentatives d’effectuer des opérations incompatibles avec le type de données (result &lt;- \"10\" + 5)\nObjet inexistant : vérifier l’orthographe de l’objet et qu’il existe dans l’environnement de travail\nErreurs logiques : problèmes liés à la logique du code, comme des boucles infinies ou des conditions incorrectes\nDonnées manquantes (NA) : problèmes liés à la présence de données manquantes et à la manière dont elles sont traitées R my_vector &lt;- c(1, 2, NA, 4) sum(my_vector)\nPackages : Problèmes avec l’installation, le chargement ou l’utilisation de packages",
+    "crumbs": [
+      "Programmation",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Déboguer</span>"
+    ]
+  },
+  {
+    "objectID": "debugger.html#astuces-de-débogage",
+    "href": "debugger.html#astuces-de-débogage",
+    "title": "16  Déboguer",
+    "section": "16.2 Astuces de débogage",
+    "text": "16.2 Astuces de débogage\n\nTester régulièrement son code\nLire attentivement les messages d’erreurs et les avertissements (warnings) imprimés dans la console\nRedémarrer sa session R et réessayer son code. Parfois des objets sont sauvés dans la mémoire et causent ou masquent les erreurs\nRechercher la documentation de la commande ?? (eg. ??plot)\nGoogler le message d’erreur pour en comprendre la signification\nInspecter les objets dans l’environnement de travail avec ls()",
+    "crumbs": [
+      "Programmation",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Déboguer</span>"
+    ]
+  },
+  {
+    "objectID": "debugger.html#ressources",
+    "href": "debugger.html#ressources",
+    "title": "16  Déboguer",
+    "section": "16.3 Ressources",
+    "text": "16.3 Ressources\nVoici quelques ressources pour vous aider à déboguer votre code :\n\nStackoverflow\nAteliers R du CSBQ\nGoogle\nAteliers Data Carpentry\nChatGPT n’est pas formidable pour R, mais peut donner des pistes d’interprétation",
+    "crumbs": [
+      "Programmation",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Déboguer</span>"
+    ]
+  },
+  {
+    "objectID": "fonctions.html",
+    "href": "fonctions.html",
+    "title": "17  Fonctions",
+    "section": "",
+    "text": "Une fonction est une séquence d’instructions groupées sous un nom, qui peut être appelée et exécutée de manière répétée. Vous connaissez probablement déjà quelques fonctions de base de R, comme mean() ou sample(). R permet d’utiliser des fonctions existantes, mais aussi d’en créer de nouvelles.\nStructure d’une fonction :\nma_fonction &lt;- function(var1, var2) {\n  # instructions\n  resultat &lt;- var1 + var2\n  return(resultat)\n}\nUtiliser une fonction :\nma_fonction(1, 2)\nParamètres et arguments\nLes paramètres sont les noms des variables définis dans la signature de la fonction. Les arguments sont les valeurs passées à la fonction lors de son appel.\nma_fonction(arg1 = 1, arg2 = 2)\nRetour de valeurs\nLa commande return() permet de retourner une valeur à la fin de la fonction. Il est important de spécifier la valeur à retourner pour être explicite. Si aucune valeur n’est retournée, la fonction retourne la dernière valeur calculée, ce qui peut porter à confusion et être la cause d’erreurs. Il est possible de retourner plusieurs valeurs en les insérant dans une liste.\nPortée des variables\nLes variables définies dans une fonction sont locales à cette fonction. Elles ne sont pas accessibles en dehors de la fonction. Les variables définies en dehors de la fonction sont accessibles à l’intérieur de la fonction, mais ne sont pas modifiées par la fonction.\nFonctions sans retour de valeur\nIl est possible de créer des fonctions qui ne retournent aucune valeur. Ces fonctions sont utiles pour effectuer des opérations de type side-effect, comme l’affichage de messages ou la création de fichiers. Elles retournent la valeur NULL par défaut.\nmy_void_function &lt;- function() {\n  print(\"Cette fonction ne renvoie aucune valeur.\")\n}\nFonctions avec des arguments par défaut\nIl est possible de définir des valeurs par défaut pour les arguments d’une fonction. Ces valeurs sont utilisées si l’utilisateur ne spécifie pas de valeur pour l’argument.\nmy_function &lt;- function(arg1 = 1, arg2 = 2) {\n  resultat &lt;- arg1 + arg2\n  return(resultat)\n}\nFonctions anonymes (lambda)\nConcept plus avancé. Il est possible de créer des fonctions anonymes, c’est-à-dire des fonctions qui n’ont pas de nom. Ces fonctions sont utiles pour créer des fonctions simples qui ne seront utilisées qu’une seule fois.\napply(my_matrix, 1, function(row) sum(row))",
+    "crumbs": [
+      "Programmation",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Fonctions</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "Réferences",
+    "section": "",
+    "text": "R ressources\nHands-On Programming with R\nIntroduction to R",
+    "crumbs": [
+      "Réferences"
+    ]
+  }
+]

@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Victor Cameron">
+
+<title>5&nbsp; SQL et RSQLite – Méthodes en écologie computationelle</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./exercices_1.html" rel="next">
+<link href="./bases_de_donnees.html" rel="prev">
+<link href="./logo.jpg" rel="icon" type="image/jpeg">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-00ccf60c28c3bdf2d57f5131fbf16f11.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./entreposer.html">Entreposage</a></li><li class="breadcrumb-item"><a href="./sql.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">SQL et RSQLite</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Méthodes en écologie computationelle</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/EcoNumUdS/BIO500" title="Code source" class="quarto-navigation-tool px-1" aria-label="Code source"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Basculer en mode lecteur">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Recherche"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Préface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./donnees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Données</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./donnees_ecologiques.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Données écologiques</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Nettoyage et validation</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./entreposer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Entreposage</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bases_de_donnees.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bases de données</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sql.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">SQL et RSQLite</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exercices_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exercices</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./reproductibilite.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reproductibilité</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Git</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./markdown1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">RMarkdown</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./targets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Targets</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./targets_avance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Targets (avancé)</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./visualiser.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualisation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./figures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Visualiser</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./composantes_graphiques.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Conception graphique</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cartes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conception graphique : les cartes</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./communiquer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Communication scientifique</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rapports_rmd.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Rapports RMarkdown</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./programmer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programmation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bonnes_pratiques.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Bonnes pratiques</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./debugger.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Déboguer</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fonctions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Fonctions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Réferences</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table des matières</h2>
+   
+  <ul>
+  <li><a href="#le-langage-sql" id="toc-le-langage-sql" class="nav-link active" data-scroll-target="#le-langage-sql"><span class="header-section-number">5.1</span> Le langage <code>SQL</code></a></li>
+  <li><a href="#rsqlite-pour-interagir-avec-la-base-de-données" id="toc-rsqlite-pour-interagir-avec-la-base-de-données" class="nav-link" data-scroll-target="#rsqlite-pour-interagir-avec-la-base-de-données"><span class="header-section-number">5.2</span> <code>RSQLite</code> pour interagir avec la base de données</a>
+  <ul class="collapse">
+  <li><a href="#conceptualiser-et-concevoir" id="toc-conceptualiser-et-concevoir" class="nav-link" data-scroll-target="#conceptualiser-et-concevoir">Conceptualiser et concevoir</a></li>
+  <li><a href="#connexion-au-serveur" id="toc-connexion-au-serveur" class="nav-link" data-scroll-target="#connexion-au-serveur">1. Connexion au serveur</a></li>
+  <li><a href="#créer-les-tables" id="toc-créer-les-tables" class="nav-link" data-scroll-target="#créer-les-tables">2. Créer les tables</a></li>
+  <li><a href="#injecter-des-données" id="toc-injecter-des-données" class="nav-link" data-scroll-target="#injecter-des-données">3. Injecter des données</a></li>
+  <li><a href="#effectuer-des-requêtes" id="toc-effectuer-des-requêtes" class="nav-link" data-scroll-target="#effectuer-des-requêtes">4. Effectuer des requêtes</a></li>
+  <li><a href="#fermer-la-connexion" id="toc-fermer-la-connexion" class="nav-link" data-scroll-target="#fermer-la-connexion">5. Fermer la connexion</a></li>
+  </ul></li>
+  <li><a href="#sec-sql_plus" id="toc-sec-sql_plus" class="nav-link" data-scroll-target="#sec-sql_plus"><span class="header-section-number">5.3</span> Utilisation avancée du <code>SQL</code></a>
+  <ul class="collapse">
+  <li><a href="#sélectionner-des-données" id="toc-sélectionner-des-données" class="nav-link" data-scroll-target="#sélectionner-des-données">Sélectionner des données</a></li>
+  <li><a href="#filtrer-la-requête" id="toc-filtrer-la-requête" class="nav-link" data-scroll-target="#filtrer-la-requête">Filtrer la requête</a></li>
+  <li><a href="#autres-commandes" id="toc-autres-commandes" class="nav-link" data-scroll-target="#autres-commandes">Autres commandes</a></li>
+  <li><a href="#agréger-linformation" id="toc-agréger-linformation" class="nav-link" data-scroll-target="#agréger-linformation">Agréger l’information</a></li>
+  <li><a href="#jointures-entre-tables" id="toc-jointures-entre-tables" class="nav-link" data-scroll-target="#jointures-entre-tables">Jointures entre tables</a></li>
+  <li><a href="#requêtes-imbriquées" id="toc-requêtes-imbriquées" class="nav-link" data-scroll-target="#requêtes-imbriquées">Requêtes imbriquées</a></li>
+  <li><a href="#mettre-à-jour-des-enregistrements" id="toc-mettre-à-jour-des-enregistrements" class="nav-link" data-scroll-target="#mettre-à-jour-des-enregistrements">Mettre à jour des enregistrements</a></li>
+  <li><a href="#supprimer-des-enregistrements" id="toc-supprimer-des-enregistrements" class="nav-link" data-scroll-target="#supprimer-des-enregistrements">Supprimer des enregistrements</a></li>
+  <li><a href="#create-table" id="toc-create-table" class="nav-link" data-scroll-target="#create-table">CREATE TABLE</a></li>
+  </ul></li>
+  <li><a href="#refs" id="toc-refs" class="nav-link" data-scroll-target="#refs"><span class="header-section-number">5.4</span> Refs</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/EcoNumUdS/BIO500/edit/main/sql.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/EcoNumUdS/BIO500/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./entreposer.html">Entreposage</a></li><li class="breadcrumb-item"><a href="./sql.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">SQL et RSQLite</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-SQL" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">SQL et RSQLite</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="le-langage-sql" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="le-langage-sql"><span class="header-section-number">5.1</span> Le langage <code>SQL</code></h2>
+<p>Le <code>SQL</code> est un langage informatique créé spécifiquement pour manipuler des bases de données relationnelles. C’est le langage utilisé pour transmettre nos instructions au SGBD. Il permet de :</p>
+<ol type="1">
+<li>Créer une base de données (<code>CREATE DATABASE</code>).</li>
+<li>Créer des tables et établir des relations (<code>CREATE TABLE</code>).</li>
+<li>Insérer des données (<code>INSERT</code>).</li>
+<li>Interroger les données par requête (<code>SELECT</code>).</li>
+<li>Supprimer des données ou des tables (<code>DROP</code>, <code>DELETE</code>).</li>
+<li>Mettre à jour des données ou des tables (<code>UPDATE</code>, <code>ALTER</code>).</li>
+<li>Supprimer la base de données (<code>DROP DATABASE</code>).</li>
+</ol>
+<p>Chacune de ces commandes est une instruction <code>SQL</code> envoyée au serveur pour manipuler et interroger la base de données.</p>
+<p>Les instructions <code>SQL</code> sont près de la structure des phrases ordinaire en anglais. Vous trouverez le langage plus intuitif que beaucoup d’autres, avec notamment des instructions comme <code>CREATE</code>, <code>JOIN</code>, <code>GROUP BY</code>, etc. Le langage est déclaratif, il permet de décrire le résultat escompté, sans avoir à décrire comment l’obtenir. C’est une caractéristique voulue lors de sa création pour faciliter l’apprentissage et la lecture.</p>
+<blockquote class="blockquote">
+<p>Le langage de programmation SQL et son utilisation sont détaillés dans la <a href="#sec-sql_plus" class="quarto-xref"><span>Section 5.3</span></a>.</p>
+</blockquote>
+</section>
+<section id="rsqlite-pour-interagir-avec-la-base-de-données" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="rsqlite-pour-interagir-avec-la-base-de-données"><span class="header-section-number">5.2</span> <code>RSQLite</code> pour interagir avec la base de données</h2>
+<p>Précédemment, nous avons vu les aspects importants de la conceptualisation d’une base de données avec les entités, les relations, les attributs et les types. Voyons maintenant comment passer au modèle informatique.</p>
+<section id="conceptualiser-et-concevoir" class="level3">
+<h3 class="anchored" data-anchor-id="conceptualiser-et-concevoir">Conceptualiser et concevoir</h3>
+<ul>
+<li>Le modèle conceptuel
+<ol type="1">
+<li>Faire une liste des variables</li>
+<li>Regrouper les variables dans des tables</li>
+<li>Établir le type d’association entre les tables</li>
+<li>Établir les clés primaires et étrangères</li>
+<li>Assigner les types de données aux variables</li>
+</ol></li>
+<li>Le modèle informatique
+<ol type="1">
+<li>Créer et se connecter au fichier de base de données</li>
+<li>Créer les tables et spécifier les clés</li>
+<li>Ajouter de l’information dans les tables</li>
+<li>Faire des requêtes pour extraire l’information</li>
+</ol></li>
+</ul>
+</section>
+<section id="connexion-au-serveur" class="level3">
+<h3 class="anchored" data-anchor-id="connexion-au-serveur">1. Connexion au serveur</h3>
+<p>Pour faciliter l’interaction avec la base de données et simplifier les manipulations, nous utiliserons RStudio et la librairie open source <code>RSQLite</code> qui contient le client SQLite3. <code>RSQLite</code> propose une interface dans R qui permet d’interagir avec les bases de données.</p>
+<p>D’abord, il faut se connecter à la base de données à l’aide de la commande <code>dbConnect()</code> et sauver cette connexion dans un objet. Nous réutiliserons cet objet pour spécifier la connexion client-serveur à toutes les fois que nous enverrons une commande à la base de données.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages('RSQLite')</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>ma_bd <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(RSQLite<span class="sc">::</span><span class="fu">SQLite</span>(), <span class="at">dbname=</span><span class="st">"./my_database.db"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="do">## !</span><span class="al">ATTENTION</span><span class="do">!: Ceci est mon chemin d'accès vers le fichier!</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Astuces: getwd() et setwd()</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(ma_bd)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Ici, <code>ma_bd</code> est un objet contenant la connexion avec le serveur/fichier de base de données.</p>
+</section>
+<section id="créer-les-tables" class="level3">
+<h3 class="anchored" data-anchor-id="créer-les-tables">2. Créer les tables</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>creer_automobiles <span class="ot">&lt;-</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"CREATE TABLE automobiles (</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="st">        id          INTEGER PRIMARY KEY AUTOINCREMENT,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="st">        marque      VARCHAR(50),</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="st">        modele      VARCHAR(50),</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="st">        annee       INTEGER CHECK(annee &gt;= 0),</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="st">        consommation REAL CHECK(consommation &gt;= 0),</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="st">        cylindree   INTEGER CHECK(cylindree &gt;= 0),</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="st">    );"</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">dbSendQuery</span>(ma_bd, creer_automobiles)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>creer_proprios <span class="ot">&lt;-</span> </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"CREATE TABLE proprios (</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="st">        automobile_id    INTEGER NOT NULL,</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="st">        prenom           VARCHAR(100) NOT NULL,</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="st">        nom              VARCHAR(100) NOT NULL,</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="st">        no_permis        VARCHAR(10),</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="st">        PRIMARY KEY (prenom, nom),</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="st">        FOREIGN KEY (automobile_id) REFERENCES mtcars(id)</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="st">    );"</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu">dbSendQuery</span>(ma_bd, creer_proprios)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote class="blockquote">
+<p>Notez que les instructions SQL sont des chaînes de caractères. Elles sont envoyées au serveur avec la commande <code>dbSendQuery()</code>.</p>
+</blockquote>
+<p><strong>Types de données</strong></p>
+<p>Un type de données (VARCHAR, INTEGER, etc.) doit être spécifié pour chaque champ. Les types de données disponibles dépendent du SGBD utilisé. Pour SQLite, les types de données sont les suivants :</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Appelation</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Valeurs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>BOLEAN</code></td>
+<td style="text-align: left;">Boléen</td>
+<td style="text-align: left;">vrai/faux</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>INTEGER</code></td>
+<td style="text-align: left;">Entiers</td>
+<td style="text-align: left;">-998, 123</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>DOUBLE</code>, <code>FLOAT</code>, <code>REAL</code></td>
+<td style="text-align: left;">Nombres réels</td>
+<td style="text-align: left;">9.98, -4.34</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>CHAR</code>,<code>VARCHAR</code>, <code>TEXT</code></td>
+<td style="text-align: left;">Chaine de caractères</td>
+<td style="text-align: left;">lapin</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>TIMESTAMP</code>,<code>DATE</code>,<code>TIME</code></td>
+<td style="text-align: left;">Dates et heures</td>
+<td style="text-align: left;">1998-02-16</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://www.sqlite.org/datatype3.html">voir la documentation SQLite3</a></p>
+<p><code>VARCHAR</code> est un type de données pour les chaînes de caractères de longueur variable. Il faut spécifier la longueur maximale de la chaîne de caractères entre parenthèses. Par exemple. le champs <code>marque</code> de la table <code>automobiles</code> est de type <code>VARCHAR(50)</code>, c’est-à-dire qu’il peut contenir des chaînes de caractères de 50 caractères au maximum.</p>
+<p><strong>Clef primaire</strong></p>
+<p>La clé primaire est un champ ou un ensemble de champs qui identifie de manière unique chaque enregistrement d’une table. Elle est utilisée pour garantir l’unicité des enregistrements. La clé primaire est un index unique pour chaque enregistrement de la table. Elle est obligatoire pour chaque table.</p>
+<p>Dans l’exemple ci-dessus, c’est le champ <code>id</code> qui est la clé primaire de la table <code>automobiles</code> puisque tous les champs de la table contribuent à l’unicité de la ligne. La combinaison des champs <code>prenom</code> et <code>nom</code> est la clé primaire de la table <code>proprios</code>.</p>
+<p><code>id      INTEGER PRIMARY KEY AUTOINCREMENT,</code> spécifie que le champ <code>id</code> est la clé primaire de la table <code>automobiles</code>. Cette clé est de type <code>INTEGER</code> et est incrémentée automatiquement à chaque nouvel enregistrement. Aucune valeur n’est à spécifier pour ce champ lors de l’insertion d’un nouvel enregistrement, la base de données s’en charge automatiquement lors de l’injection d’une nouvelle ligne.</p>
+<p><strong>Clef étrangère</strong></p>
+<p>La clé étrangère est un champ ou un ensemble de champs qui référence une clé primaire d’une autre table. Elle est utilisée pour garantir l’intégrité référentielle des données Elle n’est pas obligatoire pour chaque table, par exemple, la table <code>automobiles</code> n’a pas de clé étrangère. Par contre, la table <code>proprios</code> a une clé étrangère <code>automobile_id</code> qui référence la clé primaire <code>id</code> de la table <code>automobiles</code>.</p>
+<p><strong>Contraintes</strong></p>
+<p>Les contraintes sont des règles qui sont appliquées aux données de la table. Par exemple, <code>NOT NULL</code> spécifie que le champ ne peut pas contenir de valeurs nulles. <code>CHECK</code> spécifie une condition qui doit être vraie pour chaque enregistrement.</p>
+</section>
+<section id="injecter-des-données" class="level3">
+<h3 class="anchored" data-anchor-id="injecter-des-données">3. Injecter des données</h3>
+<p>Une table de données peut facilement être copiée dans une base de données SQLite avec <code>dbWriteTable()</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>automobiles_db <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(RSQLite<span class="sc">::</span><span class="fu">SQLite</span>(), <span class="at">dbname=</span><span class="st">"./automobiles.db"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Injection des enregistrements dans la B</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="at">append =</span> <span class="cn">TRUE</span>, <span class="at">name =</span> <span class="st">"automobiles"</span>, <span class="at">value =</span> mtcars, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="at">append =</span> <span class="cn">TRUE</span>, <span class="at">name =</span> <span class="st">"proprios"</span>, <span class="at">value =</span> iris, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Lister les tables</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListTables</span>(automobiles_db)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "automobiles"   "proprios"</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Pour ce faire, Les données doivent avoir le même <strong>format</strong> que la table dans laquelle elles sont insérées - Les colonnes doivent être dans le même ordre - Les noms des colonnes doivent être identiques - Les types de données doivent être compatibles -</p>
+</section>
+<section id="effectuer-des-requêtes" class="level3">
+<h3 class="anchored" data-anchor-id="effectuer-des-requêtes">4. Effectuer des requêtes</h3>
+<p>Pour envoyer des instructions, c’est la commande <code>dbGetQuery()</code> qui est utilisée. Son premier argument est l’objet contenant la connexion et le second les instructions SQL.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>resr <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(automobiles_db, <span class="st">'SELECT * FROM automobiles LIMIT 4'</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>res</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; id  marque  modele annee consommation cylindree</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1    Ford    F150  2016         21.0         6</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2   Honda   Pilot  2013         21.0         6</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3   Honda   Civic  2007         28.8         4</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4   Mazda     MX5  2019         19.4         4</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote class="blockquote">
+<p>Il est à noter que le code SQL est enchâssé entre <code>"</code> pour former une chaine de caractères. <strong>L’omission des <code>"</code> est une cause d’erreur fréquente !!!</strong></p>
+</blockquote>
+</section>
+<section id="fermer-la-connexion" class="level3">
+<h3 class="anchored" data-anchor-id="fermer-la-connexion">5. Fermer la connexion</h3>
+<p>Souvent oublié, il faut toujours fermer la connexion, se déconnecter de la base de données, avec la commande <code>dbDisconnect()</code> :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(automobiles_db)</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="sec-sql_plus" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="sec-sql_plus"><span class="header-section-number">5.3</span> Utilisation avancée du <code>SQL</code></h2>
+<p>Les requêtes serviront à créer les tables de la base de données, à spécifier les clés, à filtrer les données et à extraire les données de la base de données. Pour ce faire, une certaine maitrise du langage SQL est nécessaire.</p>
+<p>La requête type se découpe en quelques pièces détaillées dans les sections qui suivent :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> champs</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table1</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> table2 <span class="kw">ON</span> table1.foreignKey <span class="op">=</span> table2.primaryKey</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> critères</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> colonne1 <span class="kw">ASC</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">10</span>;</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="sélectionner-des-données" class="level3">
+<h3 class="anchored" data-anchor-id="sélectionner-des-données">Sélectionner des données</h3>
+<p>Les requêtes SQL sont une suite d’opérations séquentielles débutant par la définition des champs à être retournés <code>SELECT</code>, suivi de la table d’où les données sont extraites <code>FROM</code> et finalement des autres commandes :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> champ1, champ2</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table1;</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote class="blockquote">
+<p>Notez que toutes requêtes SQL se terminent par <code>;</code>, sans quoi un message d’erreur est retourné.</p>
+</blockquote>
+<p><code>*</code> retourne tous les champs :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table1;</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>--</code> le double tiret permet d’écrire des commentaires :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Sélection de tous les champs</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table1;</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>AS</code> permet de renommer un champ dans la table retournée. La table table1 d’où les données proviennent n’est pas affectée par la commande. Cette astuce facilite l’organisation lorsque plusieurs champs ont le même nom ou que plusieurs champs sont agrégés en une seule colonne :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> prenom_nom <span class="kw">AS</span> auteur, institution_id <span class="kw">AS</span> employeur</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table1;</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="filtrer-la-requête" class="level3">
+<h3 class="anchored" data-anchor-id="filtrer-la-requête">Filtrer la requête</h3>
+<p><code>WHERE</code> spécifie les critères de la requête.</p>
+<p>On ne peut pas filtrer (<code>WHERE</code>) avant que les opérations <code>SELECT</code>, <code>FROM</code> et <code>JOIN</code> soient complétées.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">id</span>, nom, no_telephonne, courriel</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> client</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> ville <span class="op">=</span> <span class="st">'Sherbrooke'</span>;</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="champs-numériques" class="level4">
+<h4 class="anchored" data-anchor-id="champs-numériques">Champs numériques</h4>
+<p>Les opérateurs de comparaison standard tels que <code>&gt;=</code>, <code>&lt;=</code>, <code>=</code> sont accessibles pour les valeurs numériques.</p>
+</section>
+<section id="champs-de-texte" class="level4">
+<h4 class="anchored" data-anchor-id="champs-de-texte">Champs de texte</h4>
+<p>Les valeurs de texte sont filtrées avec <code>LIKE</code> et <code>NOT LIKE</code> :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">id</span>, nom, no_telephonne, courriel</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> client</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> nom <span class="kw">LIKE</span> <span class="st">'%Beauchamp%'</span>;</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>%</code> tient pour n’importe quel caractère (Lyne Beauchamp, Julien Beauchamp-Lavallée) alors que <code>_</code> est utilisé pour un seul caractère (<code>WHERE nom LIKE 'Beauchamp_'</code> : Beauchamp, Beauchamps, etc.).</p>
+</section>
+<section id="valeurs-nulles" class="level4">
+<h4 class="anchored" data-anchor-id="valeurs-nulles">Valeurs nulles</h4>
+<p><code>IS NULL</code> et <code>IS NOT NULL</code> filtrent les valeurs nulles :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">id</span>, nom, no_telephonne, courriel</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> client</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> nom <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span>;</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="filtres-multicritères" class="level4">
+<h4 class="anchored" data-anchor-id="filtres-multicritères">Filtres multicritères</h4>
+<p>On peut aussi effectuer des filtres multicritères avec <code>AND</code> et <code>OR</code> :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">id</span>, nom, no_telephonne, date_de_naissance <span class="kw">AS</span> annee</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> client</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  (annee <span class="op">&lt;=</span> <span class="dv">2008</span> <span class="kw">AND</span> annee <span class="op">&gt;</span> <span class="dv">2000</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">OR</span> (annee <span class="op">&gt;=</span> <span class="dv">1992</span> <span class="kw">AND</span> annee <span class="op">&lt;=</span> <span class="dv">1994</span>);</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="filtrer-par-étapes" class="level4">
+<h4 class="anchored" data-anchor-id="filtrer-par-étapes">Filtrer par étapes</h4>
+<p>Une requête peut être divisée en plusieurs étapes pour faciliter la lecture et la compréhension. Chaque étape consiste en une table temporaire nommée. Par exemple, la requête suivante est divisée en trois étapes <code>table1</code>, <code>table2</code> et un <code>SELECT</code> final :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> table1 <span class="kw">AS</span> (</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> <span class="kw">id</span>, nom, no_telephonne, date_de_naissance <span class="kw">AS</span> annee</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span> client</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">WHERE</span> annee <span class="op">&lt;=</span> <span class="dv">2008</span> <span class="kw">AND</span> annee <span class="op">&gt;</span> <span class="dv">2000</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>),</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>table2 <span class="kw">AS</span> (</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> <span class="kw">id</span>, product_id, quantity</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span> commandes</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">WHERE</span> quantity <span class="op">&gt;</span> <span class="dv">10</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table1</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> table2 <span class="kw">ON</span> table1.<span class="kw">id</span> <span class="op">=</span> table2.<span class="kw">id</span>;</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="autres-commandes" class="level3">
+<h3 class="anchored" data-anchor-id="autres-commandes">Autres commandes</h3>
+<p><code>DISTINCT</code> retourne les valeurs distinctes d’un champ :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> nom</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> client</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> nom <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span>;</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>LIMIT</code> limite le nombre de lignes retournées. Cette commande est particulièrement utile pour explorer la base de données :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">id</span>, nom, no_telephonne, courriel</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> client</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">5</span>;</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>ORDER BY</code> permet d’ordonner les rangées retournées en fonction d’une colonne. <code>ASC</code> est utilisé pour ordonner en ordre croissant, <code>DESC</code> pour ordonner en ordre décroissant :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">id</span>, nom, date_de_naissance</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> client</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> date_de_naissance <span class="kw">ASC</span>;</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="agréger-linformation" class="level3">
+<h3 class="anchored" data-anchor-id="agréger-linformation">Agréger l’information</h3>
+<p>On parle d’agrégation d’information lorsque plusieurs valeurs sont utilisées dans le calcul d’une nouvelle composite. Les opérations les plus courantes sont la somme de plusieurs valeurs (<code>SUM</code>), l’extraction de la valeur maximale (<code>MAX</code>) ou minimale (<code>MIN</code>), la moyenne (<code>AVG</code>) ou le nombre d’éléments (<code>COUNT</code>) :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> client</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Des opérations peuvent également être effectuées sur plusieurs champs telles que des sommes, des divisions, etc. Les opérateurs couramment utilisés sont : <code>*</code>, <code>/</code>, <code>-</code>, <code>+</code>.</p>
+<p><code>GROUP BY</code> définit les champs sur lesquels se fera l’agrégation des données. L’agrégation se fait dans la sélection des champs :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="kw">id</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> client</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> magasin_id</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Cette requête retourne le nombre de clients par magasin.</p>
+</section>
+<section id="jointures-entre-tables" class="level3">
+<h3 class="anchored" data-anchor-id="jointures-entre-tables">Jointures entre tables</h3>
+<p>Parfois, l’information requise est répartie dans plusieurs tables de la base de données. Dans ce cas, il faut joindre des données de plusieurs tables en utilisant les relations dans une requête.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./assets/img/sql_joins.png" class="img-fluid figure-img" style="width:100.0%" alt="Jointures SQL."></p>
+<figcaption>Types de jointures SQL.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Le type de jointure utilisé dépend du résultat attendu. Chaque jointure effectuée ne peut viser que deux tables : une table principale (nommée dans le <em>FROM</em>) et une table secondaire de laquelle des données sont extraites pour être ajoutées à la table principale. Chacun des types de jointures conserve les lignes et les informations de chacune des tables différemment.</p>
+<p>Une jointure se fait en spécifiant les champs correspondants (clés étrangères), comme ici où les deux tables partagent un identifiant unique du magasin (<code>id</code> et <code>magasin_id</code>).</p>
+<p>Imaginez deux tables :</p>
+<p>client</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">id</th>
+<th style="text-align: left;">nom</th>
+<th style="text-align: left;">courriel</th>
+<th style="text-align: left;">magasin_id</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Beaulieu</td>
+<td style="text-align: left;">abc@gmail.com</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Woot</td>
+<td style="text-align: left;">Woot@hotmail.com</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">McNicols</td>
+<td style="text-align: left;">mc@livre.ca</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Tremblay</td>
+<td style="text-align: left;">tremc3001@usherbrooke.ca</td>
+<td style="text-align: left;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Beauregard</td>
+<td style="text-align: left;">fun_1998@yahoo.com</td>
+<td style="text-align: left;">4</td>
+</tr>
+</tbody>
+</table>
+<p>magasin</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">id</th>
+<th style="text-align: left;">no_civique</th>
+<th style="text-align: left;">rue</th>
+<th style="text-align: left;">code_postal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1200</td>
+<td style="text-align: left;">King</td>
+<td style="text-align: left;">J1K2S8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">134</td>
+<td style="text-align: left;">Sherbrooke</td>
+<td style="text-align: left;">B4L3V6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">13333</td>
+<td style="text-align: left;">St-Denis</td>
+<td style="text-align: left;">F2H5F5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">123</td>
+<td style="text-align: left;">Main</td>
+<td style="text-align: left;">L4X1A7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">98422</td>
+<td style="text-align: left;">3è rang</td>
+<td style="text-align: left;">L1L4D6</td>
+</tr>
+</tbody>
+</table>
+<p>Voici quelques exemples de situations que vous pouvez rencontrer :</p>
+<section id="lateral-join" class="level4">
+<h4 class="anchored" data-anchor-id="lateral-join">Lateral join</h4>
+<p>Le <strong>lateral join</strong> est un type de jointure entre tables très pratique de par sa simplicité. Cependant, il peut produire des résultats contre-intuitifs puisque toutes les lignes correspondantes des tables seront retournées. Par exemple, la jointure latérale des tables magasins (5 lignes) et client (5 lignes) par le champ id du magasin produira un jeu de données de 7 lignes puisque le magasin 1 et 4 ont chacun 2 clients. Ces lignes seront donc dupliquées :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> client.<span class="kw">id</span>, nom, magasin.<span class="kw">id</span>, code_postal</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span>  magasin, client</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> client.magasin_id <span class="op">=</span> magasin.<span class="kw">id</span>;</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">id</th>
+<th style="text-align: left;">nom</th>
+<th style="text-align: left;">magasin_id</th>
+<th style="text-align: left;">code_postal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Beaulieu</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">J1K2S8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Woot</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">J1K2S8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">McNicols</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">L4X1A7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Tremblay</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">NULL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Beauregard</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">L4X1A7</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>Notez que le champ d’une table est spécifié avec le format <code>table.champ</code>. Cela permet d’être explicite sur le champ visé puisqu’il peut y avoir de la redondance entre les tables, comme ici avec les colonnes <code>id</code>.</p>
+</blockquote>
+</section>
+<section id="left-join" class="level4">
+<h4 class="anchored" data-anchor-id="left-join">Left join</h4>
+<p>Le <code>LEFT JOIN</code> est la jointure la plus populaire puisqu’elle conserve les lignes de la table principale (de gauche) et ne joint que les colonnes de la seconde table (de droite) aux lignes correspondantes. Notez que lorsqu’il n’y a pas de correspondance, une valeur <code>NULL</code> est retournée :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> client.<span class="kw">id</span>, nom, magasin.<span class="kw">id</span>, code_postal</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span>  client</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">LEFT</span> <span class="kw">JOIN</span> magasin <span class="kw">ON</span> client.magasin_id <span class="op">=</span> magasin.<span class="kw">id</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">id</th>
+<th style="text-align: left;">nom</th>
+<th style="text-align: left;">magasin_id</th>
+<th style="text-align: left;">code_postal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Beaulieu</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">J1K2S8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Woot</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">J1K2S8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">McNicols</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">L4X1A7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Tremblay</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">NULL</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Beauregard</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">L4X1A7</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="inner-join" class="level4">
+<h4 class="anchored" data-anchor-id="inner-join">Inner join</h4>
+<p>Le <code>INNER JOIN</code> ne renvoie qu’une rangée des tables ayant un champ contenant une valeur commune. La requête suivante ne retourne que 4 lignes puisque la table magasin ne possède pas de id avec une valeur de 8 :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> client.<span class="kw">id</span>, nom, magasin_id, code_postal</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span>  client</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="kw">INNER</span> <span class="kw">JOIN</span> magasin <span class="kw">ON</span> client.magasin_id <span class="op">=</span> magasin.<span class="kw">id</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">id</th>
+<th style="text-align: left;">nom</th>
+<th style="text-align: left;">magasin_id</th>
+<th style="text-align: left;">code_postal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Beaulieu</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">J1K2S8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Woot</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">J1K2S8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">McNicols</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">L4X1A7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Beauregard</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">L4X1A7</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="requêtes-imbriquées" class="level3">
+<h3 class="anchored" data-anchor-id="requêtes-imbriquées">Requêtes imbriquées</h3>
+<p>Lorsque la requête désirée est particulièrement complexe, il est possible d’imbriquer des requêtes, de faire un <code>SELECT</code> sur le produit d’un autre <code>SELECT</code>. Pour ça, il existe deux méthodes :</p>
+<p>Spécifier la première requête dans le FROM de la seconde :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> nom </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> (</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> client.<span class="kw">id</span>, nom, magasin_id, code_postal</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span>  client</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> magasin <span class="kw">ON</span> client.magasin_id <span class="op">=</span> magasin.<span class="kw">id</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>) <span class="kw">GROUP</span> <span class="kw">BY</span> client.<span class="kw">id</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> magasin_id <span class="op">&lt;</span> <span class="dv">3</span>;</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Exécuter une première requête et utiliser son retour comme une table :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> premiere_requete <span class="kw">AS</span> (</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> client.<span class="kw">id</span>, nom, magasin_id, code_postal</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span>  client</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">INNER</span> <span class="kw">JOIN</span> magasin <span class="kw">ON</span> client.magasin_id <span class="op">=</span> magasin.<span class="kw">id</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>) </span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> nom </span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> premiere_requete</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="kw">id</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> magasin_id <span class="op">&lt;</span> <span class="dv">3</span>;</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="mettre-à-jour-des-enregistrements" class="level3">
+<h3 class="anchored" data-anchor-id="mettre-à-jour-des-enregistrements">Mettre à jour des enregistrements</h3>
+<p>On peut mettre à jour les enregistrements sélectionnés d’une table avec des critères spécifiques :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> client      <span class="co">-- Table visée</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SET</span> nom <span class="op">=</span> <span class="st">'Martin'</span> <span class="co">-- Champ = nouvelle valeur</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="kw">id</span> <span class="op">=</span> <span class="dv">3</span>;      <span class="co">-- Filtre pour sélectionner la valeur à mettre à jour</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote class="blockquote">
+<p>Notez que toutes les valeurs de la colonne <em>nom</em> de la table <em>client</em> dont <em>id=3</em> seront mises à jour pour Martin. Le risque d’erreur est important !!! Testez rigoureusement votre filtre avant d’effectuer la mise à jour.</p>
+</blockquote>
+</section>
+<section id="supprimer-des-enregistrements" class="level3">
+<h3 class="anchored" data-anchor-id="supprimer-des-enregistrements">Supprimer des enregistrements</h3>
+<p>On peut supprimer des enregistrements sélectionnés d’une table avec des critères spécifiques :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> client</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> nom <span class="op">=</span> <span class="st">'Martin'</span>;</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>ATTENTION ! Sans filtres, toutes les valeurs de la table sont supprimées :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> client;</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="create-table" class="level3">
+<h3 class="anchored" data-anchor-id="create-table">CREATE TABLE</h3>
+<p>Voici un exemple d’instruction SQL pour créer la table <code>auteurs</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> auteurs (</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    auteur      <span class="dt">VARCHAR</span>(<span class="dv">50</span>),</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    statut      <span class="dt">VARCHAR</span>(<span class="dv">40</span>),</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    institution <span class="dt">VARCHAR</span>(<span class="dv">200</span>),</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    ville       <span class="dt">VARCHAR</span>(<span class="dv">40</span>),</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    pays        <span class="dt">VARCHAR</span>(<span class="dv">40</span>),</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">PRIMARY</span> <span class="kw">KEY</span> (auteur)</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>);</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><code>auteurs</code> est le nom de la table</li>
+<li>Chaque attribut de la table (<code>auteur</code>,<code>statut</code> etc) dispose d’un type de données (<code>varchar(40)</code>,<code>DATE</code>, etc) <a href="https://www.sqlite.org/datatype3.html">Type de données SQLite</a></li>
+<li>La dernière ligne correspond aux contraintes de la table telle que la clé primaire.</li>
+<li><strong>Question:</strong> Cette clé primaire est composite ou simple?</li>
+</ul>
+</section>
+</section>
+<section id="refs" class="level2" data-number="5.4" style="display: none">
+<h2 data-number="5.4" class="anchored" data-anchor-id="refs"><span class="header-section-number">5.4</span> Refs</h2>
+<ul>
+<li><a href="https://github.com/hadley/r4ds/blob/main/databases.qmd"><em>R for data science</em></a></li>
+<li><a href="https://sqlfordatascientists.com"><em>SQL for Data Scientists</em></a> by Renée M. P. Teate is an introduction to SQL designed specifically for the needs of data scientists, and includes examples of the sort of highly interconnected data you’re likely to encounter in real organizations.</li>
+<li><a href="https://www.practicalsql.com"><em>Practical SQL</em></a> by Anthony DeBarros is written from the perspective of a data journalist (a data scientist specialized in telling compelling stories) and goes into more detail about getting your data into a database and running your own DBMS.</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copié");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copié");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/econumuds\.github\.io\/BIO500\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./bases_de_donnees.html" class="pagination-link" aria-label="Bases de données">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bases de données</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./exercices_1.html" class="pagination-link" aria-label="Exercices">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exercices</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><strong>BIO500 - Méthodes en écologie computationelle</strong> a été écrit par Victor Cameron</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/EcoNumUdS/BIO500/edit/main/sql.qmd" class="toc-action"><i class="bi bi-github"></i>Modifier cette page</a></li><li><a href="https://github.com/EcoNumUdS/BIO500/issues/new" class="toc-action"><i class="bi empty"></i>Faire part d'un problème</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Ce livre a été construit avec <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>BIO500</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Dominique Gravel" />
+    <script src="assets/header-attrs-2.30/header-attrs.js"></script>
+    <link href="assets/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="assets/remark-css-0.0.1/hygge.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/bio500.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+class: title-slide, middle
+
+&lt;style type="text/css"&gt;
+  .title-slide {
+    background-image: url('../assets/img/bg.jpg');
+    background-color: #23373B;
+    background-size: contain;
+    border: 0px;
+    background-position: 600px 0;
+    line-height: 1;
+  }
+&lt;/style&gt;
+
+&lt;div class="lab-logo"&gt;&lt;/div&gt;
+
+# Bloc 3
+
+&lt;hr width="65%" align="left" size="0.3" color="orange"&gt;&lt;/hr&gt;
+
+## La visualisation des données
+
+&lt;hr width="65%" align="left" size="0.3" color="orange" style="margin-bottom:40px;" alt="@Martin Sanchez"&gt;&lt;/hr&gt;
+
+.instructors[
+  **BIO500** - Victor Cameron
+]
+
+---
+
+# Bloc 3
+
+## Aujourd'hui
+
+- Identifier le message à communiquer
+- Les composantes graphiques
+- Les règles graphiques
+- Les types de figures
+- Les données spatiales
+
+Les notions sont abordés dans les chapitres [10](https://econumuds.github.io/BIO500/figures.html) et [11](https://econumuds.github.io/BIO500/composantes_graphiques.html) du livre.
+
+Un guide des fonctionalités de R pour la visualisation des données vous est accessible [ici](https://github.com/EcoNumUdS/BIO500/blob/master/references/graphsonr.pdf).
+
+Vous trouverez du matériel supplémentaire dans le [cours](https://r.qcbs.ca/workshop03/book-fr/index.html) du [CSBQ](https://qcbs.ca/).
+
+---
+class: inverse, center, middle
+
+# Pourquoi la visualisation de données est importante ?
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# La visualisation de données
+
+.center[&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr" href="https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#rstats&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/tidyverse?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#tidyverse&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/datajournalism?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#datajournalism&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/dataviz?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#dataviz&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/Penguins?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#Penguins&lt;/a&gt; &lt;a href="https://t.co/u2rXkBehxS"&gt;pic.twitter.com/u2rXkBehxS&lt;/a&gt;&lt;/p&gt;&amp;mdash; Laura Navarro (@LauraNavarroSol) &lt;a href="https://twitter.com/LauraNavarroSol/status/1289216490307063814?ref_src=twsrc%5Etfw"&gt;July 31, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;]
+
+---
+
+# La visualisation de données
+
+Les données sont essentielles pour supporter ses arguments et convaincre un auditoire. Toutefois, les données brutes endorment les auditeurs, ou pire, les font fuir. 
+
+## La visualisation de données permet de présenter les données de manière plus attrayante et plus facile à comprendre.
+
+Voyons comment tirer avantage de la visualisation de données.
+
+---
+
+# La visualisation de données
+
+## Quel est le message ?
+
+.center[
+  &lt;img src="assets/img/table_visu.png" width="100%"&gt;&lt;/img&gt;
+]
+
+---
+
+# La visualisation de données
+
+## Et maintenant ?
+
+.center[
+  &lt;img src="assets/img/plot_visu.png" height="450px"&gt;&lt;/img&gt;
+]
+
+---
+
+# La visualisation de données
+
+## Une courbe de tendance seule ne suffit pas !
+
+.center[
+  &lt;img src="assets/img/plot_visu.png" height="450px"&gt;&lt;/img&gt;
+]
+
+---
+
+# La visualisation de données
+
+## Les données sont utiles uniquement si elles peuvent être comprises
+
+.center[
+  &lt;img src="assets/img/plot_visu.png" height="450px"&gt;&lt;/img&gt;
+]
+
+---
+class: inverse, center, middle
+
+# Qu'est-ce qui fait une bonne figure ?
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Qu'est-ce qui fait une bonne figure ?
+
+## Quelques exemples
+
+1. Le tableau de bord [Performance du réseau de la santé et des services sociaux](https://app.powerbi.com/view?r=eyJrIjoiOTFmZjc4NzAtMTBkMS00OTE5LWE4YjQtZTIzOTc5NDZjNmZlIiwidCI6IjA2ZTFmZTI4LTVmOGItNDA3NS1iZjZjLWFlMjRiZTFhNzk5MiJ9)
+2. S&amp;P 500 [Global](https://www.spglobal.com/spdji/en/indices/equity/sp-500/#overview)
+3. Design d'information [Voilà:](https://chezvoila.com/fr/)
+
+---
+
+# Qu'est-ce qui fait une bonne figure ?
+
+## Quelques questions à se poser :
+
+- Quel est le message à communiquer ?
+- Qui est le public
+- Quelle est la meilleure façon de visualiser le message
+
+Règle générale : **restez simple, utilisez moins d'encre**
+
+---
+
+# Qu'est-ce qui fait une bonne figure ?
+
+## Quel est le message de cette figure ?
+
+.center[
+  &lt;img src="assets/img/Pacala.png" width="80%"&gt;&lt;/img&gt;
+]
+
+---
+
+# Qu'est-ce qui fait une bonne figure ?
+
+## Trop d'information !
+
+.center[
+  &lt;img src="assets/img/Pacala.png" width="80%"&gt;&lt;/img&gt;
+]
+
+---
+
+# Qu'est-ce qui fait une bonne figure ?
+
+## Comment cette figure pourrait être améliorée ?
+
+&lt;br&gt;&lt;br&gt;
+.center[
+  &lt;img src="assets/img/Boulangeat.png" width="100%"&gt;&lt;/img&gt;
+]
+
+---
+
+# Qu'est-ce qui fait une bonne figure ?
+
+## Abus de symboles et de couleurs !
+
+&lt;br&gt;&lt;br&gt;
+.center[
+  &lt;img src="assets/img/Boulangeat.png" width="100%"&gt;&lt;/img&gt;
+]
+
+---
+
+# Qu'est-ce qui fait une bonne figure ?
+
+## Que remarquez-vous en premier ?
+
+.center[
+  &lt;img src="assets/img/Desjardins.png" width="80%"&gt;&lt;/img&gt;
+]
+
+---
+
+# Qu'est-ce qui fait une bonne figure ?
+
+## Non respect des normes graphiques
+
+.center[
+  &lt;img src="assets/img/Desjardins.png" width="80%"&gt;&lt;/img&gt;
+]
+
+
+---
+class: inverse, center, middle
+
+# La première étape : bien identifier le message à communiquer
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Identifier le message
+
+## Voici un exemple illustrant l'importance de visualiser ses données:
+
+.center[
+  &lt;img src="assets/img/table_visu.png" width="100%"&gt;&lt;/img&gt;
+]
+
+---
+
+# Identifier le message
+
+## Voici un exemple illustrant l'importance de visualiser ses données:
+
+.center[
+  &lt;img src="assets/img/plot_visu.png" height="450px"&gt;&lt;/img&gt;
+]
+
+---
+
+# Communiquer par les graphiques
+
+- Les graphiques sont généralement **plus efficaces à communiquer** un message/un résultat qu'un tableau.
+
+- **Problème:** La représentation graphique peut parfois nous conduire à une **fausse interprétation**. L'idée est de transmettre une idée sans biaiser le lecteur.
+
+---
+
+# Communiquer par les graphiques
+
+.center[
+  &lt;img src="assets/img/deformation.png" width="100%"&gt;&lt;/img&gt;
+]
+
+
+&lt;!-- - Problème: ratio 8/3 --&gt;
+
+---
+class: inverse, center, middle
+
+# Règles et composantes graphiques
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Les composantes graphiques
+
+.pull-left[
+
+- Les axes et échelles.
+- Le titre de la figure.
+- La légende
+- Le [type de représentation des données](http://www.datavizcatalogue.com/).
+]
+
+.pull-right[
+  .center[
+    &lt;img src="assets/img/viz.png" width="100%"&gt;&lt;/img&gt;
+  ]
+]
+
+---
+
+# Les règles graphiques
+
+.pull-left[
+
+- Une figure doit renvoyer un seul message/résultat.
+- Chaque élément d'une figure doit **aider à comprendre** ce message.
+- **Choisir le bon type de représentation** permet de mettre en valeur plus facilement ce qui doit être illustré.
+- **Attention aux normes graphiques**: Choix des couleurs, taille des caractères, épaisseur de la ligne, disposition des marges, cadrage etc.
+]
+
+.pull-right[
+  .center[
+    &lt;img src="assets/img/viz.png" width="100%"&gt;&lt;/img&gt;
+  ]
+]
+
+---
+
+# Quelques conseils
+
+- Ne pas **JAMAIS** utiliser de diagramme en pointe de tarte
+
+.center[
+  &lt;img src="assets/img/pies_vs_bars.png" width="100%"&gt;&lt;/img&gt;
+]
+
+---
+
+# Quelques conseils
+
+.pull-left[
+
+- Éviter les figures 3D.
+- Limiter le nombre de dimensions (3 ou 4 dimensions max).
+- La multi-dimensionnalité peut être gérée en:
+  - Modifiant la forme et la la taille des points
+  - Ajoutant des couleurs
+]
+
+.pull-right[
+  .center[
+    &lt;img src="assets/img/Pacala.png" height="350px"&gt;&lt;/img&gt;
+  ]
+]
+
+---
+
+# Choisir une visualisation
+
+## Présenter une distribution
+
+.center[
+  &lt;img src="assets/img/viz_distribution.png" height="150px"&gt;&lt;/img&gt;
+]
+
+## Montrer une tendance
+
+.center[
+  &lt;img src="assets/img/viz_tendance.png" height="150px"&gt;&lt;/img&gt;
+]
+
+---
+
+# Choisir une visualisation
+
+## Comparer ou contraster
+
+.center[
+  &lt;img src="assets/img/viz_comparaison.png" height="150px"&gt;&lt;/img&gt;
+]
+
+## Établir une relation
+
+.center[
+  &lt;img src="assets/img/viz_relation.png" height="150px"&gt;&lt;/img&gt;
+]
+
+---
+
+# Choisir une visualisation
+
+## Flux
+
+.center[
+  &lt;img src="assets/img/viz_flux.png" height="150px"&gt;&lt;/img&gt;
+]
+
+---
+class: inverse, center, middle
+
+# Deuxième étape : dessiner sa figure à la main
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Exercice
+
+## 10 minutes
+
+Dessinez à la main une proposition de figure pour la phénologie des différentes espèces de chauve-souris du Québec.
+
+Message : Les dates de présence des chauve-souris varie selon les espèces.
+
+
+```
+##     X site_id          taxa_name   date_obs
+## 1 354       1 Aeorestes cinereus 2021-06-18
+## 2 355       1 Aeorestes cinereus 2021-08-11
+## 3 356       1 Aeorestes cinereus 2021-08-06
+## 4 357       1 Aeorestes cinereus 2021-06-01
+## 5 358       1 Aeorestes cinereus 2021-08-08
+## 6 359       1 Aeorestes cinereus 2021-08-11
+```
+
+---
+
+# Préparer les données adéquatement
+
+- Habituellement un `data.frame` ou `une matrice`
+- Une observation par ligne (format long)
+
+---
+
+# Ouvrir une fenêtre graphique
+
+
+``` r
+dev.new(width = 10, height = 7)
+```
+
+---
+
+# Fixer certains paramètres
+
+
+``` r
+# Fixer la largeur et la hauteur des marges
+par(mar = c(5,6,2,1))
+
+# Fixer le nombre de figures en colonnes et rangées
+par(mfrow = c(1,1))
+```
+
+---
+
+# Démarrer une figure avec `plot()`
+
+.font90[
+
+``` r
+arbres &lt;- read.csv2("assets/data/arbres.csv")
+densite &lt;- table(arbres[,c(3,5)])
+elevation &lt;- as.numeric(row.names(densite))
+plot(elevation, densite[,1], axes = TRUE,
+      xlab = "Élévation", ylab = "Densité")
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" alt="" width="55%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# Échelles logarithmiques
+
+
+``` r
+plot(elevation, densite[,1], axes = TRUE,
+      xlab = "Élévation", ylab = "Densité",
+      log = "xy")
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-9-1.png" alt="" width="55%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Ajuster les tailles de caractères
+
+## Arguments `cex`, `cex.lab` et `cex.axis`
+
+
+``` r
+plot(elevation, densite[,1], axes = TRUE,
+      xlab = "Élévation", ylab = "Densité",
+      cex.lab = 1.5, cex.axis = 1.25, cex = 1.5)
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-10-1.png" alt="" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Modifier les axes
+
+.font90[
+
+``` r
+axis(1, seq(0,1000,100))
+axis(2)
+```
+&lt;img src="index_files/figure-html/unnamed-chunk-12-1.png" alt="" width="55%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# Ajouter un titre
+
+
+``` r
+title(main = "Densité au long du gradient d'élévation")
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-14-1.png" alt="" width="55%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Superposer des points d'autres données
+
+
+``` r
+points(elevation, densite[,3], pch = 19, cex = 1.5)
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-16-1.png" alt="" width="55%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Superposer des lignes
+
+
+``` r
+lines(elevation, densite[,1],lty = 1, lwd = 1.5)
+lines(elevation, densite[,3], lty  = 3, lwd = 1.5)
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-18-1.png" alt="" width="55%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Ajouter une ligne de tendance
+
+
+``` r
+model = lm(densite[,3]~elevation)
+summary(model)
+abline(model, col = "darkred")
+```
+
+
+```
+## 
+## Call:
+## lm(formula = densite[, 3] ~ elevation)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -59.796 -26.743  -3.565  24.050  92.175 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 148.10588   11.23433  13.183   &lt;2e-16 ***
+## elevation    -0.16650    0.01976  -8.428    5e-11 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 40.32 on 48 degrees of freedom
+## Multiple R-squared:  0.5968,	Adjusted R-squared:  0.5884 
+## F-statistic: 71.04 on 1 and 48 DF,  p-value: 4.999e-11
+```
+
+---
+
+# Ajouter une ligne de tendance
+
+
+``` r
+model = lm(densite[,3]~elevation)
+abline(model, col = "darkred")
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-22-1.png" alt="" width="55%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# Ajouter une légende
+
+
+``` r
+legend("top", bty = "n", pch = c(19,1), lty = 1,
+    legend = c("Érable à sucre", "Sapin baumier"),
+    cex = 1.5)
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-24-1.png" alt="" width="55%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Ajouter du texte
+
+
+``` r
+r2 &lt;- round(summary(model)$r.squared, 2)
+text(x = 850, y = 25, paste("R2=",r2),
+    cex = 21.5)
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-26-1.png" alt="" width="55%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Pour plus d'information
+
+- `?plot`
+- `?par`
+- `?axis`
+- `?mtext`
+
+## Chapitre 12 [Conception graphique](https://econumuds.github.io/BIO500/composantes_graphiques.html)
+
+---
+class: inverse, center, middle
+
+# Créer d'autres types de figure
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Diagramme de dispersion (Scatter plot)
+
+.font80[
+
+``` r
+arbres  &lt;- read.csv2("assets/data/arbres.csv")
+densite &lt;- table(arbres[,c(3,5)])
+elevation &lt;- as.numeric(row.names(densite))
+plot(elevation, densite[,1], pch = 19,
+  xlab = "Elevation", ylab = "Densité")
+points(elevation, densite[,3])
+```
+]
+
+&lt;img src="index_files/figure-html/unnamed-chunk-28-1.png" alt="" width="52%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Diagrammes à bâtons (Bar plot)
+
+
+``` r
+arbres  &lt;- read.csv2("assets/data/arbres.csv")
+n_tot &lt;- table(arbres$esp)
+barplot(n_tot)
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-30-1.png" alt="" width="55%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Histogrammes
+
+
+``` r
+hist(densite[,3])
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-32-1.png" alt="" width="55%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Représentation 3-D
+
+.font70[
+
+``` r
+x &lt;- 10*(1:nrow(volcano))
+y &lt;- 10*(1:ncol(volcano))
+
+image(x, y, volcano,
+  col = terrain.colors(100), axes = FALSE)
+
+axis(1, at = seq(100, 800, by = 100))
+axis(2, at = seq(100, 600, by = 100))
+box()
+
+title(main = "Maunga Whau Volcano", font.main = 4)
+```
+]
+
+&lt;img src="index_files/figure-html/unnamed-chunk-34-1.png" alt="" width="45%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Lignes de contour
+
+.font70[
+
+``` r
+x &lt;- 10*(1:nrow(volcano))
+y &lt;- 10*(1:ncol(volcano))
+
+image(x, y, volcano,
+  col = terrain.colors(100), axes = FALSE)
+
+axis(1, at = seq(100, 800, by = 100))
+axis(2, at = seq(100, 600, by = 100))
+box()
+
+title(main = "Maunga Whau Volcano", font.main = 4)
+
+contour(x, y, volcano,
+  levels = seq(90, 200, by = 5),
+  add = TRUE, col = "black")
+```
+]
+
+&lt;img src="index_files/figure-html/unnamed-chunk-36-1.png" alt="" width="45%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Enregistrer une figure
+
+
+
+``` r
+png("figure.png")
+plot(x = 1:10, y = runif(n = 10, min = 1, max = 10))
+dev.off()
+```
+
+D’autres formats sont aussi disponibles. Par exemple, `pdf()`, `jpeg()`, `bmp()` ou `tiff()`.
+
+---
+
+# Exercice
+
+## 15 minutes
+
+Scripter votre figure sur R à l'aide des [données](./assets/data/phenologie.csv)
+
+Si elle est trop élaborée, vous pouvez la simplifier pour la rendre plus facile à réaliser
+
+
+```
+##     X site_id          taxa_name   date_obs
+## 1 354       1 Aeorestes cinereus 2021-06-18
+## 2 355       1 Aeorestes cinereus 2021-08-11
+## 3 356       1 Aeorestes cinereus 2021-08-06
+## 4 357       1 Aeorestes cinereus 2021-06-01
+## 5 358       1 Aeorestes cinereus 2021-08-08
+## 6 359       1 Aeorestes cinereus 2021-08-11
+```
+
+---
+
+# Exercice
+
+.center[
+  &lt;img src="assets/img/pheno_1.png" width="100%"&gt;&lt;/img&gt;
+]
+
+---
+
+# Exercice
+
+.center[
+  &lt;img src="assets/img/pheno_2.png" width="100%"&gt;&lt;/img&gt;
+]
+
+---
+class: inverse, center, middle
+
+# Troisième étape : être créatif !
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Créativité
+
+## Créer d'autres types de figures
+
+[Animation](https://quebio.ca/connect/?lang=fr#9/46.2359/-72.3120)
+
+[Interactivité](https://biodiversite-quebec.ca/fr/inventaires/site/268)
+
+[Infographies](https://www.visualcapitalist.com/history-of-pandemics-deadliest/)
+
+---
+
+# Les cartes
+
+Les cartes sont un outil de visualisation très puissant; Elles permettent de représenter des données géographiques.
+
+Deux types de données géographiques :
+
+- Les données raster
+- Les données vectorielles
+
+---
+
+# Les cartes
+
+## Données raster
+
+Les données raster sont des données qui sont stockées sous forme de grilles régulières.
+
+&lt;img src="index_files/figure-html/unnamed-chunk-39-1.png" alt="" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Les cartes
+
+## Données raster
+
+
+
+``` r
+library(terra)
+
+# Créer une matrice de valeurs aléatoires
+mat &lt;- matrix(data = runif(n = 100, min = 1, max = 10), nrow = 10, ncol = 10)
+
+# Créer un objet raster à partir de la matrice
+r &lt;- rast(mat)
+
+# Afficher l'objet raster
+r
+```
+
+Exemples : [covariables environnementales](https://io.biodiversite-quebec.ca/viewer/cec_land_cover/cec_land_cover_2020)
+
+---
+
+# Les cartes
+
+## Données vectorielles
+
+- Données associées à des coordonnées spatiales stockées sous forme de **points**, de **lignes** ou de **polygones**.
+- Utilisées pour représenter des données discrètes, telles que les limites administratives ou les points d'intérêt.
+
+&lt;img src="index_files/figure-html/unnamed-chunk-41-1.png" alt="" width="40%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Les cartes
+
+## Données vectorielles
+
+
+``` r
+library(sf)
+
+# Créer des données vectorielles
+pts &lt;- st_sfc(st_point(c(1, 1)), st_point(c(2, 2)), st_point(c(3, 3)), st_point(c(4, 4)))
+shp &lt;- st_sf(data.frame(id = 1:4), geometry = pts)
+
+# Donner un nom aux points
+shp$nom &lt;- c("A", "B", "C", "D")
+
+# Sauver les données
+st_write(obj = shp, dsn = "assets/points.shp")
+
+# Lire des données vectorielles à partir d'un fichier shapefile
+nc &lt;- st_read(dsn = "assets/points.shp")
+
+# Afficher les données vectorielles
+nc
+```
+
+---
+
+# Cartes interactives avec `leaflet`
+
+ATTENTION !! Cette fonctionnalité requiert plus de ressources et ne fonctionne pas sur tous les appareils.
+
+
+``` r
+library(leaflet)
+
+# Créer une carte interactive
+m &lt;- leaflet() |&gt;
+  addTiles() |&gt;
+  setView(lng = -72.3120, lat = 46.2359, zoom = 9)
+
+# Ajouter un marqueur
+m &lt;- m |&gt; addMarkers(lng = -72.3120, lat = 46.2359, popup = "UdS")
+
+m
+```
+
+---
+
+# Exercice
+
+## 15 minutes
+
+Gnénérez une carte de couverture du sol pour le mont Bellevue.
+
+Couverture du sol : &lt;https://www.donneesquebec.ca/recherche/dataset/utilisation-du-territoire&gt;
+
+Mont Bellevue : [en format geopackage](./assets/data/mont_bellevue.geojson)
+
+---
+class: inverse, center, middle
+
+# Travail de la semaine
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Consignes
+
+- Identifier clairement vos questions de recherche
+- Compléter votre analyse au moyen de 3 figures et 1 tableau
+
+---
+
+# Attentes pour le travail de session
+
+- Clareté des questions et adéquation des figures et du tableau
+- Efficacité de la présentation
+- Respect de normes graphiques
+- Originalité
+
+---
+
+# Lectures
+
+Est-ce que la science ouverte peut prévenir la fraude ?
+
+.center[
+  &lt;img src="assets/img/spider.png" width="30%"&gt;&lt;/img&gt;
+]
+
+[Lien vers l'article dans Science](https://www.sciencemag.org/news/2020/01/spider-biologist-denies-suspicions-widespread-data-fraud-his-animal-personality)
+
+[Et un lien vers un blog qui explique comment la triche a été réalisée](https://laskowskilab.faculty.ucdavis.edu/2020/01/29/retractions/)
+
+---
+class: inverse, center, middle
+
+# Évaluation formative #2
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+## Structurer sa base de données
+
+---
+
+## Évaluation formative #2
+
+Chaque équipe doit évaluer les scripts d'une autre équipe
+
+- À compléter pour le **8 avril**
+- La personne qui a remis le travail est responsable d'entrer l'évaluation
+- Tous les commentaires doivent être formulés comme une question
+
+---
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="../assets/macros.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "monokai",
+  "highlightLines": true,
+  "countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

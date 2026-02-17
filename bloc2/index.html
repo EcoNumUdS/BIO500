@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>BIO500</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Victor Cameron" />
+    <script src="assets/header-attrs-2.30/header-attrs.js"></script>
+    <link href="assets/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="assets/remark-css-0.0.1/hygge.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/bio500.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+class: title-slide, middle
+
+&lt;style type="text/css"&gt;
+  .title-slide {
+    background-image: url('../assets/img/bg.jpg');
+    background-color: #23373B;
+    background-size: contain;
+    border: 0px;
+    background-position: 600px 0;
+    line-height: 1;
+  }
+&lt;/style&gt;
+
+&lt;div class="lab-logo"&gt;&lt;/div&gt;
+
+# Séance 4
+
+&lt;hr width="65%" align="left" size="0.3" color="orange"&gt;&lt;/hr&gt;
+
+## Les outils pour la reproductibilité
+
+&lt;hr width="65%" align="left" size="0.3" color="orange" style="margin-bottom:40px;" alt="@Martin Sanchez"&gt;&lt;/hr&gt;
+
+.instructors[
+  **BIO500** - Victor Cameron
+]
+
+---
+
+# Les étapes du travail d'un biologiste
+
+.center[
+  &lt;img src="./assets/img/flow_full_repro.png" width="100%"&gt;&lt;/img&gt;
+]
+
+---
+
+# Une situation courante
+
+.pull-left[
+## Une situation qui vous est familière:
+
+.font90[
+```bash
+MonTravailSession/
+  |___ data/
+        |___ data_01122018.csv
+        |___ data_011022018.csv
+  |___ rapportVeg_jean_v1_01012018.docx
+  |___ rapportVeg_juliette_v1_01012018.docx
+  |___ rapportVeg_rémi_v1_04012018.docx
+  |___ rapportVeg_rémi_v2_10012018.docx
+  |___ rapportFinal_20012018.docx
+```
+]]
+
+.pull-right[
+
+## le travail d'équipe
+
+Ses difficultées techniques:
+
+- Multi-utilisateurs
+- Garder une trace de l'historique de modifications **d'un ensemble de fichiers**
+- Revenir aux versions précédentes
+- Comparer des versions d'un fichier
+]
+
+---
+
+# Systèmes de versionnage existants
+
+## Un exemple avec Dropbox
+
+.center[
+![](./assets/img/dropbox.png)
+]
+
+---
+
+# Systèmes de versionnage existants
+
+## Un exemple MS Word
+
+.center[
+![](./assets/img/word.gif)
+]
+
+---
+class: inverse, center, middle
+
+# Git: Un système de controle de version pour programmeur
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Qu'est ce que Git?
+
+.pull-left[
+
+C'est un système qui permet de suivre l'**ajout** et les **modifications** pour un ensemble de fichiers.
+
+**C'est le cahier de lab du programmeur.**
+
+- Logiciel libre soutenu par une large communauté (12 millions d'utilisateurs dans le monde)
+- Par défault, Git est installé sur les systèmes d'exploitation Linux et Mac.
+- Il peut être installé sur Windows: [https://git-scm.com/download/win](https://git-scm.com/download/win)
+]
+
+.pull-right[
+  .center[
+    &lt;img src="./assets/img/git.png" width="70%"&gt;&lt;/img&gt;
+    &lt;img src="./assets/img/LinusTorvalds.jpg" width="50%"&gt;&lt;/img&gt;
+
+    Linus Torvalds
+  ]
+]
+
+---
+
+# Qu'est ce que Git?
+
+Il présente l'avantage d'être extrêmement versatile.
+
+1. Racontez l'histoire de votre projet
+2. Voyager dans le temps
+3. Expérimentez avec les changements
+4. Backup votre travail
+5. **Collaborer sur des projets**
+
+--
+
+Mais le désavantage de fonctionner seulement avec les fichiers "plain text"...
+
+**Question**: Qu'est ce qu'un fichier "plain text"?
+
+---
+# Les grandes étapes de git
+
+0. Explorer l'interface web de github
+1. Créer un compte
+2. Créer un dépôt 
+3. Installer git 
+4. Associer un dépôt à RStudio
+5. Bien structurer un projet 
+6. Enregistrer les modifications 
+7. Revenir en arrière 
+8. Récupérer les modifications de co-équipiers
+
+---
+class: inverse, center, middle
+
+# L'histoire d'un projet
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+# L'histoire d'un projet
+
+.pull-left[
+## Une situation familière:
+
+.font90[
+```bash
+MonTravailSession/
+  |___ data/
+        |___ data_01122018.csv
+        |___ data_011022018.csv
+  |___ rapportVeg_jean_v1_01012018.docx
+  |___ rapportVeg_juliette_v1_01012018.docx
+  |___ rapportVeg_rémi_v1_04012018.docx
+  |___ rapportVeg_rémi_v2_10012018.docx
+  |___ rapportVeg_rémi_v3_12012018.docx
+  |___ rapportVeg_rémi_v4_02022018.docx
+  |___ rapportFinal_03022018.docx
+  |___ rapportFinalVRAIMENT_04022018.docx
+```
+]]
+
+--
+
+.pull-right[
+
+## Vous à la fin de ce cours:
+```bash
+MonTravailSession/
+  |___ .git/
+  |___ data/
+        |___ data_01122018.csv
+        |___ data_011022018.csv
+  |___ rapportVeg.Rmd
+```
+]
+
+---
+
+# Quelques notions de base
+
+.pull-left[
+  .center[
+    &lt;img src="./assets/img/git_1.png" width="100%"&gt;&lt;/img&gt;
+  ]
+]
+
+.pull-right[
+
+- Une branche (`master` par défault): c'est un série de commentaires (`commit`)
+- Le dernier commentaire (`commit`) est ce que l'on appelle la tête de la branche (`HEAD`), elle contient la version la plus à jour des fichiers.
+- À chaque commentaire d'édition (`commit`) est attachée une version des fichiers.
+]
+
+---
+
+# Le journal de Git
+
+## L'historique des modifications
+
+.center[
+![](./assets/img/rstudio_git_history.gif)
+]
+
+---
+
+# Le journal de Git
+
+.pull-left[
+```bash
+git log
+```
+ou
+
+![](./assets/img/rstudio_git_history.png)
+]
+
+.pull-right[
+  .center[
+    &lt;img src="./assets/img/git_3.png" width="100%"&gt;&lt;/img&gt;
+  ]
+]
+
+---
+
+# Se déplacer sur la branche `master`
+
+.pull-left[
+```bash
+git checkout 4abdb33e2f6b598aac4d5
+```
+ou
+
+![](./assets/img/rstudio_git_history.png)
+]
+
+.pull-right[
+  .center[
+    &lt;img src="./assets/img/git_3.png" width="100%"&gt;&lt;/img&gt;
+  ]
+]
+
+---
+
+# Se déplacer sur la branche `master`
+
+.pull-left[
+
+```bash
+git checkout master
+```
+ou
+
+![](./assets/img/rstudio_git_history.png)
+]
+
+Permet de se déplacer vers le `commit` le plus récent.
+
+.pull-right[
+  .center[
+    &lt;img src="./assets/img/git_3.png" width="100%"&gt;&lt;/img&gt;
+  ]
+]
+
+---
+# Revenir en arrière dans le temps
+
+Les commandes de git sont très efficaces et puissantes, elles peuvent néanmoins être fastidieuses et difficiles pour les débutants. 
+
+RStudio facilite ce travail avec un simple onglet "history" et avec un navigateur qui vous permet de passer d'une version à l'autre et de mettre en valeur les modifications qui ont été enregistrées sous forme de commit.
+
+---
+
+# Exercice 
+
+1. Créer un dépôt sur GitHub
+2. Associer le dépôt à RStudio
+3. Ajouter un nouveau fichier (`add` *staged* et `commit`)
+4. Téléverser les modifications sur le serveur (`push`)
+5. Observerver les modifications sur le répertoire GitHub
+
+---
+# Travailler en équipe 
+
+- Git a été spécifiquement créé pour travailler en équipe.
+- Plusieurs utilisateurs peuvent se connecter au même répertoire et y apporter des modifications.
+- À chaque fois que l'on ouvre un projet il est approprié d'utiliser la commande `git pull` (un bouton sur l'interface git de Rstudio) afin de récupérer les modifications des autres membres de l'équipe.
+
+![](./assets/img/rstudio_git_pull.png)
+
+---
+# Travailler en équipe 
+
+.center[
+  &lt;img src="./assets/img/git_workflow2.png" width="45%"&gt;&lt;/img&gt;
+]
+
+---
+# La puissance de git
+
+Les fonctionnalités de git sont immenses et RStudio permet de bien les utiliser. 
+
+Un tutoriel complet est disponible ici[https://happygitwithr.com/rstudio-git-github.html]
+
+---
+
+# En résumé
+
+.pull-left[
+## Enregistrer l'histoire du projet
+  - `git add` ou `git stage`
+  - `git commit`
+  - `git status`
+
+## Voyager dans le temps
+  - `git checkout`
+]
+.pull-right[
+
+## Verser sur le serveur 
+  - `git push`
+
+## Collaborer sur des projets
+  - `git pull`
+  - `git clone`
+]
+
+---
+
+# Exercice 
+
+Cet exercice se fait en équipe de 2.
+
+1. Un membre ajoute à son répertoire GitHub un fichier `README.md` avec `# Titre` pour entête et enregistre les modifications (`commit` puis `push`).
+2. Associer le dépôt GitHub à RStudio sur l'ordinateur du partenaire.
+3. Chacun modifie l'entête du fichier `README.md` et enregistre les modifications.
+4. Git `commit` puis `push`.
+
+Qu'est-ce qui arrive ?
+
+--
+
+## Un merge conflict (conflit de fusion) !!
+
+Vous avez chacun fait des modifications sur un même fichier. Git ne sait pas quelle version prioriser.
+
+---
+
+# Gestion des conflits
+
+Le conflit de de fusion est le résultat de deux modifications concurrentes sur un même fichier. C'est le conflit le plus fréquent et survient lorsqu'on oublie de `git pull` avant de `git push`
+
+Il est possible de résoudre le conflit directement dans RStudio. Essayez-vous !
+
+Marche à suivre : [Chapitre 7.3 *Git, Conflits*](https://econumuds.github.io/BIO500/git.html#conflits)
+
+---
+
+# Gestion des conflits
+
+[Chapitre 7.3 *Git, Conflits*](https://econumuds.github.io/BIO500/git.html#conflits)
+
+1. `pull` pour récupérer les modifications
+2. Inspecter le fichier en conflit
+3. Résoudre le conflit
+4. Enregistrer les modifications : `add` (*staged*), `commit` et `push`
+
+![](./assets/img/rstudio-merge-conflict.png)
+
+---
+class: inverse, center, middle
+
+# Structurer un projet
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+&lt;br&gt;
+- Organisation des fichiers
+- Documentation
+
+Un guide est disponible au [Chapitre Bonnes pratiques](https://econumuds.github.io/BIO500/bonnes_pratiques.html)
+
+---
+
+# Organisation des fichiers
+
+.small[
+```bash
+monProjet/
+│
+├── .git/
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── scripts/
+│   ├── data_cleaning.R
+│   ├── data_analysis.R
+│   └── data_visualisation.R
+│
+├── results/
+│
+├── reports/
+│   ├── report.Rmd
+│   └── report.pdf
+│
+├── .gitignore
+│
+└── README.md
+```
+]
+
+---
+
+# Documentation
+
+- Le code : par des commentaires pour faciliter la compréhension.
+- Le projet : le fichier `README.md` permet de documenter le projet avec une description, une structure, des instructions et des informations complémentaires.
+---
+
+# Documentation
+
+## Le code
+
+```r
+#############################################
+# Ce script permet de nettoyer les données
+#
+# Auteur: Victor Cameron
+# Date: 2021-10-01
+#############################################
+
+# 1. Charger les données
+data &lt;- read.csv("data/raw/data.csv")
+
+# 2. Nettoyer les données
+clean_data &lt;- clean_data(data)
+```
+
+---
+
+# Documentation
+
+## README.md
+
+Quelques éléments à inclure dans un fichier `README.md` :
+
+- Titre du projet : nom du projet.
+- Description du projet : objectifs, contexte, données, méthodes, résultats. Ça peut être un résumé du projet.
+- Structure du répertoire : organisation des fichiers, scripts et ressources.
+- Description des fichiers : rôles et contenus des principaux fichiers.
+- Instructions
+    - Comment exécuter le projet.
+    - Comment reproduire les résultats.
+    - Comment accéder aux données et aux ressources.
+- Auteurs et contributeurs : qui a travaillé sur le projet.
+
+---
+
+# .gitignore
+
+## Ignorer certains fichiers de Git
+
+Il existe des gabarits proposés pour [R](https://www.toptal.com/developers/gitignore/api/r).
+
+```bash
+# R
+*.Rproj.user
+*.Rhistory
+.RData
+```
+
+---
+
+# Exercice
+
+## En équipe de projet de session
+
+1. Chaque membre est ajouté à une équipe, ce qui donne accès à un répertoire GitHub pour le projet de session. 
+   - Remplir le formulaire "Répertoire des équipes" sur *Moodle &gt; Bloc2* pour être ajouté à une équipe.
+2. Chaque membres de l'équipe clone le répertoire sur son ordinateur.
+3. Créer la structure de projet selon les bonnes pratiques et y ajouter les fichiers nécessaires.
+4. Ajouter un fichier README.md
+5. Ajouter un fichier .gitignore
+
+&lt;br&gt;
+
+&gt; Voir le [Chapitre *Bonnes pratiques*](https://econumuds.github.io/BIO500/bonnes_pratiques.html) pour les détails sur la structuration d'un projet et la documentation.
+
+---
+
+class: inverse, center, middle
+
+# Évaluation formative #2
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+## Structurer sa base de données
+
+---
+
+# Évaluation formative #2
+
+**À remettre pour le 17 mars sur Moodle**
+
+Vous avez à soumettre vos scripts qui servent à créer votre base de données. Vos scripts doivent contenir les commandes `R` et `SQL` pour créer la base de données, ses tables et injecter les données.
+
+## La grille d'évaluation est diponible sur Moodle
+
+[Grille d'évaluation](https://github.com/EcoNumUdS/BIO500/blob/master/ressources/bd_grille_de_correction.pdf)
+
+---
+
+# Évaluation formative #2
+
+**Un membre par équipe** aura à remettre un dossier .zip contenant les scripts nécessaires pour créer la base de donnée et y injecter les données.
+
+- Remise par un seul membre par équipe
+- Spécifiez pour quel jeu de données la bd est conçue
+- Commentez vos scripts pour que votre processus soit évident aux autres
+- Diviser les tâches en fonctions distinctes
+- Un script pour une fonction
+- Un script principal qui décrit le processus et fait appel aux fonctions qui exécutent les tâches
+- Vos scripts doivent produire une base de données avec les tables, le type de chacun des champs, les clés primaires et secondaires et les contraintes
+
+---
+class: inverse, center, middle
+
+# Lectures et travaux à faire
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Lecture de la semaine
+
+- [Biswas. 2023. ChatGPT for Research and Publication: A Step-by-Step Guide](https://www.doi.org/10.5863/1551-6776-28.6.576)
+- [Nat. Mach. Intell. 2023. The AI writing on the wall.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/NatMaInt2023.pdf) 
+- [Cooper. 2024. Harnessing language models for coding, teaching and inclusion to empoyer research in ecology and evolution.](https://doi.org/10.1111/2041-210X.14325)
+
+---
+
+
+class: title-slide, middle
+
+&lt;style type="text/css"&gt;
+  .title-slide {
+    background-image: url('../assets/img/bg.jpg');
+    background-color: #23373B;
+    background-size: contain;
+    border: 0px;
+    background-position: 600px 0;
+    line-height: 1;
+  }
+&lt;/style&gt;
+
+&lt;div class="lab-logo"&gt;&lt;/div&gt;
+
+# Séance 5
+
+&lt;hr width="65%" align="left" size="0.3" color="orange"&gt;&lt;/hr&gt;
+
+## Les outils pour la reproductibilité
+
+&lt;hr width="65%" align="left" size="0.3" color="orange" style="margin-bottom:40px;" alt="@Martin Sanchez"&gt;&lt;/hr&gt;
+
+.instructors[
+  **BIO500** - Victor Cameron
+]
+
+---
+
+# Aujourd'hui
+
+1. Retour sur le dernier cours [[Chapitre 7 Git](https://econumuds.github.io/BIO500/git.html)].
+2. Le cahier de laboratoire RMarkdown [[Chapitre 8 RMarkdown](https://econumuds.github.io/BIO500/markdown1.html#anatomie-du-rmarkdown)].
+3. Automatisation avec targets [[Chapitre 9 Targets](https://econumuds.github.io/BIO500/targets.html)].
+
+---
+# Retour sur le dernier cours
+
+Il est recommandé de bien organiser ses fichiers afin de s'y retrouver plus facilement. On y retrouve habituellement les éléments suivants  : 
+
+- *README.md*: information sur le dépôt 
+- *.Rproj*: informations sur le projet R
+- *.git* : informations sur l'historique d'utilisation de git 
+- *.gitignore*:  contient les extensions de fichier ignorés par git
+- **data** : données du projet ainsi que la base de données
+- **scripts**: tous les scripts R
+- **figures**: résultats des analyses
+- **rapport**: rapport final 
+
+---
+
+# Retour sur le dernier cours
+
+## .gitignore
+
+Il existe des gabarits proposés pour [R](https://www.toptal.com/developers/gitignore/api/r).
+
+```bash
+# R
+.RData
+.Rhistory
+
+# R projets
+.Rproj.user/
+
+# Résultats intermédiaires
+donnees_intermediaires/*
+```
+
+---
+
+# Retour sur le dernier cours
+
+## Processus ETL
+
+.center[
+![:scale 70%](assets/img/etl_processus.png)
+]
+
+- **Extract** : Collecte des données brutes de diverses sources.
+- **Transform** : Nettoyage et mise en forme pour assurer cohérence et qualité.
+- **Load** : Stockage des données prêtes à l’usage dans un système cible.
+
+---
+class: inverse, center, middle
+
+# Le cahier de laboratoire RMarkdown
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# C'est quoi le RMarkdown
+
+.center[
+![:scale 70%](assets/img/Rmarkdown.png)
+]
+
+- Un outil pour intégrer du texte, du code et des résultats
+- Un format de fichier (`.Rmd`) pour créer des documents dynamiques avec R
+- Une libraire R
+
+---
+# Pourquoi RMarkdown?
+
+- Documentation (dynamique) des analyses
+- Facilite le partage/communication des résultats
+- Utilisable sur les systèmes de controle de version (Git)
+- Reproductible!
+
+---
+# L'anatomie du RMarkdown
+
+&lt;br&gt;
+.center[
+![:scale 90%](assets/img/Rmarkdown_anatomie.png)
+]
+
+---
+# L'anatomie du RMarkdown
+
+.center[
+![](assets/img/Rmarkdown_example.png)
+]
+
+---
+# L'anatomie du RMarkdown
+
+.center[
+![](assets/img/Rmarkdown_example2.png)
+]
+
+&lt;span style="color:rgb(101, 136, 71);"&gt;Metadata&lt;/span&gt; + &lt;span style="color:rgb(255, 199, 65);"&gt;Texte&lt;/span&gt; + &lt;span style="color:rgb(100, 164, 213);"&gt;Code chunk&lt;/span&gt; = RMarkdown
+
+---
+# Exercice
+
+1. Ouvrir Rstudio
+2. Installer la libraire RMarkdown si necessaire (`install.packages('Rmarkdown')`)
+3. Creer nouveau document RMarkdown (New File &gt; RMarkdown)
+4. Identifier le YAML, texte, et code chunk du document `.Rmd`
+5. Compiler le document en html (bouton 🧶 `knit`)
+
+---
+# Le fichier RMarkdown
+
+Vous pouvez suivre à l'aide du livre [Chapitre 8 RMarkdown](https://econumuds.github.io/BIO500/markdown1.html#anatomie-du-rmarkdown).
+
+---
+# Le YAML (metadata)
+
+- Les métadonnées et les options du document sont définies ici
+- La syntaxe est `cle: valeur`
+- Commence et se termine avec trois tirets `---`
+- Toujours au début du document
+
+```r
+---
+title: "Mon titre"
+author: "Victor Cameron"
+date: "29/03/2022"
+output: html_document
+    toc: true
+---
+```
+
+Les options d'`output` définissent le type de document produit.
+
+Voir `?html_document`, `?pdf_document`, `?word_document`
+
+
+---
+# Markdown (contenu)
+
+Du "plain text" avec une syntaxe minimaliste pour la mise en forme du texte
+
+.font90[
+.pull-left[
+```md
+# Titre 1
+## Titre 2
+### Titre 3
+
+Ce mot est en *italique* et celui-ci
+en **gras**.
+Ici nous avons du `code`.
+```
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+]
+
+
+.pull-right[
+
+# Titre 1
+## Titre 2
+### Titre 3
+
+Ce mot est en *italique* et celui-ci
+en **gras**.
+Ici nous avons du `code`.
+]
+]
+
+---
+# Markdown - listes
+
+.font90[
+.pull-left[
+```md
+Le texte qui suit est une liste :
+- Premier item
+- Second item
+- Troisième item
+
+Pour faire une énumération : 
+1. Item 1
+2. Item 2
+3. Item 3
+```
+]
+
+.pull-right[
+Le texte qui suit est une liste :
+- Premier item
+- Second item
+- Troisième item
+
+Pour faire une énumération : 
+1. Item 1
+2. Item 2
+3. Item 3
+]
+]
+
+---
+# Markdown - images
+
+```md
+![Schéma d'un projet de recherche](assets/img/flow_full_repro.png)
+```
+
+![Schéma d'un projet de recherche](assets/img/flow_full_repro.png)
+
+---
+# Markdown - liens
+
+```md
+Voici le [lien](https://github.com/EcoNumUdS/BIO500) pour le GitHub du cours BIO500.
+```
+
+Voici le [lien](https://github.com/EcoNumUdS/BIO500) pour le GitHub du cours BIO500.
+
+
+---
+# Markdown - tables
+
+.font90[
+.pull-left[
+```md
+| Time          | Session | Topic    |
+|:--------------|:-------:|---------:|
+| _left_        | _center_| _right_  |
+| 01:00 - 01:50 | 1       | Anatomy  |
+| 01:50 - 02:00 |         | *Break*  |
+| 02:00 - 02:45 | 2       | Tables   |
+| 02:45 - 03:00 |         | *Break*  |
+```
+]
+
+.pull-right[
+
+| Time          | Session | Topic    |
+|:--------------|:-------:|---------:|
+| _left_        | _center_| _right_  |
+| 01:00 - 01:50 | 1       | Anatomy  |
+| 01:50 - 02:00 |         | *Break*  |
+| 02:00 - 02:45 | 2       | Tables   |
+| 02:45 - 03:00 |         | *Break*  |
+
+]]
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+- Le `:` spécifie l'alignement
+- Possibilité d'utiliser des packages R spécialisés pour imprimer des tableaux automatiquement à partir de R (nous les verrons au dernier cours)
+
+
+
+---
+# Code chunk (script R)
+
+L'utilité de Rmarkdown est de combiner du texte, du code et des images dans le même document
+
+### Code dans le document Rmarkdown :
+
+.font80[
+````md
+Le code R doit être à l'intérieur d'un bloc de code (*code chunk*). Par exemple:
+
+```{r}
+data(iris)
+iris_setosa &lt;- subset(iris, Species == 'setosa')
+head(iris_setosa)
+```
+````
+]
+
+---
+# Code chunk (script R)
+
+### Sortie Rmarkdown une fois compilé :
+
+.font80[
+
+
+``` r
+data(iris)
+iris_setosa &lt;- subset(iris, Species == 'setosa')
+head(iris_setosa)
+```
+
+```
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa
+```
+]
+
+---
+# Code chunk (script R)
+
+.pull-left[
+### Code :
+
+.font80[
+````md
+```{r}
+data(iris)
+plot(iris$Sepal.Length, iris$Sepal.Width)
+```
+````
+]]
+
+.pull-right[
+### Sortie:
+
+.font80[
+
+``` r
+data(iris)
+plot(iris$Sepal.Length, iris$Sepal.Width)
+```
+
+![](index_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
+]]
+
+---
+
+# Inclure du code directement dans le texte
+
+### Code Rmarkdown:
+
+
+``` r
+le jeu de données *iris* comprend `r length(unique(iris$Species))` espèces
+avec un total de `r nrow(iris)` fleurs mesurées.
+```
+
+### Sortie:
+
+le jeu de données *iris* comprend 3 espèces avec un total de 150 fleurs mesurées.
+
+---
+
+# Configuration des code chunk
+
+.font80[
+Nommer le bloc de code (utile pour débogage)
+````md
+```{r plot_iris}
+plot(iris$Sepal.Length, iris$Sepal.Width)
+```
+````
+`echo=FALSE`:  afficher les résultats, mais pas le code
+````md
+```{r plot_iris, echo=FALSE}
+plot(iris$Sepal.Length, iris$Sepal.Width)
+```
+````
+`eval=FALSE`:  afficher le code, mais le code n'est pas évalué
+````md
+```{r plot_iris, eval=FALSE}
+plot(iris$Sepal.Length, iris$Sepal.Width)
+```
+````
+`include=FALSE`: évaluer le code, mais rien n'est affiché
+````md
+```{r plot_iris, include=FALSE}
+plot(iris$Sepal.Length, iris$Sepal.Width)
+```
+````
+]
+
+---
+# Ajuster la taille de la figure
+
+````md
+```{r plot_iris, fig.height = 3, fig.width = 5, fig.align = "center"}
+plot(iris$Sepal.Length, iris$Sepal.Width)
+```
+````
+
+&lt;img src="index_files/figure-html/plot_iris-1.png" alt="" style="display: block; margin: auto;" /&gt;
+
+---
+# Configuration des code chunk
+
+.font70[
+
+``` r
+str(knitr::opts_chunk$get())
+```
+
+```
+## List of 53
+##  $ eval         : logi TRUE
+##  $ echo         : logi TRUE
+##  $ results      : chr "markup"
+##  $ tidy         : logi FALSE
+##  $ tidy.opts    : NULL
+##  $ collapse     : logi FALSE
+##  $ prompt       : logi FALSE
+##  $ comment      : chr "##"
+##  $ highlight    : logi TRUE
+##  $ size         : chr "normalsize"
+##  $ background   : chr "#F7F7F7"
+##  $ strip.white  : 'AsIs' logi TRUE
+##  $ cache        : logi FALSE
+##  $ cache.path   : chr "01_head_cache/html/"
+##  $ cache.vars   : NULL
+##  $ cache.lazy   : logi TRUE
+##  $ dependson    : NULL
+##  $ autodep      : logi FALSE
+##  $ cache.rebuild: logi FALSE
+##  $ fig.keep     : chr "high"
+##  $ fig.show     : chr "asis"
+##  $ fig.align    : chr "default"
+##  $ fig.path     : chr "index_files/figure-html/"
+##  $ dev          : chr "png"
+##  $ dev.args     : NULL
+##  $ dpi          : num 72
+##  $ fig.ext      : NULL
+##  $ fig.width    : num 7
+##  $ fig.height   : num 7
+##  $ fig.env      : chr "figure"
+##  $ fig.cap      : NULL
+##  $ fig.scap     : NULL
+##  $ fig.lp       : chr "fig:"
+##  $ fig.subcap   : NULL
+##  $ fig.pos      : chr ""
+##  $ out.width    : NULL
+##  $ out.height   : NULL
+##  $ out.extra    : NULL
+##  $ fig.retina   : num 1
+##  $ external     : logi TRUE
+##  $ sanitize     : logi FALSE
+##  $ interval     : num 1
+##  $ aniopts      : chr "controls,loop"
+##  $ warning      : logi TRUE
+##  $ error        : logi FALSE
+##  $ message      : logi TRUE
+##  $ render       : NULL
+##  $ ref.label    : NULL
+##  $ child        : NULL
+##  $ engine       : chr "R"
+##  $ split        : logi FALSE
+##  $ include      : logi TRUE
+##  $ purl         : logi TRUE
+```
+]
+
+---
+
+# Exercice : Reproduire le document suivant
+
+.center[
+![:scale 70%](assets/img/exercice_rmd.png)
+]
+
+---
+# L'univers RMarkdown
+
+![Tutoriel](https://ulyngs.github.io/rmarkdown-workshop/slides/figures/rmarkdown_universe.jpg)
+
+.font60[*Source: Ulrik Lyngs*]
+
+---
+
+# Autres ressources disponibles en ligne :
+
+- R Markdown: The Definitive Guide [https://bookdown.org/yihui/rmarkdown/](https://bookdown.org/yihui/rmarkdown/)
+- Cheat sheet [https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf)
+- RMarkdown gallery [https://rmarkdown.rstudio.com/gallery.html](https://rmarkdown.rstudio.com/gallery.html)
+- ResearchDown [https://insileco.github.io/ResearchDown/](https://insileco.github.io/ResearchDown/)
+
+---
+
+class: inverse, center, middle
+
+# Automatisation de processus avec targets
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# L'automatisation d'un processus
+
+Un projet d'analyse de données comprend de nombreuses étapes, qui vont de la construction de la base de données, à la production du rapport, en passant par les analyses statistiques. L'ensemble du processus peut-être long et frustrant, surtout lorsque l'on a une boucle du genre : 
+
+1. Lancer le code
+2. Attendre qu'il s'exécute 
+3. Découvrir un bug 
+4. Recommencer la boucle
+
+Des petites modifications en amont peuvent affecter toute la chaîne en aval. Inversement, parfois on a seulement besoin de refaire une figure sans avoir à refaire toute la chaîne. 
+
+La programmation d'une séquence d'instructions permet de formaliser ce processus et de s'attarder seulement aux étapes qui doivent être mises à jour. 
+
+---
+
+# Qu'est-ce qu'un outil d'automatisation ?
+ 
+**Définition**: un fichier qui contient un ensemble de directives qui sont exécutées par l'ordinateur. Les instructions et leurs dépendances sont spécifiées.
+
+---
+
+# Quel outil utiliser ?
+
+&lt;!-- Le `makefile` est sans contredit l'outil le plus commun et le plus puissant. Spécifique au système d'exploitation UNIX, il peut seulement être utilisé sur les Mac, Linux, et des machines virtuelles. Pas pratique pour les utilisateurs Windows ! --&gt;
+
+Nous utiliserons la librairie `targets` pour assurer la reproductibilité de la démarche entreprise dans le cours. L'ensemble des instructions nécessaires à la production du rapport, de la création de la base de données à la compilation du document écrit, seront contenues dans une séquence d'instructions, plus généralement appelée 'workflow' ou 'pipeline'.
+
+---
+
+# Introduction à `targets`
+
+1. Consulter le [chapitre Targets](https://econumuds.github.io/BIO500/targets.html).
+2. Regarder la [vidéo](https://player.vimeo.com/video/700982360?h=38c890bd4f) de présentation.
+3. Explorer la [documentation](https://books.ropensci.org/targets/).
+
+---
+
+# Un exemple minimal 
+
+1. Lire le fichier de données `data.txt`
+2. Faire une régression linéaire 
+3. Faire une figure et l'enregistrer
+
+## Vous pouvez suivre avec le [chapitre Targets](https://econumuds.github.io/BIO500/targets.html) du livre
+
+---
+
+# Un exemple minimal 
+
+## La structure de fichiers sur votre ordinateur 
+
+```md
+├── data             # Dossier de données
+│   ├── data.txt     # Jeu de données
+
+├── R                # Dossier de scripts R
+│   ├── figure.R     # Fonction utilisée comme targets
+│   ├── analyse.R    # Fonction utilisée comme targets
+
+├── _targets.R       # Fichier targets qui définit le pipeline
+```
+
+---
+
+# Un exemple minimal 
+
+## Le fichier de données 
+
+
+``` r
+data = read.table("exemple_targets/data/data.txt", header = T)
+head(data) 
+```
+
+```
+##            X           Y
+## 1 0.51473106  0.66633330
+## 2 0.07292722 -0.18183177
+## 3 0.21961688 -0.01012248
+## 4 0.64920452  0.84208004
+## 5 0.05969420 -0.21913796
+## 6 0.13795512 -0.29987671
+```
+
+---
+# Un exemple minimal 
+
+## Le script `analyse.R`
+
+
+``` r
+resultat_modele = function(data) lm(data$Y~data$X)
+```
+
+---
+
+# Un exemple minimal 
+
+## Le script `figure.R`
+
+
+``` r
+ma_figure = function(data, resultat_modele) {
+    plot(data$X, data$Y, xlab = "X", ylab = "Y", 
+    cex.axis = 1.5, cex.lab = 1.5, pch = 19)
+    abline(resultat_modele)
+}
+```
+
+---
+
+# Un exemple minimal 
+
+## Mise à jour de la séquence
+
+Quatre éléments peuvent être modifiés : 
+
+- Le fichier de données `data.txt`
+- Les scripts `analyse.R` et `figure.R` 
+- La figure
+
+---
+
+# Un exemple minimal 
+
+## target : définition
+
+Une `target` est une étape de la séquence d'instructions.  
+
+Une `target` est au minimum une _cible_ (nom d'un objet) et une _dépendance_ (commande R) 
+
+Une `target` produit un objet R qui est enregistré dans la mémoire de la session
+
+Une _dépendance_ est une expression qui dépent d'une `target` précédente
+
+Le package `targets` exécute seulement les targets qui ne sont pas à jour. 
+
+---
+
+# Un exemple minimal 
+
+## Anatomie d'un fichier `_targets.R`
+
+
+``` r
+# _targets.R file
+library(targets)
+source("exemple_targets/R/analyse.R")
+source("exemple_targets/R/figure.R")
+tar_option_set(packages = c("MASS"))
+list(
+  tar_target(
+    data, # Le nom de l'objet
+    read.table("exemple_targets/data/data.txt", header = T) # Lecture du fichier
+  ), 
+  tar_target(
+    resultat_modele, # Cible pour le modèle 
+    mon_modele(data) # Exécution de l'analyse
+  ),
+  tar_target(
+    figure, # Cible pour l'exécution de la figure
+    ma_figure(data, resultat_modele) # Réalisation de la figure
+  )
+)
+```
+
+---
+
+# Un exemple minimal 
+
+## Construction de la séquence (pipeline)
+
+La construction d'une séquence d'opération est l'étape la plus importante. Cette étape se fait essentiellement avec du papier et un crayon, il faut identifier les dépendences entre les fonctions et les objets. 
+
+La `target` d'une étape est utilisée comme argument dans une étape suivante.
+
+Une target est exécutée seulement lorsque la `target` dont elle dépend est plus récente que l'objet qu'elle  produit. 
+
+---
+
+# Un exemple minimal 
+
+## La séquence
+
+### 1. On peut visualiser la séquence
+
+
+``` r
+source("exemple_targets/_targets.R")
+tar_glimpse()
+```
+
+### 2. Exécuter la séquence 
+
+
+``` r
+tar_make()
+```
+
+### 3. Visualiser les étapes qui sont à jour et celles qui ne le sont pas
+
+
+``` r
+tar_visnetwork()
+```
+
+---
+
+# Un exemple minimal 
+
+## Qu'est-ce qui fait une bonne target ?
+
+Comme une fonction, une `target` peut faire trois choses : 
+
+1. Produire des données 
+2. Analyser des données
+3. Résumer une analyse ou des données (e.g. figure, tableau)
+
+Si une target est trop longue, vous avez avantage à la briser en petits morceaux pour que chaque étape soit vérifiée. 
+
+Alternativement, pour une séquence d'analyse très compliquée, on pourrait vouloir regrouper les étapes pour éviter d'avoir une liste trop longue.  
+
+---
+
+# Un exemple minimal 
+
+## Qu'est-ce qui fait une bonne `target` ? 
+
+Le grain d'une séquence dépend donc d'un compromis : 
+
+1. Les `targets` sont suffisamment importantes pour sauver du temps si elles sont ignorées (e.g. construire votre base de données et faire les injections) 
+2. Suffisamment petites pour qu'il soit pertinent d'automatiser le processus
+3. Retourne un seul objet qui 
+  - est facile à comprendre et interpréter
+  - pertinent pour le projet 
+  - peut être sauvé comme objet
+
+---
+
+# Le `_targets.R` comme outil de reproductiblité
+
+La rédaction du ficher `_targets.R` nous force à spécifier les différentes étapes de notre démarche, à identifier les entrées et les sorties de différentes instructions à l'ordinateur. De cette façon, le fichier `_targets.R` permet de documenter rigoureusement la démarche réalisée.
+
+Il s'agit aussi d'un aide-mémoire qui permet de se rappeler des étapes.
+
+---
+
+# Bonnes pratiques
+
+`targets` est une librairie de haut niveau pour utilisateurs expérimentés. 
+
+Les erreurs sont difficiles à trouver et à régler. 
+
+Il faut s'assurer que chaque étape fonctionne avant d'en ajouter une autre. Il faut donc construire progressivement sont fichier `_target.R` et s'assurer qu'une étape s'exécute parfaitement avant de passer à la suivante. 
+
+---
+
+# Pour plus d'information 
+
+Manuel de targets [https://books.ropensci.org/targets/](https://books.ropensci.org/targets/)
+
+---
+
+# Exercice 
+
+Construire un script `targets` qui contient les étapes suivantes : 
+
+1. Tirer au hasard 1000 valeurs d'une distribution normale avec une moyenne de 1 et un écart-type de 1 `rnorn(1000, 1, 1)`
+2. Faire un histogramme de ces 1000 valeurs `hist()`
+3. Produire un document html avec RMarkdown 
+
+Note : la commande pour compiler du markdown est `render("mon_rmarkdown.Rmd")`
+
+Note : Alternativement, `tar_render()` peut être utilisé à la place de `render()` et de `tar_target()` pour compiler un document RMarkdown. *Voir la [documentation](https://docs.ropensci.org/tarchetypes/reference/tar_render.html).
+
+---
+
+# Nettoyage du dépôt en fin de script
+
+Il arrive que certains scripts génèrent des fichiers temporaires qui ne doivent pas être conservés inutilement et être poussés sur github. 
+
+Le fichier `.gitignore` vous permet d'identifier les fichiers qui ne doivent pas être versés sur le serveur. 
+
+---
+
+class: inverse, center, middle
+
+# Travail pour la semaine
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Consignes
+
+- Identifiez clairement vos questions de recherche
+- Planifiez les requêtes à réaliser pour traiter les données
+- Créez un dépôt github pour votre projet 
+- Créez un cahier de laboratoire où sont notées toutes vos étapes
+- Versez votre travail sur le dépôt en ligne
+- Construire le `_targets.R` au fur et à mesure de vos progrès
+
+---
+
+# Fiche de lecture
+
+Vous avez à lire "The FAIR Guiding Principles for scientific data management and stewardship" de Wilkinson (2016) et répondre aux questions suivante en une page maximum à remettre en PDF avant le cours du 31 mars :
+
+    Quel est l'importance des données, des métadonnées et du code dans crise actuelle de la reproductibilité ?
+    Pourquoi les principes FAIR ? Quelle est leur pertinence ?
+    Quel est le lien entre les principes FAIR et la reproductibilité ?
+
+[Wilkinson et al. 2016. The FAIR Guiding Principles for scientific data management and stewardship.](https://github.com/EcoNumUdS/BIO500/blob/master/lectures/wilkinson2016.pdf)
+
+---
+
+class: inverse, center, middle
+
+# Débat : Intelligence artificielle et écologie, opportunité ou menace pour la rigueur scientifique ?
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+&lt;br&gt;
+## 15 minutes pour préparer ses arguments
+## 2 minutes pour présenter ses arguments
+## 20 minutes de discussion dirigée
+## 5 minutes vote et conclusion
+&lt;!-- 
+    Sondage sur l’impact perçu des LLM.
+    Conclusion sur les pistes pour une utilisation responsable.
+--&gt;
+
+&lt;!-- 
+Points de réflexion :
+
+  -  Fiabilité et biais : Les LLM peuvent-ils introduire des biais dans l'analyse des données écologiques ?
+  -  Automatisation et créativité scientifique : Les LLM peuvent-ils renforcer la créativité ou risquent-ils de réduire l’esprit critique ?
+  -  Accès aux données et reproductibilité : Les LLM facilitent-ils l’accès à des connaissances dispersées ou compliquent-ils la transparence des méthodes ?
+  -  Éthique et impacts environnementaux : L'empreinte carbone des LLM est-elle compatible avec les objectifs de durabilité écologique ? 
+
+Retour sur règles de l'université de Sherbrooke : 
+- Responsabilité étudiants : https://www.usherbrooke.ca/intranet-education/fileadmin/sites/intranet-education/documents/Intranet/Reglements_facultaires/Informations_facultaires_VF_en_vigueur.pdf
+- Lignes directrices : https://www.usherbrooke.ca/decouvrir/a-propos/priorites-institutionnelles/intelligence-artificielle/lignes-directrices-iag
+- Biblio : https://libguides.biblio.usherbrooke.ca/IA
+--&gt;
+
+
+class: inverse, center, middle
+
+# Essai sur la reproductibilité
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Objectifs
+
+L'objectif d'un essai est de présenter une perspective sur un enjeu scientifique, appuyé par une argumentation logique et une lecture critique de la littérature. L'objectif spécifique de ce travail est de formuler et défendre une opinion sur les enjeux de reproductibilité en écologie.
+
+---
+
+# Mise en situation
+
+Le journal Québec Science vous a invité à titre de chercheur à écrire l'éditorial du mois sur cet enjeu. Plus spécifiquement, on vous demande de vous exprimer sur l'importance de la *transparence* et des standards de *reproductibilité* dans un contexte où il y a une accélération de la recherche par l'utilisation de l'intelligence artificielle. Cette invitation fait suite à la publication d'un article paru dans le dernier numéro du journal :
+
+[ChatGPT en science : alerte à l’imposteur!](https://www.quebecscience.qc.ca/edito/chatgpt-science-alerte-imposteur/)
+
+Vous êtes invités à faire une lecture critique de la situation actuelle, à identifier là où les agents conversationnels utilisant l'intelligence artificielle peuvent aider et à proposer des mesures qui permettront de répondre aux enjeux actuels.
+
+---
+
+# Attentes
+
+Québec Science est un journal destiné à un grand public, alors je vous invite à personnaliser votre argumentation et à rendre original sa présentation. Vous pouvez utiliser des tableaux, des figures ou encore des encadrés pour étayer vos propos. Essayez de faire plus que de rapporter les arguments présentés en classe, n'hésitez pas à **personnaliser** votre essai.
+
+---
+
+# Consignes
+
+- Le texte doit faire au maximum 1200 mots et doit être accompagné d'un résumé court, provocateur de 100 mots. Le document peut être supporté par une figure et/ou un tableau.
+- L'argumentaire doit être supporté de littérature scientifique appropriée. Vous pouvez utiliser les références discutées en classe, celles disponible sur le dépôt git et vous devez également trouver de **nouvelles références** pour appuyer vos propos.
+- Pour chaque argument (positif ou negatif) amené, vous devez en **donner un exemple personnel et concret** prenant place dans le cadre d'un travail scolaire.
+- Le texte peut être structuré en sections afin de permettre au lecteur de suivre le développement de l'argumentaire.
+- La section finale doit résumer les principaux points.
+
+---
+
+# Évaluation
+
+- Respect des consignes
+- Titre et résumé
+- Formulation de la proposition 
+- Qualité de l'argumentation
+    + Identification de l'apport de l'intelligence artificielle
+    + Identification des problèmes
+    + Proposition de solutions
+    + Qualité de la mise en contexte personnelle (exemples)
+- Originalité
+- Mise en page
+- Bibliographie
+- Qualité de la langue
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="../assets/macros.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "monokai",
+  "highlightLines": true,
+  "countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
