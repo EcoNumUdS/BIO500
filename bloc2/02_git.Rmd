@@ -396,7 +396,7 @@ class: inverse, center, middle
 - Organisation des fichiers
 - Documentation
 
-Un guide est disponible au [Chapitre 7. Git/Structurer son projet](https://econumuds.github.io/BIO500/git.html#Structurer-son-projet)
+Un guide est disponible au [Chapitre Bonnes pratiques](https://econumuds.github.io/BIO500/bonnes_pratiques.html)
 
 ---
 
@@ -415,7 +415,7 @@ monProjet/
 ├── scripts/
 │   ├── data_cleaning.R
 │   ├── data_analysis.R
-│   └── data_analysis.R
+│   └── data_visualisation.R
 │
 ├── results/
 │
@@ -495,7 +495,8 @@ Il existe des gabarits proposés pour [R](https://www.toptal.com/developers/giti
 
 ## En équipe de projet de session
 
-1. Chaque membre est ajouté à une équipe, ce qui donne accès à un répertoire GitHub pour le projet de session.
+1. Chaque membre est ajouté à une équipe, ce qui donne accès à un répertoire GitHub pour le projet de session. 
+   - Remplir le formulaire "Répertoire des équipes" sur *Moodle > Bloc2* pour être ajouté à une équipe.
 2. Chaque membres de l'équipe clone le répertoire sur son ordinateur.
 3. Créer la structure de projet selon les bonnes pratiques et y ajouter les fichiers nécessaires.
 4. Ajouter un fichier README.md

@@ -52,6 +52,30 @@ Les données désordonnées nécessitent généralement des transformations ou d
 
 Source : [Data Cleaning in R](https://www.geeksforgeeks.org/r-language/data-cleaning-in-r/)
 
+
+## Validation des données et gestion des erreurs
+
+Il peut y avoir des erreurs dans la saisie des données. Quant à savoir s'il faut corriger les erreurs, cela dépend de votre certitude de la valeur valide. S'il ne vous est pas possible de déterminer avec certitude la valeur correcte, mieux vaut ne pas y toucher.
+
+Faut-il sauvegarder ces données quand même ? Je vous réfère au concept de "separation of concerns" qui suggère de séparer les tâches et besoins en blocs distincts. Ainsi, le stockage des données dans une base de données devrait être distinct de l'utilisation, puisque ces deux tâches répondent à des besoins différents. Heureusement, il existe de bonnes pratiques de correction et de gestion des données douteuses :
+
+- Outils et méthodes de validation
+    - Certaines librairies R comme **CoordinateCleaner** aident à la validation https://docs.ropensci.org/CoordinateCleaner/
+    - **Mettre en place un processus automatisé** pour signaler et traiter ces erreurs (ex. une fonction qui applique ces vérifications)
+    - **Documenter les critères de validation** pour assurer la reproductibilité du nettoyage
+- Marquage et stockage des observations incertaines
+    - C'est l'approche privilégiée par GBIF. Il définissent 50+ problèmes géospatiaux https://data-blog.gbif.org/post/issues-and-flags/
+    - A été recommandé par les guides et bonnes pratiques https://www.gbif.org/document/80528/ principles-and-methods-of-data-cleaning-primary-species-and-species-occurrence-data
+    - Ajouter une colonne certainty_status avec des valeurs comme :
+        - `valid` → Coordonnées validées
+        - `corrected` → Coordonnées corrigées
+        - `suspect` → Coordonnées douteuses
+        - `unknown` → Information manquante
+    - Ajouter une colonne `original_coordinates` pour conserver la donnée brute en cas de correction
+
+Cette approche est à privilégier pour les données spatiales et peut être appliquée aux autres dimensions du jeu de données.
+
+
 ## Ressources
 
 **gsub()**
