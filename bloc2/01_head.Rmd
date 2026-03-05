@@ -19,8 +19,8 @@ output:
 
 ```{r child = '03_rmarkdown.Rmd'}
 ```
-```{r child = '04_target.Rmd'}
+```{r child = '04_principes_reproductibilite.Rmd'}
 ```
 
-```{r child = '05-essai.Rmd'}
+```{r child = '05_essai.Rmd'}
 ```
