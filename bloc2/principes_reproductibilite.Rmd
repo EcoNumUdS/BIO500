@@ -1,5 +1,5 @@
 ---
-title: "Séance 5 — Modularité, testing et automatisation"
+title: "Séance 5 - Principes de reproductibilité"
 author: "Victor Cameron"
 date: "`r Sys.Date()`"
 output:
@@ -32,7 +32,7 @@ On partira d'un script qui **casse** lorsque :
 - le contexte change (robustesse)
 - le script est réutilisé (réutilisabilité)
 
-Nous utiliserons cet échec comme point de départ pour reconstruire un pipeline robuste. Le but est de faire échouer volontairement un script monolithique pour révéler les limites de non‑modularité, puis de le reconstruire en suivant les principes de modularité, d’automatisation et de testing.
+Nous utiliserons cet échec comme point de départ pour reconstruire un pipeline robuste. Le but est de faire échouer volontairement un script monolithique pour révéler les limites de la non‑modularité, puis de le reconstruire en suivant les principes de modularité, d’automatisation et de testing.
 
 ---
 
@@ -86,13 +86,12 @@ Dupliquez le jeu de données pour atteindre plusieurs centaines de milliers de l
 
 ```{r, eval=FALSE}
 # Exemple (à adapter)
-
 data_big1 <- data[rep(seq_len(nrow(data)), times = 3000), ]
 data_big2 <- data[rep(seq_len(nrow(data)), times = 6000), ]
 data_big3 <- data[rep(seq_len(nrow(data)), times = 9000), ]
 ```
 
-Relancez ensuite le script de calcul avec `data_big`.
+Relancez ensuite le script de calcul avec `data_big`. Vous pouvez ajouter le script de calcul adapté dans le bloc de code ci-dessus.
 
 ✍️ Notez ce que vous observez :
 - Temps d'exécution :
@@ -102,13 +101,11 @@ Relancez ensuite le script de calcul avec `data_big`.
 Modifiez les données pour simuler une donnée manquante.
 
 ```{r, eval=FALSE}
-# Exemple (à adapter)
-
-data_modif <- data_big
+data_modif <- data_big1
 data_modif[data_modif$site == "Sherbrooke", "site"] <- NA
 ```
 
-Relancez ensuite le script de calcul avec `data_modif`.
+Relancez ensuite le script de calcul avec `data_modif`. Vous pouvez ajouter le script de calcul adapté dans le bloc de code ci-dessus.
 
 ✍️ Notez ce que vous observez :
 - Erreurs d'exécution :
@@ -117,7 +114,7 @@ Relancez ensuite le script de calcul avec `data_modif`.
 
 ### Réutilisabilité
 
-👉 Copiez-collez le code de calcul et essayez de l’adapter pour le nouveau jeu de données suivant légèrement différent.
+Copiez-collez le code de calcul dans le bloc de code ci-dessous et essayez de l'adapter pour le nouveau jeu de données suivant légèrement différent.
 
 ```{r, eval=FALSE}
 data <- data.frame(
@@ -127,7 +124,7 @@ data <- data.frame(
 ```
 
 ✍️ Notez ce que vous observez :
-- Facilité de modification du code :
+- Facilité de modification du code de calcul :
 
 ---
 
@@ -144,7 +141,7 @@ data <- data.frame(
 
 **2. Listez les responsabilités du script initial (ex. lecture de données, assemblage, affichage) et notez les problèmes associés à chacune d’elles (ex. code dupliqué, manque de flexibilité, erreurs potentielles).**
 
-**3. Proposez une nouvelle structure pour le script en séparant les responsabilités en fonctions distinctes et en définissant clairement les entrées et sorties de chaque fonction.**
+**3. Proposez une nouvelle structure dans le bloc de code ci-dessous pour le script de initial en séparant les responsabilités en fonctions distinctes et en définissant clairement les entrées et sorties de chaque fonction.**
 
 ```{r, eval=FALSE}
 # Exemple de structure modulaire
@@ -172,13 +169,12 @@ data <- data.frame(
 
 **Traçabilité et maintenance**
 
-> Paramètres explicites
+- *Paramètres explicites* : éviter les valeurs cachées dans le code. On peut expliciter les valeurs par défaut, les *paramètres*, en haut du script ou dans un fichier de configuration pour les rendre facilement modifiables.
+- *Logs* : garder une trace de l'exécution du programme
+- *Automatisation* : limiter les interventions manuelles
+- *Tests* : vérifier que le code fonctionne toujours après des modifications
 
-> Logs
-
-> Automatisation
-
-> Tests
+Les prochaines sections détaillent chacun de ces principes et proposent des exercices pour les appliquer à notre script initial.
 
 **Principes FAIR**
 
@@ -187,13 +183,15 @@ data <- data.frame(
 - **Interoperable** : données et code compatibles avec d’autres systèmes
 - **Reusable** : données et code réutilisables dans d’autres contextes
 
-Les principes FAIR seront explorés séparéments, dans la lecture de la semaine.
+Les principes FAIR seront explorés séparément, dans la lecture de la semaine.
 
 ---
 
-## 4. Exercice - Modularisation du script
+### Mise en pratique
 
-### Étape 1 : données
+### Modularisation (séparation des responsabilités)
+
+**Étape 1 : données**
 
 Isolez la production des données dans une fonction et complétez le code suivant. Notez les paramètres utilisés et leurs valeurs par défaut.
 
@@ -203,7 +201,7 @@ simu_data <- function(n_rep, site_col = "site", espece_col = "espece") {
 }
 ```
 
-### Étape 2 : Calcul
+**Étape 2 : Calcul**
 
 Assemblez le calcul dans une fonction distincte et complétez le code suivant. Notez les paramètres utilisés. Ici, il n'y a pas de valeurs par défaut, mais vous pouvez le faire si vous le souhaitez.
 
@@ -213,9 +211,11 @@ compte_especes_par_site <- function(df, site_col, espece_col) {
 }
 ```
 
-## 5. Script maitre (automatisation)
+### Script maitre (automatisation)
 
-> NOTE : Le script master ne fait aucun calcul.
+> NOTE : Le script master ne fait aucun calcul. Un fichier d'automatisation est un fichier qui contient un ensemble de directives qui sont exécutées par l'ordinateur, les instructions et leurs dépendances sont spécifiées. Ce fichier doit pouvoir être exécuté avec la commande `source()`.
+
+> NOTE : Les paramètres sont positionnés en haut du script. Les valeurs par défaut, les *paramètres*, sont explicités et facilement modifiables pour favoriser la traçabilité et la maintenance du code.
 
 À l'aide des fonctions que vous précédement créées, générez les deux jeux de données avec les paramètres définis ici-bas, puis calculez les résultats pour chacun.
 
@@ -237,7 +237,7 @@ n_rep2 <- 2000
 ## Vous devez imprimer les résultats de chaque jeu de données
 ```
 
-## 6. Logs
+### Logs
 
 Pourquoi des logs ?
 
@@ -263,11 +263,11 @@ result <- compte_especes_par_site(authors, site_col1, espece_col1)
 log_message("Fin du script")
 ```
 
-### Types de messages
+#### Types de messages
 
-- INFO : information générale sur l'exécution
-- WARNING : avertissement sur un problème potentiel. Le script continue malgré un problème (ex. données manquantes)
-- ERROR : message d'erreur indiquant un problème critique. Le script s’arrête (ex. division par zéro)
+- **INFO** : information générale sur l'exécution avec `cat()`, `print()` ou `message()`
+- **WARNING** : avertissement sur un problème potentiel. Le script continue malgré un problème (ex. données manquantes) avec `warning()`
+- **ERROR** : message d'erreur indiquant un problème critique. Le script s’arrête (ex. division par zéro) avec `stop()` ou `stopifnot()`
 
 ## 7. Tests
 
