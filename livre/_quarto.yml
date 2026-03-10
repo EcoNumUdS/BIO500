@@ -43,9 +43,10 @@ book:
       chapters:
         - git.qmd
         - markdown1.qmd
+        - principes_reproductibilite.qmd
         # - metadonnees.qmd
-        - targets.qmd
-        - targets_avance.qmd
+        # - targets.qmd
+        # - targets_avance.qmd
 
     # Bloc 3: Utiliser les données
     # Bloc 3: Visualisation des données    
