@@ -349,10 +349,14 @@ Un tutoriel complet est disponible ici[https://happygitwithr.com/rstudio-git-git
 
 Cet exercice se fait en équipe de 2.
 
-1. Un membre ajoute à son répertoire GitHub un fichier `README.md` avec `# Titre` pour entête et enregistre les modifications (`commit` puis `push`).
-2. Associer le dépôt GitHub à RStudio sur l'ordinateur du partenaire.
-3. Chacun modifie l'entête du fichier `README.md` et enregistre les modifications.
-4. Git `commit` puis `push`.
+1. Ajouter votre partenaire à votre répertoire GitHub en tant que collaborateur : 
+   - Aller sur votre répertoire GitHub.
+   - Cliquer sur "Settings" > "Manage access" > "Invite a collaborator".
+   - Entrer le nom d'utilisateur de votre partenaire et l'inviter à collaborer.
+2. Un membre ajoute à son répertoire GitHub un fichier `README.md` avec `# Titre` pour entête et enregistre les modifications (`commit` puis `push`).
+3. Associer le dépôt GitHub à RStudio sur l'ordinateur du partenaire.
+4. Chacun modifie l'entête du fichier `README.md` et enregistre les modifications.
+5. Git `commit` puis `push`.
 
 Qu'est-ce qui arrive ?
 

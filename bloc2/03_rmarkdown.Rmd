@@ -31,7 +31,8 @@ class: title-slide, middle
 
 1. Retour sur le dernier cours [[Chapitre 7 Git](https://econumuds.github.io/BIO500/git.html)].
 2. Le cahier de laboratoire RMarkdown [[Chapitre 8 RMarkdown](https://econumuds.github.io/BIO500/markdown1.html#anatomie-du-rmarkdown)].
-3. Automatisation avec targets [[Chapitre 9 Targets](https://econumuds.github.io/BIO500/targets.html)].
+3. Principes clefs de la reproductibilité [[Chapitre 9 Principes clefs de la reproductibilité](https://econumuds.github.io/BIO500/principes_clefs.html)].
+4. Discussion : Intelligence artificielle et écologie, opportunité ou menace pour la rigueur scientifique ?
 
 ---
 # Retour sur le dernier cours
@@ -52,6 +53,10 @@ Il est recommandé de bien organiser ses fichiers afin de s'y retrouver plus fac
 # Retour sur le dernier cours
 
 ## .gitignore
+
+Il arrive que certains scripts génèrent des fichiers temporaires qui ne doivent pas être conservés inutilement et être poussés sur github. 
+
+Le fichier `.gitignore` vous permet d'identifier les fichiers qui ne doivent pas être versés sur le serveur. 
 
 Il existe des gabarits proposés pour [R](https://www.toptal.com/developers/gitignore/api/r).
 
