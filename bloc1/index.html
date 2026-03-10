@@ -1,0 +1,2902 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>BIO500</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Dominique Gravel" />
+    <script src="assets/header-attrs-2.30/header-attrs.js"></script>
+    <link href="assets/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="assets/remark-css-0.0.1/hygge.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/bio500.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+class: title-slide, middle
+
+&lt;style type="text/css"&gt;
+  .title-slide {
+    background-image: url('../assets/img/bg.jpg');
+    background-color: #23373B;
+    background-size: contain;
+    border: 0px;
+    background-position: 600px 0;
+    line-height: 1;
+  }
+&lt;/style&gt;
+
+&lt;div class="lab-logo"&gt;&lt;/div&gt;
+
+# Séance 1
+
+&lt;hr width="65%" align="left" size="0.3" color="orange"&gt;&lt;/hr&gt;
+
+## Introduction: Méthodes en écologie computationnelle
+
+&lt;hr width="65%" align="left" size="0.3" color="orange" style="margin-bottom:40px;" alt="@Martin Sanchez"&gt;&lt;/hr&gt;
+
+.instructors[
+  **BIO500** - Victor Cameron
+]
+
+---
+
+# Séance 1
+
+- Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/bloc1/).
+- L'ensemble du matériel de cours est disponible dans le [livre du cours](https://econumuds.github.io/BIO500/) et sur [Moodle](https://moodle.usherbrooke.ca/course/view.php?id=30394).
+
+---
+class: inverse, center, middle
+
+# Introduction
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Introduction
+
+&lt;div style='text-align:center;'&gt;
+&lt;img src="assets/img/darwin.jpg" height="500px"&gt;&lt;/img&gt;
+&lt;/div&gt;
+
+---
+
+# Introduction
+
+&lt;div style='text-align:center;'&gt;
+&lt;img src="assets/img/jane_goodall.jpg" height="500px"&gt;&lt;/img&gt;
+&lt;/div&gt;
+
+---
+
+# L'écologie computationnelle
+
+&lt;div style='text-align:center;'&gt;
+&lt;img src="assets/img/computational_ecology.jpg" height="500px"&gt;&lt;/img&gt;
+&lt;/div&gt;
+
+---
+
+# L'écologie computationnelle
+
+S'intéresse aux mêmes questions, mais utilise une approche interdisciplinaire 
+entre l'informatique et l'analyse de données pour étudier les systèmes écologiques.
+
+Les outils utilisés incluent les modèles, les mathématiques et les statistiques et 
+les données.
+
+--
+
+.pull-left[
+  ## Pourquoi ?
+  - Systèmes complexes
+  - Données massives
+  - Problèmes de conservation
+]
+
+.pull-right[
+  ## Comment ?
+  - Modélisation
+  - Analyse de données
+  - Programmation
+]
+
+---
+
+# L'écologie computationnelle
+
+## Projections de biodiversité pour trois scénarios
+
+.center[
+  &lt;img src="assets/img/biodiversity_projections.jpg" height="400px"&gt;&lt;/img&gt;
+]
+
+
+---
+
+# L'écologie computationnelle
+
+.pull-left[
+  ## Dynamiques des populations
+  .center[
+    &lt;img src="assets/img/population_dynamics.jpg" height="150px"&gt;&lt;/img&gt;
+  ]
+]
+
+.pull-right[
+  ## Écologie des communautés
+  .center[
+    &lt;img src="assets/img/community_ecology.jpg" height="150px"&gt;&lt;/img&gt;
+  ]
+]
+
+.pull-left[
+  ## Biologie de la conservation
+  .center[
+    &lt;img src="assets/img/caribou.jpg" height="150px"&gt;&lt;/img&gt;
+  ]
+]
+
+.pull-right[
+  ## Modélisation des écosystèmes
+  .center[
+    &lt;img src="assets/img/ecosystem_model.jpg" height="150px"&gt;&lt;/img&gt;
+  ]
+]
+
+---
+
+# Enseignant
+
+## Victor Cameron
+- Victor.Cameron@usherbrooke.ca
+- D8-0012
+
+## Alexis Brouillette (assistant)
+- Alexis.Brouillette@usherbrooke.ca
+- D8-0022
+
+## Samuel Harimanana (assistant)
+- Samuel.Harimanana@usherbrooke.ca
+- D8-0022
+
+## Pour les questions d'intérêt général, utilisez le forum de discussion sur Moodle.
+
+---
+
+# Biodiversité Québec
+
+&lt;div style='text-align:center;'&gt;
+&lt;img src="assets/img/inventaires.png" height="500px"&gt;&lt;/img&gt;
+&lt;/div&gt;
+
+---
+
+# Biodiversité Québec
+
+&lt;div style='text-align:center;'&gt;
+&lt;img src="assets/img/atlas.png" height="500px"&gt;&lt;/img&gt;
+&lt;/div&gt;
+
+---
+
+# Biodiversité Québec
+
+&lt;div style='text-align:center;'&gt;
+&lt;img src="assets/img/indicateurs.png" height="500px"&gt;&lt;/img&gt;
+&lt;/div&gt;
+
+---
+
+# Quiz d'introduction
+
+## CODE : HGCSXP
+
+&lt;iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen style="min-width: 500px; min-height: 355px" src="https://app.wooclap.com/events/HGCSXP/questions/63c018c45fdcf8793215fe95" width="100%"&gt;&lt;/iframe&gt;
+
+---
+class: inverse, center, middle
+
+# Présentation du cours BIO500
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Objectif général
+
+Au terme de ce cours, l'étudiant sera en mesure de **réaliser l'ensemble de la  séquence d'une étude d'écologie en respectant les standards de gestion, d'analyse et de présentation des données**. Le cours portera sur la réalisation d'un projet intégrateur, de la gestion des données à la production du rapport final.
+
+---
+
+# Objectifs spécifiques
+
+- Planifier une base de données et la préparation l'intégration de données écologiques ;
+- Programmer et interroger une base de données relationnelle ;
+- Exécuter et automatiser un projet ;
+- Représenter visuellement les données au moyen de R ;
+- Préparer un rapport d'étude ;
+- Utiliser un système de contrôle de version pour le suivi des modifications sur du code ;
+- Porter un regard critique sur la reproductibilité et la transparence d'études scientifiques ;
+
+---
+
+# Contenu du cours
+
+## Bloc 1: Planification de la collecte et organisation des données
+
+- Types de données
+- Gestion des données 
+- Bases de données relationnelles (SQL)
+- Requêtes
+
+---
+
+# Contenu du cours
+
+## Bloc 2: Outils pour une science reproductible et transparente
+
+- Système de contrôle de version git
+- La modularité, le testing et l'automatisation pour l'exécution de projets sur R
+- Le cahier de laboratoire RMarkdown
+
+---
+
+# Contenu du cours
+
+## Bloc 3: Visualisation des données
+
+- Les types de graphiques
+- Fonctions graphiques de base sur R
+- Paramètres graphiques
+- Libraries R spécialisés
+
+---
+
+# Contenu du cours
+
+## Bloc 4: Communication scientifique au moyen de RMarkdown
+
+- Rédaction de rapports et d'articles scientifiques
+- Mise en page
+- Insertion de figures et tableaux
+- Gestion des références
+
+
+---
+
+# Approche
+
+Les cours vont comprendre une période de présentation entrecoupée d'exercices, suivie d'une discussion générale sur des enjeux de reproductibilité.
+
+Nous progresserons dans l'exécution du travail de session. Le travail sera divisé en étapes et l'évaluation portera sur son intégration.
+
+---
+
+# Matériel de cours
+
+Sur **moodle**, vous trouverez le matériel de cours. C'est l'endroit de référence où toute l'information se trouvera.
+
+Le contenu du cours est rassemblé dans le livre en ligne [https://econumuds.github.io/BIO500/](https://econumuds.github.io/BIO500/).
+
+.center[
+  &lt;img src="assets/img/livre.png" height="250px"&gt;&lt;/img&gt;
+]
+
+---
+
+# Ressources
+
+## Utilisation des outils d'intelligence artificielle générative (IAg)
+
+**Travail de session**
+
+- L'utilisation d'outils d'IAg (ex. ChatGPT, Copilot, etc.) *est permise pour l'amélioration des travaux du cours*. Cependant, il faut citer ces outils en précisant la nature de l'assistance fournie par l'outil (voir plan de cours pour détails).
+- Vous êtes responsable de la vérification de l'exactitude et de la pertinence des informations générées par ces outils.
+
+**Essai**
+
+- L'utilisation d'outils d'IAg est *strictement interdite pour la rédaction de l'essai*. Toute utilisation sera considérée comme une infraction.
+
+---
+
+# Évaluation
+
+## L'évaluation porte sur la réalisation d'un travail de session (75%) et d'un essai (25%).
+
+Le projet sera réalisé en équipe de 4 personnes et sera divisé en 3 étapes réparties au cours de la session. 
+
+L'essai portera sur les enjeux de reproductibilité en écologie.
+
+---
+class: inverse, center, middle
+
+# Projet de session
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Inventaires écologiques
+
+.center[
+  &lt;img src="assets/img/forest.jpg" height="500px"&gt;&lt;/img&gt;
+]
+
+---
+
+# Les inventaires écologiques
+
+## Inventaire lépidotères
+
+- Observations ponctuelles de différentes sources
+
+
+## Inventaire benthos
+
+- Suivi de la biodiversité benthique
+
+## Séries temporelles
+
+- Mesures répétées de taille de populations
+
+---
+
+# Le projet de session
+
+## Comment les variations spatiales et temporelles influent-elles sur la structure des communautés ?
+
+Vous avez à choisir et analyser un inventaire écologique qui vous permettra de répondre à cette question.
+
+---
+
+# Inventaire lépidoptères
+
+Résolution spatiale et temporelle
+
+- Assemblage d'observations ponctuelles de différentes sources
+&gt; 100 000 observations
+- Données : nom de l'espèce, date, coordonnées spatiales, source
+
+&lt;div style='text-align:center;'&gt;
+&lt;img src="assets/img/gosford.jpg" width="500px"&gt;&lt;/img&gt;
+&lt;/div&gt;
+
+
+---
+
+# Inventaire benthos
+
+Résolution spatiale et temporelle
+
+- Suivi de la biodiversité benthique
+- 43 stations d'échantillonnage
+- Données : abondance, taxons, substrat, 20+ variables d'habitat
+
+&lt;div style='text-align:center;'&gt;
+&lt;img src="assets/img/inventaire_benthos.png" height="300px"&gt;&lt;/img&gt;
+&lt;/div&gt;
+
+---
+
+# Séries temporelles
+
+Résolution spatiale et temporelle
+
+- 8248 suivis de populations 
+- Entre 2 et ~40 mesures répétées
+- Données : espèces, année, coordonnées spatiales, taille de population
+
+&lt;div style='text-align:center;'&gt;
+&lt;img src="assets/img/time_series_map.png" height="300px"&gt;&lt;/img&gt;
+&lt;/div&gt;
+
+---
+
+# Pour commencer
+
+Les données disponibles sont sur Moodle (Généralités &gt; Dossier Projet de session - données).
+
+En équipe de 4, on vous demande d'explorer les jeux de données. Commencez par lire les README.md et discuter des données disponibles. Ensuite, choisissez un de ces jeux de données pour votre travail de session.
+
+---
+
+# Deuxième étape
+
+Faites la liste des informations disponibles et de celles nécessaires pour répondre à la question de recherche.
+
+## Comment les variations spatiales et temporelles influent-elles sur la structure des communautés ?
+
+---
+class: inverse, center, middle
+
+# Retour sur les notions de programmation
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Retour sur les notions de programmation
+
+1. Débugguer [[chapitre 15](https://econumuds.github.io/BIO500/debugger.html)]
+2. Fonctions [[chapitre 16](https://econumuds.github.io/BIO500/fonctions.html)]
+
+---
+
+# Débugguer
+
+Les erreurs de programmation sont inévitables.
+
+## Comment les gérer ?
+
+.center[
+&lt;img src="assets/img/bug_example.png" width="90%"&gt;&lt;/img&gt;
+]
+
+---
+
+# Erreurs courantes
+
+- **Syntaxe** : oubli de parenthèse, de virgule, de guillemets, etc.
+- **Erreur d'indexation** : vérifier que les index sont dans les limites de l'objet
+- **Erreur de type** : tentatives d'effectuer des opérations incompatibles avec le type de données (`result &lt;- "10" + 5`)
+- **Objet inexistant** : vérifier l'orthographe de l'objet et qu'il existe dans l'environnement de travail
+- **Erreurs logiques** : problèmes liés à la logique du code, comme des boucles infinies ou des conditions incorrectes
+-  **Données manquantes (NA)** : problèmes liés à la présence de données manquantes et à la manière dont elles sont traitées 
+```R
+my_vector &lt;- c(1, 2, NA, 4)
+sum(my_vector)
+```
+- **Packages** : Problèmes avec l'installation, le chargement ou l'utilisation de packages
+
+---
+
+# Astuces
+
+- Tester régulièrement son code
+- Lire attentivement les messages d'erreurs et les avertissements (warnings) imprimés dans la console
+- **Redémarrer sa session R** et réessayer son code. Parfois des objets sont sauvés dans la mémoire et causent ou masquent les erreurs
+- Rechercher la documentation de la commande `??` (eg. `??plot`)
+- Googler le message d'erreur pour en comprendre la signification
+- Inspecter les objets dans l'environnement de travail avec `ls()`
+
+## Ressources
+
+- Stackoverflow
+- Ateliers R du [CSBQ](https://r.qcbs.ca/fr/workshops/) 
+- Google
+- Ateliers [Data Carpentry](https://datacarpentry.org/R-genomics/index.html)
+- ChatGPT n'est pas formidable pour R, mais peut donner des pistes d'interprétation
+
+---
+
+# Exercice
+
+## À faire à la maison
+
+```R
+# Script R avec des erreurs
+
+# Fonction pour calculer la somme des carrés des éléments d'un vecteur
+somme_carres &lt;- function(vecteur) {
+  somme &lt;- 0
+  for (i in 1:length(vecteur)) {
+    somme &lt;- somme + vecteur[i]^2
+  }
+  retourne(somme)
+}
+
+# Vecteur d'exemple
+mon_vecteur &lt;- c(1, 2, 3, 4, 5)
+
+# Appel de la fonction et affichage du résultat
+resultat &lt;- somme_carres(mon_vecteur)
+print("La somme des carrés est : ", resultat)
+```
+
+---
+
+# Hackathon - Fonctions
+
+Préparez un script qui retournera le nombre d'auteurs par institution de recherche.
+
+
+| auteur | statut | institution |
+|:-------|:-------|:------------|
+| Jean-Baptiste Lamarck | NA | Académie de sciences |
+| Charles Darwin | NA | London Royal Society |
+| Comte de Buffon | Professor | MHNP |
+
+---
+
+# Hackathon - Fonctions
+
+Préparez un script qui retournera le nombre d'auteurs par institution de recherche.
+
+1. Un script principal qui contiendra le nom du fichier de données à lire, fera appel aux fonctions pour produire les résultats et imprimera le résultat.
+2. Un script qui contient une fonction qui prendra en argument le nom de fichier et retournera les données sous forme de dataframe.
+3. Un script qui contient une fonction qui prendra en argument le dataframe et retournera le nombre d'auteurs par institution.
+
+&gt; Utilisez les données disponibles sur Moodle dans le fichier **Bloc1 &gt; Exercice fonctions &gt; `auteurs.csv`**.
+
+&gt; Chapitre 16 du livre
+
+---
+
+# Hackathon - Fonctions
+
+## Retour en groupe
+
+--
+
+```bash
+.
+├── 0_programme_principal.R
+├── 1_import_csv.R
+├── 2_analyse.R
+└── auteurs.csv
+```
+
+---
+class: inverse, center, middle
+
+# La science reproductible
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Discussion
+
+## La réplication en science : diagnostic et remède 
+
+[Les Jeux de la réplication: mettre des études à l'épreuve](https://ici.radio-canada.ca/tele/decouverte/site/segments/reportage/2020355/universite-social-science-economie)
+
+--
+
+- Qu’est-ce qui vous a le plus surpris dans le documentaire ?
+
+--
+
+- Pourquoi pensez-vous que la reproductibilité est un enjeu majeur en science ?
+
+---
+
+# L'importance de la reproductibilité
+
+## Ces situations peuvent survenir lors de votre carrière professionnelle:
+
+**Situation 1.** Un employeur souhaite que vous réalisiez les mêmes analyses 3 ans plus tard sur des données différentes.
+
+**Situation 2.** Vous avez commis une erreur dans votre saisie de données, vous devez reconduire vos analyses.
+
+**Situation 3.** Un des réviseurs de votre article scientifique vous demande de refaire vos analyses en tenant compte d'une nouvelle variable environnementale.
+
+---
+
+# Les étapes du travail d'un biologiste
+
+.center[
+  &lt;img src="assets/img/flow_biometrie.png"  width="90%"&gt;&lt;/img&gt;
+]
+
+---
+
+# Les étapes du travail d'un biologiste
+
+.center[
+&lt;img src="assets/img/flow_bio500.png" width="90%"&gt;&lt;/img&gt;
+]
+
+## Certaines étapes intermédiaires sont souvent oubliées.
+
+---
+
+# Discussion
+
+- Quelles sont les principales raisons pour lesquelles les études ne sont pas reproductibles ?
+- Identifiez les étapes d'une étude scientifique susceptibles d'influer sur la reproductibilité.
+- Que se passe-t-il si une étude influente n’est pas reproductible ?
+- Comment cela affecte la crédibilité de la science et la prise de décision en écologie ?
+
+.center[
+&lt;img src="assets/img/flow_bio500.png" width="70%"&gt;&lt;/img&gt;
+]
+
+&lt;!-- 
+# Discussion - Introduction à la reproductibilité
+
+Cette discussion fait suite au visionnement du documentaire *Les Jeux de la réplication: mettre des études à l'épreuve* et vise à introduire la notion de reproductibilité.
+
+## 1. Questions d’ouverture (5 mins)
+
+- Qu’est-ce qui vous a le plus surpris dans le documentaire ?
+- Pourquoi pensez-vous que la reproductibilité est un enjeu majeur en science ?
+
+
+## 2. Brainstorming en groupe (15 mins)
+
+- Quelles sont les principales raisons pour lesquelles les études ne sont pas reproductibles ?
+- Que se passe-t-il si une étude influente n’est pas reproductible ?
+- Comment cela affecte la crédibilité de la science et la prise de décision en écologie ?
+
+## 3. Conclusion 
+
+-Synthèse des points clés.
+- Question finale : Comment pouvons-nous, en tant que futurs chercheurs, contribuer à améliorer la reproductibilité ?
+--&gt;
+
+---
+class: inverse, center, middle
+
+# Lectures et travaux pour la semaine prochaine
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+# Lectures et travaux
+
+## Lecture
+
+- Baker, M. 2016. Is there a reproducibility crisis ? Nature, 533 : 452:454
+- Poisot et al. 2014. Moving toward a sustainable ecological science: don't let data go to waste ! Ideas in Ecology and Evolution 6: 11-19
+- Mills et al. 2015. Archivin Primary Data: Solutions for Long-term Studies. Trends in Ecology and Evolution.
+
+&gt; Disponible sur Moodle dans le dossier **Bloc 1 &gt; Lectures**
+
+## Travaux
+
+- Fiche de lecture #1
+- Explorer et choisir un jeu de données pour le projet de session
+
+
+
+---
+class: inverse
+
+---
+class: title-slide, middle
+
+&lt;style type="text/css"&gt;
+  .title-slide {
+    background-image: url('../assets/img/bg.jpg');
+    background-color: #23373B;
+    background-size: contain;
+    border: 0px;
+    background-position: 600px 0;
+    line-height: 1;
+  }
+&lt;/style&gt;
+
+&lt;div class="lab-logo"&gt;&lt;/div&gt;
+
+# Séance 2
+
+&lt;hr width="65%" align="left" size="0.3" color="orange"&gt;&lt;/hr&gt;
+
+## La gestion des données biologiques
+
+&lt;hr width="65%" align="left" size="0.3" color="orange" style="margin-bottom:40px;" alt="@Martin Sanchez"&gt;&lt;/hr&gt;
+
+.instructors[
+  **BIO500** - Victor Cameron
+]
+
+---
+
+# Séance 2
+
+- Ces diapositives sont disponibles en [version web](https://econumuds.github.io/BIO500/cours2/) et en [PDF](./assets/pdf/S2-BIO500.pdf).
+- L'ensemble du matériel de cours est disponible sur la page du portail [moodle](https://www.usherbrooke.ca/moodle2-cours/course/view.php?id=12189).
+
+---
+
+# Plan de cours
+
+## Dernière séance
+
+Nous avons exploré les jeux de données
+
+## Aujourd'hui
+
+Gestion des données : format et types de données
+
+Entreposer et archiver : bases de données relationnelles
+
+- Conceptualiser
+- Construire une base de données (R + SQL)
+- Interagir avec une base de données (SQL)
+
+---
+class: inverse, center, middle
+
+# Les données en biologie
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# La collecte de données
+
+.center[
+  &lt;img src="assets/img/flow_cours2.png" width="90%"&gt;&lt;/img&gt;
+]
+
+---
+
+# Le constat
+
+.pull-left[
+  Trop souvent en écologie, les données sont représentées et entreposées dans un format proche des analyses que l'on veut réaliser.
+
+  Par exemple, on utilise souvent une matrice `\(sites \times espèces\)` pour analyser la structure des communautées.
+
+  La question scientifique ne devrait jamais conditionner notre façon de stocker l'information sur un système écologique (données brutes).
+]
+
+.pull-right[
+  .center[
+  &lt;img src="assets/img/matrix.jpg" width="90%"&gt;&lt;/img&gt;
+  ]
+]
+
+---
+
+# La collecte de données en biologie
+
+## D'abord, qu'est ce qu'une donnée en écologie?
+
+
+&lt;!-- Présenter qu'est qu'une données biologiques, comme elle est représentée --&gt;
+&lt;!-- Qu'est ce qui est représenté en ligne versus en colonne --&gt;
+
+
+.center[
+  &lt;img src="assets/img/data_cube_2n.png" width="100%"&gt;&lt;/img&gt;
+]
+
+
+---
+
+# La collecte de données en biologie
+
+## Le problème de multi-dimensionnalité
+
+.center[
+  &lt;img src="assets/img/data_cube_3n.png" width="100%"&gt;&lt;/img&gt;
+]
+
+
+---
+
+# La collecte de données en biologie
+
+## Le problème de multi-dimensionnalité
+
+.center[
+  &lt;img src="assets/img/data_cube_4n.png" width="100%"&gt;&lt;/img&gt;
+]
+
+---
+
+# La collecte de données en biologie
+
+## **En biologie**, on classifie les données selon 4 dimensions/classes d'information:
+
+1. Environnementale
+2. Taxonomique
+3. Temporelle
+4. Spatial
+
+Au sein de ce cours, nous nous attarderons à la façon de structurer ces données. Les spécificités propres à chacune de ces dimensions seront présentées. D'abord le format des données, puis les types de données.
+
+---
+class: inverse, center, middle
+
+#  Le format des données
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+#  Le format des données : tableaux
+
+.font70[
+
+.pull-left[
+  ## &lt;img src="assets/img/green.svg" width="5%"&gt;&lt;/img&gt; Format long
+
+
+|ID    |esp  | annees| dhp_mm|
+|:-----|:----|------:|------:|
+|567-1 |acsa |   2010|    460|
+|567-2 |acsa |   2010|    100|
+|567-3 |acsa |   2010|    120|
+|598   |piru |   2011|    380|
+|876   |abba |   2014|    160|
+
+- Noms de colonnes courts, sans accents, sans espaces et explicites.
+- Attacher les unités au nom de la colonne (si absence de métadonnées).
+
+]
+
+.pull-right[
+## &lt;img src="assets/img/red.svg" width="5%"&gt;&lt;/img&gt; Format large
+
+
+|ID    |esp  | 2010| 2011| 2014|
+|:-----|:----|----:|----:|----:|
+|567-1 |acsa |  460|   NA|   NA|
+|567-2 |acsa |  100|   NA|   NA|
+|567-3 |acsa |  120|   NA|   NA|
+|598   |piru |   NA|  380|   NA|
+|876   |abba |   NA|   NA|  160|
+
+- Privilégier le format long
+- Une ligne = une observation
+]]
+
+---
+
+#  Le format des données: tableaux
+
+## &lt;img src="assets/img/green.svg" width="20px"&gt;&lt;/img&gt; Une colonne = une information
+
+.font70[
+.pull-left[
+  
+  |ID_arbre |ID_multi |esp  | annees| dhp_mm|
+  |:--------|:--------|:----|------:|------:|
+  |567      |1        |acsa |   2010|    460|
+  |567      |2        |acsa |   2010|    100|
+  |567      |3        |acsa |   2010|    120|
+  |598      |NA       |piru |   2011|    380|
+  |876      |NA       |abba |   2014|    160|
+]
+.pull-right[
+  
+  |ID_arbre |esp  | annees| dhp_mm|
+  |:--------|:----|------:|------:|
+  |567-1    |acsa |   2010|    460|
+  |567-2    |acsa |   2010|    100|
+  |567-3    |acsa |   2010|    120|
+  |598      |piru |   2011|    380|
+  |876      |abba |   2014|    160|
+]
+]
+
+---
+
+#  Le format des données: tableaux
+
+## &lt;img src="assets/img/green.svg" width="20px"&gt;&lt;/img&gt; Une colonne = une information
+
+.font70[
+.pull-left[
+  
+  |ID_arbre |ID_multi |esp  | annees| dhp_mm|
+  |:--------|:--------|:----|------:|------:|
+  |567      |1        |acsa |   2010|    460|
+  |567      |2        |acsa |   2010|    100|
+  |567      |3        |acsa |   2010|    120|
+  |598      |NA       |piru |   2011|    380|
+  |876      |NA       |abba |   2014|    160|
+]
+.pull-right[
+  
+  |ID_arbre |esp  | annees| dhp_mm|
+  |:--------|:----|------:|------:|
+  |567-1    |acsa |   2010|    460|
+  |567-2    |acsa |   2010|    100|
+  |567-3    |acsa |   2010|    120|
+  |598      |piru |   2011|    380|
+  |876      |abba |   2014|    160|
+]
+]
+
+&lt;span style="color:rgb(194, 0, 0);"&gt; Important:&lt;/span&gt; votre fichier de données brutes (destiné au stockage à long terme) ne doit pas contenir de champ calculé (c.a.d. une nouvelle colonne avec une moyenne, etc..)
+
+
+---
+class: inverse, center, middle
+
+# Les types de données
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+#  Les types de données en informatique
+
+## **En informatique**, on distingue plusieurs types de données:
+
+| Appelation                | Type                 | Valeurs     | Taille           |
+|---------------------------|----------------------|-------------|------------------|
+| `BOLEAN`                  | Boléen               | vrai/faux   | 1 octet          |
+| `INTEGER`                 | Entiers              | -998, 123   | 1 à 4 octets     |
+| `DOUBLE`, `FLOAT`, `REAL` | Nombres réels        | 9.98, -4.34 | 4 à 8 octets     |
+| `CHAR`,`VARCHAR`          | Chaine de caractères | lapin       | n x 1 à 8 octets |
+| `TIMESTAMP`,`DATE`,`TIME` | Dates et heures      | 1998-02-16  | 4 à 8 octets     |
+
+
+- Ce sont ces types qui seront utilisés pour entreposer nos données.
+- Le choix d'un type approprié permet de réduire la taille du fichier de données.
+- Il est *TRES IMPORTANT* de bien définir les types et de les utiliser rigoureusement.
+
+---
+
+# Les données temporelles
+
+La plupart des languages/programmes disposent d'un type `TIMESTAMP`, `DATE` et `TIME` pour représenter une donnée temporelle.
+
+On utilisera préférablement la norme [ISO8601](https://fr.wikipedia.org/wiki/ISO_8601) pour représenter ces données.
+
+  - `TIMESTAMP` (Heure et temps): `YYYY-MM-ddThh:mm:ss`. *ex. `1977-04-22T01:00:00-05:00` ou `1977-04-22T06:00:00Z`*
+  - `DATE`: `YYYY-MM-dd`. *ex. 1997-04-22*
+  - `TIME`: `HH:mm:ss` dans un système de 24 heures. *ex. 01:30:00.*
+
+Gardez à l'esprit que vos données pourraient être réutilisées à travers le monde.
+
+
+---
+
+# Les données taxonomiques
+
+*Un exemple avec l'érable à sucre*
+
+.pull-left[
+  .small[
+  **Selon vous quelle option est la meilleure?**
+
+  
+  |Option                             |Exemple        |
+  |:----------------------------------|:--------------|
+  |1. Code spécifique à l'étude       |ACSA           |
+  |2. Code du ministère               |ERS            |
+  |3. Genre et espèce                 |Acer saccharum |
+  |4. Nom vernaculaire                |Érable à sucre |
+  |5. Numéro Taxonomique (TSN - ITIS) |28731          |
+  ]
+]
+
+.pull-right[
+  .center[
+  &lt;img src="assets/img/acsa.jpg" height="450px"&gt;&lt;/img&gt;
+  ]
+]
+
+---
+
+# Les données taxonomiques
+
+*Un exemple avec l'érable à sucre*
+
+.pull-left[
+  .small[
+  
+  |Option                             |Exemple        |
+  |:----------------------------------|:--------------|
+  |1. Code spécifique à l'étude       |ACSA           |
+  |2. Code du ministère               |ERS            |
+  |3. Genre et espèce                 |Acer saccharum |
+  |4. Nom vernaculaire                |Érable à sucre |
+  |5. Numéro Taxonomique (TSN - ITIS) |28731          |
+  ]
+]
+
+.pull-right[
+  .small[
+  &gt;- &lt;img src="assets/img/red.svg" width="15px"&gt;&lt;/img&gt; **Option 1 et 2:** Doit être associé à des métadonnées. Risque de perte du fichier attaché.
+
+  &gt;- &lt;img src="assets/img/red.svg" width="15px"&gt;&lt;/img&gt; **Option 3:** Le genre et l'espèce peuvent changer à travers le temps.
+
+  &gt;- &lt;img src="assets/img/red.svg" width="15px"&gt;&lt;/img&gt; **Option 4:** Le nom vernaculaire des espèces est le pire choix. Le nom vernaculaire est propre à un pays, à une région géographique, à une culture/dialecte.
+  ]
+]
+
+---
+
+# Les données taxonomiques
+
+*Un exemple avec l'érable à sucre*
+
+.pull-left[
+  .small[
+  
+  |Option                             |Exemple        |
+  |:----------------------------------|:--------------|
+  |1. Code spécifique à l'étude       |ACSA           |
+  |2. Code du ministère               |ERS            |
+  |3. Genre et espèce                 |Acer saccharum |
+  |4. Nom vernaculaire                |Érable à sucre |
+  |5. Numéro Taxonomique (TSN - ITIS) |28731          |
+  ]
+]
+
+.pull-right[
+&gt;- &lt;img src="assets/img/green.svg" width="15px"&gt;&lt;/img&gt; **Option 5:** Cette option couplée à l'option 3, est le meilleur choix.
+]
+
+---
+
+# Les données taxonomiques
+
+## On privilégie généralement l'utilisation de code d'espèce standardisée:
+
+1. [ITIS](https://www.itis.gov/)
+2. [VASCAN](http://data.canadensys.net/vascan/search?lang=fr) (Plantes vasculaires du Canada)
+3. [NCBI](https://www.ncbi.nlm.nih.gov/)
+4. [BOLD](http://www.boldsystems.org/index.php/TaxBrowser_Home) (Projet code barre)
+
+**Avantage:** Chacune de ces institutions/infrastructures nous permet de valider et retirer l'ensemble de la classification taxonomique d'une espèce à partir de son code.
+Même si l'identifiant change (nouvelle classification), nous serons en mesure de trouver le nouvel identifiant taxonomique à partir de l'ancien.
+
+**Exemple:** [TSN - 28731](https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&amp;search_value=28731#null)
+
+---
+
+# Les données taxonomiques
+
+Certains outils permettent d'obtenir les codes d'espèces à partir du nom de l'espèce. Par exemple, le package [`ritis`](https://docs.ropensci.org/ritis/index.html) en R.
+
+```r
+# install.packages("ritis")
+library("ritis")
+
+# Recherche code TSN pour "Acer"
+itis_acer &lt;- itis_search(q = "nameWOInd:Acer")
+head(itis_acer)
+
+# Recherche code TSN pour "Castor canadensis"
+itis_castor_canadensis &lt;- itis_search(q = "nameWOInd:Castor\\ canadensis")
+```
+
+--
+&gt; Alors que l'accès aux codes peut être automatisé, il est important de ne pas y mettre trop de temps !
+
+---
+
+# Les données spatiales
+
+- **Ce qu'il est important de savoir:** des coordonnées spatiales sans système de projection ne veulent strictement rien dire.
+- Ainsi, lorsque l'on entrepose des données spatiales, trois colonnes doivent être représentées:
+  - La coordonnée en X
+  - La coordonnée en Y
+  - La projection écrite en texte (voir votre GPS), ou préférablement l'identifiant unique de la projection.
+
+---
+
+# Les données spatiales
+
+## Il existe plus de [65 familles de projections géographiques](https://en.wikipedia.org/wiki/List_of_map_projections) pour représenter des coordonnées sur la planète, en voici 3 des plus connues:
+
+.center[
+  &lt;img src="assets/img/proj.png" height="200px"&gt;&lt;/img&gt;
+]
+
+- Il est important de choisir un bon système de projection pour minimiser la déformation spatiale (surtout à nos latitudes)
+
+- À nos latitudes, on privilégiera l'utilisation d'une projection conique. Les ministères du Québec conseillent généralement l'utilisation d'une [projection conique conforme de Lambert](https://fr.wikipedia.org/wiki/Projection_conique_conforme_de_Lambert).
+
+---
+
+# L'absence de données
+
+## On peut représenter l'absence de données de plusieurs façons:
+
+- Laisser la cellule vide (`NULL`)
+- Mettre un `NA` (*Not Available*)
+- Mettre un `0`
+- Mettre `-9999` dans une colonne numérique
+
+## Selon vous, quel est le choix le plus approprié ?
+
+---
+
+#  L'absence de données
+
+## On peut représenter l'absence de données de plusieurs façons:
+
+- Laisser la cellule vide (`NULL`): montre que l'information n'a pas été saisie. *Meilleure pratique*, peut être utilisée en combinaison avec un champ décrivant la raison de l'absence de données.
+
+- Mettre un `NA` (*Not Available*): Montre que l'information est réellement absente (car le NA est saisi par un humain).
+
+&gt;- &lt;span style="text-decoration: line-through;"&gt; Mettre un `0` &lt;/span&gt;: **JAMAIS** (empêche la distinction entre un vrai d'un faux 0, influence la moyenne)
+
+&gt;- Mettre `-9999` dans une colonne numérique: Ce choix peut être utilisé seulement pour les jeux de données très importants (centaine de Megas-octet), et doit être référencé dans les métadonnées.
+
+
+---
+
+# Choisir le bon type et format de données
+
+Si l'on ne choisit pas le type de données approprié, cela aura diverses conséquences:
+
+- Des problèmes de performance (ex. : il est plus rapide de faire une recherche sur un nombre que sur une chaîne de caractères)
+- Un comportement contraire à celui attendu (ex. : trier sur un nombre stocké comme tel, ou sur un nombre stocké comme une chaîne de caractères ne donnera pas le même résultat)
+- L'impossibilité d'utiliser des fonctionnalités propres à un type de données (ex. : stocker une date comme une chaîne de caractères vous prive des nombreuses fonctions temporelles disponibles).
+
+&lt;!-- Point supplémentaire pour les avancées: - Un gaspillage de mémoire (ex. : si vous stockez de toutes petites données dans une colonne faite pour stocker de grosses quantités de données) --&gt;
+
+---
+
+## Pour en savoir davantage:
+
+- [Broman KW, Woo K (2017) Data organization in spreadsheets. The American Statistician.](http://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375989)
+- [Hart EM, Barmby P, LeBauer D, Michonneau F, Mount S, Mulrooney P, et al. (2016) Ten Simple Rules for Digital Data Storage. PLoS Comput Biol](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005097)
+
+---
+
+# Retour sur le travail de session (15 mins)
+
+1. Définissez les types de données pour les différents champs (booléen, numérique, etc)
+2. Définissez le format approprié pour les données (date, taxonomie, etc)
+
+&gt; Selon les meilleures pratiques, est-ce que des modifications seront nécessaires ?
+
+&gt; Les notions relatives aux données écologiques sont détaillées au [chapitre 2 du livre de cours](https://econumuds.github.io/BIO500/donnees_ecologiques.html).
+
+---
+class: inverse, center, middle
+
+# Nettoyage et validation des données
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Nettoyage et validation des données
+
+Vérifiez pour la présence de :
+- Erreurs communes 
+- Erreurs délétères pour le projet 
+- La bonne structure de la donnée et du tableau
+
+
+&gt; Un chapitre du livre de cours est consacré à cette étape cruciale du processus de gestion des données. Voir [*Nettoyage et validation*](https://econumuds.github.io/BIO500/validation.html).
+
+---
+class: inverse, center, middle
+
+# Entreposer et archiver les données écologiques
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Où sommes-nous?
+
+.center[
+  &lt;img src="assets/img/flow_bio.png" width="90%"&gt;&lt;/img&gt;
+]
+
+---
+
+# Pourquoi bien entreposer ses données?
+
+.center[
+  &lt;img src="assets/img/data_trends.jpg" height="500px"&gt;&lt;/img&gt;
+]
+
+[Vines et al., 2013](https://www.nature.com/news/scientists-losing-data-at-a-rapid-rate-1.14416)
+
+---
+
+# Les entrepôts existants
+
+.pull-left[
+1. Les `fichiers textes` comme les CSV, TSV (Format libre et ouvert)
+2. Les `tableurs` comme MS Excel (Logiciel propriétaire), Libre Office Calc. (Logiciel libre)
+3. Les `bases de données relationnelles`
+]
+
+.pull-right[
+  ## Exemple de fichier CSV
+
+  &lt;img src="assets/img/csv.png" width="80%"&gt;&lt;/img&gt;
+]
+
+---
+
+# Les données multi-dimensionnelles
+
+.center[
+  &lt;img src="assets/img/data_cube_4n.png" width="90%"&gt;&lt;/img&gt;
+]
+
+- Il est difficile de stocker les données écologiques dans un tableur (n-2) lorsque les données écologiques ont (n-4).
+- Conduit à une redondance dans l'information (par exemple. répéter les coordonnées de l'emplacement du site lorsqu'il est mesuré plusieurs fois).
+
+---
+
+# Les bases de données (BDs) à la rescousse
+
+.center[
+  &lt;img src="assets/img/star_eg.png" width="50%"&gt;&lt;/img&gt;
+]
+
+- Les BDs permettent de redimensionner ce problème (plusieurs tableaux de n-2 avec des relations) grâce au modèle d'entités-relations.
+- Chaque table correspond à une dimension. Les tables sont liées entre elles par des relations. Cette structure est appelée [schéma en étoile](https://en.wikipedia.org/wiki/Star_schema).
+
+---
+
+# Avantages des bases de données
+
+- **Maintenir l'intégrité entre les enregistrements de nos tableaux**. Une observation ne peut être faite sur un site qui n'existe pas.
+- **Normaliser et contrôler la qualité des données**. Chaque colonne est un type précis de données. Des contraintes peuvent être appliquées sur chaque colonne.
+- **Éviter les redondances dans le stockage de l'information**
+
+---
+class: inverse, center, middle
+
+# Conceptualisation d'une base de données &lt;br&gt; en 5 étapes
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Conceptualisation d'une base de données
+
+1. Faire une liste des variables
+2. Regrouper les variables dans des tables
+3. Établir le type d'association entre les tables
+4. Établir les clés primaires et étrangères
+5. Assigner les types de données aux variables
+
+---
+
+# Étape 1. Faire une liste des variables
+
+
+1. Dresser la liste des informations collectées.
+
+---
+
+# Étape 2. Regrouper les variables dans des tables
+
+1. Déterminer les tables/entités:
+  - Quelles sont les unités d'échantillonnage? Autrement dit, sur quelles entités portent les mesures?
+2. Remplir les tables avec les variables identifiées.
+
+À ce stade de la conceptualisation, une table est une entité possédant des attributs. Chaque attribut est une colonne.
+
+---
+
+# Étape 3.
+
+## Établir le type d'association entre les tables
+
+### Le concept d'association
+
+.center[
+  &lt;img src="assets/img/card.svg" width="80%"&gt;&lt;/img&gt;
+]
+
+---
+
+
+# Étape 4. Établir les clés primaires et étrangères
+
+## Le concept des clés primaires et des clés étrangères
+
+.center[
+  &lt;img src="assets/img/keys_1.svg" width="45%"&gt;&lt;/img&gt;
+]
+
+  - Définition : la donnée qui permet d'identifier de manière unique un enregistrement dans une table.
+  - Une clé primaire garanti le caractère unique d'un enregistrement (ligne d'une table).
+  - Une clé primaire ne peut donc jamais être `NULL`.
+  - Une clé primaire peut être composite, une combinaison de colonnes.
+
+---
+
+# Étape 4. Établir les clés primaires et étrangères
+
+1. Déterminer quels sont les attributs/colonnes garantissant le caractère unique d'un enregistrement (ligne d'une table).
+2. Déterminer quelles sont les clés étrangères.
+
+
+---
+
+# Étape 5. Assigner un type de données
+
+Chaque attribut d'une table doit correspondre à un type de données:
+
+.font70[
+
+| Appelation                | Type                 | Valeurs     | Taille           |
+|:--------------------------|:---------------------|:------------|:-----------------|
+| `BOLEAN`                  | Boléen               | vrai/faux   | 1 octet          |
+| `INTEGER`                 | Entiers              | -998, 123   | 1 à 4 octets     |
+| `DOUBLE`, `FLOAT`, `REAL` | Nombres réels        | 9.98, -4.34 | 4 à 8 octets     |
+| `CHAR`,`VARCHAR`          | Chaine de caractères | lapin       | n x 1 à 8 octets |
+| `TIMESTAMP`,`DATE`,`TIME` | Dates et heures      | 1998-02-16  | 4 à 8 octets     |
+
+]
+
+Pour tous les types de données, [voir la documentation SQLite3](https://www.sqlite.org/datatype3.html)
+
+---
+
+# En résumé
+
+## Finalement, qu'est-ce qu'un modèle conceptuel pour une base de données?
+
+Une façon de représenter l'information dans un modèle de type entités-relations où chaque entité (table) possède des attributs (colonnes).
+
+L'étape suivante est de se connecter à la base de données afin de transcrire ce modèle conceptuel en modèle logique (c.a.d compréhensible par l'ordinateur).
+
+.center[
+  &lt;img src="assets/img/star_eg.png" width="30%"&gt;&lt;/img&gt;
+]
+
+---
+
+# Retour sur le travail de session (15 mins)
+
+## Conceptualiser votre base de données
+
+1. Faire une liste des variables
+2. Regrouper les variables dans des tables
+3. Établir le type d'association entre les tables
+4. Établir les clés primaires et étrangères
+5. Assigner les types de données aux variables
+
+&gt; Les notions relatives à la base de données sont détaillées au [chapitre 4 du livre de cours](https://econumuds.github.io/BIO500/bases_de_donnees.html).
+
+---
+class: inverse, center, middle
+
+# Les Systèmes de Gestion de Base de Données (SGBDs)
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# La diversité des SGBDs
+
+.pull-left[
+  ## Il en existe une multitude:
+
+  .center[
+    &lt;img src="assets/img/sgbd.png" width="100%"&gt;&lt;/img&gt;
+  ]
+]
+
+.pull-right[
+  .font90[
+  &gt;- Pour créer, interroger, gérer et maintenir des bases de données, on utilisera un **[Système de Gestion de Base de Données](https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es) (souvent appelé SGBD)**.
+  &gt;- Mais ces systèmes disposent tous d'un dénominateur commun: le `langage SQL`
+  &gt;- Dans ce cours, nous utiliserons le système de gestion de données `SQLite3` (**Approche fichier de base de données**).
+  ]
+]
+
+---
+
+# Le langage SQL
+
+## Définition
+
+&gt; Le SQL (Structured Query Language) est le langage des SGBDs. Il permet de communiquer avec une base de données.
+
+---
+
+# Le langage SQL
+
+## Le `SQL` permet de:
+
+1. Créer une base de données (`CREATE DATABASE`).
+2. Créer des tables et établir des relations (`CREATE TABLE`).
+3. Insérer des données (`INSERT`).
+4. Interroger les données par requête (`SELECT`).
+5. Supprimer des données ou des tables (`DROP`, `DELETE`).
+6. Mettre à jour des données ou des tables (`UPDATE`, `ALTER`).
+7. Supprimer la base de données (`DROP DATABASE`).
+
+Chacune de ces commandes est une instruction `SQL` envoyée au serveur pour manipuler et interroger la base de données.
+
+---
+
+# Le langage SQL
+
+## Pour cette séance, nous nous attarderons seulement à:
+
+1. Créer une base de données (`CREATE DATABASE`).
+2. Créer des tables et établir des relations (`CREATE TABLE`).
+3. Supprimer ou modifier des tables (`DROP TABLE`, `ALTER TABLE`).
+4. Supprimer la base de données (`DROP DATABASE`).
+
+Soyez attentifs, car le travail de cette semaine consiste à écrire un script qui permet la création de la base de données (les tables et leurs relations) pour entreposer les données que vous aurez collectées pour le travail de session.
+
+
+---
+
+# Deux approches avec les bases de données
+
+.pull-left[
+  ## Serveur de base de données
+
+  &lt;img src="assets/img/flow_db.png" height="450px"&gt;&lt;/img&gt;
+]
+
+.pull-right[
+  ## Fichier de base de données
+
+  &lt;img src="assets/img/db_flow2.png" height="450px"&gt;&lt;/img&gt;
+]
+
+---
+
+# L'approche: Serveur de base de données
+
+.pull-left[
+  .center[
+    &lt;img src="assets/img/flow_db.png" height="450px"&gt;&lt;/img&gt;
+  ]
+]
+
+.pull-right[
+  - Le **client** est un logiciel installé sur votre ordinateur.
+  - On se sert de ce logiciel pour interagir avec le serveur de base de données présent localement ou à distance.
+  - **Avantage:** On peut avoir plusieurs **clients** connectés sur un même serveur (contexte multi-utilisateurs).
+]
+
+---
+
+# L'approche: Fichier de base de données
+
+.pull-left[
+  .center[
+    &lt;img src="assets/img/db_flow2.png" height="450px"&gt;&lt;/img&gt;
+  ]
+]
+
+.pull-right[
+  - On se connecte au fichier a l'aide d'un **client** (logiciel)
+  - **Avantage:** Portabilité
+  - **Désavantage:** On ne peut pas se connecter à plusieurs utilisateurs en même temps.
+]
+
+&lt;!-- ---
+
+# L'approche client-serveur
+
+## On pourrait envisager la situation suivante...
+
+
+.center[
+  &lt;img src="assets/img/db_flow_multi.png" width="55%"&gt;&lt;/img&gt;
+]
+
+L'approche multi-utilisateurs peut uniquement se faire si le serveur est distant. --&gt;
+
+---
+class: inverse, center, middle
+
+# Pratique: Du modèle conceptuel &lt;br&gt; vers le modèle informatique
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Les grandes étapes avec SQLite
+
+1. Créer et se connecter au fichier de base de données
+2. Créer les tables et spécifier les clés
+3. Ajouter de l'information dans les tables
+4. Faire des requêtes pour extraire l'information
+
+---
+
+# Se connecter au fichier la BD (SQLite3) via R
+
+
+
+
+``` r
+# install.packages('RSQLite')
+library(RSQLite)
+con &lt;- dbConnect(SQLite(), dbname="./assets/data/reseau.db")
+## !ATTENTION!: Ceci est mon chemin d'accès vers le fichier!
+## Astuces: getwd() et setwd()
+```
+
+
+``` r
+dbSendQuery(con,"Instructions SQL à envoyer;")
+```
+
+- `con` est un objet contenant la connexion avec le serveur/fichier de base de données.
+- On utilisera la fonction `dbSendQuery()` pour envoyer les instructions SQL.
+- Le deuxième argument de la fonction `dbSendQuery()` est une chaine de caractères contenant les instructions SQL.
+
+---
+
+# Création d'une première table avec clé primaire
+
+.pull-left[
+  Voici un exemple d'instruction SQL pour créer la table `auteurs`.
+
+.font90[
+```sql
+CREATE TABLE auteurs (
+    auteur      VARCHAR(50),
+    statut      VARCHAR(40),
+    institution VARCHAR(200),
+    ville       VARCHAR(40),
+    pays        VARCHAR(40),
+    PRIMARY KEY (auteur)
+);
+```
+]
+]
+
+.pull-right[
+- `auteurs` est le nom de la table
+- Chaque attribut de la table (`auteur`,`statut` etc) dispose d'un type de données (`varchar(40)`,`DATE`,  etc) [Type de données SQLite](https://www.sqlite.org/datatype3.html)
+- La dernière ligne correspond aux contraintes de la table telle que la clé primaire.
+- **Question:** Cette clé primaire est composite ou simple?
+]
+
+---
+
+# Création d'une table avec clé étrangère
+
+.pull-left[
+  Maintenant il faut créer une table `collaborations` et référencer cette table à la table `auteurs` ainsi qu'à la table `articles`.
+]
+
+.pull-right[
+- On déclare `auteur1`, `auteur2` et `articleID` comme étant la clé primaire de la table `collaborations`.
+- On référence ces trois attributs comme étant la clé étrangère.
+]
+
+.font90[
+```sql
+CREATE TABLE collaborations (
+    auteur1     VARCHAR(40),
+    auteur2     VARCHAR(40),
+    articleID   VARCHAR(20),
+    PRIMARY KEY (auteur1, auteur2, articleID),
+    FOREIGN KEY (auteur1) REFERENCES auteurs(auteur),
+    FOREIGN KEY (auteur2) REFERENCES auteurs(auteur),
+    FOREIGN KEY (articleID) REFERENCES articles(articleID)
+);
+```
+]
+
+---
+
+# Ajout de contraintes à une table
+
+La dernière table pour les `articles`.
+
+```sql
+CREATE TABLE articles (
+  articleID   VARCHAR(20) NOT NULL,
+  titre       VARCHAR(200) NOT NULL,
+  journal     VARCHAR(80),
+  annee       DATE,
+  citations   INTEGER CHECK(annee &gt;= 0),
+  PRIMARY KEY (articleID)
+);
+```
+
+- On peut rajouter des contraintes sur la saisie, comme CHECK qui assure que ce sont des entiers positifs
+- Note : les contraintes `NOT NULL` sur la clé primaire ne sont pas obligées d'être définis.
+
+---
+
+# Création d'une table avec R
+
+## On se sert de R pour envoyer l'instruction SQL de création de la table:
+
+
+``` r
+auteurs_sql &lt;- '
+CREATE TABLE auteurs (
+  auteur      VARCHAR(50),
+  statut      VARCHAR(40),
+  institution VARCHAR(200),
+  ville       VARCHAR(40),
+  pays        VARCHAR(40),
+  PRIMARY KEY (auteur)
+);'
+
+dbSendQuery(con, auteurs_sql)
+dbListTables(con)
+```
+
+---
+
+# Modifier la table existante
+
+```sql
+ALTER TABLE database_name.table_name RENAME TO new_table_name;
+ALTER TABLE database_name.table_name ADD COLUMN column_def...;
+```
+
+Il peut être parfois préférable supprimer la table et de la reconstruire plutôt que de la modifier à la volée.
+
+---
+
+# Supprimer la table de données
+
+
+``` r
+dbSendQuery(con,"DROP TABLE auteurs;")
+```
+
+- `DROP TABLE` supprime l'ensemble de la table et ses données.
+
+---
+
+# Supprimer la base de données
+
+
+``` r
+dbDisconnect(con)
+```
+
+- Dans le cas de SQLite3, on supprime la base de données en déplaçant le fichier `*.db` dans la corbeille.
+- `dbDisconnect(con)` permet de fermer la connection avec le fichier de base de données (permet à un autre utilisateur de se connecter).
+
+---
+class: inverse, center, middle
+
+# Lectures et travail pour le prochain cours
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Lectures et travail pour le prochain cours
+
+## Travail
+
+- Assembler les données	en tables			
+- Valider et nettoyer les données	(scripter des tests pour *détecter* et *corriger* les erreurs potentielles)
+- Conceptualiser la base de données	(tables, champs et clés)
+- Compléter l'évaluation formative #1
+
+---
+class: inverse, center, middle
+
+# Évaluation formative #1 
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Évaluation formative #1 
+
+**À remettre pour le 10 février sur Moodle**
+
+Vous avez à soumettre vos scripts qui servent à assembler, nettoyer et valider les données. Vos scripts doivent produire une ou plusieurs tables de données (dataframe) prêtes à être injectées. Chacun de ces dataframes représente une table de la base de données à venir.
+
+&gt; Quelques points à considérer lors du nettoyage et de la validation des données sont détaillés dans le [chapitre 3 du livre de cours](https://econumuds.github.io/BIO500/validation.html).
+
+
+
+---
+
+# Évaluation formative #1
+
+**Un membre par équipe** aura à remettre un dossier .zip contenant les scripts et les données
+
+Résumé des consignes :
+
+- Spécifiez pour quel jeu de données les scripts sont utilisés
+- Validation : tests pour détecter et corriger les erreurs *présentes* et *potentielles*
+- Commentez vos scripts pour que votre processus soit évident aux autres
+- Divisez les tâches en fonctions distinctes
+- Un script principal qui décrit le processus et fait appel aux fonctions qui exécutent les tâches
+- Le produit final sera un ou des dataframes prêts à être injectés dans la base de données. Chacun des dataframes doit représenter une table de la base de données
+
+---
+
+# Évaluation formative #1
+
+## La grille de correction est diponible sur Moodle
+
+## Le dépôt se fait dans l'Atelier du Bloc 1 sur Moodle
+
+---
+
+# Évaluation formative #1
+
+[Grille d'évaluation](https://github.com/EcoNumUdS/BIO500/blob/master/ressources/exercie_donnees_grille_de_correction.pdf)
+
+Les questions questions devront êtres posées sur le forum de Moodle.
+
+---
+class: inverse, center, middle
+
+# Discussion
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Discussion
+
+## Is there a reproducibility crisis ?
+
+1.     Quel est l'état de la reproductibilité en science ? Est-ce que les chercheurs sondés ont une opinion juste ?
+2.     "We want to be discovering new things but not generating too many false leeds." Quel est le lien entre la reproductibilité et l'innovation ?
+3.     Quels sont les particularités des domaines scientifiques qui sont les plus touchés par le problème de reproductibilité ?
+4.     Avez-vous vécu certains de ces problèmes dans le cadre d'un exercice ou d'un projet scolaire ?
+
+## 7 minutes pour comparer les réponses en équipe
+
+&gt; Pour aller plus loin : des questions supplémentaires sont sur Moodle *Bloc1 &gt; Questions pour discussion - cours #2*
+
+## 7 minutes de partage
+
+&lt;!-- # Discussion
+
+## Is there a reproducibility crisis ?
+
+En équpe, résumez les principaux points de l'article. Puis, discutez des questions suivantes :
+
+1. Que décrit l'article sur l'état de la reproductibilité en science ? Est-ce que les chercheurs sondés ont une impression juste ?
+2. "We want to be discovering new things but not generating too many false leads." Quel est le lien entre la reproductibilité et l'innovation ?
+3. Quels sont les particularités des domaines scientifiques qui sont les plus touchés par le problème de la reproductibilité ?
+4. Quelles sont les solutions proposées pour améliorer la reproductibilité en science ? --&gt;
+
+&lt;!-- # Discussion : Questions pour discussion - cours #2
+
+### Sur la reproductibilité des résultats scientifiques :
+1. Quels sont les principaux facteurs qui expliquent les difficultés de reproduction des études scientifiques ?
+2. Pensez-vous que l'incapacité à reproduire une étude remet nécessairement en cause sa validité ?
+3. Avez-vous déjà rencontré des problèmes de reproductibilité dans vos propres travaux ou ceux de vos collègues ?
+4. Quelles solutions concrètes pourraient améliorer la reproductibilité en science ?
+
+### Sur le partage des données :
+5. Quels sont les principaux avantages du partage des données pour la communauté scientifique ?
+6. Quels freins empêchent encore aujourd’hui le partage ouvert des données ?
+7. Comment peut-on encourager une culture de partage des données sans compromettre la reconnaissance du travail des chercheurs ?
+8. Quels types de données devraient être systématiquement partagés et quels types peuvent légitimement être protégés ?
+
+### Sur les défis des études à long terme :
+9. Comment concilier le besoin de partage des données avec les investissements importants nécessaires aux études à long terme ?
+10. Quelles mesures pourraient être mises en place pour protéger les intérêts des chercheurs qui ont consacré des années à collecter des données avant de les partager ?
+11. À quel moment une équipe de recherche devrait-elle rendre ses données accessibles à d’autres scientifiques ?
+12. Existe-t-il des modèles de collaboration qui permettent à la fois un accès élargi aux données et une reconnaissance du travail des équipes ayant réalisé l’étude initiale ? --&gt;
+
+
+
+---
+class: inverse
+
+---
+class: title-slide, middle
+
+&lt;style type="text/css"&gt;
+  .title-slide {
+    background-image: url('../assets/img/bg.jpg');
+    background-color: #23373B;
+    background-size: contain;
+    border: 0px;
+    background-position: 600px 0;
+    line-height: 1;
+  }
+&lt;/style&gt;
+
+&lt;div class="lab-logo"&gt;&lt;/div&gt;
+
+# Séance 3
+
+&lt;hr width="65%" align="left" size="0.3" color="orange"&gt;&lt;/hr&gt;
+
+## La gestion des données biologiques
+
+&lt;hr width="65%" align="left" size="0.3" color="orange" style="margin-bottom:40px;" alt="@Martin Sanchez"&gt;&lt;/hr&gt;
+
+.instructors[
+  **BIO500** - Victor Cameron
+]
+
+---
+
+# Aujourd'hui
+
+1. Retour sur l'évaluation formative #1
+2. Retour sur le dernier cours [[Chapitre 4 Bases de données](https://econumuds.github.io/BIO500/bases_de_donnees.html)]
+3. Le langage de requête SQL [[Chapitre 5 SQL et RSQLite](https://econumuds.github.io/BIO500/sql.html)]
+4. Exercices pratiques [[Chapitre 6 Exercices](https://econumuds.github.io/BIO500/exercices_1.html)]
+5. Travail de la semaine
+6. Discussion sur les enjeux de reproductibilité en science expérimentale
+
+---
+
+# Évaluation formative #1
+
+Était à remettre hier (9 février)
+
+## Vous avez jusqu'à lundi prochain (16 février) pour compléter l'évaluation des scripts d'assemblage et de nettoyage d'une autre équipe.
+
+- Tout se fait dans l'Atelier *Évaluation formative #1 : Atelier*
+- Vous avez à noter le travail d'une autre équipe selon les critères :
+  - Structure du programme
+  - Fonctionnement du programme
+  - Application des bonnes pratiques de programmation
+- Tous les commentaires doivent être formulés comme une question
+
+---
+class: inverse, center, middle
+
+# Retour rapide sur la &lt;br&gt; dernière séance
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+Chapitre 4 [*Bases de données*](https://econumuds.github.io/BIO500/bases_de_donnees.html)
+
+Chapitre 5 [*SQL et RSQLite*](https://econumuds.github.io/BIO500/sql.html)
+
+---
+
+# Les grandes étapes
+
+## Le modèle conceptuel
+   1. Faire une liste des variables
+   2. Regrouper les variables dans des tables
+   3. Établir le type d'association entre les tables
+   4. Établir les clés primaires et étrangères
+   5. Assigner les types de données aux variables
+
+## Le modèle informatique
+   1. Créer et se connecter au fichier de base de données
+   2. Créer les tables et spécifier les clés
+   3. Injecter les données dans les tables
+   4. Faire des requêtes pour extraire l'information
+
+---
+
+# Conceptualiser la base de données
+
+.center[
+  &lt;img src="assets/img/star_eg.png" width="80%"&gt;&lt;/img&gt;
+]
+
+---
+
+# Connexion au serveur
+
+```R
+# install.packages('RSQLite')
+library(RSQLite)
+
+con &lt;- dbConnect(SQLite(), dbname="automobiles.db")
+```
+
+---
+
+# Création de la table `automobiles`
+
+```R
+# install.packages('RSQLite')
+library(RSQLite)
+
+con &lt;- dbConnect(SQLite(), dbname="automobiles.db")
+
+creer_automobiles &lt;- 
+  "CREATE TABLE automobiles (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    marque      VARCHAR(50),
+    modele      VARCHAR(50),
+    annee       INTEGER CHECK(annee &gt;= 0)
+  );"
+dbSendQuery(con, creer_automobiles)
+```
+
+**Question:** Sur ce script, où sont les instructions SQL? Où sont les commandes R ?
+
+---
+
+# Création de la table `automobiles`
+
+```R
+# install.packages('RSQLite')
+library(RSQLite)
+
+con &lt;- dbConnect(SQLite(), dbname="automobiles.db")
+
+creer_automobiles &lt;- 
+  "CREATE TABLE automobiles (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    marque      VARCHAR(50),
+    modele      VARCHAR(50),
+    annee       INTEGER CHECK(annee &gt;= 0)
+  );"
+dbSendQuery(con, creer_automobiles)
+```
+
+**Question:** Sur ce script, où est 
+1. la clef primaire ?
+
+--
+
+2. la clef étrangère ?
+
+--
+
+3. la contrainte ?
+
+---
+
+# Création de la table `proprios`
+
+```R
+creer_proprios &lt;- 
+  "CREATE TABLE proprios (
+    automobile_id    INTEGER NOT NULL,
+    prenom           VARCHAR(100) NOT NULL,
+    nom              VARCHAR(100) NOT NULL,
+    no_permis        VARCHAR(10),
+    PRIMARY KEY (prenom, nom),
+    FOREIGN KEY (automobile_id) REFERENCES automobiles(id)
+  );"
+dbSendQuery(con, creer_proprios)
+```
+
+**Question:** Que référence la clef étrangère ?
+
+---
+
+# Création de la table `proprios`
+
+```R
+creer_proprios &lt;- 
+  "CREATE TABLE proprios (
+    automobile_id    INTEGER NOT NULL,
+    prenom           VARCHAR(100) NOT NULL,
+    nom              VARCHAR(100) NOT NULL,
+    no_permis        VARCHAR(10),
+    PRIMARY KEY (prenom, nom),
+    FOREIGN KEY (automobile_id) REFERENCES automobiles(id)
+  );"
+dbSendQuery(con, creer_proprios)
+```
+
+**Question:** Que fait `NOT NULL` ?
+
+---
+class: inverse, center, middle
+
+# Injecter les données dans les tables
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# RSQLite - `dbWriteTable`
+
+La librairie RSQLite peut nous aider plus facilement à accomplir cette tâche:
+
+.font80[
+```R
+# Lecture des fichiers CSV
+bd_automobiles &lt;- read.csv(file = 'donnees/automobiles.csv')
+bd_proprios &lt;- read.csv(file = 'donnees/proprios.csv')
+
+# Injection des enregistrements dans la BD
+dbWriteTable(con, append = TRUE, name = "automobiles", value = bd_automobiles, row.names = FALSE)
+dbWriteTable(con, append = TRUE, name = "proprios", value = bd_proprios, row.names = FALSE)
+```
+]
+
+Les données doivent avoir le même **format** que la table dans laquelle elles sont insérées
+- Les colonnes doivent être dans le même ordre
+- Les noms des colonnes doivent être identiques
+- Les types de données doivent être compatibles
+
+---
+
+# Fermer la connexion
+
+Souvent oublié, il faut toujours fermer la connexion, se déconnecter de la base de données, avec la commande `dbDisconnect()` :
+
+```R
+dbDisconnect(con)
+```
+
+---
+
+# Exercice 1
+
+Vous le trouverez dans le chapitre 6 [*Exercices*](https://econumuds.github.io/BIO500/exercices_1.html) du livre
+
+1. Créer la base de données `reseau` avec ses deux tables `auteurs` et `articles`
+2. Insérer les données [auteurs.csv](https://raw.githubusercontent.com/EcoNumUdS/BIO500/master/bloc1/assets/data/db_reseau/authors.csv) et [articles.csv](https://raw.githubusercontent.com/EcoNumUdS/BIO500/master/bloc1/assets/data/db_reseau/articles.csv) dans les deux tables à l'aide de la commande R `dbWriteTable()`
+
+**auteurs**
+.font80[
+```R
+##                  auteur    statut                     institution      ville   pays
+## 1 Pierre-Marc Brousseau      &lt;NA&gt; Universite du Quebec a Montreal   Montreal Canada
+## 2      Dominique Gravel Professor        Universite de Sherbrooke Sherbrooke Canada
+## 3        I. Tanya Handa      &lt;NA&gt; Universite du Quebec a Montreal   Montreal Canada
+```
+]
+
+**articles**
+.font80[
+```R
+##        articleID                               journal                             titre annee citations
+## 1 Brousseau2018b                    Functional Ecology Trait matching and phylogeny as p  2018        21
+## 2     Laigle2018                                 Oikos Species traits as drivers of food  2018        21 
+## 3   grossman2018 Environmental and Experimental Botany Synthesis and future research dir  2018        30
+```
+]
+
+---
+
+# Exercice 1 (suite)
+
+Ajouter une troisième table `collaborations` à la base de données `reseau` et insérer les données [collaboration.csv](https://raw.githubusercontent.com/EcoNumUdS/BIO500/master/bloc1/assets/data/db_reseau/collaboration.csv) dans cette table.
+
+```R
+collabTD &lt;- '
+CREATE TABLE collaborations (
+    auteur1     VARCHAR(40),
+    auteur2     VARCHAR(40),
+    articleID   VARCHAR(20),
+    PRIMARY KEY (auteur1, auteur2, articleID),
+    FOREIGN KEY (auteur1) REFERENCES auteurs(author),
+    FOREIGN KEY (auteur2) REFERENCES auteurs(author),
+    FOREIGN KEY (articleID) REFERENCES articles(articleID)
+);'
+
+collaboration &lt;- read.csv('collaboration.csv')
+dbWriteTable(con, append = TRUE, name = "collaborations", value = collaboration, row.names = FALSE)
+```
+
+---
+class: inverse, center, middle
+
+# Les requêtes
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Structure d'une requête
+
+.font70[
+.pull-left[
+```sql
+SELECT colonnes/champs
+FROM table1
+JOIN table2 ON table1.foreignKey = table2.primaryKey
+WHERE criteres
+ORDER BY colonne1 ASC
+LIMIT 10;
+```
+]]
+
+.pull-right[
+- Les requêtes SQL sont une suite d'opérations séquentielles.
+- On ne peut pas filtrer (`WHERE`) avant que les opérations `SELECT`, `FROM` et `JOIN` soient complétées.
+]
+
+---
+
+# Sélectionner des tables et des colonnes
+
+## La connexion est ouverte et toujours accessible depuis l'objet `con`.
+
+.pull-left[
+.font90[
+```R
+sql_requete &lt;- "
+SELECT articleID, journal, annee
+  FROM articles LIMIT 10
+;"
+
+articles &lt;- dbGetQuery(con, sql_requete)
+head(articles)
+```
+]
+]
+
+.pull-right[
+- `SELECT` spécifie les colonnes.
+- `FROM` spécifie la table.
+- On peut également ajouter une `LIMIT`.
+- [Documentation SQL Select](http://docs.postgresqlfr.org/9.5/sql-select.html).
+]
+
+
+
+
+
+```
+##        articleID                               journal annee
+## 1 Brousseau2018b                    Functional Ecology  2018
+## 2     Laigle2018                                 Oikos  2018
+## 3   grossman2018 Environmental and Experimental Botany  2018
+## 4     delmas2019                    Biological Reviews  2019
+## 5  legagneux2018    Frontiers in Ecology and Evolution  2018
+## 6     godsoe2018       Trends in ecology \\&amp; evolution  2018
+```
+
+---
+
+# Sélectionner des tables et des colonnes
+
+.font90[
+.pull-left[
+
+``` r
+sql_requete &lt;- "
+  SELECT *
+  FROM collaborations;"
+
+articles &lt;- dbGetQuery(con, sql_requete)
+head(articles)
+```
+]]
+
+.pull-right[
+.font90[
+- `*` permet de retourner toutes les colonnes
+- Cette requête retournera toutes les colonnes de la table `collaborations`
+]]
+
+
+```
+##                 auteur1               auteur2      articleID
+## 1      Dominique Gravel Pierre-Marc Brousseau Brousseau2018b
+## 2        I. Tanya Handa Pierre-Marc Brousseau Brousseau2018b
+## 3 Pierre-Marc Brousseau      Dominique Gravel Brousseau2018b
+## 4        I. Tanya Handa      Dominique Gravel Brousseau2018b
+## 5 Pierre-Marc Brousseau        I. Tanya Handa Brousseau2018b
+## 6      Dominique Gravel        I. Tanya Handa Brousseau2018b
+```
+
+---
+
+# Exercice 2
+
+Chaque équipe aura à expliquer l'action et le résultat d'une commande SQL parmi les suivantes :
+
+1. `LIMIT`
+2. `DISTINCT`
+3. `ORDER BY` 
+4. `WHERE` pour les valeurs numériques
+5. `WHERE` pour les valeurs textuelles
+6. `WHERE` pour effectuer des filtres multicritères
+7. `WHERE` et `IS NOT NULL`
+
+&gt; Les scripts à expliquer sont dans le chapitre 6 [*Exercices*](https://econumuds.github.io/BIO500/exercices_1.html) du livre
+
+---
+
+# `LIMIT`
+
+.font80[
+.pull-left[
+
+``` r
+sql_requete &lt;- "
+    SELECT *
+    FROM collaborations
+    LIMIT 10;"
+
+req &lt;- dbGetQuery(con, sql_requete)
+head(req)
+```
+
+```
+##                 auteur1               auteur2      articleID
+## 1      Dominique Gravel Pierre-Marc Brousseau Brousseau2018b
+## 2        I. Tanya Handa Pierre-Marc Brousseau Brousseau2018b
+## 3 Pierre-Marc Brousseau      Dominique Gravel Brousseau2018b
+## 4        I. Tanya Handa      Dominique Gravel Brousseau2018b
+## 5 Pierre-Marc Brousseau        I. Tanya Handa Brousseau2018b
+## 6      Dominique Gravel        I. Tanya Handa Brousseau2018b
+```
+]
+]
+
+---
+
+# `DISTINCT`
+
+
+.font80[
+.pull-left[
+
+``` r
+sql_requete &lt;- "
+    SELECT DISTINCT auteur1
+    FROM collaborations;"
+
+req &lt;- dbGetQuery(con, sql_requete)
+head(req)
+```
+
+```
+##                    auteur1
+## 1          Aitor Ameztegui
+## 2           Alain Paquette
+## 3        Aleksi Lehikoinen
+## 4 Alessandro Montemaggiori
+## 5            Alicia McGrew
+## 6         Alison D. Munson
+```
+]
+]
+
+---
+
+# `ORDER BY`
+
+`ORDER BY` permet de trier par ordre croissant (`ASC`) ou décroissant (`DESC`).
+
+.font80[
+.pull-left[
+
+``` r
+sql_requete &lt;- "
+    SELECT annee, citations, articleID
+    FROM articles 
+    ORDER BY citations DESC;"
+
+derniers_articles &lt;- dbGetQuery(con, sql_requete)
+head(derniers_articles)
+```
+
+```
+##   annee citations      articleID
+## 1  2019        59     delmas2019
+## 2  2018        30   grossman2018
+## 3  2018        28  legagneux2018
+## 4  2018        21 Brousseau2018b
+## 5  2018        21     Laigle2018
+## 6  2018        21    galiana2018
+```
+]
+]
+
+
+---
+
+# `WHERE` pour les valeurs numériques
+
+.font80[
+.pull-left[
+
+``` r
+sql_requete &lt;- "
+    SELECT articleID, annee
+    FROM articles 
+    WHERE annee &gt;= 2018;"
+  
+derniers_articles &lt;- dbGetQuery(con, sql_requete)
+head(derniers_articles)
+```
+
+```
+##        articleID annee
+## 1 Brousseau2018b  2018
+## 2     Laigle2018  2018
+## 3   grossman2018  2018
+## 4     delmas2019  2019
+## 5  legagneux2018  2018
+## 6     godsoe2018  2018
+```
+]
+]
+
+---
+
+# `WHERE` pour les valeurs numériques
+
+.font80[
+.pull-left[
+
+``` r
+sql_requete &lt;- "
+    SELECT articleID, annee
+    FROM articles 
+    WHERE annee &gt;= 2018;"
+  
+derniers_articles &lt;- dbGetQuery(con, sql_requete)
+head(derniers_articles)
+```
+
+```
+##        articleID annee
+## 1 Brousseau2018b  2018
+## 2     Laigle2018  2018
+## 3   grossman2018  2018
+## 4     delmas2019  2019
+## 5  legagneux2018  2018
+## 6     godsoe2018  2018
+```
+]
+]
+
+.pull-right[
+- Multi-critères avec `AND` et `OR`
+- Les parenthèses définissent les priorités d'opérations.
+- Opérateurs de comparaison: `&gt;=`,`&lt;=`, `=` (Valeurs numériques)
+- [Documentation sur les opérateurs de comparaisons](https://www.sqlite.org/lang_expr.html)
+]
+
+---
+
+# `WHERE` pour les valeurs textuelles
+
+.font80[
+.pull-left[
+
+``` r
+sql_requete &lt;- "
+    SELECT articleID, titre
+    FROM articles 
+    WHERE titre LIKE '%interactions%';"
+
+articles &lt;- dbGetQuery(con, sql_requete)
+head(articles)
+```
+
+```
+##        articleID
+## 1 Brousseau2018b
+## 2     delmas2019
+## 3       mora2018
+## 4 boulangeat2018
+## 5  Eitzeiger2018
+## 6   Aussenac2019
+##                                                                                                                                titre
+## 1                                  Trait matching and phylogeny as predictors of predator-prey interactions involving ground beetles
+## 2                                                                              Analysing ecological networks of species interactions
+## 3                                       Identifying a common backbone of interactions underlying food webs from different ecosystems
+## 4                                        The transient response of ecosystems to climate change is amplified by trophic interactions
+## 5 Assessing changes in arthropod predator–prey interactions through DNA-based gut content analysis—variable environment, stable diet
+## 6                            Interactions among trees: A key element in the stabilising effect of species diversity on forest growth
+```
+]
+]
+
+---
+
+# `WHERE` pour les valeurs textuelles
+
+.font80[
+.pull-left[
+
+``` r
+sql_requete &lt;- "
+    SELECT articleID, titre
+    FROM articles 
+    WHERE titre LIKE '%interactions%';"
+
+articles &lt;- dbGetQuery(con, sql_requete)
+head(articles)
+```
+
+```
+##        articleID
+## 1 Brousseau2018b
+## 2     delmas2019
+## 3       mora2018
+## 4 boulangeat2018
+## 5  Eitzeiger2018
+## 6   Aussenac2019
+##                                                                                                                                titre
+## 1                                  Trait matching and phylogeny as predictors of predator-prey interactions involving ground beetles
+## 2                                                                              Analysing ecological networks of species interactions
+## 3                                       Identifying a common backbone of interactions underlying food webs from different ecosystems
+## 4                                        The transient response of ecosystems to climate change is amplified by trophic interactions
+## 5 Assessing changes in arthropod predator–prey interactions through DNA-based gut content analysis—variable environment, stable diet
+## 6                            Interactions among trees: A key element in the stabilising effect of species diversity on forest growth
+```
+]
+]
+
+.pull-right[
+- Rechercher dans le texte: `LIKE`
+- `%`: n'importe quels caractères
+- `_`: un seul caractère (exemple: `_1_` peut renvoyer `113` ou encore `A1C`)
+- Le critère contraire est aussi possible avec `NOT` (exemple: `WHERE titre NOT LIKE '%interactions%'`)
+]
+
+---
+
+# `WHERE` et `IS NOT NULL`
+
+.font80[
+.pull-left[
+
+``` r
+sql_requete &lt;- "
+  SELECT auteur, statut, institution
+  FROM auteurs
+  WHERE statut IS NOT NULL;"
+
+auteurs &lt;- dbGetQuery(con, sql_requete)
+head(auteurs)
+```
+
+```
+##                auteur    statut               institution
+## 1    Dominique Gravel Professor  Universite de Sherbrooke
+## 2      Isabelle Aubin Professor  Natural Resources Canada
+## 3 Isabelle Boulangeat Professor Universite Grenoble Alpes
+## 4          Eva Delmas   Student    Universite de Montreal
+## 5     Mathilde Besson   Student    Universite de Montreal
+## 6  Marie-Hélène Brice   Student    Universite de Montreal
+```
+]]
+
+---
+
+# `WHERE` pour filtres multicritères
+
+.font80[
+.pull-left[
+
+``` r
+sql_requete &lt;- "
+    SELECT articleID, annee
+    FROM articles 
+    WHERE (annee &gt;= 2018 AND annee &lt; 2020)
+      OR (annee &gt;= 2012 AND annee &lt;= 2014)"
+
+articles &lt;- dbGetQuery(con, sql_requete)
+head(articles)
+```
+
+```
+##        articleID annee
+## 1 Brousseau2018b  2018
+## 2     Laigle2018  2018
+## 3   grossman2018  2018
+## 4     delmas2019  2019
+## 5  legagneux2018  2018
+## 6     godsoe2018  2018
+```
+]
+]
+
+---
+
+# Agréger l'information (1 ligne)
+
+.font80[
+.pull-left[
+
+``` r
+sql_requete &lt;- "
+  SELECT avg(citations) AS moyenne,
+    min(citations), max(citations)
+  FROM articles;"
+
+resume_articles &lt;- dbGetQuery(con, sql_requete)
+head(resume_articles)
+```
+
+```
+##    moyenne min(citations) max(citations)
+## 1 10.23529              0             59
+```
+]]
+
+.pull-right[
+- Pour faire une synthèse de l'information sur une seule ligne.
+- Faire des opérations sur les champs numériques: `max`, `min`, `sum`, `avg`, `count`.
+- Mais aussi les opérations classiques: `*`, `/`, `-` etc.
+- Renommer les colonnes avec `AS`.
+]
+
+---
+
+# Agréger l'information
+
+## plusieurs lignes par groupe
+
+.font80[
+.pull-left[
+
+``` r
+sql_requete &lt;- "
+  SELECT avg(citations) AS moyenne,
+    count(articleID) AS nb_articles, annee
+  FROM articles
+  GROUP BY annee;"
+
+resume_articles &lt;- dbGetQuery(con, sql_requete)
+head(resume_articles)
+```
+
+```
+##     moyenne nb_articles annee
+## 1 12.000000          15  2018
+## 2  8.842105          19  2019
+```
+]]
+
+.pull-right[
+- `COUNT` permet de dénombrer le nombre de lignes.
+- `GROUP BY` définit les champs sur lequel se fera l'agrégation des données.
+]
+
+---
+class: inverse, center, middle
+
+# Jointures entre tables
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Jointures entre tables
+
+Le `INNER JOIN` est un type de jointure, renvoyant seulement les auteurs et les articles ayant un identifiant `articleID` commun.
+
+
+``` r
+sql_requete &lt;- "
+  SELECT annee, auteur1, auteur2, journal, articles.articleID
+  FROM articles
+  INNER JOIN collaborations ON articles.articleID = collaborations.articleID;"
+
+auteurs_articles &lt;- dbGetQuery(con,sql_requete)
+head(auteurs_articles,4)
+```
+
+```
+##   annee               auteur1               auteur2            journal
+## 1  2018      Dominique Gravel Pierre-Marc Brousseau Functional Ecology
+## 2  2018        I. Tanya Handa Pierre-Marc Brousseau Functional Ecology
+## 3  2018 Pierre-Marc Brousseau      Dominique Gravel Functional Ecology
+## 4  2018        I. Tanya Handa      Dominique Gravel Functional Ecology
+##        articleID
+## 1 Brousseau2018b
+## 2 Brousseau2018b
+## 3 Brousseau2018b
+## 4 Brousseau2018b
+```
+---
+
+# Les type de jointures
+
+.center[
+  &lt;img src="assets/img/sql_joins.png" width="80%"&gt;&lt;/img&gt;
+]
+
+--
+
+Vous trouverez une description et des exemples d'utilisation dans le chapitre 5 [*SQL et RSQLite*](https://econumuds.github.io/BIO500/sql.html#jointures-entre-tables)
+
+---
+
+# Exercice 3
+
+## Quel article a le plus d'auteurs ?
+
+---
+
+# Requêtes par étapes
+
+## Créer des tables temporaires dans une requête
+
+
+``` r
+sql_requete &lt;- "
+WITH collaborations AS (
+  SELECT auteur1, articleID, citations
+  FROM articles
+  INNER JOIN collaborations USING (articleID)
+)
+SELECT auteur1, avg(citations) AS moy_citations
+FROM collaborations
+GROUP BY auteur1;"
+```
+
+La requête est divisée en deux parties :
+1. La première partie crée une table temporaire `collaborations` avec les colonnes `auteur1`, `articleID` et `citations`.
+2. La deuxième partie fait une moyenne des citations par auteur.
+
+---
+
+# Exercice 4
+
+## Est-ce que le nombre de citations est proportionnel au nombre de collaborateurs par article ?
+
+---
+class: inverse, center, middle
+
+# Sauvegarder les requêtes
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Sauvegarder la table retournée par une requête
+
+Afin de sauvegarder les données retournées par une requête obtenues dans R par `dbGetQuery()`, il est possible d'utiliser les fonctions d'écritures tels que `write.table()` ou encore `write.csv()`.
+
+---
+class: inverse, center, middle
+
+# Manipuler les enregistrements
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Mettre à jour des enregistrements
+
+On peut mettre à jour des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+UPDATE auteurs SET institution = 'UdeS' WHERE institution = 'Universite de Sherbrooke';
+```
+
+**Note:** On ne peut pas faire de modifications d'enregistrements sur des requêtes, seulement sur les tables directement.
+
+[Documentation sur la commande UPDATE](http://docs.postgresqlfr.org/8.3/sql-update.html)
+
+
+---
+
+# Supprimer des enregistrements
+
+On peut supprimer des enregistrements d'une table avec des critères spécifiques.
+
+```sql
+DELETE FROM auteurs WHERE ville &lt;&gt; 'Montreal';
+```
+
+Ou sans critères, pour supprimer tous les enregistrements.
+
+```sql
+DELETE FROM auteurs;
+```
+
+[Documentation sur la commande DELETE](http://docs.postgresqlfr.org/8.3/sql-delete.html)
+
+---
+class: inverse, center, middle
+
+# Travail de la semaine
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Travail de la semaine (à débuter cette semaine)
+
+À partir des données du jeu de données validé, formaté et assemblé :
+
+1. Créer la base de données
+2. Injecter les données dans les tables
+3. Faire les requêtes qui serviront à vos analyses pour répondre à la question de recherche
+4. Enregistrer le résultat des requêtes dans un fichier csv
+
+Assurez vous que le script fonctionne sur les différents ordinateurs des membres de votre équipe.
+
+---
+
+# Travail de la semaine
+
+En préparation au prochain cours, vous devrez :
+
+- Créer un compte sur GitHub
+- Mettre à jour R et RStudio
+- Installer Git
+
+Les instructions se trouvent dans le [chapitre 7, Section 7.2](https://econumuds.github.io/BIO500/git.html#d%C3%A9buter-avec-git)
+
+---
+
+# Évaluation formative #1
+
+Chaque équipe doit évaluer les scripts d'assemblage et de nettoyage d'une autre équipe
+
+- À compléter pour le **17 février**
+- La personne qui a remis le travail est responsable d'entrer l'évaluation
+- Tous les commentaires doivent être formulés comme une question
+
+
+
+---
+class: inverse, center, middle
+
+# Discussion
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Discussion
+
+## Is there a reproducibility crisis ?
+
+1.     Quel est l'état de la reproductibilité en science ? Est-ce que les chercheurs sondés ont une opinion juste ?
+2.     "We want to be discovering new things but not generating too many false leeds." Quel est le lien entre la reproductibilité et l'innovation ?
+3.     Quels sont les particularités des domaines scientifiques qui sont les plus touchés par le problème de reproductibilité ?
+4.     Avez-vous vécu certains de ces problèmes dans le cadre d'un exercice ou d'un projet scolaire ?
+
+## 7 minutes pour comparer les réponses en équipe
+
+&gt; Pour aller plus loin : des questions supplémentaires sont sur Moodle *Bloc1 &gt; Questions pour discussion - cours #2*
+
+## 7 minutes de partage
+
+&lt;!-- # Discussion
+
+## Is there a reproducibility crisis ?
+
+En équpe, résumez les principaux points de l'article. Puis, discutez des questions suivantes :
+
+1. Que décrit l'article sur l'état de la reproductibilité en science ? Est-ce que les chercheurs sondés ont une impression juste ?
+2. "We want to be discovering new things but not generating too many false leads." Quel est le lien entre la reproductibilité et l'innovation ?
+3. Quels sont les particularités des domaines scientifiques qui sont les plus touchés par le problème de la reproductibilité ?
+4. Quelles sont les solutions proposées pour améliorer la reproductibilité en science ? --&gt;
+
+&lt;!-- # Discussion : Questions pour discussion - cours #2
+
+### Sur la reproductibilité des résultats scientifiques :
+1. Quels sont les principaux facteurs qui expliquent les difficultés de reproduction des études scientifiques ?
+2. Pensez-vous que l'incapacité à reproduire une étude remet nécessairement en cause sa validité ?
+3. Avez-vous déjà rencontré des problèmes de reproductibilité dans vos propres travaux ou ceux de vos collègues ?
+4. Quelles solutions concrètes pourraient améliorer la reproductibilité en science ?
+
+### Sur le partage des données :
+5. Quels sont les principaux avantages du partage des données pour la communauté scientifique ?
+6. Quels freins empêchent encore aujourd’hui le partage ouvert des données ?
+7. Comment peut-on encourager une culture de partage des données sans compromettre la reconnaissance du travail des chercheurs ?
+8. Quels types de données devraient être systématiquement partagés et quels types peuvent légitimement être protégés ?
+
+### Sur les défis des études à long terme :
+9. Comment concilier le besoin de partage des données avec les investissements importants nécessaires aux études à long terme ?
+10. Quelles mesures pourraient être mises en place pour protéger les intérêts des chercheurs qui ont consacré des années à collecter des données avant de les partager ?
+11. À quel moment une équipe de recherche devrait-elle rendre ses données accessibles à d’autres scientifiques ?
+12. Existe-t-il des modèles de collaboration qui permettent à la fois un accès élargi aux données et une reconnaissance du travail des équipes ayant réalisé l’étude initiale ? --&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="../assets/macros.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "monokai",
+  "highlightLines": true,
+  "countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
