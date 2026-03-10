@@ -268,7 +268,10 @@ knitr::include_graphics("./assets/img/rstudio_git_history.gif", dpi = 270)
 
 Git a été spécifiquement créé pour travailler en équipe. Plusieurs utilisateurs peuvent se connecter au même répertoire et y apporter des modifications. Cependant, le répertoire en ligne GitHub est la version du projet à laquelle tous les utilisateurs contribuent. Il faut être rigoureux et fréquemment y téléverser ses modifications pour les rendre accessibles aux autres (*push*). Il faut également récupérer les modifications des autres membres de l'équipe (*pull*).
 
-Les restrictions d'accès au répertoire GitHub et les invitations peuvent être gérées à partir du site web du répertoire.
+Les restrictions d'accès au répertoire GitHub et les invitations peuvent être gérées à partir du site web du répertoire. Pour ajouter un collaborateur à votre répertoire GitHub, il faut :
+- Aller sur votre répertoire GitHub.
+- Cliquer sur "Settings" > "Manage access" > "Invite a collaborator".
+- Entrer le nom d'utilisateur de votre partenaire et l'inviter à collaborer.
 
 La collaboration entraine parfois des conflits entre versions. Ceci est particulièrement fréquent lorsqu'on oublie d'effectuer un Push ou un Pull pendant un certain temps. La section suivante détaille les conflits couramment rencontrés.
 
