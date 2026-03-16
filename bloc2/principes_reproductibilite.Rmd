@@ -313,6 +313,8 @@ site = c("X", "X", "Y")
 test_compte_especes(df_test)
 ```
 
+Des libraires spécialisées comme `testthat` permettent d'écrire des tests plus complexes et de les organiser de manière plus structurée, mais l'approche de base avec `stopifnot()` est un bon point de départ pour comprendre l'importance des tests dans la reproductibilité du code.
+
 ## 8. Question finale (réflexion)
 
 ✍️ **Répondez en quelques lignes :**
