@@ -214,10 +214,12 @@ class: inverse, center, middle
 
 - Identifiez clairement vos questions de recherche
 - Planifiez les requêtes à réaliser pour traiter les données
-- Créez un dépôt github pour votre projet 
+- Joignez le dépôt github pour votre projet 
 - Créez un cahier de laboratoire où sont notées toutes vos étapes
+- Documentez votre code et vos données
+- Ajoutez des logs pour suivre l'exécution de votre programme
+- Testez votre code et sauvez les tests dans votre dépôt
 - Versez votre travail sur le dépôt en ligne
-- Construire le `_targets.R` au fur et à mesure de vos progrès
 
 ---
 
