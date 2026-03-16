@@ -279,6 +279,21 @@ L'ajout de tests permet de vérifier que les fonctions font ce qu'elles sont cen
 - Vérifier que les fonctions font ce qu’elles promettent
 - Protéger le code contre les changements futurs
 
+```{r, eval=FALSE}
+# Exemple simple de fonction ne produisant pas les résultats attendus
+est_egal <- function(a, b) {
+  a == b
+}
+
+x = 0.1
+y = 0.2
+z = x+y
+
+est_egal(z, 0.3) # Résultat attendu : TRUE
+```
+
+Des erreurs surprenantes peuvent survenir et introduire des bugs difficiles à détecter. Il est important de tester les fonctions pour s'assurer qu'elles produisent les résultats attendus. Ici, le résultat est FALSE en raison de la manière dont les nombres à virgule flottante sont représentés en informatique, ce qui peut entraîner des erreurs d'arrondissement. Ce problème peut être évité en utilisant des fonctions de comparaison adaptées, comme `all.equal()`
+
 **Exemple de test simple**
 
 Un test peut être ajoutée à l'intérieur d'une fonction ou dans une fonction de test séparé. Dans l'exemple suivant, on crée un jeu de données de test avec des résultats connus, puis on utilise `stopifnot()` pour vérifier que les résultats obtenus correspondent aux attentes.
@@ -297,6 +312,8 @@ site = c("X", "X", "Y")
 )
 test_compte_especes(df_test)
 ```
+
+Des libraires spécialisées comme `testthat` permettent d'écrire des tests plus complexes et de les organiser de manière plus structurée, mais l'approche de base avec `stopifnot()` est un bon point de départ pour comprendre l'importance des tests dans la reproductibilité du code.
 
 ## 8. Question finale (réflexion)
 

@@ -1,0 +1,288 @@
+---
+title: "Tutoriel — Principes de reproductibilité"
+author: "Victor Cameron"
+date: last-modified
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+## Objectifs du tutoriel
+
+À la fin de ce tutoriel, vous serez capables de :
+
+- Diagnostiquer les limites d’un script monolithique
+- Structurer un pipeline reproductible (entrée → transformation → sortie)
+- Modulariser un traitement en fonctions cohérentes
+- Automatiser l’exécution d’un script maître
+- Ajouter des logs pour suivre l’exécution
+- Écrire des tests unitaires simples
+- Relier ces pratiques aux principes FAIR
+
+## Pourquoi ce tutoriel ?
+
+Nous partons volontairement d’un script fragile pour observer où il casse quand :
+
+- les données augmentent (**scalabilité**)
+- le contexte change (**robustesse**)
+- le code doit être réutilisé (**réutilisabilité**)
+
+L’objectif est ensuite de reconstruire un pipeline robuste, étape par étape.
+
+---
+
+## Étape 1 — Script initial non modulaire
+
+```{r}
+#| eval: false
+# Script volontairement non modulaire
+
+# Générer des données simulées
+data <- data.frame(
+  espece = paste0("Plante_", 1:10000),
+  site = rep(c("Sherbrooke", "Magog", "Laval", "Amqui"), length.out = 10000)
+)
+
+# Inspection rapide
+head(data)
+summary(data)
+
+# Calcul : nombre de plantes par site
+system.time({
+  result <- data.frame()
+  for (inst in unique(data$site)) {
+    n <- sum(data$site == inst)
+    result <- rbind(
+      result,
+      data.frame(site = inst, n_plantes = n)
+    )
+  }
+})
+
+# Trier les résultats
+result <- result[order(result$n_plantes, decreasing = TRUE), ]
+print(result)
+```
+
+### À observer
+
+- Temps d’exécution
+- Lisibilité
+- Facilité de modification
+- Qualité des résultats
+
+::: {.callout-question}
+Que se passe-t-il si vous devez adapter ce script à un autre jeu de données avec des noms de colonnes différents ?
+:::
+
+---
+
+## Étape 2 — Trois échecs classiques
+
+### 2.1 Scalabilité
+
+```{r}
+#| eval: false
+# Dupliquer le jeu de données
+# Ajustez "times" selon la capacité de votre ordinateur
+
+data_big1 <- data[rep(seq_len(nrow(data)), times = 300), ]
+data_big2 <- data[rep(seq_len(nrow(data)), times = 600), ]
+data_big3 <- data[rep(seq_len(nrow(data)), times = 900), ]
+```
+
+Relancez le calcul avec ces jeux de données et comparez les temps.
+
+### 2.2 Robustesse
+
+```{r}
+#| eval: false
+data_modif <- data_big1
+data_modif[data_modif$site == "Sherbrooke", "site"] <- NA
+```
+
+Relancez le calcul et observez :
+
+- erreurs éventuelles
+- comportement face aux valeurs manquantes
+- cohérence des résultats
+
+### 2.3 Réutilisabilité
+
+```{r}
+#| eval: false
+data2 <- data.frame(
+  espece = paste0("Plante_", 1:10000),
+  localisation = rep(c("Québec", "Ontario", "Nouvelle-Écosse", "Labrador"), length.out = 10000)
+)
+```
+
+Essayez d’adapter le code de calcul à `data2` sans tout réécrire.
+
+---
+
+## Étape 3 — Concept 1 : Séparation des responsabilités
+
+> Une fonction = une responsabilité.
+
+Un bon signal : si le nom d’une fonction contient « et », elle fait probablement trop de choses.
+
+### Exercice
+
+Proposez une séparation minimale en fonctions :
+
+- `simu_data()` : créer les données
+- `compte_especes_par_site()` : calculer l’indicateur
+- `affiche_resultats()` : afficher et résumer
+
+---
+
+## Étape 4 — Concept 2 : Flux de données (ETL)
+
+Entrée → Transformation → Sortie
+
+![](assets/img/etl_processus.png){fig-alt="Schéma ETL" width=70%}
+
+### Application au script
+
+- **Extract** : création/lecture du jeu de données
+- **Transform** : calcul des effectifs par site
+- **Load** : export, affichage ou sauvegarde
+
+::: {.callout-tip}
+Rendre explicite ce flux améliore la reproductibilité et facilite le débogage.
+:::
+
+---
+
+## Étape 5 — Concept 3 : Scalabilité avant performance
+
+Avant d’optimiser, validez l’ordre de priorité :
+
+1. Le code fonctionne
+2. Le code est clair
+3. Le code est rapide (si nécessaire)
+
+### Exercice
+
+Mesurez le temps d’exécution pour `data_big1`, `data_big2`, `data_big3` et notez si la croissance semble linéaire.
+
+---
+
+## Étape 6 — Concept 4 : Traçabilité et maintenance
+
+### 6.1 Paramètres explicites
+
+Placez les paramètres en haut du script maître :
+
+```{r}
+#| eval: false
+# Jeu de données 1
+site_col1 <- "site"
+espece_col1 <- "espece"
+n_rep1 <- 1000
+
+# Jeu de données 2
+site_col2 <- "localisation"
+espece_col2 <- "espece"
+n_rep2 <- 2000
+```
+
+### 6.2 Automatisation avec un script maître
+
+```{r}
+#| eval: false
+# 1) Générer les données
+# 2) Calculer les indicateurs
+# 3) Afficher/sauvegarder les résultats
+# Le script maître orchestre, mais ne contient pas la logique métier détaillée.
+```
+
+### 6.3 Logs
+
+```{r}
+#| eval: false
+log_message <- function(msg, niveau = "INFO") {
+  cat(format(Sys.time(), "%Y-%m-%d %H:%M:%S"), "[", niveau, "]", msg, "\n")
+}
+
+log_message("Début du pipeline")
+log_message("Lecture des données")
+log_message("Fin du pipeline")
+```
+
+Types utiles :
+
+- `INFO` : progression normale
+- `WARNING` : anomalie non bloquante
+- `ERROR` : arrêt du script
+
+---
+
+## Étape 7 — Concept 5 : Tests unitaires
+
+### Pourquoi tester ?
+
+- Détecter les erreurs tôt
+- Vérifier le comportement attendu
+- Éviter les régressions
+
+### Exemple minimal
+
+```{r}
+#| eval: false
+test_compte_especes <- function(df_test) {
+res <- compte_especes_par_site(df_test)
+stopifnot(res$n_plantes[res$site == "X"] == 2) # `stopifnot()` vérifie que la condition est vraie, sinon elle arrête l'exécution et affiche un message d'erreur
+stopifnot(res$n_plantes[res$site == "Y"] == 1)
+log_message("Test *compte_especes_par_site* passé avec succès") # Retourne un message de succès si les tests sont passés
+}
+
+df_test <- data.frame(
+espece = c("A", "B", "C"),
+site = c("X", "X", "Y")
+)
+test_compte_especes(df_test)
+```
+
+---
+
+## Étape 8 — Concept 6 : Principes FAIR
+
+- **Findable** : code/données faciles à localiser
+- **Accessible** : accès clair et documenté
+- **Interoperable** : formats standards et lisibles
+- **Reusable** : structure et documentation pour réutiliser
+
+::: {.callout-note}
+Dans ce cours, FAIR complète les bonnes pratiques de pipeline, documentation et versionnement déjà en place.
+:::
+
+---
+
+## Synthèse — De script fragile à pipeline reproductible
+
+Un pipeline reproductible repose sur :
+
+1. Une architecture modulaire
+2. Un flux de données explicite
+3. Des paramètres visibles et versionnés
+4. Des logs pour suivre l’exécution
+5. Des tests pour sécuriser l’évolution du code
+
+::: {.callout-question}
+Qu’est-ce qui, dans votre code, protège votre « vous du futur » dans 6 mois ?
+:::
+
+## Pour aller plus loin
+
+- Reprendre ce tutoriel avec vos propres données
+- Ajouter un export CSV des résultats
+- Ajouter un test pour le cas avec valeurs manquantes
+- Migrer ce pipeline vers `targets`
