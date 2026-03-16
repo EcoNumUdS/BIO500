@@ -214,10 +214,12 @@ class: inverse, center, middle
 
 - Identifiez clairement vos questions de recherche
 - Planifiez les requêtes à réaliser pour traiter les données
-- Créez un dépôt github pour votre projet 
+- Joignez le dépôt github pour votre projet 
 - Créez un cahier de laboratoire où sont notées toutes vos étapes
+- Documentez votre code et vos données
+- Ajoutez des logs pour suivre l'exécution de votre programme
+- Testez votre code et sauvez les tests dans votre dépôt
 - Versez votre travail sur le dépôt en ligne
-- Construire le `_targets.R` au fur et à mesure de vos progrès
 
 ---
 
@@ -240,10 +242,20 @@ class: inverse, center, middle
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
 <br>
-## 15 minutes pour préparer ses arguments
+## 10 minutes pour préparer ses arguments
 ## 2 minutes pour présenter ses arguments
-## 20 minutes de discussion dirigée
-## 5 minutes vote et conclusion
+## Discussion
+
+--
+Retour sur règles de l'université de Sherbrooke : 
+--
+- Responsabilité étudiants : https://www.usherbrooke.ca/intranet-education/fileadmin/sites/intranet-education/documents/Intranet/Reglements_facultaires/Informations_facultaires_VF_en_vigueur.pdf
+- Lignes directrices : https://www.usherbrooke.ca/decouvrir/a-propos/priorites-institutionnelles/intelligence-artificielle/lignes-directrices-iag
+- Biblio : https://libguides.biblio.usherbrooke.ca/IA
+--
+
+## Vote et conclusion
+
 <!-- 
     Sondage sur l’impact perçu des LLM.
     Conclusion sur les pistes pour une utilisation responsable.
