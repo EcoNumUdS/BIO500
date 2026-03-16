@@ -247,16 +247,11 @@ class: inverse, center, middle
 ## Discussion
 
 --
-   - *Règles de l'université de Sherbrooke*
+Retour sur règles de l'université de Sherbrooke : 
 --
-   - Fiabilité et biais
---
-   - Automatisation et créativité scientifique
---
-   - Accès aux données et reproductibilité
---
-   - Éthique et impacts environnementaux
-
+- Responsabilité étudiants : https://www.usherbrooke.ca/intranet-education/fileadmin/sites/intranet-education/documents/Intranet/Reglements_facultaires/Informations_facultaires_VF_en_vigueur.pdf
+- Lignes directrices : https://www.usherbrooke.ca/decouvrir/a-propos/priorites-institutionnelles/intelligence-artificielle/lignes-directrices-iag
+- Biblio : https://libguides.biblio.usherbrooke.ca/IA
 --
 
 ## Vote et conclusion
