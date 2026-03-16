@@ -242,10 +242,25 @@ class: inverse, center, middle
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
 <br>
-## 15 minutes pour préparer ses arguments
+## 10 minutes pour préparer ses arguments
 ## 2 minutes pour présenter ses arguments
-## 20 minutes de discussion dirigée
-## 5 minutes vote et conclusion
+## Discussion
+
+--
+   - *Règles de l'université de Sherbrooke*
+--
+   - Fiabilité et biais
+--
+   - Automatisation et créativité scientifique
+--
+   - Accès aux données et reproductibilité
+--
+   - Éthique et impacts environnementaux
+
+--
+
+## Vote et conclusion
+
 <!-- 
     Sondage sur l’impact perçu des LLM.
     Conclusion sur les pistes pour une utilisation responsable.
