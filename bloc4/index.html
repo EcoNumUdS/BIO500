@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>BIO500</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Victor Cameron" />
+    <script src="assets/header-attrs-2.30/header-attrs.js"></script>
+    <link href="assets/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="assets/remark-css-0.0.1/hygge.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/bio500.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+class: title-slide, middle
+
+&lt;style type="text/css"&gt;
+  .title-slide {
+    background-image: url('../assets/img/bg.jpg');
+    background-color: #23373B;
+    background-size: contain;
+    border: 0px;
+    background-position: 600px 0;
+    line-height: 1;
+  }
+&lt;/style&gt;
+
+&lt;div class="lab-logo"&gt;&lt;/div&gt;
+
+# Bloc 4
+
+&lt;hr width="65%" align="left" size="0.3" color="orange"&gt;&lt;/hr&gt;
+
+## Documents dynamiques &lt;br&gt; avec Rmarkdown
+
+&lt;hr width="65%" align="left" size="0.3" color="orange" style="margin-bottom:40px;" alt="@Martin Sanchez"&gt;&lt;/hr&gt;
+
+.instructors[
+  **BIO500** - Victor Cameron
+]
+
+---
+
+# Aujourd'hui
+
+1. Documents dynamiques avec Rmarkdown
+2. Arrimage avec `targets`
+
+Voir les [diapositives du cours 2](https://econumuds.github.io/BIO500/bloc2/#33) et les [chapitres 8 et 9](https://econumuds.github.io/BIO500/markdown1.html) pour un rappel approfondi
+
+---
+
+# Pourquoi Rmarkdown?
+
+&lt;br&gt;
+.center[
+  &lt;img src="assets/img/why_rmarkdown.png" width="60%"&gt;&lt;/img&gt;
+]
+
+---
+
+# Pourquoi Rmarkdown?
+
+- Documentation (dynamique) des analyses
+- Facilite la partage/communication des résultats
+- Utilisable sur les systèmes de controle de version (Git)
+- Reproductible!
+- Dans un environnement avec lequel vous êtes familier.ères
+
+---
+
+# Librairie `rticles`
+
+```r
+install.packages("rticles")
+```
+
+- Fournit une multitude de gabarits `Rmarkdown` (.Rmd)
+- Différents types (articles/rapports)
+
+---
+
+# Via Rstudio
+
+.center[
+    ![:scale 90%](assets/img/rstudio_rticles.png)
+]
+
+---
+
+# Exemple `rticles`
+
+.center[
+    ![:scale 90%](assets/img/rapport_template.png)
+]
+
+---
+
+# Exemple `rticles`
+
+Un exemple complet, dans un répertoire type, est disponible sur [Moodle](https://github.com/EcoNumUdS/BIO500/tree/master/bloc4/exemple_targets)
+
+---
+
+# Exemple `rticles`
+
+.left[
+- Template `PNAS Journal Article`
+- Principaux fichiers: .Rmd, .bib, .csl
+]
+
+.right[
+![:scale 30%](assets/img/pnas_generatedfiles.png)
+]
+
+---
+
+# Anatomie du gabarit .Rmd
+
+Même anatomie que présentée dans le bloc2, mais générée automatiquement.
+
+&lt;br&gt;
+.center[
+![:scale 90%](assets/img/Rmarkdown_anatomie.png)
+]
+
+
+---
+
+# Le YAML - Rappel
+
+- Les métadonnées et les options du document sont définies ici
+- La syntaxe est `key: value`
+- Commence et se termine entre trois tirets `---`
+- Toujours au début du document
+
+---
+# Le YAML
+
+.font70[
+```r
+---
+title: "Exemple de rapport `Rmarkdown` en sortie d'un pipeline `targets`"
+
+# Use letters for affiliations, numbers to show equal authorship (if applicable) and to indicate the corresponding author
+author:
+  - name: "Benjamin Mercier"
+    affiliation: "a"
+
+address:
+  - code: "a"
+    address: "Université de Sherbrooke, Départment de biologie, 2500 Boulevard de l'Université, Sherbrooke, Québec, J1K 2R1"
+
+abstract: |
+  Eurytus auris. Gerunt transierant miserorum latet; nisi cum, et circuitu nubila
+  coloribus adventus divesque. Loca partibus breve et unum maior stellis inpia et
+  luporum. 
+
+keywords:
+  - Mot-clé
+  - Mot-clé
+  - Optionel
+  - Optionel
+  - Optionel
+
+## must be one of: pnasresearcharticle (usual two-column layout), pnasmathematics (one column layout), or pnasinvited (invited submissions only)
+pnas_type: pnasresearcharticle
+
+bibliography: pnas-sample.bib
+csl: pnas.csl
+
+## change to true to add optional line numbering
+lineno: false
+
+output: rticles::pnas_article
+---
+```
+]
+
+---
+
+# Le YAML
+
+D'un gabarit à l'autre, les champs du YAML vont changer.
+
+Ce qui fait que chaque gabarit sera différent:
+- Le champ `csl`
+- Le champ `output`
+
+---
+
+# Gabarits "génériques"
+
+**Deux colonnes:**&lt;br&gt;
+Le gabarit 'PNAS Journal Article' est pratique.
+&lt;br&gt;&lt;br&gt;
+**Une colonne:**&lt;br&gt;
+
+Vous pourriez essayer le gabarit PNAS Journal Article avec la clé `pnas_type: pnasmathematics`
+
+---
+
+# Accéder aux données
+
+Lire les données produites dans les targets précédentes avec `tar_read` et `tar_load`
+
+Portion du fichier `_targets.R`
+```r
+list(
+  tar_target(name = data,            command = read.csv("./data.csv")),
+  tar_target(name = data_prep,       command = prep_donnees(data)),
+  tar_target(name = resultat_modele, command = mon_modele(data)),
+  tar_render(name = rapport,         path = "rapport/rapport.Rmd")
+)
+```
+
+Présenter une figure à partir des données produites à la target `resultat_modele` dans le rapport `RMarkdown` et établir la dépendance du rapport à la target
+
+```r
+data_2_plot &lt;- tar_read(resultat_modele)
+plot(data_2_plot)
+```
+
+---
+
+# Présenter une figure
+
+Structure du bloc de code : 
+- `fig.cap` : Légende
+- `\\label{fig:plot1}` : Label pour référencer dans le texte
+- `fig.width` : Commandes pour ajuster les dimensions
+
+```r
+'''{r figs, fig.cap="\\label{fig:plot1}Légende figure.", fig.width=7, fig.height=6}
+# tar_read() permet de lire l'objet créé par la target
+resultat_modele &lt;- tar_read(resultat_modele)
+data &lt;- tar_read(data)
+
+# Créer la figure
+plot(data$X, data$Y)
+abline(resultat_modele)
+'''
+```
+
+---
+
+# Insertion d'images
+
+Insertion de figures préalablement générées via un script R.
+
+Structure: 
+- Légende
+- Label pour référencer dans le texte
+- Chemin pour accéder à la figure dans l'ordinateur
+- Commandes pour ajuster les dimensions
+
+.font90[
+```r
+![Légende figure. \label{fig:plot1}]("../results/plot_lm.pdf"){width=50% height=40%}
+```
+]
+
+Attention ! De cette façon, le rapport ne se met pas à jour s'il y a un changement dans la figure.
+
+---
+
+# Référencer une figure
+
+Utiliser la même balise que lorsque la figure a été créée et que son `\label` a été généré:
+
+```r
+Je fais référence à la Figure \ref{fig:plot1}.
+```
+.center[&amp;darr;]
+
+```r
+Je fais référence à la Figure 1
+```
+
+---
+
+# Bibliographie et références
+
+Les références se font à l'aide du fichier .bib, lequel contient les références.
+
+Le fichier .bib est spécifié dans le YAML du document .Rmd à la clé:
+
+`bibliography: pnas-sample.bib`
+
+.font70[
+```bib
+@inproceedings{belkin2002using,
+  title={Using manifold stucture for partially labeled classification},
+  author={Belkin, Mikhail and Niyogi, Partha},
+  booktitle={Advances in neural information processing systems},
+  pages={929--936},
+  year={2002}
+}
+
+@article{berard1994embedding,
+  title={Embedding Riemannian manifolds by their heat kernel},
+  author={B{\'e}rard, Pierre and Besson, G{\'e}rard and Gallot, Sylvain},
+  journal={Geometric \&amp; Functional Analysis GAFA},
+  volume={4},
+  number={4},
+  pages={373--398},
+  year={1994},
+  publisher={Springer}
+}
+```
+]
+
+---
+
+# Bibliographie et références
+
+Pour utiliser une référence dans le texte il suffit d'utiliser sa clé unique:
+
+```r
+Je fais référence à la première entrée du fichier.bib @belkin2002using.
+```
+
+Pour référencer plusieurs références:
+
+```r
+Je fais référence à plusieurs références [@belkin2002using;@berard1994embedding]
+```
+
+---
+
+# Générer le fichier .bib
+
+**Optimal et rapide**:&lt;br&gt;
+- Logiciel de gestion des références comme Zotero, Mendeley, EndNote etc.
+- Générer le fichier .bib selon votre liste d'articles
+
+**Alternative**:&lt;br&gt;
+- Générer le fichier manuellement via un fichier `plain text`
+- Copier-coller les références bib de chacun des articles via par exemple GoogleScholar
+
+---
+
+# Fichier .bib manuellement
+
+.center[
+![:scale 90%](assets/img/googlescholar.png)
+]
+
+---
+
+# À vous de jouer
+
+## Créez un rapport `Rmarkdown` avec le gabarit `PNAS Journal Article` puis compilez-le
+
+Modifiez certains éléments et vérifiez le résultat dans le fichier PDF généré.
+
+---
+
+class: inverse, center, middle
+
+# Arrimer targets et Rmarkdown
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Un exemple compréhensif
+
+Un exemple de répertoire avec `targets` et `rmarkdown` est disponible. Le lien se trouve sur Moodle sous la section "Bloc 4" et la rubrique "Exemple *complet* d'un pipeline targets"
+
+- Explicite les dépendances aux multiples fichiers de données
+- Compile un rapport RMarkdown
+- Explicite les dépendances du rapport
+
+---
+
+# `targets` + rapport `rmarkdown`
+
+Structure du dossier principal :
+
+.left[
+```
+
+├── data                            # Dossier de données
+│   ├── data.txt                    # Jeu de données 1
+│   ├── data_2.txt                  # Jeu de données 2
+
+
+├── R                               # Dossier de scripts R
+│   ├── prep_donnees.R              # Fonction utilisér comme targets
+│   ├── analyse.R                   # Fonction utilisée comme targets
+│   ├── figure.R                    # Fonction utilisée comme targets
+
+
+├── resultats                       # Contient les résultats 
+│   ├── resultats_modele.csv        # Résultats
+
+├── rapport                         # Contient le rapport et fichiers associés
+│   ├── rapport.Rmd                 # Rapport
+│   ├── pnas-sample.bib             # Fichier de bibliographie
+
+├── _targets.R                      # Fichier targets qui définie le pipeline
+
+
+```
+]
+
+---
+
+# Fichier _targets.R
+
+.font80[
+```r
+# Version bonnifiée du bloc 2
+library(targets)
+library(tarchetypes)
+source("R/analyse.R")
+tar_option_set(packages = c("rmarkdown","knitr"))
+list(
+  tar_target(
+    name = path, # Cible
+    command = "./data", # Dossier contenant les fichiers de données
+    format = "file" # Format de la cible
+  ),
+  tar_target(
+    name = file_paths, # Cible
+    command = list.files(path, full.names = TRUE) # Liste les fichiers dans le dossier
+  ),
+  tar_target(
+    name = data, # Cible pour le modèle 
+    command = prep_donnees(file_paths) # Jointure des jeux de données
+  ),
+  tar_target(
+    name = resultat_modele, # Cible pour le modèle 
+    command = mon_modele(data) # Exécution de l'analyse
+  ),
+  tar_render(
+    name = rapport, # Cible du rapport
+    path = "rapport/rapport.Rmd" # Le path du rapport à renderiser
+  )
+)
+```
+]
+
+---
+
+# Suivre un ensemble de fichiers de données
+
+1. Une target pour suivre le dossier contenant les données
+.font80[
+```r
+tar_target(
+  name = path, # Cible
+  command = "./data", # Dossier contenant les fichiers de données
+  format = "file" # Format de la cible
+)
+```
+]
+2. Une target qui liste tous les fichiers du dossier
+.font80[
+```r
+tar_target(
+    name = file_paths, # Cible
+    command = list.files(path, full.names = TRUE) # Liste les fichiers dans le dossier
+  )
+```
+]
+3. Une target qui charge les données et les assemblent
+.font80[
+```r
+tar_target(
+  name = data, # Cible 
+  command = prep_donnees(file_paths) # Jointure des jeux de données
+)
+```
+]
+
+---
+
+# Compilation du Rmarkdown
+
+La librarie `tarchetypes` simplifie la compilation du fichier .Rmd.&lt;br&gt;
+Même syntaxe que les autres target `tar_target()`
+
+```r
+install.packages("tarchetypes")
+```
+
+```r
+tar_render(cible, "path/to/file.Rmd")
+```
+
+&lt;br&gt;
+
+L'instruction de compilation du fichier .Rmd sera toujours la dernière opération.
+
+---
+
+class: inverse, center, middle
+
+# Travail final
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+---
+
+# Objectif
+
+Écrire un rapport sous forme d'article scientifique
+
+---
+
+# Consignes
+
+Vous devez remettre les résultats de vos analyses.
+
+Le rapport doit contenir :
+
+- 3 figures
+- Un titre et un résumé
+- Une courte introduction spécifiant les questions
+- Une courte description de la méthode et des résultats
+- Une discussion, enrichie de citations provenant de la littérature scientifique
+- Références internes (figures, bibliographie)
+- L'ensemble du texte doit faire 1000-1500 mots max
+- Une bibliographie
+
+---
+
+# Consignes
+
+Nous vous demandons de remettre les scripts permettant de générer l'ensemble du document, incluant : 
+
+- La création de la base de données
+- La correction des données originales
+- L'injection des données
+- Les requêtes
+- La production des figures et tableaux
+- Le document RMarkdown (en format Rmd) incluant des citations
+- Le fichier de bibliographie
+
+---
+
+# Évaluation
+
+À terme, selon les principes de science reproductible, nous devrions pouvoir exécuter l'ensemble de votre analyse sur un autre ordinateur, sans avoir à changer le code. 
+
+Nous utiliserons la commande `tar_make` pour tout exécuter automatiquement.
+
+Néanmoins, l'ensemble de ce matériel doit se trouver sur un dépôt git auquel vous nous donnerez accès. Dans ce dépôt se trouveront les fichiers de données originales en csv, les scripts, le document Rmd ainsi que la bibliographie.
+
+.content-box-red[Pour cette évaluation, ce sera la responsabilité de l'utilisateur d'installer 
+
+les librairies requises pour exécuter le code.]
+
+---
+
+# Évaluation
+
+- Respect des consignes
+  - Présence et clarté des éléments du rapport
+  - Pertinence des visualisations
+  - Qualité du français
+- Reproductibilité
+  - Utilisation appropriée du versionnage
+  - Validation des données et conception de la base de données
+  - Requêtes
+  - RMarkdown
+  - Automatisation (targets)
+  - structure du répertoire GitHub
+
+Le contenu du rapport n'est pas d'une grande importance, il est prétexte à faire toutes les étapes du travail. Ne vous attardez pas à la rédaction, l'objectif est seulement de décrire rapidement votre démarche et d'utiliser `RMarkdown` pour la préparation d'un rapport. 
+
+---
+class: inverse, center, middle
+
+# Discussion
+
+&lt;hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"&gt;&lt;/hr&gt;
+
+## Le rôle de la reproductibilité pour la prévension des fraudes
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="../assets/macros.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "monokai",
+  "highlightLines": true,
+  "countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
