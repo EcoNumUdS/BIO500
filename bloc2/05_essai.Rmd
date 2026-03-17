@@ -32,7 +32,7 @@ Québec Science est un journal destiné à un grand public, alors je vous invite
 
 - Le texte doit faire au maximum 1200 mots et doit être accompagné d'un résumé court, provocateur de 100 mots. Le document peut être supporté par une figure et/ou un tableau.
 - L'argumentaire doit être supporté de littérature scientifique appropriée. Vous pouvez utiliser les références discutées en classe, celles disponible sur le dépôt git et vous devez également trouver de **nouvelles références** pour appuyer vos propos.
-- Pour chaque argument (positif ou negatif) amené, vous devez en **donner un exemple personnel et concret** prenant place dans le cadre d'un travail scolaire.
+- Pour chaque argument (positif ou négatif) amené, vous devez en **donner un exemple personnel et concret** prenant place dans le cadre d'un travail scolaire.
 - Le texte peut être structuré en sections afin de permettre au lecteur de suivre le développement de l'argumentaire.
 - La section finale doit résumer les principaux points.
 
