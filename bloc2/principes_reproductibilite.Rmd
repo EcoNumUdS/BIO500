@@ -85,27 +85,96 @@ print(result)
 Dupliquez le jeu de données pour atteindre plusieurs centaines de milliers de lignes. Si votre ordinateur a de la difficulté à gérer un très gros jeu de données, vous pouvez ajuster à la baisse le nombre de répétitions.
 
 ```{r, eval=FALSE}
-# Exemple (à adapter)
-data_big1 <- data[rep(seq_len(nrow(data)), times = 3000), ]
-data_big2 <- data[rep(seq_len(nrow(data)), times = 6000), ]
-data_big3 <- data[rep(seq_len(nrow(data)), times = 9000), ]
+# Exemple : dupliquer les données pour augmenter le volume
+data_big1 <- data[rep(seq_len(nrow(data)), times = 1000), ]
+data_big2 <- data[rep(seq_len(nrow(data)), times = 2000), ]
+data_big3 <- data[rep(seq_len(nrow(data)), times = 4000), ]
+```
+
+Puis, relancez le script de calcul du nombre de plantes par site avec chacun des nouveaux jeux de données :
+
+```{r, eval=FALSE}
+# Calcul : nombre de plantes par site
+## data_big1
+system.time({                           # system.time() pour mesurer le temps d'exécution
+    result_1 <- data.frame()
+    for (inst in unique(data_big1$site)) {
+        n <- sum(data_big1$site == inst)
+        result_1 <- rbind(
+            result_1,
+            data.frame(site = inst, n_plantes = n)
+        )
+    }
+})
+# Trier les résultats en ordre décroissant
+result <- result_1[order(result_1$n_plantes, decreasing = TRUE), ]
+
+## data_big2
+system.time({                           # system.time() pour mesurer le temps d'exécution
+    result_2 <- data.frame()
+    for (inst in unique(data_big2$site)) {
+        n <- sum(data_big2$site == inst)
+        result_2 <- rbind(
+            result_2,
+            data.frame(site = inst, n_plantes = n)
+        )
+    }
+})
+# Trier les résultats en ordre décroissant
+result <- result_2[order(result_2$n_plantes, decreasing = TRUE), ]
+
+## data_big3
+system.time({                           # system.time() pour mesurer le temps d'exécution
+    result_3 <- data.frame()
+    for (inst in unique(data_big3$site)) {
+        n <- sum(data_big3$site == inst)
+        result_3 <- rbind(
+            result_3,
+            data.frame(site = inst, n_plantes = n)
+        )
+    }
+})
+# Trier les résultats en ordre décroissant
+result <- result_3[order(result_3$n_plantes, decreasing = TRUE), ]
 ```
 
 Relancez ensuite le script de calcul avec `data_big`. Vous pouvez ajouter le script de calcul adapté dans le bloc de code ci-dessus.
 
 ✍️ Notez ce que vous observez :
-- Temps d'exécution :
+- Temps d'exécution data_big1 :
+- Temps d'exécution data_big2 :
+- Temps d'exécution data_big3 :
 
 ### Robustesse
 
 Modifiez les données pour simuler une donnée manquante.
 
 ```{r, eval=FALSE}
-data_modif <- data_big1
+data_modif <- data
 data_modif[data_modif$site == "Sherbrooke", "site"] <- NA
 ```
 
 Relancez ensuite le script de calcul avec `data_modif`. Vous pouvez ajouter le script de calcul adapté dans le bloc de code ci-dessus.
+
+```{r, eval=FALSE}
+# Calcul : nombre de plantes par site
+system.time({                           # system.time() pour mesurer le temps d'exécution
+    result_modif <- data.frame()
+    for (inst in unique(data_modif$site)) {
+        n <- sum(data_modif$site == inst)
+        result_modif <- rbind(
+            result_modif,
+            data.frame(site = inst, n_plantes = n)
+        )
+    }
+})
+# Trier les résultats en ordre décroissant
+result_modif <- result_modif[order(result_modif$n_plantes, decreasing = TRUE), ]
+
+# Afficher les résultats
+summary(result_modif)
+print(result_modif)
+```
 
 ✍️ Notez ce que vous observez :
 - Erreurs d'exécution :
@@ -114,13 +183,36 @@ Relancez ensuite le script de calcul avec `data_modif`. Vous pouvez ajouter le s
 
 ### Réutilisabilité
 
-Copiez-collez le code de calcul dans le bloc de code ci-dessous et essayez de l'adapter pour le nouveau jeu de données suivant légèrement différent.
+Essayez d'adapter le code de calcul pour le nouveau jeu de données suivant légèrement différent :
 
 ```{r, eval=FALSE}
 data <- data.frame(
     espece = paste0("Plante_", 1:100),
     localisation = rep(c("Québec", "Ontario", "Nouvelle-écosse", "Labrador"), length.out = 10000)
 )
+```
+
+Code de calcul à adapter. Le code suivant est celui utilisé pour le jeu de données initial, vous devez l'adapter pour qu'il fonctionne avec le nouveau jeu de données :
+
+```{r, eval=FALSE}
+# Calcul : nombre de plantes par site
+system.time({                           # system.time() pour mesurer le temps d'exécution
+    result <- data.frame()
+    for (inst in unique(data$site)) {
+        n <- sum(data$site == inst)
+        result <- rbind(
+            result,
+            data.frame(site = inst, n_plantes = n)
+        )
+    }
+})
+
+# Trier les résultats en ordre décroissant
+result <- result[order(result$n_plantes, decreasing = TRUE), ]
+
+# Afficher les résultats
+summary(result)
+print(result)
 ```
 
 ✍️ Notez ce que vous observez :
@@ -203,7 +295,7 @@ simu_data <- function(n_rep, site_col = "site", espece_col = "espece") {
 
 **Étape 2 : Calcul**
 
-Assemblez le calcul dans une fonction distincte et complétez le code suivant. Notez les paramètres utilisés. Ici, il n'y a pas de valeurs par défaut, mais vous pouvez le faire si vous le souhaitez.
+Assemblez le calcul dans une fonction distincte et complétez le code suivant. Notez les paramètres utilisés. Ici, il n'y a pas de valeurs par défaut, mais vous pouvez en ajouter si vous le souhaitez.
 
 ```{r}
 compte_especes_par_site <- function(df, site_col, espece_col) {
