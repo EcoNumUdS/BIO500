@@ -248,6 +248,7 @@ class: inverse, center, middle
 
 --
 Retour sur règles de l'université de Sherbrooke : 
+
 --
 - Responsabilité étudiants : https://www.usherbrooke.ca/intranet-education/fileadmin/sites/intranet-education/documents/Intranet/Reglements_facultaires/Informations_facultaires_VF_en_vigueur.pdf
 - Lignes directrices : https://www.usherbrooke.ca/decouvrir/a-propos/priorites-institutionnelles/intelligence-artificielle/lignes-directrices-iag
@@ -257,11 +258,19 @@ Retour sur règles de l'université de Sherbrooke :
 ## Vote et conclusion
 
 <!-- 
-    Sondage sur l’impact perçu des LLM.
-    Conclusion sur les pistes pour une utilisation responsable.
--->
+# Débat : Intelligence artificielle et écologie, opportunité ou menace pour la rigueur scientifique ?
 
-<!-- 
+## 10 minutes pour préparer ses arguments
+## 2 minutes pour présenter ses arguments
+## Discussion
+## Vote et conclusion
+    - Sondage sur l’impact perçu des LLM.
+    - Conclusion sur les pistes pour une utilisation responsable.
+    	- Retour sur règles de l'université de Sherbrooke : 
+		- Responsabilité étudiants : https://www.usherbrooke.ca/intranet-education/fileadmin/sites/intranet-education/documents/Intranet/Reglements_facultaires/Informations_facultaires_VF_en_vigueur.pdf
+		- Lignes directrices : https://www.usherbrooke.ca/decouvrir/a-propos/priorites-institutionnelles/intelligence-artificielle/lignes-directrices-iag
+		- Biblio : https://libguides.biblio.usherbrooke.ca/IA
+
 Points de réflexion :
 
   -  Fiabilité et biais : Les LLM peuvent-ils introduire des biais dans l'analyse des données écologiques ?
@@ -269,10 +278,7 @@ Points de réflexion :
   -  Accès aux données et reproductibilité : Les LLM facilitent-ils l’accès à des connaissances dispersées ou compliquent-ils la transparence des méthodes ?
   -  Éthique et impacts environnementaux : L'empreinte carbone des LLM est-elle compatible avec les objectifs de durabilité écologique ? 
 
-Retour sur règles de l'université de Sherbrooke : 
-- Responsabilité étudiants : https://www.usherbrooke.ca/intranet-education/fileadmin/sites/intranet-education/documents/Intranet/Reglements_facultaires/Informations_facultaires_VF_en_vigueur.pdf
-- Lignes directrices : https://www.usherbrooke.ca/decouvrir/a-propos/priorites-institutionnelles/intelligence-artificielle/lignes-directrices-iag
-- Biblio : https://libguides.biblio.usherbrooke.ca/IA
+
 -->
 
 ---
