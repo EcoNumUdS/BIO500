@@ -31,17 +31,37 @@ class: title-slide, middle
 
 ## Aujourd'hui
 
+- Retour sur le dernier cours
 - Identifier le message à communiquer
 - Les composantes graphiques
 - Les règles graphiques
 - Les types de figures
 - Les données spatiales
 
-Les notions sont abordés dans les chapitres [10](https://econumuds.github.io/BIO500/figures.html) et [11](https://econumuds.github.io/BIO500/composantes_graphiques.html) du livre.
+Les notions sont abordés dans les chapitres [10](https://econumuds.github.io/BIO500/figures.html), [11](https://econumuds.github.io/BIO500/composantes_graphiques.html) et [12](https://econumuds.github.io/BIO500/cartes.html) du livre.
 
 Un guide des fonctionalités de R pour la visualisation des données vous est accessible [ici](https://github.com/EcoNumUdS/BIO500/blob/master/references/graphsonr.pdf).
 
 Vous trouverez du matériel supplémentaire dans le [cours](https://r.qcbs.ca/workshop03/book-fr/index.html) du [CSBQ](https://qcbs.ca/).
+
+---
+class: inverse, center, middle
+
+# Retour sur le dernier cours
+
+<hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
+
+---
+
+# Retour sur le dernier cours
+
+## Atelier `Séance 5 - Principes de reproductibilité`
+
+1. Observations sur la scalabilité, robustesse et réutilisabilité
+   
+1. logs
+
+2. tests
 
 ---
 class: inverse, center, middle
@@ -119,7 +139,7 @@ class: inverse, center, middle
 
 ## Quelques exemples
 
-1. Le tableau de bord [Performance du réseau de la santé et des services sociaux](https://app.powerbi.com/view?r=eyJrIjoiOTFmZjc4NzAtMTBkMS00OTE5LWE4YjQtZTIzOTc5NDZjNmZlIiwidCI6IjA2ZTFmZTI4LTVmOGItNDA3NS1iZjZjLWFlMjRiZTFhNzk5MiJ9)
+1. Le tableau de bord [Santé Québec](https://app.powerbi.com/view?r=eyJrIjoiOGIyZWI4NGQtN2FjZC00OGFjLTgwMWYtZmM3N2M3ZjYyNjU2IiwidCI6IjA2ZTFmZTI4LTVmOGItNDA3NS1iZjZjLWFlMjRiZTFhNzk5MiJ9)
 2. S&P 500 [Global](https://www.spglobal.com/spdji/en/indices/equity/sp-500/#overview)
 3. Design d'information [Voilà:](https://chezvoila.com/fr/)
 
@@ -306,7 +326,7 @@ class: inverse, center, middle
 - Éviter les figures 3D.
 - Limiter le nombre de dimensions (3 ou 4 dimensions max).
 - La multi-dimensionnalité peut être gérée en:
-  - Modifiant la forme et la la taille des points
+  - Modifiant la forme et la taille des points
   - Ajoutant des couleurs
 ]
 
@@ -373,7 +393,7 @@ class: inverse, center, middle
 
 Dessinez à la main une proposition de figure pour la phénologie des différentes espèces de chauve-souris du Québec.
 
-Message : Les dates de présence des chauve-souris varie selon les espèces.
+Message : La présence des chauve-souris varie selon les espèces et la date.
 
 ```{r, echo = FALSE}
 pheno <- read.csv("assets/data/phenologie.csv")
@@ -449,6 +469,7 @@ plot(elevation, densite[,1], axes = TRUE,
 
 .font90[
 ```{r, eval = FALSE}
+plot(elevation, densite[,1], axes = FALSE)
 axis(1, seq(0,1000,100))
 axis(2)
 ```
@@ -770,7 +791,7 @@ D’autres formats sont aussi disponibles. Par exemple, `pdf()`, `jpeg()`, `bmp(
 
 ## 15 minutes
 
-Scripter votre figure sur R à l'aide des [données](./assets/data/phenologie.csv)
+Scripter votre figure sur R à l'aide des [données](./assets/data/phenologie.csv) (Moodle > Bloc 3 > phenologie.csv)
 
 Si elle est trop élaborée, vous pouvez la simplifier pour la rendre plus facile à réaliser
 
@@ -820,7 +841,7 @@ class: inverse, center, middle
 
 Les cartes sont un outil de visualisation très puissant; Elles permettent de représenter des données géographiques.
 
-Deux types de données géographiques :
+Deux types de données spatiales (géographiques) :
 
 - Les données raster
 - Les données vectorielles
@@ -989,20 +1010,31 @@ Est-ce que la science ouverte peut prévenir la fraude ?
 ---
 class: inverse, center, middle
 
-# Évaluation formative #2
+# Discussion
 
 <hr width="65%" size="0.3" color="orange" style="margin-top:-20px;"></hr>
 
-## Structurer sa base de données
+## Les principes FAIR
 
 ---
 
-## Évaluation formative #2
+<!-- Demander quels sont les outils et pratiques existants pour répondre aux principes FAIR. -->
 
-Chaque équipe doit évaluer les scripts d'une autre équipe
+# Principes FAIR
 
-- À compléter pour le **8 avril**
-- La personne qui a remis le travail est responsable d'entrer l'évaluation
-- Tous les commentaires doivent être formulés comme une question
+.center[
+<img src="assets/img/fair_principle.jpg" height="400px"></img>
+]
 
 ---
+
+# Discussion
+
+## 1. Quels sont les liens concrets entre les principes FAIR et les étapes d'une étude scientifique ?
+
+<br>
+.center[
+  <img src="assets/img/flow_bio500.png" width="75%"></img>
+]
+
+## 2. Comment appliquer les principes FAIR aux programmes (code) ?
