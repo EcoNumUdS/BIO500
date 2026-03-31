@@ -964,11 +964,11 @@ m
 
 ## 15 minutes
 
-Gnénérez une carte de couverture du sol pour le mont Bellevue.
+Gnénérez une carte de la pollution lumineuse pour le mont Bellevue.
 
-Couverture du sol : <https://www.donneesquebec.ca/recherche/dataset/utilisation-du-territoire>
+Pollution lumineuse (Raster) : Moodle > Bloc 3
 
-Mont Bellevue : [en format geopackage](./assets/data/mont_bellevue.geojson)
+Mont Bellevue (Vectoriel) : Moodle > Bloc 3
 
 ---
 class: inverse, center, middle
@@ -982,7 +982,7 @@ class: inverse, center, middle
 # Consignes
 
 - Identifier clairement vos questions de recherche
-- Compléter votre analyse au moyen de 3 figures et 1 tableau
+- Compléter votre analyse au moyen de 3 figures
 
 ---
 
