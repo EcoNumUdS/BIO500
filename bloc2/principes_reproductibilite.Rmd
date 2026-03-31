@@ -392,10 +392,10 @@ Un test peut être ajoutée à l'intérieur d'une fonction ou dans une fonction 
 
 ```{r, eval=FALSE}
 test_compte_especes <- function(df_test) {
-res <- compte_especes_par_site(df_test)
-stopifnot(res$n_plantes[res$site == "X"] == 2) # `stopifnot()` vérifie que la condition est vraie, sinon elle arrête l'exécution et affiche un message d'erreur
-stopifnot(res$n_plantes[res$site == "Y"] == 1)
-log_message("Test *compte_especes_par_site* passé avec succès") # Retourne un message de succès si les tests sont passés
+  res <- compte_especes_par_site(df_test)
+  stopifnot(res$n_plantes[res$site == "X"] == 2) # `stopifnot()` vérifie que la condition est vraie, sinon elle arrête l'exécution et affiche un message d'erreur
+  stopifnot(res$n_plantes[res$site == "Y"] == 1)
+  log_message("Test *compte_especes_par_site* passé avec succès") # Retourne un message de succès si les tests sont passés
 }
 
 df_test <- data.frame(
