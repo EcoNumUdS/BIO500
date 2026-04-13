@@ -107,13 +107,13 @@ terra, nutricisque flava. Eurytus auris. Gerunt transierant miserorum latet; nis
 luporum. Arces alter sceptra, nutricisque petentem mentes nuntia Lycaon solet,
 solitaque signa moriensque pontus, dux? Corpora testataque, novo tumidum. Eurytus auris. Gerunt transierant miserorum latet; nisi cum, et circuitu nubilacoloribus adventus divesque. Loca partibus breve et unum maior stellis inpia etluporum.
 
-**Voici comment inclure une figure qui dépend des étapes précédentes et la citer/référencer dans le texte, via son `label`: Figure \ref{fig:plot1}**. 
+**Voici comment inclure une figure qui dépend des étapes précédentes et la citer/référencer dans le texte, via son `label`: Figure \ref{fig1}**. 
 
 Amnis novos illuc cultusque: parvoque nimiumque murra simplicitas.
 
-<!-- ![Espace pour graphique de régression linéaire. \label{fig:plot1}]("../results/plot_lm.pdf"){ width=50% height=40%} -->
+<!-- ![Espace pour graphique de régression linéaire. \label{fig1}]("../results/plot_lm.pdf"){ width=50% height=40%} -->
 
-```{r fig:plot1, echo=FALSE, fig.cap="\\label{fig:plot1}Légende figure.", fig.align='center', out.width='70%'}
+```{r fig1, echo=FALSE, fig.cap="\\label{fig1}Légende figure.", fig.align='center', out.width='70%'}
 # Créer la figure
 plot(params$donnees$X, params$donnees$Y, xlab = "X", ylab = "Y", cex.axis = 1.5, cex.lab = 1.5, pch = 19)
 abline(params$resultats, col = "red", lwd = 2)
