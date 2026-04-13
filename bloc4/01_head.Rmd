@@ -16,8 +16,6 @@ output:
 
 ```{r child = '02_rmarkdown.Rmd'}
 ```
-```{r child = '03_targets2.Rmd'}
-```
 ```{r child = '04_travail_session.Rmd'}
 ```
 
