@@ -37,7 +37,7 @@ jobs:
           for VARIABLE in `ls -d bloc*`
           do
             sudo chmod ugo+rwx $VARIABLE
-            docker run --rm -t -v `pwd`:/slides astefanutti/decktape $VARIABLE/ $VARIABLE/$VARIABLE.pdf
+            docker run --rm -t -v `pwd`:/slides ghcr.io/astefanutti/decktape $VARIABLE/ $VARIABLE/$VARIABLE.pdf
           done
 
       - name: Render quarto book
